@@ -41,7 +41,7 @@
 - [x] Reviewed source symbols against the current book's operator, position and momentum conventions.
 - [x] Local XeLaTeX compiled the cumulative book with Chapters 1–5; verified it contains **112 pages** with title page, table of contents and updated List of Notation.
 - [x] Inspected rendered chapter pages and scanned LaTeX diagnostics for severe layout problems.
-- [ ] GitHub Actions run and repository PDF update verified (to be completed after remote run).
+- [x] GitHub Actions run 38892153047 completed successfully, including XeLaTeX, PDF artifact upload and automated commit of the updated `pdf/advanced-quantum-mechanics.pdf` to the `main` branch.
 - [ ] Full independent line-by-line and equation-by-equation bilingual instructor check.
 - [ ] Full physical and mathematical independent peer review of the source results.
 
