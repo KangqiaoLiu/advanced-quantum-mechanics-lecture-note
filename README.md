@@ -87,24 +87,15 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Complete compiled book:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), **112 pages** in the initial local XeLaTeX compile, with title, contents, notation and Chapters 1–5.
 - **Status:** Phase-T faithful first pass, awaiting independent final source–translation comparison.
 
-## Chapter 6: Symmetry and Identical Particles translation baseline
+## Chapter 6: Identical Particles and Permutation Symmetry
 
-- **Four complete sections:** [chapters/ch06/](chapters/ch06/) reproduces Chinese PDF viewer pages **140–153**: conserved quantities, symmetry transformations, exchange symmetry, and simple identical-particle systems including helium, spin coupling and Fermi-gas pressure.
-- **Pagination anomaly:** source p. 146 holds only the trailing sentence of a question; printed numbering restarts on viewer p. 147, still within Chapter 6.
-- **Source-to-English audit:** [editorial/CHAPTER06_TRANSLATION_LOG.md](editorial/CHAPTER06_TRANSLATION_LOG.md).
-- **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
-- **Full compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Local XeLaTeX verified **125 pages** comprising Chapters 1–6 plus front matter.
-- **Status:** faithful first translation; independent bilingual proofreading and instructor approval pending.
+**Current source:** [chapters/ch06/](chapters/ch06/). Rewritten from the instructor's 2024 handwritten **1.1** (5 pages) and **1.2** (2 pages), preserving the actual classroom logic: exchange operators and $S_N$, symmetric observables, explicit two- and three-particle examples, invariant subspaces, symmetrization projectors, repeated-orbital Bose normalization and Slater determinants. See [handout mapping and choices](editorial/CONTENT_INTEGRATION_2026-10-16.md).
 
-## Chapter 7: Second Quantization translation baseline
+The former Chinese-derived Chapter 6 translation is preserved at [pre-supplement snapshot](../../tree/textbook/pre-instructor-supplements-2026-10-16).
 
-- **Original chapter:** Chinese PDF viewer pages **154–173**, with the seven-page sequence **154–160 exactly repeated on 161–167**. Both text and pixel content are identical. The English textbook prints each unique source page once; the exact duplication and mapping are documented.
-- **Two original sections:** [chapters/ch07/](chapters/ch07/) contains *Particle-Number Representation* and *Representation of Observables by Creation and Annihilation Operators*. They are physically split into five editable LaTeX source files while retaining the original two sections and all eleven internal numbered subdivisions.
-- **Full derivations:** occupation-number basis, Fock spaces and unitary basis changes, bosonic/fermionic commutation relations and occupation factors, additive one-body and two-body operators, continuous fields, and the Heisenberg equation of motion.
-- **Proofing ledger:** [editorial/CHAPTER07_TRANSLATION_LOG.md](editorial/CHAPTER07_TRANSLATION_LOG.md) covers source-page correspondence, the verified duplicate, minimal notation changes and unresolved physics issues.
-- **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
-- **Rendered cumulative book:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf); **135 pages** in local XeLaTeX compilation, including the title page, TOC, notation and Chapters 1–7.
-- **Status:** complete first-pass faithful translation; final bilingual instructor signoff and later conceptual revision remain pending.
+## Chapter 7: Bosons, Fermions, and Second Quantization
+
+**Current source:** [chapters/ch07/](chapters/ch07/). Rewritten from the instructor's 2024 handwritten **1.3 Bosons** (6 pages) and **1.4 Fermions** (5 pages), emphasizing normalized occupation states, Fock spaces, canonical commutation/anticommutation, fermion sign and ordering, and the derivation of one-body and two-body Hamiltonians. Redundant original-source treatment is no longer active. The historical translation remains in the preserved version branch.
 
 ## Chapter 8: Relativistic Quantum Mechanics translation baseline
 
@@ -113,7 +104,7 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Traceable minimal corrections and unresolved physics:** [editorial/CHAPTER08_TRANSLATION_LOG.md](editorial/CHAPTER08_TRANSLATION_LOG.md). The contradictory source first occurrence of gamma-zero was corrected using the source's own later matrix representation.
 - **Full eight-chapter source map:** [editorial/FULL_BOOK_TRANSLATION_BASELINE_STATUS.md](editorial/FULL_BOOK_TRANSLATION_BASELINE_STATUS.md).
 - **Student-facing notation:** [frontmatter/notation.tex](frontmatter/notation.tex) now includes Minkowski spacetime, Dirac matrices, spinor adjoints, Lorentz transformations, bilinear covariants and free-spinor normalization.
-- **Whole-book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), locally compiled as **145 pages** with title page, automatic table of contents and all eight translated chapters.
+- **Historical Phase-T PDF:** the original eight-chapter translation compiled as 145 pages; the **current expanded book is 138 pages**, including all newly integrated instructor materials.
 - **Status:** faithful first-pass English translation of all original material, awaiting independent bilingual prose and equation-level instructor signoff.
 
 ## Full-book translation fidelity review (2026-10-16)
