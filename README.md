@@ -104,7 +104,7 @@ The **initial translation of all eight chapters** has received a second-round sy
 - **One-to-one source-page index:** [SOURCE_PAGE_COVERAGE.csv](editorial/SOURCE_PAGE_COVERAGE.csv), tracing **186 original viewer pages**, including **7 exact duplicate pairs**.
 - **Repeatable spot checks:** [source coverage script](scripts/build_source_coverage.py) (requires the original Chinese PDF locally) and [14 symbolic algebra tests](scripts/check_translation_algebra.py) (SymPy).
 - **Preserved original version:** [translation/initial-baseline-2026-10-16](../../tree/translation/initial-baseline-2026-10-16), before the fidelity fixes.
-- **Reviewed working version:** the current `main` branch, with a separately preserved reviewed-baseline branch before instructor-led curricular additions.
+- **Preserved reviewed working version:** [translation/fidelity-audited-2026-10-16](../../tree/translation/fidelity-audited-2026-10-16), frozen after the successful all-eight-chapter XeLaTeX build. Subsequent content enhancements are committed to `main`.
 
 **Quality boundary:** this was a source-structure, prose-anchor, selected-figure and targeted-formula review. It is a traceable **working English translation baseline**, not a claim that every translated sentence and every displayed equation has undergone independent bilingual certification. That final publication-grade read-through remains an explicit task. Content enhancements can now proceed as separately tracked revisions.
 
