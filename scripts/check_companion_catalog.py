@@ -28,7 +28,9 @@ for lab in labs:
     for field in ("title", "question", "observable", "minutes"):
         assert isinstance(lab[field], str) and lab[field].strip(), (lab["id"], field)
     source = lab["source"]
-    assert source.startswith(f"chapters/ch{lab['chapter']:02d}/")
+    # Cross-chapter links are deliberate (e.g. Chapter 1 tensor-product refresher
+    # cites the rigorous composite-systems treatment in Chapter 3).
+    assert re.fullmatch(r"chapters/ch0[1-9]/[A-Za-z0-9_]+\.tex", source), source
     assert (ROOT / source).is_file(), f"Missing notes source: {source}"
     if lab["stage"] == "implemented":
         page = lab.get("page")
