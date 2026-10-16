@@ -25,7 +25,8 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - **LaTeX root:** [main.tex](main.tex), containing the six translated sections in [chapters/ch01/](chapters/ch01/).
 - **Translation record:** [editorial/CHAPTER01_TRANSLATION_LOG.md](editorial/CHAPTER01_TRANSLATION_LOG.md); [provisional notation](editorial/NOTATION_BASELINE.md).
 - **Local compilation:** run `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` from the repository root. The PDF is regenerated from tracked source files.
-- **Cloud compilation:** [.github/workflows/build-notes.yml](.github/workflows/build-notes.yml) compiles XeLaTeX on GitHub Actions after changes to the source and stores the version-specific PDF under [Actions](../../actions) → *Build English lecture notes PDF* → a run → *Artifacts*. The PDF is tied to the commit; the editable LaTeX is always the canonical archive.
+- **Current PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf) is the generated, version-controlled PDF in the repository; GitHub can display it directly.
+- **Cloud compilation:** [.github/workflows/build-notes.yml](.github/workflows/build-notes.yml) compiles XeLaTeX when sources change, uploads the exact build under [Actions](../../actions) → *Build English lecture notes PDF* → *Artifacts*, and commits the latest PDF to `pdf/advanced-quantum-mechanics.pdf` using the GitHub Actions bot. Source commits and PDF commits are both preserved in the Git history. The editable LaTeX is the canonical source.
 
 The faithful translation is deliberately kept separate from future additions (Berry phase, density matrices, measurement extensions, topology, QNN, etc.). Revisions to translation vs. subsequent pedagogy must be distinguishable in history.
 
