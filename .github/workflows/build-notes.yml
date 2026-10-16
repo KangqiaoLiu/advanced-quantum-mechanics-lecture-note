@@ -12,6 +12,7 @@ on:
       - 'scripts/check_display_equations.py'
       - 'scripts/check_notation_consistency.py'
       - 'scripts/check_content_additions.py'
+      - 'scripts/check_visual_assets.py'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
@@ -30,6 +31,9 @@ jobs:
     steps:
       - name: Check out versioned LaTeX sources
         uses: actions/checkout@v4
+
+      - name: Check figure assets and AB geometry
+        run: python3 scripts/check_visual_assets.py
 
       - name: Check all displayed equations are numbered
         run: python3 scripts/check_display_equations.py

@@ -12,4 +12,4 @@ For permissions and other inquiries, contact the repository maintainer through t
 
 ## Acknowledgment of foundational sources
 
-These lecture notes draw extensively on Professor Pengfei Zhuang’s *Advanced Quantum Mechanics* lecture notes, and partially on *Quantum Computation and Quantum Information* by Michael A. Nielsen and Isaac L. Chuang and *Advanced Quantum Mechanics* by Franz Schwabl. The author gratefully acknowledges their contributions. This acknowledgment does not imply endorsement by these authors; their original rights remain unaffected.
+These lecture notes draw extensively on Professor Pengfei Zhuang’s *Advanced Quantum Mechanics* lecture notes, and partially on *Quantum Computation and Quantum Information* by Michael A. Nielsen and Isaac L. Chuang and *Advanced Quantum Mechanics* by Franz Schwabl. The author gratefully acknowledges their contributions and also thanks Professor Hong Guo (郭弘) for his Advanced Quantum Mechanics course. This acknowledgment does not imply endorsement by these authors; their original rights remain unaffected.

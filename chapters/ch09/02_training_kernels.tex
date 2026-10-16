@@ -30,12 +30,32 @@ This is the \emph{parameter-shift rule}. It expresses an exact derivative as a d
 \end{equation}
 Each parameter derivative may therefore require two or more circuit settings. With many parameters and repeated shots, measurement cost becomes part of the optimization problem.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.77\linewidth]{figures/qml/parameter_shift.pdf}
+\caption{The parameter-shift rule for the exactly soluble $f(\theta)=\cos\theta$. The two dots mark the evaluations at $\theta_0\pm\pi/2$ (with $\theta_0=0.48$); their difference, divided by two, gives $f'(\theta_0)$. The plot is generated analytically.}
+\label{fig:qml-parameter-shift}
+\end{figure}
 \subsection*{3) More expressive data encodings}
 A single use of $R_y(x)$ produced the simple trigonometric function in Eq.~\eqref{eq:qnn-onequbit}. A generic data-encoding layer may be written $e^{-\ii x\op G}$ for some Hermitian generator $\op G$. Inserting its spectral decomposition reveals factors $e^{-\ii x(g_a-g_b)}$. Consequently a circuit expectation can be written as a finite Fourier-type series in the input:
 \begin{equation}
  f_\theta(x)=\sum_{\omega\in\Omega}c_\omega(\theta)e^{\ii\omega x},\qquad
  c_{-\omega}=c_\omega^*.
 \end{equation}
+The same input can be encoded more than once, as in the following elementary one-qubit sequence.
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[>=Latex,x=1cm,y=1cm]
+ \draw[thick] (-.2,0)--(11.2,0);
+ \node[left] at (-.2,0) {$\ket0$};
+ \foreach \x/\w/\text in {1.2/1.45/{$R_y(x)$},3.5/1.7/{$R_y(\theta_1)$},5.95/1.45/{$R_y(x)$},8.25/1.7/{$R_z(\theta_2)$}} {
+   \node[draw,rounded corners,fill=blue!5,minimum width=\w cm,minimum height=8.5mm,inner sep=2pt] at (\x,0) {\text};}
+ \node[draw,rounded corners,fill=green!9,minimum width=1.45cm,minimum height=8.5mm] at (10.25,0) {$\sigma_z$};
+ \draw[decorate,decoration={brace,mirror,amplitude=4pt}] (.45,-.43)--(6.7,-.43) node[midway,below=5pt,font=\footnotesize] {repeated input encoding};
+\end{tikzpicture}
+\caption{Data re-uploading: the same input $x$ appears in multiple encoding gates separated by adjustable rotations. The measured output depends jointly on $x$ and $\theta_1,\theta_2$.}
+\label{fig:qml-reupload}
+\end{figure}
 The available frequency set $\Omega$ is constrained by the eigenvalue differences of the encoding generators. Repeating data encodings between trainable gates (\emph{data re-uploading}) can enrich the possible frequency spectrum. This precise relation between data encoding and expressivity is developed in the work of Schuld, Sweke and Meyer~\cite{SchuldSwekeMeyer2021}. Richer possible functions still need a useful loss, sufficient data, and a trainable parameterization.
 
 \section{Quantum Kernel Methods}
@@ -58,10 +78,28 @@ For any complex coefficients $c_i$,
 \end{equation}
 Hence the matrix $K_{ij}=K(x_i,x_j)$ is positive semidefinite. This mathematical property allows its use in kernel regression or support-vector classification. A quantum device may estimate kernel entries by preparing $U_{\mathrm{enc}}(x')^\dagger U_{\mathrm{enc}}(x)\ket{0^n}$ and measuring the probability of obtaining $0^n$.
 
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[>=Latex,node distance=12mm]
+ \node[draw,rounded corners,minimum width=19mm,minimum height=9mm,align=center] (zero) {$\ket{0^n}$};
+ \node[draw,rounded corners,right=of zero,minimum width=24mm,minimum height=9mm,align=center,fill=blue!6] (a) {$U_{\rm enc}(x)$};
+ \node[draw,rounded corners,right=of a,minimum width=27mm,minimum height=9mm,align=center,fill=orange!8] (b) {$U_{\rm enc}^{\dagger}(x')$};
+ \node[draw,rounded corners,right=of b,minimum width=28mm,minimum height=9mm,align=center,fill=green!8] (p) {$\Pr(0^n)$};
+ \draw[->] (zero)--(a);\draw[->] (a)--(b);\draw[->] (b)--(p);
+\end{tikzpicture}
+\caption{An overlap-based kernel evaluation: prepare $U_{\rm enc}^{\dagger}(x')U_{\rm enc}(x)\ket{0^n}$ and measure the all-zero probability, equal to $K(x,x')$.}
+\label{fig:qml-overlap-circuit}
+\end{figure}
 \subsection*{2) A one-qubit example}
 For $\ket{\phi(x)}=R_y(x)\ket0$,
 \begin{equation}
  \braket{\phi(x)}{\phi(x')}=\cos\frac{x-x'}2,
  \qquad\boxed{K(x,x')=\cos^2\frac{x-x'}2.}
 \end{equation}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.60\linewidth]{figures/qml/one_qubit_kernel.pdf}
+\caption{Exact one-qubit quantum kernel $K(x_i,x_j)=\cos^2[(x_i-x_j)/2]$ on 17 equally spaced inputs in $[-\pi,\pi]$. The diagonal entries equal one; off-diagonal similarities depend on the relative encoded angle.}
+\label{fig:qml-kernel-matrix}
+\end{figure}
 The result is simple enough to evaluate classically. The research question for larger quantum feature maps is whether useful kernel values can be estimated efficiently on suitable quantum hardware while the corresponding classical computation remains costly for the relevant data distribution. The existence of an exponentially large Hilbert space alone does not establish such a benefit~\cite{Havlicek2019}.

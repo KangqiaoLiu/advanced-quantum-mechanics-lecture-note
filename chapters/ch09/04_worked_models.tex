@@ -18,6 +18,12 @@ Therefore
 \end{equation}
 The coefficient in brackets tells us how informative the training inputs are about this parameter. If all inputs happen to sit close to a cosine maximum or minimum, the derivative is tiny and estimating the parameter becomes difficult, even for one qubit. The relation between data distribution and trainability is already visible in this elementary example.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.76\linewidth]{figures/qml/one_qubit_training.pdf}
+\caption{Full-batch gradient descent for $f_\theta(x)=\cos(x+\theta)$ using 31 equally spaced inputs in $[-1.35,1.35]$, exact targets $\cos(x+0.6)$, initial $\theta_0=-1.05$, and learning rate $0.34$. The graph plots the exact mean-squared error over 35 steps, without sampling noise.}
+\label{fig:qml-training-curve}
+\end{figure}
 \subsection*{2) Depolarizing noise}
 Consider a noise channel on a qubit, after the ideal circuit, that replaces its density operator with a mixture of the original state and the maximally mixed state:
 \begin{equation}
@@ -76,4 +82,14 @@ For an $n$-qubit Pauli string with eigenvalues $\pm1$, $d=2^n$ and $\operatornam
  \boxed{\operatorname{Var}\bigl[\langle\op O\rangle_\psi\bigr]
  =\frac1{2^n+1}.}
 \end{equation}
-Thus expectation values of a fixed traceless observable concentrate near zero under uniformly random pure states in high dimension. This calculation by itself is \emph{not} a barren-plateau theorem for derivatives, but it illustrates the concentration mechanism underlying many rigorous gradient-suppression results~\cite{McClean2018,Larocca2025}. The correct gradient scaling depends on the circuit generators, initial state, measurement locality, and objective function.
+Thus expectation values of a fixed traceless observable concentrate near zero under uniformly random pure states in high dimension. We can also examine a particular derivative rather than the expectation of a Pauli observable. Draw $\ket\psi$ from the Haar distribution in dimension $d=2^n$, apply $e^{-\ii\theta X_1/2}$, and measure the probability $f(\theta)=|\bra{0^n}e^{-\ii\theta X_1/2}\ket\psi|^2$. Here $X_1$ acts on the first qubit. If $a=\langle 0^n|\psi\rangle$ and $b=\langle 10^{n-1}|\psi\rangle$, then $f'(0)=\operatorname{Im}(a^*b)$. The Haar fourth moment yields
+\begin{equation}
+\boxed{\operatorname{Var}[f'(0)]=\frac{1}{2d(d+1)},\qquad d=2^n.}
+\end{equation}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.75\linewidth]{figures/qml/global_projector_gradients.pdf}
+\caption{Gradient concentration for this specific global-projector objective: exact Haar variance $[2d(d+1)]^{-1}$ versus 1,800 independent numerically sampled Haar states at each $n$. This illustrative ensemble of random states is a precisely defined toy model, not a universal statement about practical QNN architectures.}
+\label{fig:qml-global-gradient}
+\end{figure}
+This calculation by itself is \emph{not} a barren-plateau theorem for derivatives, but it illustrates the concentration mechanism underlying many rigorous gradient-suppression results~\cite{McClean2018,Larocca2025}. The correct gradient scaling depends on the circuit generators, initial state, measurement locality, and objective function.

@@ -10,7 +10,7 @@ The original lecture notes and their historical Chinese-to-English translation a
 
 ## Acknowledgments
 
-These lecture notes draw **extensively** on the Advanced Quantum Mechanics lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. Parts also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to Professor Zhuang and these authors for their work and teaching materials.
+These lecture notes draw **extensively** on the Advanced Quantum Mechanics lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. Parts also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to Professor Zhuang and these authors for their work and teaching materials. I also thank **Professor Hong Guo (郭弘)** for his Advanced Quantum Mechanics course, which has informed the preparation of these notes.
 
 ## Build
 

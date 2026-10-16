@@ -77,8 +77,14 @@ Completeness of the probe readout basis and unitarity of $\op U_{SM}$ imply
   \bigl(\op I_S\otimes\sum_j\ket{r_j}_M\bra{r_j}\bigr)
   \op U_{SM}\ket\theta_M=\op I_S.
 \end{equation}
-The system's state generally changes even if no direct projective measurement was performed on it. This is \emph{measurement backaction}. For an ideal rank-one probe readout conditioned on $j$, the post-readout pure composite state is the product $\ket{\psi_j}_S\otimes\ket{r_j}_M$, whereas the pre-readout state may have been entangled.
+The system's state generally changes even if no direct projective measurement was performed on it. This is \emph{measurement backaction}, illustrated in Fig.~\ref{fig:indirect-measurement-thesis}. For an ideal rank-one probe readout conditioned on $j$, the post-readout pure composite state is the product $\ket{\psi_j}_S\otimes\ket{r_j}_M$, whereas the pre-readout state may have been entangled.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.78\linewidth]{figures/source_thesis/figure_2_1_measurement.pdf}
+\caption{Indirect measurement as an interaction between a system $S$ and a probe $M$, followed by a projective meter readout. The observed result $j$ determines the induced measurement operator and the backaction on $S$. Reproduced from the instructor's doctoral dissertation, Fig.~2.1.}
+\label{fig:indirect-measurement-thesis}
+\end{figure}
 \subsection*{4) POVMs and quantum instruments}
 
 The positive operators
@@ -109,7 +115,15 @@ The individual outcome maps $\mathcal I_j(\op\rho)=\sum_k\op M_{jk}\op\rho\op M_
 
 \subsection*{5) A qubit interacting with a qubit meter}
 
-As an explicit example, prepare a system qubit and a two-level meter as
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.75\linewidth]{figures/source_thesis/figure_2_2_qubit_probe.pdf}
+\caption{A concrete two-level system $S$ and qubit probe $M$. Interaction correlates their states; projective probe readout produces information about $S$ and a conditional state change. Reproduced from the instructor's doctoral dissertation, Fig.~2.2.}
+\label{fig:qubit-probe-thesis}
+\end{figure}
+
+
+Figure~\ref{fig:qubit-probe-thesis} illustrates the two-level system and probe used below. As an explicit example, prepare a system qubit and a two-level meter as
 \begin{equation}
 \ket\psi_S=a_0\ket0+a_1\ket1,\qquad
   \ket\theta_M=\frac{\ket\downarrow+\ket\uparrow}{\sqrt2},
