@@ -63,7 +63,7 @@
 - [x] Title page chapter count, automatic TOC and cumulative printed notation list updated.
 - [x] Local XeLaTeX compiled through 97 cumulative pages (includes three previous chapters and front matter).
 - [x] PDF visual contact sheets reviewed; no equations overflow the page margins in the final compile log.
-- [ ] GitHub build and versioned PDF verified (update after cloud run).
+- [x] GitHub Actions build and versioned PDF verified: run 38890017083 succeeded; `pdf/advanced-quantum-mechanics.pdf` on `main` updated (451,100 bytes).
 - [ ] Instructor final line-by-line bilingual audit and external scientific verification still pending.
 
 **Editorial boundary:** All additions of new results, fuller explanations, literature updates or reorganization are postponed to the instructor-approved revision phase. The translation baseline remains separately versioned.
