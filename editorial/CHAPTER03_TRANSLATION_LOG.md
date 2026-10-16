@@ -73,6 +73,6 @@ Source page 62 first finishes the **magnetic-monopole passage of Chapter 2**, in
 - [x] A visual inspection of the 24 pages of Chapter 3 conducted (page contact sheets saved locally).
 - [x] LaTeX overflow messages resolved.
 - [ ] Final instructor-approved line-by-line bilingual comparison and physics audit — still required before marking **frozen translation**.
-- [ ] GitHub Actions cloud build and PDF commit — mark after remote verification.
+- [x] GitHub Actions cloud build and PDF commit — verified successful on run 38887754980; the updated PDF exists at `pdf/advanced-quantum-mechanics.pdf` on `main`.
 
 **Editorial commitment:** This file records first-pass faithful translation work. Do not insert Berry-phase additions, a new density-matrix pedagogy, or extended topological/QML teaching into the Chapter 3 translation baseline.
