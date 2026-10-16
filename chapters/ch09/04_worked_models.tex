@@ -69,6 +69,7 @@ The operator $\op W$ can be decomposed into Pauli products,
 \end{equation}
 so its expectation can be estimated from local correlation measurements. This directly connects quantum learning tasks with the density-matrix, Bell-state and measurement material introduced earlier in the textbook.
 
+\clearpage
 \section{Statistical Concentration and a Trainability Check}
 Why do randomly chosen circuits sometimes provide little training information? Let $\ket\psi$ be a Haar-random pure state in a $d$-dimensional Hilbert space, and let $\op O$ be a traceless Hermitian observable. Then the second moment of the random state gives
 \begin{equation}
@@ -92,4 +93,5 @@ Thus expectation values of a fixed traceless observable concentrate near zero un
 \caption{Gradient concentration for this specific global-projector objective: exact Haar variance $[2d(d+1)]^{-1}$ versus 1,800 independent numerically sampled Haar states at each $n$. This illustrative ensemble of random states is a precisely defined toy model, not a universal statement about practical QNN architectures.}
 \label{fig:qml-global-gradient}
 \end{figure}
+
 This calculation by itself is \emph{not} a barren-plateau theorem for derivatives, but it illustrates the concentration mechanism underlying many rigorous gradient-suppression results~\cite{McClean2018,Larocca2025}. The correct gradient scaling depends on the circuit generators, initial state, measurement locality, and objective function.
