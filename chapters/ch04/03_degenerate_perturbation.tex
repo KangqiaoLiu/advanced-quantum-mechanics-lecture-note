@@ -1,1 +1,265 @@
-The requested file reference is not currently visible. Use files.search or files.list to rediscover the file, then retry with a returned ref_id or file_id.
+% SOURCE: Chinese PDF viewer pp. 104--109. Section 3.
+\section{Degenerate Perturbation Theory}
+Suppose
+\[
+ \op H^{(0)}\ket{n,i}^{(0)}=E_n^{(0)}\ket{n,i}^{(0)},
+ \qquad i=1,2,\ldots,a.
+\]
+The zeroth-order energy has $a$-fold degeneracy. Schmidt orthogonalization or the introduction of a complete set of mechanical quantities can guarantee mutual orthonormality:
+\[
+ {}^{(0)}\!\braket{n,i}{n,j}^{(0)}=\delta_{ij}.
+\]
+\textbf{Question:} Which one of the states $\ket{n,i}^{(0)}$ should be chosen as the wavefunction for $E_n^{(0)}$?
+
+Take the general form
+\[
+ \ket n^{(0)}=\sum_{i=1}^{a}c_i\ket{n,i}^{(0)}.
+\]
+It is still an eigenstate of $\op H^{(0)}$ belonging to $E_n^{(0)}$.
+
+\textbf{Question:} How should the $c_i$ be chosen?
+
+Substitute $\ket n^{(0)}$ into the first-order approximation equation:
+\[
+ (\op H^{(0)}-E_n^{(0)})\ket n^{(1)}
+ =-(\op H^{(1)}-E_n^{(1)})\ket n^{(0)},
+\]
+so that
+\[
+ (\op H^{(0)}-E_n^{(0)})\ket n^{(1)}
+ =-\sum_{i=1}^a c_i(\op H^{(1)}-E_n^{(1)})\ket{n,i}^{(0)}.
+\]
+Multiply on the left by ${}^{(0)}\!\bra{n,j}$:
+\[
+ 0=\sum_{i=1}^{a}c_i(H_{ji}^{(1)}-E_n^{(1)}\delta_{ji}),
+ \qquad H_{ji}^{(1)}={}^{(0)}\!\mel{n,j}{\op H^{(1)}}{n,i}^{(0)}.
+\]
+This is a homogeneous system of equations for the coefficients $c_i$ ($a$ equations, $j=1,\ldots,a$, determining $a$ coefficients, $i=1,\ldots,a$). For a nonzero solution, its determinant must vanish:
+\[
+ \begin{vmatrix}
+ H_{11}^{(1)}-E_n^{(1)}&H_{12}^{(1)}&\cdots&H_{1a}^{(1)}\\
+ H_{21}^{(1)}&H_{22}^{(1)}-E_n^{(1)}&\cdots&H_{2a}^{(1)}\\
+ \vdots&\vdots&\ddots&\vdots\\
+ H_{a1}^{(1)}&H_{a2}^{(1)}&\cdots&H_{aa}^{(1)}-E_n^{(1)}
+ \end{vmatrix}=0.
+\]
+The secular equation therefore determines $a$ roots $E_{ni}^{(1)}$ of the first-order energy correction:
+\[
+ E_n^{(0)}\longrightarrow E_{ni}=E_n^{(0)}+E_{ni}^{(1)},
+ \qquad i=1,\ldots,a.
+\]
+If the $a$ roots of the secular equation are distinct, the degeneracy is completely removed; if roots repeat, it is only partially removed.
+
+\textbf{Note.} If $\op H^{(1)}$ is diagonal in the degenerate subspace, $E_{ni}^{(1)}=H_{ii}^{(1)}$.
+
+Substituting each $E_{ni}^{(1)}$ back into the homogeneous equations gives a set of coefficients $\{c_{i1},c_{i2},\ldots,c_{ia}\}$, and hence the zeroth-order wavefunction of $\op H$ corresponding to $E_{ni}$:
+\[
+ E_{ni}=E_n^{(0)}+E_{ni}^{(1)},\qquad
+ \ket{n_i}^{(0)}=\sum_{j=1}^{a}c_{ij}\ket{n,j}^{(0)}.
+\]
+Higher-order corrections can be found in the references.
+
+\textbf{Example 1: A doubly degenerate system.}
+Let $E_n^{(0)}$ have basis states $\ket{n,1}^{(0)}$ and $\ket{n,2}^{(0)}$. The secular equation in this two-dimensional subspace is
+\[
+ \begin{vmatrix}
+ H_{11}^{(1)}-E_n^{(1)}&H_{12}^{(1)}\\
+ H_{21}^{(1)}&H_{22}^{(1)}-E_n^{(1)}
+ \end{vmatrix}=0,
+ \quad
+ H_{ij}^{(1)}={}^{(0)}\!\mel{n,i}{\op H^{(1)}}{n,j}^{(0)},\quad i,j=1,2.
+\]
+Thus
+\[
+ (E_n^{(1)})^2-(H_{11}^{(1)}+H_{22}^{(1)})E_n^{(1)}
+ +H_{11}^{(1)}H_{22}^{(1)}-|H_{12}^{(1)}|^2=0,
+\]
+\[
+ E_n^{(1)}=\frac12\left[
+ H_{11}^{(1)}+H_{22}^{(1)}
+ \pm\sqrt{(H_{11}^{(1)}-H_{22}^{(1)})^2+4|H_{12}^{(1)}|^2}
+ \right].
+\]
+If $H_{12}^{(1)}=0$, then
+\[
+ E_{n1}^{(1)}=H_{11}^{(1)},\quad E_{n2}^{(1)}=H_{22}^{(1)},\quad
+ E_{n1}=E_n^{(0)}+H_{11}^{(1)},\quad E_{n2}=E_n^{(0)}+H_{22}^{(1)}.
+\]
+
+\textbf{Example 2: The hydrogen atom in an external electric field (Stark effect).}
+Choose the $z$ axis along the external electric field $\vect{\mathcal E}$:
+\[
+ \op H=-\frac{\hbar^2}{2\mu}\nabla^2-\frac{e^2}{r}
+ +e\vect{\mathcal E}\cdot\vect r
+ =-\frac{\hbar^2}{2\mu}\nabla^2-\frac{e^2}{r}
+ +e\mathcal E r\cos\theta.
+\]
+For a weak field $\mathcal E$,
+\[
+ \op H^{(0)}=-\frac{\hbar^2}{2\mu}\nabla^2-\frac{e^2}{r},\qquad
+ \op H^{(1)}=e\mathcal E r\cos\theta.
+\]
+Zeroth-order approximation:
+\[
+ E_n^{(0)}=-\frac{\mu e^4}{2n^2\hbar^2},\qquad
+ \psi_{nlm}(\vect r),\quad l=0,\ldots,n-1,\quad m=-l,\ldots,l,
+\]
+with degeneracy
+\[
+ g=\sum_{l=0}^{n-1}(2l+1)=n^2.
+\]
+For $n=2$, the zeroth-order energy $E_2^{(0)}$ is fourfold degenerate, with states
+\[
+ \phi_1=\psi_{200},\qquad \phi_2=\psi_{210},\qquad
+ \phi_3=\psi_{211},\qquad \phi_4=\psi_{21,-1}.
+\]
+To find the first-order splitting, calculate the matrix elements
+\[
+ H_{ij}^{(1)}=\int\dd^3r\,\phi_i^*(\vect r)\,
+ \op H^{(1)}\phi_j(\vect r),\qquad i,j=1,2,3,4.
+\]
+The matrix element is
+\[
+ H_{12}^{(1)}=H_{21}^{(1)}=-3e\mathcal E a_0,
+\]
+with all other entries zero. The secular equation in the four-dimensional subspace is
+\[
+ \begin{vmatrix}
+ -E_2^{(1)}&-3e\mathcal E a_0&0&0\\
+ -3e\mathcal E a_0&-E_2^{(1)}&0&0\\
+ 0&0&-E_2^{(1)}&0\\
+ 0&0&0&-E_2^{(1)}
+ \end{vmatrix}=0.
+\]
+Hence
+\[
+ E_{21}^{(1)}=3e\mathcal E a_0,\qquad
+ E_{22}^{(1)}=-3e\mathcal E a_0,\qquad
+ E_{23}^{(1)}=E_{24}^{(1)}=0.
+\]
+The original fourfold-degenerate level splits into one level shifted upward by $3e\mathcal E a_0$, a twofold-degenerate level with zero shift, and one level shifted downward by $3e\mathcal E a_0$. The degenerate perturbation is partially removed.
+
+\textbf{Example 3: Relativistic correction for the hydrogen atom.}
+The nonrelativistic kinetic energy is
+\[
+ T=\frac{p^2}{2m}.
+\]
+The relativistic kinetic energy is
+\begin{align*}
+ T&=\sqrt{p^2c^2+m^2c^4}-mc^2
+ =mc^2\sqrt{1+\frac{p^2}{m^2c^2}}-mc^2\\
+ &=\frac{p^2}{2m}-\frac{p^4}{8m^3c^2}+\cdots.
+\end{align*}
+Keeping only the $p^4$ correction gives the relativistic Hamiltonian
+\[
+ \op H=\sqrt{\op p^{\,2}c^2+m^2c^4}-mc^2-\frac{e^2}{r}
+ \simeq \frac{\op p^{\,2}}{2m}-\frac{e^2}{r}
+ -\frac{\op p^{\,4}}{8m^3c^2}.
+\]
+Take
+\[
+ \op H^{(0)}=\frac{\op p^{\,2}}{2m}-\frac{e^2}{r},\qquad
+ \op H^{(1)}=-\frac{\op p^{\,4}}{8m^3c^2}.
+\]
+The zeroth-order energy is $E_n^{(0)}$ and the $n^2$ eigenstates are $\ket{nlm}$, with wavefunctions
+\[
+ \braket{\vect r}{nlm}=\psi_{nlm}(\vect r)=R_{nl}(r)Y_{lm}(\theta,\varphi).
+\]
+In the $n^2$-dimensional subspace,
+\[
+ H_{nlm,n'l'm'}^{(1)}=-\frac{1}{8m^3c^2}
+ \mel{nlm}{\op p^{\,4}}{n'l'm'}.
+\]
+The zeroth-order Schr\"odinger equation is
+\[
+ \left(\frac{\op p^{\,2}}{2m}+V(r)\right)\ket{nlm}
+ =E_n^{(0)}\ket{nlm},
+ \qquad
+ \op p^{\,2}\ket{nlm}=2m(E_n^{(0)}-V(r))\ket{nlm}.
+\]
+Using this relation, the matrix elements become
+\begin{align*}
+ H_{nlm,n'l'm'}^{(1)}
+ &=-\frac{1}{2mc^2}\mel{nlm}{(E_n^{(0)}-V(r))^2}{n'l'm'}\\
+ &=-\frac{1}{2mc^2}\left[
+ (E_n^{(0)})^2\delta_{nn'}\delta_{ll'}\delta_{mm'}
+ -2E_n^{(0)}\mel{nlm}{V(r)}{n'l'm'}
+ +\mel{nlm}{V^2(r)}{n'l'm'}\right].
+\end{align*}
+Since $V(r)$ depends only on $r$ and not on the angles,
+\[
+ \mel{nlm}{V(r)}{n'l'm'}
+ =\int\dd^3r\,R_{nl}(r)Y_{lm}^*(\theta,\varphi)
+ \left(-\frac{e^2}{r}\right)R_{n'l'}(r)Y_{l'm'}(\theta,\varphi)
+ =-\frac{e^2}{n^2a_0}\delta_{ll'}\delta_{mm'}
+\]
+within a fixed principal-energy subspace. Similarly,
+\[
+ \mel{nlm}{V^2(r)}{nl'm'}
+ =\frac{e^4}{(l+1/2)n^3a_0^2}\delta_{ll'}\delta_{mm'}.
+\]
+Therefore the first-order matrix is diagonal:
+\[
+ H_{nlm,nl'm'}^{(1)}=H_{nl}^{(1)}\delta_{ll'}\delta_{mm'},
+\]
+\[
+ H_{nl}^{(1)}=-\frac{1}{2mc^2}
+ \left[(E_n^{(0)})^2+\frac{2e^2}{n^2a_0}E_n^{(0)}
+ +\frac{e^4}{(l+1/2)n^3a_0^2}\right].
+\]
+This shows that the eigenstates of $\op H^{(0)}$ are also eigenstates of $\op H^{(1)}$ in this subspace, and the secular equation reduces to $E_{nl}^{(1)}=H_{nl}^{(1)}$:
+\[
+ E_n^{(0)}\quad(n^2\text{-fold degenerate})
+ \longrightarrow E_{nl}=E_n^{(0)}+H_{nl}^{(1)}
+ \quad((2l+1)\text{-fold degenerate}).
+\]
+
+\textbf{Example 4: The fine structure of the spectrum.}
+Consider the spin--orbit coupling of the electron:
+\[
+ \op H=\op H^{(0)}+\op H^{(1)},\qquad
+ \op H^{(0)}=-\frac{\hbar^2}{2\mu}\nabla^2+V(r),
+\]
+\[
+ \op H^{(1)}=\frac{1}{2\mu^2r}\frac{\dd V(r)}{\dd r}
+ \op{\vect L}\cdot\op{\vect S}
+ \equiv\xi(r)\op{\vect L}\cdot\op{\vect S}.
+\]
+Zeroth-order states: the system is in an energy eigenstate $E_{nl}^{(0)}$. For a given $l$, the energy level has $2(2l+1)$ degeneracy. For this level the basis may be chosen as
+\[
+ \{\ket{n,l,m,s_z}\},\qquad
+ \ket{n,l,j,m_j},
+\]
+using either the $\{\op H^{(0)},\op{\vect L}^{\,2},\op L_z,
+ \op{\vect S}^{\,2},\op S_z\}$ representation or the
+$\{\op H^{(0)},\op{\vect J}^{\,2},\op{\vect L}^{\,2},\op J_z\}$ representation. The latter describes an eigenstate $\ket{nljm_j}$.
+
+The zeroth-order energy is degenerate, so find the matrix elements of $\op H^{(1)}$. Which representation should be used?
+
+In the uncoupled representation, $[\op H^{(1)},\op L_z]\ne0$ and $[\op H^{(1)},\op S_z]\ne0$, so $\ket{nlms_z}$ is not an eigenstate of $\op H^{(1)}$. Its matrix elements need not be diagonal and the secular equation is more complicated.
+
+In the coupled representation, $[\op H^{(1)},\op{\vect J}^{\,2}]=0$ and $[\op H^{(1)},\op J_z]=0$. Thus $\ket{nljm_j}$ is an eigenstate of $\op H^{(1)}$, whose matrix is diagonal. The first-order energy correction is
+\begin{align*}
+ E_{nlj}^{(1)}&=\mel{nljm_j}{\op H^{(1)}}{nljm_j}\\
+ &=\mel{nljm_j}{\xi(r)\op{\vect L}\cdot\op{\vect S}}{nljm_j}\\
+ &=\mel{nljm_j}{\xi(r)\frac12
+ (\op{\vect J}^{\,2}-\op{\vect L}^{\,2}-\op{\vect S}^{\,2})}{nljm_j}\\
+ &=\frac{\hbar^2}{2}[j(j+1)-l(l+1)-s(s+1)]
+ \int_0^\infty R_{nl}^{\,2}(r)\xi(r)r^2\dd r.
+\end{align*}
+The level changes as
+\[
+ E_{nl}^{(0)}\quad(2(2l+1)\text{-fold degenerate})
+ \longrightarrow E_{nlj}=E_{nl}^{(0)}+E_{nlj}^{(1)}
+ \quad((2j+1)\text{-fold degenerate}).
+\]
+For example, when $n=2$,
+\[
+ E_2^{(0)}\quad(8\text{-fold degenerate})\ \longrightarrow\
+ \begin{cases}
+ E_2^{(0)}+E_{2,1,3/2}^{(1)} & (4\text{-fold}),\\
+ E_2^{(0)}+E_{2,1,1/2}^{(1)} & (2\text{-fold}),\\
+ E_2^{(0)}+E_{2,0,1/2}^{(1)} & (2\text{-fold}).
+ \end{cases}
+\]
+\textbf{Note:} when $l=0$, $j=s$ and $E_{2,0,1/2}^{(1)}=0$.
