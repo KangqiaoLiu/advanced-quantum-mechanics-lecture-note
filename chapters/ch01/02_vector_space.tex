@@ -1,0 +1,132 @@
+% SOURCE: original Chinese PDF, viewer pages 4--6.
+\section{Linear Vector Spaces}
+From the preceding section, the projection $s_n$ of the electron's spin angular momentum along any direction $n$ can take only two values. We may regard $s_n$ as a two-dimensional vector. To establish the mathematical description of quantum mechanics, we first discuss linear vector spaces.
+\subsection*{1) Three-dimensional vector space}
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.85]
+\coordinate (O) at (0,0); \draw[->] (O)--(2.0,.1)node[right]{$\vect e_2$};\draw[->](O)--(-1.25,-.8)node[left]{$\vect e_1$};\draw[->](O)--(0,1.8)node[above]{$\vect e_3$};\draw[->,very thick](O)--(1.05,1.6)node[right]{$\vect a$};
+\end{tikzpicture}\end{center}
+Arbitrary vector: $\vect a$.
+
+Basis vectors: $\vect e_n$, $n=1,2,3$.
+
+Completeness of the basis:
+\[\vect a=\sum_{n=1}^{3}a_n\vect e_n.\]
+Inner product:
+\[\vect a\cdot\vect b=\sum_{n,m}a_nb_m\vect e_n\cdot\vect e_m.\]
+Squared norm of a vector: $\vect a\cdot\vect a\geq0$.
+
+If the basis vectors are orthonormal, $\vect e_n\cdot\vect e_m=\delta_{nm}$, the inner product has the matrix form
+\[
+\vect a\cdot\vect b=\sum_n a_nb_n=\widetilde a\,b,
+\quad b=\begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix},\quad
+ a=\begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix},\quad
+ \widetilde a=(a_1,a_2,a_3),
+\]
+where $\widetilde a$ is the transpose of $a$.
+
+Components (matrix elements) of a vector:
+\[a_n=\vect e_n\cdot\vect a.\]
+The vector $\vect a$ is its abstract or general form. The matrix $a$ is the representation of $\vect a$ in a specific coordinate system (representation). Its matrix elements depend on the choice of basis vectors; for example, Cartesian and spherical coordinate systems give different representations.
+
+Operations on a vector, such as translations and rotations (operators), give another vector in the same three-dimensional space: $\op T\vect a=\vect b$.
+\subsection*{2) Hilbert space}
+Extend the three-dimensional vector space to a complex vector space of arbitrary dimension:
+\[
+\text{three dimensions}\longrightarrow\text{arbitrary finite, infinite, or continuous dimension},
+\]
+\[
+\text{constant vectors}\longrightarrow\text{complex-function vectors}.
+\]
+Use Dirac notation (a ket) to denote an arbitrary vector: $\ket a$.
+
+For a complex vector, introduce the bra $\bra a$ to represent its complex-conjugate vector. The bra and ket are not independent; they are conjugate to each other:
+\[\ket a\longleftrightarrow\bra a.\]
+A vector can be represented by either a ket $\ket a$ or a bra $\bra a$.
+
+In a complex-function vector space, constants are generally complex, so
+\[\alpha\ket a\longleftrightarrow\bra a\alpha^*.\]
+For an operation (operator) $\op T$ in the complex space,
+\[\op T\ket a\longleftrightarrow\bra a\op T^\dagger.\]
+$\op T^\dagger$ is the left operator corresponding to the right operator $\op T$, called the Hermitian-conjugate operator. Note that
+\[
+\op T\op F\ket a=\op T(\op F\ket a)
+\longleftrightarrow \bra a\op F^\dagger\op T^\dagger.
+\]
+We now choose a particular representation, taking an $N$-dimensional discrete space as an example.
+
+Basis vectors: $\ket n$, $n=1,2,\ldots$.
+
+Expansion in a complete basis (concrete representation of a vector):
+\[\ket a=\sum_n a_n\ket n,\qquad \bra a=\sum_n a_n^*\bra n.\]
+Inner product:
+\[\braket a b=\sum_{n,m}a_n^*b_m\braket n m,\]
+which is a complex number.
+
+Squared norm: $\braket a a\geq0$. (Only when $\ket a$ and $\bra a$ are defined as conjugates can the squared norm be guaranteed nonnegative.)
+
+Normalized vector: defining $\ket{\widetilde a}=\ket a/\sqrt{\braket a a}$ gives $\braket{\widetilde a}{\widetilde a}=1$; the vector is said to be normalized.
+
+Orthonormality of basis vectors: $\braket n m=\delta_{nm}$.
+
+Matrix form of the inner product:
+\[
+\braket a b=\sum_n a_n^*b_n=a^\dagger b,
+\qquad b=\begin{pmatrix}b_1\\b_2\\\vdots\\b_N\end{pmatrix},\quad
+ a=\begin{pmatrix}a_1\\a_2\\\vdots\\a_N\end{pmatrix},
+\]
+where the Hermitian conjugate (complex-conjugate transpose) of the column matrix $a$ is the row matrix
+\[a^\dagger=(a_1^*,a_2^*,\ldots,a_N^*).\]
+Evidently,
+\[
+\braket a b=\braket b a^*,\qquad
+\mel a{\op T}b=\mel b{\op T^\dagger}a^*.
+\]
+Components (matrix elements) of a vector: multiplying $\ket a=\sum_n a_n\ket n$ from the left by $\bra m$ gives
+\[a_m=\braket m a.\]
+Completeness of the basis:
+\[
+\ket a=\sum_n a_n\ket n=\sum_n\ket n\braket n a
+=\left(\sum_n\ket n\bra n\right)\ket a.
+\]
+Because $\ket a$ is arbitrary,
+\[\boxed{\sum_n\ket n\bra n=\mathbf 1},\]
+which is the completeness relation for the basis.
+
+\paragraph{Representation of an operator (matrix form).}
+Let $\ket b=\op F\ket a$. Then
+\[
+\braket m b=\mel m{\op F}a
+=\sum_n\mel m{\op F}n\braket n a,
+\qquad F_{mn}=\mel m{\op F}n,
+\]
+and therefore
+\[b_m=\sum_n F_{mn}a_n.\]
+In matrix form, $b=Fa$. The matrix $F$ represents the operator $\op F$; it is a square matrix with elements $F_{mn}$.
+\paragraph{Representation of the Hermitian-conjugate operator (left operator).}
+From $\bra b=\bra a\op F^\dagger$,
+\[
+\braket b m=\mel a{\op F^\dagger}m
+=\sum_n\braket a n\mel n{\op F^\dagger}m,
+\]
+so
+\[
+b_m^*=\sum_n (F^\dagger)_{nm}a_n^*,\qquad
+b_m=\sum_n[(F^\dagger)_{nm}]^*a_n.
+\]
+Comparison yields
+\[
+[(F^\dagger)_{nm}]^*=F_{mn},\qquad
+(F^\dagger)_{nm}=F_{mn}^*,\qquad
+F^\dagger=(\widetilde F)^*.
+\]
+Thus $F^\dagger$ is the Hermitian-conjugate matrix of $F$.
+\paragraph{Outer product.}
+The outer product is $\ket a\bra b$.
+
+Its representation is a square matrix ($a$ is a column matrix and $b^\dagger$ a row matrix), so the outer product is an operator. In fact,
+\[(\ket a\bra b)\ket c=\ket a(\braket b c),\]
+showing that $\ket a\bra b$ maps $\ket c$ to another vector parallel to $\ket a$. Hence $\ket a\bra b$ is indeed an operator. Its representation is a square matrix with elements
+\[
+(\ket a\bra b)_{mn}=\mel m{\ket a\bra b}n
+=\braket m a\braket b n=a_mb_n^*.
+\]
