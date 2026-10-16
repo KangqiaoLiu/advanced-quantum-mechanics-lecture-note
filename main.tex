@@ -1,12 +1,18 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,oneside,openany]{book}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,mathtools,bm}
-\usepackage{geometry,microtype,enumitem,tikz}
+\usepackage{geometry,microtype,enumitem,tikz,longtable,array,booktabs}
 \usetikzlibrary{arrows.meta,calc,positioning,decorations.pathreplacing}
 \geometry{margin=26mm}
-\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={Advanced Quantum Mechanics: Graduate Lecture Notes},
+  pdfsubject={Faithful English translation of the source lecture notes},
+  pdfkeywords={advanced quantum mechanics, lecture notes}
+}
 \numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
 \newcommand{\ket}[1]{\left|#1\right\rangle}
 \newcommand{\bra}[1]{\left\langle#1\right|}
 \newcommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}
@@ -17,8 +23,42 @@
 \newcommand{\vect}[1]{\bm{#1}}
 \setlist[itemize]{noitemsep,topsep=2pt,leftmargin=1.5em}
 \setlist[enumerate]{topsep=4pt,itemsep=2pt}
+
 \begin{document}
-\begin{center}{\Large\bfseries Chapter 1: Basic Concepts}\end{center}
+% Suppress PDF page anchors on the unnumbered cover to avoid duplicate roman-page targets.
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{28mm}
+  {\sffamily\bfseries\Large GRADUATE LECTURE NOTES\par}
+  \vspace{16mm}
+  \rule{0.82\textwidth}{0.8pt}\par
+  \vspace{12mm}
+  {\Huge\bfseries Advanced\par}
+  \vspace{3mm}
+  {\Huge\bfseries Quantum Mechanics\par}
+  \vspace{12mm}
+  \rule{0.82\textwidth}{0.8pt}\par
+  \vspace{14mm}
+  {\Large Faithful English Translation\par}
+  \vspace{5mm}
+  {\large Working Edition\par}
+  \vfill
+  {\normalsize Original material currently typeset: Chapter 1 --- Basic Concepts\par}
+  \vspace{7mm}
+  {\normalsize\today\par}
+  \vspace*{12mm}
+\end{titlepage}
+\frontmatter
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+\cleardoublepage
+\input{frontmatter/notation}
+
+\mainmatter
+\chapter{Basic Concepts}
 \input{chapters/ch01/01_stern_gerlach}
 \input{chapters/ch01/02_vector_space}
 \input{chapters/ch01/03_eigensystems}
