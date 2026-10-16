@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 5–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–4** (Chinese source PDF viewer pp. 1–121, with Chapter 4 ending above the Chapter 5 heading) have been completed, compiled locally, and tracked. Chapters 5–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
