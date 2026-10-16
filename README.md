@@ -2,7 +2,7 @@
 
 A long-term project to develop a **complete English graduate-level lecture note** in advanced quantum mechanics and a **complementary interactive study resource**.
 
-The initial content backbone is a 186-page Chinese lecture note provided by the instructor. The English material will be adapted, carefully checked, and pedagogically edited. Course-level decisions about additions, reductions, and reorganization are intentionally left open for later discussions.
+The initial content backbone is a 186-page Chinese lecture note provided by the instructor. The work proceeds in two distinct stages: first a faithful, independently versioned English translation of each original Chinese chapter; then a separately tracked instructor-directed scientific/pedagogical adaptation. Course-level decisions about additions, reductions, and reorganization are intentionally left open for later discussions.
 
 ## Start here
 
@@ -18,7 +18,16 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** source review complete at the structural level; comprehensive editorial blueprint and learner-aware 48-period classroom proposal recorded. Full English chapters, compiled PDF, and interactive materials are forthcoming.
+**Project phase (2026-10-16):** the first-pass faithful English **Chapter 1 translation** (Chinese source PDF viewer pp. 1–24) has been compiled locally. Remaining original chapters and the interactive companion are forthcoming; the instructor will review translation fidelity and approve subsequent content adaptation.
+
+## Chapter 1: English translation baseline
+
+- **LaTeX root:** [main.tex](main.tex), containing the six translated sections in [chapters/ch01/](chapters/ch01/).
+- **Translation record:** [editorial/CHAPTER01_TRANSLATION_LOG.md](editorial/CHAPTER01_TRANSLATION_LOG.md); [provisional notation](editorial/NOTATION_BASELINE.md).
+- **Local compilation:** run `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` from the repository root. The PDF is regenerated from tracked source files.
+- **Cloud compilation:** [.github/workflows/build-notes.yml](.github/workflows/build-notes.yml) compiles XeLaTeX on GitHub Actions after changes to the source and stores the version-specific PDF under [Actions](../../actions) → *Build English lecture notes PDF* → a run → *Artifacts*. The PDF is tied to the commit; the editable LaTeX is always the canonical archive.
+
+The faithful translation is deliberately kept separate from future additions (Berry phase, density matrices, measurement extensions, topology, QNN, etc.). Revisions to translation vs. subsequent pedagogy must be distinguishable in history.
 
 ## Intended deliverables
 
