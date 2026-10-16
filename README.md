@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–7** (Chinese source PDF viewer pp. 1–173; seven duplicate pages of Chapter 7 identified, with Chapter 4 ending above the Chapter 5 heading on p. 121) have been completed, compiled locally, and tracked. Chapter 8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **all eight chapters** (Chinese source PDF viewer pp. 1–186; Chapter 7 duplicate pages and Chapter 4/5 boundary have been reconciled) have been completed, compiled locally, and tracked. The complete eight-chapter English manuscript is assembled and compiles locally into 145 PDF pages. Full-book bilingual proofreading and instructor approval remain outstanding; scientific/pedagogical revision and interactive materials follow.
 
 ## Whole-book PDF structure
 
@@ -38,7 +38,7 @@ The faithful translation is deliberately kept separate from future additions (Be
 
 - **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
 - **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
-- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–7, with automatic title page, contents and cumulative notation list.
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–8, with automatic title page, contents and cumulative notation list.
 - **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
 
 ## Chapter 3: Angular Momentum Theory translation baseline
@@ -85,6 +85,16 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
 - **Rendered cumulative book:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf); **135 pages** in local XeLaTeX compilation, including the title page, TOC, notation and Chapters 1–7.
 - **Status:** complete first-pass faithful translation; final bilingual instructor signoff and later conceptual revision remain pending.
+
+## Chapter 8: Relativistic Quantum Mechanics translation baseline
+
+- **English LaTeX:** [chapters/ch08/](chapters/ch08/) covers Chinese source PDF viewer pp. **174–186**, including the short source page 180 and final normalization on p. 186.
+- **All three source sections:** relativistic equations of motion, relativistic invariance (Lorentz/spin/P/T/C/bilinears), and free Dirac plane-wave solutions. The source chapter has no diagrams.
+- **Traceable minimal corrections and unresolved physics:** [editorial/CHAPTER08_TRANSLATION_LOG.md](editorial/CHAPTER08_TRANSLATION_LOG.md). The contradictory source first occurrence of gamma-zero was corrected using the source's own later matrix representation.
+- **Full eight-chapter source map:** [editorial/FULL_BOOK_TRANSLATION_BASELINE_STATUS.md](editorial/FULL_BOOK_TRANSLATION_BASELINE_STATUS.md).
+- **Student-facing notation:** [frontmatter/notation.tex](frontmatter/notation.tex) now includes Minkowski spacetime, Dirac matrices, spinor adjoints, Lorentz transformations, bilinear covariants and free-spinor normalization.
+- **Whole-book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), locally compiled as **145 pages** with title page, automatic table of contents and all eight translated chapters.
+- **Status:** faithful first-pass English translation of all original material, awaiting independent bilingual prose and equation-level instructor signoff.
 
 ## Intended deliverables
 
