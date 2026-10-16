@@ -1,0 +1,82 @@
+% SOURCE: original Chinese PDF, viewer pages 16--18.
+\section{Transformation of Representations}
+Selecting a suitable representation can simplify a calculation. The transformation between basis vectors of different representations is called a transformation of representation.
+
+Consider two representations:
+\[
+\begin{array}{ll}
+I\text{ representation:}&\text{basis }\ket i,\quad \op I\ket i=i\ket i,\\
+M\text{ representation:}&\text{basis }\ket m,\quad \op M\ket m=m\ket m.
+\end{array}
+\]
+We have
+\[\ket m=\sum_i\ket i\braket i m=\sum_i S_{im}\ket i.\]
+The transformation matrix $S$ is defined by
+\[S_{im}=\braket i m.\]
+It represents the basis vectors of the $M$ representation in the $I$ representation.
+\subsection*{1) Transformation of an arbitrary vector}
+In the $I$ representation,
+\[\ket a=\sum_i\ket i\braket i a.\]
+The coefficient $\braket i a$ is the component of $\ket a$ along $\ket i$, or its representation in the $I$ basis.
+
+In the $M$ representation,
+\[\ket a=\sum_m\ket m\braket m a.\]
+The coefficient $\braket m a$ is the component along $\ket m$, or the representation of $\ket a$ in the $M$ basis.
+
+Using completeness,
+\[
+\braket m a=\sum_i\braket m i\braket i a
+=\sum_i S_{im}^*\braket i a
+=\sum_i S_{mi}^\dagger\braket i a.
+\]
+In matrix form,
+\[\boxed{a_M=S^\dagger a_I.}\]
+\subsection*{2) Transformation of an arbitrary operator}
+In the $I$ representation,
+\[(T_I)_{ij}=\mel i{\op T}j.\]
+In the $M$ representation,
+\begin{align*}
+(T_M)_{mn}=\mel m{\op T}n
+&=\sum_{ij}\braket m i\mel i{\op T}j\braket j n\\
+&=\sum_{ij}S_{im}^*(T_I)_{ij}S_{jn}
+=\sum_{ij}(S^\dagger)_{mi}(T_I)_{ij}S_{jn}.
+\end{align*}
+In matrix form,
+\[\boxed{T_M=S^\dagger T_I S.}\]
+\subsection*{3) The representation-transformation matrix is unitary}
+\[
+(SS^\dagger)_{ij}=\sum_m S_{im}(S^\dagger)_{mj}
+=\sum_m S_{im}S_{jm}^*
+=\sum_m\braket i m\braket m j
+=\braket i j=\delta_{ij}.
+\]
+Therefore $SS^\dagger=\mathbf1$. Similarly, $S^\dagger S=\mathbf1$, and hence
+\[\boxed{S^\dagger=S^{-1}.}\]
+A representation-transformation matrix is unitary.
+
+Note that $S$ is not necessarily Hermitian: $S^\dagger\ne S$.
+\subsection*{4) Transformation of representation does not change eigenvalues}
+Suppose
+\[T_I a_I=\lambda_I a_I.\]
+Then
+\begin{align*}
+T_M a_M
+&=S^\dagger T_I SS^\dagger a_I
+=S^\dagger T_Ia_I=S^\dagger\lambda_Ia_I\\
+&=\lambda_I S^\dagger a_I=\lambda_I a_M.
+\end{align*}
+Thus the eigenvalue in the $M$ representation is still $\lambda_I$. A transformation of representation does not change the values of physical quantities.
+
+\textbf{Example 1:} A transformation of representation does not change commutation relations.
+
+If $[A_I,B_I]=C_I$ in the $I$ representation, then in the $M$ representation,
+\begin{align*}
+[A_M,B_M]&=A_MB_M-B_MA_M\\
+&=S^\dagger A_I SS^\dagger B_I S-S^\dagger B_I SS^\dagger A_I S\\
+&=S^\dagger(A_IB_I-B_IA_I)S=S^\dagger C_I S=C_M.
+\end{align*}
+Commutation relations are fundamental relations of quantum mechanics and are unchanged by the transformation of representation.
+
+\textbf{Example 2:} A transformation of representation does not change the trace of a matrix:
+\[\operatorname{tr}(T_M)=\operatorname{tr}(S^\dagger T_IS)
+=\operatorname{tr}(SS^\dagger T_I)=\operatorname{tr}(T_I).\]
