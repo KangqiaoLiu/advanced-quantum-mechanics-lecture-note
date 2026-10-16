@@ -1,0 +1,30 @@
+name: Build English lecture notes PDF
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'main.tex'
+      - 'chapters/**'
+      - 'latexmkrc'
+      - '.github/workflows/build-notes.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile notes with XeLaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+          args: -pdfxe -interaction=nonstopmode -halt-on-error -file-line-error
+      - name: Archive PDF built from this commit
+        uses: actions/upload-artifact@v4
+        with:
+          name: advanced-quantum-mechanics-chapter-01-${{ github.sha }}
+          path: main.pdf
+          if-no-files-found: error
+          retention-days: 90
