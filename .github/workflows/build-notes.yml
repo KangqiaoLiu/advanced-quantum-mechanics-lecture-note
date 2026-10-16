@@ -5,6 +5,7 @@ on:
     paths:
       - 'main.tex'
       - 'chapters/**'
+      - 'frontmatter/**'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
