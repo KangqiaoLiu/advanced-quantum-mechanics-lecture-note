@@ -35,6 +35,8 @@ Open [http://localhost:8000/companion/](http://localhost:8000/companion/). The e
 | `PHYSICS_CONVENTIONS.md` | Required numerical signs and physical conventions from current notes |
 | `../INTERACTIVE_COMPANION_BLUEPRINT.md` | Full purpose, content density, platform trade-offs, research extensions and staged implementation |
 | `../COURSE_DESIGN_48_PERIODS.md` | Provisional blackboard period route; pedagogical context |
+| [`LEARNING_PATHS.md`](LEARNING_PATHS.md) | Conceptual cross-chapter pathways and 22-lab classroom-route alignment |
+| [`labs/`](labs/) and [`notebooks/`](notebooks/) | Reserved module locations for fully tested interactive labs and optional numerical deep dives |
 | `../scripts/check_companion_catalog.py` | Deterministic catalog integrity checker |
 
 A future implemented lab may live under `companion/labs/<lab-id>/`, with its own documented model, test fixture, derivation and independent browser interface. Keep exact source equation mappings, formulas and fixed parameter checks close to each experiment. Research-grade calculations may be implemented in optional notebooks; student participation never requires coding.
