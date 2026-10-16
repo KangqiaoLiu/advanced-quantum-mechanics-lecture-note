@@ -1,0 +1,63 @@
+% Editorial front matter; reflects the mathematical symbols used in the current text.
+% When a chapter is added, review this list against that chapter's actual notation.
+\chapter*{List of Notation}
+\addcontentsline{toc}{chapter}{List of Notation}
+\markboth{List of Notation}{List of Notation}
+
+The following symbols are used in the present lecture notes. An operator carries a hat when it is written in abstract form; its matrix in a chosen basis may be written without a hat. Context distinguishes scalar coordinates from the corresponding operators.
+
+\begingroup
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{8pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.61\textwidth}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Symbol} & \textbf{Meaning (continued)}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{2}{@{}l}{\textbf{States and Hilbert-space notation}}\\[2pt]
+$\ket{a}$, $\bra{a}$ & Ket representing a state vector, and its Hermitian-adjoint bra.\\
+$\ket{n}$, $\bra{n}$ & Basis ket and bra; indices label basis states.\\
+$\braket{a}{b}$ & Inner product of two state vectors.\\
+$\mel{a}{\op{F}}{b}$ & Matrix element of operator $\op{F}$.\\
+$a_n=\braket{n}{a}$ & Component of $\ket{a}$ in the basis $\{\ket{n}\}$.\\
+$\sum_n\ket{n}\bra{n}=\mathbf{1}$ & Completeness relation for a discrete orthonormal basis.\\
+$\delta_{mn}$ & Kronecker delta: $1$ when $m=n$, otherwise $0$.\\
+\addlinespace[4pt]
+\multicolumn{2}{@{}l}{\textbf{Operators, observables, and transformations}}\\[2pt]
+$\op{F}$, $\op{T}$ & Abstract operators; $F$ and $T$ also denote matrix representations.\\
+$\op{F}^{\dagger}$, $F^{\dagger}$ & Hermitian adjoint of an operator or matrix.\\
+$\lambda$, $f_n$ & An eigenvalue; $f_n$ is an eigenvalue of observable $\op{F}$.\\
+$\langle F\rangle$ & Expectation value of the observable $\op{F}$.\\
+$\Delta F$ & Fluctuation of a quantity about its expectation value, as defined in context.\\
+$[A,B]=AB-BA$ & Commutator of two operators or matrices.\\
+$\{A,B\}=AB+BA$ & Anticommutator.\\
+$S_{im}=\braket{i}{m}$ & Matrix connecting the $I$ and $M$ bases in Chapter 1.\\
+$S^{\dagger}=S^{-1}$ & Unitarity of the representation-transformation matrix $S$.\\
+$\operatorname{tr}(T)$ & Trace of a matrix or operator where defined.\\
+\addlinespace[4pt]
+\multicolumn{2}{@{}l}{\textbf{Position, momentum, and physical constants}}\\[2pt]
+$\ket{x}$, $\ket{p}$ & Position and momentum eigenkets in one dimension.\\
+$\vect{x}$, $\vect{p}$ & Position and momentum vectors in three dimensions.\\
+$\op{x}_i$, $\op{p}_j$ & Cartesian components of the position and momentum operators.\\
+$\psi(x)=\braket{x}{\psi}$ & Wavefunction in the position representation.\\
+$\delta(x-x')$, $\delta^{(3)}(\vect{x}-\vect{x}')$ & Dirac delta distributions in one and three dimensions.\\
+$\hbar$ & Reduced Planck constant.\\
+$\ii$ & Imaginary unit, $\ii^2=-1$.\\
+$\dd x$, $\dd^3x$ & One- and three-dimensional integration elements.\\
+$\op{T}(\dd\vect{x})$ & Operator effecting an infinitesimal spatial translation.\\
+$\braket{\vect{x}}{\vect{p}}$ & Position--momentum overlap, with Fourier normalization $(2\pi\hbar)^{-3/2}$.\\
+\addlinespace[4pt]
+\multicolumn{2}{@{}l}{\textbf{Spin and Stern--Gerlach notation}}\\[2pt]
+$s_x$, $s_y$, $s_z$ & Components of spin angular momentum.\\
+$\vect{J}$, $\vect{M}$, $\vect{B}$ & Angular momentum, magnetic moment, and magnetic field.\\
+$\vect{e}_i$ & Unit vector along a coordinate axis.\\
+\end{longtable}
+\endgroup
