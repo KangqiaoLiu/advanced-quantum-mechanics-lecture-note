@@ -7,6 +7,7 @@ on:
       - 'chapters/**'
       - 'figures/**'
       - 'frontmatter/**'
+      - 'scripts/check_notation_consistency.py'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
@@ -25,6 +26,9 @@ jobs:
     steps:
       - name: Check out versioned LaTeX sources
         uses: actions/checkout@v4
+
+      - name: Check whole-book notation consistency
+        run: python3 scripts/check_notation_consistency.py
 
       - name: Compile notes with XeLaTeX
         uses: xu-cheng/latex-action@v4

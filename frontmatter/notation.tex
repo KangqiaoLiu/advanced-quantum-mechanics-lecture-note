@@ -1,203 +1,55 @@
-% Editorial front matter; reflects the mathematical symbols used in the current text.
-% When a chapter is added, review this list against that chapter's actual notation.
+% Canonical whole-book notation. Keep this page independent of chapter structure.
+% Specialized symbols and example-dependent parameters are defined at first use.
 \chapter*{List of Notation}
 \addcontentsline{toc}{chapter}{List of Notation}
 \markboth{List of Notation}{List of Notation}
 
-The following symbols are used in the present lecture notes. An operator carries a hat when it is written in abstract form; its matrix in a chosen basis may be written without a hat. Context distinguishes scalar coordinates from the corresponding operators.
-
 \begingroup
-\footnotesize
-\renewcommand{\arraystretch}{1.08}
-\setlength{\LTpre}{6pt}
-\setlength{\LTpost}{8pt}
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.61\textwidth}@{}}
+\small
+\noindent Throughout these notes, \emph{hats} denote abstract operators, \emph{bold symbols}
+denote spatial vectors, and a dagger denotes the Hermitian adjoint.
+Matrices in a specified basis may omit hats. Subscripts identify indices, states,
+or representations as indicated; local parameters are defined where introduced.
+
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{5pt}
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.58\textwidth}@{}}
 \toprule
-\textbf{Symbol} & \textbf{Meaning}\\
+\textbf{Notation} & \textbf{Meaning and global convention}\\
 \midrule
-\endfirsthead
-\toprule
-\textbf{Symbol} & \textbf{Meaning (continued)}\\
-\midrule
-\endhead
+$\ket\psi,\ \bra\psi$ & State ket and its dual bra.\\
+$\braket\phi\psi,\ \mel\phi{\op A}\psi$ & Inner product; operator matrix element.\\
+$\op A,\ A_{mn}=\mel m{\op A}n$ & Abstract operator; its matrix entries in a basis.\\
+$\op A^\dagger,\ \mathbf 1$ & Hermitian adjoint; identity operator.\\
+$[A,B],\ \{A,B\}$ & Commutator $AB-BA$; anticommutator $AB+BA$.\\
+$\langle A\rangle_\psi,\ \langle A\rangle_\rho$ & Expectations in a pure state and a mixed state.\\
+$\operatorname{tr}(A)$ & Trace, independent of basis.\\
+$\delta_{mn},\ \delta^{(3)}(\vect r)$ & Kronecker and three-dimensional Dirac deltas.\\
+$\ii,\ \hbar,\ c$ & Imaginary unit; reduced Planck constant; light speed.\\
+$\vect r,\ \vect p;\ \op{\vect r},\ \op{\vect p}$ & Position and momentum vectors; corresponding operators.\\
+$\psi(\vect r,t)=\braket{\vect r}\psi$ & Position-space wavefunction (time argument understood).\\
+$\op H,\ \op U(t,t_0)$ & Hamiltonian; unitary time evolution.\\
+$\op A_{\mathrm S},\ \op A_{\mathrm H},\ \op A_{\mathrm I}$ & Schr\"odinger, Heisenberg and interaction pictures.\\
+$\op\rho,\ \rho(\vect r,t)$ & Density operator; position-space probability density.\\
+$\Delta A$ & Standard deviation of observable $A$.\\
+$\op{\vect J},\ \op{\vect L},\ \op{\vect S}$ & Total, orbital and spin angular momenta.\\
+$\ket{j,m},\ \op J_\pm$ & Angular-momentum eigenstate; ladder operators.\\
+$\sigma_i,\ \op{\vect s}=\frac\hbar2\op{\vect\sigma}$ & Pauli matrices; spin-$\frac12$ angular momentum.\\
+$\parityop,\ \op P_{ij}$ & Spatial parity; exchange of identical particles.\\
+$\op a_i,\ \op a_i^\dagger$ & Annihilation and creation in mode $i$ (index optional).\\
+$\op n_i,\ \op N=\sum_i\op n_i$ & Mode occupation and total number operators.\\
+$\op\psi_\sigma(\vect r)$ & Field annihilation operator (spin index $\sigma$).\\
+$\timeorder,\ \op T$ & Time ordering; scattering transition operator.\\
+$f(\Omega),\ \dd\sigma/\dd\Omega$ & Scattering amplitude; differential cross section.\\
+$\op G_0^\pm,\ \op G^\pm$ & Free and full resolvents; $+$ is outgoing.\\
+$x^\mu,\ g_{\mu\nu}$ & Spacetime four-coordinate; Minkowski metric.\\
+$\gamma^\mu,\ \overline\psi=\psi^\dagger\gamma^0$ & Dirac gamma matrices; Dirac adjoint.\\
 \bottomrule
-\endfoot
-\multicolumn{2}{@{}l}{\textbf{States and Hilbert-space notation}}\\[2pt]
-$\ket{a}$, $\bra{a}$ & Ket representing a state vector, and its Hermitian-adjoint bra.\\
-$\ket{n}$, $\bra{n}$ & Basis ket and bra; indices label basis states.\\
-$\braket{a}{b}$ & Inner product of two state vectors.\\
-$\mel{a}{\op{F}}{b}$ & Matrix element of operator $\op{F}$.\\
-$a_n=\braket{n}{a}$ & Component of $\ket{a}$ in the basis $\{\ket{n}\}$.\\
-$\sum_n\ket{n}\bra{n}=\mathbf{1}$ & Completeness relation for a discrete orthonormal basis.\\
-$\delta_{mn}$ & Kronecker delta: $1$ when $m=n$, otherwise $0$.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Operators, observables, and transformations}}\\[2pt]
-$\op{F}$, $\op{T}$ & Abstract operators; $F$ and $T$ also denote matrix representations.\\
-$\op{F}^{\dagger}$, $F^{\dagger}$ & Hermitian adjoint of an operator or matrix.\\
-$\lambda$, $f_n$ & An eigenvalue; $f_n$ is an eigenvalue of observable $\op{F}$.\\
-$\langle F\rangle$ & Expectation value of the observable $\op{F}$.\\
-$\Delta F$ & Fluctuation of a quantity about its expectation value, as defined in context.\\
-$[A,B]=AB-BA$ & Commutator of two operators or matrices.\\
-$\{A,B\}=AB+BA$ & Anticommutator.\\
-$S_{im}=\braket{i}{m}$ & Matrix connecting the $I$ and $M$ bases in Chapter 1.\\
-$S^{\dagger}=S^{-1}$ & Unitarity of the representation-transformation matrix $S$.\\
-$\operatorname{tr}(T)$ & Trace of a matrix or operator where defined.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Position, momentum, and physical constants}}\\[2pt]
-$\ket{x}$, $\ket{p}$ & Position and momentum eigenkets in one dimension.\\
-$\vect{x}$, $\vect{p}$ & Position and momentum vectors in three dimensions.\\
-$\op{x}_i$, $\op{p}_j$ & Cartesian components of the position and momentum operators.\\
-$\psi(x)=\braket{x}{\psi}$ & Wavefunction in the position representation.\\
-$\delta(x-x')$, $\delta^{(3)}(\vect{x}-\vect{x}')$ & Dirac delta distributions in one and three dimensions.\\
-$\hbar$ & Reduced Planck constant.\\
-$\ii$ & Imaginary unit, $\ii^2=-1$.\\
-$\dd x$, $\dd^3x$ & One- and three-dimensional integration elements.\\
-$\op{T}(\dd\vect{x})$ & Operator effecting an infinitesimal spatial translation.\\
-$\braket{\vect{x}}{\vect{p}}$ & Position--momentum overlap, with Fourier normalization $(2\pi\hbar)^{-3/2}$.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Spin and Stern--Gerlach notation}}\\[2pt]
-$s_x$, $s_y$, $s_z$ & Components of spin angular momentum.\\
-$\vect{J}$, $\vect{M}$, $\vect{B}$ & Angular momentum, magnetic moment, and magnetic field.\\
-$\vect{e}_i$ & Unit vector along a coordinate axis.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Time evolution and the two pictures (Chapter 2)}}\\[2pt]
-$\op U(t,t_0)$ & Unitary time-evolution operator from $t_0$ to $t$.\\
-$\op H$, $E$, $\omega$ & Hamiltonian, energy eigenvalue and angular frequency.\\
-$\ket{\alpha,t}$ & Quantum state at time $t$ in the Schr\"odinger picture.\\
-$\op A_{\mathrm S}$, $\op A_{\mathrm H}(t)$ & Schr\"odinger- and Heisenberg-picture observable.\\
-$\{A,H\}_{\mathrm{Poisson}}$ & Classical Poisson bracket; distinct from a quantum anticommutator.\\
-$\Delta A$ & Standard deviation of the observable $\op A$.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Oscillator, semiclassical theory and propagation}}\\[2pt]
-$\op a$, $\op a^{\dagger}$ & Oscillator annihilation and creation operators.\\
-$\op N=\op a^{\dagger}\op a$ & Number operator; $n=0,1,2,\dots$ labels number eigenstates.\\
-$\ket{\alpha}$ & Coherent state, with $\op a\ket\alpha=\alpha\ket\alpha$.\\
-$\psi(\vect x,t)$, $\varphi_E(\vect x)$ & Coordinate-space wavefunction and stationary spatial eigenfunction.\\
-$\rho(\vect x,t)$, $\vect j(\vect x,t)$ & Probability density and probability-current density.\\
-$s_0,s_1$, $p(x)$ & WKB phase coefficients and local classical momentum.\\
-$K(x_f,t_f;x_i,t_i)$ & Propagator or position-space transition amplitude.\\
-$S[x(t)]$, $L_c$ & Classical action functional and Lagrangian.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Electromagnetism, geometric phases and monopoles}}\\[2pt]
-$\varphi$, $\vect A$ & Scalar and vector electromagnetic potentials.\\
-$\vect E$, $\vect B$ & Electric and magnetic fields in the source's Gaussian convention.\\
-$e$, $c$ & Signed charge and speed of light; factors $1/c$ follow the source convention.\\
-$\Lambda(\vect x)$ & Scalar function generating a spatial gauge transformation.\\
-$\rho_a,\rho_b$ & Inner and outer radii of the cylindrical AB geometry.\\
-$e_m$ & Magnetic monopole charge, defined by $\vect B=e_m\vect e_r/r^2$.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Rotations and angular momentum (Chapter 3)}}\\[2pt]
-$R_i(\varphi)$, $\op D_i(\varphi)$ & Classical $3\times3$ rotation about axis $i$, and the corresponding quantum rotation operator.\\
-$\op{\vect J}$, $\op{\vect L}$, $\op{\vect S}$ & Total or general, orbital, and intrinsic-spin angular momentum, respectively.\\
-$\epsilon_{ijk}$ & Totally antisymmetric Levi--Civita symbol.\\
-$\op J_\pm=\op J_x\pm\ii\op J_y$ & Raising and lowering operators for angular momentum.\\
-$\ket{j,m}$ & Common eigenket of $\op{\vect J}^{\,2}$ and $\op J_z$; $j$ and $m$ are dimensionless.\\
-$j$, $m$ & Angular-momentum quantum numbers; $m=-j,-j+1,\ldots,j$.\\
-$\op{\vect\sigma}$, $\sigma_x,\sigma_y,\sigma_z$ & Pauli operator vector and its three matrix representations.\\
-$\op{\vect s}=\frac\hbar2\op{\vect\sigma}$ & Spin-$\frac12$ angular-momentum operator.\\
-$D^j_{mm'}(\alpha,\beta,\gamma)$ & Rotation-matrix element in the fixed-$j$ subspace (Euler angles).\\
-$d^j_{mm'}(\beta)$ & Reduced Wigner rotation-matrix element for a $Y$-axis rotation.\\
-$Y_{lm}(\theta,\varphi)$ & Spherical harmonic; common orbital-angular-momentum eigenfunction.\\
-$P_l^m(x)$ & Associated Legendre polynomial, with phase convention specified in the text.\\
-$\ket{j_1m_1j_2m_2}$, $\ket{j_1j_2jm}$ & Uncoupled and coupled angular-momentum basis states.\\
-$C_{m_1m_2}=\braket{j_1m_1j_2m_2}{j_1j_2jm}$ & Clebsch--Gordan coefficient.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Density operators and spin correlations (Chapter 3)}}\\[2pt]
-$\op\rho=\sum_\alpha w_\alpha\ket\alpha\bra\alpha$ & Density operator for an ensemble with probabilities $w_\alpha$.\\
-$[A]=\operatorname{tr}(\op\rho\op A)$ & Ensemble average; distinguished from $\langle A\rangle_\alpha$ in one pure state.\\
-$\rho_{bb'}$ & Density-matrix entry in basis $\{\ket b\}$.\\
-$\vect e_a,\vect e_b,\vect e_c$ & Spin-measurement directions in the Bell-inequality example.\\
-$P(s_a^+,s_b^+)$ & Joint probability for outcomes $s_a^+$ and $s_b^+$ at two detectors.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Approximation methods (Chapter 4)}}\\[2pt]
-$\op H^{(0)}$, $\op H^{(1)}$ & Unperturbed Hamiltonian and perturbation, respectively.\\
-$E_n^{(k)}$, $\ket n^{(k)}$ & $k$th-order corrections in stationary perturbation theory; $k=0$ denotes the unperturbed quantity.\\
-$H_{mn}^{(1)}$ & Matrix element of the perturbation in the unperturbed energy basis.\\
-$\ket{n,i}^{(0)}$, $c_i$ & Degenerate unperturbed basis and its superposition coefficients.\\
-$\langle E\rangle(\lambda)$ & Energy expectation of a trial wavefunction parametrized by $\lambda$.\\
-$Z$, $a_0$ & Effective nuclear charge in the helium variational example; Bohr radius.\\
-$g$, $\alpha$, $S(r)$ & Yukawa coupling, screening parameter, and exponent in $\psi(r)=e^{-S(r)}$.\\
-$a_m(t)$, $\omega_{mn}$ & Time-dependent stationary-state amplitude and transition frequency $(E_m-E_n)/\hbar$.\\
-$W_{n\to m}(t)$ & Probability for a transition from state $n$ to state $m$.\\
-$\op H^{(1)}_{\mathrm I}(t)$, $T$ & Interaction-picture perturbation and time-ordering operator.\\
-$\theta(t)$ & Heaviside step function in the time-ordered product.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Scattering theory (Chapter 5)}}\\[2pt]
-$\psi_1$, $\psi_2$ & Incident plane wave and outgoing scattered spherical wave.\\
-$\mu$, $m$ & Reduced mass and particle mass, respectively, in the contexts specified by the source.\\
-$\dd\Omega$, $\sigma(\theta,\varphi)$ & Solid-angle element and differential scattering cross section.\\
-$f(\theta,\varphi)$ & Scattering amplitude, $\sigma=|f|^2$.\\
-$\sigma_{\mathrm{tot}}$ & Total scattering cross section, $\int\dd\Omega\,\sigma$.\\
-$J_z$, $J_r$ & Incident and scattered radial probability-current densities.\\
-$\vect{k}$, $\vect{k}'$, $\vect{q}$ & Incident wavevector, scattered wavevector, and momentum-transfer wavevector $\vect q=\vect k'-\vect k$.\\
-$U(\vect r)=2mV(\vect r)/\hbar^2$ & Rescaled scattering potential in the Green-function equation.\\
-$G^{+}$, $G^{-}$ & Outgoing/retarded and incoming/advanced Green functions in the source terminology.\\
-$\op G_0^{\pm}$, $\op G^{\pm}$ & Free and full resolvent (Green) operators.\\
-$\ket{\psi^{\pm}}$, $\ket\varphi$ & Scattering states with outgoing/incoming conditions and incident free state.\\
-$\epsilon\to0^+$ & Infinitesimal imaginary-energy prescription for resolvents.\\
-$\op T$ & Scattering transition (T) operator, distinct from the time-ordering operator of Chapter 4.\\
-$\operatorname{Pr}$, $\operatorname{Im}$ & Cauchy principal value and imaginary part.\\
-$j_l(kr)$, $P_l(\cos\theta)$ & Spherical Bessel function and Legendre polynomial.\\
-$R_l(r)$, $\delta_l$ & Radial partial-wave function and its scattering phase shift.\\
-$f_l(\theta)$ & Partial-wave scattering amplitude; $f(\theta)=\sum_lf_l(\theta)$.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Symmetry and identical particles (Chapter 6)}}\\[2pt]
-$\op S$, $\op F$ & Symmetry transformation and its Hermitian generating observable, as defined in context.\\
-$[\op F,\op H]=0$ & Commutation criterion for a time-independent conserved observable.\\
-$\op I$, $\psi_s$, $\psi_a$ & Spatial-inversion (parity) operator and its even and odd eigenstates.\\
-$(-1)^l$ & Parity eigenvalue of the spherical harmonic $Y_{lm}(\theta,\varphi)$.\\
-$\op P_{ij}$ & Operator exchanging identical particles $i$ and $j$; exchange eigenvalues are $+1,-1$.\\
-$\psi_+$, $\psi_-$ & Symmetric and antisymmetric two-particle spatial wavefunctions.\\
-$\varphi_n(i)$, $\varepsilon_n$ & Single-particle orbital for particle $i$ and its one-particle energy.\\
-$\chi_+$, $\chi_-$ & Symmetric and antisymmetric two-particle spin wavefunctions; context distinguishes single-spin $\chi_\pm(i)$.\\
-$\vect R=(\vect r_1+\vect r_2)/2$ & Two-particle center-of-mass coordinate for equal masses.\\
-$\vect r=\vect r_1-\vect r_2$ & Relative position coordinate in the two-particle examples.\\
-$\vect K$, $\vect k$ & Total and relative wavevectors in the two-particle plane-wave example.\\
-$P_\pm(r)$, $A$ & Relative-distance probability for symmetric/antisymmetric spatial states; its source normalization constant.\\
-$I$, $J$ & Direct and exchange Coulomb integrals in the helium example; distinguish $I$ from parity $\op I$ and $J$ from angular-momentum $\op{\vect J}$.\\
-$\op{\vect S}=\op{\vect s}_1+\op{\vect s}_2$ & Combined spin of two fermions; $S=0$ (singlet) or $1$ (triplet).\\
-$\op{\vect L}=\op{\vect L}_1+\op{\vect L}_2$ & Combined orbital angular momentum in the atomic example.\\
-$f(k)$, $\mu$, $T$ & Occupation function, chemical potential and temperature in the source's Fermi-gas convention.\\
-$k_F$, $n$, $\varepsilon$, $P$ & Fermi momentum, number density, energy density and pressure of the free Fermi gas.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Second quantization (Chapter 7)}}\\[2pt]
-$\ket{n_1,n_2,\ldots}$ & Fock-space occupation-number state with $n_i$ particles in orbital $\ket{a_i}$.\\
-$\ket0$ & Empty-particle vacuum.\\
-$\op a_i^\dagger,\op a_i$ & Creation and annihilation operators in orbital $i$.\\
-$\op b_i^\dagger,\op b_i$ & Operators defined with another one-particle eigenbasis.\\
-$S_{ji}=\braket{b_j}{a_i}$ & One-particle unitary basis-transformation coefficient.\\
-$\op n_i=\op a_i^\dagger\op a_i$ & Occupation-number operator for orbital $i$.\\
-$\op N=\sum_i\op n_i$ & Total-particle-number operator.\\
-$[\op a_i,\op a_j^\dagger]$ & Bosonic commutator, equal to $\delta_{ij}$.\\
-$\{\op a_i,\op a_j^\dagger\}$ & Fermionic anticommutator, equal to $\delta_{ij}$.\\
-$\lambda,\mu$ & Exchange coefficients, taking values $+1$ or $-1$ in the source derivation.\\
-$\op{\mathcal A}$ & Additive one-particle observable on Fock space.\\
-$\op{\mathcal V}$, $V_{ij}$ & Many-body pair interaction and its two-orbital potential eigenvalue.\\
-$\ket{\vect r,\sigma}$ & Continuous coordinate and discrete spin one-particle basis state.\\
-$\op\psi_\sigma(\vect r)$, $\op\psi_\sigma^\dagger(\vect r)$ & Field annihilation and creation operators.\\
-$\op n_\sigma(\vect r)$ & Local particle-number density operator.\\
-$\op H_0$, $\op H=\op H_0+\op V$ & One-particle part of Hamiltonian and total many-body Hamiltonian.\\
-$\varphi_\sigma(\vect r,t)$ & Single-particle Schr\"odinger-picture wavefunction used at the end of Chapter 7.\\
-\addlinespace[4pt]
-\multicolumn{2}{@{}l}{\textbf{Relativistic quantum mechanics (Chapter 8)}}\\[2pt]
-$\hbar=c=1$ & Natural-unit convention for the source's relativistic chapter.\\
-$x^\mu$, $p^\mu=(E,\vect p)$ & Spacetime four-coordinate and energy--momentum four-vector.\\
-$g_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$ & Minkowski metric with mostly-minus signature.\\
-$\partial_\mu$, $\partial^\mu$ & Spacetime derivative and the metric-raised derivative.\\
-$\psi$, $\psi^*$ & Scalar Klein--Gordon wavefunction and its complex conjugate (Section 8.1).\\
-$\psi(x)$, $\overline\psi=\psi^\dagger\gamma^0$ & Four-component Dirac spinor and Dirac adjoint (Dirac context).\\
-$\gamma^\mu$ & Dirac $4\times4$ gamma matrices, $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}I$.\\
-$\sigma_i$, $\vect\Sigma$ & Pauli matrices and block-diagonal Dirac spin matrix $\operatorname{diag}(\vect\sigma,\vect\sigma)$.\\
-$\sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu]$ & Antisymmetric Dirac-spinor Lorentz generators.\\
-$\Lambda^\mu{}_{\nu}$, $S(\Lambda)$ & Lorentz coordinate transformation and induced spinor transformation.\\
-$\omega^{\mu\nu}$, $J_{\mu\nu}$ & Infinitesimal antisymmetric Lorentz parameters and total angular-momentum generators.\\
-$P$, $T$, $C$ & Spatial-inversion, time-reversal and charge-conjugation transformations in the source's notation.\\
-$D_\mu=\partial_\mu+\ii e A_\mu$ & Covariant derivative for electromagnetic minimal coupling in natural units.\\
-$\psi^c=C\overline\psi^{\mathsf T}$ & Charge-conjugated spinor, describing opposite electric charge.\\
-$\gamma_5$, $\Gamma$ & Dirac chirality matrix and a basis matrix for bilinear covariants.\\
-$\overline\psi\Gamma\psi$ & Bilinear covariant (scalar, vector, pseudoscalar, pseudovector or tensor).\\
-$u_\alpha(k)$, $v_\alpha(k)$ & Positive- and negative-energy Dirac plane-wave spinors with spin label $\alpha$.\\
-$\varphi_\uparrow$, $\varphi_\downarrow$ & Two-component rest-frame Pauli spinors.\\
-$A$, $B$ & Normalization constants for the source's free Dirac plane-wave solutions.\\
-\end{longtable}
+\end{tabular}
+\par\smallskip
+\noindent\footnotesize
+\emph{Conventions:} $\sigma_i$ denotes a Pauli matrix, while $\sigma(\Omega)$
+may denote a scattering cross section; the index or argument distinguishes them.
+The relativistic discussion uses $\hbar=c=1$; factors of $c$ elsewhere
+follow the units specified in the text.
 \endgroup

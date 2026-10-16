@@ -20,6 +20,14 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 
 **Project phase (2026-10-16):** first-pass faithful English **all eight chapters** (Chinese source PDF viewer pp. 1–186; Chapter 7 duplicate pages and Chapter 4/5 boundary have been reconciled) have been completed, compiled locally, and tracked. The complete eight-chapter English manuscript is assembled and compiles locally into 145 PDF pages. Full-book bilingual proofreading and instructor approval remain outstanding; scientific/pedagogical revision and interactive materials follow.
 
+## Single-page, whole-book mathematical notation
+
+The printed [**List of Notation**](frontmatter/notation.tex) is a **single A4 page**, with one continuous table of **27 core notation conventions** shared across Chapters 1–8. It focuses on mathematically significant, reusable conventions; local example parameters are defined within their respective derivations. There are no chapter-based notation subsections.
+
+The detailed [**whole-book notation policy**](editorial/NOTATION_POLICY.md) defines what remains consistent across the textbook, including operator hats, vectors, pure/mixed expectations, spin, parity and particle exchange, second quantization, time ordering versus the scattering transition operator, and natural-unit exceptions. This change harmonizes the body text where conventions previously collided: `\\parityop=\\op{\\Pi}`, `\\timeorder=\\mathcal T`, and ensemble averages `\\langle A\\rangle_\\rho`. The source-faithful version is preserved at [translation/fidelity-audited-2026-10-16](../../tree/translation/fidelity-audited-2026-10-16).
+
+Run `python scripts/check_notation_consistency.py` to verify the centralized conventions; `python scripts/check_notation_consistency.py --pdf main.pdf` additionally checks that the printed list occupies **one page**. The local post-edit XeLaTeX compilation produced a **142-page** complete book.
+
 ## Whole-book PDF structure
 
 The versioned book root [`main.tex`](main.tex) produces a **title page**, an automatically generated **table of contents**, and an English [**List of Notation**](frontmatter/notation.tex) before the numbered chapters. These are editorial front matter, kept separate from the faithful chapter translation. All subsequent chapters should be added as `\\chapter{...}` entries in `main.tex`, with their existing section files included below. The document uses `book`, roman page numbers for front matter and arabic page numbers for the chapters. Equations are numbered by chapter and section. The notation list must be checked and extended when new chapter-specific symbols are introduced; changes to it also trigger the automatic PDF build.

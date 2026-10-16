@@ -18,12 +18,12 @@ This is a \emph{quantum average}. Insert any complete basis $B$:
 \[\langle A\rangle_\alpha
 =\sum_{b,b'}\braket\alpha{b'}\mel{b'}{\op A}b\braket b\alpha.\]
 The ensemble average is
-\[[A]=\sum_\alpha w_\alpha\langle A\rangle_\alpha,\]
+\[\langle A\rangle_\rho=\sum_\alpha w_\alpha\langle A\rangle_\alpha,\]
 where $w_\alpha$ is the probability that the system occupies state $\ket\alpha$. It satisfies the normalization condition
 \[\sum_\alpha w_\alpha=1.\]
 This is a \emph{statistical average}. Since
 \begin{align*}
-[A]&=\sum_{\alpha,b,b'}w_\alpha\braket\alpha{b'}\mel{b'}{\op A}b\braket b\alpha\\
+\langle A\rangle_\rho&=\sum_{\alpha,b,b'}w_\alpha\braket\alpha{b'}\mel{b'}{\op A}b\braket b\alpha\\
 &=\sum_{b,b'}\left(\sum_\alpha w_\alpha\braket b\alpha\braket\alpha{b'}\right)
 \mel{b'}{\op A}b,
 \end{align*}
@@ -33,7 +33,7 @@ Its matrix elements in the $B$ representation are
 \[\rho_{bb'}=\mel b{\op\rho}{b'}
 =\sum_\alpha w_\alpha\braket b\alpha\braket\alpha{b'}.\]
 Therefore
-\[\boxed{[A]=\sum_{b,b'}\mel b{\op\rho}{b'}\mel{b'}{\op A}b
+\[\boxed{\langle A\rangle_\rho=\sum_{b,b'}\mel b{\op\rho}{b'}\mel{b'}{\op A}b
 =\sum_b\mel b{\op\rho\op A}b
 \equiv\operatorname{tr}(\op\rho\op A).}\]
 This fundamental equation of quantum statistical mechanics includes both quantum and statistical averaging. The trace is unchanged by a change of representation, so the formula is independent of the chosen representation.
@@ -43,7 +43,7 @@ In a continuous representation, e.g., the position basis, the matrix elements ar
 =\sum_\alpha w_\alpha\braket{\vect x}\alpha\braket\alpha{\vect x'}
 =\sum_\alpha w_\alpha\psi_\alpha(\vect x)\psi_\alpha^*(\vect x').\]
 The ensemble average becomes
-\[[A]=\operatorname{tr}(\op\rho\op A)
+\[\langle A\rangle_\rho=\operatorname{tr}(\op\rho\op A)
 =\int\dd^3x\,\mel{\vect x}{\op\rho\op A}{\vect x}.\]
 
 The density matrix satisfies the normalization condition
@@ -100,8 +100,8 @@ In the $s_z$ representation,
 \[\rho_{++}=\frac12,\quad\rho_{+-}=0,\quad\rho_{-+}=0,\quad\rho_{--}=\frac12,\qquad
 \rho=\frac12\begin{pmatrix}1&0\\0&1\end{pmatrix}.\]
 The density matrix of a completely mixed ensemble is proportional to the identity. The expectation values in a completely unpolarized ensemble obviously cancel:
-\[[s_i]=\operatorname{tr}(\op\rho\op s_i)=\frac12\operatorname{tr}(\op s_i).\]
-Inserting the spin matrices $s_x,s_y,s_z$ gives $[s_i]=0$.
+\[\langle s_i\rangle_\rho=\operatorname{tr}(\op\rho\op s_i)=\frac12\operatorname{tr}(\op s_i).\]
+Inserting the spin matrices $s_x,s_y,s_z$ gives $\langle s_i\rangle_\rho=0$.
 
 \textbf{Example 3: density matrix for a partially polarized system.} Let
 \[\op\rho=\frac34\ket+\bra++\frac14\ket{s_x^+}\bra{s_x^+}.\]
@@ -110,7 +110,7 @@ In the $s_z$ representation,
 \rho_{+-}=\rho_{-+}=\rho_{--}=\frac18,\]
 so that
 \[\rho=\frac18\begin{pmatrix}7&1\\1&1\end{pmatrix},\qquad
-[s_x]=\frac\hbar8,\quad[s_y]=0,\quad[s_z]=\frac{3\hbar}{8}.\]
+\langle s_x\rangle_\rho=\frac\hbar8,\quad\langle s_y\rangle_\rho=0,\quad\langle s_z\rangle_\rho=\frac{3\hbar}{8}.\]
 
 \subsection*{3) Evolution of the ensemble}
 How does the density operator evolve in time? If the statistical properties of the ensemble do not vary in time, its probability distribution $w_\alpha$ is constant and

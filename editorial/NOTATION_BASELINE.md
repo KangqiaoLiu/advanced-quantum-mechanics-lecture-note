@@ -1,5 +1,7 @@
 # Provisional notation baseline for the faithful-translation stage
 
+> **Historical Phase-T record.** This file documents the original chapter-by-chapter notation decisions used during literal translation. The canonical *current* policy for all later manuscript editing is [NOTATION_POLICY.md](NOTATION_POLICY.md), with the single-page printed list at [frontmatter/notation.tex](../frontmatter/notation.tex). Historical tokens `\\op I` for parity, `T` for Dyson ordering, and `[A]` for statistical averaging were superseded in the global-unification pass. The translated manuscript uses `\\parityop`, `\\timeorder` and `\\langle A\\rangle_\\rho`, respectively. Do not reintroduce the historical collisions when revising chapters.
+
 ## Student-facing notation list
 
 The canonical **printed List of Notation** is maintained as [frontmatter/notation.tex](../frontmatter/notation.tex) and included in the whole-book PDF by `main.tex`. It covers symbols that appear in the completed English chapter(s), including equations and basis conventions. The present editorial file records intended global conventions and unresolved choices. Update the printed notation list and this editorial record together when a new chapter is added or conventions are changed. The printed front matter is an editorial addition: faithful source chapter text remains untouched.
