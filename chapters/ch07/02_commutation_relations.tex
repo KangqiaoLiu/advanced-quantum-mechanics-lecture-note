@@ -1,0 +1,152 @@
+% SOURCE: Chinese PDF viewer pp.156--159, exactly repeated on pp.163--166.
+\subsection*{4) Commutation relations of creation and annihilation operators}
+\textbf{A. First consider the relations between $\op a_i^\dagger$ and $\op a_j^\dagger$ (or between $\op a_i$ and $\op a_j$).}
+
+For any state $\ket\psi$, the states $\op a_i^\dagger\op a_j^\dagger\ket\psi$ and $\op a_j^\dagger\op a_i^\dagger\ket\psi$ are the same state, and can differ only by a constant:
+\[\op a_i^\dagger\op a_j^\dagger\ket\psi
+=\lambda\op a_j^\dagger\op a_i^\dagger\ket\psi.\]
+Consequently,
+\begin{align*}
+0&=(\op a_i^\dagger\op a_j^\dagger-\lambda\op a_j^\dagger\op a_i^\dagger)\ket\psi\\
+&=\sum_{k,l}S_{ki}S_{lj}
+(\op b_k^\dagger\op b_l^\dagger-\lambda\op b_l^\dagger\op b_k^\dagger)\ket\psi\\
+&=\sum_{l,k}S_{li}S_{kj}
+(\op b_l^\dagger\op b_k^\dagger-\lambda\op b_k^\dagger\op b_l^\dagger)\ket\psi.
+\end{align*}
+By the independence of $\ket\psi$ and the representation-transformation matrix elements $S_{ji}=\braket{b_j}{a_i}$ (that is, the independence of the basis vectors),
+\begin{align*}
+\op a_i^\dagger\op a_j^\dagger-\lambda\op a_j^\dagger\op a_i^\dagger&=0,\\
+\op b_k^\dagger\op b_l^\dagger-\lambda\op b_l^\dagger\op b_k^\dagger&=0,\\
+\op b_l^\dagger\op b_k^\dagger-\lambda\op b_k^\dagger\op b_l^\dagger&=0.
+\end{align*}
+The last two relations lead to
+\[(1-\lambda^2)\op b_k^\dagger\op b_l^\dagger=0,\qquad\lambda=\pm1.\]
+For $\lambda=+1$ the first relation gives
+\[\op a_i^\dagger\op a_j^\dagger-\op a_j^\dagger\op a_i^\dagger=0,\qquad
+\op a_i\op a_j-\op a_j\op a_i=0.\]
+For $\lambda=-1$, it gives
+\[\op a_i^\dagger\op a_j^\dagger+\op a_j^\dagger\op a_i^\dagger=0,\qquad
+\op a_i\op a_j+\op a_j\op a_i=0.\]
+
+\textbf{B. Next consider the relations between $\op a_i$ and $\op a_j^\dagger$.}
+
+First take $i\ne j$. The vectors $\op a_i\op a_j^\dagger\ket\psi$ and $\op a_j^\dagger\op a_i\ket\psi$ describe the same state. Therefore,
+\[0=(\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i)\ket\psi,\]
+so that
+\[\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i=0.\]
+Under a transformation of representation,
+\[0=\sum_{k,l}S_{ki}^*S_{lj}
+(\op b_k\op b_l^\dagger-\mu\op b_l^\dagger\op b_k)\ket\psi.\]
+If $k\ne l$, independence of the transformation-matrix elements implies
+\[\op b_k\op b_l^\dagger-\mu\op b_l^\dagger\op b_k=0.\]
+If $k=l$, we have
+\[0=\sum_k S_{ki}^*S_{kj}
+(\op b_k\op b_k^\dagger-\mu\op b_k^\dagger\op b_k)\ket\psi.\]
+Only if
+\[\op b_k\op b_k^\dagger-\mu\op b_k^\dagger\op b_k=\op A,\]
+where $\op A$ is independent of $k$, can we ensure that
+\begin{align*}
+\sum_kS_{ki}^*S_{kj}
+(\op b_k\op b_k^\dagger-\mu\op b_k^\dagger\op b_k)\ket\psi
+&=\sum_kS_{ki}^*S_{kj}\op A\ket\psi\\
+&=\delta_{ij}\op A\ket\psi=0\qquad(i\ne j).
+\end{align*}
+Now take $i=j$. Then
+\begin{align*}
+\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i
+&=\sum_{k,l}S_{ki}^*S_{lj}
+(\op b_k\op b_l^\dagger-\mu\op b_l^\dagger\op b_k)\\
+&=\sum_kS_{ki}^*S_{kj}(\op b_k\op b_k^\dagger-\mu\op b_k^\dagger\op b_k)\\
+&=\sum_kS_{ki}^*S_{kj}\op A=\op A\qquad(i=j).
+\end{align*}
+Combining $i\ne j$ and $i=j$,
+\[\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i=\op A\delta_{ij}.\]
+\textbf{Note:} The relation between $\op a_i$ and $\op a_j^\dagger$ differs from the relation between two creation operators (or between two annihilation operators) because of the unitarity of the transformation matrix,
+\[\sum_kS_{ki}^*S_{kj}=\delta_{ij}.\]
+
+\textbf{C. Determine $\mu$ and $\op A$.}
+
+The total number of particles is independent of representation:
+\[N=\sum_i n_i=\sum_i\widetilde n_i,\qquad
+\op N=\sum_i\op n_i=\sum_i\op{\widetilde n}_i.\]
+Since both $\sum_i\op a_i^\dagger\op a_i$ and $\sum_i\op a_i\op a_i^\dagger$ are independent of representation, write
+\[\op N=x\sum_i\op a_i^\dagger\op a_i
++y\sum_i\op a_i\op a_i^\dagger+Z,\]
+\[\op n_i=x\op a_i^\dagger\op a_i+y\op a_i\op a_i^\dagger+z,\]
+where $x,y,z$ are constants. As
+\[\op n_i\ket0=0,\qquad
+(x\op a_i^\dagger\op a_i+y\op a_i\op a_i^\dagger+z)\ket0=0,\]
+and
+\[\op a_i\ket0=0,\qquad
+\op a_i\op a_i^\dagger\ket0=\op a_i\ket{a_i}=\ket0,\]
+we have
+\[(y+z)\ket0=0,\qquad z=-y,\]
+so that
+\[\op n_i=x\op a_i^\dagger\op a_i+y(\op a_i\op a_i^\dagger-1).\]
+Again consider $i\ne j$. In order to determine $\mu$, use
+\[\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i=0.\]
+For the occupation-number state $\ket{\ldots,n_i,\ldots,n_j,\ldots}$,
+\begin{align*}
+\op n_i\op a_j\ket{\ldots,n_i,\ldots,n_j,\ldots}
+&=c_j n_i\ket{\ldots,n_i,\ldots,n_j-1,\ldots},\\
+\op a_j\op n_i\ket{\ldots,n_i,\ldots,n_j,\ldots}
+&=n_ic_j\ket{\ldots,n_i,\ldots,n_j-1,\ldots}.
+\end{align*}
+Hence
+\[[\op n_i,\op a_j]=0,\]
+which yields
+\[x(\op a_i^\dagger\op a_i\op a_j-\op a_j\op a_i^\dagger\op a_i)
++y(\op a_i\op a_i^\dagger\op a_j-\op a_j\op a_i\op a_i^\dagger)=0.\]
+For $\op a_i\op a_j-\op a_j\op a_i=0$, this becomes
+\[x(\op a_i^\dagger\op a_j-\op a_j\op a_i^\dagger)\op a_i
++y\op a_i(\op a_i^\dagger\op a_j-\op a_j\op a_i^\dagger)=0,\]
+so
+\[\op a_j\op a_i^\dagger-\op a_i^\dagger\op a_j=0.\]
+Likewise, if $\op a_i\op a_j+\op a_j\op a_i=0$, we obtain
+\[\op a_j\op a_i^\dagger+\op a_i^\dagger\op a_j=0.\]
+Thus for $i\ne j$, the sign $\mu=\pm1$ is the same as the corresponding sign $\lambda=\pm1$.
+
+For $i=j$, the relation is
+\[\op a_i\op a_i^\dagger-\mu\op a_i^\dagger\op a_i=\op A.\]
+From its action on the vacuum,
+\[(\op a_i\op a_i^\dagger-\mu\op a_i^\dagger\op a_i)\ket0=\op A\ket0,\]
+we obtain
+\[\ket0=\op A\ket0,\qquad\op A=1.\]
+Combining $i\ne j$ and $i=j$ gives
+\[\boxed{\op a_i\op a_j^\dagger-\mu\op a_j^\dagger\op a_i=\delta_{ij}.}\]
+
+\textbf{D. Summary of commutation relations.}
+There are precisely two sets of relations:
+\begin{align*}
+\text{Bosons:}\qquad
+[\op a_i,\op a_j]&=0,&
+[\op a_i^\dagger,\op a_j^\dagger]&=0,&
+[\op a_i,\op a_j^\dagger]&=\delta_{ij};\\
+\text{Fermions:}\qquad
+\{\op a_i,\op a_j\}&=0,&
+\{\op a_i^\dagger,\op a_j^\dagger\}&=0,&
+\{\op a_i,\op a_j^\dagger\}&=\delta_{ij}.
+\end{align*}
+They correspond to the two kinds of identical particles: bosons and fermions.
+
+\subsection*{5) Pauli exclusion principle}
+For a system of fermions,
+\[\op a_i^\dagger\op a_i^\dagger=0,\qquad
+\op a_i^\dagger\op a_i^\dagger\ket0=0,\]
+\[\op a_i^\dagger\ket{0,\ldots,n_i=1,\ldots}=0,\qquad
+\ket{0,\ldots,n_i=2,\ldots}=0.\]
+Thus two or more fermions cannot occupy the same single-particle state. For fermions, $n_i=0,1$.
+
+\subsection*{6) Particle-number operator}
+We have
+\[\op n_i=x\op a_i^\dagger\op a_i+y(\op a_i\op a_i^\dagger-1).\]
+Because
+\[\op a_i\op a_i^\dagger=1\pm\op a_i^\dagger\op a_i,\]
+we obtain
+\[\op n_i=(x\pm y)\op a_i^\dagger\op a_i.\]
+Since
+\[\op n_i\ket{a_i}=\ket{a_i},\]
+\[(x\pm y)\op a_i^\dagger\op a_i\ket{a_i}
+=(x\pm y)\op a_i^\dagger\ket0=(x\pm y)\ket{a_i}=\ket{a_i},\]
+we find
+\[x\pm y=1,\qquad\boxed{\op n_i=\op a_i^\dagger\op a_i}.\]

@@ -1,0 +1,88 @@
+% SOURCE: Chinese PDF viewer pp.168--170. The original Chapter 7 Section 2 begins on p.168.
+\section{Representation of Observables by Creation and Annihilation Operators}
+\subsection*{1) Additive one-particle operators}
+An observable of a system is the sum of the observables of its individual particles, for example the kinetic-energy operator.
+
+Consider a single-particle observable $\op A$, which takes a definite value in its own representation,
+\[\op A\ket{a_i}=a_i\ket{a_i}.\]
+In Fock space $\ket{n_1,\ldots,n_i,\ldots}$, the creation and annihilation operators are $\op a_i^\dagger,\op a_i$, and the observable of the entire system of identical particles is
+\[\boxed{\op{\mathcal A}=\sum_i a_i\op n_i
+=\sum_i a_i\op a_i^\dagger\op a_i.}\]
+For another single-particle observable $\op B$ that takes definite values in its own representation, use the Fock space $\ket{\widetilde n_1,\ldots,\widetilde n_i,\ldots}$ and operators $\op b_i,\op b_i^\dagger$. The operator transformation gives
+\begin{align*}
+\op{\mathcal A}
+&=\sum_i a_i\op a_i^\dagger\op a_i\\
+&=\sum_{i,j,k}a_iS_{ji}S_{ki}^*\op b_j^\dagger\op b_k\\
+&=\sum_{j,k}\op b_j^\dagger\op b_k
+\sum_i a_i\braket{b_j}{a_i}\braket{a_i}{b_k}\\
+&=\sum_{j,k}\op b_j^\dagger\op b_k
+\sum_i\mel{b_j}{\op A}{a_i}\braket{a_i}{b_k}\\
+&=\sum_{j,k}\op b_j^\dagger\op b_k\mel{b_j}{\op A}{b_k}.
+\end{align*}
+This shows that an additive one-particle operator has off-diagonal elements in an arbitrary representation and only diagonal elements in its own representation.
+
+\textbf{Application.} In a true many-particle system with interactions between particles, the action of other particles upon a particular particle may approximately be treated as an average potential. This is the mean-field approximation. The observable of the system is then an additive one-particle operator, a sum of the contributions from all the independent particles.
+
+\subsection*{2) Additive two-particle operators}
+Consider a two-particle interaction potential $\op V$.
+Suppose in the particle-number representation $A$, the single-particle operator satisfies
+\[\op A\ket{a_i}=a_i\ket{a_i},\]
+and the two-particle state is
+\[\ket{a_i,a_j}=\ket{a_i}\ket{a_j}
+=\ket{0,\ldots,n_i=1,\ldots,n_j=1,\ldots}.\]
+The potential has a definite value,
+\[\op V\ket{a_i,a_j}=V_{ij}\ket{a_i,a_j},\qquad V_{ij}=V_{ji}.\]
+A pair of particles may occupy different states or the same state, so
+\begin{align*}
+\op{\mathcal V}
+&=\frac12\sum_{i\ne j}\op n_i\op n_j V_{ij}
++\frac12\sum_i\op n_i(\op n_i-1)V_{ii}\\
+&=\frac12\sum_{i,j}(\op n_i\op n_j-\delta_{ij}\op n_j)V_{ij}.
+\end{align*}
+By the commutation or anticommutation relations, for $i\ne j$,
+\begin{align*}
+\op n_i\op n_j-\delta_{ij}\op n_j
+&=\op n_i\op n_j
+=\op a_i^\dagger\op a_i\op a_j^\dagger\op a_j\\
+&=\pm\op a_i^\dagger\op a_j^\dagger\op a_i\op a_j
+=\op a_i^\dagger\op a_j^\dagger\op a_j\op a_i.
+\end{align*}
+For $i=j$,
+\begin{align*}
+\op n_i\op n_i-\op n_i
+&=\op a_i^\dagger\op a_i\op a_i^\dagger\op a_i-\op a_i^\dagger\op a_i\\
+&=\op a_i^\dagger(1\pm\op a_i^\dagger\op a_i)\op a_i-\op a_i^\dagger\op a_i\\
+&=\pm\op a_i^\dagger\op a_i^\dagger\op a_i\op a_i
+=\op a_i^\dagger\op a_i^\dagger\op a_i\op a_i.
+\end{align*}
+In the last step the two annihilation operators have been interchanged.
+Combining $i\ne j$ and $i=j$,
+\[\op n_i\op n_j-\delta_{ij}\op n_j
+=\op a_i^\dagger\op a_j^\dagger\op a_j\op a_i,\]
+\[\boxed{\op{\mathcal V}=\frac12\sum_{i,j}V_{ij}
+\op a_i^\dagger\op a_j^\dagger\op a_j\op a_i.}\]
+In any particle-number representation $B$, the potential has no definite eigenvalue. Using the transformation of operators,
+\begin{align*}
+\op{\mathcal V}
+&=\frac12\sum_{i,j}V_{ij}\op a_i^\dagger\op a_j^\dagger\op a_j\op a_i\\
+&=\frac12\sum_{i,j,k,l,m,n}V_{ij}S_{ki}S_{lj}S_{mj}^*S_{ni}^*
+\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n\\
+&=\frac12\sum_{i,j,k,l,m,n}V_{ij}
+\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n
+\braket{b_k}{a_i}\braket{b_l}{a_j}\braket{a_j}{b_m}\braket{a_i}{b_n}\\
+&=\frac12\sum_{k,l,m,n}\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n
+\sum_{i,j}\braket{b_k,b_l}{a_i,a_j}
+V_{ij}\braket{a_j,a_i}{b_m,b_n}\\
+&=\frac12\sum_{k,l,m,n}\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n
+\sum_{i,j}\mel{b_k,b_l}{\op V}{a_i,a_j}
+\braket{a_j,a_i}{b_m,b_n}\\
+&=\frac12\sum_{k,l,m,n}
+\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n
+\mel{b_k,b_l}{\op V}{b_m,b_n}.
+\end{align*}
+In the last step we have used the completeness relation
+\[\sum_{i,j}\ket{a_i,a_j}\bra{a_j,a_i}
+=\sum_{i,j}\ket{a_i}\bra{a_i}\ket{a_j}\bra{a_j}=\mathbf1.\]
+This shows that an additive two-particle operator is a fourth-rank tensor in an arbitrary representation, and a second-rank tensor in the representation where it has definite values.
+
+\textbf{Application.} Go beyond the mean-field approximation while retaining only two-particle interactions, that is, pair interactions.

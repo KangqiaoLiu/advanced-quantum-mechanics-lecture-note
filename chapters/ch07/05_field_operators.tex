@@ -1,0 +1,133 @@
+% SOURCE: Chinese PDF viewer pp.170--173, including the short final page 173.
+\subsection*{3) Single-particle continuous spectrum}
+For a particle-number representation $A$ with a discrete spectrum, the annihilation and creation operators are $\op a_i,\op a_i^\dagger$. We have
+\[\op N=\sum_i\op n_i,\qquad \op n_i=\op a_i^\dagger\op a_i,\qquad
+\braket{a_i}{a_j}=\delta_{ij},\qquad \sum_i\ket{a_i}\bra{a_i}=\mathbf1.\]
+The commutation relations are
+\begin{align*}
+\text{Bosons:}&&
+[\op a_i,\op a_j]&=0,&
+[\op a_i^\dagger,\op a_j^\dagger]&=0,&
+[\op a_i,\op a_j^\dagger]&=\delta_{ij},\\
+\text{Fermions:}&&
+\{\op a_i,\op a_j\}&=0,&
+\{\op a_i^\dagger,\op a_j^\dagger\}&=0,&
+\{\op a_i,\op a_j^\dagger\}&=\delta_{ij}.
+\end{align*}
+Now extend this to the particle-number representation for a continuous spectrum, for example the coordinate and spin states $\ket{\vect r,\sigma}$ (continuous coordinates and discrete spin). The annihilation and creation operators are $\op\psi_\sigma(\vect r)$ and $\op\psi_\sigma^\dagger(\vect r)$. Their basis satisfies
+\[\op{\vect r}\ket{\vect r,\sigma}=\vect r\ket{\vect r,\sigma},\qquad
+\op\sigma\ket{\vect r,\sigma}=\sigma\ket{\vect r,\sigma},\]
+\[\braket{\vect r',\sigma'}{\vect r'',\sigma''}
+=\delta^{(3)}(\vect r'-\vect r'')\delta_{\sigma'\sigma''},\qquad
+\int\dd^3r\sum_\sigma\ket{\vect r,\sigma}\bra{\vect r,\sigma}=\mathbf1.\]
+The particle-number operator is
+\[\op N=\int\dd^3r\sum_\sigma\op n_\sigma(\vect r),\qquad
+\op n_\sigma(\vect r)=\op\psi_\sigma^\dagger(\vect r)\op\psi_\sigma(\vect r).\]
+The commutation relations become
+\begin{align*}
+\text{Bosons:}\quad
+[\op\psi_{\sigma'}(\vect r'),\op\psi_{\sigma''}(\vect r'')]&=0,\\
+[\op\psi_{\sigma'}^\dagger(\vect r'),\op\psi_{\sigma''}^\dagger(\vect r'')]&=0,\\
+[\op\psi_{\sigma'}(\vect r'),\op\psi_{\sigma''}^\dagger(\vect r'')]
+&=\delta^{(3)}(\vect r'-\vect r'')\delta_{\sigma'\sigma''};
+\end{align*}
+\begin{align*}
+\text{Fermions:}\quad
+\{\op\psi_{\sigma'}(\vect r'),\op\psi_{\sigma''}(\vect r'')\}&=0,\\
+\{\op\psi_{\sigma'}^\dagger(\vect r'),\op\psi_{\sigma''}^\dagger(\vect r'')\}&=0,\\
+\{\op\psi_{\sigma'}(\vect r'),\op\psi_{\sigma''}^\dagger(\vect r'')\}
+&=\delta^{(3)}(\vect r'-\vect r'')\delta_{\sigma'\sigma''}.
+\end{align*}
+The additive one-particle operator has the form
+\begin{align*}
+\op{\mathcal A}&=\sum_{j,k}\op b_j^\dagger\op b_k\mel{b_j}{\op A}{b_k}\\
+&\longrightarrow\sum_{\sigma',\sigma''}\int\dd^3r'\,\dd^3r''\,
+\op\psi_{\sigma'}^\dagger(\vect r')\op\psi_{\sigma''}(\vect r'')
+\mel{\vect r',\sigma'}{\op A}{\vect r'',\sigma''}.
+\end{align*}
+An additive two-particle operator (a two-particle potential) has the form
+\begin{align*}
+\op{\mathcal V}
+&=\frac12\sum_{k,l,m,n}\op b_k^\dagger\op b_l^\dagger\op b_m\op b_n
+\mel{b_k,b_l}{\op V}{b_m,b_n}\\
+&\longrightarrow\frac12\sum_{\sigma_1,\sigma_2,\sigma_3,\sigma_4}
+\int\dd^3r_1\,\dd^3r_2\,\dd^3r_3\,\dd^3r_4\,
+\op\psi_{\sigma_1}^\dagger(\vect r_1)
+\op\psi_{\sigma_2}^\dagger(\vect r_2)
+\op\psi_{\sigma_3}(\vect r_3)
+\op\psi_{\sigma_4}(\vect r_4)\\
+&\hspace{2.7em}\times
+\mel{\vect r_1,\sigma_1;\vect r_2,\sigma_2}{\op V}
+{\vect r_3,\sigma_3;\vect r_4,\sigma_4}.
+\end{align*}
+
+\subsection*{4) Quantum dynamics and second quantization}
+In the Heisenberg picture, consider the equation of motion for the annihilation operator:
+\[\ii\hbar\frac{\dd\op a_i}{\dd t}=[\op a_i,\op H].\]
+Neglect interactions involving three or more particles, retaining only one-particle and two-particle contributions:
+\[\op H=\op H_0+\op V.\]
+Here $\op H_0$ contains the kinetic energy of one particle and its potential energy in an external field. In an arbitrary discrete particle-number representation $A$,
+\begin{align*}
+\op H
+&=\sum_{k,l}\op a_k^\dagger\op a_l\mel{a_k}{\op H_0}{a_l}\\
+&\quad+\frac12\sum_{k,l,m,n}
+\op a_k^\dagger\op a_l^\dagger\op a_m\op a_n
+\mel{a_k,a_l}{\op V}{a_m,a_n}.
+\end{align*}
+Since
+\begin{align*}
+[\op a_i,\op a_k^\dagger\op a_l]
+&=\op a_i\op a_k^\dagger\op a_l-\op a_k^\dagger\op a_l\op a_i\\
+&=\op a_i\op a_k^\dagger\op a_l-\mu\op a_k^\dagger\op a_i\op a_l\\
+&=\op a_l\delta_{ik},\\[4pt]
+[\op a_i,\op a_k^\dagger\op a_l^\dagger\op a_m\op a_n]
+&=\op a_l^\dagger\op a_m\op a_n\delta_{ik}
++\op a_k^\dagger\op a_n\op a_m\delta_{il},
+\end{align*}
+we find
+\begin{align*}
+\ii\hbar\frac{\dd\op a_i}{\dd t}
+&=[\op a_i,\op H]\\
+&=\sum_l\op a_l\mel{a_i}{\op H_0}{a_l}
++\sum_{l,m,n}\op a_l^\dagger\op a_m\op a_n
+\mel{a_i,a_l}{\op V}{a_m,a_n}.
+\end{align*}
+If $\op V$ has a definite value in the $A$ representation, namely
+\[\op V\ket{a_m,a_n}=V_{mn}\ket{a_m,a_n},\]
+then
+\[\ii\hbar\frac{\dd\op a_i}{\dd t}
+=\sum_l\mel{a_i}{\op H_0}{a_l}\op a_l
++\sum_lV_{il}\op a_l^\dagger\op a_l\op a_i.\]
+If the representation $A$ is the continuous position-and-spin representation,
+\begin{align*}
+\ii\hbar\frac{\partial}{\partial t}\op\psi_\sigma(\vect r,t)
+&=\sum_{\sigma'}\int\dd^3r'\,
+\mel{\vect r,\sigma}{\op H_0}{\vect r',\sigma'}
+\op\psi_{\sigma'}(\vect r',t)\\
+&\quad+\sum_{\sigma'}\int\dd^3r'\,
+V(\vect r,\vect r')
+\op\psi_{\sigma'}^\dagger(\vect r',t)
+\op\psi_{\sigma'}(\vect r',t)
+\op\psi_\sigma(\vect r,t).
+\end{align*}
+If $\op H_0$ is a function only of position and momentum and is spin independent, then
+\[\mel{\vect r,\sigma}{\op H_0}{\vect r',\sigma'}
+=H_0(\vect r,-\ii\hbar\vect\nabla)
+\delta^{(3)}(\vect r-\vect r')\delta_{\sigma\sigma'},\]
+and hence
+\begin{align*}
+\ii\hbar\frac{\partial}{\partial t}\op\psi_\sigma(\vect r,t)
+&=H_0(\vect r,-\ii\hbar\vect\nabla)\op\psi_\sigma(\vect r,t)\\
+&\quad+\sum_{\sigma'}\int\dd^3r'\,
+V(\vect r,\vect r')
+\op\psi_{\sigma'}^\dagger(\vect r',t)
+\op\psi_{\sigma'}(\vect r',t)
+\op\psi_\sigma(\vect r,t).
+\end{align*}
+When $\op V=0$, the Heisenberg-picture annihilation operator $\op\psi_\sigma(\vect r,t)$ for the many-particle system satisfies
+\[\ii\hbar\frac{\partial}{\partial t}\op\psi_\sigma(\vect r,t)
+=H_0(\vect r,-\ii\hbar\vect\nabla)\op\psi_\sigma(\vect r,t).\]
+This has the same form as the Schr\"odinger-picture equation for the single-particle wavefunction $\varphi_\sigma(\vect r,t)$:
+\[\ii\hbar\frac{\partial}{\partial t}\varphi_\sigma(\vect r,t)
+=H_0(\vect r,-\ii\hbar\vect\nabla)\varphi_\sigma(\vect r,t).\]
+This shows that, if $\psi_\sigma(\vect r,t)$ is regarded as a Schr\"odinger wavefunction (a classical field), canonical quantization of this field, by imposing the commutation relations of the field operators, gives a quantum field $\op\psi_\sigma(\vect r,t)$ whose equation of motion is the same as that of the classical field $\psi_\sigma(\vect r,t)$. Therefore the procedure above, in which Fock space is introduced to treat a many-particle problem, can be regarded as \emph{second quantization}: in quantum mechanics an observable is quantized and becomes an operator, while the wavefunction remains a classical function; on entering the particle-number representation it is equivalent to quantizing the wavefunction as well, turning it into a quantum field.

@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–6** (Chinese source PDF viewer pp. 1–153, with Chapter 4 ending above the Chapter 5 heading on p. 121) have been completed, compiled locally, and tracked. Chapters 7–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–7** (Chinese source PDF viewer pp. 1–173; seven duplicate pages of Chapter 7 identified, with Chapter 4 ending above the Chapter 5 heading on p. 121) have been completed, compiled locally, and tracked. Chapter 8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
@@ -38,7 +38,7 @@ The faithful translation is deliberately kept separate from future additions (Be
 
 - **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
 - **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
-- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–6, with automatic title page, contents and cumulative notation list.
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–7, with automatic title page, contents and cumulative notation list.
 - **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
 
 ## Chapter 3: Angular Momentum Theory translation baseline
@@ -75,6 +75,16 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
 - **Full compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Local XeLaTeX verified **125 pages** comprising Chapters 1–6 plus front matter.
 - **Status:** faithful first translation; independent bilingual proofreading and instructor approval pending.
+
+## Chapter 7: Second Quantization translation baseline
+
+- **Original chapter:** Chinese PDF viewer pages **154–173**, with the seven-page sequence **154–160 exactly repeated on 161–167**. Both text and pixel content are identical. The English textbook prints each unique source page once; the exact duplication and mapping are documented.
+- **Two original sections:** [chapters/ch07/](chapters/ch07/) contains *Particle-Number Representation* and *Representation of Observables by Creation and Annihilation Operators*. They are physically split into five editable LaTeX source files while retaining the original two sections and all eleven internal numbered subdivisions.
+- **Full derivations:** occupation-number basis, Fock spaces and unitary basis changes, bosonic/fermionic commutation relations and occupation factors, additive one-body and two-body operators, continuous fields, and the Heisenberg equation of motion.
+- **Proofing ledger:** [editorial/CHAPTER07_TRANSLATION_LOG.md](editorial/CHAPTER07_TRANSLATION_LOG.md) covers source-page correspondence, the verified duplicate, minimal notation changes and unresolved physics issues.
+- **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
+- **Rendered cumulative book:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf); **135 pages** in local XeLaTeX compilation, including the title page, TOC, notation and Chapters 1–7.
+- **Status:** complete first-pass faithful translation; final bilingual instructor signoff and later conceptual revision remain pending.
 
 ## Intended deliverables
 

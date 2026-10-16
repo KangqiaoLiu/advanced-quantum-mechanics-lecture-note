@@ -1,0 +1,64 @@
+% SOURCE: Chinese PDF viewer pp.154--155, exactly repeated on pp.161--162.
+\section{Particle-Number Representation}
+The preceding method for treating identical-particle systems is first to assign a number to every particle, and then to consider all possible permutations of these numbers in order to satisfy exchange symmetry. This method has the following shortcomings: (1) since the particles are identical, they cannot in principle be distinguished by numbers; (2) when the number $N$ of particles is large, the symmetric or antisymmetric wavefunctions become very complicated; (3) the method cannot describe the conversion of particles into one another, and hence cannot be extended to a relativistic quantum many-particle system.
+
+\subsection*{1) Fock space}
+\textbf{Idea:} Use the eigenvalues and eigenstates of a single-particle observable $\op A$ to construct the eigenvalues and eigenstates of an identical-particle system, irrespective of whether the particles interact with one another.
+
+The eigenvalues of $\op A$ are
+\[a_1,a_2,\ldots;\]
+the single-particle eigenstates are
+\[\ket{a_1},\ket{a_2},\ldots;\]
+and the particle numbers occupying these eigenstates are
+\[n_1,n_2,\ldots.\]
+According to the principle of indistinguishability, we do not know which particle occupies which particular single-particle eigenstate. We care only about the number of particles occupying each state. The state of the system is therefore described by
+\[\ket{n_1,n_2,\ldots},\]
+where $n_i$ is the number of particles occupying the state $\ket{a_i}$.
+
+The multiparticle vector space formed by the states $\ket{n_1,n_2,\ldots}$ is called \emph{Fock space}. The state of an identical-particle system is described by the distribution of occupation numbers among the single-particle states. The vacuum and single-particle states can evidently be written
+\[\ket 0=\ket{0,0,\ldots},\qquad
+\ket{a_i}=\ket{0,0,\ldots,n_i=1,\ldots}.\]
+
+\subsection*{2) Creation and annihilation operators}
+Since a many-particle state is represented by its occupation-number distribution, the operators acting on this state change the occupation-number distribution. They are the particle creation and annihilation operators $\op a_i^\dagger$ and $\op a_i$:
+\begin{align*}
+\op a_i^\dagger\ket{n_1,\ldots,n_i,\ldots}&\sim\ket{n_1,\ldots,n_i+1,\ldots},\\
+\op a_i\ket{n_1,\ldots,n_i,\ldots}&\sim\ket{n_1,\ldots,n_i-1,\ldots}.
+\end{align*}
+For the vacuum state,
+\[\op a_i\ket0=0.\]
+For a single-particle state,
+\[\op a_i\ket{a_j}=\delta_{ij}\ket0,\qquad
+\op a_i^\dagger\ket0=\ket{a_i}.\]
+
+\subsection*{3) Transformation between two Fock spaces}
+Consider two single-particle observables $\op A$ and $\op B$.
+\[\begin{array}{c|cc}
+&\text{$A$ representation}&\text{$B$ representation}\\\hline
+\text{Eigenvalue}&a_i&b_i\\
+\text{Eigenstate}&\ket{a_i}&\ket{b_i}\\
+\text{Occupation number}&n_i&\widetilde n_i\\
+\text{Creation operator}&\op a_i^\dagger&\op b_i^\dagger\\
+\text{Annihilation operator}&\op a_i&\op b_i
+\end{array}\]
+The distribution of occupation numbers in the $\ket{a_i}$ states defines a Fock space $\ket{n_1,n_2,\ldots}$, while the distribution in the $\ket{b_i}$ states defines another Fock space $\ket{\widetilde n_1,\widetilde n_2,\ldots}$. The transformation between the two Fock spaces reduces to the transformation between $\op a_i,\op a_i^\dagger$ and $\op b_i,\op b_i^\dagger$.
+
+The transformation of a single-particle eigenstate is
+\[\ket{a_i}=\sum_j\ket{b_j}\braket{b_j}{a_i}
+=\sum_jS_{ji}\ket{b_j},\qquad S_{ji}=\braket{b_j}{a_i}.\]
+The representation-transformation matrix $S$ is unitary:
+\[\sum_k S_{ki}^*S_{kj}=\delta_{ij},\qquad
+\sum_k S_{ik}^*S_{jk}=\delta_{ij}.\]
+Using the single-particle identity $\op a_i\ket{a_j}=\delta_{ij}\ket0$, the operator transformation gives
+\begin{align*}
+\op a_i\ket{a_j}
+&=\delta_{ij}\ket0
+=\sum_k S_{ki}^*S_{kj}\ket0
+=\sum_{k,l}S_{ki}^*S_{lj}\delta_{kl}\ket0\\
+&=\sum_{k,l}S_{ki}^*S_{lj}\op b_k\ket{b_l}
+=\sum_kS_{ki}^*\op b_k\left(\sum_lS_{lj}\ket{b_l}\right)\\
+&=\sum_kS_{ki}^*\op b_k\ket{a_j}.
+\end{align*}
+Thus,
+\[\boxed{\op a_i=\sum_kS_{ki}^*\op b_k,\qquad
+\op a_i^\dagger=\sum_kS_{ki}\op b_k^\dagger.}\]

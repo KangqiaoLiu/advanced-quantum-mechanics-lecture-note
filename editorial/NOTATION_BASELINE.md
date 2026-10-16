@@ -65,3 +65,13 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - Two-particle relative coordinates `\\vect r=\\vect r_1-\\vect r_2` and `\\vect R=(\\vect r_1+\\vect r_2)/2`, with total/relative wavevectors `\\vect K`, `\\vect k`, retain the source's plane-wave normalization in the faithful baseline.
 - Occupation `f(k)`, chemical potential `\\mu`, Fermi momentum `k_F`, number density `n`, energy density `\\varepsilon` and pressure `P` retain the source's implicit natural-unit convention in the last example; discrepancies with Chapter 1 `\\hbar` normalization are logged for later scientific revision.
 - Student-facing global notation is maintained in `frontmatter/notation.tex` and should be extended alongside each translated chapter.
+
+## Chapter 7 notation and duplicate-page rule (2026-10-16)
+
+- Source pages **154–160** are an exact duplicate (same text and rendered pixels) of **161–167**. Print the unique block only once and trace both source appearances in `editorial/CHAPTER07_TRANSLATION_LOG.md`.
+- Fock states use `\\ket{n_1,n_2,\\ldots}`, single-particle orbitals `\\ket{a_i}`, and creation/annihilation operators `\\op a_i^\\dagger,\\op a_i`. The source superscript `+` on creation maps to the preexisting project `\\dagger` convention.
+- Single-mode number operator `\\op n_i=\\op a_i^\\dagger\\op a_i`, total `\\op N=\\sum_i\\op n_i`; fixed orbital ordering in fermion Fock states produces `(-1)^{\\sum_{j<i} n_j}`.
+- Bosons obey commutators `[\\op a_i,\\op a_j^\\dagger]=\\delta_{ij}`, fermions anticommutators `\\{\\op a_i,\\op a_j^\\dagger\\}=\\delta_{ij}`; all same-type mode brackets vanish accordingly.
+- Extensive additive observables `\\op{\\mathcal A},\\op{\\mathcal V}` distinguish their Fock-space forms from the single-particle `\\op A` and potential `\\op V` used in the source.
+- Continuum field modes use `\\op\\psi_\\sigma(\\vect r)`, its adjoint `\\op\\psi_\\sigma^\\dagger(\\vect r)`, and `\\delta^{(3)}` for a spatial Dirac delta. `\\op H=\\op H_0+\\op V` in the final Heisenberg dynamics.
+- Full printed notation remains in `frontmatter/notation.tex`, updated simultaneously with the chapter.
