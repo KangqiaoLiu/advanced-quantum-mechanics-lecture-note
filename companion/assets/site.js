@@ -22,13 +22,19 @@ function card(lab) {
   const chips = element("div", "chips");
   chips.append(element("span", "chip", lab.level + " · " + lab.minutes + " min"));
   if (lab.route === "core") chips.append(element("span", "chip route", "classroom route"));
-  chips.append(element("span", "chip", lab.stage === "prototype" ? "planned prototype" : "planned lab"));
+  chips.append(element("span", "chip", lab.stage === "implemented" ? "working experiment" : (lab.stage === "prototype" ? "planned prototype" : "planned lab")));
   article.append(chips);
   const a = element("a", "", "View relevant lecture-note source ↗");
   a.href = base + lab.source;
   a.target = "_blank";
   a.rel = "noopener noreferrer";
   article.append(a);
+  if (lab.stage === "implemented" && lab.page) {
+    const launch = element("a", "launch", "Open interactive experiment ↗");
+    launch.href = lab.page;
+    article.append(document.createTextNode(" · "));
+    article.append(launch);
+  }
   return article;
 }
 function render() {
@@ -51,6 +57,10 @@ async function init() {
     const response = await fetch("./catalog.json");
     if (!response.ok) throw Error("Catalog file unavailable.");
     catalog = await response.json();
+    const available = catalog.labs.filter(lab => lab.stage === "implemented").length;
+    document.querySelector("#catalog-status").textContent = available
+      ? available + " working experiments · " + (catalog.labs.length - available) + " further questions in development"
+      : "Curriculum preview · Physics laboratories are being prepared";
     catalog.chapters.forEach(ch=>{
       const opt = document.createElement("option");
       opt.value = String(ch.number);

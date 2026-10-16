@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the companion's current nine-chapter catalog and local source mapping."""
+"""Check companion catalog integrity and exact current textbook source links."""
 import json
 import re
 from collections import Counter
@@ -10,35 +10,58 @@ CATALOG = ROOT / "companion" / "catalog.json"
 data = json.loads(CATALOG.read_text(encoding="utf-8"))
 chapters = data["chapters"]
 labs = data["labs"]
+
 assert [c["number"] for c in chapters] == list(range(1, 10))
 assert len({c["name"] for c in chapters}) == 9
-assert len(labs) == 62, len(labs)
-assert Counter(lab["chapter"] for lab in labs) == {
-    1: 9, 2: 11, 3: 8, 4: 5, 5: 5, 6: 6, 7: 4, 8: 7, 9: 7
-}
+assert labs, "The companion must contain a navigable curriculum."
 ids = [lab["id"] for lab in labs]
-assert len(ids) == len(set(ids))
-for chapter in range(1, 10):
-    actual = [lab["id"] for lab in labs if lab["chapter"] == chapter]
-    assert actual == [
-        f"IC-{chapter:02d}-{i:02d}" for i in range(1, len(actual) + 1)
-    ]
+assert len(ids) == len(set(ids)), "Each lab ID must remain unique."
+per_chapter = Counter(lab["chapter"] for lab in labs)
+assert all(per_chapter.get(ch, 0) > 0 for ch in range(1, 10)), per_chapter
+
 for lab in labs:
-    assert re.fullmatch(r"IC-0[1-9]-\d{2}", lab["id"])
+    assert re.fullmatch(r"IC-(0[1-9])-\d{2,3}", lab["id"])
+    assert int(lab["id"].split("-")[1]) == lab["chapter"]
     assert lab["level"] in {"foundation", "guided", "advanced"}
     assert lab["route"] in {"core", "extension"}
-    assert lab["stage"] in {"planned", "prototype"}
-    for field in ["title", "question", "observable", "minutes"]:
-        assert isinstance(lab[field], str) and lab[field].strip()
-    src = lab["source"]
-    assert src.startswith(f"chapters/ch{lab['chapter']:02d}/")
-    assert (ROOT / src).is_file(), f"Missing notes source for {lab['id']}: {src}"
-expected = {"IC-01-03", "IC-02-03", "IC-08-02", "IC-09-03"}
-assert {lab["id"] for lab in labs if lab["stage"] == "prototype"} == expected
-assert sum(lab["route"] == "core" for lab in labs) == 22
-assert (ROOT / "companion" / "index.html").is_file()
-assert (ROOT / "companion" / "assets" / "site.js").is_file()
-assert (ROOT / "companion" / "assets" / "site.css").is_file()
-assert (ROOT / "INTERACTIVE_COMPANION_BLUEPRINT.md").is_file()
-assert (ROOT / "companion" / "PROTOTYPES.md").is_file()
-print("Companion catalog valid: 9 chapters, 62 lab questions, 22 classroom-route candidates, 4 prototypes.")
+    assert lab["stage"] in {"planned", "prototype", "implemented"}
+    for field in ("title", "question", "observable", "minutes"):
+        assert isinstance(lab[field], str) and lab[field].strip(), (lab["id"], field)
+    source = lab["source"]
+    assert source.startswith(f"chapters/ch{lab['chapter']:02d}/")
+    assert (ROOT / source).is_file(), f"Missing notes source: {source}"
+    if lab["stage"] == "implemented":
+        page = lab.get("page")
+        assert isinstance(page, str) and re.fullmatch(r"labs/[A-Za-z0-9_./-]+\.html", page), lab["id"]
+        assert ".." not in Path(page).parts, lab["id"]
+        assert (ROOT / "companion" / page).is_file(), f"Missing experiment page: {page}"
+
+# Initial four exemplars are stable teaching anchors, even after they become implemented.
+for anchor in ("IC-01-03", "IC-02-03", "IC-08-02", "IC-09-03"):
+    assert anchor in ids, f"Missing core prototype anchor: {anchor}"
+
+for relpath in (
+    "INTERACTIVE_COMPANION_BLUEPRINT.md",
+    "companion/README.md",
+    "companion/PROTOTYPES.md",
+    "companion/LAB_TEMPLATE.md",
+    "companion/PHYSICS_CONVENTIONS.md",
+    "companion/index.html",
+    "companion/assets/site.js",
+    "companion/assets/site.css",
+):
+    assert (ROOT / relpath).is_file(), f"Missing companion resource: {relpath}"
+
+cover = (ROOT / "main.tex").read_text(encoding="utf-8")
+for reference in (
+    "mailto:kqliu@xhu.edu.cn",
+    "https://kangqiaoliu.github.io/",
+    "companion/README.md",
+):
+    assert reference in cover, f"Missing PDF-cover contact / companion link: {reference}"
+
+print(
+    f"Companion catalog valid: {len(chapters)} chapters, {len(labs)} questions, "
+    f"{per_chapter}, {sum(x['route'] == 'core' for x in labs)} classroom-route candidates, "
+    f"{sum(x['stage'] == 'implemented' for x in labs)} implemented experiments."
+)
