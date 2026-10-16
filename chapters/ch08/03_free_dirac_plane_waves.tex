@@ -1,0 +1,103 @@
+% SOURCE: Chinese PDF viewer pp.184 (middle)--186 (end of PDF).
+\section{Plane-Wave Solutions of the Free Dirac Equation}
+The Dirac equation for a free particle is
+\[
+(\ii\gamma^\mu\partial_\mu-m)\psi(x)=0.
+\]
+Assume that positive- and negative-energy plane waves take the forms
+\[
+\psi^+(x)=u(k)e^{-\ii k^\mu x_\mu},\qquad
+\psi^-(x)=v(k)e^{+\ii k^\mu x_\mu},\qquad
+k_0=E=\sqrt{m^2+\vect k^{\,2}}.
+\]
+Here $u(k)$ and $v(k)$ are Dirac spinors. Substitution yields
+\[
+(\gamma^\mu k_\mu-m)u(k)=0,\qquad
+(\gamma^\mu k_\mu+m)v(k)=0.
+\]
+
+First consider the solutions in the particle rest frame, i.e. for $k_\mu=(m,\vect0)$:
+\[
+(\gamma_0-I)u(m,\vect0)=0,\qquad
+(\gamma_0+I)v(m,\vect0)=0.
+\]
+Choose
+\[
+\gamma_0=\begin{pmatrix}I&0\\0&-I\end{pmatrix},\qquad
+\vect\gamma=\begin{pmatrix}0&\vect\sigma\\-\vect\sigma&0\end{pmatrix}.
+\]
+$I$ is the identity matrix and $\vect\sigma$ the Pauli matrices. Thus each of $u$ and $v$ has two independent solutions:
+\[
+\begin{aligned}
+u_\uparrow(m,\vect0)&=\begin{pmatrix}1\\0\\0\\0\end{pmatrix},&
+u_\downarrow(m,\vect0)&=\begin{pmatrix}0\\1\\0\\0\end{pmatrix},\\[5pt]
+v_\uparrow(m,\vect0)&=\begin{pmatrix}0\\0\\1\\0\end{pmatrix},&
+v_\downarrow(m,\vect0)&=\begin{pmatrix}0\\0\\0\\1\end{pmatrix}.
+\end{aligned}
+\]
+Let the Lorentz transformations from the particle rest frame to a moving frame be
+\[
+u_\alpha(k)=S_u u_\alpha(m,\vect0),\qquad
+v_\alpha(k)=S_v v_\alpha(m,\vect0),\qquad
+\alpha=\uparrow,\downarrow.
+\]
+Substituting the equations satisfied by $u(k)$ and $v(k)$ gives
+\[
+(\gamma^\mu k_\mu-m)S_u u_\alpha(m,\vect0)=0,\qquad
+(\gamma^\mu k_\mu+m)S_v v_\alpha(m,\vect0)=0.
+\]
+Note that
+\[
+(\gamma^\mu k_\mu-m)(\gamma^\mu k_\mu+m)
+=(\gamma^\mu k_\mu+m)(\gamma^\mu k_\mu-m)=k^2-m^2=0.
+\]
+Therefore one may take
+\[
+S_u=A(\gamma^\mu k_\mu+m),\qquad
+S_v=B(\gamma^\mu k_\mu-m),
+\]
+where $A$ and $B$ are constants. Hence
+\begin{align*}
+u_\alpha(k)
+&=A(\gamma^\mu k_\mu+m)u_\alpha(m,\vect0)
+=A\begin{pmatrix}(E+m)\varphi_\alpha(m,\vect0)\\
+\vect\sigma\cdot\vect k\,\varphi_\alpha(m,\vect0)\end{pmatrix},\\
+v_\alpha(k)
+&=B(\gamma^\mu k_\mu-m)v_\alpha(m,\vect0)
+=-B\begin{pmatrix}\vect\sigma\cdot\vect k\,\varphi_\alpha(m,\vect0)\\
+(E+m)\varphi_\alpha(m,\vect0)\end{pmatrix}.
+\end{align*}
+Here $\varphi_\alpha$ is a two-component spinor, with
+\[
+\varphi_\uparrow(m,\vect0)=\begin{pmatrix}1\\0\end{pmatrix},\qquad
+\varphi_\downarrow(m,\vect0)=\begin{pmatrix}0\\1\end{pmatrix}.
+\]
+To determine $A$ and $B$ from the normalization conditions, define
+\[
+\overline u_\alpha=u_\alpha^\dagger\gamma^0,\qquad
+\overline v_\alpha=v_\alpha^\dagger\gamma^0.
+\]
+Taking Hermitian conjugates,
+\begin{align*}
+\overline u_\alpha(k)
+&=\overline u_\alpha(m,\vect0)(\gamma^\mu k_\mu+m)A
+=A\left(\varphi_\alpha^{\mathsf T}(m,\vect0)(E+m),
+-\varphi_\alpha^{\mathsf T}(m,\vect0)\vect\sigma\cdot\vect k\right),\\
+\overline v_\alpha(k)
+&=\overline v_\alpha(m,\vect0)(\gamma^\mu k_\mu-m)B
+=-B\left(-\varphi_\alpha^{\mathsf T}(m,\vect0)\vect\sigma\cdot\vect k,
+\varphi_\alpha^{\mathsf T}(m,\vect0)(E+m)\right).
+\end{align*}
+Define the orthonormality relations
+\[
+\begin{aligned}
+\overline u_\alpha(k)u_\beta(k)&=\delta_{\alpha\beta},\\
+\overline v_\alpha(k)v_\beta(k)&=-\delta_{\alpha\beta},\\
+\overline u_\alpha(k)v_\beta(k)&=0,\\
+\overline v_\alpha(k)u_\beta(k)&=0.
+\end{aligned}
+\]
+The constants are then
+\[
+\boxed{A=-B=\frac{1}{\sqrt{2m(m+E)}}.}
+\]

@@ -1,0 +1,300 @@
+% SOURCE: Chinese PDF viewer pp.177--184 (top), source Section 2 and six subdivisions.
+\section{Relativistic Invariance}
+\subsection*{1) Lorentz invariance}
+Consider two coordinate systems $O$ and $O'$, in which the Dirac equations are respectively
+\[
+\ii\gamma^\mu\frac{\partial}{\partial x^\mu}\psi(x)-m\psi(x)=0,
+\qquad
+\ii\gamma^\mu\frac{\partial}{\partial x'^\mu}\psi'(x')-m\psi'(x')=0.
+\]
+Assume that the coordinates $x^\mu$ and wavefunction $\psi$ are related in the two coordinate systems by
+\[
+x'=\Lambda x,\qquad \psi'(x')=S(\Lambda)\psi(x).
+\]
+Here $\Lambda$ and $S(\Lambda)$ are $4\times4$ matrices and are not functions of the coordinates. Since Lorentz scalars remain invariant under a transformation,
+\[
+x'_\mu x'^\mu=x_\mu x^\mu,
+\]
+the matrix $\Lambda$ satisfies
+\[
+\Lambda^\nu{}_{\mu}\Lambda^\mu{}_{\rho}=g^\nu{}_{\rho}
+\]
+(in metric-contracted index notation). Taking determinants of the Lorentz-invariance condition gives
+\[
+(\det\Lambda)^2=1,\qquad\det\Lambda=\pm1.
+\]
+A transformation with $\det\Lambda=+1$ is called a proper Lorentz transformation; one with $\det\Lambda=-1$ is called an improper Lorentz transformation.
+
+Under the above transformation, the Dirac equation in the $O'$ system is
+\begin{align*}
+\ii\gamma^\mu\frac{\partial x^\nu}{\partial x'^\mu}
+\frac{\partial}{\partial x^\nu}S\psi(x)-mS\psi(x)&=0,\\
+\ii\gamma^\mu(\Lambda^{-1})^\nu{}_{\mu}
+\frac{\partial}{\partial x^\nu}S\psi(x)-mS\psi(x)&=0.
+\end{align*}
+Multiplying this equation from the left by $S^{-1}$ gives
+\[
+\ii S^{-1}\gamma^\mu S(\Lambda^{-1})^\nu{}_{\mu}
+\frac{\partial\psi(x)}{\partial x^\nu}-m\psi(x)=0.
+\]
+For the Dirac equation to be Lorentz invariant, i.e. for the $O'$ and $O$ equations to be equivalent, the transformation $S$ must satisfy
+\[
+S\gamma^\mu S^{-1}=(\Lambda^{-1})^\mu{}_{\nu}\gamma^\nu,
+\qquad\text{or}\qquad S^{-1}\gamma^\mu S=\Lambda^\mu{}_{\nu}\gamma^\nu.
+\]
+This is the restriction on the transformation $S$ imposed by relativistic invariance of the Dirac equation.
+
+For example, consider an infinitesimal transformation
+\[
+\Lambda^\mu{}_{\nu}=g^\mu{}_{\nu}+\omega^\mu{}_{\nu},
+\qquad \omega^{\mu\nu}=-\omega^{\nu\mu},
+\]
+where $\omega^{\mu\nu}$ is completely antisymmetric in its two indices, and
+\[
+(\Lambda^{-1})^\mu{}_{\nu}=g^\mu{}_{\nu}-\omega^\mu{}_{\nu},
+\qquad\omega^\mu{}_{\nu}=\omega^{\mu\sigma}g_{\sigma\nu}.
+\]
+Take
+\[
+S=I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu},\qquad
+S^{-1}=I+\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu},
+\]
+where the $\sigma_{\mu\nu}$ are $4\times4$ matrices to be determined. Substituting into the condition on $S$, one obtains
+\begin{align*}
+\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)
+\gamma^\rho
+\left(I+\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)
+&=\gamma^\nu(g^\rho{}_{\nu}-\omega^\rho{}_{\nu}),\\
+\frac{\ii}{4}(\gamma^\rho\sigma_{\mu\nu}-\sigma_{\mu\nu}\gamma^\rho)\omega^{\mu\nu}
+&=-\gamma_\nu\omega^{\rho\nu},\\
+\frac{\ii}{4}[\gamma^\rho,\sigma_{\mu\nu}]\omega^{\mu\nu}
+&=\frac12(-\gamma_\nu\omega^{\rho\nu}-\gamma_\mu\omega^{\mu\rho})\\
+&=-\frac12(\gamma_\nu g^\rho{}_{\mu}-\gamma_\mu g^\rho{}_{\nu})\omega^{\mu\nu}.
+\end{align*}
+Hence $\sigma_{\mu\nu}$ can be chosen as
+\[
+\sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu].
+\]
+Clearly $\sigma_{\mu\nu}=-\sigma_{\nu\mu}$ is an antisymmetric tensor matrix.
+
+\subsection*{2) Spin}
+Particle spin is automatically contained in the Dirac equation.
+
+For an infinitesimal Lorentz transformation,
+\[
+\psi'(x')=\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)\psi(x)
+=\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)\psi(\Lambda^{-1}x').
+\]
+Performing a Taylor expansion,
+\begin{align*}
+\psi'(x')
+&=\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)
+\left(1+x'_\mu\omega^{\mu\nu}\partial'_\nu\right)\psi(x'),\\
+\psi'(x)
+&=\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}\right)
+\left(1+x_\mu\omega^{\mu\nu}\partial_\nu\right)\psi(x)\\
+&=\left(I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}
++x_\mu\omega^{\mu\nu}\partial_\nu\right)\psi(x)\\
+&=\left[I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}
++\frac12(x_\mu\partial_\nu-x_\nu\partial_\mu)\omega^{\mu\nu}\right]\psi(x).
+\end{align*}
+Terms of second order in the infinitesimal parameters have been neglected.
+
+For an infinitesimal rotation,
+\[
+\psi'(x)=\left(I-\frac{\ii}{2}J_{\mu\nu}\omega^{\mu\nu}\right)\psi(x),
+\]
+where the angular-momentum tensor $J_{\mu\nu}$ generates rotations. Comparison with the preceding equation gives
+\[
+J_{\mu\nu}=\frac12\sigma_{\mu\nu}
++\ii(x_\mu\partial_\nu-x_\nu\partial_\mu).
+\]
+Writing the angular-momentum components as
+\[
+J_1=J_{23},\qquad J_2=J_{31},\qquad J_3=J_{12},
+\]
+we obtain the total angular momentum
+\[
+\vect J=\frac12\begin{pmatrix}\vect\sigma&0\\0&\vect\sigma\end{pmatrix}
++\vect r\times\vect p
+=\frac12\vect\Sigma+\vect L,
+\qquad \vect p=-\ii\vect\nabla.
+\]
+Thus the total angular momentum $\vect J$ consists of orbital angular momentum $\vect L$ and spin angular momentum $\vect S=\frac12\vect\Sigma$.
+
+The fact that the Dirac equation automatically contains spin is a relativistic effect. Specifically, this is a consequence of the Dirac equation containing first-order derivatives; the Klein--Gordon equation is second order and does not contain spin.
+
+\subsection*{3) Spatial-inversion invariance ($P$ transformation)}
+As shown above, invariance of the Dirac equation under $\psi'(x')=S\psi(x)$ requires
+\[
+S^{-1}\gamma^\mu S=\Lambda^\mu{}_{\nu}\gamma^\nu.
+\]
+For continuous transformations we can take $S=I-\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}$, where $\sigma_{\mu\nu}=\frac{\ii}{2}[\gamma_\mu,\gamma_\nu]$. For a discontinuous transformation, such as parity,
+\[
+x'=\Lambda x,\qquad
+\Lambda^{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)=g^{\mu\nu}.
+\]
+Choose
+\[
+S=P=\gamma^0.
+\]
+Then
+\[
+S^{-1}\gamma^\mu S=\gamma^0\gamma^\mu\gamma^0
+=g^{\mu\mu}\gamma^\mu=\Lambda^\mu{}_{\nu}\gamma^\nu
+\quad\text{(no sum in $\mu$)}.
+\]
+This satisfies the condition on $S$, showing that the Dirac equation is invariant under spatial inversion.
+
+\subsection*{4) Time-reversal invariance ($T$ transformation)}
+For a time-reversal transformation,
+\[
+x'=\Lambda x,\qquad
+\Lambda^{\mu\nu}=\operatorname{diag}(-1,1,1,1)=-g^{\mu\nu}.
+\]
+Choose
+\[
+S=T=\gamma_1\gamma_2\gamma_3.
+\]
+Since
+\begin{align*}
+SS&=\gamma_1\gamma_2\gamma_3\gamma_1\gamma_2\gamma_3\\
+&=-\gamma_1\gamma_2\gamma_1\gamma_3\gamma_2\gamma_3
+=\gamma_1\gamma_1\gamma_2\gamma_3\gamma_2\gamma_3\\
+&=-\gamma_1\gamma_1\gamma_2\gamma_2\gamma_3\gamma_3=I,
+\end{align*}
+we have $S^{-1}=S$, and
+\[
+S^{-1}\gamma^\mu S=S\gamma^\mu S
+=S\gamma^\mu\gamma_1\gamma_2\gamma_3
+=\Lambda^\mu{}_{\nu}S\gamma_1\gamma_2\gamma_3\gamma^\nu
+=\Lambda^\mu{}_{\nu}SS\gamma^\nu
+=\Lambda^\mu{}_{\nu}\gamma^\nu.
+\]
+This satisfies the condition on $S$ and shows that the Dirac equation is time-reversal invariant.
+
+\subsection*{5) Charge-conjugation invariance ($C$ transformation)}
+Introduce an electromagnetic interaction by minimal coupling. Replace the derivative in the Dirac equation by the covariant derivative
+\[
+\partial_\mu\longrightarrow D_\mu=\partial_\mu+\ii e A_\mu,
+\]
+where the electromagnetic potential $A_\mu=(A_0,\vect A)$ is an external field, not a wavefunction. The Dirac equation is
+\[
+(\ii\gamma^\mu\partial_\mu-e\gamma^\mu A_\mu-m)\psi=0.
+\]
+It remains invariant under a local gauge transformation
+\[
+\psi(x)\longrightarrow e^{\ii e\alpha(x)}\psi(x),\qquad
+A_\mu(x)\longrightarrow A_\mu(x)-\partial_\mu\alpha(x).
+\]
+Take the Hermitian conjugate of the Dirac equation and multiply from the right by $\gamma^0$:
+\[
+\overline\psi\left(\ii\gamma^\mu\overleftarrow\partial_\mu
++e\gamma^\mu A_\mu+m\right)=0.
+\]
+Transpose:
+\[
+\left(\ii\gamma^{\mu\mathsf T}\partial_\mu
++e\gamma^{\mu\mathsf T}A_\mu+m\right)\overline\psi^{\mathsf T}=0.
+\]
+Multiply on the left by the transformation matrix $C$:
+\[
+\left(\ii C\gamma^{\mu\mathsf T}C^{-1}\partial_\mu
++eC\gamma^{\mu\mathsf T}C^{-1}A_\mu+m\right)C\overline\psi^{\mathsf T}=0.
+\]
+If $C$ satisfies
+\[
+C\gamma^{\mu\mathsf T}C^{-1}=-\gamma^\mu,
+\]
+and we define
+\[
+\psi^c=C\overline\psi^{\mathsf T},
+\]
+then
+\[
+(\ii\gamma^\mu\partial_\mu+e\gamma^\mu A_\mu-m)\psi^c=0.
+\]
+Compared with the Dirac equation for a particle with charge $e$, the wavefunction $\psi^c$ describes a particle of charge $-e$. The transformation $C$ is called charge conjugation, or the particle--antiparticle transformation.
+
+Note that $C$ is an internal transformation, not a spacetime transformation.
+
+\subsection*{6) Bilinear covariants}
+Physically observable quantities should be constructed from the Dirac spinor
+\[
+\psi(x)=\begin{pmatrix}\psi_1(x)\\\psi_2(x)\\\psi_3(x)\\\psi_4(x)\end{pmatrix},
+\qquad \overline\psi(x)=\psi^\dagger(x)\gamma^0,
+\]
+in the form of Dirac bilinears $\overline\psi\Gamma\psi$, with $\Gamma$ a $4\times4$ matrix. What are their Lorentz-transformation properties?
+
+First consider the transformation of $\overline\psi(x)$. Since
+\[
+\psi'(x')=S\psi(x),
+\]
+we have
+\[
+\psi'^\dagger(x')=\psi^\dagger(x)S^\dagger,
+\]
+and multiplication on the right by $\gamma^0$ gives
+\[
+\overline\psi'(x')=\overline\psi(x)\gamma^0 S^\dagger\gamma^0.
+\]
+Since
+\[
+\gamma^0\sigma_{\mu\nu}^\dagger\gamma^0=\sigma_{\mu\nu},
+\qquad
+\gamma^0S^\dagger\gamma^0=
+\gamma^0\left(I+\frac{\ii}{4}\sigma_{\mu\nu}^\dagger\omega^{\mu\nu}\right)\gamma^0
+=I+\frac{\ii}{4}\sigma_{\mu\nu}\omega^{\mu\nu}=S^{-1},
+\]
+it follows that
+\[
+\overline\psi'(x')=\overline\psi(x)S^{-1}.
+\]
+There are 16 linearly independent $4\times4$ matrices, which can be taken as
+\[
+\Gamma\in\left\{\begin{array}{ll}
+I&(1),\\
+\gamma_\mu&(4),\\
+\sigma_{\mu\nu}&(6),\\
+\gamma_5&(1),\\
+\gamma_5\gamma_\mu&(4),
+\end{array}\right.
+\]
+where
+\[
+\gamma_5=\ii\gamma_0\gamma_1\gamma_2\gamma_3.
+\]
+Its properties include
+\[
+\{\gamma_5,\gamma_\mu\}=0,\qquad
+\gamma_5^2=I,\qquad S^{-1}\gamma_5S=\gamma_5.
+\]
+Using the transformation properties of $\Gamma$,
+\begin{align*}
+S^{-1}IS&=I,\\
+S^{-1}\gamma_\mu S&=\Lambda_\mu{}^\nu\gamma_\nu,\\
+S^{-1}\sigma_{\mu\nu}S&=\Lambda_\mu{}^\rho\Lambda_\nu{}^\sigma\sigma_{\rho\sigma},\\
+S^{-1}\gamma_5S&=-\gamma_5,\\
+S^{-1}\gamma_5\gamma_\mu S&=-\Lambda_\mu{}^\nu\gamma_5\gamma_\nu,
+\end{align*}
+we see that the 16 independent Dirac bilinears transform as
+\begingroup\small
+\begin{align*}
+\overline\psi'(x')\psi'(x')&=\overline\psi(x)S^{-1}S\psi(x)
+=\overline\psi(x)\psi(x),&&\text{Lorentz scalar},\\
+\overline\psi'(x')\gamma^\mu\psi'(x')
+&=\overline\psi(x)S^{-1}\gamma^\mu S\psi(x)
+=\Lambda^\mu{}_{\nu}\overline\psi(x)\gamma^\nu\psi(x),&&\text{Lorentz vector},\\
+\overline\psi'(x')\gamma^5\psi'(x')
+&=\overline\psi(x)S^{-1}\gamma^5S\psi(x)
+=\det\Lambda\,\overline\psi(x)\gamma^5\psi(x),&&\text{Lorentz pseudoscalar},\\
+\overline\psi'(x')\gamma^5\gamma^\mu\psi'(x')
+&=\overline\psi(x)S^{-1}\gamma^5SS^{-1}\gamma^\mu S\psi(x)
+=\det\Lambda\,\Lambda^\mu{}_{\nu}\overline\psi(x)\gamma^5\gamma^\nu\psi(x),&&\text{Lorentz pseudovector},\\
+\overline\psi'(x')\sigma^{\mu\nu}\psi'(x')
+&=\overline\psi(x)S^{-1}\sigma^{\mu\nu}S\psi(x)
+=\Lambda^\mu{}_{\rho}\Lambda^\nu{}_{\sigma}
+\overline\psi(x)\sigma^{\rho\sigma}\psi(x),&&\text{Lorentz tensor}.
+\end{align*}
+\endgroup
+The transformation $S$ may be either continuous or a space-reflection transformation.
