@@ -45,3 +45,7 @@ The instructor's handwritten references and the Nielsen–Chuang excerpt are **r
 ## Reference and publication policy
 
 The teaching handouts are primary pedagogical references. Source-derived content retains this provenance in file comments and this record. The external Nielsen–Chuang textbook excerpt is a reference, not permission to reproduce lengthy copyrighted passages or its original diagram verbatim. The rewritten circuit is authored directly from its mathematical logic. The book currently remains private; attribution and permissions must be settled before any public release of source-derived lecture notes.
+
+## Cloud build and preservation
+
+GitHub Actions [run 38909682908](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/actions/runs/38909682908) completed successfully, including the whole-book notation guard, **14 supplementary mathematical checks**, XeLaTeX, artifact upload and automatic commit of the expanded PDF. The remote `pdf/advanced-quantum-mechanics.pdf` was verified after publication (Git blob `ce03b377d81032066a7d46e838683c5962ab854f`, 599,818 bytes); the local edition has **138 physical pages**. The pre-supplement snapshot is preserved at `textbook/pre-instructor-supplements-2026-10-16`.
