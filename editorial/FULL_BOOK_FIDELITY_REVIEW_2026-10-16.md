@@ -53,3 +53,11 @@ The source discussion of projective measurements, Ehrenfest/energy-time uncertai
 2. Preserve this review report, all eight chapter logs, `SOURCE_PAGE_COVERAGE.csv`, and deterministic algebra checks in the repository.
 3. The present main-branch translation can serve as the **working reference for the forthcoming instructor-directed content revision**, with the following clear caveat: an independent bilingual sentence-by-sentence and displayed-equation-by-displayed-equation read-through is still required for a publication-grade *certified* translation. Never represent the automated page index or a successful build as that signoff.
 4. In the content-revision phase, record changes to assumptions, proofs, exposition, nomenclature, examples and supplementary material separately from translation-fidelity corrections. Maintain attribution and permissions review before public release of source-derived English text.
+
+## Verification and version freeze (2026-10-16)
+
+The corrected complete book was compiled locally to **145 PDF pages**, with the source-derived graphene example and restored magnetic-monopole conclusion confirmed in the rendered PDF. GitHub Actions [run 38901916361](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/actions/runs/38901916361) passed all steps: XeLaTeX compilation, PDF artifact archiving and commit of `pdf/advanced-quantum-mechanics.pdf` to `main`. The PDF file in the repository was independently verified after the cloud run (Git blob `af811b5c924e41b509955c1ca335b9b87c505e48`, 643,849 bytes).
+
+An immutable handoff branch [`translation/fidelity-audited-2026-10-16`](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/tree/translation/fidelity-audited-2026-10-16) was created at `50ae0871c71708c6da35467216a9c11438fe3111`, the post-build commit including the reviewed LaTeX and PDF. The initial unreviewed snapshot is preserved independently at `translation/initial-baseline-2026-10-16`.
+
+**Status:** systematic structural and selective scientific checks complete; full independent bilingual one-to-one verification is still unverified. The reviewed version is ready as an immutable working translation reference for separate content expansion.
