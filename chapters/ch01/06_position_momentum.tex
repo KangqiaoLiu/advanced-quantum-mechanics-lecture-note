@@ -1,0 +1,337 @@
+% SOURCE: original Chinese PDF, viewer pages 19--24.
+\section{Position and Momentum Representations}
+\subsection*{1) Continuous spectrum}
+Unlike the spin angular momentum $\op s_z$, which takes discrete values, position $\op x$ and momentum $\op p$ take continuous values.
+
+The eigenstates of position or momentum constitute a continuous position or momentum representation.
+
+Eigenvalue equations:
+\[\op x\ket x=x\ket x,\qquad\op p\ket p=p\ket p.\]
+Basis vectors: $\ket x$, $\ket p$.
+
+Orthonormality:
+\[\braket x{x'}=\delta(x-x'),\qquad\braket p{p'}=\delta(p-p').\]
+Completeness:
+\[\int\dd x\,\ket x\bra x=\mathbf1,\qquad
+\int\dd p\,\ket p\bra p=\mathbf1.\]
+For an arbitrary state $\ket\psi$,
+\[\ket\psi=\int\dd x\,\ket x\braket x\psi
+=\int\dd p\,\ket p\braket p\psi.\]
+The functions $\braket x\psi$ and $\braket p\psi$ are the concrete forms of $\ket\psi$ in the position and momentum representations; they are continuous column matrices.
+
+In three-dimensional space,
+\[\op{\vect x}\ket{\vect x}=\vect x\ket{\vect x},\qquad
+\op{\vect p}\ket{\vect p}=\vect p\ket{\vect p}.\]
+\textbf{Postulate of quantum mechanics:} The fundamental commutation relations are
+\[
+[\op x_i,\op x_j]=0,\qquad [\op p_i,\op p_j]=0,\qquad
+[\op x_i,\op p_j]=\ii\hbar\delta_{ij},\quad i,j=1,2,3.
+\]
+The position--momentum uncertainty relation is
+\[
+\langle(\Delta\op x)^2\rangle\langle(\Delta\op p_x)^2\rangle
+\ge\left(\frac1{2\ii}\langle[\op x,\op p_x]\rangle\right)^2=\frac{\hbar^2}{4}.
+\]
+\subsection*{2) Spatial translations}
+Define the spatial-translation operator by
+\[\op T(\dd\vect x)\ket{\vect x}=\ket{\vect x+\dd\vect x}.\]
+For an arbitrary state $\ket\psi$,
+\begin{align*}
+\op T(\dd\vect x)\ket\psi
+&=\op T(\dd\vect x)\int\dd^3x\,\ket{\vect x}\braket{\vect x}\psi\\
+&=\int\dd^3x\,\ket{\vect x+\dd\vect x}\braket{\vect x}\psi
+&&\text{(the operator acts only on vectors)}\\
+&=\int\dd^3x\,\ket{\vect x}\braket{\vect x-\dd\vect x}\psi
+&&\text{(change of integration variable).}
+\end{align*}
+For an infinitesimal translation, take
+\[\op T(\dd\vect x)=\mathbf1-\ii\op{\vect K}\cdot\dd\vect x,\]
+where the generator $\op{\vect K}$ is Hermitian.
+
+A translation is a unitary operator:
+\[
+\op T(\dd\vect x)\op T^\dagger(\dd\vect x)
+=(\mathbf1-\ii\op{\vect K}\cdot\dd\vect x)
+ (\mathbf1+\ii\op{\vect K}\cdot\dd\vect x)
+=\mathbf1,
+\]
+neglecting second-order infinitesimals.
+
+Composition law for translations:
+\begin{align*}
+\op T(\dd\vect x_1)\op T(\dd\vect x_2)
+&=(\mathbf1-\ii\op{\vect K}\cdot\dd\vect x_1)
+(\mathbf1-\ii\op{\vect K}\cdot\dd\vect x_2)\\
+&=\mathbf1-\ii\op{\vect K}\cdot(\dd\vect x_1+\dd\vect x_2)
+=\op T(\dd\vect x_1+\dd\vect x_2).
+\end{align*}
+A finite translation is obtained by repeated infinitesimal translations.
+
+For an arbitrary state $\ket\psi$,
+\begin{align*}
+\op{\vect x}\op T(\dd\vect x)\ket\psi
+&=\int\dd^3x\,\op{\vect x}\ket{\vect x+\dd\vect x}\braket{\vect x}\psi\\
+&=\int\dd^3x\,(\vect x+\dd\vect x)\ket{\vect x+\dd\vect x}\braket{\vect x}\psi,\\
+\op T(\dd\vect x)\op{\vect x}\ket\psi
+&=\int\dd^3x\,\op T(\dd\vect x)\vect x\ket{\vect x}\braket{\vect x}\psi\\
+&=\int\dd^3x\,\vect x\ket{\vect x+\dd\vect x}\braket{\vect x}\psi.
+\end{align*}
+Hence
+\begin{align*}
+[\op{\vect x},\op T(\dd\vect x)]\ket\psi
+&=\int\dd^3x\,\dd\vect x\,\ket{\vect x+\dd\vect x}\braket{\vect x}\psi\\
+&=\int\dd^3x\,\dd\vect x\,\ket{\vect x}\braket{\vect x}\psi
+=\dd\vect x\ket\psi,
+\end{align*}
+where second-order infinitesimals have been neglected. Thus
+\[[\op{\vect x},\op T(\dd\vect x)]=\dd\vect x,\qquad
+[\op{\vect x},\op{\vect K}\cdot\dd\vect x]=\ii\dd\vect x.\]
+If the translation is taken in the $x_j$ direction, $\dd\vect x=\epsilon\vect e_j$, then
+\[[\op x_i,\op K_j]=\ii\delta_{ij}.\]
+Comparing with the fundamental quantum-mechanical commutation relation,
+\[[\op x_i,\op p_j]=\ii\hbar\delta_{ij},\]
+we have
+\[\op{\vect p}=\hbar\op{\vect K}.\]
+Momentum is therefore the generator of translations, and
+\[\boxed{\op T(\dd\vect x)=\mathbf1-\frac\ii\hbar\op{\vect p}\cdot\dd\vect x.}\]
+Since $[\op p_x,\op p_y]=0$,
+\[
+[\op T(\dd x),\op T(\dd y)]
+=\left[\mathbf1-\frac\ii\hbar\op p_x\dd x,
+        \mathbf1-\frac\ii\hbar\op p_y\dd y\right]=0.
+\]
+This shows that the order of translations is immaterial. Translating $A\to C$ by $\dd x$ and then $C\to B$ by $\dd y$ gives the same result as translating $A\to D$ by $\dd y$ and then $D\to B$ by $\dd x$.
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.85]
+\draw[->](-.5,0)--(4.3,0)node[right]{$x$};\draw[->](0,-.5)--(0,3.3)node[above]{$y$};
+\coordinate(A)at(1,0.45);\coordinate(C)at(3.1,.45);\coordinate(D)at(1,2.5);\coordinate(B)at(3.1,2.5);
+\draw[->,thick](A)--(C)node[midway,below]{$\dd x$};\draw[->,thick](C)--(B)node[midway,right]{$\dd y$};
+\draw[->,thick](A)--(D);\draw[->,thick](D)--(B);
+\foreach \name in {A,B,C,D}{\node[above left]at(\name){$\name$};}
+\end{tikzpicture}\end{center}
+\subsection*{3) Canonical quantization}
+Dirac, 1925: quantization of classical mechanical systems.
+
+The Poisson bracket of analytical mechanics is replaced by a commutation relation in quantum mechanics:
+\[
+[A,B]_{\rm P}=\sum_s\left(
+\frac{\partial A}{\partial q_s}\frac{\partial B}{\partial p_s}
+-\frac{\partial A}{\partial p_s}\frac{\partial B}{\partial q_s}
+\right)
+\longrightarrow\frac1{\ii\hbar}[\op A,\op B]
+=\frac1{\ii\hbar}(\op A\op B-\op B\op A).
+\]
+For example,
+\[[x_i,p_j]_{\rm P}=\delta_{ij}
+\longrightarrow [\op x_i,\op p_j]=\ii\hbar\delta_{ij}.\]
+\subsection*{4) Position representation}
+The matrix elements of $\op{\vect x}$ are
+\[
+\mel{\vect x_1}{\op{\vect x}}{\vect x_2}
+=\vect x_2\delta^{(3)}(\vect x_1-\vect x_2)
+=\vect x_1\delta^{(3)}(\vect x_1-\vect x_2),
+\]
+so the position operator is diagonal.
+
+From
+\[
+\op T(\dd\vect x)\ket\beta
+=\left(\mathbf1-\frac\ii\hbar\op{\vect p}\cdot\dd\vect x\right)\ket\beta
+\]
+and
+\begin{align*}
+\op T(\dd\vect x)\ket\beta
+&=\int\dd^3x\,\ket{\vect x}\braket{\vect x-\dd\vect x}\beta\\
+&=\int\dd^3x\,\ket{\vect x}\left(
+\braket{\vect x}\beta-\dd\vect x\cdot\vect\nabla_{\vect x}\braket{\vect x}\beta
+\right)\\
+&=\ket\beta-\dd\vect x\cdot\int\dd^3x\,\ket{\vect x}\vect\nabla_{\vect x}\braket{\vect x}\beta,
+\end{align*}
+we obtain
+\[
+\op{\vect p}\ket\beta
+=\int\dd^3x\,\ket{\vect x}(-\ii\hbar\vect\nabla_{\vect x})\braket{\vect x}\beta,
+\]
+and
+\[
+\mel\alpha{\op{\vect p}}\beta
+=\int\dd^3x\,\braket\alpha{\vect x}(-\ii\hbar\vect\nabla_{\vect x})\braket{\vect x}\beta.
+\]
+Taking $\ket\alpha=\ket{\vect x_1}$ and $\ket\beta=\ket{\vect x_2}$ gives the matrix elements of momentum in the position representation:
+\[
+\mel{\vect x_1}{\op{\vect p}}{\vect x_2}
+=\int\dd^3x\,\braket{\vect x_1}{\vect x}(-\ii\hbar\vect\nabla_{\vect x})\braket{\vect x}{\vect x_2}
+=-\ii\hbar\vect\nabla_{\vect x_1}\delta^{(3)}(\vect x_1-\vect x_2).
+\]
+Now take $\ket\alpha=\ket{\vect x_1}$ and $\ket\beta=\ket{\vect p}$:
+\[
+\mel{\vect x_1}{\op{\vect p}}{\vect p}
+=\int\dd^3x\,\braket{\vect x_1}{\vect x}(-\ii\hbar\vect\nabla_{\vect x})\braket{\vect x}{\vect p}
+=-\ii\hbar\vect\nabla_{\vect x_1}\braket{\vect x_1}{\vect p}.
+\]
+But the momentum eigenvalue equation gives
+\[\vect p\braket{\vect x_1}{\vect p}
+=-\ii\hbar\vect\nabla_{\vect x_1}\braket{\vect x_1}{\vect p}.\]
+Solving this first-order differential equation, we find that the momentum eigenstate in the position representation is a plane wave:
+\[\braket{\vect x}{\vect p}=N\exp\left(\frac\ii\hbar\vect p\cdot\vect x\right).\]
+Using
+\begin{align*}
+\braket{\vect x_1}{\vect x_2}
+&=\int\dd^3p\,\braket{\vect x_1}{\vect p}\braket{\vect p}{\vect x_2}\\
+&=|N|^2\int\dd^3p\,\exp\left[\frac\ii\hbar\vect p\cdot(\vect x_1-\vect x_2)\right],
+\end{align*}
+and
+\[\delta^{(3)}(\vect x_1-\vect x_2)
+=|N|^2(2\pi\hbar)^3\delta^{(3)}(\vect x_1-\vect x_2),\]
+we obtain
+\[N=\frac1{(2\pi\hbar)^{3/2}},\qquad
+\boxed{\braket{\vect x}{\vect p}
+=\frac1{(2\pi\hbar)^{3/2}}\exp\left(\frac\ii\hbar\vect p\cdot\vect x\right).}\]
+\subsection*{5) Momentum representation}
+The matrix elements of the momentum operator are
+\[\mel{\vect p_1}{\op{\vect p}}{\vect p_2}
+=\vect p_1\delta^{(3)}(\vect p_1-\vect p_2),\]
+so the momentum operator is diagonal.
+
+For the position operator,
+\begin{align*}
+\mel{\vect p_1}{\op{\vect x}}{\vect p_2}
+&=\int\dd^3x_1\dd^3x_2\,
+\braket{\vect p_1}{\vect x_1}
+\mel{\vect x_1}{\op{\vect x}}{\vect x_2}
+\braket{\vect x_2}{\vect p_2}\\
+&=\frac1{(2\pi\hbar)^3}\int\dd^3x_1\dd^3x_2\,
+\exp\left(-\frac\ii\hbar\vect p_1\cdot\vect x_1\right)
+\vect x_2\delta^{(3)}(\vect x_1-\vect x_2)
+\exp\left(\frac\ii\hbar\vect p_2\cdot\vect x_2\right)\\
+&=\frac1{(2\pi\hbar)^3}\int\dd^3x_1\,
+\vect x_1\exp\left[\frac\ii\hbar(\vect p_2-\vect p_1)\cdot\vect x_1\right]\\
+&=\ii\hbar\vect\nabla_{\vect p_1}\,
+\frac1{(2\pi\hbar)^3}\int\dd^3x_1\,
+\exp\left[\frac\ii\hbar(\vect p_2-\vect p_1)\cdot\vect x_1\right]\\
+&=\ii\hbar\vect\nabla_{\vect p_1}\delta^{(3)}(\vect p_1-\vect p_2).
+\end{align*}
+Note that differentiation here is with respect to momentum.
+
+The form of the position eigenstate in the momentum representation is
+\[\boxed{\braket{\vect p}{\vect x}
+=\braket{\vect x}{\vect p}^*
+=\frac1{(2\pi\hbar)^{3/2}}\exp\left(-\frac\ii\hbar\vect p\cdot\vect x\right).}\]
+\paragraph{Example 1: Prove that $\op x$ and $\op p$ are Hermitian operators in the position representation.}
+For position,
+\[
+\mel{x_1}{\op x}{x_2}=\delta(x_1-x_2)x_1,
+\]
+and
+\begin{align*}
+\mel{x_1}{\op x^\dagger}{x_2}
+&=\mel{x_2}{\op x}{x_1}^*
+=[\delta(x_2-x_1)x_2]^*
+=\delta(x_2-x_1)x_2\\
+&=\delta(x_1-x_2)x_1
+=\mel{x_1}{\op x}{x_2}.
+\end{align*}
+For momentum,
+\[
+\mel{x_1}{\op p}{x_2}
+=-\ii\hbar\frac{\partial}{\partial x_1}\delta(x_1-x_2)
+=-\ii\hbar\frac{\partial}{\partial(x_1-x_2)}\delta(x_1-x_2).
+\]
+Also,
+\begin{align*}
+\mel{x_1}{\op p^\dagger}{x_2}
+&=\mel{x_2}{\op p}{x_1}^*
+=\left[-\ii\hbar\frac{\partial}{\partial(x_2-x_1)}\delta(x_2-x_1)\right]^*\\
+&=\ii\hbar\frac{\partial}{\partial(x_2-x_1)}\delta(x_2-x_1)
+=-\ii\hbar\frac{\partial}{\partial(x_1-x_2)}\delta(x_1-x_2)\\
+&=\mel{x_1}{\op p}{x_2}.
+\end{align*}
+Thus both $\op x$ and $\op p$ are Hermitian.
+\paragraph{Example 2: Compute $[\op x,\op p]$ in the position representation.}
+\begin{align*}
+\op x\op p
+&=\int\dd x_1\dd x_2\,
+\op x\ket{x_1}\mel{x_1}{\op p}{x_2}\bra{x_2}\\
+&=\int\dd x_1\dd x_2\,\ket{x_1}\,x_1
+\left(-\ii\hbar\frac\partial{\partial x_1}\right)\delta(x_1-x_2)\bra{x_2}\\
+&=-\int\dd x_1\dd x_2\,\ket{x_1}
+\left(-\ii\hbar\frac\partial{\partial x_1}\right)[x_1\bra{x_1}]\,\delta(x_1-x_2)
+\quad\text{(integration by parts)}\\
+&=-\int\dd x_1\,\ket{x_1}
+\left(-\ii\hbar\frac\partial{\partial x_1}\right)[x_1\bra{x_1}]\\
+&=\int\dd x_1\,x_1\ket{x_1}
+\left(-\ii\hbar\frac\partial{\partial x_1}\right)\bra{x_1}
+\quad\text{(integration by parts).}
+\end{align*}
+Similarly,
+\[
+\op p\op x=-\ii\hbar+\int\dd x_1\,x_1\ket{x_1}
+\left(-\ii\hbar\frac\partial{\partial x_1}\right)\bra{x_1}.
+\]
+Therefore
+\[[\op x,\op p]=\ii\hbar.\]
+This shows that commutation relations do not depend on the representation.
+
+According to the uncertainty relation, position and momentum cannot simultaneously have definite values. For example, in a momentum eigenstate the momentum has a definite value, $\mel p{(\Delta\op p)^2}p=0$, but the probability for position to take value $x$ is
+\[
+|\braket x p|^2=\left|\frac1{\sqrt{2\pi\hbar}}e^{\ii px/\hbar}\right|^2
+=\text{const}.
+\]
+The particle therefore has equal probability of appearing anywhere in $-\infty<x<\infty$; position is completely indefinite, with variance $\mel p{(\Delta\op x)^2}p=\infty$.
+\paragraph{Example 3: Minimum-uncertainty wave packet.}
+For equality to hold in the uncertainty relation
+\[
+\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
+\ge\left(\frac1{2\ii}\langle[\op A,\op B]\rangle\right)^2,
+\]
+so that the uncertainty is minimal, the state must satisfy:
+\begin{enumerate}[label=\arabic*)]
+\item Equality in the Schwarz inequality:
+\[\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
+=|\langle\Delta\op A\Delta\op B\rangle|^2.\]
+\item $\operatorname{Re}\langle\Delta\op A\Delta\op B\rangle=0$.
+\end{enumerate}
+The solution of condition 1 is
+\[\Delta\op B\ket\psi=c\Delta\op A\ket\psi,\]
+where $c$ is a constant. Condition 2 implies
+\[\operatorname{Re}\left(c\langle(\Delta\op A)^2\rangle\right)=0.\]
+Since $\langle(\Delta\op A)^2\rangle$ is real, $c=\ii a$, with $a$ real. Hence
+\[(\op B-\langle\op B\rangle)\ket\psi
+=\ii a(\op A-\langle\op A\rangle)\ket\psi.\]
+This is the constraint on $\ket\psi$ for minimum uncertainty. Choose
+\[\op A=\op x,\qquad\op B=\op p,\]
+so
+\[(\op p-\langle\op p\rangle)\ket\psi
+=\ii a(\op x-\langle\op x\rangle)\ket\psi.\]
+In the position representation,
+\[
+\left(-\ii\hbar\frac\dd{\dd x}-\langle\op p\rangle\right)\psi(x)
+=\ii a(x-\langle\op x\rangle)\psi(x),\qquad
+\psi(x)=\braket x\psi.
+\]
+The solution is
+\[
+\psi(x)=A\exp\left[-\frac{a(x-\langle\op x\rangle)^2}{2\hbar}\right]
+\exp\left(\frac\ii\hbar\langle\op p\rangle x\right),
+\]
+a Gaussian wave packet in position space.
+\paragraph{Example 4: The ground state of the hydrogen atom.}
+Given the state in the position representation
+\[\braket{\vect r}\psi
+=\frac1{\sqrt{\pi a_0^3}}e^{-r/a_0}\qquad\text{(hydrogen-atom ground state)},\]
+find the expectation value of the momentum.
+
+Since $\braket{\vect r}\psi$ is not a plane wave, momentum has no definite value. The probability for momentum $\vect p$ is $|\braket{\vect p}\psi|^2$, where
+\begin{align*}
+\braket{\vect p}\psi
+&=\int\dd^3r\,\braket{\vect p}{\vect r}\braket{\vect r}\psi
+=\int\dd^3r\,\braket{\vect r}{\vect p}^*\braket{\vect r}\psi\\
+&=\int\dd^3r\,\frac1{(2\pi\hbar)^{3/2}}
+\exp\left(-\frac\ii\hbar\vect p\cdot\vect r\right)
+\frac1{\sqrt{\pi a_0^3}}e^{-r/a_0}\\
+&=\frac{(2a_0\hbar)^{3/2}\hbar}{\pi(a_0^2p^2+\hbar^2)^2}.
+\end{align*}
+Since $\braket{\vect p}\psi$ depends only on the magnitude of momentum, the expectation value of the momentum magnitude is
+\[
+\langle p\rangle=\frac{\displaystyle\int\dd p\,p^3|\braket{\vect p}\psi|^2}
+{\displaystyle\int\dd p\,p^2|\braket{\vect p}\psi|^2}.
+\]
