@@ -1,10 +1,12 @@
 # Advanced Quantum Mechanics: Master Project Blueprint
 
 **Status:** Initial source review complete; curricular and publishing choices remain open  
-**Working date:** 8 October 2026  
+**Working date:** 8 October 2026; course-design revision 16 October 2026  
 **Repository:** https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note  
 **Working language of all student-facing deliverables:** English  
 **Source of the initial curricular backbone:** the supplied 186-page Chinese PDF, “清华大学 高等量子力学” (file title supplied by the instructor; authorship, licensing, and provenance have not yet been established).
+
+> **Updated course constraints:** Read **[COURSE_DESIGN_48_PERIODS.md](COURSE_DESIGN_48_PERIODS.md)** for the confirmed cohort profile, actual 48 × 40-minute time budget, board-led teaching method, historical lesson choices, detailed provisional classroom route, and proposed new topology/quantum-learning units. **The classroom route is a selected path through the complete notes; it does not determine the full notes' scope.**
 
 > **Purpose of this document.** This is the durable working specification for the course project. It records what the Chinese source covers, what needs attention, how we will write the English lecture notes at full derivational depth, how the interactive companion will relate to the notes, and how changes will remain coherent over a long editing history. The document is deliberately revisable. Any new decision should be recorded here before it becomes a project-wide convention.
 
@@ -455,7 +457,7 @@ For mathematical repairs, record the original and replacement formulas and an in
 |---|---|---|
 | D-001 | Preserve the complete eight-chapter source as an initial coverage map? | **Yes, as baseline; later trims/additions open.** |
 | D-002 | Main authoring format? | **Modular LaTeX proposed; instructor discussion possible.** |
-| D-003 | Course length, number of lectures and prerequisite assumptions? | **Open.** Important for relative emphasis, not permission to erase topics. |
+| D-003 | Course length, number of lectures and prerequisite assumptions? | **Confirmed 48 × 40 minutes and uneven prerequisite retention; blackboard-led.** Detailed route proposed in COURSE_DESIGN_48_PERIODS.md. |
 | D-004 | How much of Ch. 1 is review versus full proof-based reconstruction? | **Open.** |
 | D-005 | Keep Casimir and monopole sections in main narrative, enrichment, or companion? | **Open.** |
 | D-006 | Density matrices, Bell tests, and quantum-information enrichment? | **Open.** |
@@ -471,6 +473,8 @@ For mathematical repairs, record the original and replacement formulas and an in
 ### 8.3 Decision-log entries
 
 **2026-10-08 — Initial project definition.** The project has two deliverables: full English graduate lecture notes based primarily on the supplied Chinese source, and a supplementary interactive study resource. All eight source chapters are inventoried and retained in the working map. The repository is private. The Chinese source has duplicated Ch. 7 pages and several mathematical passages requiring independent audit. Content cuts, additions, visual design, and the interactive platform remain subjects for subsequent instructor decisions.
+
+**2026-10-16 — Learner profile and classroom route.** The instructor confirmed a 48-period course with 40 minutes per period (32 clock hours), very limited retained prior preparation for many students, relatively weak academic English, and pure blackboard-style teaching. Prior classroom emphasis was ~12 periods of basic concepts, 2 Berry periods after AB, 2 density-operator periods, 2 measurement-theory periods, 8-ish periods proposed for exchange/Fock derivations through the full interacting second-quantized Hamiltonian, and 4 periods of Dirac physics through emergence of spin. New topics requested: topological condensed matter and quantum neural networks/machine learning. The newly created **[48-period course design](COURSE_DESIGN_48_PERIODS.md)** supplies a provisional 48-lecture sequence, with 4 periods each for topological matter and quantum ML, both subject to discussion and timing review. Retain the original eight source chapters and extended content in the comprehensive English notes, independent of what is derived live. Differentiate full textbook, blackboard route, and interactive remediation/exploration. Students are described neutrally in published content.
 
 Append future entries here rather than overwriting the history. Summaries may be rewritten for clarity; decisions and their dates must stay traceable.
 
@@ -532,3 +536,9 @@ The most influential first discussion concerns **course profile**, rather than s
 In parallel, choose one complete model section for a real end-to-end trial. The section will reveal the appropriate derivational depth, page design and amount of student guidance far more reliably than choosing a platform from screenshots.
 
 The governing principle is **one evolving intellectual project, two complementary educational products, and a fully traceable editorial history**.
+
+## 12. Addendum: confirmed teaching constraints (2026-10-16)
+
+The reference-book blueprint remains broad. The instructor's current course has **48 periods of 40 minutes** with substantial prerequisite refresh needs and a sustained **board-derivation** teaching style. The detailed time calculation, 48 proposed period descriptions, two added topical modules, mathematical refresh strategies, and associated decisions now live in **[COURSE_DESIGN_48_PERIODS.md](COURSE_DESIGN_48_PERIODS.md)**. Use that document whenever assigning sections to classroom time or prioritizing interactive help; continue using the present blueprint when deciding the scope, rigor, and cohesion of the full text.
+
+All eight source chapters remain part of the future comprehensive notes. Chapters not presented live are self-study chapters, not deleted chapters. The proposed 4+4 periods for topological condensed matter and quantum learning create two **classroom examples**, while the complete subject extensions remain open to ambitious development. Berry phase, density operators, measurement theory, and the interacting second-quantized Hamiltonian are explicit continuity anchors across the instructor's previous and future course versions. The final route is still **provisional** until board-writing time and instructor preferences have been reviewed.
