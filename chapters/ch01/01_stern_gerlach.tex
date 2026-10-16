@@ -1,0 +1,107 @@
+% SOURCE: original Chinese PDF, viewer pages 1--3.
+\section{Stern--Gerlach Experiment}
+\begin{itemize}
+\item The fundamental difference from classical mechanics is readily demonstrated.
+\item The central issue of quantum mechanics---the measurement problem---is readily demonstrated.
+\item A two-level system is the most quantum-mechanical system.
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.9]
+ \draw[->] (-3.8,0)--(0,0); \node[left] at (-3.8,0){Ag};
+ \draw[thick] (-1.6,.3) rectangle (-.9,1);\node at (-1.25,.65){S};
+ \draw[thick] (-1.6,-1) rectangle (-.9,-.3);\node at (-1.25,-.65){N};
+ \draw[->,thick] (0,0) to[out=0,in=180] (1.6,.55) node[right] {$s_z^+$};
+ \draw[->,thick] (0,0) to[out=0,in=180] (1.6,-.55) node[right] {$s_z^-$};
+ \draw[thick] (1.82,-.9)--(1.82,.9);
+ \draw[->] (3.4,0)--(3.4,1) node[above] {$z$};
+ \draw[->] (3.4,0)--(4.7,0) node[right] {$y$};
+ \draw[->] (3.4,0)--(2.7,-.65) node[left] {$x$};
+\end{tikzpicture}
+\end{center}
+\subsection*{1) Results}
+A heated beam of silver atoms splits into two beams after passing through an inhomogeneous magnetic field.
+\subsection*{2) Analysis}
+\begin{itemize}
+\item The splitting is caused by interaction with the magnetic field and must therefore be due to the magnetic moment $\vect M$ of the atoms. The interaction potential is $V=-\vect M\cdot\vect B$.
+\item The magnetic moment is proportional to the angular momentum $\vect J$: $\vect M\propto\vect J$.
+\item The force on the atoms is
+\[
+\vect F=-\vect\nabla V=M_z\frac{\partial B_z}{\partial z}\vect e_z\propto J_z\frac{\partial B_z}{\partial z}\vect e_z.
+\]
+\end{itemize}
+The beam separates symmetrically into an upper and a lower component. This indicates that the angular momentum along the direction of the magnetic field (the $z$ direction) has only two components of equal magnitude and opposite directions.
+
+If this angular momentum were produced by the rotation of the atoms themselves, the angular-momentum directions of the thermal atoms would be randomly distributed. After a large number of atoms passed through the magnetic field, their distribution on the screen would be symmetric and continuous, rather than consisting of two separated components. Thus the force does not originate from orbital angular momentum.
+
+A silver atom has 47 electrons. Of these, 46 occupy filled shells with a spherically symmetric distribution and have no net angular momentum. The angular momentum of the silver atom is entirely due to the remaining valence electron. The separated two-component distribution shows that it is caused by the intrinsic angular momentum of the valence electron, denoted by $\vect s$. The component $s_z$ has only two values of equal magnitude and opposite direction, $s_z^+$ and $s_z^-$.
+\subsection*{3) Quantum properties}
+\begin{itemize}
+\item Spin angular momentum exists as an intrinsic physical quantity (independent of space and time).
+\item The values of spin angular momentum are discrete.
+\item The magnetic field performs a measurement. A magnetic field in the $z$ direction measures the angular momentum in the $z$ direction.
+\end{itemize}
+\subsection*{4) Cascaded Stern--Gerlach experiments}
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.9, every node/.style={font=\small}]
+\foreach \yy/\labs in {2.6/{Z--Z},0/{Z--X},-2.6/{Z--X--Z}}{
+ \node[left] at (-4,\yy){\labs};
+ \draw[->] (-3.65,\yy)--(-2.85,\yy);
+ \draw[thick] (-2.9,\yy+.35) rectangle (-2.35,\yy+.75);\node at (-2.625,\yy+.55){S};
+ \draw[thick] (-2.9,\yy-.75) rectangle (-2.35,\yy-.35);\node at (-2.625,\yy-.55){N};
+ \draw (-2.3,\yy)--(-1.25,\yy+.3) node[above left] {$s_z^+$};
+ \draw (-2.3,\yy)--(-1.25,\yy-.3) node[below left] {$s_z^-$};
+ \draw[very thick] (-1.1,\yy-.46)--(-1.1,\yy-.16);
+}
+\draw[->] (-.9,2.9)--(-.15,2.9); \node at (.15,3.35){$S_z$};\draw (.3,2.9)--(1.7,2.9) node[right] {$s_z^+$};
+\draw[->] (-.9,.3)--(-.15,.3);\node at (.15,.75){$S_x$};
+\draw (.3,.3)--(1.5,.55) node[right] {$s_x^+$};\draw (.3,.3)--(1.5,.05) node[right] {$s_x^-$};
+\draw[->] (-.9,-2.3)--(-.15,-2.3);\node at (.15,-1.85){$S_x$};
+\draw (.3,-2.3)--(.95,-2.05) node[above] {$s_x^+$};\draw (.3,-2.3)--(.95,-2.55) node[below] {$s_x^-$};
+\draw[very thick] (1.1,-2.65)--(1.1,-2.43);
+\draw[->] (1.1,-2.05)--(1.65,-2.05);\node at (1.9,-1.65){$S_z$};
+\draw (2.05,-2.05)--(3,-1.83) node[right] {$s_z^+$};\draw (2.05,-2.05)--(3,-2.28) node[right] {$s_z^-$};
+\end{tikzpicture}
+\par\smallskip Figure 1.
+\end{center}
+The incident atomic beam passes successively through two magnetic fields in the $z$ direction, as shown in the upper part of Fig.~1. Before the second magnetic field, $s_z$ has the definite value $s_z^+$. Therefore the force on the atoms in that field is definite, and $s_z$ still has the definite value $s_z^+$ after the second field.
+
+Now let the incident atomic beam pass through two magnetic fields, in the $z$ and $x$ directions, as shown in the middle of Fig.~1. In the second magnetic field the atoms experience a force $\vect F\propto J_x(\partial B_x/\partial x)\vect e_x$. The beam splits after the second magnetic field, indicating that $s_x$ has two components $s_x^+$ and $s_x^-$ before that field, although $s_z$ has the definite value $s_z^+$.
+\begin{itemize}\item Quantum property: when $s_z$ has a definite value, $s_x$ does not. $s_z$ and $s_x$ cannot have definite values simultaneously.\end{itemize}
+Next, let the beam pass successively through three magnetic fields in the $z$, $x$, and $z$ directions, as shown in the lower part of Fig.~1. Finally one observes two components $s_z^+$ and $s_z^-$. Thus $s_z$ has two components before the third magnetic field, even though $s_x$ has the definite value $s_x^+$.
+\begin{itemize}\item Quantum property: when $s_x$ has a definite value, $s_z$ likewise does not. $s_x$ and $s_z$ cannot have definite values simultaneously.\end{itemize}
+\subsection*{5) Analogy with classical electromagnetic waves (matter particles and light waves)}
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.7]
+\node at (-2,1){$\vect E$};\draw[->] (-1.6,1)--(-.8,1);
+\draw[thick] (-.8,.35) rectangle (.55,1.65);\node[below] at (-.125,.35){$x$ filter};
+\draw[->] (.55,1)--(1.6,1);\node[above] at (1.1,1){$E_x$};
+\draw[thick] (1.6,.35) rectangle (2.95,1.65);\node[below] at (2.275,.35){$y$ filter};
+\begin{scope}[yshift=-2.3cm]
+\node at (-3,1){$\vect E$};\draw[->] (-2.5,1)--(-1.8,1);
+\foreach \x/\lab in {-1.8/{$x$ filter},.25/{$x'$ filter},2.3/{$y$ filter}} {
+ \draw[thick] (\x,.35) rectangle (\x+1.4,1.65);\node[below] at (\x+.7,.35){\lab};
+}
+\draw[->] (-.4,1)--(.25,1);\draw[->] (1.65,1)--(2.3,1);\draw[->] (3.7,1)--(4.5,1);
+\end{scope}
+\begin{scope}[shift={(6,-1.1)}]
+\draw[->](-1.6,0)--(1.6,0) node[right]{$x$};\draw[->](0,-.35)--(0,1.45)node[above]{$y$};
+\draw[->](0,0)--(1.15,1.15)node[above]{$x'$};\draw[->](0,0)--(-1.15,1.15)node[above]{$y'$};\node at (.7,.2){$45^\circ$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+An electromagnetic wave propagating along the $z$ direction disappears completely after passing successively through a filter that transmits only the $x$ component ($x$ filter) and a filter that transmits only the $y$ component ($y$ filter):
+\begin{align*}
+\vect E(\vect r,t)&=E_0(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
+\xrightarrow{x\text{ filter}}\quad &E_0\vect e_x\cos(kz-\omega t),\\
+\xrightarrow{y\text{ filter}}\quad &0.
+\end{align*}
+Place an $x'$ filter between the $x$ and $y$ filters, with $x'$ at $45^\circ$ to both $x$ and $y$. An electromagnetic wave in the $y$ direction can still be observed at the end:
+\begin{align*}
+\vect E(\vect r,t)&=E_0(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
+\xrightarrow{x\text{ filter}}\quad&E_0\vect e_x\cos(kz-\omega t)=\frac{E_0}{\sqrt2}(\vect e_{x'}-\vect e_{y'})\cos(kz-\omega t),\\
+\xrightarrow{x'\text{ filter}}\quad&\frac{E_0}{\sqrt2}\vect e_{x'}\cos(kz-\omega t)=\frac{E_0}{2}(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
+\xrightarrow{y\text{ filter}}\quad&\frac{E_0}{2}\vect e_y\cos(kz-\omega t).
+\end{align*}
+Similarity: $s_x,s_y,s_z$ and $E_{x'},E_{y'}$ can all be regarded as two-component vectors.
+
+Difference: $\vect s$ is intrinsic angular momentum, a quantum-mechanical quantity; $\vect E$ is a spatially dependent mechanical quantity, a classical-mechanical quantity.
