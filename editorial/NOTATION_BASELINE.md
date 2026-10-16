@@ -75,3 +75,13 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - Extensive additive observables `\\op{\\mathcal A},\\op{\\mathcal V}` distinguish their Fock-space forms from the single-particle `\\op A` and potential `\\op V` used in the source.
 - Continuum field modes use `\\op\\psi_\\sigma(\\vect r)`, its adjoint `\\op\\psi_\\sigma^\\dagger(\\vect r)`, and `\\delta^{(3)}` for a spatial Dirac delta. `\\op H=\\op H_0+\\op V` in the final Heisenberg dynamics.
 - Full printed notation remains in `frontmatter/notation.tex`, updated simultaneously with the chapter.
+
+## Chapter 8 mathematical conventions (2026-10-16)
+
+- Natural units in the relativistic chapter: `hbar=c=1`; Minkowski metric `diag(1,-1,-1,-1)`. Retain the source's chosen convention in the translation stage.
+- Four-component Dirac spinors `psi(x)`, Dirac adjoint `bar{psi}=psi^dagger gamma^0`, with gamma anticommutator `{gamma^mu,gamma^nu}=2g^{mu nu}I`.
+- The source p. 176 first prints `gamma^0=diag(I,I)`, inconsistent with the Clifford algebra and its correct p. 184 rest-frame representation `diag(I,-I)`. The English first occurrence is repaired; see the chapter log for provenance.
+- Lorentz and spinor transformations: `x'=Lambda x`, `psi'(x')=S(Lambda)psi(x)`; sigma-matrix Lorentz generators `sigma_{mu nu}=(i/2)[gamma_mu,gamma_nu]`.
+- The source's P/T/C and gamma-five sign conventions are preserved and flagged for scientific audit. In particular, time reversal should be examined for its antiunitary character at the revision stage.
+- Free spinor notation: `u_alpha(k)`, `v_alpha(k)`, spin labels up/down, with source's covariant normalizations and `A=-B=1/sqrt(2m(m+E))` (verified from the page 186 image).
+- The student-facing printed cumulative notation is in `frontmatter/notation.tex`; the whole-book source index and final proofreading checklist is `editorial/FULL_BOOK_TRANSLATION_BASELINE_STATUS.md`.
