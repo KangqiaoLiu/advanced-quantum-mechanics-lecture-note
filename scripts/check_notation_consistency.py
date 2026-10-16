@@ -35,8 +35,8 @@ def main():
     page = content("frontmatter/notation.tex")
     permutation = content("chapters/ch06/01_permutation_symmetry.tex")
     symmetrization = content("chapters/ch06/02_symmetrized_states.tex")
-    bosons = content("chapters/ch07/01_bosons.tex")
-    fermions = content("chapters/ch07/02_fermions.tex")
+    bosons = content("chapters/ch06/03_bosons.tex")
+    fermions = content("chapters/ch06/04_fermions.tex")
     berry = content("chapters/ch02/07a_berry_phase.tex")
     measurement = content("chapters/ch03/03a_quantum_measurement.tex")
     ordering = content("chapters/ch04/07_interaction_picture.tex")
@@ -59,7 +59,7 @@ def main():
           "Chapter 6 uses consistent exchange operators and symmetrization projectors")
     check(r"\op{\mathcal O}" in bosons and r"\op{\mathcal O}" in fermions
           and r"\op T" not in bosons + fermions,
-          "Chapter 7 one-body observable does not collide with scattering T operator")
+          "many-body operators do not collide with scattering T")
     check(r"\timeorder" in measurement and r"\vect{\mathcal A}" in berry,
           "generalized measurement and Berry-phase additions use established notation")
     check(ordering.count(r"\timeorder") == 4 and not re.search(r"(?<!\\)T\\left\(", ordering),

@@ -1,0 +1,91 @@
+\section{Berry Curvature and the Chern Number}
+The SSH invariant is an integer obtained by winding around a circle. In two dimensions, the Brillouin zone is a torus. An isolated band can carry a different integer invariant, the \emph{first Chern number}, whose physical manifestation includes the quantized Hall response~\cite{TKNN1982,QiZhang2011}.
+
+\subsection*{1) Berry connection in two dimensions}
+Let $\op h(\vect k)$ be a periodic Bloch Hamiltonian with $\vect k=(k_x,k_y)$, and let a normalized isolated band satisfy
+$\op h(\vect k)\ket{u_n(\vect k)}=E_n(\vect k)\ket{u_n(\vect k)}$.
+For a nondegenerate band define
+\[
+\mathcal A_{n,i}(\vect k)=\ii\braket{u_n(\vect k)}{\partial_{k_i}u_n(\vect k)}.
+\]
+This is a connection in momentum space; it is the same geometric object used in the Berry-phase derivation but evaluated as the Bloch momentum varies. The corresponding \emph{Berry curvature} is
+\[
+\Omega_n(\vect k)=\partial_{k_x}\mathcal A_{n,y}-\partial_{k_y}\mathcal A_{n,x}
+=\ii\left(\braket{\partial_{k_x}u_n}{\partial_{k_y}u_n}
+-\braket{\partial_{k_y}u_n}{\partial_{k_x}u_n}\right).
+\]
+Under a gauge transformation $\ket{u_n}\mapsto e^{\ii\chi(\vect k)}\ket{u_n}$, the connection changes by $-\vect\nabla_{\vect k}\chi$, whereas $\Omega_n$ is gauge invariant. Stokes' theorem relates the Berry phase around a contour to the curvature passing through an enclosed surface.
+
+\subsection*{2) The Chern number}
+Integrating the curvature over the full Brillouin zone gives
+\begin{equation}\label{eq:chern-def}
+\boxed{C_n=\frac1{2\pi}\int_{\mathrm{BZ}}\Omega_n(\vect k)\,\dd^2k\in\mathbb Z.}
+\end{equation}
+The integral is an integer for a smooth, gapped, isolated band over the periodic Brillouin torus. Intuitively, the curvature is locally analogous to a magnetic field in momentum space, while the integral measures the global twisting of the band eigenstates. A nonzero $C_n$ prevents one from choosing a single smooth, periodic eigenvector gauge everywhere on the torus. Changing an integer requires an occupied band to touch another band or a defining assumption to fail.
+
+For a two-band Hamiltonian $\op h(\vect k)=\vect d(\vect k)\cdot\vect\sigma$ with $\vect d\ne0$, introduce the unit vector $\vect n(\vect k)=\vect d(\vect k)/|\vect d(\vect k)|$. The lower-band curvature can be computed directly from the eigenprojector $P_-=(\mathbf1_2-\vect n\cdot\vect\sigma)/2$:
+\begin{equation}\label{eq:chern-twoband}
+\boxed{\Omega_-(\vect k)=\frac12\vect n\cdot
+\bigl(\partial_{k_x}\vect n\times\partial_{k_y}\vect n\bigr).}
+\end{equation}
+This gives a geometric picture: as $\vect k$ sweeps the Brillouin torus, $\vect n(\vect k)$ traces the unit sphere, and the Chern number counts the oriented number of sphere coverings. For an upper band the sign is reversed.
+
+\subsection*{3) A minimal Chern insulator}
+Consider the square-lattice two-band model
+\begin{equation}\label{eq:q-w-z}
+\op h(\vect k)=\sin k_x\,\sigma_x+\sin k_y\,\sigma_y+
+\bigl(M+\cos k_x+\cos k_y\bigr)\sigma_z.
+\end{equation}
+Energy bands are $E_\pm=\pm|\vect d|$. They touch only when $d_x=d_y=d_z=0$, which requires $k_x,k_y\in\{0,\pi\}$ and $M=-2,0,2$. These critical values divide the parameter axis into four gapped regimes.
+
+Near any crossing, a change $\vect k=\vect K+\vect q$ gives a two-dimensional Dirac form $\op h\simeq v_xq_x\sigma_x+v_yq_y\sigma_y+m_{\vect K}\sigma_z$. The four points have masses and orientation factors
+\[
+\begin{array}{c|cccc}
+\vect K &(0,0)&(\pi,0)&(0,\pi)&(\pi,\pi)\\\hline
+m_{\vect K}&M+2&M&M&M-2\\
+\operatorname{sgn}(v_xv_y)&+1&-1&-1&+1
+\end{array}
+\]
+A regularized massive Dirac cone changes the lower-band Chern number when its mass crosses zero. Summing the four contributions using Eq.~\eqref{eq:chern-twoband} gives
+\begin{equation}\label{eq:q-w-z-phase}
+\boxed{C_- =\frac12\Bigl[\operatorname{sgn}(M+2)-2\operatorname{sgn}(M)
++\operatorname{sgn}(M-2)\Bigr]
+=\begin{cases}
+0,&M<-2,\\
+1,&-2<M<0,\\
+-1,&0<M<2,\\
+0,&M>2.
+\end{cases}}
+\end{equation}
+The integer is undefined at the gap-closing points themselves.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.92]
+\draw[->] (-4.9,0)--(4.9,0) node[right] {$M$};
+\foreach \x/\txt in {-2.5/{$-2$},0/{$0$},2.5/{$2$}}{
+\draw (\x,.11)--(\x,-.11) node[below=.10cm] {\txt};
+\fill[white] (\x,0) circle (.075);\draw (\x,0) circle (.075);
+}
+\node at (-3.65,.43) {$C=0$};
+\node at (-1.22,.43) {$C=1$};
+\node at (1.23,.43) {$C=-1$};
+\node at (3.65,.43) {$C=0$};
+\end{tikzpicture}
+\end{center}
+This model is a convenient algebraic route to a Chern insulator. The honeycomb-lattice Haldane model established that a quantum Hall phase can arise from an appropriate pattern of complex hopping amplitudes without a net external magnetic field~\cite{Haldane1988}.
+
+\subsection*{4) Hall conductance and boundary transport}
+For completely filled, isolated noninteracting electron bands and under the usual clean-gap assumptions, the transverse conductivity is quantized in units of the conductance quantum:
+\[
+\boxed{\sigma_{xy}=\frac{e^2}{h}\sum_{n\in\mathrm{occupied}}C_n,}
+\]
+with sign fixed by the chosen electric-charge and Hall-orientation conventions. This is the TKNN result~\cite{TKNN1982}. At an interface where the Chern number changes, the spectral gap must be bridged by conducting boundary modes. For $|C|=1$ there is one net chiral edge channel, whose direction is tied to the sign of the invariant. A disorder perturbation that respects the bulk mobility gap cannot remove the net chirality of an isolated edge.
+
+\section{Other Topological Phases and Present Perspective}
+\subsection*{1) Symmetry-protected phases}
+The SSH winding relies on chiral symmetry. Two-dimensional time-reversal-invariant electronic systems can instead support a $\mathbb Z_2$ classification, exemplified by the quantum spin Hall effect: opposite propagation directions can carry opposite Kramers-related spins. The resulting \emph{helical} edges are protected against elastic backscattering by nonmagnetic, time-reversal-symmetric perturbations under the standard single-particle assumptions~\cite{QiZhang2011}. Three-dimensional topological insulators similarly exhibit characteristic surface states. The protecting symmetry and the nature of the gap must always be stated when asserting robustness.
+
+\subsection*{2) How to recognize a topological problem}
+A useful sequence of questions is: What is the Hilbert-space basis? Does the model have translation symmetry, giving a Bloch Hamiltonian? Is the occupied spectrum gapped? Which symmetries are present? Can we calculate a Berry phase, winding number, or Chern number? What do the corresponding finite-boundary eigenstates look like? The SSH chain answers all these questions analytically, while higher-dimensional examples require increasingly sophisticated band geometry.
+
+Beyond these introductory models, current research investigates interacting topological phases, topological superconductivity, higher-order boundary states, driven and dissipative systems, and non-Hermitian spectra. The derivations above provide the basic language for approaching these topics. A deeper introduction to band topology is given in \emph{A Short Course on Topological Insulators}~\cite{Asboth2016}; the broad review of topological insulators and superconductors by Qi and Zhang~\cite{QiZhang2011} explains the connection to real materials and symmetry classifications.

@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,mathtools,bm}
-\usepackage{geometry,microtype,enumitem,tikz,longtable,array,booktabs}
+\usepackage{geometry,microtype,enumitem,tikz,longtable,array,booktabs,xcolor,eso-pic}
 \usetikzlibrary{arrows.meta,calc,positioning,decorations.pathreplacing,decorations.markings,patterns}
 \geometry{margin=26mm}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
@@ -10,6 +10,14 @@
   pdftitle={Advanced Quantum Mechanics: Graduate Lecture Notes},
   pdfsubject={Graduate lecture notes integrating original translation and instructor-directed additions},
   pdfkeywords={advanced quantum mechanics, lecture notes}
+}
+% Discreet copyright mark on every PDF page, including the cover.
+% The notice is placed in the outside bottom margin and does not overlap content.
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{\put(20,15){%
+    \makebox(0,0)[lb]{\sffamily\fontsize{6.5}{8}\selectfont\color{black!35}
+      \copyright\ 2026 Kangqiao LIU. All rights reserved.}%
+  }}%
 }
 \numberwithin{equation}{section}
 \setcounter{tocdepth}{1}
@@ -32,25 +40,19 @@
 \begin{titlepage}
   \thispagestyle{empty}
   \centering
-  \vspace*{28mm}
-  {\sffamily\bfseries\Large GRADUATE LECTURE NOTES\par}
-  \vspace{16mm}
+  \vspace*{42mm}
   \rule{0.82\textwidth}{0.8pt}\par
-  \vspace{12mm}
+  \vspace{16mm}
   {\Huge\bfseries Advanced\par}
   \vspace{3mm}
   {\Huge\bfseries Quantum Mechanics\par}
-  \vspace{12mm}
+  \vspace{16mm}
   \rule{0.82\textwidth}{0.8pt}\par
-  \vspace{14mm}
-  {\Large Graduate Reference Text\par}
-  \vspace{5mm}
-  {\large Instructor-Directed Expanded Edition\par}
+  \vspace{25mm}
+  {\large Instructor: Kangqiao LIU\par}
   \vfill
-  {\normalsize Eight chapters with instructor supplementary material\par}
-  \vspace{7mm}
   {\normalsize\today\par}
-  \vspace*{12mm}
+  \vspace*{18mm}
 \end{titlepage}
 \frontmatter
 \hypersetup{pageanchor=true}
@@ -102,14 +104,28 @@
 \input{chapters/ch05/03_lippmann_schwinger}
 \input{chapters/ch05/04_born_series}
 \input{chapters/ch05/05_partial_waves}
-\chapter{Identical Particles and Permutation Symmetry}\label{ch:symmetry-identical}
+\chapter{Quantum Many-Body Systems}\label{ch:many-body}
 \input{chapters/ch06/01_permutation_symmetry}
 \input{chapters/ch06/02_symmetrized_states}
-\chapter{Bosons, Fermions, and Second Quantization}\label{ch:second-quantization}
-\input{chapters/ch07/01_bosons}
-\input{chapters/ch07/02_fermions}
+\input{chapters/ch06/03_bosons}
+\input{chapters/ch06/04_fermions}
 \chapter{Relativistic Quantum Mechanics}\label{ch:relativistic-qm}
-\input{chapters/ch08/01_relativistic_wave_equations}
-\input{chapters/ch08/02_relativistic_covariance}
-\input{chapters/ch08/03_free_dirac_plane_waves}
+\input{chapters/ch07/01_relativistic_wave_equations}
+\input{chapters/ch07/02_relativistic_covariance}
+\input{chapters/ch07/03_free_dirac_plane_waves}
+\chapter{Topological Condensed Matter Physics}\label{ch:topological-matter}
+\input{chapters/ch08/01_crystals_bloch}
+\input{chapters/ch08/02_ssh_bulk}
+\input{chapters/ch08/03_edge_states}
+\input{chapters/ch08/04_chern_insulators}
+\input{chapters/ch08/05_quantum_pumping}
+\chapter{Quantum Neural Networks and Machine Learning}\label{ch:qnn-ml}
+\input{chapters/ch09/01_ml_basics}
+\input{chapters/ch09/02_training_kernels}
+\input{chapters/ch09/03_scope_limits}
+\input{chapters/ch09/04_worked_models}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrt}
+\bibliography{references/topology_qml}
 \end{document}

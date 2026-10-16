@@ -1,0 +1,89 @@
+\section{The Su--Schrieffer--Heeger Chain}
+The Su--Schrieffer--Heeger (SSH) model is a chain with two orbitals per unit cell and alternating hopping amplitudes. It provides a solvable example of a topological phase and of boundary states~\cite{Asboth2016}.
+
+\subsection*{1) A chain with two hopping amplitudes}
+Label the sites of cell $n$ by $A_n$ and $B_n$. Write the one-particle Hamiltonian in second-quantized form,
+\begin{equation}\label{eq:ssh-real}
+ \op H=\sum_n\left(t_1\op a_n^\dagger\op b_n+
+               t_2\op a_{n+1}^\dagger\op b_n+\mathrm{h.c.}\right),
+\end{equation}
+where $t_1,t_2>0$ are the intra-cell and inter-cell hopping amplitudes. Here $\op a_n$ and $\op b_n$ annihilate a particle on the two sites; the same one-particle Hamiltonian can be studied without specifying Bose or Fermi occupation statistics. For convenience we set the lattice constant $a=1$ in this chapter.
+
+\begin{center}
+\begin{tikzpicture}[x=1.08cm,y=1cm,>=Latex]
+\foreach \n in {0,...,5}{
+ \filldraw[draw=blue!65!black,fill=blue!13,thick] (1.05*\n,0) circle (.15);
+ \filldraw[draw=orange!70!black,fill=orange!16,thick] (1.05*\n+.42,0) circle (.15);
+ \draw[line width=1.6pt] (1.05*\n+.15,0)--(1.05*\n+.27,0);
+}
+\foreach \n in {0,...,4}{\draw[line width=1.0pt,dashed] (1.05*\n+.57,0)--(1.05*\n+1.05-.15,0);}
+\node at (.21,.4) {$t_1$}; \node at (.73,.4) {$t_2$};
+\node[below] at (0,-.18) {$A_1$};\node[below] at (.42,-.18) {$B_1$};
+\node[below] at (1.05,-.18) {$A_2$};\node[below] at (1.47,-.18) {$B_2$};
+\end{tikzpicture}
+\end{center}
+Choose the Fourier convention $\op a_n=N^{-1/2}\sum_k e^{\ii kn}\op a_k$ and similarly for $b_n$. In the basis $(\op a_k,\op b_k)$ the Bloch Hamiltonian is
+\begin{equation}\label{eq:ssh-bloch}
+\op h(k)=\begin{pmatrix}0&q(k)\\q(k)^*&0\end{pmatrix},\qquad
+ q(k)=t_1+t_2e^{-\ii k}.
+\end{equation}
+Equivalently,
+\[
+\op h(k)=\bigl(t_1+t_2\cos k\bigr)\sigma_x+t_2\sin k\,\sigma_y.
+\]
+Its energies are
+\[
+\boxed{E_\pm(k)=\pm\sqrt{t_1^2+t_2^2+2t_1t_2\cos k}.}
+\]
+The direct band gap is $2|t_1-t_2|$, reached at $k=\pi$. Only at $t_1=t_2$ does it close. A gap closing therefore separates two parameter regions.
+
+\subsection*{2) Chiral symmetry}
+The operator $\Gamma=\sigma_z$ distinguishes the two sublattices. Because the SSH Hamiltonian couples $A$ only to $B$,
+\[
+ \boxed{\Gamma\op h(k)\Gamma=-\op h(k),\quad \text{or}\quad
+ \{\Gamma,\op h(k)\}=0.}
+\]
+This is called \emph{chiral} or \emph{sublattice} symmetry. It pairs an eigenstate of energy $E$ with one of energy $-E$. In the Bloch-vector language it forbids a $\sigma_z$ contribution and constrains $\vect d(k)$ to the $xy$ plane. Adding a staggered on-site potential $\Delta\sigma_z$ would break this symmetry; the plane winding introduced below would then lose its quantized protection.
+
+\subsection*{3) A winding number}
+As $k$ traverses one Brillouin zone, the vector
+\[
+ (d_x(k),d_y(k))=(t_1+t_2\cos k,t_2\sin k)
+\]
+traces a circle of radius $t_2$ centered at $(t_1,0)$. The origin is enclosed if $t_2>t_1$. Define the phase $\varphi(k)=\arg[d_x(k)+\ii d_y(k)]$ and
+\begin{equation}\label{eq:ssh-wind}
+\boxed{\nu=\frac1{2\pi}\int_{-\pi}^{\pi}\frac{\dd\varphi(k)}{\dd k}\,\dd k
+ =\begin{cases}0,&t_1>t_2,\\1,&t_2>t_1.\end{cases}}
+\end{equation}
+In the gapped phases $\varphi(k)$ is continuous locally, although it may differ by an integer multiple of $2\pi$ when the Brillouin zone closes. Therefore $\nu$ is an integer and cannot change under a smooth, gap-preserving deformation respecting chiral symmetry. Its sign depends on the orientation and choice of unit cell; here the cell and Fourier convention were specified in Eq.~\eqref{eq:ssh-real}.
+
+\begin{center}
+\begin{tikzpicture}[scale=.91,>=Latex]
+\foreach \s/\c/\rad/\label in {0/2.1/.65/{$t_1>t_2$: $\nu=0$},5.0/.55/1.18/{$t_2>t_1$: $\nu=1$}}{
+\begin{scope}[shift={(\s,0)}]
+\draw[->,gray] (-1.45,0)--(2.6,0) node[right] {$d_x$};
+\draw[->,gray] (0,-1.6)--(0,1.65) node[above] {$d_y$};
+\draw[blue!65!black,very thick] (\c,0) circle (\rad);
+\fill (0,0) circle (.05);
+\node[below] at (.6,-1.85) {\label};
+\end{scope}}
+\end{tikzpicture}
+\end{center}
+This simple geometrical picture is the essential topological content of the SSH bulk Hamiltonian.
+
+\subsection*{4) The Berry (Zak) phase}
+Write $d_x+\ii d_y=|q|e^{\ii\varphi(k)}$. A normalized lower-band eigenvector of Eq.~\eqref{eq:ssh-bloch} is
+\[
+\ket{u_-(k)}=\frac1{\sqrt2}\begin{pmatrix}-e^{-\ii\varphi(k)}\\1\end{pmatrix}.
+\]
+The Berry connection defined in the preceding dynamics chapter is
+\[
+ \mathcal A(k)=\ii\braket{u_-(k)}{\partial_k u_-(k)}
+ =\frac12\partial_k\varphi(k).
+\]
+Integrating over the Brillouin zone gives the \emph{Zak phase}~\cite{Zak1989}
+\[
+\boxed{\gamma_{\mathrm{Zak}}=\oint_{\mathrm{BZ}}\mathcal A(k)\,\dd k
+ =\pi\nu\pmod{2\pi}.}
+\]
+An eigenstate phase change shifts the connection by a derivative, while the physically meaningful closed-loop phase is unchanged modulo $2\pi$ under single-valued gauge choices. The Zak phase also depends on the orbital embedding and the unit-cell convention; its quantization to $0$ or $\pi$ in this SSH convention follows from chiral symmetry. The winding number contains the oriented integer information.

@@ -373,3 +373,8 @@ These references support **candidate additions** and should not be attributed to
 ---
 
 **Long-term rule:** maintain this file as the versioned description of the course's real learners, time budget and board-level path. Maintain [PROJECT_BLUEPRINT.md](PROJECT_BLUEPRINT.md) as the broader intellectual and editorial specification. Changes in either document must respect and link to the other.
+
+
+## Manuscript structure update (2026-10-16)
+
+The current reference textbook has nine chapters: the old chapters 6 and 7 are combined into Quantum Many-Body Systems; Relativistic Quantum Mechanics is rebuilt from the instructor's separate 2024 eight-page handwritten notes and now follows as Chapter 7; Topological Condensed Matter Physics and Quantum Neural Networks and Machine Learning are Chapters 8 and 9. The original 48 × 40-minute classroom plan remains an instructor-controlled, preliminary allocation and is distinct from the complete textbook. The new chapters contain more derivation than may fit on the board; no timing redistribution is made without instructor approval. Student-facing material remains self-contained and does not contain internal course scheduling prose.

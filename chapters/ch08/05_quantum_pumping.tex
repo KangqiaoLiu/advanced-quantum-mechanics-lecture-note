@@ -1,0 +1,69 @@
+\section{Geometric Phases in a Periodic Lattice}
+The Bloch-band topology can be computed numerically without differentiating an eigenvector whose overall phase is arbitrary. This is also useful for understanding which quantities depend on the choice of gauge.
+
+\subsection*{1) A discrete Berry phase}
+Let $k_j=-\pi+2\pi j/N$ for $j=0,\ldots,N-1$ and identify $k_N$ with $k_0$ on the Brillouin circle. Consider a normalized, nondegenerate Bloch eigenstate at each point. Define the overlap product
+\[
+ W_N=\braket{u(k_0)}{u(k_1)}\braket{u(k_1)}{u(k_2)}
+ \cdots\braket{u(k_{N-1})}{u(k_0)}.
+\]
+Under the independent phase choices $\ket{u(k_j)}\mapsto e^{\ii\chi_j}\ket{u(k_j)}$, each overlap acquires $e^{\ii(\chi_{j+1}-\chi_j)}$. Their product cancels every phase factor. Thus the quantity
+\[
+ \gamma_N=-\operatorname{Im}\log W_N\quad(\bmod\ 2\pi)
+\]
+is gauge invariant. For closely spaced momenta, the overlap is
+\[
+ \braket{u(k)}{u(k+\Delta k)}=1+
+ \braket{u(k)}{\partial_k u(k)}\Delta k+O(\Delta k^2),
+\]
+so, taking the principal value consistently as the mesh is refined,
+\[
+ \gamma_N\longrightarrow \ii\oint\braket{u(k)}{\partial_k u(k)}\,\dd k.
+\]
+This yields the Zak phase of the occupied band. The limit requires a nonvanishing gap and a sufficiently fine mesh; accidental orthogonality between adjacent numerical eigenvectors makes the discrete formula ill-conditioned.
+
+\subsection*{2) A simple SSH check}
+In the SSH model set $t_1=0$, $t_2>0$. Then $d_x+\ii d_y=t_2e^{\ii k}$, so $\varphi(k)=k$ and Eq.~\eqref{eq:ssh-wind} gives $\nu=1$. The occupied eigenstate is
+\[
+ \ket{u_-(k)}=\frac1{\sqrt2}\begin{pmatrix}-e^{-\ii k}\\1\end{pmatrix},
+ \qquad\mathcal A(k)=\frac12.
+\]
+Consequently the Zak phase is $\pi$. For $t_2=0$ and $t_1>0$, the Bloch Hamiltonian is independent of momentum, and the Zak phase is zero. This difference persists while the gap remains open and chiral symmetry is respected. By contrast, the energy spectra alone contain no information about the sign of the winding: both models can be flattened to bands at $\pm1$ without losing the topological distinction.
+
+\section{Charge Transport from a Slowly Varying Hamiltonian}
+Topology also appears in a dynamical process. Suppose a one-dimensional insulating Bloch Hamiltonian depends periodically on a control parameter $\lambda(t)$, with $\lambda(0)=\lambda(T)$ and an energy gap that stays open during the evolution. The pair $(k,t)$ spans a two-dimensional torus, even though the physical lattice is one-dimensional.
+
+For one completely occupied isolated band, the geometric contribution to the adiabatic transported charge over one cycle is proportional to the Berry-curvature flux in this $(k,t)$ parameter space:
+\begin{equation}\label{eq:thouless-pump}
+\boxed{Q=eC_{kt},\qquad
+ C_{kt}=\frac1{2\pi}\int_0^T\dd t\int_{\mathrm{BZ}}\dd k\,
+ \Omega_{kt}(k,t).}
+\end{equation}
+The sign of $Q$ depends on the electron-charge and transport-direction convention. Its magnitude is an integer multiple of the elementary charge when the band is filled, the evolution is adiabatic and the gap stays open. This phenomenon is called a \emph{Thouless pump}: a one-dimensional adiabatic cycle realizes the same two-dimensional Chern-number geometry as a quantum Hall band. It connects the Berry phase derived after the AB effect to the transport observables of a lattice system.
+
+A useful example is a \emph{Rice--Mele} chain, obtained from the SSH model by adding staggered site energies:
+\[
+ \op h(k,t)=\bigl[t_1(t)+t_2(t)\cos k\bigr]\sigma_x
+ +t_2(t)\sin k\,\sigma_y+\Delta(t)\sigma_z.
+\]
+A closed loop in parameter space $(t_1-t_2,\Delta)$ can encircle the gap closing at the origin while keeping the instantaneous spectrum gapped. The integer pumped charge then distinguishes loops that enclose the degeneracy from loops that can be shrunk continuously to a point without crossing it. This interpretation is a direct physical use of Berry curvature.
+
+\section{Further Worked Checks}
+\subsection*{1) A symmetry-breaking perturbation}
+Add $\Delta\sigma_z$ to the SSH Hamiltonian. Its spectrum is
+\[
+ E_\pm(k)=\pm\sqrt{t_1^2+t_2^2+2t_1t_2\cos k+\Delta^2}.
+\]
+For $\Delta\ne0$, the gap stays open even when $t_1=t_2$. Hence the two SSH limits can now be connected continuously by varying $t_1-t_2$ while keeping $\Delta\ne0$. Their chiral winding distinction no longer applies: the perturbation has broken the protecting symmetry. This calculation illustrates why every statement of topological protection requires a statement of the relevant symmetry.
+
+\subsection*{2) Scaling of an edge state}
+From Eq.~\eqref{eq:ssh-leftedge}, the probability on cell $n$ of a normalized semi-infinite left-edge state is
+\[
+ P_n=\left(1-\frac{t_1^2}{t_2^2}\right)\left(\frac{t_1^2}{t_2^2}\right)^{n-1}.
+\]
+The mean distance of the state from the end is
+\[
+ \langle n\rangle=\sum_{n=1}^\infty nP_n
+ =\frac1{1-(t_1/t_2)^2}.
+\]
+As $t_1\to t_2^-$, the edge state spreads across an increasing number of cells and ultimately ceases to be normalizable on the semi-infinite system. The diverging localization length and the closing bulk gap are two complementary signatures of the same transition.

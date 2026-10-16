@@ -1,0 +1,91 @@
+% Instructor's original relativistic notes pp. 6--8: Pauli--Dirac representation and limits.
+\section{The Nonrelativistic Limit of the Dirac Equation}
+\subsection*{1) Free-particle energy and the rest-energy phase}
+For a free particle, the eigenvalues of the Dirac Hamiltonian satisfy
+\[
+ E_\pm=\pm\sqrt{m^2c^4+c^2\vect p^{\,2}}.
+\]
+Near the positive-energy rest branch, $|\vect p|\ll mc$,
+\[
+\begin{aligned}
+E_+&=mc^2\sqrt{1+\frac{\vect p^{\,2}}{m^2c^2}}\\
+&=mc^2+\frac{\vect p^{\,2}}{2m}-\frac{\vect p^{\,4}}{8m^3c^2}
+  +O\!\left(\frac{p^6}{m^5c^4}\right).
+\end{aligned}
+\]
+The constant rest energy creates a rapid overall phase. Remove it by writing
+\[
+ \psi(\vect r,t)=e^{-\ii mc^2t/\hbar}
+ \begin{pmatrix}\varphi(\vect r,t)\\\chi(\vect r,t)\end{pmatrix}.
+\]
+In the Pauli--Dirac representation, $\op H_{\mathrm D}$ has block form
+\[
+ \op H_{\mathrm D}=\begin{pmatrix}mc^2\mathbf1_2&c\vect\sigma\cdot\op{\vect p}\\
+ c\vect\sigma\cdot\op{\vect p}&-mc^2\mathbf1_2\end{pmatrix}.
+\]
+Substitution into the Dirac equation gives two coupled Pauli-spinor equations:
+\begin{equation}\label{eq:dirac-two-spinors}
+\boxed{\begin{aligned}
+\ii\hbar\partial_t\varphi&=c\vect\sigma\cdot\op{\vect p}\,\chi,\\
+\ii\hbar\partial_t\chi&=c\vect\sigma\cdot\op{\vect p}\,\varphi-2mc^2\chi.
+\end{aligned}}
+\end{equation}
+The large rest-energy separation makes the lower spinor small on the positive-energy branch. When kinetic energies and the time variation of $\chi$ are small compared with $2mc^2$, the second equation gives
+\[
+ \chi\simeq\frac{\vect\sigma\cdot\op{\vect p}}{2mc}\varphi.
+\]
+Inserting this into the first equation produces
+\[
+ \ii\hbar\partial_t\varphi
+ \simeq\frac1{2m}(\vect\sigma\cdot\op{\vect p})^2\varphi
+ =\frac{\op{\vect p}^{\,2}}{2m}\varphi.
+\]
+Thus the positive-energy Dirac equation reduces to the free two-component Pauli equation. The lower component has a controlled suppression of order $|\vect p|/(mc)$. The approximation selects positive-energy, low-momentum states; the complete relativistic theory still contains antiparticle solutions.
+
+\subsection*{2) Recovering spin coupling for a charged particle}
+Under minimal electromagnetic coupling, replace $\op{\vect p}$ by
+$\op{\vect\pi}=\op{\vect p}-(q/c)\vect A$ and add $q\phi$. After extracting the rest-energy phase, the equations become
+\[
+\begin{aligned}
+\ii\hbar\partial_t\varphi&=q\phi\,\varphi
+       +c\vect\sigma\cdot\op{\vect\pi}\,\chi,\\
+\ii\hbar\partial_t\chi&=c\vect\sigma\cdot\op{\vect\pi}\,\varphi
+      +(q\phi-2mc^2)\chi.
+\end{aligned}
+\]
+At leading nonrelativistic order,
+\[
+ \chi\simeq\frac{\vect\sigma\cdot\op{\vect\pi}}{2mc}\varphi,
+\]
+so the upper equation reads
+\begin{equation}\label{eq:pauli-from-dirac}
+\boxed{\ii\hbar\partial_t\varphi=
+\left[\frac1{2m}(\vect\sigma\cdot\op{\vect\pi})^2+q\phi\right]\varphi
++\text{higher-order relativistic corrections}.}
+\end{equation}
+Using the commutator of the kinetic momentum components obtained in the first section yields
+\[
+\ii\hbar\partial_t\varphi=\left[
+\frac{\op{\vect\pi}^{\,2}}{2m}
+-\frac{q\hbar}{2mc}\vect\sigma\cdot\vect B+q\phi\right]\varphi
++\cdots.
+\]
+This is precisely the Pauli Hamiltonian in Eq.~\eqref{eq:pauli-expanded}. In particular, the spin magnetic interaction follows from the matrix factorization of relativistic energy. Higher-order terms bring additional effects such as relativistic kinetic corrections and, for inhomogeneous fields, spin--orbit and Darwin terms.
+
+\section{The Relation among the Schr\"odinger, Pauli, and Dirac Equations}
+The preceding derivations connect three familiar descriptions. The scalar Schr\"odinger equation is the nonrelativistic theory of orbital motion. Enlarging its state space to a Pauli spinor incorporates spin $1/2$ and magnetic coupling. The relativistic Dirac equation describes a four-component spinor; at small velocities and after factoring out the rest energy, its positive-energy sector returns the Pauli equation. The Klein--Gordon equation results directly from the relativistic energy relation, and for scalar particles it admits a quantum-field interpretation.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,thick, node distance=12mm and 22mm,
+every node/.style={font=\small,align=center}]
+\node (sch) [draw,rounded corners,minimum width=35mm,minimum height=10mm] {Schr\"odinger\\scalar wavefunction};
+\node (pau) [draw,rounded corners,right=of sch,minimum width=32mm,minimum height=10mm] {Pauli\\two-component spinor};
+\node (dir) [draw,rounded corners,below=of pau,minimum width=38mm,minimum height=10mm] {Dirac\\four-component spinor};
+\node (kg) [draw,rounded corners,below=of sch,minimum width=35mm,minimum height=10mm] {Klein--Gordon\\scalar relativistic field};
+\draw[->] (sch)--node[above]{include spin}(pau);
+\draw[->] (dir)--node[right]{low-energy limit}(pau);
+\draw[->] (sch)--node[left]{relativistic dispersion}(kg);
+\draw[->] (pau)--node[above,sloped]{relativistic extension}(dir);
+\end{tikzpicture}
+\end{center}
+In particular, the two-component Pauli equation can be viewed both as the spinful extension of nonrelativistic Schr\"odinger theory and as a systematically controlled limit of the Dirac equation.
