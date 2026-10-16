@@ -6,6 +6,9 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 
 ## Start here
 
+**[COURSE_DESIGN_48_PERIODS.md](COURSE_DESIGN_48_PERIODS.md)** captures the instructor-confirmed classroom constraints: 48 periods of 40 minutes (32 actual hours), board-by-board derivations, substantial prerequisite review, and an explicitly **provisional** 48-period route. It maps the requested new modules on topological condensed matter and quantum neural networks / machine learning while preserving the scope of the complete reference text. **Classroom teaching, full lecture notes, and interactive independent study are distinct, coordinated layers.**
+
+
 **[PROJECT_BLUEPRINT.md](PROJECT_BLUEPRINT.md)** is the authoritative project plan. It includes:
 
 - A complete eight-chapter map of the Chinese source, with PDF page references and subsection coverage.
@@ -15,11 +18,11 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-08):** source review and detailed planning. English chapters, the typeset PDF, and interactive materials are forthcoming.
+**Project phase (2026-10-16):** source review complete at the structural level; comprehensive editorial blueprint and learner-aware 48-period classroom proposal recorded. Full English chapters, compiled PDF, and interactive materials are forthcoming.
 
 ## Intended deliverables
 
-**Lecture notes:** a coherent English course text, with explicit graduate-level derivations, worked examples, carefully explained figures, chapter problems, and references. Modular LaTeX is the current working proposal.
+**Lecture notes:** a coherent English reference course text, including all eight source chapters, the instructor's additions (Berry phase, density operator, measurement theory, an introduction to non-Hermitian physics), and planned substantial extensions in topology and quantum learning; with explicit derivations, worked examples, carefully explained figures, chapter problems, and references. Modular LaTeX is the current working proposal.
 
 **Interactive companion:** a complementary self-study resource, with physically motivated explorations and deeper extensions. The platform will be selected after comparing working prototypes. Inspirations include [Topology in Condensed Matter](https://topocondmat.org/) and [Shiling Liang's interactive PRX explainer](https://shilingliang.com/files/thermodynamic_space_explainer.html).
 
@@ -31,6 +34,6 @@ The repository is private during development. Original-source provenance, transl
 
 ## Contributing and continuing work
 
-Read [PROJECT_BLUEPRINT.md](PROJECT_BLUEPRINT.md) before preparing or modifying substantial material. Source references use PDF viewer page numbers, 1–186. Record any durable editorial or architectural decision in the blueprint so that long-term development remains consistent.
+Read both [PROJECT_BLUEPRINT.md](PROJECT_BLUEPRINT.md) and [COURSE_DESIGN_48_PERIODS.md](COURSE_DESIGN_48_PERIODS.md) before preparing or modifying substantial material. Source references use PDF viewer page numbers, 1–186. Record any durable editorial or architectural decision in the blueprint so that long-term development remains consistent.
 
 **Maintainer:** course instructor; content and publication decisions are subject to instructor review.
