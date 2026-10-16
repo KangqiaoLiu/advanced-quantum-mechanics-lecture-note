@@ -75,3 +75,11 @@ The source's precise graphical styling and dimensions are not necessary for the 
 - Compiles with `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex`, and with the existing GitHub Actions PDF build.
 - All 37 source pages have a corresponding English section; the second chapter retains all seven original sections.
 - Verify every correction against the original pages before publishing the eventual classroom version. Continue to **Chapter 3 translation**, with later scientific/pedagogical expansions kept in a separate phase.
+
+## Full-book fidelity review: cross-chapter source p. 62 (2026-10-16)
+
+A bilingual boundary check discovered that the Chinese source continues **above the Chapter 3 heading on viewer p. 62** with two final sentences about the monopole argument. Although the final quantization formula was already included in the English text, the conclusion itself was omitted in the initial English chapter. It has now been restored, after the charge-quantization expression in `chapters/ch02/07_gauge_transformations.tex`:
+
+> Quantum mechanics does not require the existence of magnetic monopoles. If a magnetic monopole exists, however, electric charge must be quantized and there is a smallest unit of electric charge.
+
+This is a **translation omission repair**, not a new claim or scientific rewrite. Source coverage for Chapter 2 should be read as **PDF viewer pp. 25–61 plus the first part of p. 62**. See `editorial/FULL_BOOK_FIDELITY_REVIEW_2026-10-16.md`.

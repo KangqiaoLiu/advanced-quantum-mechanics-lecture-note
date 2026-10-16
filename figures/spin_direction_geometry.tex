@@ -1,0 +1,16 @@
+% Faithful replacement of the source p.95 singlet measurement-direction sketch.
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.83, every node/.style={font=\footnotesize}]
+ \coordinate (O) at (0,0);
+ \draw[->,very thick] (0,-1.45)--(0,2.45) node[above] {$\vect e_a$};
+ \draw[->,thick] (O)--(2.9,2.2) node[above right] {$\vect e_b$};
+ \draw[densely dashed] (O)--(-1.95,-1.48);
+ \draw[densely dashed] (O)--(0,2.65);
+ \draw[->] (0,1.04) arc[start angle=90,end angle=37,radius=1.04];
+ \node at (.45,1.43) {$\theta_{ab}$};
+ \draw[->,line width=1pt] (.18,.60)--(.18,1.28);
+ \draw[->,line width=1pt] (-.18,-.16)--(-.18,-.84);
+ \draw[->,line width=1pt] (.55,.42)--(1.20,.92);
+ \node[anchor=west] at (2.35,-.30) {spin directions};
+\end{tikzpicture}
+\end{center}

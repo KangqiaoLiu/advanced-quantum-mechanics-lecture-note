@@ -73,6 +73,15 @@ Source page 62 first finishes the **magnetic-monopole passage of Chapter 2**, in
 - [x] A visual inspection of the 24 pages of Chapter 3 conducted (page contact sheets saved locally).
 - [x] LaTeX overflow messages resolved.
 - [ ] Final instructor-approved line-by-line bilingual comparison and physics audit — still required before marking **frozen translation**.
-- [x] GitHub Actions cloud build and PDF commit — verified successful on run 38887754980; the updated PDF exists at `pdf/advanced-quantum-mechanics.pdf` on `main`.
+- [ ] GitHub Actions cloud build and PDF commit — mark after remote verification.
 
 **Editorial commitment:** This file records first-pass faithful translation work. Do not insert Berry-phase additions, a new density-matrix pedagogy, or extended topological/QML teaching into the Chapter 3 translation baseline.
+
+## Full-book fidelity review: missing diagrams and printed subsection typo (2026-10-16)
+
+- **Viewer pp. 69 and 86:** the same original two-rotation direction diagram appears in the spin and orbital-angular-momentum sections. Both English appearances were missing in the initial version. A shared editable replacement, `figures/two_rotation_axes.tex`, is now included at both locations. The arrows identify successive rotations and the angles `\alpha,\beta`.
+- **Viewer p. 95:** the original schematic showing the singlet measurement directions and angle `\theta_{ab}` was absent. `figures/spin_direction_geometry.tex` now restores it, distinct from the already present three-ray Bell arrangement on p. 96.
+- **Viewer p. 70:** the Euler-angle source gives three successive, geometrically different stages (a), (b), (c). The first English line drawing repeated essentially the same axes three times. It has been redrawn to distinguish the three stages in `chapters/ch03/02_spin.tex`.
+- **Viewer pp. 94 and 96:** the original contains two separately headed topics each printed with `3)` (quantum-mechanical comparison and experiment). Both distinct topics remain headings in English; the *second* is labeled `4)` to correct the source's evident repeated-number typo.
+
+These are figure and source-structure fidelity repairs. Review file `editorial/FULL_BOOK_FIDELITY_REVIEW_2026-10-16.md` describes the evidence and remaining proofing limitations.

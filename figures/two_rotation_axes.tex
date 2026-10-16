@@ -1,0 +1,23 @@
+% Source pp. 69 and 86 show the same two-rotation construction.
+% Reused at both appearances of the source illustration.
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1.08, every node/.style={font=\footnotesize}]
+\coordinate (O) at (0,0);
+\draw[->] (O)--(0,2.70) node[above] {$z$};
+\draw[->] (O)--(2.55,-.48) node[right] {$y$};
+\draw[->] (O)--(-1.80,-1.03) node[left] {$x$};
+\draw[->,line width=0.9pt] (O)--(1.16,1.98)
+  node[above right,xshift=1pt] {$\vect e_r$};
+\draw[->,dashed,thick] (O)--(-.73,2.14)
+  node[above left,xshift=-3pt] {$\vect e_r'$};
+\draw[densely dashed] (0,1.72) ellipse [x radius=1.12,y radius=.30];
+\draw[->] (-.12,1.36) arc[start angle=100,end angle=62,radius=.73];
+\node at (-.70,1.07) {$\beta$};
+\draw[->] (.55,1.98) arc[start angle=30,end angle=110,x radius=.50,y radius=.23];
+\node at (.22,2.35) {$\alpha$};
+\node[anchor=west] at (2.25,1.55) {second rotation about $z$};
+\draw[->] (2.30,1.43) -- (1.20,1.55);
+\node[anchor=west] at (2.25,.47) {first rotation about $y$};
+\draw[->] (2.30,.38)--(1.16,.24);
+\end{tikzpicture}
+\end{center}

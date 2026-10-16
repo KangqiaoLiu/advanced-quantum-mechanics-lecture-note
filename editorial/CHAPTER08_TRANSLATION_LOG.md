@@ -42,9 +42,15 @@ The following material is **preserved in source order and has not been silently 
 - [x] Local `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` successful: **145 cumulative PDF pages** including front matter and Chapters 1–8.
 - [x] Eliminated the new overfull horizontal box warning from the longest bilinear-covariant display.
 - [x] Inspected contact-sheet renders of all ten English Chapter 8 pages.
-- [x] GitHub Actions run 38897750654 completed successfully: XeLaTeX compilation, version-specific artifact archive and generated eight-chapter PDF committed to `pdf/advanced-quantum-mechanics.pdf` on `main` (verified in repository listing).
+- [ ] Confirmed cloud GitHub Actions compilation and updated repository PDF; fill in only after verified success.
 - [ ] Full independent instructor source-vs-translation bilingual and mathematical review.
 
 ## Frozen-stage handoff
 
 The eight source chapters are now represented in editable English LaTeX source. A book-wide forensic audit (sentence/diagram/equation matching, mathematical corrections, notation and derivation checks, and permissions), followed by instructor signoff, is required before calling the translation *final*. The future pedagogical/research revision and interactive materials are separate phases.
+
+## Full-book fidelity review: original graphene example (2026-10-16)
+
+On source PDF viewer **p. 174**, the example in the introduction reads `石墨稀` (an orthographic variant/typo for `石墨烯`, i.e. **graphene**). The first English pass incorrectly substituted **the hydrogen atom**. The paragraph now correctly says **graphene**. This is a direct bilingual mistranslation repair, with the surrounding sentence and argument left unchanged. Source visual/text extraction confirms the original noun.
+
+The existing gamma-matrix correction and source-level P/T/C issues remain as documented above.

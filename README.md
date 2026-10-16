@@ -96,6 +96,18 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Whole-book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), locally compiled as **145 pages** with title page, automatic table of contents and all eight translated chapters.
 - **Status:** faithful first-pass English translation of all original material, awaiting independent bilingual prose and equation-level instructor signoff.
 
+## Full-book translation fidelity review (2026-10-16)
+
+The **initial translation of all eight chapters** has received a second-round systematic source-fidelity review. The editable translation has been corrected for verified problems in source PDF viewer pages **62, 69–70, 86, 94–96 and 174**, including an omitted Chapter 2 paragraph, a mistranslated physical example, source illustrations, and subsection numbering.
+
+- **Detailed scope, actual corrections and remaining limitations:** [full-book fidelity review](editorial/FULL_BOOK_FIDELITY_REVIEW_2026-10-16.md).
+- **One-to-one source-page index:** [SOURCE_PAGE_COVERAGE.csv](editorial/SOURCE_PAGE_COVERAGE.csv), tracing **186 original viewer pages**, including **7 exact duplicate pairs**.
+- **Repeatable spot checks:** [source coverage script](scripts/build_source_coverage.py) (requires the original Chinese PDF locally) and [14 symbolic algebra tests](scripts/check_translation_algebra.py) (SymPy).
+- **Preserved original version:** [translation/initial-baseline-2026-10-16](../../tree/translation/initial-baseline-2026-10-16), before the fidelity fixes.
+- **Reviewed working version:** the current `main` branch, with a separately preserved reviewed-baseline branch before instructor-led curricular additions.
+
+**Quality boundary:** this was a source-structure, prose-anchor, selected-figure and targeted-formula review. It is a traceable **working English translation baseline**, not a claim that every translated sentence and every displayed equation has undergone independent bilingual certification. That final publication-grade read-through remains an explicit task. Content enhancements can now proceed as separately tracked revisions.
+
 ## Intended deliverables
 
 **Lecture notes:** a coherent English reference course text, including all eight source chapters, the instructor's additions (Berry phase, density operator, measurement theory, an introduction to non-Hermitian physics), and planned substantial extensions in topology and quantum learning; with explicit derivations, worked examples, carefully explained figures, chapter problems, and references. Modular LaTeX is the current working proposal.
