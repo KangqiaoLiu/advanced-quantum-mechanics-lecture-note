@@ -1,0 +1,54 @@
+% AUTHOR'S CLASSROOM HANDOUT: 1.2 (two pages), prepared 2024-01-11.
+\section{Completely Symmetric and Antisymmetric States}
+
+Let $\{\ket i\}$ be an orthonormal one-particle basis. An ordered basis vector in the $N$-particle tensor-product space is
+\[\ket{i_1,\ldots,i_N}:=\ket{i_1}_1\otimes\cdots\otimes\ket{i_N}_N.\]
+Write the sum of the permutation operators as
+\[\op{\mathcal S}_\pm=\frac1{\sqrt{N!}}
+  \sum_{P\in S_N}[\operatorname{sgn}(P)]_\pm\op P,\]
+where $[\operatorname{sgn}(P)]_+=1$ and $[\operatorname{sgn}(P)]_-=\operatorname{sgn}(P)$. We deliberately use $\mathcal S$ for the unnormalized sum with the square-root prefactor; normalized projectors are introduced below. Changing variables $Q=PP'$ in the group sum yields
+\[\op P'\op{\mathcal S}_+=\op{\mathcal S}_+\op P'=\op{\mathcal S}_+,
+\qquad
+\op P'\op{\mathcal S}_-=\op{\mathcal S}_-\op P'
+ =\operatorname{sgn}(P')\op{\mathcal S}_-.\]
+Consequently $\op{\mathcal S}_+\ket{i_1,\ldots,i_N}$ is symmetric and $\op{\mathcal S}_-\ket{i_1,\ldots,i_N}$ is antisymmetric. They are also orthogonal for $N>1$: an exchange $P_{12}$ preserves the first state and reverses the sign of the second, so their overlap equals its own negative.
+
+\subsection*{1) The symmetrization and antisymmetrization projectors}
+
+Introduce the actual orthogonal projectors
+\[\boxed{\op{\mathcal P}_\pm=\frac1{N!}
+    \sum_{P\in S_N}[\operatorname{sgn}(P)]_\pm\op P.}\]
+Their defining properties follow directly from the group multiplication law:
+\[\op{\mathcal P}_\pm^\dagger=\op{\mathcal P}_\pm,
+\qquad\op{\mathcal P}_\pm^2=\op{\mathcal P}_\pm,
+\qquad\op{\mathcal P}_+\op{\mathcal P}_-=0\quad(N>1).\]
+For example, in the square of the plus projector, for each fixed $R\in S_N$ there are $N!$ pairs $(P,Q)$ with $PQ=R$; therefore
+\[\op{\mathcal P}_+^2
+=\frac1{(N!)^2}\sum_{P,Q}\op{PQ}
+=\frac1{N!}\sum_R\op R=\op{\mathcal P}_+.\]
+For the minus projector the factor $\operatorname{sgn}(P)\operatorname{sgn}(Q)=\operatorname{sgn}(PQ)$ yields the identical argument. Every completely symmetric state can be written as a linear combination of projected ordered basis states, since the identity resolution can be inserted before projection.
+
+\subsection*{2) Normalization and repeated orbital occupation}
+
+Suppose the ordered list $(i_1,\ldots,i_N)$ contains the orbital $i$ precisely $n_i$ times, with $\sum_i n_i=N$. For bosons, there are $N!/\prod_i n_i!$ distinct permutations of that list, and every distinct ordered product occurs $\prod_i n_i!$ times in the full permutation sum. The norm is therefore
+\[\left\|\sum_{P\in S_N}\op P\ket{i_1,\ldots,i_N}\right\|^2
+   =N!\prod_i n_i!.\]
+Thus the normalized Bose state is
+\[\boxed{\ket{\{n_i\}}_{\mathrm B}
+  =\frac1{\sqrt{N!\prod_i n_i!}}
+    \sum_{P\in S_N}\op P\ket{i_1,\ldots,i_N}.}\]
+In terms of the handout's $\op{\mathcal S}_+$, this is $\ket{\{n_i\}}_{\mathrm B}
+=\op{\mathcal S}_+\ket{i_1,\ldots,i_N}/\sqrt{\prod_i n_i!}$. This factorial is essential whenever an orbital is occupied more than once.
+
+For fermions, if $i_a=i_b$ for $a\ne b$, the exchanged ordered product is unchanged but the antisymmetrization sign is reversed, giving zero. Therefore all occupied orbitals must be distinct. For distinct $i_1,\ldots,i_N$, every ordered product in the permutation sum is orthogonal to every other, and
+\[\boxed{\ket{i_1,\ldots,i_N}_{\mathrm F}
+=\frac1{\sqrt{N!}}\sum_{P\in S_N}
+     \operatorname{sgn}(P)\op P\ket{i_1,\ldots,i_N}.}\]
+In coordinate representation the same expression is the normalized Slater determinant,
+\[\Psi_{\mathrm F}(x_1,\ldots,x_N)
+=\frac1{\sqrt{N!}}\det\!\begin{pmatrix}
+\varphi_{i_1}(x_1)&\cdots&\varphi_{i_N}(x_1)\\
+\vdots&\ddots&\vdots\\
+\varphi_{i_1}(x_N)&\cdots&\varphi_{i_N}(x_N)
+\end{pmatrix}.\]
+The variable $x$ may include spin as well as position. Both constructions provide complete orthonormal bases of their respective symmetric and antisymmetric $N$-particle sectors. The next chapter assembles sectors with different $N$ into Fock space and derives operator rules directly from these states.

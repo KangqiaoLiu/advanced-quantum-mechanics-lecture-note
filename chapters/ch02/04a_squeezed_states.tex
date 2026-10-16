@@ -1,0 +1,45 @@
+% INSTRUCTOR ADDITION: 10-minute blackboard topic immediately after coherent states.
+\section{Squeezed States}
+
+A coherent state has the minimum uncertainty product and exhibits equal fluctuations of its two \emph{dimensionless} oscillator quadratures. Minimum uncertainty does not require these two fluctuations to be equal. A squeezed state redistributes the fluctuations between conjugate quadratures while maintaining the uncertainty bound.
+
+Define the Hermitian quadratures
+\[\op X=\frac{\op a+\op a^\dagger}{\sqrt2},\qquad
+\op P=\frac{\op a-\op a^\dagger}{\ii\sqrt2},\qquad
+[\op X,\op P]=\ii\op I.\]
+For real $r$ introduce the \emph{single-mode squeezing operator}
+\[\boxed{\op S(r)=\exp\!\left[\frac r2
+       \bigl(\op a^{2}-\op a^{\dagger2}\bigr)\right],\qquad
+  \ket{0,r}=\op S(r)\ket0.}\]
+Its exponent is anti-Hermitian; $\op S(r)$ is unitary. The transformation of the lowering operator is the Bogoliubov relation
+\[\boxed{\op S^\dagger(r)\op a\op S(r)
+   =\op a\cosh r-\op a^\dagger\sinh r.}\]
+To derive it, set $\op a(r)=\op S^\dagger(r)\op a\op S(r)$. Differentiate with respect to $r$ and use the commutators $[\op a,\op a^{\dagger2}]=2\op a^\dagger$ and $[\op a,\op a^2]=0$. Together with the adjoint equation this gives
+\[\frac{\dd\op a(r)}{\dd r}=-\op a^\dagger(r),\qquad
+\frac{\dd\op a^\dagger(r)}{\dd r}=-\op a(r),\]
+whose solution with $\op a(0)=\op a$ is the displayed transformation.
+
+Consequently,
+\[\op S^\dagger(r)\op X\op S(r)=e^{-r}\op X,\qquad
+  \op S^\dagger(r)\op P\op S(r)=e^{r}\op P.\]
+The vacuum has $\langle\op X\rangle=\langle\op P\rangle=0$ and $\langle\op X^2\rangle=\langle\op P^2\rangle=1/2$. Evaluating the transformed variances in $\ket{0,r}$ gives
+\[\boxed{(\Delta X)^2=\frac12e^{-2r},\qquad
+        (\Delta P)^2=\frac12e^{2r},\qquad
+        \Delta X\,\Delta P=\frac12.}\]
+For $r>0$, the $X$ quadrature is squeezed and the $P$ quadrature is anti-squeezed. Both coherent and squeezed vacuum states saturate the Heisenberg uncertainty relation; they have different distributions of the fluctuations.
+
+\begin{center}
+\begin{tikzpicture}[x=0.78cm,y=0.65cm,>=Latex]
+  \foreach \cx in {0,5.3}{
+    \draw[->,gray] (\cx-2.05,0)--(\cx+2.0,0) node[below] {$X$};
+    \draw[->,gray] (\cx,-1.85)--(\cx,1.83) node[left] {$P$};
+  }
+  \filldraw[fill=blue!12,draw=blue!60!black,thick] (0,0) circle (1.08);
+  \filldraw[fill=orange!14,draw=orange!75!black,thick] (5.3,0) ellipse (0.57 and 1.58);
+  \node at (0,-2.2) {Coherent state};
+  \node at (5.3,-2.2) {Squeezed vacuum};
+\end{tikzpicture}
+\end{center}
+The ellipses schematically indicate quantum uncertainties in phase space. The squeezed state retains the minimum uncertainty \emph{area}, but its shape changes. A displaced squeezed state is $\op D(\alpha)\op S(r)\ket0$, where $\op D(\alpha)=\exp(\alpha\op a^\dagger-\alpha^*\op a)$; the displacement moves the center without altering these variances.
+
+\paragraph{Ten-minute lecture route.} Recall equal quadrature fluctuations of a coherent state; write the squeezing operator and its transformation of $\op a$; derive the two variances and draw the circular and elliptical uncertainty regions. The Bogoliubov differentiation and displaced case provide optional follow-up reading.

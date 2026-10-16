@@ -33,7 +33,12 @@ def main():
 
     main_tex = content("main.tex")
     page = content("frontmatter/notation.tex")
-    parity = content("chapters/ch06/02_symmetry_conservation.tex")
+    permutation = content("chapters/ch06/01_permutation_symmetry.tex")
+    symmetrization = content("chapters/ch06/02_symmetrized_states.tex")
+    bosons = content("chapters/ch07/01_bosons.tex")
+    fermions = content("chapters/ch07/02_fermions.tex")
+    berry = content("chapters/ch02/07a_berry_phase.tex")
+    measurement = content("chapters/ch03/03a_quantum_measurement.tex")
     ordering = content("chapters/ch04/07_interaction_picture.tex")
     density = content("chapters/ch03/03_density_operators.tex")
 
@@ -48,10 +53,15 @@ def main():
     rows = [s for s in page.splitlines() if " & " in s and s.rstrip().endswith(r"\\")]
     # The header's " & " is included, so 27 data rows plus one header.
     check(len(rows) == 28, "27 compact global-notation entries")
-    check(r"\parityop" in page and r"\timeorder" in page,
-          "student page uses the shared parity and time-ordering macros")
-    check(parity.count(r"\parityop") >= 30 and r"\op I" not in parity,
-          "Chapter 6 parity uses only the canonical operator")
+    check(r"\op P_{ij}" in page and r"\timeorder" in page,
+          "student page uses shared particle-exchange and time-ordering conventions")
+    check(r"\op P_{ij}" in permutation and r"\op{\mathcal P}_\pm" in symmetrization,
+          "Chapter 6 uses consistent exchange operators and symmetrization projectors")
+    check(r"\op{\mathcal O}" in bosons and r"\op{\mathcal O}" in fermions
+          and r"\op T" not in bosons + fermions,
+          "Chapter 7 one-body observable does not collide with scattering T operator")
+    check(r"\timeorder" in measurement and r"\vect{\mathcal A}" in berry,
+          "generalized measurement and Berry-phase additions use established notation")
     check(ordering.count(r"\timeorder") == 4 and not re.search(r"(?<!\\)T\\left\(", ordering),
           "Chapter 4 Dyson time-ordering uses only the canonical symbol")
     check("[A]" not in density and not re.search(r"\[s_[xyzi]\]", density)

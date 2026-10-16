@@ -1,0 +1,91 @@
+% AUTHOR'S CLASSROOM HANDOUT: 1.4 Fermions (five pages), prepared 2024-01-12.
+\section{Fermions: Antisymmetric States and Operator Algebra}
+
+Fermionic many-particle states are completely antisymmetric under exchanging any two particles. From the preceding chapter, the normalized wavefunction made of $N$ distinct single-particle orbitals is a Slater determinant:
+\[\Psi_{\mathrm F}(x_1,\ldots,x_N)
+=\frac1{\sqrt{N!}}\det[\varphi_{i_a}(x_b)]_{a,b=1}^N.\]
+If any two orbitals coincide, two rows of the determinant are identical and the wavefunction vanishes. This is the Pauli exclusion principle: the occupation number of each one-particle state is either zero or one.
+
+\subsection*{1) Fermionic Fock space and ordered occupation states}
+
+Choose a fixed ordering $1<2<\cdots$ of the one-particle orbitals. The antisymmetric states with different occupation lists form an orthonormal basis,
+\[\ket{n_1,n_2,\ldots}_{\mathrm F},\qquad
+n_i\in\{0,1\},\qquad N=\sum_i n_i.\]
+The full fermionic Fock space is the direct sum
+\[\mathcal F_{\mathrm F}=\bigoplus_{N=0}^\infty\mathcal H_N^{(\mathrm F)},\]
+with vacuum $\ket0$. The fixed ordering is essential: exchanging the order of fermion creation operators changes the sign of the state.
+
+Define creation operators by the ordered convention
+\[\boxed{\ket{n_1,n_2,\ldots}_{\mathrm F}
+=\prod_{i=1}^\infty(\op a_i^\dagger)^{n_i}\ket0,}\]
+where the product is taken in increasing order of $i$, from left to right. Since adding a particle to an occupied orbital would produce a repeated column in the Slater determinant,
+\[(\op a_i^\dagger)^2=0.\]
+Exchanging two distinct orbitals reverses the Slater determinant sign, hence
+\[\op a_i^\dagger\op a_j^\dagger=-\op a_j^\dagger\op a_i^\dagger
+\qquad(i\ne j).\]
+
+\subsection*{2) Fermionic creation and annihilation operators}
+
+To put a newly created operator into the fixed orbital order, it must pass every occupied lower-index mode. Define the parity count
+\[\nu_i=\sum_{j<i}n_j.\]
+The creation and annihilation actions are then
+\[\boxed{\begin{aligned}
+\op a_i^\dagger\ket{\ldots,n_i,\ldots}_{\mathrm F}
+ &=(1-n_i)(-1)^{\nu_i}\ket{\ldots,n_i+1,\ldots}_{\mathrm F},\\
+\op a_i\ket{\ldots,n_i,\ldots}_{\mathrm F}
+ &=n_i(-1)^{\nu_i}\ket{\ldots,n_i-1,\ldots}_{\mathrm F}.
+\end{aligned}}\]
+Thus creation at an already occupied mode and annihilation at an empty mode both give zero. For the vacuum, $\op a_i\ket0=0$ as in the bosonic case. The sign is the number of already occupied orbitals passed when inserting or removing a fermion.
+
+\subsection*{3) Derivation of anticommutation relations}
+
+Apply the operators in the two possible orders to an arbitrary occupation state. For the same mode,
+\[\begin{aligned}
+\op a_i\op a_i^\dagger\ket{\{n_k\}}_{\mathrm F}
+ &=(1-n_i)\ket{\{n_k\}}_{\mathrm F},\\
+\op a_i^\dagger\op a_i\ket{\{n_k\}}_{\mathrm F}
+ &=n_i\ket{\{n_k\}}_{\mathrm F}.
+\end{aligned}\]
+Their sum is the identity. For distinct $i<j$, exchanging the order of the two operations changes the number of occupied orbitals through which one operator passes by one. Therefore
+\[\op a_i\op a_j^\dagger\ket{\{n_k\}}_{\mathrm F}
+ =-\op a_j^\dagger\op a_i\ket{\{n_k\}}_{\mathrm F},\quad i\ne j,\]
+and analogously for two creation or two annihilation operators. Define the anticommutator $\{\op A,\op B\}=\op A\op B+\op B\op A$. We have
+\[\boxed{\{\op a_i,\op a_j\}=0,\quad
+\{\op a_i^\dagger,\op a_j^\dagger\}=0,\quad
+\{\op a_i,\op a_j^\dagger\}=\delta_{ij}\op I.}\]
+In particular, the nilpotence of the creation operator follows again from $\{\op a_i^\dagger,\op a_i^\dagger\}=0$. The occupation-number operator has the same formal expression as for bosons,
+\[\op n_i=\op a_i^\dagger\op a_i,\qquad
+\op N=\sum_i\op a_i^\dagger\op a_i,\]
+but its eigenvalues are restricted to $0,1$.
+
+\subsection*{4) One-particle operators and the importance of order}
+
+Take the additive operator $\op{\mathcal O}=\sum_{\alpha=1}^N\op t_\alpha$, and let $t_{ij}=\mel i{\op t}j$. As for bosons, each term $\ket i_\alpha\bra j_\alpha$ removes one occupied orbital $j$ and replaces it by $i$. In the ordered Slater determinant, the signs from removing and inserting exactly match those in $\op a_i^\dagger\op a_j$. Thus on every antisymmetric basis state,
+\[\sum_{\alpha=1}^N\ket i_\alpha\bra j_\alpha
+=\op a_i^\dagger\op a_j,\]
+and hence
+\[\boxed{\op{\mathcal O}=\sum_{ij}t_{ij}\op a_i^\dagger\op a_j.}\]
+No special parity factor is inserted outside the operators: the fermionic sign is already contained in the creation and annihilation algebra.
+
+For a symmetric two-particle interaction, apply the same reasoning with two incoming and two outgoing orbitals. Use the unsymmetrized matrix elements $V_{ij;kl}$ defined in the boson section. With the explicit operator order
+\[\op a_i^\dagger\op a_j^\dagger\op a_l\op a_k,\]
+particles are first annihilated from $k$ and $l$, and then created in $j$ and $i$, with all signs supplied by anticommutation. One obtains
+\[\boxed{\op V=\frac12\sum_{ijkl}V_{ij;kl}
+\op a_i^\dagger\op a_j^\dagger\op a_l\op a_k.}\]
+The factor $1/2$ counts each \emph{unordered particle pair} once. It is independent of Bose or Fermi statistics when $V_{ij;kl}$ is defined by unsymmetrized orbital integrals.
+
+\subsection*{5) Unified form for bosons and fermions}
+
+Both particle species have the same \emph{normal-ordered} form of a general one- plus two-body Hamiltonian:
+\[\boxed{\begin{aligned}
+\op H={}&\sum_{ij}h_{ij}\op a_i^\dagger\op a_j\\
+ &+\frac12\sum_{ijkl}V_{ij;kl}\op a_i^\dagger\op a_j^\dagger\op a_l\op a_k,
+\end{aligned}}\]
+where $h_{ij}=\mel i{\op p^2/(2m)+\op U}j$. The entire difference between the statistics resides in the canonical commutator or anticommutator relations and the allowed occupation numbers:
+\[\begin{array}{c|c|c}
+ &\text{Bosons}&\text{Fermions}\\\hline
+n_i&0,1,2,\ldots&0,1\\
+\op a_i\op a_j^\dagger\mp\op a_j^\dagger\op a_i
+&\delta_{ij}&\delta_{ij}\\
+\end{array}\]
+Here the minus sign applies to bosons and the plus sign to fermions. For a one-body potential $U$, its matrix elements are included in $h_{ij}$; interactions between two particles are included in $V_{ij;kl}$. This is the general result toward which the lecture derivations have been building.

@@ -1,0 +1,112 @@
+% INSTRUCTOR REFERENCE: D_K.Liu-15-25.pdf, pp. 15--25, especially Secs. 2.1.2 and 2.2.
+% Integrated here after the original density-operator discussion; overlapping unitary,
+% ensemble and projective-measurement postulates are referenced, not redeveloped.
+\section{Composite Systems and Generalized Quantum Measurements}
+
+The preceding discussion described pure and mixed ensembles by a density operator $\op\rho$. We now ask how a measurement can be modeled as a physical interaction. The essential observation is that the system of interest and the measuring device together form a composite quantum system. Unitary evolution of that larger system, followed by a readout of the probe, generates measurement probabilities and conditional state changes of the measured subsystem.
+
+\subsection*{1) Composite systems and reduced states}
+
+Let two subsystems $A,B$ have Hilbert spaces $\mathcal H_A,\mathcal H_B$. The composite Hilbert space is
+\[\mathcal H_{AB}=\mathcal H_A\otimes\mathcal H_B.\]
+For bases $\{\ket i_A\}$ and $\{\ket j_B\}$, an arbitrary pure composite state has the form
+\[\ket{\Psi_{AB}}=\sum_{ij}c_{ij}\ket i_A\otimes\ket j_B,
+\qquad\sum_{ij}|c_{ij}|^2=1.\]
+If $\ket{\Psi_{AB}}$ cannot be factored as a product $\ket{\psi_A}\otimes\ket{\psi_B}$, the two subsystems are entangled. The density operator of the full system is $\op\rho_{AB}=\ket{\Psi_{AB}}\bra{\Psi_{AB}}$; the state of subsystem $A$ is obtained by \emph{partial trace},
+\[\boxed{\op\rho_A=\operatorname{Tr}_B\op\rho_{AB}
+ =\sum_j{}_B\bra j\op\rho_{AB}\ket j_B.}\]
+Expectation values of every observable acting only on $A$ can be computed equivalently as
+\[\operatorname{Tr}_{AB}\bigl[\op\rho_{AB}(\op A\otimes\op I_B)\bigr]
+ =\operatorname{Tr}_A(\op\rho_A\op A).\]
+For example, for the entangled Bell state
+\[\ket{\Phi^+}_{AB}=\frac{\ket{00}+\ket{11}}{\sqrt2},\]
+the reduced state is
+\[\op\rho_A=\frac12(\ket0\bra0+\ket1\bra1)=\frac12\op I_A.\]
+The composite state is pure even though its subsystem is maximally mixed. The purity $\operatorname{Tr}\op\rho^2$ equals one for a pure state and is smaller for a mixed state; it is preserved under unitary evolution of the closed composite system but need not be preserved under a partial trace.
+
+\subsection*{2) Projective measurement and conditional states}
+
+A projective measurement of an observable $\op A=\sum_j a_j\op Q_j$ uses mutually orthogonal projectors $\op Q_j\op Q_k=\delta_{jk}\op Q_j$ and $\sum_j\op Q_j=\op I$. As established earlier, outcome $j$ has probability
+\[p_j=\operatorname{Tr}(\op Q_j\op\rho),\]
+and the selectively updated state for a L\"uders measurement is
+\[\op\rho_j=\frac{\op Q_j\op\rho\op Q_j}{p_j}\quad(p_j>0).\]
+If the outcome is ignored, the state is $\sum_j\op Q_j\op\rho\op Q_j$. General laboratory measurements need not be described by orthogonal projectors on the system alone; this is the motivation for the system--probe construction.
+
+\subsection*{3) A measurement as a system--probe interaction}
+
+Denote the measured system by $S$ and the probe or meter by $M$. Prepare an initially uncorrelated state
+\[\ket{\Psi_{SM}(0)}=\ket{\psi}_S\otimes\ket\theta_M.\]
+For an interaction of duration $\tau$, the combined evolution is unitary:
+\[\ket{\Psi_{SM}(\tau)}=\op U_{SM}\ket\psi_S\ket\theta_M,\qquad
+\op U_{SM}=\timeorder\exp\!\left(-\frac\ii\hbar\int_0^\tau\op H_{SM}(t)\,\dd t\right).\]
+When the interaction is sufficiently short and strong, the free subsystem Hamiltonians can be neglected relative to the interaction Hamiltonian during this interval. A general interaction correlates the system and probe. We then make a projective measurement on the \emph{probe} in an orthonormal basis $\{\ket{r_j}_M\}$.
+
+Define the induced operator on the system Hilbert space by
+\[\boxed{\op M_j={}_M\bra{r_j}\op U_{SM}\ket\theta_M.}\]
+Projecting the composite state onto $\ket{r_j}_M$ gives the unnormalized system state $\op M_j\ket\psi_S$. Its squared norm is the probability of outcome $j$:
+\[\boxed{p_j=\mel\psi{\op M_j^\dagger\op M_j}\psi,\qquad
+\ket{\psi_j}=\frac{\op M_j\ket\psi}{\sqrt{p_j}}.}\]
+Completeness of the probe readout basis and unitarity of $\op U_{SM}$ imply
+\[\sum_j\op M_j^\dagger\op M_j
+={}_M\bra\theta\op U_{SM}^\dagger
+  \bigl(\op I_S\otimes\sum_j\ket{r_j}_M\bra{r_j}\bigr)
+  \op U_{SM}\ket\theta_M=\op I_S.\]
+The system's state generally changes even if no direct projective measurement was performed on it. This is \emph{measurement backaction}. For an ideal rank-one probe readout conditioned on $j$, the post-readout pure composite state is the product $\ket{\psi_j}_S\otimes\ket{r_j}_M$, whereas the pre-readout state may have been entangled.
+
+\subsection*{4) POVMs and quantum instruments}
+
+The positive operators
+\[\boxed{\op E_j=\op M_j^\dagger\op M_j,\qquad
+\op E_j\ge 0,\qquad\sum_j\op E_j=\op I_S}\]
+are called \emph{effects}, and their complete collection forms a positive operator-valued measure (POVM). They determine outcome probabilities, $p_j=\operatorname{Tr}(\op\rho_S\op E_j)$. A projective measurement is the special case $\op M_j=\op E_j=\op Q_j$.
+
+For a mixed probe state $\op\rho_M=\sum_k q_k\ket{\theta_k}\bra{\theta_k}$, the same recorded result $j$ may arise from several unobserved probe components. Define the Kraus operators
+\[\op M_{jk}=\sqrt{q_k}\,{}_M\bra{r_j}\op U_{SM}\ket{\theta_k}_M.\]
+Now
+\[\boxed{\begin{aligned}
+\op E_j&=\sum_k\op M_{jk}^\dagger\op M_{jk},\\
+p_j&=\operatorname{Tr}(\op\rho_S\op E_j),\\
+\op\rho_{S|j}&=\frac{\sum_k\op M_{jk}\op\rho_S\op M_{jk}^\dagger}{p_j}.
+\end{aligned}}\]
+The \emph{nonselective} state after the measurement is
+\[\boxed{\op\rho'_S=\sum_{jk}\op M_{jk}\op\rho_S\op M_{jk}^\dagger,\qquad
+\operatorname{Tr}\op\rho'_S=1.}\]
+The individual outcome maps $\mathcal I_j(\op\rho)=\sum_k\op M_{jk}\op\rho\op M_{jk}^\dagger$ comprise a quantum \emph{instrument}; their sum is completely positive and trace-preserving. An effect $\op E_j$ specifies a probability but \emph{not, by itself,} the conditional state: different instruments can have identical POVM effects.
+
+\subsection*{5) A qubit interacting with a qubit meter}
+
+As an explicit example, prepare a system qubit and a two-level meter as
+\[\ket\psi_S=a_0\ket0+a_1\ket1,\qquad
+  \ket\theta_M=\frac{\ket\downarrow+\ket\uparrow}{\sqrt2},\]
+with $|a_0|^2+|a_1|^2=1$. To allow the meter preparation to vary, first write $\ket\theta_M=b_0\ket\downarrow+b_1\ket\uparrow$ with $|b_0|^2+|b_1|^2=1$. We will subsequently choose $b_0=b_1=1/\sqrt2$ to obtain a particularly transparent measurement. The handout uses the interaction Hamiltonian
+\[\boxed{\op H_{\mathrm{int}}=\ii g(\ket1\bra1-\ket0\bra0)
+ \otimes\bigl(\ket\uparrow\bra\downarrow-\ket\downarrow\bra\uparrow\bigr),}\]
+which is Hermitian because the operator in the second factor is anti-Hermitian. Introduce $\sigma_y^{(M)}=\ii(\ket\uparrow\bra\downarrow-\ket\downarrow\bra\uparrow)$ and $\theta=g\tau/\hbar$. Then
+\[\op U_{SM}=e^{-\ii\theta(\ket1\bra1-\ket0\bra0)\otimes\sigma_y^{(M)}}.\]
+For a general meter preparation $b_0,b_1$, direct evaluation of this unitary and projection of the meter onto $\ket\downarrow$ or $\ket\uparrow$ yield
+\[\begin{aligned}
+\op M_\downarrow&=(b_0\cos\theta+b_1\sin\theta)\ket0\bra0
+ +(b_0\cos\theta-b_1\sin\theta)\ket1\bra1,\\
+\op M_\uparrow&=(b_1\cos\theta-b_0\sin\theta)\ket0\bra0
+ +(b_1\cos\theta+b_0\sin\theta)\ket1\bra1.
+\end{aligned}\]
+These two operators satisfy the completeness relation for any normalized $b_0,b_1$. Specialize now to $b_0=b_1=1/\sqrt2$. For $\ket{m_\pm}=(\ket\downarrow\pm\ket\uparrow)/\sqrt2$, the state after the interaction is
+\[\begin{split}
+\ket{\Psi_{SM}(\tau)}={}&a_0\ket0(\cos\theta\ket{m_+}+\sin\theta\ket{m_-})\\
+&+a_1\ket1(\cos\theta\ket{m_+}-\sin\theta\ket{m_-}).
+\end{split}\]
+A measurement of the meter in the $\{\ket\downarrow,\ket\uparrow\}$ basis induces the system operators
+\[\boxed{\begin{aligned}
+\op M_\downarrow&=\tfrac1{\sqrt2}\bigl[(\cos\theta+\sin\theta)\ket0\bra0
+  +(\cos\theta-\sin\theta)\ket1\bra1\bigr],\\
+\op M_\uparrow&=\tfrac1{\sqrt2}\bigl[(\cos\theta-\sin\theta)\ket0\bra0
+  +(\cos\theta+\sin\theta)\ket1\bra1\bigr].
+\end{aligned}}\]
+Set $\eta=\sin(2\theta)$. The two POVM effects are
+\[\op E_\downarrow=\tfrac12[(1+\eta)\ket0\bra0+(1-\eta)\ket1\bra1],\qquad
+\op E_\uparrow=\op I-\op E_\downarrow.\]
+They are positive and sum to the identity for $|\eta|\le1$. When $\theta=\pi/4$, the measurement is projective:
+\[\op M_\downarrow=\ket0\bra0,\quad
+\op M_\uparrow=\ket1\bra1,\quad
+\ket{\Psi_{SM}}=a_0\ket0\ket\downarrow+a_1\ket1\ket\uparrow.\]
+The outcomes identify the computational-basis state, with probabilities $|a_0|^2$ and $|a_1|^2$. At $\theta=3\pi/4$ the two projector outcomes are exchanged (up to an irrelevant phase): the meter result $\downarrow$ selects system state $\ket1$, and $\uparrow$ selects $\ket0$. When $\theta=0$, both effects are $\op I/2$: the result contains no information about the system and the conditional state is unchanged. Intermediate $0<\theta<\pi/4$ implements a tunable \emph{unsharp} measurement, whose backaction and information gain vary continuously with the interaction strength and time. The result follows entirely from a unitary system--probe interaction and an ordinary projective readout of the meter.

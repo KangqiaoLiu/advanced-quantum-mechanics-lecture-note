@@ -3,12 +3,12 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,mathtools,bm}
 \usepackage{geometry,microtype,enumitem,tikz,longtable,array,booktabs}
-\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathreplacing,patterns}
+\usetikzlibrary{arrows.meta,calc,positioning,decorations.pathreplacing,decorations.markings,patterns}
 \geometry{margin=26mm}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
 \hypersetup{
   pdftitle={Advanced Quantum Mechanics: Graduate Lecture Notes},
-  pdfsubject={Faithful English translation of the source lecture notes},
+  pdfsubject={Graduate lecture notes integrating original translation and instructor-directed additions},
   pdfkeywords={advanced quantum mechanics, lecture notes}
 }
 \numberwithin{equation}{section}
@@ -43,11 +43,11 @@
   \vspace{12mm}
   \rule{0.82\textwidth}{0.8pt}\par
   \vspace{14mm}
-  {\Large Faithful English Translation\par}
+  {\Large Graduate Reference Text\par}
   \vspace{5mm}
-  {\large Working Edition\par}
+  {\large Instructor-Directed Expanded Edition\par}
   \vfill
-  {\normalsize Original material currently typeset: Chapters 1--8\par}
+  {\normalsize Eight chapters with instructor supplementary material\par}
   \vspace{7mm}
   {\normalsize\today\par}
   \vspace*{12mm}
@@ -72,17 +72,22 @@
 \input{chapters/ch02/02_pictures_ehrenfest}
 \input{chapters/ch02/03_harmonic_oscillator}
 \input{chapters/ch02/04_coherent_states}
+\input{chapters/ch02/04a_squeezed_states}
 \input{chapters/ch02/05_coordinate_wkb}
 \input{chapters/ch02/06_path_integral}
 \input{chapters/ch02/07_gauge_transformations}
+\input{chapters/ch02/07a_berry_phase}
+\input{chapters/ch02/07b_magnetic_monopoles}
 \chapter{Angular Momentum Theory}\label{ch:angular-momentum}
 \input{chapters/ch03/01_rotations}
 \input{chapters/ch03/02_spin}
 \input{chapters/ch03/03_density_operators}
+\input{chapters/ch03/03a_quantum_measurement}
 \input{chapters/ch03/04_angular_momentum_spectrum}
 \input{chapters/ch03/05_orbital_angular_momentum}
 \input{chapters/ch03/06_angular_momentum_coupling}
 \input{chapters/ch03/07_bell_inequality}
+\input{chapters/ch03/08_quantum_teleportation}
 \chapter{Approximation Methods}\label{ch:approximation-methods}
 \input{chapters/ch04/01_stationary_perturbation}
 \input{chapters/ch04/02_nondegenerate_perturbation}
@@ -97,17 +102,12 @@
 \input{chapters/ch05/03_lippmann_schwinger}
 \input{chapters/ch05/04_born_series}
 \input{chapters/ch05/05_partial_waves}
-\chapter{Symmetry and Identical Particles}\label{ch:symmetry-identical}
-\input{chapters/ch06/01_conserved_quantities}
-\input{chapters/ch06/02_symmetry_conservation}
-\input{chapters/ch06/03_identical_particle_symmetry}
-\input{chapters/ch06/04_simple_identical_particle_systems}
-\chapter{Second Quantization}\label{ch:second-quantization}
-\input{chapters/ch07/01_fock_space}
-\input{chapters/ch07/02_commutation_relations}
-\input{chapters/ch07/03_occupation_factors}
-\input{chapters/ch07/04_additive_operators}
-\input{chapters/ch07/05_field_operators}
+\chapter{Identical Particles and Permutation Symmetry}\label{ch:symmetry-identical}
+\input{chapters/ch06/01_permutation_symmetry}
+\input{chapters/ch06/02_symmetrized_states}
+\chapter{Bosons, Fermions, and Second Quantization}\label{ch:second-quantization}
+\input{chapters/ch07/01_bosons}
+\input{chapters/ch07/02_fermions}
 \chapter{Relativistic Quantum Mechanics}\label{ch:relativistic-qm}
 \input{chapters/ch08/01_relativistic_wave_equations}
 \input{chapters/ch08/02_relativistic_covariance}

@@ -8,6 +8,7 @@ on:
       - 'figures/**'
       - 'frontmatter/**'
       - 'scripts/check_notation_consistency.py'
+      - 'scripts/check_content_additions.py'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
@@ -29,6 +30,13 @@ jobs:
 
       - name: Check whole-book notation consistency
         run: python3 scripts/check_notation_consistency.py
+
+      - name: Check supplementary quantum algebra
+        shell: bash
+        run: |
+          python3 -m venv /tmp/aqm-checks
+          /tmp/aqm-checks/bin/python -m pip install --quiet sympy
+          /tmp/aqm-checks/bin/python scripts/check_content_additions.py
 
       - name: Compile notes with XeLaTeX
         uses: xu-cheng/latex-action@v4

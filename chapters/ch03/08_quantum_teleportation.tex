@@ -1,0 +1,99 @@
+% INSTRUCTOR REFERENCE: Nielsen--Chuang, Quantum Computation and Quantum
+% Information, extracted pp. 26--28, Bell-state table and teleportation example.
+% New textbook exposition; no lengthy prose copied from the book.
+\section{Quantum Teleportation: An Application of Entanglement and Measurement}
+
+The Bell correlations developed above and the general measurement formalism in this chapter can be combined into a communication protocol. \emph{Quantum teleportation} transfers an unknown qubit state using one previously shared entangled pair and two classical bits. The protocol moves the quantum \emph{state}, not the physical particle carrying it.
+
+\subsection*{1) Bell states and an unknown input qubit}
+
+Use the computational basis $\ket0,\ket1$ and the Pauli operators
+\[\sigma_x=\ket0\bra1+\ket1\bra0,\qquad
+  \sigma_z=\ket0\bra0-\ket1\bra1.\]
+The four Bell states are
+\[\begin{aligned}
+\ket{\Phi^\pm}&=\frac{\ket{00}\pm\ket{11}}{\sqrt2},\\
+\ket{\Psi^\pm}&=\frac{\ket{01}\pm\ket{10}}{\sqrt2}.
+\end{aligned}\]
+They form an orthonormal basis of two qubits. One may obtain them from computational-basis states with a Hadamard gate on the first qubit and a controlled-NOT (CNOT) gate from the first qubit to the second: a Hadamard creates a superposition; the CNOT correlates the target with its control. More precisely,
+\[\boxed{\ket{\beta_{xy}}=\operatorname{CNOT}(\op U_{\mathrm H}\otimes\op I)\ket{x,y}
+=\frac{\ket{0,y}+(-1)^x\ket{1,1-y}}{\sqrt2},\quad x,y\in\{0,1\}.}\]
+This convention gives $\ket{\beta_{00}}=\ket{\Phi^+}$, $\ket{\beta_{01}}=\ket{\Psi^+}$, $\ket{\beta_{10}}=\ket{\Phi^-}$, and $\ket{\beta_{11}}=\ket{\Psi^-}$.
+
+Let Alice hold an unknown normalized state
+\[\ket\psi_1=\alpha\ket0_1+\beta\ket1_1,
+\qquad|\alpha|^2+|\beta|^2=1.\]
+Alice and Bob have previously shared the entangled state $\ket{\Phi^+}_{23}$, with qubit $2$ at Alice's location and qubit $3$ at Bob's location. Their initial three-qubit state is
+\[\ket{\Psi_0}=\ket\psi_1\otimes\ket{\Phi^+}_{23}
+=\frac1{\sqrt2}\bigl[\alpha(\ket{000}+\ket{011})
+   +\beta(\ket{100}+\ket{111})\bigr].\]
+The ordering of the three tensor factors is always $1,2,3$.
+
+\subsection*{2) The two-gate derivation}
+
+Alice first applies a CNOT with qubit $1$ as the control and qubit $2$ as the target. The target flips only when the control is $\ket1$:
+\[\ket{\Psi_1}=\frac1{\sqrt2}
+  \bigl[\alpha(\ket{000}+\ket{011})
+       +\beta(\ket{110}+\ket{101})\bigr].\]
+Next Alice applies the Hadamard gate $\op U_{\mathrm H}$ to qubit $1$, with
+\[\op U_{\mathrm H}\ket0=\frac{\ket0+\ket1}{\sqrt2},\qquad
+\op U_{\mathrm H}\ket1=\frac{\ket0-\ket1}{\sqrt2}.\]
+Grouping the resulting three-qubit amplitudes according to Alice's two-qubit state gives
+\[\boxed{\begin{aligned}
+\ket{\Psi_2}=\frac12\bigl\{&\ket{00}_{12}(\alpha\ket0+\beta\ket1)_3\\
+ &+\ket{01}_{12}(\alpha\ket1+\beta\ket0)_3\\
+ &+\ket{10}_{12}(\alpha\ket0-\beta\ket1)_3\\
+ &+\ket{11}_{12}(\alpha\ket1-\beta\ket0)_3\bigr\}.
+\end{aligned}}\]
+The expression contains the entire protocol. Alice measures both qubits in the computational basis. Each two-bit result occurs with probability $1/4$, independent of the unknown amplitudes $\alpha,\beta$. Conditioned on this outcome, Bob's qubit is one of four states related to $\ket\psi$ by Pauli operations.
+
+\subsection*{3) Classical communication and the correction}
+
+Write Alice's two measured bits as $m_1m_2$. Bob applies the appropriate correction:
+\[\begin{array}{c|c|c}
+\text{Alice's result}&\text{Bob's conditional state}&\text{Correction}\\\hline
+00&\ket\psi&\op I\\
+01&\sigma_x\ket\psi&\sigma_x\\
+10&\sigma_z\ket\psi&\sigma_z\\
+11&\sigma_x\sigma_z\ket\psi&\sigma_z\sigma_x
+\end{array}\]
+The corrections are summarized, up to irrelevant global phases, by
+\[\boxed{\op U_{\mathrm{corr}}=\sigma_z^{m_1}\sigma_x^{m_2}.}\]
+Because the Pauli operators square to the identity, after Bob receives Alice's two classical bits his final state is $\ket\psi$. The prior entangled resource is consumed by the measurement.
+
+\begin{center}
+\begin{tikzpicture}[x=0.82cm,y=0.78cm,>=Latex]
+\foreach \yy/\lab in {2.5/{$\ket\psi$},1.25/{$\ket0$},0/{$\ket0$}}{
+  \node[anchor=east] at (-.2,\yy) {\lab};
+  \draw[thick] (0,\yy)--(9.5,\yy);
+}
+\node[anchor=east,font=\scriptsize] at (-.05,3.1) {Alice};
+\node[anchor=east,font=\scriptsize] at (-.05,-.6) {Bob};
+\draw[rounded corners,fill=blue!8] (0.5,-.43) rectangle (1.2,1.64);
+\node[font=\scriptsize,align=center] at (.85,.57) {Bell\\pair};
+\draw[fill=white] (2.4,2.5) circle (.085); \fill (2.4,2.5) circle (.075);
+\draw (2.4,2.5)--(2.4,1.25);
+\draw (2.4,1.25) circle (.16);\draw (2.24,1.25)--(2.56,1.25);\draw (2.4,1.09)--(2.4,1.41);
+\draw[fill=white] (3.75,2.12) rectangle (4.25,2.88);\node at (4,2.5) {$H$};
+\foreach \yy in {1.25,2.5}{
+ \draw[fill=white] (5.05,\yy-.23) rectangle (5.66,\yy+.23);
+ \node[font=\scriptsize] at (5.355,\yy) {$M$};
+}
+\draw[dashed,thick] (5.85,1.25)--(6.55,1.25)--(6.55,.45)--(7.45,.45);
+\draw[dashed,thick] (5.85,2.5)--(6.9,2.5)--(6.9,.45);
+\draw[fill=white] (7.45,-.3) rectangle (8.85,.3);
+\node[font=\scriptsize] at (8.15,0) {$Z^{m_1}X^{m_2}$};
+\node[anchor=west] at (9.55,0) {$\ket\psi$};
+\end{tikzpicture}
+\end{center}
+In the circuit the pair shared before the protocol is represented by the initialization of qubits $2$ and $3$; the dashed lines indicate the two classical outcomes sent to Bob. The CNOT control is on qubit $1$ and its target is qubit $2$.
+
+\subsection*{4) Causality and the no-cloning principle}
+
+Without Alice's classical message, Bob must average over her possible outcomes. His density operator is
+\[\op\rho_3=\frac14\bigl(\op\rho+\sigma_x\op\rho\sigma_x
++\sigma_z\op\rho\sigma_z+\sigma_x\sigma_z\op\rho\sigma_z\sigma_x\bigr)
+=\frac12\op I,\]
+where $\op\rho=\ket\psi\bra\psi$. Bob's local state is independent of $\alpha,\beta$ before he receives the classical bits, so the protocol cannot transmit information faster than light.
+
+Teleportation also respects the no-cloning theorem. Alice measures and thereby changes her original input system; after the full protocol the unknown state is available at Bob's site, with no additional intact copy left at Alice's site. One shared Bell pair plus two classical bits is therefore sufficient to transfer a single arbitrary qubit state, but the entanglement is a consumed resource and classical communication remains necessary.

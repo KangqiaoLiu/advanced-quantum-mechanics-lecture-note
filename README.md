@@ -2,7 +2,7 @@
 
 A long-term project to develop a **complete English graduate-level lecture note** in advanced quantum mechanics and a **complementary interactive study resource**.
 
-The initial content backbone is a 186-page Chinese lecture note provided by the instructor. The work proceeds in two distinct stages: first a faithful, independently versioned English translation of each original Chinese chapter; then a separately tracked instructor-directed scientific/pedagogical adaptation. Course-level decisions about additions, reductions, and reorganization are intentionally left open for later discussions.
+The initial content backbone was a 186-page Chinese lecture note supplied by the instructor. The complete first-pass translation and structural fidelity review are preserved in versioned Git branches. The current `main` manuscript has entered instructor-directed content revision: Chapters 6–7 now follow the instructor's actual handwritten lectures, and further modules extend the complete English reference text.
 
 ## Start here
 
@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **all eight chapters** (Chinese source PDF viewer pp. 1–186; Chapter 7 duplicate pages and Chapter 4/5 boundary have been reconciled) have been completed, compiled locally, and tracked. The complete eight-chapter English manuscript is assembled and compiles locally into 145 PDF pages. Full-book bilingual proofreading and instructor approval remain outstanding; scientific/pedagogical revision and interactive materials follow.
+**Project phase (2026-10-16):** Eight-chapter translation baseline preserved; instructor-directed expanded English manuscript now includes squeezed and Berry states, generalized quantum measurement and teleportation, with complete replacement Chapters 6–7 from four handwritten handouts. The locally built reference book is **138 pages**, retaining a single-page book-wide List of Notation. Publication-grade bilingual line-by-line verification of historical translation material remains separate; the interactive companion follows the textbook revision.
 
 ## Single-page, whole-book mathematical notation
 
@@ -27,6 +27,18 @@ The printed [**List of Notation**](frontmatter/notation.tex) is a **single A4 pa
 The detailed [**whole-book notation policy**](editorial/NOTATION_POLICY.md) defines what remains consistent across the textbook, including operator hats, vectors, pure/mixed expectations, spin, parity and particle exchange, second quantization, time ordering versus the scattering transition operator, and natural-unit exceptions. This change harmonizes the body text where conventions previously collided: `\\parityop=\\op{\\Pi}`, `\\timeorder=\\mathcal T`, and ensemble averages `\\langle A\\rangle_\\rho`. The source-faithful version is preserved at [translation/fidelity-audited-2026-10-16](../../tree/translation/fidelity-audited-2026-10-16).
 
 Run `python scripts/check_notation_consistency.py` to verify the centralized conventions; `python scripts/check_notation_consistency.py --pdf main.pdf` additionally checks that the printed list occupies **one page**. The local post-edit XeLaTeX compilation produced a **142-page** complete book.
+
+## Instructor handout integration: expanded English edition
+
+The instructor confirmed that the four 2024 handwritten handouts on indistinguishable particles, permutation symmetry, bosons and fermions were the **actual materials used in class**. These now determine the order and derivations of Chapters **6 and 7**; the previous translated versions are preserved only in Git history and the [pre-integration snapshot](../../tree/textbook/pre-instructor-supplements-2026-10-16), not duplicated in the active manuscript.
+
+The revision also adds the instructor's complete photographed **Berry-phase derivation directly after the Aharonov--Bohm effect**, a **10-minute squeezed-state introduction immediately after coherent states**, and a systematic account of composite systems, **Kraus operators, POVMs, system--probe dynamics**, and **quantum teleportation** after the relevant Chapter 3 topics. All additions use original, unified English exposition.
+
+- **Source mapping, equation decisions and detailed integration report:** [editorial/CONTENT_INTEGRATION_2026-10-16.md](editorial/CONTENT_INTEGRATION_2026-10-16.md).
+- **New mathematical spot checks:** [scripts/check_content_additions.py](scripts/check_content_additions.py) (14 deterministic group/fermion/measurement/teleportation/Berry/squeezing verifications).
+- **Cumulative PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), **138 pages** in the initial local build.
+- The compact [List of Notation](frontmatter/notation.tex) stays on **one page**. Specialized symbols are defined where first used.
+- The handwritten source PDFs and photographed source pages remain private reference files outside the GitHub source repository.
 
 ## Whole-book PDF structure
 

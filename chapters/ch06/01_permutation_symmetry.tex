@@ -1,0 +1,73 @@
+% AUTHOR'S CLASSROOM HANDOUT: 1.1 (five pages), prepared 2024-01-10.
+% Phase-R replacement: mathematical organization follows the instructor's own lectures.
+\section{Identical Particles and Permutation Symmetry}
+
+In a system of identical particles, all particles have the same intrinsic properties: mass, charge, spin, and any other labels that identify the species. The spin--statistics connection is established in relativistic quantum field theory: integer-spin particles obey Bose--Einstein statistics, while half-integer-spin particles obey Fermi--Dirac statistics. Our immediate purpose is to understand how these two classes arise in the state space of a many-particle system. The analysis begins with permutations of particle labels.
+
+\subsection*{1) States, observables, and permutations}
+
+Consider $N$ identical particles with particle labels $1,\ldots,N$. Their Hamiltonian is symmetric under exchanging the particle labels, including the associated spatial and spin coordinates. A many-body wavefunction is written
+\[\Psi(1,2,\ldots,N),\]
+where each argument collectively denotes the coordinates of one particle. Define the exchange operator $\op P_{ij}$ by
+\[\op P_{ij}\Psi(1,\ldots,i,\ldots,j,\ldots,N)
+   =\Psi(1,\ldots,j,\ldots,i,\ldots,N).\]
+Exchanging two particles twice restores the original state, hence
+\[\op P_{ij}^{\,2}=\op I,\qquad \op P_{ij}^{-1}=\op P_{ij}.\]
+The Hamiltonian commutes with every permutation operator:
+\[\boxed{[\op H,\op P]=0,\qquad P\in S_N.}\]
+Here $S_N$ is the symmetric group consisting of the $N!$ permutations of $N$ objects. Any permutation is a product of elementary transpositions; its parity is even or odd according to the parity of the number of transpositions in such a decomposition. Different decompositions have the same parity.
+
+On the many-particle Hilbert space each permutation is represented by a unitary operator. To see this, let the inner product be the integral over all particle coordinates. Relabeling dummy integration variables gives
+\[\begin{aligned}
+\braket{\Psi}{\op P\Phi}
+ &=\int\dd 1\cdots\dd N\,\Psi^*(1,\ldots,N)
+      (\op P\Phi)(1,\ldots,N)\\
+ &=\braket{\op P^{-1}\Psi}{\Phi},
+\end{aligned}\]
+so $\op P^\dagger=\op P^{-1}$. In particular, $\op P_{ij}$ is Hermitian as well as unitary, and its eigenvalues are $+1$ or $-1$.
+
+An observable that treats identical particles identically is invariant under relabeling, and therefore
+\[\boxed{\op P^{-1}\op A\op P=\op A,
+\qquad [\op A,\op P]=0\quad(P\in S_N).}\]
+The converse follows immediately by multiplying the commutator by $\op P^{-1}$. Invariance of the Hamiltonian means that permutation symmetry is preserved under time evolution: for $\op U(t)=e^{-\ii\op Ht/\hbar}$,
+\[\op P\op U(t)\ket\Psi=\op U(t)\op P\ket\Psi.\]
+Therefore, if a state is symmetric or antisymmetric at the initial time, its symmetry character remains unchanged.
+
+\subsection*{2) Examples: two and three particles}
+
+For two particles, $S_2=\{I,P_{12}\}$. Given an arbitrary wavefunction $\Psi(1,2)$, its symmetric and antisymmetric combinations are
+\[\Psi_\pm(1,2)\propto\Psi(1,2)\pm\Psi(2,1),\]
+which satisfy $\op P_{12}\Psi_\pm=\pm\Psi_\pm$ whenever the combinations are nonzero. The normalization depends on the overlap of the two terms; it is derived explicitly in the next section.
+
+The three-particle example reveals an important additional possibility. The six elements of $S_3$ are the identity, three exchanges, and two cyclic permutations. For instance,
+\[\op P_{12}\op P_{23}\op P_{12}=\op P_{13},\qquad
+\op P_{12}\op P_{23}\ne\op P_{23}\op P_{12}.\]
+These operators need not commute. Hence a basis of simultaneous eigenstates of \emph{all} exchange operators generally does not exist in the full distinguishable-particle tensor-product space.
+
+Take three orthonormal one-particle orbitals $\ket a,\ket b,\ket c$. Acting with all elements of $S_3$ on $\ket{abc}:=\ket a\otimes\ket b\otimes\ket c$ produces six orthonormal ordered products. This six-dimensional permutation space contains an invariant symmetric combination
+\[\ket{\Psi_{\mathrm s}}=\frac1{\sqrt6}
+   (\ket{abc}+\ket{acb}+\ket{bac}+\ket{bca}+\ket{cab}+\ket{cba}),\]
+and an invariant antisymmetric combination
+\[\ket{\Psi_{\mathrm a}}=\frac1{\sqrt6}
+   (\ket{abc}-\ket{acb}-\ket{bac}+\ket{bca}+\ket{cab}-\ket{cba}).\]
+They transform as $\op P\ket{\Psi_{\mathrm s}}=\ket{\Psi_{\mathrm s}}$ and $\op P\ket{\Psi_{\mathrm a}}=\operatorname{sgn}(P)\ket{\Psi_{\mathrm a}}$.
+
+There are also states in this six-dimensional space that transform into \emph{linear combinations of one another} under permutations. These form two copies of the two-dimensional standard irreducible representation of $S_3$. Two orthonormal vectors in the remaining four-dimensional complement are
+\[\begin{aligned}
+\ket{u_1}&=\frac{1}{\sqrt6}
+   (2\ket{abc}-\ket{bca}-\ket{cab}),\\
+\ket{u_2}&=\frac{1}{\sqrt2}(\ket{bca}-\ket{cab}).
+\end{aligned}\]
+Permutation operators mix vectors in this four-dimensional complement. By choosing appropriate two-dimensional invariant subspaces, each permutation is represented by a $2\times2$ matrix rather than a single overall sign. More abstractly, the six-dimensional regular representation decomposes as
+\[\mathbf6\simeq\mathbf1_{\mathrm s}\oplus
+\mathbf1_{\mathrm a}\oplus\mathbf2\oplus\mathbf2,\qquad
+1^2+1^2+2^2=6.\]
+This example explains why permutation-group symmetry alone permits mathematical representations beyond the completely symmetric and completely antisymmetric ones. In the usual nonrelativistic treatment of ordinary identical bosons and fermions, we select the corresponding one-dimensional sectors as the physical exchange-symmetry postulate. Its relation to particle spin is supplied by the spin--statistics theorem under its relativistic assumptions.
+
+\subsection*{3) Permutation-invariant subspaces}
+
+A subspace $\mathcal V$ is invariant under a representation of $S_N$ if $\op P\mathcal V\subseteq\mathcal V$ for every $P\in S_N$. Symmetric and antisymmetric states constitute two especially simple invariant subspaces. The physical action of a permutation never changes measurable expectation values:
+\[\mel{\op P\Psi}{\op A}{\op P\Psi}
+ =\mel\Psi{\op P^\dagger\op A\op P}\Psi
+ =\mel\Psi{\op A}\Psi.\]
+This is the operational meaning of particle indistinguishability. The next section constructs normalized many-particle states in the two physical exchange-symmetry sectors.

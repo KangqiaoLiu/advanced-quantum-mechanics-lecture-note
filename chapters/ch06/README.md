@@ -1,20 +1,10 @@
-# Chapter 6 — Symmetry and Identical Particles
+# Chapter 6 — Identical Particles and Permutation Symmetry
 
-**Phase:** T, first-pass source-faithful English translation. **Source:** `清华大学 高等量子力学.pdf`, PDF viewer pages **140–153**. The following page (154) begins Chapter 7.
+**Instructor-directed replacement** of the original translated Chapter 6. The new mathematical route follows the instructor's actual 2024 classroom handouts, not the discarded Chinese source chapter:
 
-| Original source | English source | Coverage |
-|---|---|---|
-| 140–141, upper | `01_conserved_quantities.tex` | Conservation, expectation values, commutators, probability conservation, good quantum numbers |
-| 141, lower–144, upper | `02_symmetry_conservation.tex` | Symmetry transformations; translations, rotations, inversion/parity; spherical harmonics |
-| 144, lower–151, upper | `03_identical_particle_symmetry.tex` | Indistinguishability, permutation operator, symmetrization, Pauli exclusion, exchange effects and spin |
-| 151, lower–153 | `04_simple_identical_particle_systems.tex` | Helium direct/exchange integrals; atomic angular momentum; Pauli/Fermi pressure |
+- `01_permutation_symmetry.tex`: handout `1. 1 Identical particles, many-particle states, and permutation symmetry.pdf` (5 pages). Identical particles, $S_N$, exchange operators, invariance of the Hamiltonian and observables, $S_2$ and $S_3$ examples, two-dimensional representations and invariant subspaces.
+- `02_symmetrized_states.tex`: handout `1.2 Completely symmetric and antisymmetric states.pdf` (2 pages). Symmetrizer and antisymmetrizer, normalized projectors, repeated boson orbital factors, Slater determinants and completeness.
 
-The source PDF p. 146 has only one sentence fragment completing the preceding question, and p. 147 resets the **printed** source page number to 1 while continuing Chapter 6. Both are accounted for. Illustrations of spatial overlap and the boson/fermion relative-distance probability are editable TikZ.
+The mathematical distinction between invariance under exchange and selection of Bose/Fermi statistics is explicit, as are repeated-orbital combinatorial factors. The instructor's original 2024 PDF files remain outside GitHub. The pre-replacement translated chapter is preserved in Git history and in the version branch established before the expansion.
 
-Reproducible whole-book build:
-
-```bash
-latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
-```
-
-For minimal mathematical corrections, original-source ambiguity and subsequent scientific review, consult [`editorial/CHAPTER06_TRANSLATION_LOG.md`](../../editorial/CHAPTER06_TRANSLATION_LOG.md). Initial translation maintains source organization and order, and has not undergone independent bilingual instructor signoff.
+Related chapter: Chapter 7 develops occupation-number Fock spaces and one-/two-body operator representations from this basis.

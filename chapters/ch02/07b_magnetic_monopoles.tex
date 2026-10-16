@@ -1,0 +1,98 @@
+% Original Chinese source continues after the Berry-phase instructor insertion.
+\section{Magnetic Monopoles and Charge Quantization}
+In classical electromagnetic theory, static electric and magnetic fields are asymmetric. The static electric field has sources but no curl:
+\[\vect\nabla\cdot\vect E=4\pi\rho_e,\qquad
+\vect\nabla\times\vect E=0.\]
+Electric field-line patterns (single-charge configuration):
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.62]
+\fill (0,0)circle(10pt)node[white]{\small $+$};
+\foreach \a in {0,45,...,315}{\draw[->] (\a:0.25)--(\a:1.5);}
+\begin{scope}[xshift=6cm]
+\fill (0,0)circle(10pt)node[white]{\small $-$};
+\foreach \a in {0,45,...,315}{\draw[->] (\a:1.5)--(\a:.25);}
+\end{scope}
+\end{tikzpicture}\end{center}
+The static magnetic field has no sources and does have curl:
+\[\vect\nabla\cdot\vect B=0,\qquad
+\vect\nabla\times\vect B=\frac{4\pi}{c}\vect J.\]
+The magnetic field-line pattern has a dipole structure:
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.65]
+\draw[thick,fill=gray!12](-1,-.25)rectangle(1,.25);
+\node at(-.72,0){N};\node at(.72,0){S};
+\foreach \h in {.45,.75,1.12,1.55}{
+\draw[->,smooth]plot coordinates{(-.8,.25)(-1.1,\h)(0,\h+0.5)(1.1,\h)(.8,.25)};
+\draw[->,smooth]plot coordinates{(-.8,-.25)(-1.1,-\h)(0,-\h-.5)(1.1,-\h)(.8,-.25)};}
+\end{tikzpicture}\end{center}
+Question: Can there be an isolated magnetic charge, that is, a magnetic monopole?
+
+\paragraph{Dirac string.}
+If there is a magnetic charge $e_m$ at the origin, the static field it produces satisfies
+\[\vect\nabla\cdot\vect B=4\pi e_m\delta^{(3)}(\vect r).\]
+Its solution is
+\[\boxed{\vect B(\vect r)=\frac{e_m}{r^2}\vect e_r.}\]
+Can a vector potential $\vect A(\vect r)$ be found such that the original relation $\vect B=\vect\nabla\times\vect A$ still holds everywhere? The answer is no.
+
+Proof: If $\vect B=\vect\nabla\times\vect A$, then necessarily
+\[\vect\nabla\cdot\vect B=\vect\nabla\cdot(\vect\nabla\times\vect A)=0,\]
+contradicting the monopole source equation.
+
+Likewise, by Gauss's theorem, for a closed surface surrounding the monopole,
+\[\oint\vect B\cdot\dd\vect S=4\pi e_m.\]
+But if $\vect B=\vect\nabla\times\vect A$, then
+\[\oint\vect B\cdot\dd\vect S
+=\oint(\vect\nabla\times\vect A)\cdot\dd\vect S
+=\int\vect\nabla\cdot(\vect\nabla\times\vect A)\dd V=0,\]
+contradicting Gauss's theorem. Thus no single globally regular vector potential $\vect A(\vect r)$ can produce $\vect B(\vect r)=\vect\nabla\times\vect A$.
+
+For example, in spherical coordinates take
+\[\vect A=e_m\frac{1-\cos\theta}{r\sin\theta}\vect e_\varphi.\]
+For $\theta<\pi-\varepsilon$ ($\varepsilon$ infinitesimal), using
+\[\begin{split}
+\vect\nabla\times\vect A
+&=\frac1{r\sin\theta}\left[
+\frac{\partial}{\partial\theta}(A_\varphi\sin\theta)
+-\frac{\partial A_\theta}{\partial\varphi}\right]\vect e_r\\
+&\quad+\frac1r\left[
+\frac1{\sin\theta}\frac{\partial A_r}{\partial\varphi}
+-\frac{\partial}{\partial r}(rA_\varphi)\right]\vect e_\theta\\
+&\quad+\frac1r\left[
+\frac{\partial}{\partial r}(rA_\theta)
+-\frac{\partial A_r}{\partial\theta}\right]\vect e_\varphi
+=\frac{e_m}{r^2}\vect e_r=\vect B.
+\end{split}\]
+However, $\vect A$ diverges at $\theta=\pi$. The negative $z$ axis therefore contains a singular string, called the Dirac string. Its singular contribution means that the distributional curl of this globally extended singular potential does not equal the monopole field alone.
+
+\paragraph{Quantization of electric charge.}
+Although a single vector potential satisfying $\vect B=\vect\nabla\times\vect A$ cannot cover all space, such potentials can be found in separate regions. For example, take
+\[\boxed{\begin{aligned}
+\vect A_{\mathrm I}&=e_m\frac{1-\cos\theta}{r\sin\theta}\vect e_\varphi,
+\qquad\theta<\pi-\varepsilon,\\
+\vect A_{\mathrm{II}}&=-e_m\frac{1+\cos\theta}{r\sin\theta}\vect e_\varphi,
+\qquad\theta>\varepsilon.
+\end{aligned}}\]
+$\vect A_{\mathrm I}$ diverges at $\theta=\pi$, while $\vect A_{\mathrm{II}}$ diverges at $\theta=0$. With this choice of potentials,
+\[\vect\nabla\times\vect A=\frac{e_m}{r^2}\vect e_r=\vect B\]
+in each nonsingular region.
+
+In their overlap, since both potentials produce the same magnetic field, they are related by a gauge transformation $\Lambda$:
+\[\vect A_{\mathrm{II}}-\vect A_{\mathrm I}
+=-\frac{2e_m}{r\sin\theta}\vect e_\varphi=\vect\nabla\Lambda.\]
+In spherical coordinates,
+\[\vect\nabla\Lambda=\frac{\partial\Lambda}{\partial r}\vect e_r
++\frac1r\frac{\partial\Lambda}{\partial\theta}\vect e_\theta
++\frac1{r\sin\theta}\frac{\partial\Lambda}{\partial\varphi}\vect e_\varphi.\]
+Hence
+\[\boxed{\Lambda(\vect r)=-2e_m\varphi.}\]
+Consider a particle of electric charge $e$ moving in the monopole field. The wavefunctions $\psi_{\mathrm I}$ and $\psi_{\mathrm{II}}$ corresponding to $\vect A_{\mathrm I}$ and $\vect A_{\mathrm{II}}$ satisfy in the overlapping region
+\[\psi_{\mathrm{II}}=e^{\ii e\Lambda/(\hbar c)}\psi_{\mathrm I}
+=e^{-2\ii ee_m\varphi/(\hbar c)}\psi_{\mathrm I}.\]
+By single-valuedness of the wavefunction, $\psi_{\mathrm{II}}$ must be single valued in the overlap. For example, at $\theta=\pi/2$,
+\[\psi_{\mathrm{II}}(r,\theta=\pi/2,\varphi=0)
+=\psi_{\mathrm{II}}(r,\theta=\pi/2,\varphi=2\pi).\]
+Consequently,
+\[\frac{2ee_m}{\hbar c}=\pm n,\qquad n=0,\pm1,\pm2,\ldots.\]
+This is electric-charge quantization:
+\[\boxed{e=\pm\frac{\hbar c}{2e_m}n.}\]
+There is a smallest unit of electric charge.
+
+Quantum mechanics does not require the existence of magnetic monopoles. If a magnetic monopole exists, however, electric charge must be quantized and there is a smallest unit of electric charge.
