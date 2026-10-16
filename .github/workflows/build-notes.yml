@@ -8,23 +8,49 @@ on:
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
+
+# Keep the most recent build when multiple source commits arrive together.
+concurrency:
+  group: lecture-notes-pdf-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
-  contents: read
+  contents: write
+
 jobs:
   latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out versioned LaTeX sources
+        uses: actions/checkout@v4
+
       - name: Compile notes with XeLaTeX
         uses: xu-cheng/latex-action@v4
         with:
           root_file: main.tex
           latexmk_use_xelatex: true
           args: -pdfxe -interaction=nonstopmode -halt-on-error -file-line-error
-      - name: Archive PDF built from this commit
+
+      - name: Archive version-specific PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: advanced-quantum-mechanics-chapter-01-${{ github.sha }}
+          name: advanced-quantum-mechanics-${{ github.sha }}
           path: main.pdf
           if-no-files-found: error
           retention-days: 90
+
+      - name: Update repository PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p pdf
+          cp main.pdf pdf/advanced-quantum-mechanics.pdf
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add pdf/advanced-quantum-mechanics.pdf
+          if git diff --cached --quiet; then
+            echo 'PDF has not changed; no commit required.'
+            exit 0
+          fi
+          git commit -m 'build: update versioned lecture notes PDF [skip ci]'
+          git push origin HEAD:main
