@@ -40,3 +40,6 @@ latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
 **Final local outcome:** 151 PDF pages; numbered displays 1,141; no overfull boxes; original one-page notation and bibliography preserved; source-vs-PDF source drawing checks complete. The bibliography uses ordinary BibTeX compilation as before.
+## GitHub Actions verification
+
+GitHub Actions [run 38921950467](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/actions/runs/38921950467) completed successfully: all equations-numbered checks, notation checks, supplementary mathematics, topology/QML checks, XeLaTeX with BibTeX, PDF artifact upload, and generated PDF commit passed. The repository PDF was independently verified after the run (Git blob `fa200e29c02f5b285ba8fa2ce093bfcadafd1974`, 725,463 bytes). The original pre-audit manuscript is retained in `textbook/pre-equation-figure-audit-2026-10-16`.
