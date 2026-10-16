@@ -1,0 +1,88 @@
+% SOURCE: original Chinese PDF, viewer pages 7--9.
+\section{Eigenvalues and Eigenvectors of Operators (Matrices)}
+\subsection*{1) Eigenvalues and eigenstates of a general operator}
+The eigenvalue equation of an operator is
+\[\op T\ket a=\lambda\ket a,\]
+where $\lambda$ is called an eigenvalue of $\op T$ and $\ket a$ is called an eigenvector of $\op T$.
+
+In matrix form (prove this yourself using the completeness relation),
+\[Ta=\lambda a,\qquad (T-\lambda I)a=0.\]
+The condition for a nonzero eigenvector $a\ne0$ is
+\[\det(T-\lambda I)=0.\]
+This is the secular equation in an $N$-dimensional space:
+\[
+\begin{vmatrix}
+T_{11}-\lambda&T_{12}&\cdots&T_{1N}\\
+T_{21}&T_{22}-\lambda&\cdots&T_{2N}\\
+\vdots&\vdots&\ddots&\vdots\\
+T_{N1}&T_{N2}&\cdots&T_{NN}-\lambda
+\end{vmatrix}=0.
+\]
+One thereby obtains $N$ eigenvalues $\lambda_i$ ($i=1,2,\ldots,N$). Substituting each into
+\[(T-\lambda_i I)a=0\]
+gives the corresponding eigenvector $a$.
+
+\textbf{Example.} Find the eigenvalues and eigenvectors of
+\[T=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.\]
+The secular equation is
+\[\begin{vmatrix}1-\lambda&0\\0&-1-\lambda\end{vmatrix}=0,
+\quad\text{i.e.,}\quad \lambda^2-1=0,\]
+and the eigenvalues are $\lambda_\pm=\pm1$.
+
+Let $a=(a_1,a_2)^{\mathsf T}$. For $\lambda=1$,
+\[\begin{pmatrix}0&0\\0&-2\end{pmatrix}
+\begin{pmatrix}a_1\\a_2\end{pmatrix}=0.\]
+The normalized eigenvector is $a=(1,0)^{\mathsf T}$. Similarly, taking $\lambda=-1$ gives $a=(0,1)^{\mathsf T}$.
+\subsection*{2) Hermitian operators}
+If $\op T^\dagger=\op T$, or $T^\dagger=T$, the operator $\op T$ is called Hermitian and $T$ is called a Hermitian matrix.
+
+We discuss the following properties of Hermitian operators.
+\paragraph{a) Conjugate symmetry.}
+\[\mel a{\op T}b=\mel b{\op T^\dagger}a^*=\mel b{\op T}a^*.\]
+In particular,
+\[\mel a{\op T}a=\mel a{\op T}a^*,\]
+which shows that the expectation value $\mel a{\op T}a$ of a Hermitian operator is real.
+
+For an anti-Hermitian operator, $\op T^\dagger=-\op T$ and
+\[\mel a{\op T}a=-\mel a{\op T}a^*,\]
+so its expectation value is purely imaginary.
+\paragraph{b) Reality of eigenvalues and orthogonality.}
+Suppose
+\[\op T\ket i=\lambda_i\ket i,\qquad \op T\ket j=\lambda_j\ket j.\]
+From
+\[\mel j{\op T}i=\lambda_i\braket j i\]
+and
+\[\bra j\op T=\bra j\lambda_j^*,\qquad
+\mel j{\op T}i=\lambda_j^*\braket j i,\]
+we obtain
+\[(\lambda_i-\lambda_j^*)\braket j i=0.\]
+For $j=i$ and $\braket i i\ne0$, $\lambda_i=\lambda_i^*$: the eigenvalues of a Hermitian operator are real.
+
+For $j\ne i$, if $\lambda_i-\lambda_j\ne0$, then $\braket j i=0$. Thus eigenstates corresponding to different eigenvalues of a Hermitian operator are orthogonal. Since they can always be normalized, the orthonormality condition is
+\[\braket i j=\delta_{ij}.\]
+\textbf{Question:} Are eigenstates corresponding to the same eigenvalue orthogonal?
+\paragraph{c) Orthogonalization by linear superposition (Schmidt orthogonalization).}
+Suppose several eigenstates correspond to the same eigenvalue, i.e., there is degeneracy. For example, for a $g$-fold degenerate eigenvalue ($g\ge2$),
+\[\op T\ket{i,j}=\lambda_i\ket{i,j},\qquad j=1,\ldots,g.\]
+Are these $g$ eigenvectors orthogonal?
+
+Redefine $g$ new states:
+\[\ket{i,n}=\sum_{j=1}^g C_{nj}\ket{i,j},\qquad n=1,2,\ldots,g.\]
+Since
+\[
+\op T\ket{i,n}=\sum_{j=1}^g C_{nj}\op T\ket{i,j}
+=\lambda_i\sum_{j=1}^g C_{nj}\ket{i,j}=\lambda_i\ket{i,n},
+\]
+each $\ket{i,n}$ is still an eigenstate of $\op T$ with eigenvalue $\lambda_i$. Hence it suffices to show that the $\ket{i,n}$ can be made orthonormal.
+
+Can one choose the coefficients $C_{nj}$ so that these $g$ new states satisfy
+\[\braket{i,m}{i,n}=\delta_{mn}\;?\]
+There are $g$ normalization equations and $(g^2-g)/2$ orthogonality equations, making $g(g+1)/2$ independent equations, fewer than the $g^2$ coefficients $C_{nj}$. Thus there are various choices of coefficients satisfying the orthonormality conditions, so that the new states $\ket{i,n}$ are orthonormal:
+\[\braket{i,m}{j,n}=\delta_{ij}\delta_{mn}.\]
+Here $\delta_{ij}$ follows from orthonormality of eigenstates belonging to different eigenvalues, while $\delta_{mn}$ follows from orthogonalization by linear superposition.
+
+\textbf{Conclusion:} Eigenstates of a Hermitian operator can be chosen orthonormal, whether the eigenvalues are degenerate or nondegenerate.
+\paragraph{d) Completeness.}
+It can be shown that eigenvectors of a Hermitian operator satisfy
+\[\sum_i\ket i\bra i=\mathbf1.\]
+Hence the eigenvectors of a Hermitian operator can form a set of orthonormal basis vectors of a Hilbert space, i.e., a linear vector space or a representation.
