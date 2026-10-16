@@ -20,6 +20,10 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 
 **Project phase (2026-10-16):** the first-pass faithful English **Chapter 1 translation** (Chinese source PDF viewer pp. 1–24) has been compiled locally. Remaining original chapters and the interactive companion are forthcoming; the instructor will review translation fidelity and approve subsequent content adaptation.
 
+## Whole-book PDF structure
+
+The versioned book root [`main.tex`](main.tex) produces a **title page**, an automatically generated **table of contents**, and an English [**List of Notation**](frontmatter/notation.tex) before the numbered chapters. These are editorial front matter, kept separate from the faithful chapter translation. All subsequent chapters should be added as `\\chapter{...}` entries in `main.tex`, with their existing section files included below. The document uses `book`, roman page numbers for front matter and arabic page numbers for the chapters. Equations are numbered by chapter and section. The notation list must be checked and extended when new chapter-specific symbols are introduced; changes to it also trigger the automatic PDF build.
+
 ## Chapter 1: English translation baseline
 
 - **LaTeX root:** [main.tex](main.tex), containing the six translated sections in [chapters/ch01/](chapters/ch01/).
