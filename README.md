@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 4–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 5–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
@@ -38,7 +38,7 @@ The faithful translation is deliberately kept separate from future additions (Be
 
 - **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
 - **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
-- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–3, with automatic title page, contents and cumulative notation list.
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–4, with automatic title page, contents and cumulative notation list.
 - **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
 
 ## Chapter 3: Angular Momentum Theory translation baseline
@@ -48,6 +48,15 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Book-wide notation:** [frontmatter/notation.tex](frontmatter/notation.tex) now includes angular-momentum and density-operator conventions.
 - **Rendered complete PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Initial local XeLaTeX compilation produced a **78-page** complete book including front matter.
 - **Status:** faithful first-pass English translation; instructor's final page-by-page fidelity review remains pending. This phase does not include course-content extensions.
+
+## Chapter 4: Approximation Methods translation baseline
+
+- **Seven source sections:** [chapters/ch04/](chapters/ch04/) covers nondegenerate/degenerate stationary perturbation, the variational method, strong-coupling Schrödinger equation, time-dependent perturbation, and interaction picture.
+- **Critical chapter boundary:** Chapter 4 begins on source PDF viewer page **97** and ends in the **top portion of page 121**. The rest of page 121 begins Chapter 5. This correction prevents omission of the final time-ordering/Dyson formulas.
+- **Translation ledger:** [editorial/CHAPTER04_TRANSLATION_LOG.md](editorial/CHAPTER04_TRANSLATION_LOG.md).
+- **Cumulative student notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
+- **Compiled cumulative PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Four-chapter local book: 97 pages.
+- **Status:** First-pass faithful translation with logged minimal repairs; independent instructor bilingual signoff remains outstanding.
 
 ## Intended deliverables
 

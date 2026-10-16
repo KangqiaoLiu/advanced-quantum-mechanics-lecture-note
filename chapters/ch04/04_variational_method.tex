@@ -1,0 +1,95 @@
+% SOURCE: Chinese PDF viewer pp. 109--111. Section 4.
+\section{Variational Method}
+The variational method is used to solve the stationary equation
+\[
+ \op H\ket n=E_n\ket n.
+\]
+For an arbitrary state,
+\[
+ \ket\psi=\sum_n c_n\ket n,
+\]
+the energy expectation value is
+\begin{align*}
+ \langle E\rangle&=\mel\psi{\op H}\psi
+ =\sum_{n,m}c_n^*c_m\mel n{\op H}m\\
+ &=\sum_{n,m}c_n^*c_m E_n\delta_{nm}
+ =\sum_n|c_n|^2E_n\ge E_0.
+\end{align*}
+This is the basis of the variational method: take different trial functions $\ket\psi$, calculate $\langle E\rangle=\mel\psi{\op H}\psi$, and choose the lowest $\langle E\rangle$ to approximate the ground-state energy $E_0$.
+
+\textbf{Method.} From the physical properties of the system, guess a trial wavefunction $\ket{\psi(\lambda)}$ containing a parameter $\lambda$. Calculate
+\[
+ \langle E\rangle(\lambda)=\mel{\psi(\lambda)}{\op H}{\psi(\lambda)}.
+\]
+Solve
+\[
+ \frac{\dd\langle E\rangle(\lambda)}{\dd\lambda}=0,
+ \qquad \frac{\dd^2\langle E\rangle(\lambda)}{\dd\lambda^2}>0
+ \quad\longrightarrow\quad\lambda_0,
+\]
+which gives the minimum $\langle E\rangle(\lambda_0)$. The ground-state energy is approximately
+\[
+ E_0\simeq\langle E\rangle(\lambda_0).
+\]
+
+\textbf{Example: The helium atom.}
+\begin{align*}
+ \op H&=-\frac{\hbar^2}{2\mu}\nabla_1^2
+ -\frac{\hbar^2}{2\mu}\nabla_2^2
+ -\frac{2e^2}{r_1}-\frac{2e^2}{r_2}
+ +\frac{e^2}{|\vect r_1-\vect r_2|}\\
+ &=\op H^{(0)}+\frac{e^2}{|\vect r_1-\vect r_2|}.
+\end{align*}
+Here the atomic nucleus is approximately considered fixed. In the ground state of $\op H^{(0)}$,
+\[
+ E_0^{(0)}=-\frac{4e^2}{a_0},
+\]
+\[
+ \psi_0(\vect r_1,\vect r_2)=
+ \psi_{100}(\vect r_1)\psi_{100}(\vect r_2),\qquad
+ \psi_{100}(\vect r)=\frac1{\sqrt\pi}
+ \left(\frac Z{a_0}\right)^{3/2}e^{-Zr/a_0},\qquad Z=2.
+\]
+Taking the interaction between the two electrons into account, the screening by one electron reduces the effective nuclear charge felt by the other to $Z<2$. Treat $Z$ as a parameter, and use $\psi_0(\vect r_1,\vect r_2,Z)$ as the trial wavefunction for $\op H$. Since $\op H$ itself is independent of $Z$,
+\begin{align*}
+ \langle E\rangle(Z)
+ &=\int\dd^3r_1\dd^3r_2\,
+ \psi_0^*(\vect r_1,\vect r_2,Z)\op H
+ \psi_0(\vect r_1,\vect r_2,Z)\\
+ &=\left(2Z^2-\frac{27}{4}Z\right)\frac{e^2}{2a_0}.
+\end{align*}
+From
+\[
+ \frac{\dd\langle E\rangle(Z)}{\dd Z}=0,
+ \qquad\frac{\dd^2\langle E\rangle(Z)}{\dd Z^2}>0,
+\]
+one obtains
+\[
+ Z_0=\frac{27}{16}<2.
+\]
+The ground-state energy is
+\[
+ E_0\simeq\langle E\rangle(Z_0)
+ =-2.85\frac{e^2}{a_0},
+\]
+with corresponding trial wavefunction $\psi_0(\vect r_1,\vect r_2,Z_0)$.
+
+Perturbation theory can also be used to obtain the correction to the ground-state energy. Take
+\[
+ \op H^{(1)}=\frac{e^2}{|\vect r_1-\vect r_2|}.
+\]
+The ground state is nondegenerate; nondegenerate perturbation theory gives
+\[
+ E_0^{(1)}=\int\dd^3r_1\dd^3r_2\,
+ \psi_0^*(\vect r_1,\vect r_2)
+ \frac{e^2}{|\vect r_1-\vect r_2|}
+ \psi_0(\vect r_1,\vect r_2)
+ =\frac{5e^2}{4a_0}.
+\]
+Therefore
+\[
+ E_0^{(0)}+E_0^{(1)}
+ =-\frac{4e^2}{a_0}+\frac{5e^2}{4a_0}
+ =-2.75\frac{e^2}{a_0}.
+\]
+The experimental ground-state energy of helium is $-2.904e^2/a_0$. Thus the variational result is closer to the experimental value and is better.

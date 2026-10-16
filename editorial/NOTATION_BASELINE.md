@@ -37,3 +37,13 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - Ensemble density `\\op\\rho=\\sum w_\\alpha\\ket\\alpha\\bra\\alpha`; `[A]` denotes an ensemble average and `\\langle A\\rangle` the pure-state expectation.
 - Bell probabilities `P(s_a^+,s_b^+)` represent joint outcomes at separated detectors. Local hidden-type assumptions are retained in their source language for the baseline.
 - Printed notation continues to live in [frontmatter/notation.tex](../frontmatter/notation.tex).
+
+## Chapter 4 conventions (2026-10-16)
+
+- Perturbative order $k$ is a **superscript** in `E_n^{(k)}`, `\\ket n^{(k)}`, and `\\op H^{(k)}` as in the Chinese source. `k=0` indicates the unperturbed quantity; `H_{mn}^{(1)}` denotes perturbation matrix elements.
+- The degenerate subspace uses `\\ket{n,i}^{(0)}` and coefficient vectors `c_i`; the unperturbed reference energy is `E_n^{(0)}`.
+- Use `\\langle E\\rangle(\\lambda)` for the variational trial energy; helium uses an effective nuclear charge `Z` and Bohr radius `a_0`.
+- Preserve the strong-coupling Yukawa source convention `g,\\alpha,S(r)` and the original source's distinct symbols `m,\\mu` when they occur; unresolved dimensional issues are logged.
+- Time-dependent perturbation coefficients are `a_m(t)`, transition frequencies `\\omega_{mn}=(E_m-E_n)/\\hbar`, probabilities `W_{n\\to m}(t)`.
+- Interaction-picture operators carry `\\mathrm I`, time ordering is `T`, and the Heaviside step function `\\theta(t)`.
+- The student-facing notation table is `frontmatter/notation.tex`, automatically included in the PDF.

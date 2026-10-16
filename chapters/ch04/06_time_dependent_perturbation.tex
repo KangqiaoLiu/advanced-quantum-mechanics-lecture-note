@@ -1,0 +1,210 @@
+% SOURCE: Chinese PDF viewer pp. 113--118. Section 6.
+\section{Time-Dependent Perturbation Theory}
+The Schr\"odinger equation is
+\[
+ \ii\hbar\frac{\partial}{\partial t}\ket{\psi(t)}
+ =\op H(t)\ket{\psi(t)}.
+\]
+The Hamiltonian can be written as
+\[
+ \op H(t)=\op H^{(0)}+\op H^{(1)}(t),
+ \qquad \op H^{(0)}\ket m=E_m\ket m.
+\]
+\textbf{Question.} When $t\le0$, the Hamiltonian is $\op H=\op H^{(0)}$, independent of time, and the system may be in a stationary state. Assume that at $t=0$ it is in the stationary state $\ket n$. For $t>0$, $\op H(t)$ depends on time; the system is no longer stably in the stationary state $\ket n$, but has certain probabilities of being in other stationary states. At time $t$ the state is
+\[
+ \ket{\psi(t)}=\sum_m a_m(t)\ket m e^{-\ii E_mt/\hbar}.
+\]
+The probability of the stationary state $\ket m$ is $|a_m(t)|^2$. For a time-dependent perturbation, the quantity to be found is the probability that, after a macroscopic time ($t\to\infty$), the system has made a transition from the initial stationary state $\ket n$ to another stationary state $\ket m$:
+\[
+ \lim_{t\to\infty}W_{n\to m}(t)
+ =\lim_{t\to\infty}|a_m(t)|^2.
+\]
+\subsection*{1) Transition equations}
+Substitute the expansion of $\ket{\psi(t)}$ into the Schr\"odinger equation:
+\begin{align*}
+ &\ii\hbar\sum_m\dot a_m\ket m e^{-\ii E_mt/\hbar}
+ +\sum_m a_mE_m\ket m e^{-\ii E_mt/\hbar}\\
+ &\quad=\sum_m a_m\op H^{(0)}\ket m e^{-\ii E_mt/\hbar}
+ +\sum_m a_m\op H^{(1)}(t)\ket m e^{-\ii E_mt/\hbar}.
+\end{align*}
+The second term on the left cancels the first term on the right, giving
+\[
+ \ii\hbar\sum_m\dot a_m\ket m e^{-\ii E_mt/\hbar}
+ =\sum_m a_m\op H^{(1)}(t)\ket m e^{-\ii E_mt/\hbar}.
+\]
+Multiply on the left by $\bra k$:
+\[
+ \ii\hbar\dot a_ke^{-\ii E_kt/\hbar}
+ =\sum_m a_m H_{km}^{(1)}(t)e^{-\ii E_mt/\hbar},
+ \quad H_{km}^{(1)}(t)=\mel k{\op H^{(1)}(t)}m.
+\]
+Here $H_{km}^{(1)}(t)$ is the matrix element of $\op H^{(1)}(t)$ in the $\op H^{(0)}$ representation. Thus
+\[
+ \boxed{\begin{aligned}
+ \ii\hbar\dot a_k&=\sum_m a_m H_{km}^{(1)}(t)e^{\ii\omega_{km}t},\\
+ a_k(0)&=\delta_{kn},\qquad \omega_{km}=\frac{E_k-E_m}{\hbar}.
+ \end{aligned}}
+\]
+\subsection*{2) Perturbative solution}
+Write
+\[
+ a_k(t)=a_k^{(0)}(t)+a_k^{(1)}(t)+\cdots.
+\]
+The transition equation becomes
+\[
+ \ii\hbar(\dot a_k^{(0)}+\dot a_k^{(1)}+\cdots)
+ =\sum_m(a_m^{(0)}+a_m^{(1)}+\cdots)
+ H_{km}^{(1)}(t)e^{\ii\omega_{km}t}.
+\]
+The zeroth-order equation is
+\[
+ \ii\hbar\dot a_k^{(0)}(t)=0,\qquad
+ a_k^{(0)}(0)=\delta_{kn},
+\]
+with solution
+\[
+ a_k^{(0)}(t)=\delta_{kn}.
+\]
+The first-order equation is
+\[
+ \ii\hbar\dot a_k^{(1)}(t)
+ =\sum_m a_m^{(0)}(t)H_{km}^{(1)}(t)e^{\ii\omega_{km}t}
+ =H_{kn}^{(1)}(t)e^{\ii\omega_{kn}t}.
+\]
+Its solution is
+\[
+ \boxed{a_k^{(1)}(t)=\frac1{\ii\hbar}
+ \int_0^t H_{kn}^{(1)}(t')e^{\ii\omega_{kn}t'}\dd t'.}
+\]
+For a transition from $\ket n$ to $\ket k$ ($k\ne n$), $a_k(t)\simeq a_k^{(1)}(t)$, so the transition probability is
+\[
+ W_{n\to k}(t)\simeq|a_k^{(1)}(t)|^2.
+\]
+\subsection*{3) Periodic perturbation}
+Take
+\[
+ \op H^{(1)}(t)=\op A\cos\omega t
+ =\op F(e^{\ii\omega t}+e^{-\ii\omega t}),
+\]
+where $\op A$, $\op F$ are independent of $t$. The first-order transition amplitude is
+\begin{align*}
+ a_m^{(1)}(t)
+ &=\frac1{\ii\hbar}\int_0^t H_{mn}^{(1)}(t')e^{\ii\omega_{mn}t'}\dd t'\\
+ &=\frac{F_{mn}}{\ii\hbar}\int_0^t
+ \bigl[e^{\ii(\omega_{mn}+\omega)t'}
+ +e^{\ii(\omega_{mn}-\omega)t'}\bigr]\dd t',
+\end{align*}
+where $\omega_{mn}$ is the transition frequency and $\omega$ is the driving frequency. Integrating gives
+\[
+ a_m^{(1)}(t)=-\frac{F_{mn}}{\hbar}\left[
+ \frac{e^{\ii(\omega_{mn}+\omega)t}-1}{\omega_{mn}+\omega}
+ +\frac{e^{\ii(\omega_{mn}-\omega)t}-1}{\omega_{mn}-\omega}
+ \right].
+\]
+When $\omega\ne\pm\omega_{mn}$, $a_m^{(1)}(t)$ oscillates with $t$ and does not increase monotonically with time. When $\omega\to\pm\omega_{mn}$, the nearly resonant term dominates:
+\[
+ a_m^{(1)}(t)\simeq-\frac{F_{mn}}{\hbar}
+ \frac{e^{\ii(\omega_{mn}\mp\omega)t}-1}{\omega_{mn}\mp\omega}.
+\]
+The transition probability is
+\[
+ W_{n\to m}(t)=|a_m^{(1)}(t)|^2
+ \simeq\frac{4|F_{mn}|^2}{\hbar^2}
+ \frac{\sin^2[(\omega_{mn}\mp\omega)t/2]}{(\omega_{mn}\mp\omega)^2}.
+\]
+Since
+\[
+ \lim_{t\to\infty}\frac{\sin^2(xt)}{\pi t x^2}=\delta(x),
+\]
+it follows that
+\[
+ \lim_{t\to\infty}W_{n\to m}(t)
+ \simeq\frac{2\pi t|F_{mn}|^2}{\hbar^2}
+ \delta(\omega_{mn}\mp\omega)
+ =\frac{2\pi t|F_{mn}|^2}{\hbar}
+ \delta(E_m-E_n\mp\hbar\omega).
+\]
+It grows linearly with $t$. The $\delta$ function expresses energy conservation, illustrated schematically below:
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.9]
+ \foreach \xx in {0,5.2}{\draw[thick] (\xx,0)--++(3.1,0);\draw[thick](\xx,2)--++(3.1,0);}
+ \draw[->,thick] (1.55,1.9)--(1.55,.1);
+ \node[right] at (1.75,1.1) {$\hbar\omega$};
+ \draw[->,thick] (6.75,.1)--(6.75,1.9);
+ \node[right] at (6.95,1.1) {$\hbar\omega$};
+\end{tikzpicture}
+\end{center}
+The transition rate is
+\[
+ \frac{\dd W_{n\to m}(t)}{\dd t}
+ =\frac{2\pi}{\hbar^2}|F_{mn}|^2\delta(\omega_{mn}\mp\omega).
+\]
+A real perturbation is not a strictly monochromatic field but has a frequency range $\Delta\omega$. The total transition rate is
+\begin{align*}
+ \frac{\dd W_{n\to m}(t)}{\dd t}
+ &=\frac{2\pi}{\hbar^2}|F_{mn}|^2
+ \int_{\Delta\omega}\delta(\omega_{mn}\mp\omega)\dd\omega\\
+ &=\begin{cases}
+ \displaystyle\frac{2\pi}{\hbar^2}|F_{mn}|^2,
+ &\Delta\omega\text{ contains }|\omega_{mn}|,\\
+ 0,&\Delta\omega\text{ does not contain }|\omega_{mn}|.
+ \end{cases}
+\end{align*}
+\textbf{Example.} At $t=0$ a hydrogen atom is in its ground state $\ket{100}$. A perturbation
+\[
+ \op H^{(1)}(t)=-e\mathcal E_0 z\,\delta(t)
+\]
+is applied. Find the probability for transitions to all excited states.
+
+\textbf{Solution.} The first-order amplitude is
+\begin{align*}
+ a_m^{(1)}(t)
+ &=\frac1{\ii\hbar}\int_0^t H_{mn}^{(1)}(t')e^{\ii\omega_{mn}t'}\dd t'\\
+ &=-\frac{e\mathcal E_0 z_{mn}}{\ii\hbar}
+ \int_0^t e^{\ii\omega_{mn}t'}\delta(t')\dd t'\\
+ &=-\frac{e\mathcal E_0 z_{mn}}{\ii\hbar}.
+\end{align*}
+Here $\ket n=\ket{100}$ is the ground state and $\ket m=\ket{nlm}$ ($n\ne1$) are excited states. The probability of a transition from the ground state to any excited state is
+\[
+ W=\sum_{nlm}'\left(\frac{e\mathcal E_0}{\hbar}\right)^2
+ |\mel{nlm}{z}{100}|^2,
+\]
+where the prime means that the ground state is excluded from the sum. Since
+\[
+ z=r\cos\theta,
+\]
+the corresponding matrix elements are
+\[
+ \mel{nlm}{z}{n'l'm'}
+ =\mel{nl}{r}{n'l'}\mel{lm}{\cos\theta}{l'm'}.
+\]
+The source gives the following action of $\cos\theta$:
+\[
+ \cos\theta\ket{lm}
+ =\sqrt{\frac{(l+1)^2-m^2}{(2l+1)(2l+3)}}\ket{l+1,m}
+ +\sqrt{\frac{l^2-m^2}{(2l-1)(2l+1)}}\ket{l-1,m}.
+\]
+Therefore, the conditions for $\mel{lm}{\cos\theta}{l'm'}$ to be nonzero (the selection rules for transitions) are
+\[
+ \Delta l=l-l'=\pm1.
+\]
+Thus $\mel{100}{z}{100}=0$, and
+\begin{align*}
+ W&=\sum_{nlm}\left(\frac{e\mathcal E_0}{\hbar}\right)^2
+ |\mel{nlm}{z}{100}|^2\\
+ &=\left(\frac{e\mathcal E_0}{\hbar}\right)^2
+ \sum_{nlm}\mel{100}{z}{nlm}\mel{nlm}{z}{100}\\
+ &=\left(\frac{e\mathcal E_0}{\hbar}\right)^2\mel{100}{z^2}{100}.
+\end{align*}
+Since
+\[
+ \mel{100}{z^2}{100}=a_0^2,
+\]
+where $a_0$ is the Bohr radius, the result is
+\[
+ \boxed{W=\left(\frac{e\mathcal E_0 a_0}{\hbar}\right)^2}.
+\]
+The probability for the hydrogen atom to remain in the ground state is therefore
+\[
+ \boxed{1-W=1-\left(\frac{e\mathcal E_0 a_0}{\hbar}\right)^2}.
+\]

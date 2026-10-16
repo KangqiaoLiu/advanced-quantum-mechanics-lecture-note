@@ -1,0 +1,71 @@
+% SOURCE: Chinese PDF viewer pp. 97--98. Section 1.
+\section{The Idea of Stationary Perturbation Theory}
+The Schr\"odinger equation is
+\[
+ \ii\hbar\frac{\partial}{\partial t}\ket{\psi,t}
+ =\op H\ket{\psi,t}.
+\]
+Only a very small number of physical problems can be solved exactly. For most actual problems, the construction of $\op H$ is so complicated that an exact solution is impossible; approximate methods must be used. Different problems call for different methods of approximation.
+
+When $\op H$ does not depend on time, separation of variables gives a stationary state
+\[
+ \ket{\psi_n,t}=\ket n e^{-\ii E_nt/\hbar},
+\]
+where the energy $E_n$ and the energy eigenstate $\ket n$ satisfy the stationary Schr\"odinger equation
+\[
+ \op H\ket n=E_n\ket n.
+\]
+Write
+\[
+ \op H=\op H^{(0)}+\op H^{(1)}.
+\]
+The following are required:
+\begin{enumerate}
+\item $\op H^{(0)}$ contains the main part of $\op H$, so $\op H^{(1)}$ is small. Since both $\op H^{(0)}$ and $\op H^{(1)}$ are operators, their relative magnitudes can be understood from the classical correspondence principle. Strictly speaking, one compares the matrix elements of the two operators, as discussed below.
+\item The stationary equation for $\op H^{(0)}$,
+\[
+ \op H^{(0)}\ket n^{(0)}=E_n^{(0)}\ket n^{(0)},
+\]
+can be solved exactly.
+\end{enumerate}
+Expand $E_n$ and $\ket n$:
+\[
+ E_n=E_n^{(0)}+E_n^{(1)}+E_n^{(2)}+\cdots,
+ \qquad
+ \ket n=\ket n^{(0)}+\ket n^{(1)}+\ket n^{(2)}+\cdots.
+\]
+Insert these into the stationary Schr\"odinger equation:
+\begin{align*}
+ &(\op H^{(0)}+\op H^{(1)})
+ (\ket n^{(0)}+\ket n^{(1)}+\ket n^{(2)}+\cdots)\\
+ &\hspace{10mm}=(E_n^{(0)}+E_n^{(1)}+E_n^{(2)}+\cdots)
+ (\ket n^{(0)}+\ket n^{(1)}+\ket n^{(2)}+\cdots).
+\end{align*}
+The equation is then solved successively, order by order.
+
+\textbf{Zeroth-order approximation:}
+\[
+ \op H^{(0)}\ket n^{(0)}=E_n^{(0)}\ket n^{(0)}
+ \quad\longrightarrow\quad E_n^{(0)},\ \ket n^{(0)}.
+\]
+\textbf{First-order approximation:}
+\[
+ \op H^{(0)}\ket n^{(1)}+\op H^{(1)}\ket n^{(0)}
+ =E_n^{(0)}\ket n^{(1)}+E_n^{(1)}\ket n^{(0)},
+\]
+or
+\[
+ (\op H^{(0)}-E_n^{(0)})\ket n^{(1)}
+ =-(\op H^{(1)}-E_n^{(1)})\ket n^{(0)}
+ \quad\longrightarrow\quad E_n^{(1)},\ \ket n^{(1)}.
+\]
+\textbf{Second-order approximation:}
+\[
+ (\op H^{(0)}-E_n^{(0)})\ket n^{(2)}
+ =-(\op H^{(1)}-E_n^{(1)})\ket n^{(1)}
+ +E_n^{(2)}\ket n^{(0)}
+ \quad\longrightarrow\quad E_n^{(2)},\ \ket n^{(2)}.
+\]
+And so forth. In general, only the first nonzero correction is calculated.
+
+Perturbation theory is based on the eigenvalues $E_n^{(0)}$ and eigenstates $\ket n^{(0)}$ of $\op H^{(0)}$. In obtaining higher-order corrections, it is necessary to consider whether $E_n^{(0)}$ is degenerate. We first consider the nondegenerate case.

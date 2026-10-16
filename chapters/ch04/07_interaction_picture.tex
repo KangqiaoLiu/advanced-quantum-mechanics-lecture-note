@@ -1,0 +1,142 @@
+% SOURCE: Chinese PDF viewer pp. 119--120 and the opening passage of p. 121,
+% ending immediately before the printed Chapter 5 heading.
+\section{Interaction Picture and Perturbation Theory}
+\subsection*{1) Interaction picture}
+First review the Schr\"odinger picture and the Heisenberg picture.
+
+\textbf{Schr\"odinger picture:}
+The state depends on time $t$:
+\[
+ \ket{\alpha,t}_{\mathrm S}=\op U(t)\ket{\alpha,0}_{\mathrm S},
+ \qquad \op U(t)=e^{-\ii\op Ht/\hbar}.
+\]
+A mechanical quantity does not depend explicitly on time: $\op A_{\mathrm S}$.
+
+The dynamical equation is
+\[
+ \ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm S}
+ =\op H\ket{\alpha,t}_{\mathrm S}.
+\]
+\textbf{Heisenberg picture:}
+The state does not depend on time: $\ket\alpha_{\mathrm H}$.
+
+The mechanical quantities depend on time:
+\[
+ \op A_{\mathrm H}(t)=\op U^\dagger(t)\op A_{\mathrm H}(0)\op U(t).
+\]
+The dynamical equation is
+\[
+ \frac{\dd\op A_{\mathrm H}}{\dd t}
+ =\frac1{\ii\hbar}[\op A_{\mathrm H},\op H].
+\]
+The Hamiltonian $\op H$ is the same in both pictures.
+
+Now introduce the interaction picture. In the Schr\"odinger picture, separate the Hamiltonian into two parts:
+\[
+ \op H=\op H^{(0)}+\op H^{(1)}.
+\]
+Define the relation between states in the interaction and Schr\"odinger pictures by
+\[
+ \ket{\alpha,t}_{\mathrm I}
+ =e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}.
+\]
+The expectation value of a mechanical quantity $\op O$ is independent of the picture:
+\begin{align*}
+ {}_{\mathrm I}\!\mel{\alpha,t}{\op O_{\mathrm I}}{\alpha,t}_{\mathrm I}
+ &={}_{\mathrm S}\!\mel{\alpha,t}{\op O_{\mathrm S}}{\alpha,t}_{\mathrm S}\\
+ &={}_{\mathrm I}\!\bra{\alpha,t}e^{\ii\op H^{(0)}t/\hbar}
+ \op O_{\mathrm S}e^{-\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm I}.
+\end{align*}
+Hence mechanical quantities are related by
+\[
+ \boxed{\op O_{\mathrm I}
+ =e^{\ii\op H^{(0)}t/\hbar}\op O_{\mathrm S}
+ e^{-\ii\op H^{(0)}t/\hbar}.}
+\]
+\textbf{Note:} $\op H^{(0)}$ is the same in the Schr\"odinger and interaction pictures, but $\op H^{(1)}$ is not.
+
+In the interaction picture, both states and mechanical quantities depend on time. The equation of motion for states is
+\begin{align*}
+ \ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm I}
+ &=-\op H^{(0)}e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}
+ +e^{\ii\op H^{(0)}t/\hbar}
+ \ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm S}\\
+ &=-e^{\ii\op H^{(0)}t/\hbar}\op H^{(0)}\ket{\alpha,t}_{\mathrm S}
+ +e^{\ii\op H^{(0)}t/\hbar}\op H\ket{\alpha,t}_{\mathrm S}\\
+ &=e^{\ii\op H^{(0)}t/\hbar}\op H^{(1)}_{\mathrm S}\ket{\alpha,t}_{\mathrm S}\\
+ &=e^{\ii\op H^{(0)}t/\hbar}\op H_{\mathrm S}^{(1)}
+ e^{-\ii\op H^{(0)}t/\hbar}
+ e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}\\
+ &=\op H^{(1)}_{\mathrm I}\ket{\alpha,t}_{\mathrm I}.
+\end{align*}
+The equation of motion for an operator in the interaction picture is
+\begin{align*}
+ \ii\hbar\frac{\partial}{\partial t}\op O_{\mathrm I}
+ &=-\op H^{(0)}\op O_{\mathrm I}+\op O_{\mathrm I}\op H^{(0)}\\
+ &=[\op O_{\mathrm I},\op H^{(0)}].
+\end{align*}
+Although both states and mechanical quantities depend on time in the interaction picture (only states depend on time in the Schr\"odinger picture, and only mechanical quantities depend on time in the Heisenberg picture), the time evolution of the states depends only on $\op H^{(1)}$, while the time evolution of the mechanical quantities depends only on $\op H^{(0)}$. This is very useful in perturbative expansions.
+
+\subsection*{2) Perturbative expansion}
+The time evolution of a state in the interaction picture is
+\[
+ \ket{\alpha,t}_{\mathrm I}
+ =\op U(t,t_0)\ket{\alpha,t_0}_{\mathrm I}.
+\]
+The equation of motion for the interaction-picture state gives
+\[
+ \ii\hbar\frac{\partial}{\partial t}\op U(t,t_0)
+ =\op H^{(1)}_{\mathrm I}(t)\op U(t,t_0),
+\]
+subject to
+\[
+ \op U(t_0,t_0)=\mathbf1.
+\]
+Its integral solution is
+\[
+ \op U(t,t_0)=\mathbf1-\frac{\ii}{\hbar}
+ \int_{t_0}^{t}\dd t'\,\op H^{(1)}_{\mathrm I}(t')\op U(t',t_0).
+\]
+By iteration,
+\begin{align*}
+ \op U(t,t_0)
+ &=\mathbf1-\frac{\ii}{\hbar}\int_{t_0}^{t}\dd t'\,
+ \op H^{(1)}_{\mathrm I}(t')\\
+ &\quad+\left(-\frac{\ii}{\hbar}\right)^2
+ \int_{t_0}^{t}\dd t'\int_{t_0}^{t'}\dd t''\,
+ \op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')+\cdots.
+\end{align*}
+For the third term on the right,
+\begin{align*}
+ &\int_{t_0}^{t}\dd t'\int_{t_0}^{t'}\dd t''\,
+ \op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\\
+ &=\frac1{2!}\biggl[
+ \int_{t_0}^{t}\dd t'\int_{t_0}^{t'}\dd t''\,
+ \op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')
+ +\int_{t_0}^{t}\dd t''\int_{t_0}^{t''}\dd t'\,
+ \op H^{(1)}_{\mathrm I}(t'')\op H^{(1)}_{\mathrm I}(t')
+ \biggr]\\
+ &=\frac1{2!}\int_{t_0}^{t}\dd t'\int_{t_0}^{t}\dd t''\,
+ T\left(\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\right).
+\end{align*}
+The second term on the right of the first equality is obtained by interchanging the integration variables. The time-ordered product $T$ is defined by
+\begin{align*}
+ &T\left(\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\right)\\
+ &\quad=\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\theta(t'-t'')
+ +\op H^{(1)}_{\mathrm I}(t'')\op H^{(1)}_{\mathrm I}(t')\theta(t''-t').
+\end{align*}
+The operator corresponding to the later time always stands to the left.
+
+Thus the solution for the time-evolution operator can be written as
+\[
+ \boxed{\begin{aligned}
+ \op U(t,t_0)&=\sum_{n=0}^{\infty}\frac1{n!}
+ \left(-\frac{\ii}{\hbar}\right)^n
+ \int_{t_0}^{t}\dd t_1\int_{t_0}^{t}\dd t_2\cdots
+ \int_{t_0}^{t}\dd t_n\\
+ &\quad\times T\left(\op H^{(1)}_{\mathrm I}(t_1)
+ \op H^{(1)}_{\mathrm I}(t_2)\cdots
+ \op H^{(1)}_{\mathrm I}(t_n)\right).
+ \end{aligned}}
+\]
+This is the perturbative expansion of the evolution operator for states in the interaction picture, and it is the foundation of perturbation theory in quantum mechanics and quantum field theory.
