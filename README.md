@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–5** (Chinese source PDF viewer pp. 1–139, with Chapter 4 ending above the Chapter 5 heading on p. 121) have been completed, compiled locally, and tracked. Chapters 6–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–6** (Chinese source PDF viewer pp. 1–153, with Chapter 4 ending above the Chapter 5 heading on p. 121) have been completed, compiled locally, and tracked. Chapters 7–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
@@ -38,7 +38,7 @@ The faithful translation is deliberately kept separate from future additions (Be
 
 - **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
 - **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
-- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–5, with automatic title page, contents and cumulative notation list.
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–6, with automatic title page, contents and cumulative notation list.
 - **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
 
 ## Chapter 3: Angular Momentum Theory translation baseline
@@ -66,6 +66,15 @@ The faithful translation is deliberately kept separate from future additions (Be
 - **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex) collects Chapter 5 scattering quantities, resolvents, phase shifts and spherical Bessel symbols.
 - **Complete compiled book:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf), **112 pages** in the initial local XeLaTeX compile, with title, contents, notation and Chapters 1–5.
 - **Status:** Phase-T faithful first pass, awaiting independent final source–translation comparison.
+
+## Chapter 6: Symmetry and Identical Particles translation baseline
+
+- **Four complete sections:** [chapters/ch06/](chapters/ch06/) reproduces Chinese PDF viewer pages **140–153**: conserved quantities, symmetry transformations, exchange symmetry, and simple identical-particle systems including helium, spin coupling and Fermi-gas pressure.
+- **Pagination anomaly:** source p. 146 holds only the trailing sentence of a question; printed numbering restarts on viewer p. 147, still within Chapter 6.
+- **Source-to-English audit:** [editorial/CHAPTER06_TRANSLATION_LOG.md](editorial/CHAPTER06_TRANSLATION_LOG.md).
+- **Updated notation:** [frontmatter/notation.tex](frontmatter/notation.tex).
+- **Full compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Local XeLaTeX verified **125 pages** comprising Chapters 1–6 plus front matter.
+- **Status:** faithful first translation; independent bilingual proofreading and instructor approval pending.
 
 ## Intended deliverables
 

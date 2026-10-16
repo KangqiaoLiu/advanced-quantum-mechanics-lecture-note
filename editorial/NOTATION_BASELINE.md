@@ -56,3 +56,12 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - `\\op T` is the scattering transition operator here; `T` already appeared as a time-ordering operator in Chapter 4. Context and hats disambiguate them.
 - `f(\\theta)=\\sum_{l=0}^\\infty f_l(\\theta)` and the differential cross section is `\\sigma(\\theta)=|\\sum_l f_l(\\theta)|^2`; the source's sum of moduli squared misses interference and is corrected with provenance in the Chapter 5 ledger.
 - `R_l, j_l, P_l, \\delta_l` are the radial partial wave, spherical Bessel function, Legendre polynomial and phase shift. New symbols were added to the student-facing `frontmatter/notation.tex`.
+
+## Chapter 6 notation and source conventions (2026-10-16)
+
+- Conserved observable `\\op F` is time-independent and commutes with `\\op H`; its quantum number labels stationary probabilities. A generic symmetry operator is `\\op S` (also used for total spin by context).
+- Parity is `\\op I` and spherical harmonic eigenvalue `(-1)^l`. `I` also labels the direct Coulomb integral in the helium example; `J` there denotes exchange integral rather than angular momentum.
+- Exchange operator `\\op P_{ij}` has eigenvalues `+1,-1`; `\\psi_+,\\psi_-` are symmetric/antisymmetric spatial states and `\\chi_+,\\chi_-` spin states.
+- Two-particle relative coordinates `\\vect r=\\vect r_1-\\vect r_2` and `\\vect R=(\\vect r_1+\\vect r_2)/2`, with total/relative wavevectors `\\vect K`, `\\vect k`, retain the source's plane-wave normalization in the faithful baseline.
+- Occupation `f(k)`, chemical potential `\\mu`, Fermi momentum `k_F`, number density `n`, energy density `\\varepsilon` and pressure `P` retain the source's implicit natural-unit convention in the last example; discrepancies with Chapter 1 `\\hbar` normalization are logged for later scientific revision.
+- Student-facing global notation is maintained in `frontmatter/notation.tex` and should be extended alongside each translated chapter.
