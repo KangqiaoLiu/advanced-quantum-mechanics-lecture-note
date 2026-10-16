@@ -64,4 +64,4 @@ These pairs were checked **both by exact extracted-text equality and exact rende
 - [ ] Scientific/pedagogical corrections in subsequent Phase R.
 - [x] Local XeLaTeX compilation verified: 135-page complete book, Chapters 1–7 including title, contents and notation.
 - [x] Rendered English Chapter 7 PDF pages 126–135 and inspected both contact sheets; no overfull-box diagnostics.
-- [ ] Verify the GitHub Actions build and automatic PDF commit; update after the cloud run.
+- [x] GitHub Actions run **38895811544** completed successfully; XeLaTeX compiled all seven chapters, archived the PDF and automatically committed the new `pdf/advanced-quantum-mechanics.pdf` to the `main` branch (verified in repository file listing).
