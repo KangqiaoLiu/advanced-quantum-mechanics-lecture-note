@@ -1,0 +1,159 @@
+% SOURCE: Chinese PDF viewer pp.134 (lower half)--139.
+\section{Partial-Wave Method}
+Find the scattering amplitude in a central potential field.
+
+\subsection*{1) Idea}
+The incident plane wave $Ae^{\ii kz}$ is a common eigenstate of the free-particle observables $\{\op H,\op{\vect p},\op L_z\}$, with eigenvalues
+\[E=\frac{\hbar^2k^2}{2\mu},\qquad p_x=p_y=0,\qquad p_z=\hbar k,\qquad L_z=0.\]
+For a central potential, $[\op{\vect p},\op H]\ne0$, so momentum $\vect p$ is not conserved, while $[\op{\vect L}^{\,2},\op H]=0$: orbital angular momentum is conserved. A commuting set of conserved observables is $\{\op H,\op{\vect L}^{\,2},\op L_z\}$. Thus a plane wave is not an eigenstate of the conserved-observable set for a central field, and it is inconvenient for describing directly the relation between incoming and outgoing states.
+
+The partial-wave method: Under conservation of energy (unchanged $k$) and conservation of $\op L_z$ (unchanged $m=0$), expand the incident plane wave in eigenstates of $\op{\vect L}^{\,2}$, $P_l(\cos\theta)$ (a partial-wave expansion). The scattering of a plane wave is thereby converted into the sum of scatterings of eigenstates (partial waves) of the conserved-observable set.
+
+\subsection*{2) Partial-wave expansion of the plane wave}
+\[\boxed{e^{\ii kz}=e^{\ii kr\cos\theta}
+=\sum_{l=0}^\infty(2l+1)\ii^l j_l(kr)P_l(\cos\theta).}\]
+For the spherical Bessel function of order $l$,
+\[j_l(kr)\xrightarrow{r\to\infty}\frac1{kr}
+\sin\left(kr-\frac{l\pi}{2}\right).\]
+Hence
+\[e^{\ii kz}\xrightarrow{r\to\infty}
+\sum_{l=0}^\infty(2l+1)\ii^l\frac1{kr}
+\sin\left(kr-\frac{l\pi}{2}\right)P_l(\cos\theta).\]
+The standard asymptotic solution is
+\begin{align*}
+\psi(\vect r)\xrightarrow{r\to\infty}
+&Ae^{\ii kz}+Af(\theta)\frac{e^{\ii kr}}r\\
+&=A\sum_{l=0}^\infty(2l+1)\ii^l\frac1{kr}
+\sin\left(kr-\frac{l\pi}2\right)P_l(\cos\theta)
++Af(\theta)\frac{e^{\ii kr}}r.
+\end{align*}
+
+\subsection*{3) Partial-wave expansion of the state in a central field}
+A particular solution of the stationary Schr\"odinger equation for a central field is
+\[\psi_{nlm}(r,\theta,\varphi)=R_{nl}(r)Y_{lm}(\theta,\varphi).\]
+The general solution is
+\[\psi(r,\theta,\varphi)=\sum_{n,l,m}B_{nlm}R_{nl}(r)Y_{lm}(\theta,\varphi).\]
+The general solution satisfying conservation of energy ($k$ unchanged) and $\op L_z$ ($m=0$ unchanged) is
+\[\psi(r,\theta)=\sum_{l=0}^\infty B_lR_l(r)P_l(\cos\theta).\]
+Here $R_l(r)$ is determined by the radial equation
+\[
+\frac1{r^2}\frac{\dd}{\dd r}\left(r^2\frac{\dd R_l}{\dd r}\right)
++\left(k^2-\frac{2\mu}{\hbar^2}V(r)-\frac{l(l+1)}{r^2}\right)R_l=0.
+\]
+As $r\to\infty$, $V(r)\to0$, and
+\[\frac{\dd^2(rR_l)}{\dd r^2}+k^2(rR_l)=0.\]
+Thus
+\[R_l(r\to\infty)=\frac{C_l}{kr}\sin\left(kr-\frac{l\pi}{2}+\delta_l\right).\]
+The two undetermined constants $C_l$ and $\delta_l$ depend on the particular central potential $V(r)$; $-l\pi/2$ is introduced for convenience in calculation. The asymptotic solution is therefore
+\[\psi(r,\theta)\xrightarrow{r\to\infty}
+A\sum_{l=0}^\infty\frac{A_l}{kr}
+\sin\left(kr-\frac{l\pi}{2}+\delta_l\right)P_l(\cos\theta),
+\qquad AA_l=B_lC_l.\]
+Comparing with the standard asymptotic solution gives
+\begin{align*}
+\sum_{l=0}^\infty &(2l+1)\ii^l\frac1{kr}
+\sin\left(kr-\frac{l\pi}{2}\right)P_l(\cos\theta)
++f(\theta)\frac{e^{\ii kr}}r\\
+&=\sum_{l=0}^\infty\frac{A_l}{kr}
+\sin\left(kr-\frac{l\pi}{2}+\delta_l\right)P_l(\cos\theta).
+\end{align*}
+Use
+\[\sin x=\frac{e^{\ii x}-e^{-\ii x}}{2\ii}.\]
+Then
+\begin{align*}
+0&=\frac{e^{\ii kr}}{2\ii kr}
+\left[2\ii kf(\theta)+\sum_{l=0}^\infty(2l+1)\ii^l e^{-\ii l\pi/2}P_l(\cos\theta)
+-\sum_{l=0}^\infty A_le^{\ii(\delta_l-l\pi/2)}P_l(\cos\theta)\right]\\
+&\quad-\frac{e^{-\ii kr}}{2\ii kr}
+\left[\sum_{l=0}^\infty(2l+1)\ii^l e^{\ii l\pi/2}P_l(\cos\theta)
+-\sum_{l=0}^\infty A_le^{-\ii(\delta_l-l\pi/2)}P_l(\cos\theta)\right].
+\end{align*}
+For this to hold for arbitrary $r$, the coefficients of $e^{\ii kr}$ and $e^{-\ii kr}$ must vanish separately. We find
+\[A_l=(2l+1)\ii^l e^{\ii\delta_l},\]
+and
+\[\boxed{f(\theta)=\sum_{l=0}^\infty\frac{2l+1}{k}
+P_l(\cos\theta)e^{\ii\delta_l}\sin\delta_l}.\]
+Define the partial-wave scattering amplitude
+\[\boxed{f_l(\theta)=\frac1k(2l+1)P_l(\cos\theta)e^{\ii\delta_l}\sin\delta_l}.\]
+The total scattering amplitude is the sum of the partial-wave amplitudes:
+\[f(\theta)=\sum_{l=0}^\infty f_l(\theta).\]
+The differential scattering cross section is
+\[\boxed{\sigma(\theta)=\left|\sum_{l=0}^\infty f_l(\theta)\right|^2}.\]
+The partial-wave scattering amplitudes depend only on $\delta_l$. The key is to find the phase shifts $\delta_l$:
+\begin{enumerate}
+\item Substitute $V(r)$ into the radial equation and obtain $R_l(r)$.
+\item Compare $\lim_{r\to\infty}R_l(r)$ with $C_l(kr)^{-1}\sin(kr-l\pi/2+\delta_l)$ to find $\delta_l$.
+\end{enumerate}
+The physical meaning of $\delta_l$ is as follows. The partial wave before scattering is
+\[\frac1{kr}\sin\left(kr-\frac{l\pi}2\right),\]
+whereas the partial wave after scattering is
+\[\frac1{kr}\sin\left(kr-\frac{l\pi}2+\delta_l\right).\]
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.86]
+\draw[->](-.3,0)--(7.0,0);
+\draw[domain=0:6.4,samples=110,smooth,thick] plot (\x,{.6*sin(115*\x)});
+\draw[domain=0:6.4,samples=110,smooth,dashed,thick] plot (\x,{.6*sin(115*\x+45)});
+\draw[<->] (1.57,.96)--(1.96,.96)node[midway,above]{$\delta_l$};
+\node[anchor=west]at (6.8,.55){\footnotesize scattered};
+\node[anchor=west]at (6.8,-.42){\footnotesize incident};
+\end{tikzpicture}
+\end{center}
+Thus scattering involves the same partial wave before and after, with only an overall phase shift $\delta_l$.
+
+\subsection*{4) Convergence}
+A semiclassical estimate of the convergence of the sum gives $L\sim pr$. Suppose the potential $V(r)$ has effective radius $a$. Scattering occurs only for $L<pa$, so that partial waves satisfying approximately $\sqrt{l(l+1)}<ka$ contribute. When the incident energy $E(k)$ is small, one need retain only low-order partial waves, such as the $s$ wave.
+
+\textbf{Conclusion:} The partial-wave method is suitable for low-energy scattering by a central field.
+
+\textbf{Example.} Scattering of a low-energy particle by a spherically symmetric attractive potential well:
+\[V(r)=\begin{cases}-V_0,&r\le a,\\0,&r>a.\end{cases}\]
+The radial equation is
+\[
+\frac1{r^2}\frac{\dd}{\dd r}\left(r^2\frac{\dd R_l}{\dd r}\right)
++\left(k^2-\frac{2\mu}{\hbar^2}V(r)-\frac{l(l+1)}{r^2}\right)R_l=0.
+\]
+Consider only the $s$ partial wave ($l=0$). Then
+\[\begin{cases}
+\dfrac{\dd^2(rR_0)}{\dd r^2}+k'^2(rR_0)=0,&r\le a,\\[4pt]
+\dfrac{\dd^2(rR_0)}{\dd r^2}+k^2(rR_0)=0,&r>a,
+\end{cases}
+\qquad k'^2=k^2+\frac{2\mu}{\hbar^2}V_0.
+\]
+The solution is
+\[R_0(r)=\begin{cases}
+\dfrac{C_0'}{k'r}\sin(k'r+B_0'),&r\le a,\\[5pt]
+\dfrac{C_0}{kr}\sin(kr+B_0),&r>a.
+\end{cases}\]
+Requiring $R_0(r)$ to remain finite at $r=0$ gives $B_0'=0$.
+Furthermore, continuity of $R_0(r)$ and $\dd R_0/\dd r$ at $r=a$ gives
+\begin{align*}
+B_0&=\arctan\left(\frac{k}{k'}\tan(k'a)\right)-ka,\\
+C_0'&=C_0\frac{k'}{k}\frac{\sin(ka+B_0)}{\sin(k'a)}.
+\end{align*}
+Compare
+\[\lim_{r\to\infty}R_0(r)=\frac{C_0}{kr}\sin(kr+B_0)\]
+with the standard asymptotic form for a central potential,
+\[\lim_{r\to\infty}R_0(r)=\frac{C_0}{kr}\sin(kr+\delta_0).\]
+The $s$-wave phase shift is
+\[\boxed{\delta_0=B_0}.\]
+Since $P_0(\cos\theta)=1$,
+\[f_0(\theta)=\frac1k e^{\ii\delta_0}\sin\delta_0,\]
+\[\sigma(\theta)=|f(\theta)|^2\simeq |f_0(\theta)|^2
+=\frac{\sin^2\delta_0}{k^2}.\]
+At low energy, $k\to0$,
+\[
+\arctan\left(\frac{k}{k'}\tan k'a\right)
+\longrightarrow \frac{k}{k'}\tan k'a,
+\qquad k'^2\longrightarrow\frac{2\mu V_0}{\hbar^2}.
+\]
+Therefore
+\[\delta_0\simeq\frac{k}{k'}\tan k'a-ka
+=ka\left(\frac{\tan k'a}{k'a}-1\right),\]
+and
+\[
+\boxed{\sigma(\theta)\simeq\frac{\sin^2\delta_0}{k^2}
+\simeq\frac{\delta_0^2}{k^2}
+\simeq a^2\left(\frac{\tan k'a}{k'a}-1\right)^2}.\]
+Since only the $s$ partial wave has been considered, $\sigma$ is independent of $\theta$. The total scattering cross section is
+\[\boxed{\sigma_{\mathrm{tot}}=\int\sigma(\theta)\dd\Omega
+=4\pi a^2\left(\frac{\tan k'a}{k'a}-1\right)^2}.\]

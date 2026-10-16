@@ -1,0 +1,119 @@
+% SOURCE: Chinese PDF viewer pp.123 (lower half) -- 126.
+\section{Green-Function Method}
+\subsection*{1) Integral equation}
+The stationary Schr\"odinger equation is
+\[
+\left(-\frac{\hbar^2}{2m}\nabla^2+V(\vect r)\right)\psi(\vect r)=E\psi(\vect r).
+\]
+In elastic scattering the energy is conserved. $E$ is the known incident energy, and only $\psi(\vect r)$ needs to be determined. (In a bound-state problem, the bound-state condition is used to determine the allowed values of $E$.) Set
+\[k^2=\frac{2mE}{\hbar^2},\qquad U(\vect r)=\frac{2m}{\hbar^2}V(\vect r).\]
+Then
+\[(\nabla^2+k^2)\psi(\vect r)=U(\vect r)\psi(\vect r),\]
+which has a continuous source (potential) $U(\vect r)$.
+
+The idea of the Green-function method is to solve first the stationary equation corresponding to a point source $\delta^{(3)}(\vect r-\vect r')$,
+\[(\nabla_{\vect r}^2+k^2)G(\vect r,\vect r')=\delta^{(3)}(\vect r-\vect r'),\]
+thus obtaining the Green function $G(\vect r,\vect r')$, and then solving the stationary equation
+\begin{align*}
+(\nabla^2+k^2)\psi(\vect r)
+&=U(\vect r)\psi(\vect r)\\
+&=\int\dd^3r'\,U(\vect r')\psi(\vect r')\delta^{(3)}(\vect r-\vect r')\\
+&=\int\dd^3r'\,U(\vect r')\psi(\vect r')
+   (\nabla_{\vect r}^2+k^2)G(\vect r,\vect r').
+\end{align*}
+Therefore one solution of the stationary equation is
+\[\psi(\vect r)=\int\dd^3r'\,U(\vect r')\psi(\vect r')G(\vect r,\vect r').\]
+Taking into account the solution to the sourceless equation
+\[(\nabla^2+k^2)\psi^{(0)}(\vect r)=0,\qquad
+\psi^{(0)}(\vect r)=A e^{\ii\vect k\cdot\vect r},\]
+the general solution of the stationary equation is
+\[\boxed{\psi(\vect r)=A e^{\ii\vect k\cdot\vect r}+
+\int\dd^3r'\,U(\vect r')\psi(\vect r')G(\vect r,\vect r')}.\]
+This satisfies the requirement
+\[\lim_{V\to0}\psi(\vect r)=\psi^{(0)}(\vect r).\]
+It is an integral equation for $\psi(\vect r)$, completely equivalent to the differential form of the stationary equation.
+
+The integral equation has advantages: (1) The boundary condition is already included in the equation (the incident plane wave $Ae^{\ii\vect k\cdot\vect r}$); (2) an iterative method may be used to solve it.
+
+\subsection*{2) Green functions}
+Perform a Fourier transformation,
+\begin{align*}
+G(\vect r,\vect r')&=\frac1{(2\pi)^3}\int\dd^3k'\,g(\vect k',\vect r')e^{\ii\vect k'\cdot\vect r},\\
+\delta^{(3)}(\vect r-\vect r')&=\frac1{(2\pi)^3}\int\dd^3k'\,e^{\ii\vect k'\cdot(\vect r-\vect r')}.
+\end{align*}
+Substitution into the equation satisfied by $G(\vect r,\vect r')$ gives
+\[g(\vect k',\vect r')=\frac{e^{-\ii\vect k'\cdot\vect r'}}{k^2-k'^2}.\]
+Hence
+\[
+G(\vect r,\vect r')=G(\vect r-\vect r')
+=\frac1{(2\pi)^3}\int_{-\infty}^{\infty}\dd^3k'\,
+\frac{e^{\ii\vect k'\cdot(\vect r-\vect r')}}{k^2-k'^2}.
+\]
+Take $\vect r-\vect r'$ as the polar axis. After angular integration, with $R=|\vect r-\vect r'|$,
+\begin{align*}
+G(\vect r-\vect r')
+&=\frac1{4\pi^2R}\int_{-\infty}^{\infty}\dd k'\,
+ \frac{k'\sin(k'R)}{k^2-k'^2}\\
+&=\frac1{4\pi^2\ii R}\int_{-\infty}^{\infty}\dd k'\,
+\frac{k'e^{\ii k'R}}{k^2-k'^2}\\
+&=-\frac1{8\pi^2\ii R}\int_{-\infty}^{\infty}\dd k'
+\left(\frac{e^{\ii k'R}}{k'-k}+\frac{e^{\ii k'R}}{k'+k}\right).
+\end{align*}
+The part of the integrand involving $\cos(k'R)$ is an odd function of $k'$ and integrates to zero. The integral has two poles, $k'=\pm k$, and is treated by complex-variable methods.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.84,every node/.style={font=\scriptsize}]
+% Two deformations of the same upper-half-plane contour (source top row).
+\begin{scope}[shift={(0,0)}]
+ \draw[->] (-2.3,0)--(2.3,0) node[right] {$\mathrm{Re}\,k'$};
+ \draw[->] (0,-.4)--(0,2.15)node[above]{$\mathrm{Im}\,k'$};
+ \draw[thick,->] (2,0) arc(0:135:2); \draw[thick] (2,0)arc(0:180:2);
+ \draw[thick](-2,0)--(-1.1,0) arc(180:0:.16)--(.73,0) arc(0:-180:.16)--(2,0);
+ \node[below]at (-.94,-.21){$-k$}; \node[below]at (.9,-.21){$+k$};
+ \node[below] at (0,-.77){(a) contour 1};
+\end{scope}
+\begin{scope}[shift={(5.7,0)}]
+ \draw[->] (-2.3,0)--(2.3,0) node[right] {$\mathrm{Re}\,k'$};
+ \draw[->] (0,-.4)--(0,2.15)node[above]{$\mathrm{Im}\,k'$};
+ \draw[thick,->] (2,0) arc(0:135:2); \draw[thick] (2,0)arc(0:180:2);
+ \draw[thick](-2,0)--(-1.1,0) arc(180:360:.16)--(.73,0) arc(180:0:.16)--(2,0);
+ \node[below]at (-.94,-.21){$-k$}; \node[below]at (.9,-.21){$+k$};
+ \node[below] at (0,-.77){(b) contour 2};
+\end{scope}
+% Equivalently, move the poles off the real integration line.
+\begin{scope}[shift={(0,-3.65)}]
+ \draw[->] (-2.3,0)--(2.3,0)node[right]{$\mathrm{Re}\,k'$};
+ \draw[->](0,-.46)--(0,2.15)node[above]{$\mathrm{Im}\,k'$};
+ \draw[thick,->](2,0)arc(0:135:2); \draw[thick](2,0)arc(0:180:2);
+ \draw[thick](-2,0)--(2,0);
+ \fill (-.88,-.18)circle(1.4pt)node[below]{$-k-\ii\epsilon$};
+ \fill (.88,.22)circle(1.4pt)node[above]{$k+\ii\epsilon$};
+ \node[below]at (0,-.77){(a) displaced poles};
+\end{scope}
+\begin{scope}[shift={(5.7,-3.65)}]
+ \draw[->] (-2.3,0)--(2.3,0)node[right]{$\mathrm{Re}\,k'$};
+ \draw[->](0,-.46)--(0,2.15)node[above]{$\mathrm{Im}\,k'$};
+ \draw[thick,->](2,0)arc(0:135:2); \draw[thick](2,0)arc(0:180:2);
+ \draw[thick](-2,0)--(2,0);
+ \fill (-.88,.22)circle(1.4pt)node[above]{$-k+\ii\epsilon$};
+ \fill (.88,-.18)circle(1.4pt)node[below]{$k-\ii\epsilon$};
+ \node[below]at (0,-.77){(b) displaced poles};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+In the complex $k'$ plane, consider contour 1 closed in the upper half-plane (left). The first pole contributes and the second does not. On the semicircle,
+\[e^{\ii k'R}=e^{\ii\operatorname{Re}k'R}e^{-\operatorname{Im}k'R};\]
+since $\operatorname{Im}k'>0$ in the upper half-plane, this tends to zero as $R\to\infty$. The residue theorem gives
+\[\boxed{G^+(\vect r-\vect r')=-\frac1{4\pi}\frac{e^{\ii k|\vect r-\vect r'|}}{|\vect r-\vect r'|}},\]
+called the \emph{retarded Green function}. For contour 2 in the upper half-plane (right), the first pole does not contribute and the second does:
+\[\boxed{G^-(\vect r-\vect r')=-\frac1{4\pi}\frac{e^{-\ii k|\vect r-\vect r'|}}{|\vect r-\vect r'|}},\]
+called the \emph{advanced Green function}.
+
+A contour containing both poles gives what is called the causal Green function. The contours above each make small semicircular indentations around the poles. Equivalently, one may displace the two poles slightly upward or downward and use a straight integration path (bottom diagrams in the source figure).
+
+Retarded, advanced, and causal Green functions are all solutions of
+\[(\nabla_{\vect r}^2+k^2)G(\vect r,\vect r')=\delta^{(3)}(\vect r-\vect r').\]
+Substituting the retarded and advanced Green functions into the integral equation for $\psi(\vect r)$, for example, gives
+\[\boxed{\psi^\pm(\vect r)=Ae^{\ii\vect k\cdot\vect r}
+-\frac1{4\pi}\int\dd^3r'\,U(\vect r')\psi^\pm(\vect r')
+\frac{e^{\pm\ii k|\vect r-\vect r'|}}{|\vect r-\vect r'|}}.\]

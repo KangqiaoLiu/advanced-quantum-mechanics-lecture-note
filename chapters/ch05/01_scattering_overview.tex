@@ -1,0 +1,67 @@
+% SOURCE: Chinese PDF viewer pp.121 (lower half) -- 123 (upper half).
+\section{General Description}
+The perturbation method discussed above is mainly suitable for discrete spectra, that is, for the case of separated energy levels. How should one solve continuous-spectrum problems? A typical physical problem involving a continuous spectrum is scattering.
+
+\subsection*{1) Differential scattering cross section}
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={font=\small}]
+  \draw[->] (-4.1,0)--(4.2,0) node[right] {$z$};
+  \draw[very thick] (0,0) circle (0.13); \node[below] at (0,-0.2) {target};
+  \draw[thick,->] (-3.4,0.03)--(-0.23,0.03); \node[below] at (-2.5,0) {incident plane wave};
+  \draw[thick,->] (0.15,0.12) .. controls (0.65,0.6) and (1.1,1.65) .. (1.55,2.55);
+  \draw[dashed] (0,0)--(2.0,3.25); \node[above] at (2.02,3.20) {scattered flux};
+  \draw[->] (0,0)--(1.28,2.08) node[midway,left] {$\vect r$};
+  \draw[dashed] (1.70,2.45) ellipse (0.34 and 0.13);
+  \draw[->] (1.75,2.45)--(2.30,2.70) node[right] {$\dd S$};
+  \node[right] at (1.9,2.25) {$\dd\Omega$};
+  \draw (0.65,0) arc (0:59:0.65); \node at (0.87,0.35) {$\theta$};
+\end{tikzpicture}
+\end{center}
+An incident plane wave is changed into a spherical wave after scattering. The problem is to find the probability per unit time that an incident particle is scattered into a unit solid angle in the direction $\Omega$, denoted by $\sigma(\theta,\varphi)$. The quantity $\sigma(\theta,\varphi)$ depends on the nature of the target and of the interaction. By measuring $\sigma(\theta,\varphi)$, we may learn about the internal structure of the target or discover new particles.
+
+Scattering is divided into elastic and inelastic scattering:
+\begin{itemize}
+\item \textbf{Elastic scattering:} The energy of the particle does not change before and after scattering; only its direction of motion changes.
+\item \textbf{Inelastic scattering:} After scattering, the properties of the particle change; new particles may even be created.
+\end{itemize}
+We consider only elastic scattering, in the rest frame of the target particle. Let the incident plane wave be
+\[\psi_1(\vect r)=A e^{\ii kz}.\]
+The probability-current density of the incident particle (probability crossing unit area per unit time) is
+\[
+J_z=\frac{\ii\hbar}{2\mu}\left(\psi_1\frac{\partial\psi_1^*}{\partial z}-\psi_1^*\frac{\partial\psi_1}{\partial z}\right)
+=\frac{\hbar k}{\mu}|A|^2.
+\]
+The probability per unit time that these incident particles are scattered into the direction $\dd\Omega$ is
+\[\dd N=J_z\sigma(\theta,\varphi)\dd\Omega.\]
+Analyze the dimension of $\sigma$: since $[\dd N]=T^{-1}$, $[J_z]=L^{-2}T^{-1}$ and $[\dd\Omega]=1$, it follows that
+\[[\sigma]=L^2.\]
+It has the dimension of area and therefore $\sigma(\theta,\varphi)$ is called the \emph{differential scattering cross section}.
+
+\subsection*{2) General method for calculating $\sigma(\theta,\varphi)$}
+As $r\to\infty$, $V(\vect r)\to0$, and $\psi(\vect r)$ consists of two parts: the incident plane wave propagating in the $z$ direction without being affected by the interaction, and an outgoing scattered spherical wave propagating in the $\vect r$ direction,
+\[
+\psi(\vect r)\xrightarrow{r\to\infty}\psi_1(\vect r)+\psi_2(\vect r)
+=Ae^{\ii kz}+Af(\theta,\varphi)\frac{e^{\ii kr}}r.
+\]
+Note: (1) The spherical wave depends on $\theta$ and $\varphi$; $f(\theta,\varphi)$ can be chosen so that $\psi_2$ and $\psi_1$ have the same constant $A$. The specific form of $f(\theta,\varphi)$ is determined by the interaction. (2) For elastic scattering, the energy and the magnitude of $k$ remain unchanged, while its direction changes.
+
+The probability-current density of the scattered particles is
+\[
+J_r=\frac{\ii\hbar}{2\mu}\left(\psi_2\frac{\partial\psi_2^*}{\partial r}-\psi_2^*\frac{\partial\psi_2}{\partial r}\right)
+=\frac{\hbar k}{\mu}|A|^2\frac{|f(\theta,\varphi)|^2}{r^2}
+=J_z\frac{|f(\theta,\varphi)|^2}{r^2}.
+\]
+The probability per unit time scattered into $\dd\Omega$ is
+\[\dd N=J_r\dd S=J_r r^2\dd\Omega=J_z|f(\theta,\varphi)|^2\dd\Omega.\]
+Comparing with $\dd N=J_z\sigma(\theta,\varphi)\dd\Omega$, we obtain
+\[\boxed{\sigma(\theta,\varphi)=|f(\theta,\varphi)|^2}.\]
+Here $f(\theta,\varphi)$ is called the \emph{scattering amplitude}.
+
+\textbf{Conclusion:} The general method for calculating the differential cross section $\sigma(\theta,\varphi)$ is:
+\begin{enumerate}
+\item Solve the specific Schr\"odinger equation to obtain $\psi(\vect r)$.
+\item Compare its asymptotic form as $r\to\infty$ with the standard asymptotic solution
+\[\psi(\vect r)\xrightarrow{r\to\infty} Ae^{\ii kz}+Af(\theta,\varphi)\frac{e^{\ii kr}}r\]
+to find $f(\theta,\varphi)$.
+\item Obtain $\sigma(\theta,\varphi)=|f(\theta,\varphi)|^2$.
+\end{enumerate}

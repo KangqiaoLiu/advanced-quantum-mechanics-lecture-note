@@ -1,0 +1,214 @@
+% SOURCE: Chinese PDF viewer pp.127--132 (upper part).
+\section{Lippmann--Schwinger Equation}
+\subsection*{1) Lippmann--Schwinger equation in Hilbert space}
+Let
+\[\op H=\op H_0+\op V,\qquad \op H_0=\frac{\op{\vect p}^{\,2}}{2m}.\]
+The incident plane wave is $\ket\varphi$, with
+\[\op H_0\ket\varphi=E\ket\varphi,\qquad E=\frac{p^2}{2m}=\frac{\hbar^2 k^2}{2m}.\]
+The scattered wave is $\ket\psi$. In elastic scattering the energy is unchanged:
+\[\op H\ket\psi=(\op H_0+\op V)\ket\psi=E\ket\psi,\qquad
+(E-\op H_0)\ket\psi=\op V\ket\psi.\]
+The formal solution satisfying the initial condition $\lim_{V\to0}\ket\psi=\ket\varphi$ is
+\[\ket\psi=\ket\varphi+\frac{1}{E-\op H_0}\op V\ket\psi.\]
+However, the operator $(E-\op H_0)^{-1}$ diverges when acting on eigenstates of $\op H_0$. To avoid the divergence, extend the energy into the complex plane and write the formal solution as
+\[\boxed{\ket{\psi^\pm}=\ket\varphi+
+\frac{1}{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},\quad\epsilon\to0^+.}\]
+This is the Lippmann--Schwinger equation in Hilbert space.
+
+Enter the coordinate representation:
+\[
+\braket{\vect r}{\psi^\pm}=\braket{\vect r}{\varphi}
++\int\dd^3r'\,\mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
+\mel{\vect r'}{\op V}{\psi^\pm}.
+\]
+Because
+\begin{align*}
+\mel{\vect r}{\frac{1}{E-\op H_0\pm\ii\epsilon}}{\vect r'}
+&=\int\dd^3p'\dd^3p''\,\braket{\vect r}{\vect p'}
+\mel{\vect p'}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect p''}
+\braket{\vect p''}{\vect r'},\\
+\mel{\vect p'}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect p''}
+&=\frac{\delta^{(3)}(\vect p'-\vect p'')}{E-E'\pm\ii\epsilon},\\
+\braket{\vect r}{\vect p'}&=\frac{e^{\ii\vect p'\cdot\vect r/\hbar}}{(2\pi\hbar)^{3/2}},\qquad
+\braket{\vect p''}{\vect r'}=\frac{e^{-\ii\vect p''\cdot\vect r'/\hbar}}{(2\pi\hbar)^{3/2}},
+\end{align*}
+we have
+\begin{align*}
+\mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
+&=\int\frac{\dd^3p'}{(2\pi\hbar)^3}
+\frac{e^{\ii\vect p'\cdot(\vect r-\vect r')/\hbar}}{E-E'\pm\ii\epsilon}\\
+&=\int\frac{\dd^3k'}{(2\pi)^3}
+\frac{e^{\ii\vect k'\cdot(\vect r-\vect r')}}{E-E'\pm\ii\epsilon}.
+\end{align*}
+By the same contour deformation used to define the Green function, moving a pole slightly upward or downward makes the integration path straight. With $E=\hbar^2k^2/(2m)$,
+\begin{align*}
+G^\pm(\vect r-\vect r')
+&=\int\frac{\dd^3k'}{(2\pi)^3}
+\frac{e^{\ii\vect k'\cdot(\vect r-\vect r')}}{k^2-k'^2\pm\ii0},\\
+\mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
+&=\frac{2m}{\hbar^2}G^\pm(\vect r-\vect r').
+\end{align*}
+Hence the Lippmann--Schwinger equation in the coordinate representation becomes
+\[
+\braket{\vect r}{\psi^\pm}=\braket{\vect r}{\varphi}
++\frac{2m}{\hbar^2}\int\dd^3r'\,G^\pm(\vect r-\vect r')
+\mel{\vect r'}{\op V}{\psi^\pm}.
+\]
+Since
+\begin{align*}
+\mel{\vect r'}{\op V}{\psi^\pm}
+&=\int\dd^3r''\,\mel{\vect r'}{\op V}{\vect r''}
+\braket{\vect r''}{\psi^\pm}\\
+&=\int\dd^3r''\,V(\vect r')\delta^{(3)}(\vect r'-\vect r'')
+\braket{\vect r''}{\psi^\pm}
+=V(\vect r')\braket{\vect r'}{\psi^\pm},
+\end{align*}
+we obtain
+\[
+\boxed{\braket{\vect r}{\psi^\pm}=
+\braket{\vect r}{\varphi}+\int\dd^3r'\,
+U(\vect r')G^\pm(\vect r-\vect r')\braket{\vect r'}{\psi^\pm}.}
+\]
+This is precisely the integral equation corresponding to the coordinate-space Schr\"odinger equation obtained in the preceding section by the Green-function method. It is the coordinate representation of the Lippmann--Schwinger equation.
+
+\subsection*{2) Dyson equation}
+In the general Lippmann--Schwinger equation,
+\[\ket{\psi^\pm}=\ket\varphi+\frac1{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},\]
+let
+\[\op G_0^\pm=\frac1{E-\op H_0\pm\ii\epsilon}.\]
+The coordinate representation $\mel{\vect r}{\op G_0^\pm}{\vect r'}$ is a Green function, and thus $\op G_0^\pm$ is called the \emph{free Green operator}, related to $\op H_0$.
+
+The Lippmann--Schwinger equation can also be rewritten as
+\begin{align*}
+(E-\op H_0\pm\ii\epsilon)\ket{\psi^\pm}
+&=(E-\op H_0\pm\ii\epsilon)\ket\varphi+\op V\ket{\psi^\pm},\\
+(E-\op H\pm\ii\epsilon)\ket{\psi^\pm}
+&=(E-\op H\pm\ii\epsilon)\ket\varphi+\op V\ket\varphi,\\
+\ket{\psi^\pm}&=\ket\varphi+
+\frac1{E-\op H\pm\ii\epsilon}\op V\ket\varphi.
+\end{align*}
+Note that $\ket\varphi$ is an eigenstate of $\op H_0$, not of $\op H$. Define
+\[\op G^\pm=\frac1{E-\op H\pm\ii\epsilon}\]
+as the \emph{full Green operator}, related to $\op H$.
+
+From
+\begin{align*}
+(E-\op H\pm\ii\epsilon)\op G^\pm&=\mathbf1,\\
+(E-\op H_0\pm\ii\epsilon)\op G^\pm-\op V\op G^\pm&=\mathbf1,
+\end{align*}
+we have
+\[\boxed{\op G^\pm=\op G_0^\pm+\op G_0^\pm\op V\op G^\pm}.\]
+This is the \emph{Dyson equation}, which describes the relation between the free and full Green operators. It has important applications in quantum statistical mechanics and quantum field theory.
+
+\subsection*{3) Scattering amplitude}
+Consider the state $\ket{\psi^+}$ associated with the retarded Green function $G^+$. The coordinate-space Lippmann--Schwinger equation gives
+\[
+\psi^+(\vect r)=A e^{\ii\vect k\cdot\vect r}
+-\frac1{4\pi}\int\dd^3r'\,U(\vect r')\psi^+(\vect r')
+\frac{e^{\ii k|\vect r-\vect r'|}}{|\vect r-\vect r'|}.
+\]
+Because the effective region of the potential $V(\vect r')$ is finite, when $r\to\infty$,
+\begin{align*}
+|\vect r'|&\ll r,\\
+|\vect r-\vect r'|&=\sqrt{(\vect r-\vect r')^2}
+=\sqrt{r^2+r'^2-2\vect r\cdot\vect r'}\\
+&\simeq r\left(1-2\frac{\vect r\cdot\vect r'}{r^2}\right)^{1/2}
+\simeq r-\frac{\vect r\cdot\vect r'}r.
+\end{align*}
+Consequently,
+\[
+\psi^+(\vect r)\xrightarrow{r\to\infty}
+Ae^{\ii\vect k\cdot\vect r}
+-\frac1{4\pi}\frac{2m}{\hbar^2}\frac{e^{\ii kr}}r
+\int\dd^3r'\,e^{-\ii\vect k'\cdot\vect r'}V(\vect r')\psi^+(\vect r').
+\]
+In the phase, $|\vect r-\vect r'|$ is retained to first order; in the denominator only the zeroth-order term is kept. The scattered wavevector is $\vect k'=k\vect r/r$, with $|\vect k'|=k$.
+
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.9]
+ \coordinate (O) at (0,0);\coordinate (K) at (3.1,0);\coordinate (Kp) at (2.45,2.15);
+ \draw[->,thick](O)--(K)node[midway,below]{$\vect k$};
+ \draw[->,thick](O)--(Kp)node[midway,above left]{$\vect k'$};
+ \draw[->,thick](K)--(Kp)node[midway,right]{$\vect q=\vect k'-\vect k$};
+ \draw (0.65,0)arc(0:41:0.65);\node at (0.82,.28){$\theta$};
+\end{tikzpicture}
+\end{center}
+Comparing with the standard asymptotic solution
+\[\psi(\vect r)=Ae^{\ii\vect k\cdot\vect r}+Af(\theta,\varphi)\frac{e^{\ii kr}}r,\]
+we obtain the scattering amplitude
+\begin{align*}
+f(\theta,\varphi)
+&=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\int\dd^3r'\,\frac{e^{-\ii\vect k'\cdot\vect r'}}{(2\pi)^{3/2}}
+V(\vect r')\psi^+(\vect r')\\
+&=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\int\dd^3r'\,\braket{\vect k'}{\vect r'}V(\vect r')
+\braket{\vect r'}{\psi^+}\\
+&=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\mel{\vect k'}{\op V}{\psi^+}
+\equiv f(\vect k,\vect k').
+\end{align*}
+Here we have taken
+\[\braket{\vect r}{\varphi}=\frac{e^{\ii\vect k\cdot\vect r}}{(2\pi)^{3/2}}.\]
+Define the transition operator $\op T$ by
+\[\op V\ket{\psi^+}\equiv\op T\ket\varphi.\]
+Then the scattering amplitude is
+\[\boxed{f(\vect k,\vect k')=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\mel{\vect k'}{\op T}{\vect k}.}\]
+The physical meaning of the transition matrix element $\mel{\vect k'}{\op T}{\vect k}$ is clear: it is the transition amplitude from the plane wave $\ket{\vect k}$ to the free state $\ket{\vect k'}$.
+
+If one considers the advanced Green function $G^-$, the resulting $\psi^-(\vect r)$ is a superposition of a plane wave and an inward-propagating spherical wave, rather than a solution of the outgoing scattering problem. Advanced and causal Green functions are relevant to time evolution in dynamical systems.
+
+\subsection*{4) Optical theorem}
+The forward scattering amplitude is
+\[f(0,\varphi)=f(\vect k,\vect k)=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\mel{\vect k}{\op V}{\psi^+}.\]
+From the Lippmann--Schwinger equation (with $\ket\varphi=\ket{\vect k}$),
+\begin{align*}
+\ket{\psi^+}&=\ket\varphi+\frac1{E-\op H_0+\ii\epsilon}\op V\ket{\psi^+},\\
+\bra{\vect k}&=\bra{\psi^+}-\bra{\psi^+}\op V
+\frac1{E-\op H_0-\ii\epsilon},
+\end{align*}
+so that
+\begin{align*}
+\mel{\vect k}{\op V}{\psi^+}
+&=\left(\bra{\psi^+}-\bra{\psi^+}\op V\frac1{E-\op H_0-\ii\epsilon}\right)\op V\ket{\psi^+}\\
+&=\mel{\psi^+}{\op V}{\psi^+}
+-\bra{\psi^+}\op V\frac1{E-\op H_0-\ii\epsilon}\op V\ket{\psi^+}.
+\end{align*}
+Using
+\[\frac1{E-\op H_0-\ii\epsilon}
+=\operatorname{Pr}\frac1{E-\op H_0}+\ii\pi\delta(E-\op H_0),\]
+and noting that $\op V$ and $\op V(\operatorname{Pr}(E-\op H_0)^{-1})\op V$ are Hermitian operators, whose expectation values in $\ket{\psi^+}$ are real, we find
+\begin{align*}
+\operatorname{Im}\mel{\vect k}{\op V}{\psi^+}
+&=-\pi\bra{\psi^+}\op V\delta(E-\op H_0)\op V\ket{\psi^+}\\
+&=-\pi\int\dd^3k'\,
+\mel{\psi^+}{\op V}{\vect k'}\mel{\vect k'}{\op V}{\psi^+}
+\delta(E-\hbar^2k'^2/2m)\\
+&=-\pi\int\dd^3k'\,
+\left|\mel{\vect k'}{\op V}{\psi^+}\right|^2
+\delta\left(E-\frac{\hbar^2k'^2}{2m}\right)\\
+&=-\frac{\pi m k}{\hbar^2}\int\dd\Omega'\,
+\left|\mel{\vect k'}{\op V}{\psi^+}\right|^2.
+\end{align*}
+Because
+\[\sigma(\vect k',\vect k)=|f(\vect k',\vect k)|^2
+=\frac{(2\pi)^6}{16\pi^2}\frac{4m^2}{\hbar^4}
+\left|\mel{\vect k'}{\op V}{\psi^+}\right|^2,\qquad
+\sigma_{\mathrm{tot}}=\int\dd\Omega\,\sigma(\theta,\varphi),\]
+we obtain
+\begin{align*}
+\operatorname{Im}\mel{\vect k}{\op V}{\psi^+}
+&=-\frac{\hbar^2k}{16\pi^3m}\int\dd\Omega'\,\sigma(\theta,\varphi)
+=-\frac{\hbar^2k}{16\pi^3m}\sigma_{\mathrm{tot}}.
+\end{align*}
+Therefore
+\begin{align*}
+\operatorname{Im}f(\theta=0)
+&=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\operatorname{Im}\mel{\vect k}{\op V}{\psi^+}\\
+&=\frac{k}{4\pi}\sigma_{\mathrm{tot}}.
+\end{align*}
+This relation between the forward scattering amplitude and the total scattering cross section is called the \emph{optical theorem}:
+\[\boxed{\operatorname{Im}f(0)=\frac{k}{4\pi}\sigma_{\mathrm{tot}}}.\]

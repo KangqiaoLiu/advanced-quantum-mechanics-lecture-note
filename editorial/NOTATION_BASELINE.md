@@ -47,3 +47,12 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - Time-dependent perturbation coefficients are `a_m(t)`, transition frequencies `\\omega_{mn}=(E_m-E_n)/\\hbar`, probabilities `W_{n\\to m}(t)`.
 - Interaction-picture operators carry `\\mathrm I`, time ordering is `T`, and the Heaviside step function `\\theta(t)`.
 - The student-facing notation table is `frontmatter/notation.tex`, automatically included in the PDF.
+
+## Chapter 5 conventions (2026-10-16)
+
+- The source's first and final sections use reduced mass `\\mu` while middle sections use `m`; the translation preserves this distinction where the source uses it. Define `U(r)=2mV(r)/\\hbar^2` in the Green-function section.
+- Coordinate free-particle wavevector basis: `\\braket{\\vect r}{\\vect k}=(2\\pi)^{-3/2}e^{i\\vect k\\cdot\\vect r}`. Physical momentum basis: `\\braket{\\vect r}{\\vect p}=(2\\pi\\hbar)^{-3/2}e^{i\\vect p\\cdot\\vect r/\\hbar}`. The factor of `\\hbar` must be treated consistently during basis conversion.
+- `G^+(\\vect r-\\vect r')=-e^{+ik|\\vect r-\\vect r'|}/(4\\pi|\\vect r-\\vect r'|)` is the outgoing/retarded spatial Green function, and `G^-` is incoming/advanced, using the Chinese source's names. `\\op G_0^\\pm` and `\\op G^\\pm` are the free/full resolvents.
+- `\\op T` is the scattering transition operator here; `T` already appeared as a time-ordering operator in Chapter 4. Context and hats disambiguate them.
+- `f(\\theta)=\\sum_{l=0}^\\infty f_l(\\theta)` and the differential cross section is `\\sigma(\\theta)=|\\sum_l f_l(\\theta)|^2`; the source's sum of moduli squared misses interference and is corrected with provenance in the Chapter 5 ledger.
+- `R_l, j_l, P_l, \\delta_l` are the radial partial wave, spherical Bessel function, Legendre polynomial and phase shift. New symbols were added to the student-facing `frontmatter/notation.tex`.
