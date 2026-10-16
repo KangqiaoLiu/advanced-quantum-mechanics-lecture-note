@@ -43,7 +43,7 @@
 - [x] Compared Chapter 6 notation with existing translation conventions and extended `frontmatter/notation.tex`.
 - [x] Compiled the complete book locally with XeLaTeX (Chapters 1–6): **125 pages**, including front matter.
 - [x] Reviewed rendered page contact sheets and fixed new-section overfull-line warnings.
-- [ ] Verify the GitHub Actions build and the version-controlled repository PDF; fill in after remote success.
+- [x] GitHub Actions run 38894111667 succeeded; verified the version-controlled `pdf/advanced-quantum-mechanics.pdf` was updated on `main` after XeLaTeX compilation and artifact upload.
 - [ ] Independent bilingual instructor source–target line-by-line and formula-by-formula check.
 - [ ] Independent physics review of identified source issues (Phase R).
 
