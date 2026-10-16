@@ -1,0 +1,128 @@
+% SOURCE: Chinese PDF viewer pp. 72--76.
+\section{Ensembles and the Density Operator}
+We consider the spin properties of a many-particle system.
+
+\subsection*{1) Pure ensembles and mixed ensembles}
+Identical physical systems form an ensemble; for example, an ensemble may consist of particles with identical spins. The spin state of a spin-$1/2$ particle, with azimuthal and polar angles $\alpha,\beta$, is
+\[\chi(\alpha,\beta)=c_+(\alpha,\beta)\chi_++c_-(\alpha,\beta)\chi_-
+=\cos\frac\beta2e^{-\ii\alpha/2}\chi_+
++\sin\frac\beta2e^{\ii\alpha/2}\chi_-,\]
+where $\chi_+,\chi_-$ are eigenstates of $\op s_z$ and
+\[\frac{c_+}{c_-}=\frac{\cos(\beta/2)}{e^{\ii\alpha}\sin(\beta/2)}.\]
+If all particles are in the same state, e.g., their spins point in the same direction, the ensemble is called a \emph{pure ensemble} or a polarized system. If particles are in different states, e.g., their spins do not all point in one direction, the ensemble is called a \emph{mixed ensemble}. For example, if $70\%$ of particles have spin up and $30\%$ spin down, the system is partially polarized and forms a partially mixed ensemble. In a system with completely random spin directions, the probabilities of spin up and spin down are each $50\%$. Their overall contributions cancel and there is no net spin polarization.
+
+\subsection*{2) Ensemble averages and the density operator}
+For a fixed state $\ket\alpha$, the average of a mechanical quantity $\op A$ is
+\[\langle A\rangle_\alpha=\mel\alpha{\op A}\alpha.\]
+This is a \emph{quantum average}. Insert any complete basis $B$:
+\[\langle A\rangle_\alpha
+=\sum_{b,b'}\braket\alpha{b'}\mel{b'}{\op A}b\braket b\alpha.\]
+The ensemble average is
+\[[A]=\sum_\alpha w_\alpha\langle A\rangle_\alpha,\]
+where $w_\alpha$ is the probability that the system occupies state $\ket\alpha$. It satisfies the normalization condition
+\[\sum_\alpha w_\alpha=1.\]
+This is a \emph{statistical average}. Since
+\begin{align*}
+[A]&=\sum_{\alpha,b,b'}w_\alpha\braket\alpha{b'}\mel{b'}{\op A}b\braket b\alpha\\
+&=\sum_{b,b'}\left(\sum_\alpha w_\alpha\braket b\alpha\braket\alpha{b'}\right)
+\mel{b'}{\op A}b,
+\end{align*}
+we define the density operator by
+\[\boxed{\op\rho=\sum_\alpha w_\alpha\ket\alpha\bra\alpha.}\]
+Its matrix elements in the $B$ representation are
+\[\rho_{bb'}=\mel b{\op\rho}{b'}
+=\sum_\alpha w_\alpha\braket b\alpha\braket\alpha{b'}.\]
+Therefore
+\[\boxed{[A]=\sum_{b,b'}\mel b{\op\rho}{b'}\mel{b'}{\op A}b
+=\sum_b\mel b{\op\rho\op A}b
+\equiv\operatorname{tr}(\op\rho\op A).}\]
+This fundamental equation of quantum statistical mechanics includes both quantum and statistical averaging. The trace is unchanged by a change of representation, so the formula is independent of the chosen representation.
+
+In a continuous representation, e.g., the position basis, the matrix elements are
+\[\rho_{\vect x\vect x'}=\mel{\vect x}{\op\rho}{\vect x'}
+=\sum_\alpha w_\alpha\braket{\vect x}\alpha\braket\alpha{\vect x'}
+=\sum_\alpha w_\alpha\psi_\alpha(\vect x)\psi_\alpha^*(\vect x').\]
+The ensemble average becomes
+\[[A]=\operatorname{tr}(\op\rho\op A)
+=\int\dd^3x\,\mel{\vect x}{\op\rho\op A}{\vect x}.\]
+
+The density matrix satisfies the normalization condition
+\begin{align*}
+\operatorname{tr}\op\rho
+&=\sum_{\alpha,b}w_\alpha\braket b\alpha\braket\alpha b\\
+&=\sum_\alpha w_\alpha\bra\alpha\left(\sum_b\ket b\bra b\right)\ket\alpha
+&&\text{(completeness)}\\
+&=\sum_\alpha w_\alpha\braket\alpha\alpha
+&&\text{(quantum-state normalization)}\\
+&=\sum_\alpha w_\alpha=1
+&&\text{(statistical normalization)}.
+\end{align*}
+Suppose the density operator has an eigenstate $\ket\theta$:
+\[\op\rho\ket\theta=\theta\ket\theta,\qquad
+\op\rho^2\ket\theta=\theta^2\ket\theta.\]
+For a pure ensemble all systems are in the same state $\ket n$:
+\[w_\alpha=\begin{cases}1,&\alpha=n,\\0,&\alpha\ne n.\end{cases}\]
+Then
+\[\op\rho=\ket n\bra n,\qquad
+\op\rho^2=\ket n\braket n n\bra n=\ket n\bra n=\op\rho,\]
+so $\theta^2=\theta$ and its eigenvalues are $\theta=0,1$. If $\ket n$ is a basis state of the chosen representation, the density matrix is diagonal:
+\[\rho_{bb'}=\braket b n\braket n{b'}=\delta_{bn}\delta_{b'n},\qquad
+\rho=\begin{pmatrix}0&&&&\\&\ddots&&&\\&&1&&\\&&&\ddots&\\&&&&0\end{pmatrix}.\]
+Only one matrix entry is $1$; all others are $0$.
+
+For a completely mixed ensemble, all possible states occur with equal probabilities $w_\alpha=w_0=1/N$, where $N$ is the number of states. Then
+\[\rho_{bb'}=\sum_\alpha w_\alpha\braket b\alpha\braket\alpha{b'}
+=\frac1N\braket b{b'}=\frac1N\delta_{bb'},\]
+and the density matrix is proportional to the identity:
+\[\rho=\frac1N\begin{pmatrix}1&&\\&\ddots&\\&&1\end{pmatrix}.\]
+
+\textbf{Example 1: pure ensemble.} Suppose that the completely polarized state is $\ket n=\ket+$, with $\op s_z\ket\pm=\pm(\hbar/2)\ket\pm$. Then
+\[\op\rho=\ket+\bra+.\]
+In the $s_z$ basis $\rho$ is a $2\times2$ matrix:
+\[\rho_{++}=\braket+{+}\braket+{+}=1,\quad
+\rho_{+-}=\braket+{+}\braket+{-}=0,\]
+\[\rho_{-+}=\braket-{+}\braket+{+}=0,\quad
+\rho_{--}=\braket-{+}\braket+{-}=0,\qquad
+\rho=\begin{pmatrix}1&0\\0&0\end{pmatrix}.\]
+If the completely polarized state is
+\[\ket n=\ket{s_x^+}=\frac1{\sqrt2}\ket++\frac1{\sqrt2}\ket-,\qquad
+\op s_x\ket{s_x^+}=\frac\hbar2\ket{s_x^+},\]
+then $\op\rho=\ket{s_x^+}\bra{s_x^+}$. In the $s_z$ representation,
+\[\rho_{++}=\braket+{s_x^+}\braket{s_x^+}{+}=\frac12,\quad
+\rho_{+-}=\braket+{s_x^+}\braket{s_x^+}{-}=\frac12,\]
+\[\rho_{-+}=\braket-{s_x^+}\braket{s_x^+}{+}=\frac12,\quad
+\rho_{--}=\braket-{s_x^+}\braket{s_x^+}{-}=\frac12,\qquad
+\rho=\frac12\begin{pmatrix}1&1\\1&1\end{pmatrix}.\]
+
+\textbf{Example 2: density matrix for a completely unpolarized system.} With $N=2$,
+\[\op\rho=\frac12\ket+\bra++\frac12\ket-\bra-.\]
+In the $s_z$ representation,
+\[\rho_{++}=\frac12,\quad\rho_{+-}=0,\quad\rho_{-+}=0,\quad\rho_{--}=\frac12,\qquad
+\rho=\frac12\begin{pmatrix}1&0\\0&1\end{pmatrix}.\]
+The density matrix of a completely mixed ensemble is proportional to the identity. The expectation values in a completely unpolarized ensemble obviously cancel:
+\[[s_i]=\operatorname{tr}(\op\rho\op s_i)=\frac12\operatorname{tr}(\op s_i).\]
+Inserting the spin matrices $s_x,s_y,s_z$ gives $[s_i]=0$.
+
+\textbf{Example 3: density matrix for a partially polarized system.} Let
+\[\op\rho=\frac34\ket+\bra++\frac14\ket{s_x^+}\bra{s_x^+}.\]
+In the $s_z$ representation,
+\[\rho_{++}=\frac34+\frac14\frac12=\frac78,\qquad
+\rho_{+-}=\rho_{-+}=\rho_{--}=\frac18,\]
+so that
+\[\rho=\frac18\begin{pmatrix}7&1\\1&1\end{pmatrix},\qquad
+[s_x]=\frac\hbar8,\quad[s_y]=0,\quad[s_z]=\frac{3\hbar}{8}.\]
+
+\subsection*{3) Evolution of the ensemble}
+How does the density operator evolve in time? If the statistical properties of the ensemble do not vary in time, its probability distribution $w_\alpha$ is constant and
+\[\op\rho(t)=\sum_\alpha w_\alpha\ket{\alpha,t}\bra{\alpha,t}.\]
+By the state evolution equations
+\[\ii\hbar\frac\partial{\partial t}\ket{\alpha,t}=\op H\ket{\alpha,t},\qquad
+-\ii\hbar\frac\partial{\partial t}\bra{\alpha,t}=\bra{\alpha,t}\op H,\]
+we obtain
+\begin{align*}
+\ii\hbar\frac{\partial\op\rho}{\partial t}
+&=\sum_\alpha w_\alpha\left(\op H\ket{\alpha,t}\bra{\alpha,t}
+-\ket{\alpha,t}\bra{\alpha,t}\op H\right)\\
+&=-[\op\rho,\op H].
+\end{align*}
+This is the density operator's time-evolution equation. It resembles the equation of motion of mechanical quantities in the Heisenberg picture, differing by a minus sign; however $\op\rho$ is not an observable operator but an operator constructed from states in the Schrödinger picture.

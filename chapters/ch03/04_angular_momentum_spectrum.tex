@@ -1,0 +1,214 @@
+% SOURCE: Chinese PDF viewer pp. 77--83.
+\section{Eigenvalues and Eigenstates of Angular Momentum}
+We study the eigenvalues and eigenstates of a general angular momentum. The general definition of angular momentum $\op{\vect J}$ is its commutation relation,
+\[[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k.\]
+A mechanical quantity satisfying this relation is called an angular momentum. Orbital angular momentum $\op{\vect L}$ and spin angular momentum are special cases. We employ an algebraic method, analogous to that used for the harmonic oscillator, to find the eigenvalues of $\op{\vect J}^{\,2}$ and $\op J_z$.
+
+\subsection*{1) Definition of angular momentum squared}
+Define the operator describing the magnitude of angular momentum:
+\[\op{\vect J}^{\,2}=\op J_x^2+\op J_y^2+\op J_z^2=\op J_i\op J_i.\]
+It commutes with angular momentum in any direction:
+\begin{align*}
+[\op{\vect J}^{\,2},\op J_j]
+&=\op J_i[\op J_i,\op J_j]+[\op J_i,\op J_j]\op J_i\\
+&=\ii\hbar\epsilon_{ijk}\op J_i\op J_k
++\ii\hbar\epsilon_{ijk}\op J_k\op J_i\\
+&=\ii\hbar\epsilon_{ijk}\op J_i\op J_k
++\ii\hbar\epsilon_{kji}\op J_i\op J_k=0.
+\end{align*}
+Here we used the antisymmetry of the Levi--Civita tensor, $\epsilon_{ijk}=-\epsilon_{kji}$.
+
+Because $\op{\vect J}^{\,2}$ and $\op J_z$ commute, they possess common eigenstates. Since $\op{\vect J}^{\,2}$ is not determined by $\op J_z$ alone, at least two quantum numbers are required. Denote a common eigenstate by $\ket{\lambda,m}$; quantum numbers are conventionally dimensionless. Taking the dimensions of the operators into account,
+\[\op{\vect J}^{\,2}\ket{\lambda,m}=\lambda\hbar^2\ket{\lambda,m},\qquad
+\op J_z\ket{\lambda,m}=m\hbar\ket{\lambda,m}.\]
+The question is: $\lambda=?$, $m=?$
+
+\subsection*{2) Construct a new set of operators}
+Replace $\op J_x,\op J_y,\op J_z$ by
+\[\op J_+=\op J_x+\ii\op J_y,\qquad
+\op J_-=\op J_x-\ii\op J_y=\op J_+^\dagger,\qquad\op J_z.\]
+It follows that
+\[\op J_+\op J_-=\op{\vect J}^{\,2}-\op J_z^2+\hbar\op J_z,\]
+\[\op J_-\op J_+=\op{\vect J}^{\,2}-\op J_z^2-\hbar\op J_z,\]
+\[\op{\vect J}^{\,2}=\frac12(\op J_+\op J_-+\op J_-\op J_+)+\op J_z^2.\]
+The new commutation relations are
+\[[\op J_+,\op J_-]=2\hbar\op J_z,\qquad
+[\op J_-,\op J_z]=\hbar\op J_-,\qquad
+[\op J_+,\op J_z]=-\hbar\op J_+,\]
+\[[\op{\vect J}^{\,2},\op J_+]=[\op{\vect J}^{\,2},\op J_-]
+=[\op{\vect J}^{\,2},\op J_z]=0.\]
+
+\subsection*{3) Positivity bound}
+Take an expectation value in $\ket{\lambda,m}$:
+\begin{align*}
+\mel{\lambda,m}{\op{\vect J}^{\,2}-\op J_z^2}{\lambda,m}
+&=\frac12\mel{\lambda,m}{\op J_+\op J_-+\op J_-\op J_+}{\lambda,m},\\
+(\lambda-m^2)\hbar^2\braket{\lambda,m}{\lambda,m}
+&=\frac12\mel{\lambda,m}{\op J_+\op J_-}{\lambda,m}
++\frac12\mel{\lambda,m}{\op J_-\op J_+}{\lambda,m}\ge0.
+\end{align*}
+Thus $\lambda\ge m^2$.
+
+\subsection*{4) Raising and lowering operators}
+Using their commutators with $\op{\vect J}^{\,2}$ and $\op J_z$,
+\[\begin{cases}
+\op{\vect J}^{\,2}(\op J_+\ket{\lambda,m})
+=\lambda\hbar^2(\op J_+\ket{\lambda,m}),\\
+\op J_z(\op J_+\ket{\lambda,m})
+=(\hbar\op J_++\op J_+\op J_z)\ket{\lambda,m}
+=(m+1)\hbar(\op J_+\ket{\lambda,m}),
+\end{cases}\]
+and
+\[\begin{cases}
+\op{\vect J}^{\,2}(\op J_-\ket{\lambda,m})
+=\lambda\hbar^2(\op J_-\ket{\lambda,m}),\\
+\op J_z(\op J_-\ket{\lambda,m})
+=(-\hbar\op J_-+\op J_-\op J_z)\ket{\lambda,m}
+=(m-1)\hbar(\op J_-\ket{\lambda,m}).
+\end{cases}\]
+Thus if $\ket{\lambda,m}$ is a common eigenstate of $\op{\vect J}^{\,2}$ and $\op J_z$, so are $\op J_+\ket{\lambda,m}$ and $\op J_-\ket{\lambda,m}$, when nonzero. Their eigenvalues form the sequence
+\[\begin{array}{c|c|c}
+\text{Common eigenstate}&\op J_z\text{ eigenvalue}&\op{\vect J}^{\,2}\text{ eigenvalue}\\\hline
+\vdots&\vdots&\vdots\\
+(\op J_+)^2\ket{\lambda,m}&(m+2)\hbar&\lambda\hbar^2\\
+\op J_+\ket{\lambda,m}&(m+1)\hbar&\lambda\hbar^2\\
+\ket{\lambda,m}&m\hbar&\lambda\hbar^2\\
+\op J_-\ket{\lambda,m}&(m-1)\hbar&\lambda\hbar^2\\
+(\op J_-)^2\ket{\lambda,m}&(m-2)\hbar&\lambda\hbar^2\\
+\vdots&\vdots&\vdots
+\end{array}\]
+Therefore $\op J_-$ is called a lowering operator and $\op J_+$ a raising operator. Since the bound $\lambda\ge m^2$ limits $m$, there must be largest and smallest values of $m$, denoted $j$ and $j'$. The values of $m$ form the sequence $j',j'+1,\ldots,j-1,j$, and $\lambda\ge j^2,\lambda\ge j'^2$.
+
+\subsection*{5) Determine the upper and lower bounds}
+For the largest value $j$,
+\[\op J_+\ket{\lambda,j}=0,\]
+otherwise $j\hbar$ would not be the greatest eigenvalue of $\op J_z$. Using
+\[0=\op J_-\op J_+\ket{\lambda,j}
+=(\op{\vect J}^{\,2}-\op J_z^2-\hbar\op J_z)\ket{\lambda,j}
+=(\lambda-j^2-j)\hbar^2\ket{\lambda,j},\]
+we obtain $\lambda=j(j+1)$.
+
+For the smallest value $j'$,
+\[\op J_-\ket{\lambda,j'}=0,\]
+otherwise $j'\hbar$ would not be the smallest eigenvalue. Similarly,
+\[0=\op J_+\op J_-\ket{\lambda,j'}
+=(\lambda-j'^2+j')\hbar^2\ket{\lambda,j'},\]
+so $\lambda=j'(j'-1)$. Since $j(j+1)=j'(j'-1)$,
+\[j'=\begin{cases}j+1,\\-j.\end{cases}\]
+The choice $j'=j+1>j$ contradicts the fact that $j$ is the maximum and $j'$ the minimum. Thus $j'=-j$, and
+\[\op{\vect J}^{\,2}\ket{j,m}=j(j+1)\hbar^2\ket{j,m},\qquad
+\op J_z\ket{j,m}=m\hbar\ket{j,m},\]
+where $m=-j,-j+1,\ldots,j-1,j$ comprises $2j+1$ values. We relabel $\ket{\lambda,m}$ as $\ket{j,m}$. The remaining question is: which values of $j$ are possible?
+
+\subsection*{6) Allowed angular-momentum quantum numbers}
+Applying $\op J_-$ to $\ket{j,j}$ exactly $2j$ times produces $\ket{j,-j}$; applying $\op J_+$ to $\ket{j,-j}$ exactly $2j$ times produces $\ket{j,j}$. Therefore $2j$ is zero or a positive integer, so $j$ may be zero, a positive integer, or a positive half-integer.
+
+In summary,
+\[\boxed{\begin{gathered}
+\op{\vect J}^{\,2}\ket{j,m}=j(j+1)\hbar^2\ket{j,m},\quad
+j=0,\frac12,1,\frac32,\ldots,\\
+\op J_z\ket{j,m}=m\hbar\ket{j,m},\quad
+m=-j,-j+1,\ldots,j\quad(2j+1\text{ values}).
+\end{gathered}}\]
+For $j$ zero or a positive integer, $\op{\vect J}$ can be explained by orbital angular momentum $\op{\vect L}$. What is the physical meaning of $\op{\vect J}$ when $j$ is a positive half-integer? The angular-momentum commutation relation itself establishes the possibility of a new type of angular momentum: spin angular momentum.
+
+\subsection*{7) Matrix elements of raising and lowering operators}
+Because the eigenvalue pair $(j,m)$ labels a unique eigenstate in an irreducible fixed-$j$ multiplet,
+\[\op J_+\ket{j,m}=a_{jm}\ket{j,m+1},\qquad
+\op J_-\ket{j,m}=b_{jm}\ket{j,m-1}.\]
+Taking Hermitian conjugates,
+\[\bra{j,m}\op J_-=a_{jm}^*\bra{j,m+1},\qquad
+\bra{j,m}\op J_+=b_{jm}^*\bra{j,m-1}.\]
+Consequently,
+\begin{align*}
+|a_{jm}|^2
+&=\mel{j,m}{\op J_-\op J_+}{j,m}
+=\mel{j,m}{\op{\vect J}^{\,2}-\op J_z^2-\hbar\op J_z}{j,m}\\
+&=\big[j(j+1)-m^2-m\big]\hbar^2.
+\end{align*}
+Choose the phase convention
+\[a_{jm}=\hbar\sqrt{j(j+1)-m(m+1)}
+=\hbar\sqrt{(j-m)(j+m+1)}.\]
+Similarly,
+\[b_{jm}=\hbar\sqrt{(j+m)(j-m+1)}.\]
+Thus
+\[\boxed{\begin{aligned}
+\op J_+\ket{j,m}&=\hbar\sqrt{(j-m)(j+m+1)}\ket{j,m+1},\\
+\op J_-\ket{j,m}&=\hbar\sqrt{(j+m)(j-m+1)}\ket{j,m-1}.
+\end{aligned}}\]
+Because
+\[\op J_x=\tfrac12(\op J_++\op J_-),\qquad
+\op J_y=\tfrac1{2\ii}(\op J_+-\op J_-),\]
+we obtain
+\begin{align*}
+\op J_x\ket{j,m}&=\frac\hbar2\sqrt{(j-m)(j+m+1)}\ket{j,m+1}
++\frac\hbar2\sqrt{(j+m)(j-m+1)}\ket{j,m-1},\\
+\op J_y\ket{j,m}&=\frac\hbar{2\ii}\sqrt{(j-m)(j+m+1)}\ket{j,m+1}
+-\frac\hbar{2\ii}\sqrt{(j+m)(j-m+1)}\ket{j,m-1}.
+\end{align*}
+
+\subsection*{8) Common representation of $\op{\vect J}^{\,2}$ and $\op J_z$}
+The basis consists of $\ket{j,m}$. For fixed $j$, the eigenvalue of $\op{\vect J}^{\,2}$ is fixed, and the eigenstates of $\op J_z$ span a subspace of dimension $D=2j+1$. The matrix elements are
+\[\mel{j,n}{\op{\vect J}^{\,2}}{j,m}=j(j+1)\hbar^2\delta_{nm},\qquad
+\mel{j,n}{\op J_z}{j,m}=m\hbar\delta_{nm},\]
+\begin{align*}
+\mel{j,n}{\op J_x}{j,m}&=\frac\hbar2\sqrt{(j-m)(j+m+1)}\delta_{n,m+1}
++\frac\hbar2\sqrt{(j+m)(j-m+1)}\delta_{n,m-1},\\
+\mel{j,n}{\op J_y}{j,m}&=\frac\hbar{2\ii}\sqrt{(j-m)(j+m+1)}\delta_{n,m+1}
+-\frac\hbar{2\ii}\sqrt{(j+m)(j-m+1)}\delta_{n,m-1}.
+\end{align*}
+These are the matrix representations of $\op J_x,\op J_y,\op J_z$ in the common eigenbasis.
+
+\textbf{Example 1: $j=1/2$ (electron spin).} In this case
+\[\op{\vect J}^{\,2}=\frac34\hbar^2,\qquad m=\pm\frac12,\qquad D=2.\]
+Choose the first basis state $\ket{1/2,1/2}$ and the second $\ket{1/2,-1/2}$. Then
+\[J_z=\begin{pmatrix}\hbar/2&0\\0&-\hbar/2\end{pmatrix}=\frac\hbar2\sigma_z,\quad
+J_x=\begin{pmatrix}0&\hbar/2\\\hbar/2&0\end{pmatrix}=\frac\hbar2\sigma_x,\]
+\[J_y=\begin{pmatrix}0&-\ii\hbar/2\\\ii\hbar/2&0\end{pmatrix}=\frac\hbar2\sigma_y.\]
+If an eigenstate of $\op J_z$ has components $(a,b)^{\mathsf T}$, its eigenvalue equation is
+\[\begin{pmatrix}\hbar/2&0\\0&-\hbar/2\end{pmatrix}\begin{pmatrix}a\\b\end{pmatrix}
+=m\hbar\begin{pmatrix}a\\b\end{pmatrix}.\]
+After normalization, the eigenstate is $(1,0)^{\mathsf T}$ for $m=1/2$ and $(0,1)^{\mathsf T}$ for $m=-1/2$.
+
+\textbf{Example 2: $j=1$ (photon spin).} Here $\op{\vect J}^{\,2}=2\hbar^2$, $m=-1,0,1$, and $D=3$. Choose the ordered basis $\ket{1,1}$, $\ket{1,0}$, $\ket{1,-1}$:
+\[J_x=\frac\hbar{\sqrt2}\begin{pmatrix}0&1&0\\1&0&1\\0&1&0\end{pmatrix},\qquad
+J_y=\frac\hbar{\sqrt2}\begin{pmatrix}0&-\ii&0\\\ii&0&-\ii\\0&\ii&0\end{pmatrix},\qquad
+J_z=\hbar\begin{pmatrix}1&0&0\\0&0&0\\0&0&-1\end{pmatrix}.\]
+The eigenstates of $J_z$ have components
+\[m=1:\begin{pmatrix}1\\0\\0\end{pmatrix},\quad
+m=0:\begin{pmatrix}0\\1\\0\end{pmatrix},\quad
+m=-1:\begin{pmatrix}0\\0\\1\end{pmatrix}.\]
+
+\subsection*{9) Matrix representation of rotation operators}
+The rotation operator is
+\[\op D_n(\varphi)=\exp\!\left(-\frac\ii\hbar\op{\vect J}\cdot\vect e_n\varphi\right).\]
+Since
+\[[\op{\vect J}^{\,2},\op{\vect J}]=0,\qquad
+[\op{\vect J}^{\,2},\op D_n(\varphi)]=0,\]
+$\op D_n(\varphi)$ and $\op{\vect J}^{\,2}$ have common eigenstates. In the $\op{\vect J}^{\,2}$ representation, the rotation matrix is block diagonal; in the common basis of $\op{\vect J}^{\,2}$ and $\op J_z$,
+\[D^{jj'}_{mm'}=\mel{j,m}{\op D(\varphi)}{j',m'}=0\qquad(j\ne j').\]
+But $[\op J_z,\op D_n(\varphi)]\ne0$ in general, so within a fixed-$j$ subspace $D$ has off-diagonal entries. Since any rotation can be written in terms of Euler angles $\alpha,\beta,\gamma$, the matrix elements in a fixed-$j$ subspace obey
+\begin{align*}
+D^j_{mm'}&=\mel{j,m}{\op D_n(\varphi)}{j,m'}
+=\mel{j,m}{e^{-\ii\op{\vect J}\cdot\vect e_n\varphi/\hbar}}{j,m'}\\
+&=\mel{j,m}{e^{-\ii\op J_z\alpha/\hbar}e^{-\ii\op J_y\beta/\hbar}
+e^{-\ii\op J_z\gamma/\hbar}}{j,m'}\\
+&=e^{-\ii(m\alpha+m'\gamma)}\mel{j,m}{e^{-\ii\op J_y\beta/\hbar}}{j,m'}\\
+&=e^{-\ii(m\alpha+m'\gamma)}d^j_{mm'}(\beta).
+\end{align*}
+Thus $D$ is block diagonal in $j$, with nonzero matrix elements generally occurring only within the same $j$ block.
+
+For $j=1/2$, we previously found
+\[d^{1/2}(\beta)=\begin{pmatrix}\cos(\beta/2)&-\sin(\beta/2)\\\sin(\beta/2)&\cos(\beta/2)\end{pmatrix}.\]
+For $j=1$, in the common representation,
+\[J_y=\frac\hbar{\sqrt2}\begin{pmatrix}0&-\ii&0\\\ii&0&-\ii\\0&\ii&0\end{pmatrix}.\]
+One can verify
+\[e^{-\ii J_y\beta/\hbar}
+=\mathbf1-\frac\ii\hbar\sin\beta\,J_y
++\left(\frac\ii\hbar\right)^2(1-\cos\beta)J_y^2,\]
+which yields
+\[\boxed{d^1(\beta)=\frac12\begin{pmatrix}
+1+\cos\beta&-\sqrt2\sin\beta&1-\cos\beta\\
+\sqrt2\sin\beta&2\cos\beta&-\sqrt2\sin\beta\\
+1-\cos\beta&\sqrt2\sin\beta&1+\cos\beta
+\end{pmatrix}.}\]

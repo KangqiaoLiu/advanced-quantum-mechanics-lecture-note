@@ -1,0 +1,107 @@
+% SOURCE: Chinese PDF viewer pp. 92--96.
+\section{Spin Correlations and Bell's Inequality}
+\subsection*{1) Correlations in spin measurements}
+The spin singlet of two electrons may be expanded in the eigenstates of $\op s_{1z}$ and $\op s_{2z}$:
+\[\ket{\tfrac12,\tfrac12;0,0}
+=\frac1{\sqrt2}\Big(\ket{s_{1z}^+}\ket{s_{2z}^-}
+-\ket{s_{1z}^-}\ket{s_{2z}^+}\Big).\]
+Because
+\[\ket{s_z^\pm}=\frac1{\sqrt2}\Big(\ket{s_x^+}\pm\ket{s_x^-}\Big),\]
+the spin singlet can also be expanded in the eigenstates of $\op s_{1x},\op s_{2x}$:
+\[\ket{\tfrac12,\tfrac12;0,0}
+=\frac1{\sqrt2}\Big(\ket{s_{1x}^-}\ket{s_{2x}^+}
+-\ket{s_{1x}^+}\ket{s_{2x}^-}\Big).\]
+As illustrated below, let two electrons in the singlet state move from a central source to detectors A and B on opposite sides. Detector A first measures the spin of electron 1; immediately afterwards detector B measures the spin of electron 2.
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.88]
+\draw[thick] (-4,-.45) rectangle (-3,.45);\node at (-3.5,0){B};
+\draw[thick] (3,-.45) rectangle (4,.45);\node at (3.5,0){A};
+\draw[thick] (0,0) circle (.53);
+\draw[->,thick] (-.6,0)--(-2.95,0) node[midway,above]{Particle 2};
+\draw[->,thick] (.6,0)--(2.95,0) node[midway,above]{Particle 1};
+\draw[->] (-2.1,-.8)--(-2.1,-.05);\draw[->] (2.1,-.05)--(2.1,.8);
+\end{tikzpicture}
+\end{center}
+If A measures $s_z$ for electron 1 and B measures $s_x$ for electron 2, then the probabilities for electron 2 to have $s_x^+$ or $s_x^-$ are each $50\%$: there is no correlation between these measurement outcomes.
+
+If A measures $s_x$ for electron 1 and B also measures $s_x$ for electron 2, the spin of electron 2 is determined by the result at A. When electron 1 is found to have $s_x^+$, electron 2 has $s_x^-$; when electron 1 has $s_x^-$, electron 2 has $s_x^+$. The two measurements are correlated.
+
+If A does not measure electron 1, while B measures $s_x$ for electron 2, then electron 2 has $s_x^+$ and $s_x^-$ with equal probability, $50\%$ each. No correlation with an A measurement is observed.
+
+\subsection*{2) Einstein locality and Bell's inequality}
+The spin-measurement correlations discussed above suggest that what is measured for particle 2 at B is related to the physical quantity previously measured for particle 1 at A, despite a large separation between A and B.
+
+Many physicists found this long-range correlation puzzling. Einstein and collaborators proposed the principle of locality: the behavior of system 2 should not depend on the state of distant system 1 (the EPR paradox). To resolve the puzzle, many proposed hidden-variable theories: quantum mechanics results from a theory containing additional parameters that are not observed (hidden variables). We will not discuss a particular hidden-variable theory, but consider how experiments can distinguish the implications of Einstein locality from quantum-mechanical predictions.
+
+Consider two particles. Assume a particle is of a definite type such that measuring $s_z$ gives $s_z^+$ and measuring $s_x$ gives $s_x^+$, irrespective of the other distant particle's state, as required by the locality assumption in this model. Denote this type by $(s_z^+,s_x^+)$. Of course $s_z$ and $s_x$ are still not measured simultaneously. To maintain the total spin singlet, its partner must have the opposite type $(s_z^-,s_x^-)$. Continuing in this way, the possible pairs are
+\[\begin{array}{cc}
+\text{Particle 1}&\text{Particle 2}\\\hline
+(s_z^+,s_x^+)&(s_z^-,s_x^-)\\
+(s_z^+,s_x^-)&(s_z^-,s_x^+)\\
+(s_z^-,s_x^+)&(s_z^+,s_x^-)\\
+(s_z^-,s_x^-)&(s_z^+,s_x^+)
+\end{array}\]
+This reproduces the spin-measurement correlations described above. For example, measuring $s_z$ for particle 1 at A and $s_x$ for particle 2 at B allows both $s_x^+$ and $s_x^-$; measuring $s_x$ for both particles gives opposite results. Thus two measurement directions do not reveal a difference between these predictions.
+
+Continue to consider two particles, but now measure spin along three directions $\vect e_a,\vect e_b,\vect e_c$, i.e.
+\[s_a=\vect s\cdot\vect e_a,\qquad s_b=\vect s\cdot\vect e_b,\qquad
+s_c=\vect s\cdot\vect e_c.\]
+The directions need not be mutually perpendicular. A particle of type $(s_a^+,s_b^+,s_c^+)$ means it yields $s_a^+$ if $s_a$ is measured, $s_b^+$ if $s_b$ is measured, and $s_c^+$ if $s_c$ is measured (not all simultaneously). Requiring the two-particle system to be a spin singlet, the locality model gives the following types for particles 1 and 2 measured at A and B:
+\[\begin{array}{c|c|c}
+\text{Particle 1}&\text{Particle 2}&\text{Count}\\\hline
+(s_a^+,s_b^+,s_c^+)&(s_a^-,s_b^-,s_c^-)&N_1\\
+(s_a^+,s_b^+,s_c^-)&(s_a^-,s_b^-,s_c^+)&N_2\\
+(s_a^+,s_b^-,s_c^+)&(s_a^-,s_b^+,s_c^-)&N_3\\
+(s_a^+,s_b^-,s_c^-)&(s_a^-,s_b^+,s_c^+)&N_4\\
+(s_a^-,s_b^+,s_c^+)&(s_a^+,s_b^-,s_c^-)&N_5\\
+(s_a^-,s_b^+,s_c^-)&(s_a^+,s_b^-,s_c^+)&N_6\\
+(s_a^-,s_b^-,s_c^+)&(s_a^+,s_b^+,s_c^-)&N_7\\
+(s_a^-,s_b^-,s_c^-)&(s_a^+,s_b^+,s_c^+)&N_8
+\end{array}\]
+The probability that particle 1 at A is found in $s_a^+$ and particle 2 at B in $s_b^+$ is
+\[P(s_a^+,s_b^+)=\frac{N_3+N_4}{\sum_{i=1}^8N_i}.\]
+Similarly,
+\[P(s_a^+,s_c^+)=\frac{N_2+N_4}{\sum_{i=1}^8N_i},\qquad
+P(s_c^+,s_b^+)=\frac{N_3+N_7}{\sum_{i=1}^8N_i}.\]
+Since
+\[N_3+N_4\le (N_3+N_7)+(N_2+N_4),\]
+we have
+\[\boxed{P(s_a^+,s_b^+)\le P(s_a^+,s_c^+)+P(s_c^+,s_b^+).}\]
+This is Bell's inequality in the form used here; it expresses a consequence of Einstein locality under the stated assignments.
+
+\subsection*{3) Quantum mechanics and Bell's inequality}
+The preceding inequality is based on Einstein locality. Is it satisfied by quantum mechanics? We calculate the three probabilities in the inequality using quantum mechanics.
+
+When particle 1 is measured along direction $a$ at A and found in $s_a^+$, we wish to determine the probability that particle 2 is measured along $b$ at B and found in $s_b^+$. For the spin singlet, particle 2 is in $s_a^-$. Using the rotation of spin states discussed previously, $\ket{s_a^-}$ can be expressed in the eigenbasis of $\op s_b$. Let $\theta_{ab}$ be the angle between $\vect e_b$ and $\vect e_a$, with relative azimuth $\alpha_{ab}$:
+\[\ket{s_a^-}=\cos\frac{\pi-\theta_{ab}}2e^{-\ii\alpha_{ab}/2}\ket{s_b^+}
++\sin\frac{\pi-\theta_{ab}}2e^{\ii\alpha_{ab}/2}\ket{s_b^-}.\]
+Thus, conditional on $s_a^-$ for particle 2, the probability of $s_b^+$ is
+\[\cos^2\frac{\pi-\theta_{ab}}2=\sin^2\frac{\theta_{ab}}2.\]
+Accounting for the probability $1/2$ that particle 1 is in $s_a^+$,
+\[\boxed{P(s_a^+,s_b^+)=\frac12\sin^2\frac{\theta_{ab}}2.}\]
+Likewise,
+\[P(s_a^+,s_c^+)=\frac12\sin^2\frac{\theta_{ac}}2,\qquad
+P(s_c^+,s_b^+)=\frac12\sin^2\frac{\theta_{cb}}2.\]
+Bell's inequality would therefore require, for any three directions $\vect e_a,\vect e_b,\vect e_c$,
+\[\boxed{\sin^2\frac{\theta_{ab}}2\le
+\sin^2\frac{\theta_{ac}}2+\sin^2\frac{\theta_{cb}}2.}\]
+However, this inequality is not always satisfied. Let the three directions lie in one plane and let
+\[\theta_{ab}=2\theta,\qquad\theta_{ac}=\theta_{cb}=\theta.\]
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=1]
+\draw[->,thick] (0,0)--(4,0) node[right]{$b$};
+\draw[->,thick] (0,0)--(3.5,2.05) node[right]{$c$};
+\draw[->,thick] (0,0)--(1.8,3.45) node[above]{$a$};
+\draw (1,0) arc [start angle=0,end angle=30,radius=1];
+\draw (1.4,0) arc [start angle=0,end angle=60,radius=1.4];
+\node at (1.25,.27){$\theta$};\node at (1.15,1.3){$2\theta$};
+\end{tikzpicture}
+\end{center}
+For $0<\theta<\pi/2$, Bell's inequality reads
+\[\sin^2\theta\le2\sin^2\frac\theta2.\]
+This fails, for example, at $\theta=\pi/4$: it would demand the impossible numerical relation $0.5\le0.292$. Thus the quantum-mechanical calculation and Bell's inequality are inconsistent.
+
+\subsection*{4) Experimental results}
+Many precise experiments have shown violations of Bell's inequality, with results agreeing with quantum-mechanical predictions within experimental errors.
+
+Nevertheless, the interpretation of quantum mechanics, especially measurement, remains a question that has not been completely resolved.

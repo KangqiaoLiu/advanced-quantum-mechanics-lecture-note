@@ -1,0 +1,164 @@
+% SOURCE: Chinese PDF viewer pp. 66--71.
+\section{Spin Angular Momentum}
+\subsection*{1) Spin precession (relation between the rotation operator and the time-evolution operator)}
+We have previously discussed the time evolution of spin precession about the $Z$ axis. In the particle's own coordinate frame there is no kinetic energy, only the interaction of its spin with the external magnetic field:
+\[\op H=\omega\op s_z,\qquad \omega=-\frac{eB}{mc},\qquad
+\op U(t,0)=e^{-\ii\op Ht/\hbar}=e^{-\ii\omega\op s_zt/\hbar}.\]
+Suppose the initial state ($t=0$) is the eigenstate $\ket{s_x^+}$ of $\op s_x$. Then at any time $t$ the expectation values are
+\[\langle\op s_x\rangle_t=\frac\hbar2\cos\omega t,\qquad
+\langle\op s_y\rangle_t=\frac\hbar2\sin\omega t,\qquad
+\langle\op s_z\rangle_t=0.\]
+Compare $\op U(t,0)=e^{-\ii\omega\op s_zt/\hbar}$ with the rotation operator about $Z$, $\op D_z(\varphi)=e^{-\ii\op s_z\varphi/\hbar}$. If $\varphi=\omega t$, the angle $\varphi$ corresponds one-to-one with $t$. From the relation between angular-momentum expectation values before and after a rotation,
+\[\begin{cases}
+\langle\op s_x\rangle_\varphi=\langle\op s_x\rangle_0\cos\varphi-\langle\op s_y\rangle_0\sin\varphi,\\
+\langle\op s_y\rangle_\varphi=\langle\op s_y\rangle_0\cos\varphi+\langle\op s_x\rangle_0\sin\varphi,\\
+\langle\op s_z\rangle_\varphi=\langle\op s_z\rangle_0,
+\end{cases}\]
+we obtain for any initial state
+\[\begin{cases}
+\langle\op s_x\rangle_t=\langle\op s_x\rangle_0\cos\omega t-\langle\op s_y\rangle_0\sin\omega t,\\
+\langle\op s_y\rangle_t=\langle\op s_y\rangle_0\cos\omega t+\langle\op s_x\rangle_0\sin\omega t,\\
+\langle\op s_z\rangle_t=\langle\op s_z\rangle_0.
+\end{cases}\]
+These expressions are the expectation values of spin angular momentum at time $t$ for an arbitrary initial state.
+
+For $t=2\pi/\omega$,
+\[\langle\op s_x\rangle_t=\langle\op s_x\rangle_0,\quad
+\langle\op s_y\rangle_t=\langle\op s_y\rangle_0,\quad
+\langle\op s_z\rangle_t=\langle\op s_z\rangle_0.\]
+Thus $2\pi/\omega$ is called the spin-precession period.
+
+Expand an arbitrary initial state in the eigenstates $\ket{s_z^\pm}$ of $\op s_z$. Under a rotation about $Z$,
+\begin{align*}
+\ket\alpha&=\ket{s_z^+}\braket{s_z^+}\alpha+\ket{s_z^-}\braket{s_z^-}\alpha\\
+&\longrightarrow\ket\alpha_\varphi
+=e^{-\ii\op s_z\varphi/\hbar}\ket\alpha
+=e^{-\ii\varphi/2}\ket{s_z^+}\braket{s_z^+}\alpha
++e^{\ii\varphi/2}\ket{s_z^-}\braket{s_z^-}\alpha.
+\end{align*}
+When $\varphi=2\pi$, or $t=2\pi/\omega$, $\ket\alpha_\varphi=-\ket\alpha$; the state does not return to itself! Only after $\varphi=4\pi$ does it return. Unlike the period of the expectation values, $2\pi/\omega$, the period of the state is $4\pi/\omega$.
+
+\subsection*{2) Neutron interference experiment (experimental verification of spin precession)}
+The neutron has spin $1/2$. A neutron beam with almost fixed energy is split into two beams, which travel along paths A and B to an interference region. Along path B a region containing a nonzero magnetic field is inserted, as illustrated.
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.86]
+\coordinate (S) at (-3,0);\coordinate (D) at (3,0);
+\draw[thick] (S)--(0,1.1)--(D) (S)--(0,-1.1)--(D);
+\draw[very thick,fill=gray!12] (-.15,-1.45) rectangle (.15,1.45);
+\draw[thick] (-2.1,-1.32) circle (.65);\draw[->,thick] (-2.35,-1.45)--(-1.85,-1.12) node[above]{$\vect B$};
+\node[above] at (-1.5,.75){A};\node[below] at (1.55,.75){A};
+\node[above] at (-1.5,-.85){B};\node[below] at (1.55,-.85){B};
+\node[right,align=left] at (D){Interference\\region};
+\end{tikzpicture}
+\end{center}
+The magnetic moment of the neutron is
+\[\mu_n=\frac{g_ne\hbar}{2m_nc},\qquad g_n=-1.91,\]
+and the spin-precession frequency is
+\[\omega=\frac{g_neB}{m_nc}.\]
+(Note: for an electron, $g_e=-1$, and the precession frequency is $\omega=g_eeB/(m_ec)$ in the source's convention.) From the time evolution
+\[\op U(t,0)=e^{-\ii\op Ht/\hbar}=e^{-\ii\omega\op s_zt/\hbar},\]
+the state of the neutron following path B acquires an additional phase factor $e^{\pm\ii\omega T/2}$ after passing through the field region. Here $T$ is the time the neutron takes to traverse that region:
+\[T=l/v_n=lm_n/p_n=lm_n\lambda/\hbar.\]
+The interference consequently has a term
+\[\cos\!\left(\frac{\omega T}{2}+\delta\right),\]
+where $\delta$ is the phase difference between paths A and B in the absence of the magnetic field.
+
+Changing the external field $B$ changes the Larmor frequency and produces a periodic change in the interference intensity. The frequency change corresponding to one full period obeys
+\[\frac{\Delta\omega\,T}{2}=2\pi,\]
+corresponding to
+\[\boxed{\Delta B=\frac{4\pi m_nc}{g_neT}.}\]
+Such changes in interference intensity caused by varying the magnetic field have been confirmed experimentally.
+
+\subsection*{3) Pauli matrices}
+Introduce the Pauli operator $\op{\vect\sigma}$:
+\[\op{\vect s}=\frac\hbar2\op{\vect\sigma}.\]
+The eigenvalues of $\op\sigma_i$ are $\pm1$; $\op\sigma_i^2=\mathbf1$, and $\op{\vect\sigma}^{\,2}=3\mathbf1$.
+Using the commutation relations
+\[[\op\sigma_i,\op\sigma_j]=2\ii\epsilon_{ijk}\op\sigma_k,\]
+we have, for example,
+\begin{align*}
+\op\sigma_x\op\sigma_y+\op\sigma_y\op\sigma_x
+&=\frac1{2\ii}(\op\sigma_y\op\sigma_z-\op\sigma_z\op\sigma_y)\op\sigma_y
++\frac1{2\ii}\op\sigma_y(\op\sigma_y\op\sigma_z-\op\sigma_z\op\sigma_y)\\
+&=\frac1{2\ii}(-\op\sigma_z\op\sigma_y^2+\op\sigma_y^2\op\sigma_z)
+=\frac1{2\ii}(-\op\sigma_z+\op\sigma_z)=0.
+\end{align*}
+Hence the anticommutation relations are
+\[\boxed{\{\op\sigma_i,\op\sigma_j\}=2\delta_{ij}\mathbf1.}\]
+In the $\op\sigma_z$ representation,
+\[\sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
+\sigma_y=\begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix},\quad
+\sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.\]
+The eigenstates of $\op\sigma_z$ are
+\[\chi_+=\begin{pmatrix}1\\0\end{pmatrix},\qquad
+\chi_-=\begin{pmatrix}0\\1\end{pmatrix}.\]
+By completeness, any spin state has the form $\chi=c_+\chi_++c_-\chi_-$.
+
+Consider rotations of a spin state. In the $s_z$ representation,
+\[D_n(\varphi)=e^{-\ii\op{\vect s}\cdot\vect e_n\varphi/\hbar}
+=e^{-\ii\vect\sigma\cdot\vect e_n\varphi/2}.\]
+It is straightforward to prove for arbitrary vectors $\vect a$ and $\vect b$ that
+\[(\vect\sigma\cdot\vect a)(\vect\sigma\cdot\vect b)
+=\vect a\cdot\vect b+\ii\vect\sigma\cdot(\vect a\times\vect b).\]
+In particular, $(\vect\sigma\cdot\vect a)^2=|\vect a|^2$, and
+\[(\vect\sigma\cdot\vect e_n)^r=
+\begin{cases}\mathbf1,&r\text{ even},\\\vect\sigma\cdot\vect e_n,&r\text{ odd}.
+\end{cases}\]
+Therefore
+\[\boxed{D_n(\varphi)=\cos\frac\varphi2\,\mathbf1-\ii\vect\sigma\cdot\vect e_n\sin\frac\varphi2.}\]
+
+\textbf{Example: any spin state can be generated by rotating an eigenstate of $s_z$ (or $\sigma_z$).}
+Suppose that the orientation of an arbitrary spin state $\chi$ is $\vect e_n$, whose polar and azimuthal angles are $\beta$ and $\alpha$. Assume it has eigenvalue $+1$:
+\[(\vect\sigma\cdot\vect e_n)\chi=\chi.\]
+It may be obtained by rotating the eigenstate $\sigma_z\chi_+=\chi_+$, $\chi_+=(1,0)^{\mathsf T}$, through an angle $\beta$ about $Y$ and then through an angle $\alpha$ about $Z$:
+\begin{align*}
+\chi&=D_z(\alpha)D_y(\beta)\chi_+
+=e^{-\ii\sigma_z\alpha/2}e^{-\ii\sigma_y\beta/2}\chi_+\\
+&=\left(\cos\frac\alpha2-\ii\sigma_z\sin\frac\alpha2\right)
+\left(\cos\frac\beta2-\ii\sigma_y\sin\frac\beta2\right)\chi_+\\
+&=\begin{pmatrix}e^{-\ii\alpha/2}&0\\0&e^{\ii\alpha/2}\end{pmatrix}
+\begin{pmatrix}\cos(\beta/2)&-\sin(\beta/2)\\\sin(\beta/2)&\cos(\beta/2)\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}\\
+&=\begin{pmatrix}\cos(\beta/2)e^{-\ii\alpha/2}\\\sin(\beta/2)e^{\ii\alpha/2}\end{pmatrix}
+=\cos\frac\beta2e^{-\ii\alpha/2}\chi_+
++\sin\frac\beta2e^{\ii\alpha/2}\chi_-.
+\end{align*}
+
+\subsection*{4) Euler rotations}
+We now discuss how an arbitrary rotation can be expressed as a product of rotations about the $X$, $Y$ and $Z$ axes.
+
+Let $(X,Y,Z)$ be fixed coordinates and $(X',Y',Z')$ a frame that moves with the vector. In analytical mechanics, an arbitrary rigid-body rotation can be described by three Euler angles. Initially the two frames coincide. First rotate counterclockwise about $Z$ by $\alpha$, as shown in (a); $Y'$ then no longer coincides with $Y$. Next rotate about $Y'$ by $\beta$, as in (b), after which $Z'$ no longer coincides with $Z$. Finally rotate about $Z'$ by $\gamma$, as in (c); the $Y'$ axis changes again, becoming $Y''$. Thus an arbitrary rigid-body rotation can be written as
+\[R(\alpha,\beta,\gamma)=R_{z'}(\gamma)R_{y'}(\beta)R_z(\alpha).\]
+The angles $\alpha,\beta,\gamma$ are the Euler angles.
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.85]
+\foreach \x/\angle/\tag in {0/\alpha/{(a)},3/\beta/{(b)},6/\gamma/{(c)}}{
+\draw[->] (\x,0)--(\x,1.5) node[above]{$Z$};
+\draw[->] (\x,0)--(\x+1.25,-.45) node[right]{$Y$};
+\draw[->] (\x,0)--(\x-.8,-.55) node[left]{$X$};
+\draw[->,thick] (\x,0)--(\x+.55,1.2) node[right]{$Z'$};
+\draw[dashed] (\x,0) ellipse [x radius=.75,y radius=.23];
+\node at (\x+.9,.65){$\angle$};\node[below] at (\x,-.95){\tag};}
+\end{tikzpicture}\end{center}
+Two of these three Euler rotations are about moving axes, $y'$ and $z'$, which is inconvenient for calculations: rotations generated by angular momentum are defined with respect to the fixed frame. We must therefore express rotations about moving axes as rotations about fixed axes. The preceding three rotations are equivalent to three rotations about the fixed axes:
+\[R(\alpha,\beta,\gamma)=R_z(\alpha)R_y(\beta)R_z(\gamma).\]
+The corresponding quantum rotation operator factorizes as
+\[\op D(\alpha,\beta,\gamma)
+=\op D_z(\alpha)\op D_y(\beta)\op D_z(\gamma)
+=e^{-\ii\op J_z\alpha/\hbar}e^{-\ii\op J_y\beta/\hbar}
+e^{-\ii\op J_z\gamma/\hbar}.\]
+For spin $1/2$,
+\[D(\alpha,\beta,\gamma)=e^{-\ii\sigma_z\alpha/2}
+e^{-\ii\sigma_y\beta/2}e^{-\ii\sigma_z\gamma/2}.\]
+In the $s_z$ representation,
+\begin{align*}
+D(\alpha,\beta,\gamma)
+&=\left(\cos\frac\alpha2-\ii\sigma_z\sin\frac\alpha2\right)
+\left(\cos\frac\beta2-\ii\sigma_y\sin\frac\beta2\right)
+\left(\cos\frac\gamma2-\ii\sigma_z\sin\frac\gamma2\right)\\
+&=\begin{pmatrix}e^{-\ii\alpha/2}&0\\0&e^{\ii\alpha/2}\end{pmatrix}
+\begin{pmatrix}\cos(\beta/2)&-\sin(\beta/2)\\\sin(\beta/2)&\cos(\beta/2)\end{pmatrix}
+\begin{pmatrix}e^{-\ii\gamma/2}&0\\0&e^{\ii\gamma/2}\end{pmatrix}\\
+&=\begin{pmatrix}
+e^{-\ii(\alpha+\gamma)/2}\cos(\beta/2)&-e^{-\ii(\alpha-\gamma)/2}\sin(\beta/2)\\
+e^{\ii(\alpha-\gamma)/2}\sin(\beta/2)&e^{\ii(\alpha+\gamma)/2}\cos(\beta/2)
+\end{pmatrix}.
+\end{align*}

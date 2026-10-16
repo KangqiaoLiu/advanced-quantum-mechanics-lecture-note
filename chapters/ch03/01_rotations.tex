@@ -1,0 +1,101 @@
+% SOURCE: Chinese PDF viewer pp. 62--65 (p.62 begins with the previous chapter's final remark).
+\section{Rotations and Angular Momentum}
+Rotations and angular momentum have a unique position in quantum mechanics.
+
+\subsection*{1) Classical rotations}
+Two rotations about the same axis commute. For instance, rotating first through $30^\circ$ about the $Z$ axis and then through $60^\circ$ is exactly equivalent to performing the $60^\circ$ rotation first and the $30^\circ$ rotation second.
+
+However, two rotations about different axes do not commute. As shown in the figure, a counterclockwise rotation through $90^\circ$ about the $Z$ axis followed by a $90^\circ$ rotation about the $X$ axis gives a result different from performing the $X$ rotation first and the $Z$ rotation second.
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.82]
+  % Six orientations: the two possible orders of quarter turns.
+  \foreach \x/\y in {0/2.4,3.1/2.4,6.2/2.4,0/0,3.1/0,6.2/0}{
+    \draw[gray,thin,dashed] (\x-.85,\y-.72)--(\x-.85,\y+.85) node[above]{$z$};
+    \draw[gray,thin,dashed] (\x-.85,\y-.72)--(\x+.15,\y-.72) node[right]{$x$};
+  }
+  \draw[fill=gray!14,thick] (-.65,2.03)--(.43,2.03)--(.65,2.27)--(-.43,2.27)--cycle;
+  \draw[fill=gray!14,thick] (2.3,1.99)--(3.52,1.99)--(3.52,2.48)--(2.3,2.48)--cycle;
+  \draw[fill=gray!14,thick] (5.67,1.84)--(6.18,1.84)--(6.18,3.08)--(5.67,3.08)--cycle;
+  \draw[fill=gray!14,thick] (-.65,-.37)--(.43,-.37)--(.65,-.13)--(-.43,-.13)--cycle;
+  \draw[fill=gray!14,thick] (2.7,-.65)--(3.22,-.65)--(3.22,.60)--(2.7,.60)--cycle;
+  \draw[fill=gray!14,thick] (5.5,-.52)--(6.52,-.52)--(6.52,-.07)--(5.5,-.07)--cycle;
+  \draw[->,thick] (.9,2.35)--(2.1,2.35) node[midway,above]{$R_z(\pi/2)$};
+  \draw[->,thick] (4.0,2.35)--(5.25,2.35) node[midway,above]{$R_x(\pi/2)$};
+  \draw[->,thick] (.9,-.05)--(2.1,-.05) node[midway,above]{$R_x(\pi/2)$};
+  \draw[->,thick] (4.0,-.05)--(5.25,-.05) node[midway,above]{$R_z(\pi/2)$};
+\end{tikzpicture}
+\end{center}
+The upper and lower sequences show the different final orientations produced by reversing the order of the two rotations.
+
+A three-dimensional vector $\vect V=V_x\vect e_x+V_y\vect e_y+V_z\vect e_z$ becomes $\vect V'=V'_x\vect e_x+V'_y\vect e_y+V'_z\vect e_z$ after a rotation $R(\varphi)$. In matrix form,
+\[\vect V'=R(\varphi)\vect V.\]
+Here $R(\varphi)$ is a $3\times3$ matrix. Obviously, rotation does not change the length of a vector:
+\[|\vect V'|=|\vect V|.\]
+The rotation matrix through an angle $\varphi$ about the $Z$ axis is easily obtained:
+\[R_z(\varphi)=\begin{pmatrix}\cos\varphi&-\sin\varphi&0\\ \sin\varphi&\cos\varphi&0\\0&0&1\end{pmatrix}.\]
+For an infinitesimal rotation $\epsilon$,
+\[R_z(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&-\epsilon&0\\\epsilon&1-\epsilon^2/2&0\\0&0&1\end{pmatrix},\]
+where terms higher than the second order in $\epsilon$ have been omitted. Similarly,
+\[R_x(\epsilon)=\begin{pmatrix}1&0&0\\0&1-\epsilon^2/2&-\epsilon\\0&\epsilon&1-\epsilon^2/2\end{pmatrix},\qquad
+R_y(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&0&\epsilon\\0&1&0\\-\epsilon&0&1-\epsilon^2/2\end{pmatrix}.\]
+Clearly,
+\[R_x(\epsilon)R_y(\epsilon)-R_y(\epsilon)R_x(\epsilon)
+=\begin{pmatrix}0&-\epsilon^2&0\\\epsilon^2&0&0\\0&0&0\end{pmatrix}
+=R_z(\epsilon^2)-\mathbf1.\]
+This expression shows that rotations about $X$ and $Y$ do not commute. In general,
+\[R_i(\epsilon)R_j(\epsilon)-R_j(\epsilon)R_i(\epsilon)
+=\epsilon_{ijk}\big[R_k(\epsilon^2)-\mathbf1\big].\]
+
+\subsection*{2) Quantum rotations}
+Let the quantum rotation operator corresponding to the classical rotation matrix $R(\varphi)$ be $\op D(\varphi)$:
+\[\ket{\alpha}_\varphi=\op D(\varphi)\ket\alpha.\]
+Its representation is a matrix $D(\varphi)$.
+
+First discuss the general properties of the rotation operator. The generator of an infinitesimal spatial translation is the momentum operator:
+\[\op T(\dd\vect x)=\mathbf1-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right).\]
+Spatial-translation invariance implies momentum conservation. For an infinitesimal time evolution, the generator is the Hamiltonian:
+\[\op U(t+\dd t,t)=\mathbf1-\frac{\ii}{\hbar}\op H\dd t
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op H\dd t\right).\]
+Time-translation invariance implies energy conservation. For a rotation, classical mechanics tells us that its generator is the corresponding conserved mechanical quantity: angular momentum. Let $\op{\vect J}$ be the generator of the quantum rotation operator $\op D(\varphi)$. For an infinitesimal rotation $\dd\varphi$ about the direction $\vect e_n$,
+\[\op D(\dd\varphi)=\mathbf1-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi\right).\]
+Because rotations about one axis commute, a finite rotation can be regarded as a sequence of infinitesimal rotations. Thus
+\[\boxed{\op D(\varphi)=\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\varphi\right).}\]
+Assume that $\op D$ in quantum mechanics and $R$ in classical mechanics satisfy the same commutation relations:
+\[\big[\op D_i(\epsilon),\op D_j(\epsilon)\big]
+=\epsilon_{ijk}\big[\op D_k(\epsilon^2)-\mathbf1\big].\]
+Retaining terms through $\epsilon^2$,
+\[\left[\mathbf1-\frac{\ii}{\hbar}\op J_i\epsilon-\frac{\op J_i^2\epsilon^2}{2\hbar^2},\;
+\mathbf1-\frac{\ii}{\hbar}\op J_j\epsilon-\frac{\op J_j^2\epsilon^2}{2\hbar^2}\right]
+=\epsilon_{ijk}\left(\mathbf1-\frac{\ii}{\hbar}\op J_k\epsilon^2-\mathbf1\right).\]
+Hence
+\[\boxed{[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k,}\qquad
+\op{\vect J}\times\op{\vect J}=\ii\hbar\op{\vect J}.\]
+This is the fundamental angular-momentum commutation relation in quantum mechanics.
+
+\subsection*{3) Expectation values of angular momentum}
+Consider a rotation by $\varphi$ about $Z$. The state changes as
+\[\ket\alpha\longrightarrow\ket\alpha_\varphi
+=\op D_z(\varphi)\ket\alpha=e^{-\ii\op J_z\varphi/\hbar}\ket\alpha.\]
+The expectation value of $\op J_x$ changes from
+\[\langle\op J_x\rangle_0=\mel\alpha{\op J_x}\alpha\]
+to
+\[\langle\op J_x\rangle_\varphi
+=\mel{\alpha_\varphi}{\op J_x}{\alpha_\varphi}
+=\bra\alpha e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}\ket\alpha.\]
+Expand $e^{\pm\ii\op J_z\varphi/\hbar}$ in a power series and use
+\[[\op J_z,\op J_x]=\ii\hbar\op J_y.\]
+We obtain
+\[e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}
+=\op J_x\cos\varphi-\op J_y\sin\varphi.\]
+Therefore
+\[\langle\op J_x\rangle_\varphi
+=\langle\op J_x\rangle_0\cos\varphi-\langle\op J_y\rangle_0\sin\varphi.\]
+Similarly,
+\[\langle\op J_y\rangle_\varphi
+=\langle\op J_y\rangle_0\cos\varphi+\langle\op J_x\rangle_0\sin\varphi,
+\qquad\langle\op J_z\rangle_\varphi=\langle\op J_z\rangle_0.\]
+If $\langle\op J_x\rangle$, $\langle\op J_y\rangle$ and $\langle\op J_z\rangle$ are regarded as three components of $\langle\op{\vect J}\rangle$, then
+\[\boxed{\langle\op{\vect J}\rangle_\varphi=R_z(\varphi)\langle\op{\vect J}\rangle_0.}\]
+This obeys the same transformation law as a vector mechanical quantity in classical mechanics.

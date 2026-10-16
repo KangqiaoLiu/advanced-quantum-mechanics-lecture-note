@@ -28,3 +28,12 @@ Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; c
 - The position-space propagator is `K(x_f,t_f;x_i,t_i)`.
 - Source Chapter 2 uses Gaussian electromagnetic conventions, including `(e/c)A`, `E=-\nabla\varphi-c^{-1}\partial_t A`. Keep these units in Phase T, pending separate later decisions on uniform book units.
 - The printed student list of notation remains [frontmatter/notation.tex](../frontmatter/notation.tex).
+
+## Chapter 3 conventions (2026-10-16)
+
+- Angular momentum uses `\\op{\\vect J}`, orbital `\\op{\\vect L}`, spin `\\op{\\vect s}` or `\\op{\\vect S}` as in source context; generators carry hats and matrices can omit hats.
+- Standard ladder operators `\\op J_\\pm=\\op J_x\\pm\\ii\\op J_y`; `j,m` label `\\op{\\vect J}^{\\,2}` and `\\op J_z`; phase convention is positive square-root ladder coefficients.
+- Euler rotations `D(\\alpha,\\beta,\\gamma)=D_z(\\alpha)D_y(\\beta)D_z(\\gamma)`, with Wigner `D^j_{mm'}`, `d^j_{mm'}`. Spherical-harmonic phase conventions to be harmonized later, after the faithful translation.
+- Ensemble density `\\op\\rho=\\sum w_\\alpha\\ket\\alpha\\bra\\alpha`; `[A]` denotes an ensemble average and `\\langle A\\rangle` the pure-state expectation.
+- Bell probabilities `P(s_a^+,s_b^+)` represent joint outcomes at separated detectors. Local hidden-type assumptions are retained in their source language for the baseline.
+- Printed notation continues to live in [frontmatter/notation.tex](../frontmatter/notation.tex).

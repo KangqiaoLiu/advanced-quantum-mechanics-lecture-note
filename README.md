@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 3–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 4–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
@@ -38,8 +38,16 @@ The faithful translation is deliberately kept separate from future additions (Be
 
 - **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
 - **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
-- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–2, with automatic title page, contents and cumulative notation list.
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–3, with automatic title page, contents and cumulative notation list.
 - **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
+
+## Chapter 3: Angular Momentum Theory translation baseline
+
+- **Seven source sections:** [chapters/ch03/](chapters/ch03/) covers the Chinese PDF's Chapter 3 on viewer pp. **62–96**: rotations, spin, density operators, the angular momentum spectrum, orbital angular momentum, coupling and Bell's inequality.
+- **Source provenance, smallest clear corrections and open scientific questions:** [editorial/CHAPTER03_TRANSLATION_LOG.md](editorial/CHAPTER03_TRANSLATION_LOG.md).
+- **Book-wide notation:** [frontmatter/notation.tex](frontmatter/notation.tex) now includes angular-momentum and density-operator conventions.
+- **Rendered complete PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). Initial local XeLaTeX compilation produced a **78-page** complete book including front matter.
+- **Status:** faithful first-pass English translation; instructor's final page-by-page fidelity review remains pending. This phase does not include course-content extensions.
 
 ## Intended deliverables
 
