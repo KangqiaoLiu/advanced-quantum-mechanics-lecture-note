@@ -1,59 +1,93 @@
 % Faithful translation baseline; Chinese source PDF pp. 42--47.
 \section{Schr\"odinger Equation in the Coordinate Representation and the WKB Approximation}
 Consider the abstract state $\ket{\psi,t}$, whose Schr\"odinger equation is
-\[\ii\hbar\frac{\partial}{\partial t}\ket{\psi,t}=\op H\ket{\psi,t}.\]
+\begin{equation}
+\ii\hbar\frac{\partial}{\partial t}\ket{\psi,t}=\op H\ket{\psi,t}.
+\end{equation}
 Multiply from the left by the eigenbra $\bra{\vect x}$ of the position operator $\vect{\op x}$. Since these eigenstates are time independent in the Schr\"odinger picture,
-\[\ii\hbar\frac{\partial}{\partial t}\braket{\vect x}{\psi,t}
+\begin{equation}
+\ii\hbar\frac{\partial}{\partial t}\braket{\vect x}{\psi,t}
 =\mel{\vect x}{\op H}{\psi,t}
-=\int\dd^3x'\,\mel{\vect x}{\op H}{\vect x'}\braket{\vect x'}{\psi,t}.\]
+=\int\dd^3x'\,\mel{\vect x}{\op H}{\vect x'}\braket{\vect x'}{\psi,t}.
+\end{equation}
 Let
-\[\op H=\frac{\vect{\op p}^{\,2}}{2m}+V(\vect{\op x}).\]
+\begin{equation}
+\op H=\frac{\vect{\op p}^{\,2}}{2m}+V(\vect{\op x}).
+\end{equation}
 Since
-\[\mel{\vect x}{\op H}{\vect x'}
+\begin{equation}
+\mel{\vect x}{\op H}{\vect x'}
 =\delta^{(3)}(\vect x-\vect x')
-\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right],\]
+\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right],
+\end{equation}
 we obtain
-\[\ii\hbar\frac{\partial}{\partial t}\braket{\vect x}{\psi,t}
-=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right]\braket{\vect x}{\psi,t}.\]
+\begin{equation}
+\ii\hbar\frac{\partial}{\partial t}\braket{\vect x}{\psi,t}
+=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right]\braket{\vect x}{\psi,t}.
+\end{equation}
 Define the wavefunction $\psi(\vect x,t)=\braket{\vect x}{\psi,t}$. This is the Schr\"odinger equation in the coordinate representation.
 
 \subsection*{1) Time-independent Schr\"odinger equation}
 Put
-\[\psi(\vect x,t)=\varphi(\vect x)T(t).\]
+\begin{equation}
+\psi(\vect x,t)=\varphi(\vect x)T(t).
+\end{equation}
 If $\op H$ has no time dependence, inserting this into the Schr\"odinger equation separates it into two equations. The time-dependent factor is
-\[T(t)=e^{-\ii Et/\hbar}.\]
+\begin{equation}
+T(t)=e^{-\ii Et/\hbar}.
+\end{equation}
 The energy $E$ and $\varphi(\vect x)$ are determined by the other equation, the energy eigenvalue equation:
-\[\boxed{\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right]
-\varphi_E(\vect x)=E\varphi_E(\vect x).}\]
+\begin{equation}
+\boxed{\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect x)\right]
+\varphi_E(\vect x)=E\varphi_E(\vect x).}
+\end{equation}
 A stationary state is
-\[\psi_E(\vect x,t)=\varphi_E(\vect x)e^{-\ii Et/\hbar}.\]
+\begin{equation}
+\psi_E(\vect x,t)=\varphi_E(\vect x)e^{-\ii Et/\hbar}.
+\end{equation}
 For bound states the bound-state condition
-\[\lim_{|\vect x|\to\infty}\varphi_E(\vect x)=0\]
+\begin{equation}
+\lim_{|\vect x|\to\infty}\varphi_E(\vect x)=0
+\end{equation}
 leads to discrete values of $E$.
 
 Stationary states are particular solutions when $\op H$ is time independent. The general solution is a linear superposition of stationary states:
-\[\psi(\vect x,t)=\sum_Ec_E\psi_E(\vect x,t).\]
+\begin{equation}
+\psi(\vect x,t)=\sum_Ec_E\psi_E(\vect x,t).
+\end{equation}
 
 \subsection*{2) Probability interpretation of the wavefunction}
 The probability density of finding the particle at a given point is
-\[\rho(\vect x,t)=|\braket{\vect x}{\psi(t)}|^2
-=|\psi(\vect x,t)|^2=\psi^*(\vect x,t)\psi(\vect x,t).\]
+\begin{equation}
+\rho(\vect x,t)=|\braket{\vect x}{\psi(t)}|^2
+=|\psi(\vect x,t)|^2=\psi^*(\vect x,t)\psi(\vect x,t).
+\end{equation}
 When $V(\vect x)$ is real, the Schr\"odinger equation can be written as the continuity equation,
-\[\boxed{\frac{\partial\rho(\vect x,t)}{\partial t}
-+\vect\nabla\cdot\vect j(\vect x,t)=0,}\]
-\[\vect j(\vect x,t)=-\frac{\ii\hbar}{2m}
+\begin{equation}
+\boxed{\frac{\partial\rho(\vect x,t)}{\partial t}
++\vect\nabla\cdot\vect j(\vect x,t)=0,}
+\end{equation}
+\begin{equation}
+\vect j(\vect x,t)=-\frac{\ii\hbar}{2m}
 \left[\psi^*(\vect x,t)\vect\nabla\psi(\vect x,t)
--\psi(\vect x,t)\vect\nabla\psi^*(\vect x,t)\right].\]
+-\psi(\vect x,t)\vect\nabla\psi^*(\vect x,t)\right].
+\end{equation}
 What is the physical meaning of $\vect j$? Integrate the continuity equation over a finite volume $V$:
-\[\int_V\dd^3r\,\frac{\partial\rho(\vect r,t)}{\partial t}
-+\int_V\dd^3r\,\vect\nabla\cdot\vect j(\vect r,t)=0,\]
-\[\frac{\dd}{\dd t}\int_V\dd^3r\,\rho(\vect r,t)
-=-\oint_{\partial V}\dd\vect S\cdot\vect j(\vect r,t).\]
+\begin{equation}
+\int_V\dd^3r\,\frac{\partial\rho(\vect r,t)}{\partial t}
++\int_V\dd^3r\,\vect\nabla\cdot\vect j(\vect r,t)=0,
+\end{equation}
+\begin{equation}
+\frac{\dd}{\dd t}\int_V\dd^3r\,\rho(\vect r,t)
+=-\oint_{\partial V}\dd\vect S\cdot\vect j(\vect r,t).
+\end{equation}
 Local probability conservation says that the change in the probability inside $V$ equals the negative of the outward probability flux across its boundary $S$. Thus $\vect j$ is called the probability-current density.
 
 If we integrate over all space,
-\[\frac{\dd}{\dd t}\int_{\mathbb R^3}\dd^3r\,\rho(\vect r,t)
-=-\oint_{\infty}\dd\vect S\cdot\vect j(\vect r,t)=0.\]
+\begin{equation}
+\frac{\dd}{\dd t}\int_{\mathbb R^3}\dd^3r\,\rho(\vect r,t)
+=-\oint_{\infty}\dd\vect S\cdot\vect j(\vect r,t)=0.
+\end{equation}
 Therefore $\int\dd^3r\,\rho(\vect r,t)$ is independent of time and is a constant. This implies:
 \begin{enumerate}[label=\alph*)]
 \item Total probability is conserved; particles are neither created nor annihilated. This describes nonrelativistic quantum mechanics.
@@ -65,56 +99,82 @@ Therefore $\int\dd^3r\,\rho(\vect r,t)$ is independent of time and is a constant
 An operator in a general state has no definite value, whereas its expectation value does. Thus expectation values of quantum observables correspond to physical quantities in classical mechanics.
 
 The classical equation of motion is
-\[\frac{\dd O}{\dd t}=\{O,H\}_{\text{Poisson bracket}},\]
+\begin{equation}
+\frac{\dd O}{\dd t}=\{O,H\}_{\text{Poisson bracket}},
+\end{equation}
 while the quantum equation of motion for the expectation value is
-\[\frac{\dd\langle O\rangle}{\dd t}
-=\frac{\langle[\op O,\op H]\rangle}{\ii\hbar}.\]
+\begin{equation}
+\frac{\dd\langle O\rangle}{\dd t}
+=\frac{\langle[\op O,\op H]\rangle}{\ii\hbar}.
+\end{equation}
 In the classical limit, observables commute, and $[\op O,\op H]\to0$. To recover the classical equation of motion, one requires
-\[\hbar\longrightarrow0,\qquad
+\begin{equation}
+\hbar\longrightarrow0,\qquad
 \frac{\langle[\op O,\op H]\rangle}{\ii\hbar}
-\longrightarrow\{O,H\}_{\text{Poisson bracket}}.\]
+\longrightarrow\{O,H\}_{\text{Poisson bracket}}.
+\end{equation}
 
 \subsection*{4) WKB approximation to the time-independent equation}
 Only a few Schr\"odinger equations can be solved exactly. Expanding the Schr\"odinger equation in powers of $\hbar$ and solving it by successive approximations gives the WKB approximation (Wentzel, Kramers and Brillouin).
 
 Write a stationary-state wavefunction as
-\[\Psi(\vect r,t)=\psi(\vect r)e^{-\ii Et/\hbar}
+\begin{equation}
+\Psi(\vect r,t)=\psi(\vect r)e^{-\ii Et/\hbar}
 =e^{\ii s(\vect r)/\hbar}e^{-\ii Et/\hbar}
-=e^{\ii[s(\vect r)-Et]/\hbar}.\]
+=e^{\ii[s(\vect r)-Et]/\hbar}.
+\end{equation}
 Insert this into the stationary Schr\"odinger equation,
-\[\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect r)\right]\psi(\vect r)
-=E\psi(\vect r).\]
+\begin{equation}
+\left[-\frac{\hbar^2}{2m}\nabla^2+V(\vect r)\right]\psi(\vect r)
+=E\psi(\vect r).
+\end{equation}
 We find
-\[\frac{(\vect\nabla s)^2}{2m}+V(\vect r)-E
--\frac{\ii\hbar}{2m}\nabla^2s=0.\]
+\begin{equation}
+\frac{(\vect\nabla s)^2}{2m}+V(\vect r)-E
+-\frac{\ii\hbar}{2m}\nabla^2s=0.
+\end{equation}
 Expand $s(\vect r)$ in $\hbar/\ii$:
-\[s(\vect r)=s_0(\vect r)+\frac\hbar\ii s_1(\vect r)
-+\left(\frac\hbar\ii\right)^2s_2(\vect r)+\cdots.\]
+\begin{equation}
+s(\vect r)=s_0(\vect r)+\frac\hbar\ii s_1(\vect r)
++\left(\frac\hbar\ii\right)^2s_2(\vect r)+\cdots.
+\end{equation}
 Equate like powers of $\hbar$:
-\[\begin{array}{ll}
+\begin{equation}
+\begin{array}{ll}
 \hbar^0:&(\vect\nabla s_0)^2+2m[V(\vect r)-E]=0,\\[3pt]
 \hbar^1:&\vect\nabla s_1\cdot\vect\nabla s_0+\frac12\nabla^2s_0=0,\\[3pt]
 &\vdots
-\end{array}\]
+\end{array}
+\end{equation}
 For one dimension,
-\[s_0(x)=\pm\int^x p(x')\dd x'+C,\qquad
-s_1(x)=-\ln\sqrt{p(x)}+\widetilde C,\]
-\[\boxed{p(x)=\sqrt{2m[E-V(x)]}.}\]
+\begin{equation}
+s_0(x)=\pm\int^x p(x')\dd x'+C,\qquad
+s_1(x)=-\ln\sqrt{p(x)}+\widetilde C,
+\end{equation}
+\begin{equation}
+\boxed{p(x)=\sqrt{2m[E-V(x)]}.}
+\end{equation}
 Keeping terms through first order in $\hbar$,
-\[\begin{split}
+\begin{equation}
+\begin{split}
 \psi_{\mathrm{II}}(x)
 &=\exp\left[\frac\ii\hbar\left(s_0(x)+\frac\hbar\ii s_1(x)\right)\right]\\
 &=\frac{C_1}{\sqrt{p(x)}}\exp\left(\frac\ii\hbar\int^xp(x')\dd x'\right)
 +\frac{C_2}{\sqrt{p(x)}}\exp\left(-\frac\ii\hbar\int^xp(x')\dd x'\right).
-\end{split}\]
+\end{split}
+\end{equation}
 This solution is valid where $p(x)=\sqrt{2m[E-V(x)]}>0$, that is, $E>V$. In classical mechanics, $E=T+V$; the condition $E>V$ therefore identifies a classically allowed region.
 
 In the classically forbidden region, $E<V$, put
-\[p(x)=\ii\widetilde p(x)=\ii\sqrt{2m[V(x)-E]}.\]
+\begin{equation}
+p(x)=\ii\widetilde p(x)=\ii\sqrt{2m[V(x)-E]}.
+\end{equation}
 Then
-\[\psi_{\mathrm{I,III}}(x)
+\begin{equation}
+\psi_{\mathrm{I,III}}(x)
 =\frac{C_3}{\sqrt{|p(x)|}}\exp\left(\frac1\hbar\int^x\widetilde p(x')\dd x'\right)
-+\frac{C_4}{\sqrt{|p(x)|}}\exp\left(-\frac1\hbar\int^x\widetilde p(x')\dd x'\right).\]
++\frac{C_4}{\sqrt{|p(x)|}}\exp\left(-\frac1\hbar\int^x\widetilde p(x')\dd x'\right).
+\end{equation}
 At $E=V$, the momentum $p=0$ and the solution diverges: WKB is no longer valid. A point $x_0$ satisfying $E-V(x_0)=0$ is a classical turning point. How can one solve the equation near $x_0$?
 
 \begin{center}
@@ -129,9 +189,13 @@ At $E=V$, the momentum $p=0$ and the solution diverges: WKB is no longer valid. 
 \end{tikzpicture}
 \end{center}
 Expand the potential to linear order near $x_0$:
-\[V(x)\simeq V(x_0)+\left.\frac{\dd V}{\dd x}\right|_{x_0}(x-x_0).\]
+\begin{equation}
+V(x)\simeq V(x_0)+\left.\frac{\dd V}{\dd x}\right|_{x_0}(x-x_0).
+\end{equation}
 Substitution into the stationary Schr\"odinger equation gives
-\[\frac{\dd^2\varphi}{\dd x^2}
+\begin{equation}
+\frac{\dd^2\varphi}{\dd x^2}
 -\frac{2m}{\hbar^2}\left.\frac{\dd V}{\dd x}\right|_{x_0}
-(x-x_0)\varphi=0.\]
+(x-x_0)\varphi=0.
+\end{equation}
 The exact solutions are Bessel functions of order $\pm\frac13$. Consider their asymptotic solutions when $|x-x_0|$ is large and require continuity with the classically allowed and forbidden solutions on either side of $x_0$. In this way the constants $C_1,C_2,C_3,C_4$ can be fixed.

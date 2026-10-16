@@ -3,9 +3,9 @@ Machine learning studies how a model uses examples to learn a rule that can make
 
 \subsection*{1) Inputs, labels, and a model}
 In supervised learning, a \emph{dataset} consists of input--target pairs
-\[
+\begin{equation}
 \mathcal D=\{(x_1,y_1),(x_2,y_2),\ldots,(x_M,y_M)\}.
-\]
+\end{equation}
 An input $x_i$ can be a real number, an image represented by a vector, a measurement signal, or any other record. The target $y_i$ is a desired answer, for example $0$ or $1$ in binary classification. A \emph{model} $f_\theta(x)$ maps an input to a prediction. Its parameters $\theta=(\theta_1,\ldots,\theta_p)$ are adjusted to fit the examples.
 
 For regression with real targets, a convenient objective is the mean squared error
@@ -13,9 +13,9 @@ For regression with real targets, a convenient objective is the mean squared err
 \mathcal L(\theta)=\frac1M\sum_{i=1}^M\bigl[f_\theta(x_i)-y_i\bigr]^2.
 \end{equation}
 A step of gradient descent has the form
-\[
+\begin{equation}
  \theta_j\longleftarrow\theta_j-\eta\frac{\partial\mathcal L}{\partial\theta_j},
-\]
+\end{equation}
 where $\eta>0$ is the \emph{learning rate}. For class probabilities $p_\theta(y|x)$, a common alternative is the negative log-likelihood (cross-entropy) $-M^{-1}\sum_i\log p_\theta(y_i|x_i)$.
 
 A model that describes the training examples perfectly may still perform poorly on new data. We therefore separate the examples into training and held-out test sets. \emph{Generalization} refers to prediction quality on inputs not used to adjust the parameters. Model complexity, data volume, statistical noise, and the choice of training objective all affect generalization; the fact that a circuit is quantum does not remove these requirements.
@@ -26,44 +26,44 @@ Two types of learning problems must be distinguished. \emph{Classical-data QML} 
 \section{Qubits, Quantum Gates, and Readout}
 \subsection*{1) One qubit}
 A qubit has an orthonormal basis $\ket0,\ket1$. A pure qubit state is
-\[
+\begin{equation}
  \ket\psi=\alpha\ket0+\beta\ket1,\qquad
  |\alpha|^2+|\beta|^2=1.
-\]
+\end{equation}
 A projective measurement of $\sigma_z=\ket0\bra0-\ket1\bra1$ gives $+1$ with probability $|\alpha|^2$ and $-1$ with probability $|\beta|^2$, hence
-\[
+\begin{equation}
  \langle\sigma_z\rangle_\psi=|\alpha|^2-|\beta|^2.
-\]
+\end{equation}
 A general density operator gives the same mean as $\operatorname{tr}(\rho\sigma_z)$; the formalism was developed in the earlier measurement chapter. Finite experimental sampling returns an estimate of this expectation, with statistical uncertainty.
 
 \subsection*{2) Gates as adjustable rotations}
 A gate is a unitary operator. Three common single-qubit rotations are
-\[
+\begin{equation}
  R_\mu(\theta)=e^{-\ii\theta\sigma_\mu/2},\qquad \mu=x,y,z.
-\]
+\end{equation}
 Since $\sigma_\mu^2=\mathbf1_2$, their exponential can be evaluated exactly:
-\[
+\begin{equation}
  R_\mu(\theta)=\cos\frac\theta2\,\mathbf1_2
  -\ii\sin\frac\theta2\,\sigma_\mu.
-\]
+\end{equation}
 For the $y$ axis,
-\[
+\begin{equation}
  R_y(\theta)=\begin{pmatrix}
  \cos(\theta/2)&-\sin(\theta/2)\\
  \sin(\theta/2)&\cos(\theta/2)
  \end{pmatrix}.
-\]
+\end{equation}
 A \emph{controlled-NOT} gate (CNOT) acts on two qubits. Its first qubit is the control; it flips the second, called the target, if and only if the control is $\ket1$:
-\[
+\begin{equation}
 \ket{00}\mapsto\ket{00},\quad\ket{01}\mapsto\ket{01},\quad
 \ket{10}\mapsto\ket{11},\quad\ket{11}\mapsto\ket{10}.
-\]
+\end{equation}
 It can create entanglement. For example,
-\[
+\begin{equation}
 \mathrm{CNOT}(\ket+\otimes\ket0)=
 \frac{\ket{00}+\ket{11}}{\sqrt2},\qquad
 \ket+=\frac{\ket0+\ket1}{\sqrt2}.
-\]
+\end{equation}
 These gates suffice for the examples below.
 
 \section{A Quantum Neural Network as a Parameterized Circuit}
@@ -94,14 +94,14 @@ The quantum circuit evaluates the function; the classical optimization loop adju
 
 \subsection*{2) An exactly soluble one-qubit model}
 Encode a real input $x$ as
-\[
+\begin{equation}
 \ket{\phi(x)}=R_y(x)\ket0=
 \cos\frac x2\ket0+\sin\frac x2\ket1.
-\]
+\end{equation}
 Apply a second, trainable rotation $R_y(\theta)$ and measure $\sigma_z$. Rotations around the same axis add, so
-\[
+\begin{equation}
 R_y(\theta)R_y(x)=R_y(x+\theta).
-\]
+\end{equation}
 The predicted value can be computed without approximation:
 \begin{equation}\label{eq:qnn-onequbit}
 \boxed{f_\theta(x)=\bra0 R_y^\dagger(x+\theta)\sigma_z R_y(x+\theta)\ket0
@@ -110,17 +110,17 @@ The predicted value can be computed without approximation:
 The learnable angle shifts the phase of the cosine. This is a nonlinear function of the classical input even though the quantum dynamics is linear in state vectors. The nonlinearity is introduced through the input encoding and the measurement probability, followed by the classical loss function.
 
 For one training example $(x,y)$, the squared loss is $[\cos(x+\theta)-y]^2$, with gradient
-\[
+\begin{equation}
 \frac{\partial\mathcal L}{\partial\theta}=-2[\cos(x+\theta)-y]\sin(x+\theta).
-\]
+\end{equation}
 This simple example makes clear that a quantum circuit does not automatically produce a better predictor than a classical cosine model. Its purpose is to show the precise form of the quantum learning procedure.
 
 \subsection*{3) Two qubits and entangling gates}
 Start in $\ket{00}$, encode two real inputs by $R_y(x_1)\otimes R_y(x_2)$, then apply a CNOT with the first qubit as the control. Measure $\sigma_z$ on the second qubit. The CNOT transforms the measured operator in the Heisenberg picture as
-\[
+\begin{equation}
 \mathrm{CNOT}^\dagger(\mathbf1\otimes\sigma_z)\mathrm{CNOT}
 =\sigma_z\otimes\sigma_z.
-\]
+\end{equation}
 Therefore the measured expectation is exactly
 \begin{equation}\label{eq:qnn-two-qubit}
 \boxed{f(x_1,x_2)=\cos x_1\cos x_2.}

@@ -28,74 +28,120 @@ However, two rotations about different axes do not commute. As shown in the figu
 The upper and lower sequences show the different final orientations produced by reversing the order of the two rotations.
 
 A three-dimensional vector $\vect V=V_x\vect e_x+V_y\vect e_y+V_z\vect e_z$ becomes $\vect V'=V'_x\vect e_x+V'_y\vect e_y+V'_z\vect e_z$ after a rotation $R(\varphi)$. In matrix form,
-\[\vect V'=R(\varphi)\vect V.\]
+\begin{equation}
+\vect V'=R(\varphi)\vect V.
+\end{equation}
 Here $R(\varphi)$ is a $3\times3$ matrix. Obviously, rotation does not change the length of a vector:
-\[|\vect V'|=|\vect V|.\]
+\begin{equation}
+|\vect V'|=|\vect V|.
+\end{equation}
 The rotation matrix through an angle $\varphi$ about the $Z$ axis is easily obtained:
-\[R_z(\varphi)=\begin{pmatrix}\cos\varphi&-\sin\varphi&0\\ \sin\varphi&\cos\varphi&0\\0&0&1\end{pmatrix}.\]
+\begin{equation}
+R_z(\varphi)=\begin{pmatrix}\cos\varphi&-\sin\varphi&0\\ \sin\varphi&\cos\varphi&0\\0&0&1\end{pmatrix}.
+\end{equation}
 For an infinitesimal rotation $\epsilon$,
-\[R_z(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&-\epsilon&0\\\epsilon&1-\epsilon^2/2&0\\0&0&1\end{pmatrix},\]
+\begin{equation}
+R_z(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&-\epsilon&0\\\epsilon&1-\epsilon^2/2&0\\0&0&1\end{pmatrix},
+\end{equation}
 where terms higher than the second order in $\epsilon$ have been omitted. Similarly,
-\[R_x(\epsilon)=\begin{pmatrix}1&0&0\\0&1-\epsilon^2/2&-\epsilon\\0&\epsilon&1-\epsilon^2/2\end{pmatrix},\qquad
-R_y(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&0&\epsilon\\0&1&0\\-\epsilon&0&1-\epsilon^2/2\end{pmatrix}.\]
+\begin{equation}
+R_x(\epsilon)=\begin{pmatrix}1&0&0\\0&1-\epsilon^2/2&-\epsilon\\0&\epsilon&1-\epsilon^2/2\end{pmatrix},\qquad
+R_y(\epsilon)=\begin{pmatrix}1-\epsilon^2/2&0&\epsilon\\0&1&0\\-\epsilon&0&1-\epsilon^2/2\end{pmatrix}.
+\end{equation}
 Clearly,
-\[R_x(\epsilon)R_y(\epsilon)-R_y(\epsilon)R_x(\epsilon)
+\begin{equation}
+R_x(\epsilon)R_y(\epsilon)-R_y(\epsilon)R_x(\epsilon)
 =\begin{pmatrix}0&-\epsilon^2&0\\\epsilon^2&0&0\\0&0&0\end{pmatrix}
-=R_z(\epsilon^2)-\mathbf1.\]
+=R_z(\epsilon^2)-\mathbf1.
+\end{equation}
 This expression shows that rotations about $X$ and $Y$ do not commute. In general,
-\[R_i(\epsilon)R_j(\epsilon)-R_j(\epsilon)R_i(\epsilon)
-=\epsilon_{ijk}\big[R_k(\epsilon^2)-\mathbf1\big].\]
+\begin{equation}
+R_i(\epsilon)R_j(\epsilon)-R_j(\epsilon)R_i(\epsilon)
+=\epsilon_{ijk}\big[R_k(\epsilon^2)-\mathbf1\big].
+\end{equation}
 
 \subsection*{2) Quantum rotations}
 Let the quantum rotation operator corresponding to the classical rotation matrix $R(\varphi)$ be $\op D(\varphi)$:
-\[\ket{\alpha}_\varphi=\op D(\varphi)\ket\alpha.\]
+\begin{equation}
+\ket{\alpha}_\varphi=\op D(\varphi)\ket\alpha.
+\end{equation}
 Its representation is a matrix $D(\varphi)$.
 
 First discuss the general properties of the rotation operator. The generator of an infinitesimal spatial translation is the momentum operator:
-\[\op T(\dd\vect x)=\mathbf1-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x
-\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right).\]
+\begin{equation}
+\op T(\dd\vect x)=\mathbf1-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right).
+\end{equation}
 Spatial-translation invariance implies momentum conservation. For an infinitesimal time evolution, the generator is the Hamiltonian:
-\[\op U(t+\dd t,t)=\mathbf1-\frac{\ii}{\hbar}\op H\dd t
-\simeq\exp\!\left(-\frac{\ii}{\hbar}\op H\dd t\right).\]
+\begin{equation}
+\op U(t+\dd t,t)=\mathbf1-\frac{\ii}{\hbar}\op H\dd t
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op H\dd t\right).
+\end{equation}
 Time-translation invariance implies energy conservation. For a rotation, classical mechanics tells us that its generator is the corresponding conserved mechanical quantity: angular momentum. Let $\op{\vect J}$ be the generator of the quantum rotation operator $\op D(\varphi)$. For an infinitesimal rotation $\dd\varphi$ about the direction $\vect e_n$,
-\[\op D(\dd\varphi)=\mathbf1-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi
-\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi\right).\]
+\begin{equation}
+\op D(\dd\varphi)=\mathbf1-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi
+\simeq\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\dd\varphi\right).
+\end{equation}
 Because rotations about one axis commute, a finite rotation can be regarded as a sequence of infinitesimal rotations. Thus
-\[\boxed{\op D(\varphi)=\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\varphi\right).}\]
+\begin{equation}
+\boxed{\op D(\varphi)=\exp\!\left(-\frac{\ii}{\hbar}\op{\vect J}\cdot\vect e_n\varphi\right).}
+\end{equation}
 Assume that $\op D$ in quantum mechanics and $R$ in classical mechanics satisfy the same commutation relations:
-\[\big[\op D_i(\epsilon),\op D_j(\epsilon)\big]
-=\epsilon_{ijk}\big[\op D_k(\epsilon^2)-\mathbf1\big].\]
+\begin{equation}
+\big[\op D_i(\epsilon),\op D_j(\epsilon)\big]
+=\epsilon_{ijk}\big[\op D_k(\epsilon^2)-\mathbf1\big].
+\end{equation}
 Retaining terms through $\epsilon^2$,
-\[\left[\mathbf1-\frac{\ii}{\hbar}\op J_i\epsilon-\frac{\op J_i^2\epsilon^2}{2\hbar^2},\;
+\begin{equation}
+\left[\mathbf1-\frac{\ii}{\hbar}\op J_i\epsilon-\frac{\op J_i^2\epsilon^2}{2\hbar^2},\;
 \mathbf1-\frac{\ii}{\hbar}\op J_j\epsilon-\frac{\op J_j^2\epsilon^2}{2\hbar^2}\right]
-=\epsilon_{ijk}\left(\mathbf1-\frac{\ii}{\hbar}\op J_k\epsilon^2-\mathbf1\right).\]
+=\epsilon_{ijk}\left(\mathbf1-\frac{\ii}{\hbar}\op J_k\epsilon^2-\mathbf1\right).
+\end{equation}
 Hence
-\[\boxed{[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k,}\qquad
-\op{\vect J}\times\op{\vect J}=\ii\hbar\op{\vect J}.\]
+\begin{equation}
+\boxed{[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k,}\qquad
+\op{\vect J}\times\op{\vect J}=\ii\hbar\op{\vect J}.
+\end{equation}
 This is the fundamental angular-momentum commutation relation in quantum mechanics.
 
 \subsection*{3) Expectation values of angular momentum}
 Consider a rotation by $\varphi$ about $Z$. The state changes as
-\[\ket\alpha\longrightarrow\ket\alpha_\varphi
-=\op D_z(\varphi)\ket\alpha=e^{-\ii\op J_z\varphi/\hbar}\ket\alpha.\]
+\begin{equation}
+\ket\alpha\longrightarrow\ket\alpha_\varphi
+=\op D_z(\varphi)\ket\alpha=e^{-\ii\op J_z\varphi/\hbar}\ket\alpha.
+\end{equation}
 The expectation value of $\op J_x$ changes from
-\[\langle\op J_x\rangle_0=\mel\alpha{\op J_x}\alpha\]
+\begin{equation}
+\langle\op J_x\rangle_0=\mel\alpha{\op J_x}\alpha
+\end{equation}
 to
-\[\langle\op J_x\rangle_\varphi
+\begin{equation}
+\langle\op J_x\rangle_\varphi
 =\mel{\alpha_\varphi}{\op J_x}{\alpha_\varphi}
-=\bra\alpha e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}\ket\alpha.\]
+=\bra\alpha e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}\ket\alpha.
+\end{equation}
 Expand $e^{\pm\ii\op J_z\varphi/\hbar}$ in a power series and use
-\[[\op J_z,\op J_x]=\ii\hbar\op J_y.\]
+\begin{equation}
+[\op J_z,\op J_x]=\ii\hbar\op J_y.
+\end{equation}
 We obtain
-\[e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}
-=\op J_x\cos\varphi-\op J_y\sin\varphi.\]
+\begin{equation}
+e^{\ii\op J_z\varphi/\hbar}\op J_xe^{-\ii\op J_z\varphi/\hbar}
+=\op J_x\cos\varphi-\op J_y\sin\varphi.
+\end{equation}
 Therefore
-\[\langle\op J_x\rangle_\varphi
-=\langle\op J_x\rangle_0\cos\varphi-\langle\op J_y\rangle_0\sin\varphi.\]
+\begin{equation}
+\langle\op J_x\rangle_\varphi
+=\langle\op J_x\rangle_0\cos\varphi-\langle\op J_y\rangle_0\sin\varphi.
+\end{equation}
 Similarly,
-\[\langle\op J_y\rangle_\varphi
+\begin{equation}
+\langle\op J_y\rangle_\varphi
 =\langle\op J_y\rangle_0\cos\varphi+\langle\op J_x\rangle_0\sin\varphi,
-\qquad\langle\op J_z\rangle_\varphi=\langle\op J_z\rangle_0.\]
+\qquad\langle\op J_z\rangle_\varphi=\langle\op J_z\rangle_0.
+\end{equation}
 If $\langle\op J_x\rangle$, $\langle\op J_y\rangle$ and $\langle\op J_z\rangle$ are regarded as three components of $\langle\op{\vect J}\rangle$, then
-\[\boxed{\langle\op{\vect J}\rangle_\varphi=R_z(\varphi)\langle\op{\vect J}\rangle_0.}\]
+\begin{equation}
+\boxed{\langle\op{\vect J}\rangle_\varphi=R_z(\varphi)\langle\op{\vect J}\rangle_0.}
+\end{equation}
 This obeys the same transformation law as a vector mechanical quantity in classical mechanics.

@@ -9,3 +9,7 @@ This repository is provided for private educational review and authorized course
 The notes were developed with reference to third-party teaching materials, books and research articles, and incorporate a translated/adapted historical Chinese course handout. Rights in those underlying third-party materials remain with their respective holders. The copyright notice on the compiled PDF applies to the original contributions and the compilation and **does not transfer or supersede any underlying third-party rights**. Bibliographic citations appear in the notes where relevant.
 
 For permissions and other inquiries, contact the repository maintainer through the private repository.
+
+## Acknowledgment of foundational sources
+
+These lecture notes draw extensively on Professor Pengfei Zhuang’s *Advanced Quantum Mechanics* lecture notes, and partially on *Quantum Computation and Quantum Information* by Michael A. Nielsen and Isaac L. Chuang and *Advanced Quantum Mechanics* by Franz Schwabl. The author gratefully acknowledges their contributions. This acknowledgment does not imply endorsement by these authors; their original rights remain unaffected.

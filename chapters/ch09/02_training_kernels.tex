@@ -1,21 +1,21 @@
 \section{How Quantum Circuits Are Trained}
 \subsection*{1) Expectation values from repeated measurements}
 Suppose a Pauli readout produces outcomes $z_s=\pm1$ for $s=1,\ldots,N_{\mathrm{shots}}$. The sample mean
-\[
+\begin{equation}
  \widehat f_\theta(x)=\frac1{N_{\mathrm{shots}}}\sum_{s=1}^{N_{\mathrm{shots}}}z_s
-\]
+\end{equation}
 is an unbiased estimate of $f_\theta(x)=\langle\op O\rangle$. For statistically independent shots,
-\[
+\begin{equation}
  \operatorname{Var}(\widehat f_\theta)=\frac{1-f_\theta(x)^2}{N_{\mathrm{shots}}}
 \le\frac1{N_{\mathrm{shots}}}.
-\]
+\end{equation}
 Thus the typical sampling error shrinks as $N_{\mathrm{shots}}^{-1/2}$. Larger circuits and complicated observables may require many repeated measurements to estimate the loss and its gradients accurately.
 
 \subsection*{2) The parameter-shift rule}
 Consider one gate $R_\mu(\theta)=e^{-\ii\theta\sigma_\mu/2}$ inside a circuit, with all other gates fixed. Its expectation value has the form
-\[
+\begin{equation}
 f(\theta)=A+B\cos\theta+C\sin\theta,
-\]
+\end{equation}
 where the constants depend on the other gates, initial state, and observable. It follows that
 \begin{equation}\label{eq:qnn-shift}
 \boxed{\frac{\dd f(\theta)}{\dd\theta}=
@@ -23,26 +23,26 @@ where the constants depend on the other gates, initial state, and observable. It
 -f\left(\theta-\frac\pi2\right)\right].}
 \end{equation}
 This is the \emph{parameter-shift rule}. It expresses an exact derivative as a difference of two expectation values measurable on the device. It applies under the two-eigenvalue generator assumption just used; gates with more general generators may require other shift formulas. Combining the chain rule with Eq.~\eqref{eq:ml-mse} gives
-\[
+\begin{equation}
 \frac{\partial\mathcal L}{\partial\theta_j}=
 \frac2M\sum_{i=1}^M[f_\theta(x_i)-y_i]
 \frac{\partial f_\theta(x_i)}{\partial\theta_j}.
-\]
+\end{equation}
 Each parameter derivative may therefore require two or more circuit settings. With many parameters and repeated shots, measurement cost becomes part of the optimization problem.
 
 \subsection*{3) More expressive data encodings}
 A single use of $R_y(x)$ produced the simple trigonometric function in Eq.~\eqref{eq:qnn-onequbit}. A generic data-encoding layer may be written $e^{-\ii x\op G}$ for some Hermitian generator $\op G$. Inserting its spectral decomposition reveals factors $e^{-\ii x(g_a-g_b)}$. Consequently a circuit expectation can be written as a finite Fourier-type series in the input:
-\[
+\begin{equation}
  f_\theta(x)=\sum_{\omega\in\Omega}c_\omega(\theta)e^{\ii\omega x},\qquad
  c_{-\omega}=c_\omega^*.
-\]
+\end{equation}
 The available frequency set $\Omega$ is constrained by the eigenvalue differences of the encoding generators. Repeating data encodings between trainable gates (\emph{data re-uploading}) can enrich the possible frequency spectrum. This precise relation between data encoding and expressivity is developed in the work of Schuld, Sweke and Meyer~\cite{SchuldSwekeMeyer2021}. Richer possible functions still need a useful loss, sufficient data, and a trainable parameterization.
 
 \section{Quantum Kernel Methods}
 Parameterized circuits are one way to use quantum states in learning. A different approach is to encode each input as a quantum feature state
-\[
+\begin{equation}
  \ket{\phi(x)}=U_{\mathrm{enc}}(x)\ket{0^n}
-\]
+\end{equation}
 and compare two inputs using their overlap. Define
 \begin{equation}\label{eq:qkernel}
 \boxed{K(x,x')=|\braket{\phi(x)}{\phi(x')}|^2.}
@@ -51,17 +51,17 @@ This is a \emph{quantum kernel}: it measures similarity of the corresponding den
 
 \subsection*{1) Why it is a valid kernel}
 For any complex coefficients $c_i$,
-\[
+\begin{equation}
 \sum_{ij}c_i^*c_jK(x_i,x_j)
 =\operatorname{tr}\left[\left(\sum_i c_i\rho_{x_i}\right)^\dagger
 \left(\sum_jc_j\rho_{x_j}\right)\right]\ge0.
-\]
+\end{equation}
 Hence the matrix $K_{ij}=K(x_i,x_j)$ is positive semidefinite. This mathematical property allows its use in kernel regression or support-vector classification. A quantum device may estimate kernel entries by preparing $U_{\mathrm{enc}}(x')^\dagger U_{\mathrm{enc}}(x)\ket{0^n}$ and measuring the probability of obtaining $0^n$.
 
 \subsection*{2) A one-qubit example}
 For $\ket{\phi(x)}=R_y(x)\ket0$,
-\[
+\begin{equation}
  \braket{\phi(x)}{\phi(x')}=\cos\frac{x-x'}2,
  \qquad\boxed{K(x,x')=\cos^2\frac{x-x'}2.}
-\]
+\end{equation}
 The result is simple enough to evaluate classically. The research question for larger quantum feature maps is whether useful kernel values can be estimated efficiently on suitable quantum hardware while the corresponding classical computation remains costly for the relevant data distribution. The existence of an exponentially large Hilbert space alone does not establish such a benefit~\cite{Havlicek2019}.

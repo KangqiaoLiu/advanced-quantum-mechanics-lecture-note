@@ -2,104 +2,156 @@
 \section{Orbital Angular Momentum}
 \subsection*{1) Eigenvalues and eigenstates}
 The classical orbital angular momentum and its quantum operator are
-\[\vect L=\vect r\times\vect p\quad\longrightarrow\quad
+\begin{equation}
+\vect L=\vect r\times\vect p\quad\longrightarrow\quad
 \op{\vect L}=\op{\vect r}\times\op{\vect p},\qquad
-\op L_i=\epsilon_{ijk}\op x_j\op p_k\quad (i,j,k=1,2,3).\]
+\op L_i=\epsilon_{ijk}\op x_j\op p_k\quad (i,j,k=1,2,3).
+\end{equation}
 From the fundamental commutation relations
-\[[\op x_i,\op x_j]=0,\qquad[\op p_i,\op p_j]=0,\qquad
-[\op x_i,\op p_j]=\ii\hbar\delta_{ij},\]
+\begin{equation}
+[\op x_i,\op x_j]=0,\qquad[\op p_i,\op p_j]=0,\qquad
+[\op x_i,\op p_j]=\ii\hbar\delta_{ij},
+\end{equation}
 one can show that
-\[[\op L_i,\op L_j]=\ii\hbar\epsilon_{ijk}\op L_k.\]
+\begin{equation}
+[\op L_i,\op L_j]=\ii\hbar\epsilon_{ijk}\op L_k.
+\end{equation}
 Thus the orbital angular-momentum operators satisfy the general definition of angular momentum.
 
 Because this is orbital angular momentum, we calculate eigenvalues and eigenstates in the coordinate representation:
-\[\op{\vect r}=\vect r,\qquad\op{\vect p}=-\ii\hbar\vect\nabla,\]
-\[\op{\vect L}=-\ii\hbar\vect r\times\vect\nabla,\qquad
-\op L_i=-\ii\hbar\epsilon_{ijk}x_j\frac\partial{\partial x_k}.\]
+\begin{equation}
+\op{\vect r}=\vect r,\qquad\op{\vect p}=-\ii\hbar\vect\nabla,
+\end{equation}
+\begin{equation}
+\op{\vect L}=-\ii\hbar\vect r\times\vect\nabla,\qquad
+\op L_i=-\ii\hbar\epsilon_{ijk}x_j\frac\partial{\partial x_k}.
+\end{equation}
 It is convenient to consider rotations in spherical coordinates, $(x,y,z)\to(r,\theta,\varphi)$. The operators are
-\[\begin{aligned}
+\begin{equation}
+\begin{aligned}
 \op L_x&=\ii\hbar\left(\sin\varphi\frac\partial{\partial\theta}
 +\cot\theta\cos\varphi\frac\partial{\partial\varphi}\right),\\
 \op L_y&=-\ii\hbar\left(\cos\varphi\frac\partial{\partial\theta}
 -\cot\theta\sin\varphi\frac\partial{\partial\varphi}\right),\\
 \op L_z&=-\ii\hbar\frac\partial{\partial\varphi},
-\end{aligned}\]
-\[\op{\vect L}^{\,2}=-\hbar^2\left[
+\end{aligned}
+\end{equation}
+\begin{equation}
+\op{\vect L}^{\,2}=-\hbar^2\left[
 \frac1{\sin\theta}\frac\partial{\partial\theta}
 \left(\sin\theta\frac\partial{\partial\theta}\right)
-+\frac1{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right].\]
++\frac1{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right].
+\end{equation}
 This shows that $\op{\vect L}$ depends only on the angles $\theta$ and $\varphi$.
 
 First consider the eigenvalue equation of $\op L_z$. As $\op L_z$ does not depend on $\theta$,
-\[\op L_z\Phi(\varphi)=L_z\Phi(\varphi),\qquad
--\ii\hbar\frac{\dd\Phi}{\dd\varphi}=L_z\Phi(\varphi).\]
+\begin{equation}
+\op L_z\Phi(\varphi)=L_z\Phi(\varphi),\qquad
+-\ii\hbar\frac{\dd\Phi}{\dd\varphi}=L_z\Phi(\varphi).
+\end{equation}
 The solution is
-\[\Phi(\varphi)=A\exp(\ii L_z\varphi/\hbar).\]
+\begin{equation}
+\Phi(\varphi)=A\exp(\ii L_z\varphi/\hbar).
+\end{equation}
 The single-valuedness condition
-\[\Phi(\varphi)=\Phi(\varphi+2\pi)\]
+\begin{equation}
+\Phi(\varphi)=\Phi(\varphi+2\pi)
+\end{equation}
 implies $L_z=m\hbar$, where $m=0,\pm1,\ldots,\pm\infty$, and $\Phi(\varphi)=Ae^{\ii m\varphi}$. Normalize:
-\[\int_0^{2\pi}|\Phi(\varphi)|^2\dd\varphi=1
-\quad\Longrightarrow\quad A=\frac1{\sqrt{2\pi}}.\]
+\begin{equation}
+\int_0^{2\pi}|\Phi(\varphi)|^2\dd\varphi=1
+\quad\Longrightarrow\quad A=\frac1{\sqrt{2\pi}}.
+\end{equation}
 Thus
-\[\boxed{\Phi(\varphi)=\frac{e^{\ii m\varphi}}{\sqrt{2\pi}}.}\]
+\begin{equation}
+\boxed{\Phi(\varphi)=\frac{e^{\ii m\varphi}}{\sqrt{2\pi}}.}
+\end{equation}
 
 Next consider the eigenvalue equation of $\op{\vect L}^{\,2}$:
-\[\op{\vect L}^{\,2}Y(\theta,\varphi)=L^2Y(\theta,\varphi).\]
+\begin{equation}
+\op{\vect L}^{\,2}Y(\theta,\varphi)=L^2Y(\theta,\varphi).
+\end{equation}
 This is
-\[\left[
+\begin{equation}
+\left[
 \frac1{\sin\theta}\frac\partial{\partial\theta}
 \left(\sin\theta\frac\partial{\partial\theta}\right)
 +\frac1{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}
-+\frac{L^2}{\hbar^2}\right]Y_{lm}(\theta,\varphi)=0.\]
++\frac{L^2}{\hbar^2}\right]Y_{lm}(\theta,\varphi)=0.
+\end{equation}
 Using separation of variables and the single-valuedness and finiteness conditions, one finds
-\[L^2=l(l+1)\hbar^2,\qquad l=0,1,2,\ldots.\]
+\begin{equation}
+L^2=l(l+1)\hbar^2,\qquad l=0,1,2,\ldots.
+\end{equation}
 The eigenstates are spherical harmonics
-\[Y_{lm}(\theta,\varphi)=N_{lm}P_l^m(\cos\theta)e^{\ii m\varphi},\]
+\begin{equation}
+Y_{lm}(\theta,\varphi)=N_{lm}P_l^m(\cos\theta)e^{\ii m\varphi},
+\end{equation}
 where $P_l^m(x)$ is the associated Legendre polynomial. The magnetic quantum number is
-\[m=0,\pm1,\pm2,\ldots,\pm l,\]
+\begin{equation}
+m=0,\pm1,\pm2,\ldots,\pm l,
+\end{equation}
 with $2l+1$ values. The eigenvalue $L^2$ depends only on $l$ whereas the eigenstates also depend on $m$, so the degeneracy is $g=2l+1$.
 
 The normalization condition is
-\[\int_0^{2\pi}\!\dd\varphi\int_0^\pi\!\sin\theta\dd\theta\,
-|Y_{lm}(\theta,\varphi)|^2=1,\]
+\begin{equation}
+\int_0^{2\pi}\!\dd\varphi\int_0^\pi\!\sin\theta\dd\theta\,
+|Y_{lm}(\theta,\varphi)|^2=1,
+\end{equation}
 which gives the normalization factor
-\[N_{lm}=\sqrt{\frac{(l-m)!(2l+1)}{(l+m)!4\pi}}.\]
+\begin{equation}
+N_{lm}=\sqrt{\frac{(l-m)!(2l+1)}{(l+m)!4\pi}}.
+\end{equation}
 Because the $\varphi$-dependent factor in $Y_{lm}$ is an eigenstate of $\op L_z$, the spherical harmonics are common eigenstates of $\op{\vect L}^{\,2}$ and $\op L_z$:
-\[\boxed{\begin{aligned}
+\begin{equation}
+\boxed{\begin{aligned}
 \op{\vect L}^{\,2}Y_{lm}(\theta,\varphi)&=l(l+1)\hbar^2Y_{lm}(\theta,\varphi),\\
 \op L_zY_{lm}(\theta,\varphi)&=m\hbar Y_{lm}(\theta,\varphi),
-\end{aligned}}\]
+\end{aligned}}
+\end{equation}
 where $l=0,1,2,\ldots$ and $m=0,\pm1,\ldots,\pm l$. The component of angular momentum is constrained by its total magnitude, so $m$ cannot extend to $\pm\infty$ for fixed $l$.
 
 This shows that orbital angular momentum realizes the general angular-momentum algebra in coordinate space. It is only one form of angular momentum: $l$ is restricted to zero and positive integers and cannot be a positive half-integer.
 
 \subsection*{2) Spatial rotation operator}
 The orbital-angular-momentum eigenstate is the projection of $\ket{l,m}$ onto a radial position basis state $\ket{\vect e_r(\theta,\varphi)}$:
-\[Y_{lm}(\theta,\varphi)=\braket{\vect e_r(\theta,\varphi)}{l,m}.\]
+\begin{equation}
+Y_{lm}(\theta,\varphi)=\braket{\vect e_r(\theta,\varphi)}{l,m}.
+\end{equation}
 The unit vector $\vect e_r(\theta,\varphi)$ can be obtained from $\vect e_z(0,\varphi)$ by two rotations, first by $\theta$ about the $y$ axis and then by $\varphi$ about the $z$ axis:
 \input{figures/two_rotation_axes}
-\[\ket{\vect e_r(\theta,\varphi)}
-=\op D_z(\varphi)\op D_y(\theta)\ket{\vect e_z(0,\varphi)}.\]
+\begin{equation}
+\ket{\vect e_r(\theta,\varphi)}
+=\op D_z(\varphi)\op D_y(\theta)\ket{\vect e_z(0,\varphi)}.
+\end{equation}
 Insert the complete basis:
-\[\ket{\vect e_r(\theta,\varphi)}
+\begin{equation}
+\ket{\vect e_r(\theta,\varphi)}
 =\sum_{m'}\op D_z(\varphi)\op D_y(\theta)\ket{l,m'}
-\braket{l,m'}{\vect e_z(0,\varphi)}.\]
+\braket{l,m'}{\vect e_z(0,\varphi)}.
+\end{equation}
 Hence
-\begin{align*}
+\begin{equation}\begin{aligned}
 Y_{lm}^*(\theta,\varphi)
 &=\braket{l,m}{\vect e_r(\theta,\varphi)}\\
 &=\sum_{m'}\mel{l,m}{\op D_z(\varphi)\op D_y(\theta)}{l,m'}
 \braket{l,m'}{\vect e_z(0,\varphi)}.
-\end{align*}
+\end{aligned}\end{equation}
 Since
-\[\braket{l,m'}{\vect e_z(0,\varphi)}=Y_{lm'}^*(0,\varphi)
-=\sqrt{\frac{2l+1}{4\pi}}\delta_{m'0},\]
+\begin{equation}
+\braket{l,m'}{\vect e_z(0,\varphi)}=Y_{lm'}^*(0,\varphi)
+=\sqrt{\frac{2l+1}{4\pi}}\delta_{m'0},
+\end{equation}
 and
-\[\bra{l,m}\op D_z(\varphi)
+\begin{equation}
+\bra{l,m}\op D_z(\varphi)
 =\bra{l,m}e^{-\ii\op L_z\varphi/\hbar}
-=e^{-\ii m\varphi}\bra{l,m},\]
+=e^{-\ii m\varphi}\bra{l,m},
+\end{equation}
 we obtain
-\[\boxed{Y_{lm}^*(\theta,\varphi)
+\begin{equation}
+\boxed{Y_{lm}^*(\theta,\varphi)
 =e^{-\ii m\varphi}\sqrt{\frac{2l+1}{4\pi}}\,d^l_{m0}(\theta),\qquad
- d^l_{mm'}(\theta)=\mel{l,m}{\op D_y(\theta)}{l,m'}.}\]
+ d^l_{mm'}(\theta)=\mel{l,m}{\op D_y(\theta)}{l,m'}.}
+\end{equation}
 A spherical harmonic in any direction can thus be obtained by rotating a spherical harmonic along the $Z$ direction.

@@ -8,6 +8,10 @@ The manuscript covers foundational quantum theory, quantum dynamics, angular mom
 
 The original lecture notes and their historical Chinese-to-English translation are preserved in separate repository branches; the current manuscript incorporates instructor-authored handwritten lecture material and additional self-contained topics. The student-facing book includes a single-page *List of Notation* and a bibliography for its two contemporary chapters.
 
+## Acknowledgments
+
+These lecture notes draw **extensively** on the Advanced Quantum Mechanics lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. Parts also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to Professor Zhuang and these authors for their work and teaching materials.
+
 ## Build
 
 The root file is `main.tex` (XeLaTeX). Its sources are organized under `chapters/ch01/`--`chapters/ch09/`; the new academic references are in `references/topology_qml.bib`.
@@ -16,11 +20,14 @@ The root file is `main.tex` (XeLaTeX). Its sources are organized under `chapters
 latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 python3 scripts/check_notation_consistency.py
 python3 scripts/check_new_chapters.py
+python3 scripts/check_display_equations.py
 ```
 
 GitHub Actions (`.github/workflows/build-notes.yml`) runs validation, compiles the book, archives a version-specific PDF, and publishes the new `pdf/advanced-quantum-mechanics.pdf` on `main`.
 
 ## Editorial references and history
+
+- [Equation-numbering and figure-by-figure visual review](editorial/EQUATION_FIGURE_REVIEW_2026-10-16.md)
 
 - [Project blueprint](PROJECT_BLUEPRINT.md)
 - [Whole-book notation policy](editorial/NOTATION_POLICY.md)

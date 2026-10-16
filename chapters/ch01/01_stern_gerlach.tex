@@ -10,8 +10,8 @@
  \draw[->] (-3.8,0)--(0,0); \node[left] at (-3.8,0){Ag};
  \draw[thick] (-1.6,.3) rectangle (-.9,1);\node at (-1.25,.65){S};
  \draw[thick] (-1.6,-1) rectangle (-.9,-.3);\node at (-1.25,-.65){N};
- \draw[->,thick] (0,0) to[out=0,in=180] (1.6,.55) node[right] {$s_z^+$};
- \draw[->,thick] (0,0) to[out=0,in=180] (1.6,-.55) node[right] {$s_z^-$};
+ \draw[->,thick] (0,0) to[out=0,in=180] (1.6,.55) node[above,xshift=-4pt,yshift=2pt] {$s_z^+$};
+ \draw[->,thick] (0,0) to[out=0,in=180] (1.6,-.55) node[below,xshift=-4pt,yshift=-2pt] {$s_z^-$};
  \draw[thick] (1.82,-.9)--(1.82,.9);
  \draw[->] (3.4,0)--(3.4,1) node[above] {$z$};
  \draw[->] (3.4,0)--(4.7,0) node[right] {$y$};
@@ -25,9 +25,9 @@ A heated beam of silver atoms splits into two beams after passing through an inh
 \item The splitting is caused by interaction with the magnetic field and must therefore be due to the magnetic moment $\vect M$ of the atoms. The interaction potential is $V=-\vect M\cdot\vect B$.
 \item The magnetic moment is proportional to the angular momentum $\vect J$: $\vect M\propto\vect J$.
 \item The force on the atoms is
-\[
+\begin{equation}
 \vect F=-\vect\nabla V=M_z\frac{\partial B_z}{\partial z}\vect e_z\propto J_z\frac{\partial B_z}{\partial z}\vect e_z.
-\]
+\end{equation}
 \end{itemize}
 The beam separates symmetrically into an upper and a lower component. This indicates that the angular momentum along the direction of the magnetic field (the $z$ direction) has only two components of equal magnitude and opposite directions.
 
@@ -90,18 +90,18 @@ Next, let the beam pass successively through three magnetic fields in the $z$, $
 \end{tikzpicture}
 \end{center}
 An electromagnetic wave propagating along the $z$ direction disappears completely after passing successively through a filter that transmits only the $x$ component ($x$ filter) and a filter that transmits only the $y$ component ($y$ filter):
-\begin{align*}
+\begin{equation}\begin{aligned}
 \vect E(\vect r,t)&=E_0(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
 \xrightarrow{x\text{ filter}}\quad &E_0\vect e_x\cos(kz-\omega t),\\
 \xrightarrow{y\text{ filter}}\quad &0.
-\end{align*}
+\end{aligned}\end{equation}
 Place an $x'$ filter between the $x$ and $y$ filters, with $x'$ at $45^\circ$ to both $x$ and $y$. An electromagnetic wave in the $y$ direction can still be observed at the end:
-\begin{align*}
+\begin{equation}\begin{aligned}
 \vect E(\vect r,t)&=E_0(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
 \xrightarrow{x\text{ filter}}\quad&E_0\vect e_x\cos(kz-\omega t)=\frac{E_0}{\sqrt2}(\vect e_{x'}-\vect e_{y'})\cos(kz-\omega t),\\
 \xrightarrow{x'\text{ filter}}\quad&\frac{E_0}{\sqrt2}\vect e_{x'}\cos(kz-\omega t)=\frac{E_0}{2}(\vect e_x+\vect e_y)\cos(kz-\omega t),\\
 \xrightarrow{y\text{ filter}}\quad&\frac{E_0}{2}\vect e_y\cos(kz-\omega t).
-\end{align*}
+\end{aligned}\end{equation}
 Similarity: $s_x,s_y,s_z$ and $E_{x'},E_{y'}$ can all be regarded as two-component vectors.
 
 Difference: $\vect s$ is intrinsic angular momentum, a quantum-mechanical quantity; $\vect E$ is a spatially dependent mechanical quantity, a classical-mechanical quantity.

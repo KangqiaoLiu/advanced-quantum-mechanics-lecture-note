@@ -8,30 +8,30 @@ When $t_2=0$, each $A_n$ bonds to $B_n$: the chain consists of $N$ isolated dime
 For finite $t_1/t_2$, let a possible left-edge state have amplitudes only on the $A$ sublattice,
 $\ket{\psi_L}=\sum_{n\geq1}u_n\ket{A_n}$.
 At zero energy, the amplitude of each $B_n$ component of $\op H\ket{\psi_L}$ must vanish:
-\[
+\begin{equation}
  t_1u_n+t_2u_{n+1}=0
  \quad\Longrightarrow\quad
  u_{n+1}=-\frac{t_1}{t_2}u_n.
-\]
+\end{equation}
 Thus on a semi-infinite chain,
 \begin{equation}\label{eq:ssh-leftedge}
 \boxed{\ket{\psi_L}=\sqrt{1-\left|\frac{t_1}{t_2}\right|^2}
  \sum_{n=1}^{\infty}\left(-\frac{t_1}{t_2}\right)^{n-1}\ket{A_n}}
 \end{equation}
 for $|t_1/t_2|<1$. The sum of squared amplitudes equals unity because it is a geometric series. The localization length (in units of the cell spacing) is
-\[
+\begin{equation}
  \xi^{-1}=\ln\!\left|\frac{t_2}{t_1}\right|.
-\]
+\end{equation}
 There is an analogous state on the right end, supported on the $B$ sublattice. On a finite chain the two edge states hybridize weakly; their energies split by an amount exponentially small in the chain length. Exact zero energy follows directly only for an idealized isolated edge or a suitable sublattice imbalance.
 
 \subsection*{3) What is protected?}
 The winding number $\nu=1$ for the periodic chain and the localized end modes for the open chain describe the same phase. This is a simple case of \emph{bulk--boundary correspondence}: a topological invariant of the gapped bulk constrains boundary phenomena. Boundary termination matters, and perturbations preserving chiral symmetry and the bulk gap preserve the appropriate topological distinction. If chiral symmetry is broken, boundary energies can shift and the SSH winding need not remain quantized.
 
 The main result of the SSH model can be summarized in a single connected sequence:
-\[
+\begin{equation}
  \text{alternating hopping}\longrightarrow
  \op h(k)\longrightarrow
  \nu\ \text{and}\ \gamma_{\mathrm{Zak}}
  \longrightarrow\text{localized edge states}.
-\]
+\end{equation}
 It provides a starting point for the higher-dimensional invariants studied next~\cite{Asboth2016}.

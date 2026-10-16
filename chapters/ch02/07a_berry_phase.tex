@@ -7,64 +7,92 @@ The Aharonov--Bohm effect showed that the relative phase of a quantum amplitude 
 \subsection*{1) Instantaneous eigenstates and adiabatic evolution}
 
 Let a Hamiltonian depend smoothly on real control parameters $\vect R=(R_1,\ldots,R_d)$:
-\[\op H(\vect R)\ket{n(\vect R)}=E_n(\vect R)\ket{n(\vect R)},\qquad
-\braket{n(\vect R)}{n(\vect R)}=1.\]
+\begin{equation}
+\op H(\vect R)\ket{n(\vect R)}=E_n(\vect R)\ket{n(\vect R)},\qquad
+\braket{n(\vect R)}{n(\vect R)}=1.
+\end{equation}
 Assume that $\vect R(t)$ changes sufficiently slowly and that the chosen eigenvalue remains nondegenerate and separated by a gap from the other energy levels along the path. Under the adiabatic approximation a state prepared in $\ket{n(\vect R(0))}$ follows the corresponding instantaneous eigenspace. Its evolution contains a dynamical phase and a second, geometrical phase:
-\[\boxed{\ket{\psi(t)}\simeq
+\begin{equation}
+\boxed{\ket{\psi(t)}\simeq
  e^{-\frac\ii\hbar\int_0^t E_n(\vect R(t'))\,\dd t'}
- e^{\ii\gamma_n(t)}\ket{n(\vect R(t))}.}\]
+ e^{\ii\gamma_n(t)}\ket{n(\vect R(t))}.}
+\end{equation}
 We determine $\gamma_n$ from the Schr\"odinger equation, rather than assuming its form.
 
 Write $\ket\psi=e^{-\ii\int E_n\dd t/\hbar}e^{\ii\gamma_n}\ket n$ and substitute into
-\[\ii\hbar\frac{\dd}{\dd t}\ket\psi=\op H(\vect R(t))\ket\psi.\]
+\begin{equation}
+\ii\hbar\frac{\dd}{\dd t}\ket\psi=\op H(\vect R(t))\ket\psi.
+\end{equation}
 Differentiation gives the identity within the adiabatic approximation,
-\[\left(E_n-\hbar\dot\gamma_n\right)\ket n
-   +\ii\hbar\frac{\dd}{\dd t}\ket n=E_n\ket n.\]
+\begin{equation}
+\left(E_n-\hbar\dot\gamma_n\right)\ket n
+   +\ii\hbar\frac{\dd}{\dd t}\ket n=E_n\ket n.
+\end{equation}
 Project onto the instantaneous normalized eigenstate to find
-\[\boxed{\dot\gamma_n(t)=\ii\bra{n(\vect R(t))}
-\frac{\dd}{\dd t}\ket{n(\vect R(t))}.}\]
+\begin{equation}
+\boxed{\dot\gamma_n(t)=\ii\bra{n(\vect R(t))}
+\frac{\dd}{\dd t}\ket{n(\vect R(t))}.}
+\end{equation}
 The normalization condition implies that $\braket n{\dot n}$ is purely imaginary, so $\dot\gamma_n$ is real. Apply the chain rule,
-\[\frac{\dd}{\dd t}\ket{n(\vect R(t))}
- =\sum_\mu\frac{\partial}{\partial R_\mu}\ket{n(\vect R)}\dot R_\mu,\]
+\begin{equation}
+\frac{\dd}{\dd t}\ket{n(\vect R(t))}
+ =\sum_\mu\frac{\partial}{\partial R_\mu}\ket{n(\vect R)}\dot R_\mu,
+\end{equation}
 to rewrite the accumulated phase as an integral along the \emph{parameter path} $C$:
-\[\boxed{\gamma_n(C)=\int_C\vect{\mathcal A}_n(\vect R)\cdot\dd\vect R,
+\begin{equation}
+\boxed{\gamma_n(C)=\int_C\vect{\mathcal A}_n(\vect R)\cdot\dd\vect R,
 \qquad\vect{\mathcal A}_n(\vect R)
- =\ii\braket{n(\vect R)}{\vect\nabla_{\!R}n(\vect R)}.}\]
+ =\ii\braket{n(\vect R)}{\vect\nabla_{\!R}n(\vect R)}.}
+\end{equation}
 The vector field $\vect{\mathcal A}_n$ is the \emph{Berry connection}. It depends on how the phase of the instantaneous eigenstate has been chosen.
 
 \subsection*{2) Gauge transformations of the eigenstate}
 
 The normalized eigenket is physically unchanged by a parameter-dependent phase. Choose a new convention
-\[\ket{n'(\vect R)}=e^{-\ii\beta(\vect R)}\ket{n(\vect R)},\qquad
- \beta(\vect R)\in\mathbb R.\]
+\begin{equation}
+\ket{n'(\vect R)}=e^{-\ii\beta(\vect R)}\ket{n(\vect R)},\qquad
+ \beta(\vect R)\in\mathbb R.
+\end{equation}
 Substituting it into the Berry connection shows explicitly how the additional derivative acts:
-\[\begin{aligned}
+\begin{equation}
+\begin{aligned}
 \vect{\mathcal A}'_n
  &=\ii\bra n e^{\ii\beta}\vect\nabla_{\!R}
     \bigl(e^{-\ii\beta}\ket n\bigr)\\
  &=\ii\braket n{\vect\nabla_{\!R}n}
        +\vect\nabla_{\!R}\beta\\
  &=\boxed{\vect{\mathcal A}_n+\vect\nabla_{\!R}\beta}.
-\end{aligned}\]
+\end{aligned}
+\end{equation}
 Hence an \emph{open-path} integral transforms as
-\[\gamma_n'(C)=\gamma_n(C)+\beta(\vect R_f)-\beta(\vect R_i).\]
+\begin{equation}
+\gamma_n'(C)=\gamma_n(C)+\beta(\vect R_f)-\beta(\vect R_i).
+\end{equation}
 For a closed path $C$, with a single-valued choice of phase along the loop, the two endpoint contributions cancel modulo $2\pi$. Thus the Berry phase around a closed cycle is a gauge-invariant quantity:
-\[\boxed{e^{\ii\gamma_n(C)}\quad\text{is gauge invariant for a closed }C.}\]
+\begin{equation}
+\boxed{e^{\ii\gamma_n(C)}\quad\text{is gauge invariant for a closed }C.}
+\end{equation}
 The distinction matters: neither the connection at one point nor the Berry phase assigned to an open segment is independently gauge invariant. A physically measured phase comes from interference, from a cyclic state evolution, or from an appropriate endpoint comparison.
 
 \subsection*{3) Berry curvature and geometry of parameter space}
 
 For three control parameters define the Berry curvature by
-\[\boxed{\vect{\mathcal F}_n(\vect R)
- =\vect\nabla_{\!R}\times\vect{\mathcal A}_n(\vect R).}\]
+\begin{equation}
+\boxed{\vect{\mathcal F}_n(\vect R)
+ =\vect\nabla_{\!R}\times\vect{\mathcal A}_n(\vect R).}
+\end{equation}
 It is unaffected by the gauge change because $\vect\nabla_{\!R}\times\vect\nabla_{\!R}\beta=0$. For a surface $\Sigma$ whose boundary is $C$, Stokes' theorem gives
-\[\boxed{\gamma_n(C)=\oint_C\vect{\mathcal A}_n\cdot\dd\vect R
-=\int_\Sigma\vect{\mathcal F}_n\cdot\dd\vect S\quad(\mathrm{mod}\ 2\pi),}\]
+\begin{equation}
+\boxed{\gamma_n(C)=\oint_C\vect{\mathcal A}_n\cdot\dd\vect R
+=\int_\Sigma\vect{\mathcal F}_n\cdot\dd\vect S\quad(\mathrm{mod}\ 2\pi),}
+\end{equation}
 provided the eigenstate can be chosen smoothly over the surface; singular gauges or degeneracies require appropriate patches. In more than three parameters use the antisymmetric tensor
-\[\mathcal F_{n,\mu\nu}
+\begin{equation}
+\mathcal F_{n,\mu\nu}
  =\partial_\mu\mathcal A_{n,\nu}-\partial_\nu\mathcal A_{n,\mu}
  =\ii\left(\braket{\partial_\mu n}{\partial_\nu n}
-           -\braket{\partial_\nu n}{\partial_\mu n}\right).\]
+           -\braket{\partial_\nu n}{\partial_\mu n}\right).
+\end{equation}
 
 \begin{center}
 \begin{tikzpicture}[>=Latex,scale=0.85]
@@ -74,10 +102,10 @@ provided the eigenstate can be chosen smoothly over the surface; singular gauges
  \draw[very thick,blue!70!black,postaction={decorate},
    decoration={markings,mark=at position .12 with {\arrow{>}}}]
  (2.7,1.3) ellipse (1.6 and .96);
- \node[blue!70!black] at (4.4,2.3) {$C$};
+ \node[blue!70!black,anchor=west] at (4.55,2.14) {$C$};
  \node at (2.65,1.2) {$\Sigma$};
  \draw[->,thick,red!75!black] (3,1.6)--(3.38,2.0);
- \node[red!75!black,anchor=west] at (3.42,2.04) {$\vect{\mathcal F}_n$};
+ \node[red!75!black,anchor=west] at (3.05,2.70) {$\vect{\mathcal F}_n$};
 \end{tikzpicture}
 \end{center}
 

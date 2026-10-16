@@ -3,19 +3,19 @@ A quantum prediction model must satisfy three different requirements: it should 
 
 \subsection*{1) Barren plateaus}
 A common difficulty for parameterized quantum circuits is the \emph{barren plateau} phenomenon. In some families of random-like circuits, the typical gradient becomes extremely small as the number $n$ of qubits increases. Schematically,
-\[
+\begin{equation}
 \operatorname{Var}_{\theta}\left(\frac{\partial\mathcal L}{\partial\theta_j}\right)
 \sim O(b^{-n})\quad\text{for some }b>1,
-\]
+\end{equation}
 under the assumptions of the particular theorem. Then exponentially many measurements may be needed to resolve a typical tiny gradient from sampling noise. This behavior was identified in the foundational analysis of McClean \emph{et al.}~\cite{McClean2018} and is reviewed, including the influence of architecture, noise, initialization and measurement, in Larocca \emph{et al.}~\cite{Larocca2025}.
 
 A barren plateau is a property of particular circuit families and training objectives, not an inevitable characteristic of every quantum circuit. Shallow local circuits with carefully chosen initializations or local objectives can have different gradient behavior. At the same time, a model that is easy to train may be representationally restricted or classically simulable. Both questions must be considered together.
 
 \subsection*{2) Noise and finite shots}
 Physical devices have imperfect gates, readout errors, and limited coherence times. With noise, the ideal pure circuit state is replaced by a density operator $\rho_\theta(x)$, and the prediction becomes
-\[
+\begin{equation}
  f_\theta(x)=\operatorname{tr}[\rho_\theta(x)\op O].
-\]
+\end{equation}
 Noise modifies the loss landscape and can suppress the magnitude of observable-dependent information. A theoretical parameter-shift identity for an ideal gate must be applied with attention to which parts of the noisy implementation depend on the shifted parameter. Finite-shot estimates add statistical uncertainty to every measured output.
 
 \subsection*{3) Data input and fair comparisons}
@@ -25,12 +25,12 @@ The term \emph{quantum advantage} has a specific meaning: a demonstrable improve
 
 \section{Beyond the Introductory Models}
 Quantum learning also includes \emph{quantum convolutional} and recurrent-like architectures, generative modeling, quantum-data classification, learning properties of quantum phases, and hybrid quantum--classical methods. Their physical motivations differ. For example, classifying states of a many-body system can start directly from a measured or prepared quantum state, while training a classical-label classifier usually requires a chosen encoding of ordinary inputs. The preceding derivations establish a minimal mathematical language for these extensions:
-\[
+\begin{equation}
 \begin{gathered}
 \text{input}\longrightarrow\text{quantum state}
 \longrightarrow\text{parameterized evolution}\\[2pt]
 \longrightarrow\text{measurement}
 \longrightarrow\text{loss and optimization}.
 \end{gathered}
-\]
+\end{equation}
 A physical model of learning is useful when each arrow has an explicit definition and a measurable cost. The broader connection between circuits and learning is analyzed in the review by Cerezo \emph{et al.}~\cite{Cerezo2021}; Abbas \emph{et al.}~\cite{Abbas2021} discuss the representational capacities of certain quantum neural networks, while recent work continues to clarify limitations due to statistical concentration and efficient classical representations~\cite{Larocca2025}.

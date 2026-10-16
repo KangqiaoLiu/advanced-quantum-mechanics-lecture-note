@@ -3,25 +3,25 @@
 In 1999, T. D. Lee and collaborators proposed a method for the strongly coupled Schr\"odinger equation. We give a brief introduction using the Yukawa potential as an example.
 
 The Yukawa potential is
-\[
+\begin{equation}
  V(r)=-g^2\frac{e^{-\alpha r}}{r},\qquad g>1\quad\text{(strong coupling)}.
-\]
+\end{equation}
 The energy eigenvalue equation is
-\[
+\begin{equation}
  \left(-\frac{\hbar^2}{2\mu}\nabla^2+V(r)\right)
  \psi(\vect r)=E\psi(\vect r).
-\]
+\end{equation}
 An exact analytic solution is unavailable. Set $\hbar=1$ to simplify the calculation. The ground-state wavefunction does not depend on the angular coordinates. Let
-\[
+\begin{equation}
  \psi(r)=e^{-S(r)}.
-\]
+\end{equation}
 Expand the eigenvalue $E$ and the exponent function $S(r)$ in powers of $1/g^2$:
-\[
+\begin{equation}
  E=g^4E_0+g^2E_1+E_2+\cdots,\qquad
  S=g^2S_0+S_1+g^{-2}S_2+\cdots.
-\]
+\end{equation}
 The purpose of this expansion is to eliminate $V$ from the equations for $E_0$ and $S_0$. Substitute it into the stationary Schr\"odinger equation, and compare the coefficients of equal powers of $g$:
-\begin{align*}
+\begin{equation}\begin{aligned}
  \text{Zeroth-order equation:}\quad
  &(\nabla S_0)^2=-2mE_0,\\
  \text{First-order equation:}\quad
@@ -31,44 +31,44 @@ The purpose of this expansion is to eliminate $V$ from the equations for $E_0$ a
  &\nabla S_0\cdot\nabla S_2
  =-\frac12(\nabla S_1)^2+\frac12\nabla^2S_1-mE_2,\\
  &\hspace{1cm}\vdots
-\end{align*}
+\end{aligned}\end{equation}
 The solution of the zeroth-order equation is
-\[
+\begin{equation}
  S_0(r)=\sqrt{-2mE_0}\,r.
-\]
+\end{equation}
 The positive square root is chosen in view of the boundary condition that the wavefunction $\psi(r)$ remain finite at infinity. Substituting $S_0(r)$ into the first-order equation gives
-\[
+\begin{equation}
  \sqrt{-2mE_0}\,\frac{\dd S_1}{\dd r}
  =\frac1r\bigl(\sqrt{-2mE_0}-me^{-\alpha r}\bigr)-mE_1.
-\]
+\end{equation}
 The wavefunction $\psi$ and its first derivative must be continuous. Thus $S_0,S_1,S_2,\ldots$ and their first derivatives must be continuous, requiring $\dd S_1/\dd r$ to be nonsingular at $r=0$ (since $S_0$ and its first derivative are continuous). Therefore
-\[
+\begin{equation}
  \lim_{r\to0}\frac{\sqrt{-2mE_0}-me^{-\alpha r}}{r}
  \quad\text{must be finite}.
-\]
+\end{equation}
 It follows that
-\[
+\begin{equation}
  E_0=-\frac m2,\qquad S_0(r)=mr,
-\]
-\[
+\end{equation}
+\begin{equation}
  S_1(r)=\int_0^r\dd r'\left[
  \frac{1-e^{-\alpha r'}}{r'}-E_1\right].
-\]
+\end{equation}
 Substitute into the second-order equation and require $\dd S_2/\dd r$ to be nonsingular at $r=0$. This gives
-\[
+\begin{equation}
  E_1=\alpha.
-\]
+\end{equation}
 The successive solution gives the ground-state energy
-\[
+\begin{equation}
  E=-\frac m2g^4+\alpha g^2
  -\frac{3\alpha^2}{4m}
  +\frac{\alpha^2}{2m^2}g^{-2}+\cdots.
-\]
+\end{equation}
 If $\alpha=0$, the Yukawa potential reduces to the Coulomb potential. In this case,
-\[
+\begin{equation}
  \boxed{\begin{aligned}
  E&=-\frac m2g^4,\\
  \psi(r)&=e^{-g^2S_0(r)}=e^{-mg^2r}.
  \end{aligned}}
-\]
+\end{equation}
 This is exactly the same as the exact ground-state solution of the hydrogen-atom problem.

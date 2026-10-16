@@ -1,166 +1,224 @@
 % SOURCE: Chinese PDF viewer pp. 86 (bottom)--91.
 \section{Coupling of Two Angular Momenta}
 Consider the addition of two arbitrary independent angular momenta $\op{\vect J}_1$ and $\op{\vect J}_2$:
-\[\op{\vect J}=\op{\vect J}_1+\op{\vect J}_2.\]
+\begin{equation}
+\op{\vect J}=\op{\vect J}_1+\op{\vect J}_2.
+\end{equation}
 They satisfy
-\[[\op J_{1i},\op J_{1j}]=\ii\hbar\epsilon_{ijk}\op J_{1k},\qquad
+\begin{equation}
+[\op J_{1i},\op J_{1j}]=\ii\hbar\epsilon_{ijk}\op J_{1k},\qquad
 [\op J_{2i},\op J_{2j}]=\ii\hbar\epsilon_{ijk}\op J_{2k},\qquad
-[\op J_{1i},\op J_{2j}]=0.\]
+[\op J_{1i},\op J_{2j}]=0.
+\end{equation}
 The respective eigenvalues are
-\[J_1^2=j_1(j_1+1)\hbar^2,\quad J_{1z}=m_1\hbar,\quad m_1=-j_1,\ldots,j_1,\]
-\[J_2^2=j_2(j_2+1)\hbar^2,\quad J_{2z}=m_2\hbar,\quad m_2=-j_2,\ldots,j_2.\]
+\begin{equation}
+J_1^2=j_1(j_1+1)\hbar^2,\quad J_{1z}=m_1\hbar,\quad m_1=-j_1,\ldots,j_1,
+\end{equation}
+\begin{equation}
+J_2^2=j_2(j_2+1)\hbar^2,\quad J_{2z}=m_2\hbar,\quad m_2=-j_2,\ldots,j_2.
+\end{equation}
 It is easy to prove
-\[[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k.\]
+\begin{equation}
+[\op J_i,\op J_j]=\ii\hbar\epsilon_{ijk}\op J_k.
+\end{equation}
 Thus $\op{\vect J}$ is again an angular-momentum operator, called the total angular momentum, with eigenvalues
-\[J^2=j(j+1)\hbar^2,\qquad J_z=m\hbar,\qquad m=-j,\ldots,j.\]
+\begin{equation}
+J^2=j(j+1)\hbar^2,\qquad J_z=m\hbar,\qquad m=-j,\ldots,j.
+\end{equation}
 The problem is to find the relation between $\ket{j,m}$ and $\ket{j_1,m_1}\ket{j_2,m_2}$.
 
 \subsection*{1) Two representations}
 \textbf{Uncoupled representation.} Since the two angular momenta commute with one another, the four operators $\op{\vect J}_1^{\,2}$, $\op J_{1z}$, $\op{\vect J}_2^{\,2}$, $\op J_{2z}$ have common eigenvectors $\ket{j_1m_1j_2m_2}$, which form the uncoupled representation:
-\[\begin{aligned}
+\begin{equation}
+\begin{aligned}
 \op{\vect J}_1^{\,2}\ket{j_1m_1j_2m_2}&=j_1(j_1+1)\hbar^2\ket{j_1m_1j_2m_2},\\
 \op J_{1z}\ket{j_1m_1j_2m_2}&=m_1\hbar\ket{j_1m_1j_2m_2},\\
 \op{\vect J}_2^{\,2}\ket{j_1m_1j_2m_2}&=j_2(j_2+1)\hbar^2\ket{j_1m_1j_2m_2},\\
 \op J_{2z}\ket{j_1m_1j_2m_2}&=m_2\hbar\ket{j_1m_1j_2m_2}.
-\end{aligned}\]
+\end{aligned}
+\end{equation}
 But $[\op{\vect J}^{\,2},\op J_{1z}]\ne0$ and $[\op{\vect J}^{\,2},\op J_{2z}]\ne0$. Consequently, $\op{\vect J}^{\,2}$ is not diagonal in this basis, making its eigenvalues inconvenient to obtain directly.
 
 \textbf{Coupled representation.} Since
-\[[\op{\vect J}^{\,2},\op{\vect J}_1^{\,2}]
+\begin{equation}
+[\op{\vect J}^{\,2},\op{\vect J}_1^{\,2}]
 =[\op{\vect J}^{\,2},\op{\vect J}_2^{\,2}]
-=[\op{\vect J}^{\,2},\op J_z]=0,\]
+=[\op{\vect J}^{\,2},\op J_z]=0,
+\end{equation}
 and the remaining relevant pairs also commute, the four operators $\op{\vect J}_1^{\,2}$, $\op{\vect J}_2^{\,2}$, $\op{\vect J}^{\,2}$, and $\op J_z$ have common eigenvectors $\ket{j_1j_2jm}$, which form the coupled representation:
-\[\begin{aligned}
+\begin{equation}
+\begin{aligned}
 \op{\vect J}_1^{\,2}\ket{j_1j_2jm}&=j_1(j_1+1)\hbar^2\ket{j_1j_2jm},\\
 \op{\vect J}_2^{\,2}\ket{j_1j_2jm}&=j_2(j_2+1)\hbar^2\ket{j_1j_2jm},\\
 \op{\vect J}^{\,2}\ket{j_1j_2jm}&=j(j+1)\hbar^2\ket{j_1j_2jm},\\
 \op J_z\ket{j_1j_2jm}&=m\hbar\ket{j_1j_2jm}.
-\end{aligned}\]
+\end{aligned}
+\end{equation}
 Because the eigenvalues and eigenvectors of the four uncoupled operators are known, obtaining those of total angular momentum requires connecting the two representations by a change of basis.
 
 From completeness of the uncoupled basis,
-\[\sum_{m_1,m_2}\ket{j_1m_1j_2m_2}\bra{j_1m_1j_2m_2}=\mathbf1,\]
+\begin{equation}
+\sum_{m_1,m_2}\ket{j_1m_1j_2m_2}\bra{j_1m_1j_2m_2}=\mathbf1,
+\end{equation}
 the transformation is
-\[\boxed{\ket{j_1j_2jm}=\sum_{m_1,m_2}\ket{j_1m_1j_2m_2}
-\braket{j_1m_1j_2m_2}{j_1j_2jm}.}\]
+\begin{equation}
+\boxed{\ket{j_1j_2jm}=\sum_{m_1,m_2}\ket{j_1m_1j_2m_2}
+\braket{j_1m_1j_2m_2}{j_1j_2jm}.}
+\end{equation}
 The overlaps $\braket{j_1m_1j_2m_2}{j_1j_2jm}$ are the Clebsch--Gordan (CG) coefficients.
 
 \subsection*{2) Eigenvalues $(j,m)$ of the coupled representation}
 Apply $\op J_z=\op J_{1z}+\op J_{2z}$ to the expansion:
-\begin{align*}
+\begin{equation}\begin{aligned}
 m\hbar\ket{j_1j_2jm}
 &=\sum_{m_1,m_2}\braket{j_1m_1j_2m_2}{j_1j_2jm}
 (\op J_{1z}+\op J_{2z})\ket{j_1m_1j_2m_2}\\
 &=\sum_{m_1,m_2}(m_1+m_2)\hbar\,
 \braket{j_1m_1j_2m_2}{j_1j_2jm}\ket{j_1m_1j_2m_2}.
-\end{align*}
+\end{aligned}\end{equation}
 Thus
-\[\sum_{m_1,m_2}(m-m_1-m_2)\hbar\,
-\braket{j_1m_1j_2m_2}{j_1j_2jm}\ket{j_1m_1j_2m_2}=0.\]
+\begin{equation}
+\sum_{m_1,m_2}(m-m_1-m_2)\hbar\,
+\braket{j_1m_1j_2m_2}{j_1j_2jm}\ket{j_1m_1j_2m_2}=0.
+\end{equation}
 The uncoupled basis vectors are linearly independent. Therefore for each term either the CG coefficient is zero or $m=m_1+m_2$. We seek nonzero CG coefficients, and hence
-\[\boxed{m=m_1+m_2.}\]
+\begin{equation}
+\boxed{m=m_1+m_2.}
+\end{equation}
 Next consider the possible values of $j$. Let $j_{\min}\le j\le j_{\max}$. The maximum is
-\[j_{\max}=m_{\max}=(m_1)_{\max}+(m_2)_{\max}=j_1+j_2.\]
+\begin{equation}
+j_{\max}=m_{\max}=(m_1)_{\max}+(m_2)_{\max}=j_1+j_2.
+\end{equation}
 The dimension of the uncoupled representation is
-\[D=(2j_1+1)(2j_2+1),\]
+\begin{equation}
+D=(2j_1+1)(2j_2+1),
+\end{equation}
 while the dimension of the coupled representation is
-\[D=\sum_{j=j_{\min}}^{j_{\max}}(2j+1)
-=(j_{\max}+1)^2-j_{\min}^2.\]
+\begin{equation}
+D=\sum_{j=j_{\min}}^{j_{\max}}(2j+1)
+=(j_{\max}+1)^2-j_{\min}^2.
+\end{equation}
 Equating the dimensions,
-\[(2j_1+1)(2j_2+1)=(j_1+j_2+1)^2-j_{\min}^2,\]
+\begin{equation}
+(2j_1+1)(2j_2+1)=(j_1+j_2+1)^2-j_{\min}^2,
+\end{equation}
 gives $j_{\min}^2=(j_1-j_2)^2$ and $j_{\min}=|j_1-j_2|$.
 Thus for fixed $(j_1,j_2)$,
-\[\boxed{\begin{gathered}
+\begin{equation}
+\boxed{\begin{gathered}
 J^2=j(j+1)\hbar^2,\qquad j=|j_1-j_2|,|j_1-j_2|+1,\ldots,j_1+j_2,\\
 J_z=m\hbar,\qquad m=m_1+m_2.
-\end{gathered}}\]
+\end{gathered}}
+\end{equation}
 
 \subsection*{3) Eigenstates $\ket{j_1j_2jm}$ of the coupled representation}
 The central task is to calculate the CG coefficients. We do not undertake a general treatment; standard tables are available.
 
 \textbf{Example 1: spin and orbital angular momentum.} Let $\op{\vect J}_1=\op{\vect L}$, $\op{\vect J}_2=\op{\vect S}$, and $\op{\vect J}=\op{\vect L}+\op{\vect S}$. The coupled basis is $\ket{l,\tfrac12;j,m}$ and the uncoupled basis is $\ket{l,m_l;\tfrac12,m_s}$.
 The transformation reads
-\[\ket{l,\tfrac12;j,m}
+\begin{equation}
+\ket{l,\tfrac12;j,m}
 =\sum_{m_l,m_s}C_{m_lm_s}\ket{l,m_l;\tfrac12,m_s}
 =\sum_{m_l}\big[A_{m_l}\ket{l,m_l;\tfrac12,\tfrac12}
-+B_{m_l}\ket{l,m_l;\tfrac12,-\tfrac12}\big].\]
++B_{m_l}\ket{l,m_l;\tfrac12,-\tfrac12}\big].
+\end{equation}
 Because $m=m_l+m_s$,
-\[m_l=m-m_s=\begin{cases}
+\begin{equation}
+m_l=m-m_s=\begin{cases}
 m-\frac12,&m_s=\frac12,\\
 m+\frac12,&m_s=-\frac12,
-\end{cases}\]
+\end{cases}
+\end{equation}
 there are only two terms:
-\[\boxed{\ket{l,\tfrac12;j,m}
+\begin{equation}
+\boxed{\ket{l,\tfrac12;j,m}
 =A\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
-+B\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}\]
++B\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}
+\end{equation}
 We determine the coefficients $A,B$.
 
 In the spin subspace of the uncoupled representation,
-\begin{align*}
+\begin{equation}\begin{aligned}
 \op{\vect J}^{\,2}&=\op{\vect L}^{\,2}+\op{\vect S}^{\,2}
 +2\op{\vect L}\cdot\op{\vect S}\\
 &=\begin{pmatrix}
 \op{\vect L}^{\,2}+\frac34\hbar^2+\hbar\op L_z&\hbar\op L_-\\
 \hbar\op L_+&\op{\vect L}^{\,2}+\frac34\hbar^2-\hbar\op L_z
 \end{pmatrix}.
-\end{align*}
+\end{aligned}\end{equation}
 Here $\op L_\pm=\op L_x\pm\ii\op L_y$ are the orbital raising and lowering operators. The uncoupled states are represented as
-\[\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
+\begin{equation}
+\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
 =\begin{pmatrix}\ket{l,m-\tfrac12}\\0\end{pmatrix},\qquad
 \ket{l,m+\tfrac12;\tfrac12,-\tfrac12}
-=\begin{pmatrix}0\\\ket{l,m+\tfrac12}\end{pmatrix}.\]
+=\begin{pmatrix}0\\\ket{l,m+\tfrac12}\end{pmatrix}.
+\end{equation}
 Insert the expansion into the eigenvalue equation
-\[\op{\vect J}^{\,2}\ket{l,\tfrac12;j,m}
-=j(j+1)\hbar^2\ket{l,\tfrac12;j,m}.\]
+\begin{equation}
+\op{\vect J}^{\,2}\ket{l,\tfrac12;j,m}
+=j(j+1)\hbar^2\ket{l,\tfrac12;j,m}.
+\end{equation}
 It becomes
 \begingroup\small
-\begin{align*}
+\begin{equation}\begin{aligned}
 j(j+1)\hbar^2\big(A\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
 +B\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}\big)
 ={}&(\op{\vect L}^{\,2}+\op{\vect S}^{\,2}+2\op{\vect L}\cdot\op{\vect S})\\[-1ex]
 &\quad\times\big(A\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
 +B\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}\big).
-\end{align*}
+\end{aligned}\end{equation}
 \endgroup
 In the spin subspace this gives
-\[\begin{cases}
+\begin{equation}
+\begin{cases}
 A\left(\op{\vect L}^{\,2}+\frac34\hbar^2+\hbar\op L_z-j(j+1)\hbar^2\right)\ket{l,m-\tfrac12}
 +B\hbar\op L_-\ket{l,m+\tfrac12}=0,\\[1ex]
 A\hbar\op L_+\ket{l,m-\tfrac12}
 +B\left(\op{\vect L}^{\,2}+\frac34\hbar^2-\hbar\op L_z-j(j+1)\hbar^2\right)\ket{l,m+\tfrac12}=0.
-\end{cases}\]
+\end{cases}
+\end{equation}
 Using the orbital-angular-momentum eigenvalues and ladder-operator coefficients yields
-\[\begin{cases}
+\begin{equation}
+\begin{cases}
 \displaystyle\left[l(l+1)+\frac34+\left(m-\frac12\right)-j(j+1)\right]A
 +\sqrt{\left(l-m+\frac12\right)\left(l+m+\frac12\right)}\,B=0,\\[1.1ex]
 \displaystyle\sqrt{\left(l+m+\frac12\right)\left(l-m+\frac12\right)}\,A
 +\left[l(l+1)+\frac34-\left(m+\frac12\right)-j(j+1)\right]B=0.
-\end{cases}\]
+\end{cases}
+\end{equation}
 These equations determine $A,B$. The allowed total angular momenta are $j=l-\frac12$ and $j=l+\frac12$ (where permitted).
 
 For $j=l+\frac12$, normalization yields
-\[\boxed{\ket{l,\tfrac12;j,m}
+\begin{equation}
+\boxed{\ket{l,\tfrac12;j,m}
 =\sqrt{\frac{l+m+\frac12}{2l+1}}\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
-+\sqrt{\frac{l-m+\frac12}{2l+1}}\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}\]
++\sqrt{\frac{l-m+\frac12}{2l+1}}\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}
+\end{equation}
 For $j=l-\frac12$,
-\[\boxed{\ket{l,\tfrac12;j,m}
+\begin{equation}
+\boxed{\ket{l,\tfrac12;j,m}
 =-\sqrt{\frac{l-m+\frac12}{2l+1}}\ket{l,m-\tfrac12;\tfrac12,\tfrac12}
-+\sqrt{\frac{l+m+\frac12}{2l+1}}\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}\]
++\sqrt{\frac{l+m+\frac12}{2l+1}}\ket{l,m+\tfrac12;\tfrac12,-\tfrac12}.}
+\end{equation}
 
 \textbf{Example 2: coupling two electron spins.} Let
-\[\op{\vect s}=\op{\vect s}_1+\op{\vect s}_2,\qquad
-s_1=s_2=\frac12,\qquad m_1,m_2=\pm\frac12,\qquad s=0,1.\]
+\begin{equation}
+\op{\vect s}=\op{\vect s}_1+\op{\vect s}_2,\qquad
+s_1=s_2=\frac12,\qquad m_1,m_2=\pm\frac12,\qquad s=0,1.
+\end{equation}
 The uncoupled basis states are
-\[\begin{gathered}
+\begin{equation}
+\begin{gathered}
 \ket{\tfrac12,\tfrac12}\ket{\tfrac12,\tfrac12},\quad
 \ket{\tfrac12,\tfrac12}\ket{\tfrac12,-\tfrac12},\\
 \ket{\tfrac12,-\tfrac12}\ket{\tfrac12,\tfrac12},\quad
 \ket{\tfrac12,-\tfrac12}\ket{\tfrac12,-\tfrac12}.
-\end{gathered}\]
+\end{gathered}
+\end{equation}
 The coupled basis is $\ket{\tfrac12,\tfrac12;s,m}$ with $(s,m)=(1,1),(1,0),(1,-1),(0,0)$. As in Example 1, coupled states can be expressed in the uncoupled basis.
 
 For $s=1$, the \emph{spin triplet} is
-\begin{align*}
+\begin{equation}\begin{aligned}
 \ket{\tfrac12,\tfrac12;1,1}
 &=\ket{\tfrac12,\tfrac12}\ket{\tfrac12,\tfrac12},\\
 \ket{\tfrac12,\tfrac12;1,0}
@@ -168,8 +226,10 @@ For $s=1$, the \emph{spin triplet} is
 +\ket{\tfrac12,-\tfrac12}\ket{\tfrac12,\tfrac12}\right),\\
 \ket{\tfrac12,\tfrac12;1,-1}
 &=\ket{\tfrac12,-\tfrac12}\ket{\tfrac12,-\tfrac12}.
-\end{align*}
+\end{aligned}\end{equation}
 For $s=0$, the \emph{spin singlet} is
-\[\boxed{\ket{\tfrac12,\tfrac12;0,0}
+\begin{equation}
+\boxed{\ket{\tfrac12,\tfrac12;0,0}
 =\frac1{\sqrt2}\left(\ket{\tfrac12,\tfrac12}\ket{\tfrac12,-\tfrac12}
--\ket{\tfrac12,-\tfrac12}\ket{\tfrac12,\tfrac12}\right).}\]
+-\ket{\tfrac12,-\tfrac12}\ket{\tfrac12,\tfrac12}\right).}
+\end{equation}

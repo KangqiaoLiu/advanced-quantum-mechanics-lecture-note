@@ -2,27 +2,37 @@
 \section{Lippmann--Schwinger Equation}
 \subsection*{1) Lippmann--Schwinger equation in Hilbert space}
 Let
-\[\op H=\op H_0+\op V,\qquad \op H_0=\frac{\op{\vect p}^{\,2}}{2m}.\]
+\begin{equation}
+\op H=\op H_0+\op V,\qquad \op H_0=\frac{\op{\vect p}^{\,2}}{2m}.
+\end{equation}
 The incident plane wave is $\ket\varphi$, with
-\[\op H_0\ket\varphi=E\ket\varphi,\qquad E=\frac{p^2}{2m}=\frac{\hbar^2 k^2}{2m}.\]
+\begin{equation}
+\op H_0\ket\varphi=E\ket\varphi,\qquad E=\frac{p^2}{2m}=\frac{\hbar^2 k^2}{2m}.
+\end{equation}
 The scattered wave is $\ket\psi$. In elastic scattering the energy is unchanged:
-\[\op H\ket\psi=(\op H_0+\op V)\ket\psi=E\ket\psi,\qquad
-(E-\op H_0)\ket\psi=\op V\ket\psi.\]
+\begin{equation}
+\op H\ket\psi=(\op H_0+\op V)\ket\psi=E\ket\psi,\qquad
+(E-\op H_0)\ket\psi=\op V\ket\psi.
+\end{equation}
 The formal solution satisfying the initial condition $\lim_{V\to0}\ket\psi=\ket\varphi$ is
-\[\ket\psi=\ket\varphi+\frac{1}{E-\op H_0}\op V\ket\psi.\]
+\begin{equation}
+\ket\psi=\ket\varphi+\frac{1}{E-\op H_0}\op V\ket\psi.
+\end{equation}
 However, the operator $(E-\op H_0)^{-1}$ diverges when acting on eigenstates of $\op H_0$. To avoid the divergence, extend the energy into the complex plane and write the formal solution as
-\[\boxed{\ket{\psi^\pm}=\ket\varphi+
-\frac{1}{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},\quad\epsilon\to0^+.}\]
+\begin{equation}
+\boxed{\ket{\psi^\pm}=\ket\varphi+
+\frac{1}{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},\quad\epsilon\to0^+.}
+\end{equation}
 This is the Lippmann--Schwinger equation in Hilbert space.
 
 Enter the coordinate representation:
-\[
+\begin{equation}
 \braket{\vect r}{\psi^\pm}=\braket{\vect r}{\varphi}
 +\int\dd^3r'\,\mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
 \mel{\vect r'}{\op V}{\psi^\pm}.
-\]
+\end{equation}
 Because
-\begin{align*}
+\begin{equation}\begin{aligned}
 \mel{\vect r}{\frac{1}{E-\op H_0\pm\ii\epsilon}}{\vect r'}
 &=\int\dd^3p'\dd^3p''\,\braket{\vect r}{\vect p'}
 \mel{\vect p'}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect p''}
@@ -31,97 +41,105 @@ Because
 &=\frac{\delta^{(3)}(\vect p'-\vect p'')}{E-E'\pm\ii\epsilon},\\
 \braket{\vect r}{\vect p'}&=\frac{e^{\ii\vect p'\cdot\vect r/\hbar}}{(2\pi\hbar)^{3/2}},\qquad
 \braket{\vect p''}{\vect r'}=\frac{e^{-\ii\vect p''\cdot\vect r'/\hbar}}{(2\pi\hbar)^{3/2}},
-\end{align*}
+\end{aligned}\end{equation}
 we have
-\begin{align*}
+\begin{equation}\begin{aligned}
 \mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
 &=\int\frac{\dd^3p'}{(2\pi\hbar)^3}
 \frac{e^{\ii\vect p'\cdot(\vect r-\vect r')/\hbar}}{E-E'\pm\ii\epsilon}\\
 &=\int\frac{\dd^3k'}{(2\pi)^3}
 \frac{e^{\ii\vect k'\cdot(\vect r-\vect r')}}{E-E'\pm\ii\epsilon}.
-\end{align*}
+\end{aligned}\end{equation}
 By the same contour deformation used to define the Green function, moving a pole slightly upward or downward makes the integration path straight. With $E=\hbar^2k^2/(2m)$,
-\begin{align*}
+\begin{equation}\begin{aligned}
 G^\pm(\vect r-\vect r')
 &=\int\frac{\dd^3k'}{(2\pi)^3}
 \frac{e^{\ii\vect k'\cdot(\vect r-\vect r')}}{k^2-k'^2\pm\ii0},\\
 \mel{\vect r}{\frac1{E-\op H_0\pm\ii\epsilon}}{\vect r'}
 &=\frac{2m}{\hbar^2}G^\pm(\vect r-\vect r').
-\end{align*}
+\end{aligned}\end{equation}
 Hence the Lippmann--Schwinger equation in the coordinate representation becomes
-\[
+\begin{equation}
 \braket{\vect r}{\psi^\pm}=\braket{\vect r}{\varphi}
 +\frac{2m}{\hbar^2}\int\dd^3r'\,G^\pm(\vect r-\vect r')
 \mel{\vect r'}{\op V}{\psi^\pm}.
-\]
+\end{equation}
 Since
-\begin{align*}
+\begin{equation}\begin{aligned}
 \mel{\vect r'}{\op V}{\psi^\pm}
 &=\int\dd^3r''\,\mel{\vect r'}{\op V}{\vect r''}
 \braket{\vect r''}{\psi^\pm}\\
 &=\int\dd^3r''\,V(\vect r')\delta^{(3)}(\vect r'-\vect r'')
 \braket{\vect r''}{\psi^\pm}
 =V(\vect r')\braket{\vect r'}{\psi^\pm},
-\end{align*}
+\end{aligned}\end{equation}
 we obtain
-\[
+\begin{equation}
 \boxed{\braket{\vect r}{\psi^\pm}=
 \braket{\vect r}{\varphi}+\int\dd^3r'\,
 U(\vect r')G^\pm(\vect r-\vect r')\braket{\vect r'}{\psi^\pm}.}
-\]
+\end{equation}
 This is precisely the integral equation corresponding to the coordinate-space Schr\"odinger equation obtained in the preceding section by the Green-function method. It is the coordinate representation of the Lippmann--Schwinger equation.
 
 \subsection*{2) Dyson equation}
 In the general Lippmann--Schwinger equation,
-\[\ket{\psi^\pm}=\ket\varphi+\frac1{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},\]
+\begin{equation}
+\ket{\psi^\pm}=\ket\varphi+\frac1{E-\op H_0\pm\ii\epsilon}\op V\ket{\psi^\pm},
+\end{equation}
 let
-\[\op G_0^\pm=\frac1{E-\op H_0\pm\ii\epsilon}.\]
+\begin{equation}
+\op G_0^\pm=\frac1{E-\op H_0\pm\ii\epsilon}.
+\end{equation}
 The coordinate representation $\mel{\vect r}{\op G_0^\pm}{\vect r'}$ is a Green function, and thus $\op G_0^\pm$ is called the \emph{free Green operator}, related to $\op H_0$.
 
 The Lippmann--Schwinger equation can also be rewritten as
-\begin{align*}
+\begin{equation}\begin{aligned}
 (E-\op H_0\pm\ii\epsilon)\ket{\psi^\pm}
 &=(E-\op H_0\pm\ii\epsilon)\ket\varphi+\op V\ket{\psi^\pm},\\
 (E-\op H\pm\ii\epsilon)\ket{\psi^\pm}
 &=(E-\op H\pm\ii\epsilon)\ket\varphi+\op V\ket\varphi,\\
 \ket{\psi^\pm}&=\ket\varphi+
 \frac1{E-\op H\pm\ii\epsilon}\op V\ket\varphi.
-\end{align*}
+\end{aligned}\end{equation}
 Note that $\ket\varphi$ is an eigenstate of $\op H_0$, not of $\op H$. Define
-\[\op G^\pm=\frac1{E-\op H\pm\ii\epsilon}\]
+\begin{equation}
+\op G^\pm=\frac1{E-\op H\pm\ii\epsilon}
+\end{equation}
 as the \emph{full Green operator}, related to $\op H$.
 
 From
-\begin{align*}
+\begin{equation}\begin{aligned}
 (E-\op H\pm\ii\epsilon)\op G^\pm&=\mathbf1,\\
 (E-\op H_0\pm\ii\epsilon)\op G^\pm-\op V\op G^\pm&=\mathbf1,
-\end{align*}
+\end{aligned}\end{equation}
 we have
-\[\boxed{\op G^\pm=\op G_0^\pm+\op G_0^\pm\op V\op G^\pm}.\]
+\begin{equation}
+\boxed{\op G^\pm=\op G_0^\pm+\op G_0^\pm\op V\op G^\pm}.
+\end{equation}
 This is the \emph{Dyson equation}, which describes the relation between the free and full Green operators. It has important applications in quantum statistical mechanics and quantum field theory.
 
 \subsection*{3) Scattering amplitude}
 Consider the state $\ket{\psi^+}$ associated with the retarded Green function $G^+$. The coordinate-space Lippmann--Schwinger equation gives
-\[
+\begin{equation}
 \psi^+(\vect r)=A e^{\ii\vect k\cdot\vect r}
 -\frac1{4\pi}\int\dd^3r'\,U(\vect r')\psi^+(\vect r')
 \frac{e^{\ii k|\vect r-\vect r'|}}{|\vect r-\vect r'|}.
-\]
+\end{equation}
 Because the effective region of the potential $V(\vect r')$ is finite, when $r\to\infty$,
-\begin{align*}
+\begin{equation}\begin{aligned}
 |\vect r'|&\ll r,\\
 |\vect r-\vect r'|&=\sqrt{(\vect r-\vect r')^2}
 =\sqrt{r^2+r'^2-2\vect r\cdot\vect r'}\\
 &\simeq r\left(1-2\frac{\vect r\cdot\vect r'}{r^2}\right)^{1/2}
 \simeq r-\frac{\vect r\cdot\vect r'}r.
-\end{align*}
+\end{aligned}\end{equation}
 Consequently,
-\[
+\begin{equation}
 \psi^+(\vect r)\xrightarrow{r\to\infty}
 Ae^{\ii\vect k\cdot\vect r}
 -\frac1{4\pi}\frac{2m}{\hbar^2}\frac{e^{\ii kr}}r
 \int\dd^3r'\,e^{-\ii\vect k'\cdot\vect r'}V(\vect r')\psi^+(\vect r').
-\]
+\end{equation}
 In the phase, $|\vect r-\vect r'|$ is retained to first order; in the denominator only the zeroth-order term is kept. The scattered wavevector is $\vect k'=k\vect r/r$, with $|\vect k'|=k$.
 
 \begin{center}
@@ -134,9 +152,11 @@ In the phase, $|\vect r-\vect r'|$ is retained to first order; in the denominato
 \end{tikzpicture}
 \end{center}
 Comparing with the standard asymptotic solution
-\[\psi(\vect r)=Ae^{\ii\vect k\cdot\vect r}+Af(\theta,\varphi)\frac{e^{\ii kr}}r,\]
+\begin{equation}
+\psi(\vect r)=Ae^{\ii\vect k\cdot\vect r}+Af(\theta,\varphi)\frac{e^{\ii kr}}r,
+\end{equation}
 we obtain the scattering amplitude
-\begin{align*}
+\begin{equation}\begin{aligned}
 f(\theta,\varphi)
 &=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
 \int\dd^3r'\,\frac{e^{-\ii\vect k'\cdot\vect r'}}{(2\pi)^{3/2}}
@@ -147,40 +167,50 @@ V(\vect r')\psi^+(\vect r')\\
 &=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
 \mel{\vect k'}{\op V}{\psi^+}
 \equiv f(\vect k,\vect k').
-\end{align*}
+\end{aligned}\end{equation}
 Here we have taken
-\[\braket{\vect r}{\varphi}=\frac{e^{\ii\vect k\cdot\vect r}}{(2\pi)^{3/2}}.\]
+\begin{equation}
+\braket{\vect r}{\varphi}=\frac{e^{\ii\vect k\cdot\vect r}}{(2\pi)^{3/2}}.
+\end{equation}
 Define the transition operator $\op T$ by
-\[\op V\ket{\psi^+}\equiv\op T\ket\varphi.\]
+\begin{equation}
+\op V\ket{\psi^+}\equiv\op T\ket\varphi.
+\end{equation}
 Then the scattering amplitude is
-\[\boxed{f(\vect k,\vect k')=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
-\mel{\vect k'}{\op T}{\vect k}.}\]
+\begin{equation}
+\boxed{f(\vect k,\vect k')=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\mel{\vect k'}{\op T}{\vect k}.}
+\end{equation}
 The physical meaning of the transition matrix element $\mel{\vect k'}{\op T}{\vect k}$ is clear: it is the transition amplitude from the plane wave $\ket{\vect k}$ to the free state $\ket{\vect k'}$.
 
 If one considers the advanced Green function $G^-$, the resulting $\psi^-(\vect r)$ is a superposition of a plane wave and an inward-propagating spherical wave, rather than a solution of the outgoing scattering problem. Advanced and causal Green functions are relevant to time evolution in dynamical systems.
 
 \subsection*{4) Optical theorem}
 The forward scattering amplitude is
-\[f(0,\varphi)=f(\vect k,\vect k)=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
-\mel{\vect k}{\op V}{\psi^+}.\]
+\begin{equation}
+f(0,\varphi)=f(\vect k,\vect k)=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
+\mel{\vect k}{\op V}{\psi^+}.
+\end{equation}
 From the Lippmann--Schwinger equation (with $\ket\varphi=\ket{\vect k}$),
-\begin{align*}
+\begin{equation}\begin{aligned}
 \ket{\psi^+}&=\ket\varphi+\frac1{E-\op H_0+\ii\epsilon}\op V\ket{\psi^+},\\
 \bra{\vect k}&=\bra{\psi^+}-\bra{\psi^+}\op V
 \frac1{E-\op H_0-\ii\epsilon},
-\end{align*}
+\end{aligned}\end{equation}
 so that
-\begin{align*}
+\begin{equation}\begin{aligned}
 \mel{\vect k}{\op V}{\psi^+}
 &=\left(\bra{\psi^+}-\bra{\psi^+}\op V\frac1{E-\op H_0-\ii\epsilon}\right)\op V\ket{\psi^+}\\
 &=\mel{\psi^+}{\op V}{\psi^+}
 -\bra{\psi^+}\op V\frac1{E-\op H_0-\ii\epsilon}\op V\ket{\psi^+}.
-\end{align*}
+\end{aligned}\end{equation}
 Using
-\[\frac1{E-\op H_0-\ii\epsilon}
-=\operatorname{Pr}\frac1{E-\op H_0}+\ii\pi\delta(E-\op H_0),\]
+\begin{equation}
+\frac1{E-\op H_0-\ii\epsilon}
+=\operatorname{Pr}\frac1{E-\op H_0}+\ii\pi\delta(E-\op H_0),
+\end{equation}
 and noting that $\op V$ and $\op V(\operatorname{Pr}(E-\op H_0)^{-1})\op V$ are Hermitian operators, whose expectation values in $\ket{\psi^+}$ are real, we find
-\begin{align*}
+\begin{equation}\begin{aligned}
 \operatorname{Im}\mel{\vect k}{\op V}{\psi^+}
 &=-\pi\bra{\psi^+}\op V\delta(E-\op H_0)\op V\ket{\psi^+}\\
 &=-\pi\int\dd^3k'\,
@@ -191,24 +221,28 @@ and noting that $\op V$ and $\op V(\operatorname{Pr}(E-\op H_0)^{-1})\op V$ are 
 \delta\left(E-\frac{\hbar^2k'^2}{2m}\right)\\
 &=-\frac{\pi m k}{\hbar^2}\int\dd\Omega'\,
 \left|\mel{\vect k'}{\op V}{\psi^+}\right|^2.
-\end{align*}
+\end{aligned}\end{equation}
 Because
-\[\sigma(\vect k',\vect k)=|f(\vect k',\vect k)|^2
+\begin{equation}
+\sigma(\vect k',\vect k)=|f(\vect k',\vect k)|^2
 =\frac{(2\pi)^6}{16\pi^2}\frac{4m^2}{\hbar^4}
 \left|\mel{\vect k'}{\op V}{\psi^+}\right|^2,\qquad
-\sigma_{\mathrm{tot}}=\int\dd\Omega\,\sigma(\theta,\varphi),\]
+\sigma_{\mathrm{tot}}=\int\dd\Omega\,\sigma(\theta,\varphi),
+\end{equation}
 we obtain
-\begin{align*}
+\begin{equation}\begin{aligned}
 \operatorname{Im}\mel{\vect k}{\op V}{\psi^+}
 &=-\frac{\hbar^2k}{16\pi^3m}\int\dd\Omega'\,\sigma(\theta,\varphi)
 =-\frac{\hbar^2k}{16\pi^3m}\sigma_{\mathrm{tot}}.
-\end{align*}
+\end{aligned}\end{equation}
 Therefore
-\begin{align*}
+\begin{equation}\begin{aligned}
 \operatorname{Im}f(\theta=0)
 &=-\frac{(2\pi)^3}{4\pi}\frac{2m}{\hbar^2}
 \operatorname{Im}\mel{\vect k}{\op V}{\psi^+}\\
 &=\frac{k}{4\pi}\sigma_{\mathrm{tot}}.
-\end{align*}
+\end{aligned}\end{equation}
 This relation between the forward scattering amplitude and the total scattering cross section is called the \emph{optical theorem}:
-\[\boxed{\operatorname{Im}f(0)=\frac{k}{4\pi}\sigma_{\mathrm{tot}}}.\]
+\begin{equation}
+\boxed{\operatorname{Im}f(0)=\frac{k}{4\pi}\sigma_{\mathrm{tot}}}.
+\end{equation}

@@ -5,15 +5,15 @@ The SSH invariant is an integer obtained by winding around a circle. In two dime
 Let $\op h(\vect k)$ be a periodic Bloch Hamiltonian with $\vect k=(k_x,k_y)$, and let a normalized isolated band satisfy
 $\op h(\vect k)\ket{u_n(\vect k)}=E_n(\vect k)\ket{u_n(\vect k)}$.
 For a nondegenerate band define
-\[
+\begin{equation}
 \mathcal A_{n,i}(\vect k)=\ii\braket{u_n(\vect k)}{\partial_{k_i}u_n(\vect k)}.
-\]
+\end{equation}
 This is a connection in momentum space; it is the same geometric object used in the Berry-phase derivation but evaluated as the Bloch momentum varies. The corresponding \emph{Berry curvature} is
-\[
+\begin{equation}
 \Omega_n(\vect k)=\partial_{k_x}\mathcal A_{n,y}-\partial_{k_y}\mathcal A_{n,x}
 =\ii\left(\braket{\partial_{k_x}u_n}{\partial_{k_y}u_n}
 -\braket{\partial_{k_y}u_n}{\partial_{k_x}u_n}\right).
-\]
+\end{equation}
 Under a gauge transformation $\ket{u_n}\mapsto e^{\ii\chi(\vect k)}\ket{u_n}$, the connection changes by $-\vect\nabla_{\vect k}\chi$, whereas $\Omega_n$ is gauge invariant. Stokes' theorem relates the Berry phase around a contour to the curvature passing through an enclosed surface.
 
 \subsection*{2) The Chern number}
@@ -39,13 +39,13 @@ Consider the square-lattice two-band model
 Energy bands are $E_\pm=\pm|\vect d|$. They touch only when $d_x=d_y=d_z=0$, which requires $k_x,k_y\in\{0,\pi\}$ and $M=-2,0,2$. These critical values divide the parameter axis into four gapped regimes.
 
 Near any crossing, a change $\vect k=\vect K+\vect q$ gives a two-dimensional Dirac form $\op h\simeq v_xq_x\sigma_x+v_yq_y\sigma_y+m_{\vect K}\sigma_z$. The four points have masses and orientation factors
-\[
+\begin{equation}
 \begin{array}{c|cccc}
 \vect K &(0,0)&(\pi,0)&(0,\pi)&(\pi,\pi)\\\hline
 m_{\vect K}&M+2&M&M&M-2\\
 \operatorname{sgn}(v_xv_y)&+1&-1&-1&+1
 \end{array}
-\]
+\end{equation}
 A regularized massive Dirac cone changes the lower-band Chern number when its mass crosses zero. Summing the four contributions using Eq.~\eqref{eq:chern-twoband} gives
 \begin{equation}\label{eq:q-w-z-phase}
 \boxed{C_- =\frac12\Bigl[\operatorname{sgn}(M+2)-2\operatorname{sgn}(M)
@@ -76,9 +76,9 @@ This model is a convenient algebraic route to a Chern insulator. The honeycomb-l
 
 \subsection*{4) Hall conductance and boundary transport}
 For completely filled, isolated noninteracting electron bands and under the usual clean-gap assumptions, the transverse conductivity is quantized in units of the conductance quantum:
-\[
+\begin{equation}
 \boxed{\sigma_{xy}=\frac{e^2}{h}\sum_{n\in\mathrm{occupied}}C_n,}
-\]
+\end{equation}
 with sign fixed by the chosen electric-charge and Hall-orientation conventions. This is the TKNN result~\cite{TKNN1982}. At an interface where the Chern number changes, the spectral gap must be bridged by conducting boundary modes. For $|C|=1$ there is one net chiral edge channel, whose direction is tied to the sign of the invariant. A disorder perturbation that respects the bulk mobility gap cannot remove the net chirality of an isolated edge.
 
 \section{Other Topological Phases and Present Perspective}

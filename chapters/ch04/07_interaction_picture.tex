@@ -6,57 +6,57 @@ First review the Schr\"odinger picture and the Heisenberg picture.
 
 \textbf{Schr\"odinger picture:}
 The state depends on time $t$:
-\[
+\begin{equation}
  \ket{\alpha,t}_{\mathrm S}=\op U(t)\ket{\alpha,0}_{\mathrm S},
  \qquad \op U(t)=e^{-\ii\op Ht/\hbar}.
-\]
+\end{equation}
 A mechanical quantity does not depend explicitly on time: $\op A_{\mathrm S}$.
 
 The dynamical equation is
-\[
+\begin{equation}
  \ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm S}
  =\op H\ket{\alpha,t}_{\mathrm S}.
-\]
+\end{equation}
 \textbf{Heisenberg picture:}
 The state does not depend on time: $\ket\alpha_{\mathrm H}$.
 
 The mechanical quantities depend on time:
-\[
+\begin{equation}
  \op A_{\mathrm H}(t)=\op U^\dagger(t)\op A_{\mathrm H}(0)\op U(t).
-\]
+\end{equation}
 The dynamical equation is
-\[
+\begin{equation}
  \frac{\dd\op A_{\mathrm H}}{\dd t}
  =\frac1{\ii\hbar}[\op A_{\mathrm H},\op H].
-\]
+\end{equation}
 The Hamiltonian $\op H$ is the same in both pictures.
 
 Now introduce the interaction picture. In the Schr\"odinger picture, separate the Hamiltonian into two parts:
-\[
+\begin{equation}
  \op H=\op H^{(0)}+\op H^{(1)}.
-\]
+\end{equation}
 Define the relation between states in the interaction and Schr\"odinger pictures by
-\[
+\begin{equation}
  \ket{\alpha,t}_{\mathrm I}
  =e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}.
-\]
+\end{equation}
 The expectation value of a mechanical quantity $\op O$ is independent of the picture:
-\begin{align*}
+\begin{equation}\begin{aligned}
  {}_{\mathrm I}\!\mel{\alpha,t}{\op O_{\mathrm I}}{\alpha,t}_{\mathrm I}
  &={}_{\mathrm S}\!\mel{\alpha,t}{\op O_{\mathrm S}}{\alpha,t}_{\mathrm S}\\
  &={}_{\mathrm I}\!\bra{\alpha,t}e^{\ii\op H^{(0)}t/\hbar}
  \op O_{\mathrm S}e^{-\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm I}.
-\end{align*}
+\end{aligned}\end{equation}
 Hence mechanical quantities are related by
-\[
+\begin{equation}
  \boxed{\op O_{\mathrm I}
  =e^{\ii\op H^{(0)}t/\hbar}\op O_{\mathrm S}
  e^{-\ii\op H^{(0)}t/\hbar}.}
-\]
+\end{equation}
 \textbf{Note:} $\op H^{(0)}$ is the same in the Schr\"odinger and interaction pictures, but $\op H^{(1)}$ is not.
 
 In the interaction picture, both states and mechanical quantities depend on time. The equation of motion for states is
-\begin{align*}
+\begin{equation}\begin{aligned}
  \ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm I}
  &=-\op H^{(0)}e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}
  +e^{\ii\op H^{(0)}t/\hbar}
@@ -68,46 +68,46 @@ In the interaction picture, both states and mechanical quantities depend on time
  e^{-\ii\op H^{(0)}t/\hbar}
  e^{\ii\op H^{(0)}t/\hbar}\ket{\alpha,t}_{\mathrm S}\\
  &=\op H^{(1)}_{\mathrm I}\ket{\alpha,t}_{\mathrm I}.
-\end{align*}
+\end{aligned}\end{equation}
 The equation of motion for an operator in the interaction picture is
-\begin{align*}
+\begin{equation}\begin{aligned}
  \ii\hbar\frac{\partial}{\partial t}\op O_{\mathrm I}
  &=-\op H^{(0)}\op O_{\mathrm I}+\op O_{\mathrm I}\op H^{(0)}\\
  &=[\op O_{\mathrm I},\op H^{(0)}].
-\end{align*}
+\end{aligned}\end{equation}
 Although both states and mechanical quantities depend on time in the interaction picture (only states depend on time in the Schr\"odinger picture, and only mechanical quantities depend on time in the Heisenberg picture), the time evolution of the states depends only on $\op H^{(1)}$, while the time evolution of the mechanical quantities depends only on $\op H^{(0)}$. This is very useful in perturbative expansions.
 
 \subsection*{2) Perturbative expansion}
 The time evolution of a state in the interaction picture is
-\[
+\begin{equation}
  \ket{\alpha,t}_{\mathrm I}
  =\op U(t,t_0)\ket{\alpha,t_0}_{\mathrm I}.
-\]
+\end{equation}
 The equation of motion for the interaction-picture state gives
-\[
+\begin{equation}
  \ii\hbar\frac{\partial}{\partial t}\op U(t,t_0)
  =\op H^{(1)}_{\mathrm I}(t)\op U(t,t_0),
-\]
+\end{equation}
 subject to
-\[
+\begin{equation}
  \op U(t_0,t_0)=\mathbf1.
-\]
+\end{equation}
 Its integral solution is
-\[
+\begin{equation}
  \op U(t,t_0)=\mathbf1-\frac{\ii}{\hbar}
  \int_{t_0}^{t}\dd t'\,\op H^{(1)}_{\mathrm I}(t')\op U(t',t_0).
-\]
+\end{equation}
 By iteration,
-\begin{align*}
+\begin{equation}\begin{aligned}
  \op U(t,t_0)
  &=\mathbf1-\frac{\ii}{\hbar}\int_{t_0}^{t}\dd t'\,
  \op H^{(1)}_{\mathrm I}(t')\\
  &\quad+\left(-\frac{\ii}{\hbar}\right)^2
  \int_{t_0}^{t}\dd t'\int_{t_0}^{t'}\dd t''\,
  \op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')+\cdots.
-\end{align*}
+\end{aligned}\end{equation}
 For the third term on the right,
-\begin{align*}
+\begin{equation}\begin{aligned}
  &\int_{t_0}^{t}\dd t'\int_{t_0}^{t'}\dd t''\,
  \op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\\
  &=\frac1{2!}\biggl[
@@ -118,17 +118,17 @@ For the third term on the right,
  \biggr]\\
  &=\frac1{2!}\int_{t_0}^{t}\dd t'\int_{t_0}^{t}\dd t''\,
  \timeorder\left(\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\right).
-\end{align*}
+\end{aligned}\end{equation}
 The second term on the right of the first equality is obtained by interchanging the integration variables. The time-ordered product $\timeorder$ is defined by
-\begin{align*}
+\begin{equation}\begin{aligned}
  &\timeorder\left(\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\right)\\
  &\quad=\op H^{(1)}_{\mathrm I}(t')\op H^{(1)}_{\mathrm I}(t'')\theta(t'-t'')
  +\op H^{(1)}_{\mathrm I}(t'')\op H^{(1)}_{\mathrm I}(t')\theta(t''-t').
-\end{align*}
+\end{aligned}\end{equation}
 The operator corresponding to the later time always stands to the left.
 
 Thus the solution for the time-evolution operator can be written as
-\[
+\begin{equation}
  \boxed{\begin{aligned}
  \op U(t,t_0)&=\sum_{n=0}^{\infty}\frac1{n!}
  \left(-\frac{\ii}{\hbar}\right)^n
@@ -138,5 +138,5 @@ Thus the solution for the time-evolution operator can be written as
  \op H^{(1)}_{\mathrm I}(t_2)\cdots
  \op H^{(1)}_{\mathrm I}(t_n)\right).
  \end{aligned}}
-\]
+\end{equation}
 This is the perturbative expansion of the evolution operator for states in the interaction picture, and it is the foundation of perturbation theory in quantum mechanics and quantum field theory.

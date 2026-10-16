@@ -6,46 +6,46 @@ The nonrelativistic Schr\"odinger equation describes a scalar wavefunction and, 
 
 \subsection*{1) A two-component wavefunction}
 For spin $1/2$ write
-\[
+\begin{equation}
  \psi(\vect r,t)=\begin{pmatrix}\psi_\uparrow(\vect r,t)\\\psi_\downarrow(\vect r,t)\end{pmatrix},
  \qquad \op{\vect s}=\frac{\hbar}{2}\vect\sigma,
-\]
+\end{equation}
 where $\vect\sigma=(\sigma_x,\sigma_y,\sigma_z)$ denotes the Pauli matrices,
-\[
+\begin{equation}
 \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad
 \sigma_y=\begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix},\quad
 \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
-\]
+\end{equation}
 They satisfy $\sigma_i\sigma_j=\delta_{ij}\mathbf1_2+\ii\sum_k\epsilon_{ijk}\sigma_k$. Thus, for vectors of mutually commuting scalars, $(\vect\sigma\cdot\vect a)^2=\vect a^{\,2}\mathbf1_2$. In an electromagnetic field we must take account of the noncommutativity of kinetic momentum components.
 
 \subsection*{2) Minimal coupling and the kinetic momentum}
 For a particle of mass $m$ and electric charge $q$ in the electromagnetic potentials $\phi(\vect r,t)$ and $\vect A(\vect r,t)$, define
-\[
+\begin{equation}
  \op{\vect p}=-\ii\hbar\vect\nabla,\qquad
  \op{\vect\pi}=\op{\vect p}-\frac qc\vect A(\op{\vect r},t),
  \qquad \vect B=\vect\nabla\times\vect A.
-\]
+\end{equation}
 Here $\op{\vect p}$ is the canonical momentum, whereas $\op{\vect\pi}$ is the mechanical (kinetic) momentum. The Pauli Hamiltonian is
 \begin{equation}\label{eq:pauli-compact}
 \boxed{\op H_{\mathrm P}=\frac1{2m}(\vect\sigma\cdot\op{\vect\pi})^2+q\phi(\op{\vect r},t).}
 \end{equation}
 To expand the square, use the Pauli identity in operator form:
-\[
+\begin{equation}
 (\vect\sigma\cdot\op{\vect\pi})^2
 =\sum_{ij}(\delta_{ij}\mathbf1_2+\ii\epsilon_{ijk}\sigma_k)\op\pi_i\op\pi_j
 =\op{\vect\pi}^{\,2}+\frac\ii2\sum_{ijk}\epsilon_{ijk}\sigma_k[\op\pi_i,\op\pi_j].
-\]
+\end{equation}
 Direct differentiation gives
-\[
+\begin{equation}
 [\op\pi_i,\op\pi_j]
 =\frac{\ii q\hbar}{c}(\partial_i A_j-\partial_j A_i)
 =\frac{\ii q\hbar}{c}\epsilon_{ijk}B_k.
-\]
+\end{equation}
 Consequently,
-\[
+\begin{equation}
 \boxed{(\vect\sigma\cdot\op{\vect\pi})^2
 =\op{\vect\pi}^{\,2}-\frac{q\hbar}{c}\vect\sigma\cdot\vect B},
-\]
+\end{equation}
 and hence
 \begin{equation}\label{eq:pauli-expanded}
 \boxed{\op H_{\mathrm P}=\frac{\op{\vect\pi}^{\,2}}{2m}
@@ -56,24 +56,24 @@ The spin-field term is $-\op{\vect\mu}_{s}\cdot\vect B$ with magnetic moment $\o
 \subsection*{3) Orbital and spin magnetic moments in a weak uniform field}
 To identify the orbital contribution, consider a uniform field and choose the symmetric gauge
 $\vect A=\frac12\vect B\times\vect r$. For weak $B$ we retain terms through first order in the field:
-\[
+\begin{equation}
 \begin{aligned}
 \op{\vect\pi}^{\,2}
  &=\op{\vect p}^{\,2}-\frac qc(\op{\vect p}\cdot\vect A+\vect A\cdot\op{\vect p})+O(B^2)\\
  &=\op{\vect p}^{\,2}-\frac{q}{c}\vect B\cdot(\op{\vect r}\times\op{\vect p})+O(B^2).
 \end{aligned}
-\]
+\end{equation}
 Here $\vect\nabla\cdot\vect A=0$ and $\op{\vect L}=\op{\vect r}\times\op{\vect p}$ is the orbital angular momentum. Substituting into Eq.~\eqref{eq:pauli-expanded} yields
-\[
+\begin{equation}
  \op H_{\mathrm P}=\frac{\op{\vect p}^{\,2}}{2m}+q\phi
  -\frac{q}{2mc}\op{\vect L}\cdot\vect B
  -\frac{q}{mc}\op{\vect s}\cdot\vect B+O(B^2).
-\]
+\end{equation}
 Define the two magnetic moments by
-\[
+\begin{equation}
  \boxed{\op{\vect\mu}_L=\frac{q}{2mc}\op{\vect L},\qquad
  \op{\vect\mu}_s=\frac{q}{mc}\op{\vect s}.}
-\]
+\end{equation}
 The orbital coefficient is half the spin coefficient. The same ratio will reappear from the relativistic Dirac equation. For atoms, these couplings underlie the Zeeman splitting and, after including the nuclear spin, hyperfine structure.
 
 \section{From Relativistic Energy to the Dirac Equation}
@@ -87,9 +87,9 @@ We seek a wave equation compatible with this relation. It will have to accommoda
 Using the same operator substitutions as in the Schr\"odinger equation,
 $E\mapsto\ii\hbar\partial_t$ and $\vect p\mapsto-\ii\hbar\vect\nabla$,
 Eq.~\eqref{eq:mass-shell} gives
-\[
+\begin{equation}
  -\hbar^2\partial_t^2\phi=-\hbar^2c^2\nabla^2\phi+m^2c^4\phi.
-\]
+\end{equation}
 Thus a relativistic scalar field obeys the Klein--Gordon equation
 \begin{equation}\label{eq:kg-handout}
 \boxed{\left(\frac1{c^2}\frac{\partial^2}{\partial t^2}-\nabla^2
@@ -99,25 +99,25 @@ With $x^\mu=(ct,\vect r)$, metric $g_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$ a
 
 \subsection*{2) A first-order relativistic Hamiltonian}
 Dirac's strategy is to factor the expression on the right of Eq.~\eqref{eq:mass-shell} using matrices:
-\[
+\begin{equation}
  \op H_{\mathrm D}=c\vect\alpha\cdot\op{\vect p}+\beta mc^2,
  \qquad \ii\hbar\frac{\partial\psi}{\partial t}=\op H_{\mathrm D}\psi.
-\]
+\end{equation}
 The matrices $\alpha_i$ and $\beta$ are independent of position and momentum. Expanding the square and demanding $\op H_{\mathrm D}^2=(c^2\op{\vect p}^{\,2}+m^2c^4)\mathbf1$ gives
-\[
+\begin{equation}
  \boxed{\{\alpha_i,\alpha_j\}=2\delta_{ij}\mathbf1,\quad
  \{\alpha_i,\beta\}=0,\quad \beta^2=\mathbf1.}
-\]
+\end{equation}
 The anticommutation relations cannot be satisfied by ordinary numbers or by $2\times2$ complex Hermitian matrices simultaneously for three independent spatial directions and one mass matrix. A four-component representation works:
 \begin{equation}\label{eq:pauli-dirac-alpha}
 \alpha_i=\begin{pmatrix}0&\sigma_i\\\sigma_i&0\end{pmatrix},\qquad
 \beta=\begin{pmatrix}\mathbf1_2&0\\0&-\mathbf1_2\end{pmatrix}.
 \end{equation}
 Consequently the Dirac wavefunction is a four-component spinor,
-\[
+\begin{equation}
  \psi=\begin{pmatrix}\varphi\\\chi\end{pmatrix},
  \qquad\varphi,\chi\in\mathbb C^2.
-\]
+\end{equation}
 The two Pauli spinors are coupled by the momentum operator. Positive- and negative-energy solutions occur; in the quantum-field interpretation, the latter are related to antiparticles.
 
 \subsection*{3) Covariant form}

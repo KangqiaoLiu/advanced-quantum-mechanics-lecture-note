@@ -7,28 +7,36 @@ In the Stern--Gerlach experiment, $s_z$ has no definite value before the magneti
 \textbf{Postulate of quantum mechanics:} Physical quantities of a quantum-mechanical system are represented by Hermitian operators in a linear vector space, and states are represented by vectors. Because the eigenstates of a Hermitian operator are complete, the eigenstates of any physical quantity can form a linear vector space, or a representation.
 
 The eigenvalue equation of $\op F$ is
-\[\op F\ket n=f_n\ket n.\]
+\begin{equation}
+\op F\ket n=f_n\ket n.
+\end{equation}
 In the $F$ representation, the basis vectors are $\ket n$. An arbitrary state is
-\[\ket a=\sum_n\ket n\braket n a.\]
+\begin{equation}
+\ket a=\sum_n\ket n\braket n a.
+\end{equation}
 The coefficient $\braket n a$ is the concrete representation of $\ket a$ in the $F$ representation.
 
 \textbf{Postulate of quantum mechanics:} The physical quantity $\op F$ has a definite value, namely the eigenvalue $f_n$, only in its eigenstate $\ket n$. In an arbitrary state $\ket a$, $\op F$ has no definite value, but has a definite average value
-\[\langle F\rangle\equiv\mel a{\op F}a.\]
+\begin{equation}
+\langle F\rangle\equiv\mel a{\op F}a.
+\end{equation}
 (The eigenvalues and expectation values of Hermitian operators are real. This is why physical quantities are represented by Hermitian operators.)
-\begin{align*}
+\begin{equation}\begin{aligned}
 \langle F\rangle
 &\equiv\mel a{\op F}a
 =\sum_{n,m}\braket a n\mel n{\op F}m\braket m a\\
 &=\sum_{n,m}\braket a n f_m\delta_{nm}\braket m a
 =\sum_n\braket a n\braket n a f_n
 =\sum_n|\braket n a|^2f_n.
-\end{align*}
+\end{aligned}\end{equation}
 Thus the probability that $\op F$ takes the value $f_n$ is $|\braket n a|^2$. The quantity $\braket n a$ is a probability amplitude, and $|\braket n a|^2$ is the probability for state $\ket a$ to contain state $\ket n$.
 
 In a general state, the value of a physical quantity is uncertain, but its probabilities and expectation value are definite.
 
 In the eigenbasis of $\op F$, the matrix elements are
-\[F_{mn}=\mel m{\op F}n=f_n\braket m n=f_n\delta_{mn}.\]
+\begin{equation}
+F_{mn}=\mel m{\op F}n=f_n\braket m n=f_n\delta_{mn}.
+\end{equation}
 Thus a physical quantity is represented by a diagonal matrix in its own representation, and the diagonal elements are its eigenvalues.
 
 We now discuss measurement and collapse of the state.
@@ -46,66 +54,96 @@ First measurement: $\ket a\longrightarrow\ket n$.
 At the second measurement, the system is already in the eigenstate $\ket n$ of $\op F$; the result is still $f_n$. This explains why an Ag atom in the Stern--Gerlach experiment still has spin $s_z^+$ after passing through two magnetic fields in the $z$ direction.
 \subsection*{2) Spin matrices}
 From the Stern--Gerlach experiment, the electron has spin $1/2$, and the spin operator $\vect{\op s}\cdot\vect e_n=\op s_n$ along any direction $\vect e_n$ takes the values $\pm\hbar/2$. Its eigenvalue equation is
-\[\op s_n\ket{s_n^\pm}=\pm\frac\hbar2\ket{s_n^\pm}.\]
+\begin{equation}
+\op s_n\ket{s_n^\pm}=\pm\frac\hbar2\ket{s_n^\pm}.
+\end{equation}
 In the representation formed by the eigenstates of $\op s_z$ (the $s_z$ representation), $s_z$ is a diagonal matrix whose diagonal entries are $\pm\hbar/2$:
-\[s_z=\frac\hbar2\begin{pmatrix}1&0\\0&-1\end{pmatrix}.\]
+\begin{equation}
+s_z=\frac\hbar2\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\end{equation}
 Solving
-\[s_z\begin{pmatrix}a\\b\end{pmatrix}=\pm\frac\hbar2\begin{pmatrix}a\\b\end{pmatrix}\]
+\begin{equation}
+s_z\begin{pmatrix}a\\b\end{pmatrix}=\pm\frac\hbar2\begin{pmatrix}a\\b\end{pmatrix}
+\end{equation}
 gives the normalized eigenstates
-\[\ket{s_z^+}=\begin{pmatrix}1\\0\end{pmatrix},\qquad
-\ket{s_z^-}=\begin{pmatrix}0\\1\end{pmatrix}.\]
+\begin{equation}
+\ket{s_z^+}=\begin{pmatrix}1\\0\end{pmatrix},\qquad
+\ket{s_z^-}=\begin{pmatrix}0\\1\end{pmatrix}.
+\end{equation}
 We now find the matrices for $\op s_x$ and $\op s_y$ in the $s_z$ representation. From the completeness of the eigenstates of $\op s_z$,
-\[
+\begin{equation}
 \ket{s_x^+}=\sum_{i=\pm}\ket{s_z^i}\braket{s_z^i}{s_x^+}
 =\braket{s_z^+}{s_x^+}\ket{s_z^+}
 +\braket{s_z^-}{s_x^+}\ket{s_z^-}.
-\]
+\end{equation}
 The cascaded Stern--Gerlach experiment shows that a state with a definite $s_x$ value, after passing through a $z$-directed magnetic field (a measurement device for $s_z$), separates into two beams of equal intensity, with equal probabilities for $s_z^+$ and $s_z^-$:
-\[
+\begin{equation}
 |\braket{s_z^+}{s_x^+}|=|\braket{s_z^-}{s_x^+}|=\frac1{\sqrt2}.
-\]
+\end{equation}
 Consequently,
-\[\ket{s_x^+}=\frac1{\sqrt2}\ket{s_z^+}+\frac1{\sqrt2}e^{\ii\delta_1}\ket{s_z^-}.\]
+\begin{equation}
+\ket{s_x^+}=\frac1{\sqrt2}\ket{s_z^+}+\frac1{\sqrt2}e^{\ii\delta_1}\ket{s_z^-}.
+\end{equation}
 Through normalization, the phase factors have been collected into $\delta_1$.
 
 Using the orthonormality of $\ket{s_x^\pm}$,
 $\braket{s_x^i}{s_x^j}=\delta_{ij}$, we obtain
-\[\ket{s_x^-}=\frac1{\sqrt2}\ket{s_z^+}-\frac1{\sqrt2}e^{\ii\delta_1}\ket{s_z^-}.\]
+\begin{equation}
+\ket{s_x^-}=\frac1{\sqrt2}\ket{s_z^+}-\frac1{\sqrt2}e^{\ii\delta_1}\ket{s_z^-}.
+\end{equation}
 Equivalently,
-\[
+\begin{equation}
 \begin{cases}
 \displaystyle\ket{s_z^+}=\frac1{\sqrt2}(\ket{s_x^+}+\ket{s_x^-}),\\[5pt]
 \displaystyle\ket{s_z^-}=\frac1{\sqrt2}e^{-\ii\delta_1}(\ket{s_x^+}-\ket{s_x^-}).
 \end{cases}
-\]
+\end{equation}
 Substituting into the matrix elements of $\op s_x$ gives
-\[
+\begin{equation}
 \mel{s_z^+}{\op s_x}{s_z^+}=0,\quad
 \mel{s_z^+}{\op s_x}{s_z^-}=\frac\hbar2e^{-\ii\delta_1},\quad
 \mel{s_z^-}{\op s_x}{s_z^+}=\frac\hbar2e^{\ii\delta_1},\quad
 \mel{s_z^-}{\op s_x}{s_z^-}=0.
-\]
+\end{equation}
 Thus
-\[s_x=\frac\hbar2\begin{pmatrix}0&e^{-\ii\delta_1}\\e^{\ii\delta_1}&0\end{pmatrix}.\]
+\begin{equation}
+s_x=\frac\hbar2\begin{pmatrix}0&e^{-\ii\delta_1}\\e^{\ii\delta_1}&0\end{pmatrix}.
+\end{equation}
 Similarly,
-\[\ket{s_y^\pm}=\frac1{\sqrt2}\ket{s_z^+}\pm\frac1{\sqrt2}e^{\ii\delta_2}\ket{s_z^-},\qquad
-s_y=\frac\hbar2\begin{pmatrix}0&e^{-\ii\delta_2}\\e^{\ii\delta_2}&0\end{pmatrix}.\]
+\begin{equation}
+\ket{s_y^\pm}=\frac1{\sqrt2}\ket{s_z^+}\pm\frac1{\sqrt2}e^{\ii\delta_2}\ket{s_z^-},\qquad
+s_y=\frac\hbar2\begin{pmatrix}0&e^{-\ii\delta_2}\\e^{\ii\delta_2}&0\end{pmatrix}.
+\end{equation}
 Now consider the values of $\delta_1,\delta_2$. A state with a definite $s_x$ value, after passing through a magnetic field in the $y$ direction (a measurement device for $s_y$), splits into two equally intense beams corresponding to $s_y^+$ and $s_y^-$:
-\[|\braket{s_y^\pm}{s_x^+}|=\frac1{\sqrt2}.\]
+\begin{equation}
+|\braket{s_y^\pm}{s_x^+}|=\frac1{\sqrt2}.
+\end{equation}
 That is,
-\[\frac12\left|1\pm e^{\ii(\delta_1-\delta_2)}\right|=\frac1{\sqrt2}.\]
+\begin{equation}
+\frac12\left|1\pm e^{\ii(\delta_1-\delta_2)}\right|=\frac1{\sqrt2}.
+\end{equation}
 Hence
-\[\delta_1-\delta_2=\pm\frac\pi2.\]
+\begin{equation}
+\delta_1-\delta_2=\pm\frac\pi2.
+\end{equation}
 Choosing $\delta_1=0$ and $\delta_2=\pi/2$ yields
-\[s_x=\frac\hbar2\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
-s_y=\frac\hbar2\begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix}.\]
+\begin{equation}
+s_x=\frac\hbar2\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+s_y=\frac\hbar2\begin{pmatrix}0&-\ii\\\ii&0\end{pmatrix}.
+\end{equation}
 For $s_x,s_y,s_z$, one can show that
-\[ [s_i,s_j]=\ii\epsilon_{ijk}\hbar s_k,\qquad
-\{s_i,s_j\}=\frac{\hbar^2}{2}\delta_{ij},\]
+\begin{equation}
+ [s_i,s_j]=\ii\epsilon_{ijk}\hbar s_k,\qquad
+\{s_i,s_j\}=\frac{\hbar^2}{2}\delta_{ij},
+\end{equation}
 where
-\[[A,B]=AB-BA,\qquad\{A,B\}=AB+BA.\]
+\begin{equation}
+[A,B]=AB-BA,\qquad\{A,B\}=AB+BA.
+\end{equation}
 Define
-\[s^2=\sum_i s_i^2=\frac{3}{4}\hbar^2\begin{pmatrix}1&0\\0&1\end{pmatrix}.\]
+\begin{equation}
+s^2=\sum_i s_i^2=\frac{3}{4}\hbar^2\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\end{equation}
 Because $s^2$ is proportional to the identity matrix, every state is its eigenstate, and it has the definite value $3\hbar^2/4$ in every state. Clearly, $\op{s^2}$ commutes with every physical quantity $\op F$ and may be regarded as a classical quantity.
 \subsection*{3) Conditions for simultaneous measurement of several physical quantities}
 Can two physical quantities $\op A$ and $\op B$ be measured simultaneously?
@@ -113,26 +151,36 @@ Can two physical quantities $\op A$ and $\op B$ be measured simultaneously?
 \textbf{Theorem.} If $\op A$ and $\op B$ have a complete set of common eigenstates, then $\op A$ and $\op B$ commute.
 
 \textbf{Proof.} Let the complete common eigenstates be $\ket n$, with
-\[\op A\ket n=a_n\ket n,\qquad \op B\ket n=b_n\ket n.\]
+\begin{equation}
+\op A\ket n=a_n\ket n,\qquad \op B\ket n=b_n\ket n.
+\end{equation}
 In the representation formed by $\ket n$, an arbitrary state is
-\[\ket\psi=\sum_n\ket n\braket n\psi.\]
+\begin{equation}
+\ket\psi=\sum_n\ket n\braket n\psi.
+\end{equation}
 Then
-\begin{align*}
+\begin{equation}\begin{aligned}
 (\op A\op B-\op B\op A)\ket\psi
 &=\sum_n(\op A\op B-\op B\op A)\ket n\braket n\psi\\
 &=\sum_n(\op A b_n-\op B a_n)\ket n\braket n\psi\\
 &=\sum_n(a_nb_n-b_na_n)\ket n\braket n\psi=0.
-\end{align*}
+\end{aligned}\end{equation}
 Since $\ket\psi$ is arbitrary, $[\op A,\op B]=0$.
 
 \textbf{Converse theorem.} If $\op A$ and $\op B$ commute, then they have a complete set of common eigenstates.
 
 \textbf{Proof.} Let $\ket n$ be an eigenstate of $\op A$:
-\[\op A\ket n=a_n\ket n.\]
+\begin{equation}
+\op A\ket n=a_n\ket n.
+\end{equation}
 From $[\op A,\op B]=0$,
-\[\op A\op B\ket n=\op B\op A\ket n=a_n\op B\ket n.\]
+\begin{equation}
+\op A\op B\ket n=\op B\op A\ket n=a_n\op B\ket n.
+\end{equation}
 Thus $\op B\ket n$ is also an eigenstate of $\op A$ with eigenvalue $a_n$. If $\op A$ is nondegenerate, $\op B\ket n$ and $\ket n$ are the same state up to a constant:
-\[\op B\ket n=b_n\ket n.\]
+\begin{equation}
+\op B\ket n=b_n\ket n.
+\end{equation}
 Therefore $\ket n$ is also an eigenstate of $\op B$, and $\op A$ and $\op B$ have a complete common eigenbasis.
 
 If $\op A$ is degenerate, one can use the Schmidt method to prove the same result (exercise).
@@ -142,47 +190,79 @@ If $\op A$ is degenerate, one can use the Schmidt method to prove the same resul
 Note that $[\op A,\op B]=0$ and $[\op B,\op C]=0$ mean that $A,B$ can have definite values simultaneously and that $B,C$ can have definite values simultaneously. However, $A,C$ need not have definite values simultaneously.
 
 When $\op A$ and $\op B$ do not commute, they cannot have a complete set of common eigenstates and cannot always be measured simultaneously. They may, however, be simultaneously measurable in a subspace. For example, for orbital angular momentum,
-\[[\op{\vect L}^{\,2},\op L_x]=0,\qquad [\op{\vect L}^{\,2},\op L_y]=0,\qquad [\op L_x,\op L_y]\ne0.\]
+\begin{equation}
+[\op{\vect L}^{\,2},\op L_x]=0,\qquad [\op{\vect L}^{\,2},\op L_y]=0,\qquad [\op L_x,\op L_y]\ne0.
+\end{equation}
 Thus $L^2,L_x$ can have definite values simultaneously, and $L^2,L_y$ can have definite values simultaneously, while $L_x,L_y$ cannot generally have definite values simultaneously. In the state with $L=0$, however, $L_x,L_y$ are simultaneously definite, with $L_x=L_y=0$.
 \subsection*{4) Complete set of physical quantities}
 When eigenvalues and eigenstates of a physical quantity are degenerate,
-\[\op F\ket{i,j}=f_i\ket{i,j},\qquad j=1,\ldots,g,\]
+\begin{equation}
+\op F\ket{i,j}=f_i\ket{i,j},\qquad j=1,\ldots,g,
+\end{equation}
 Schmidt orthogonalization can be used mathematically to obtain orthonormal eigenstates. In physics, however, one generally introduces a complete set of physical quantities to achieve orthonormality.
 
 That several eigenstates share one eigenvalue indicates that this physical quantity is insufficient to characterize the states completely; another physical quantity is needed to distinguish them. Introduce $\op T$ and require that the eigenstates of $\op F$ also be eigenstates of $\op T$:
-\[\op F\ket{i,j}=f_i\ket{i,j},\qquad
-  \op T\ket{i,j}=t_j\ket{i,j}.\]
+\begin{equation}
+\op F\ket{i,j}=f_i\ket{i,j},\qquad
+  \op T\ket{i,j}=t_j\ket{i,j}.
+\end{equation}
 For the set $\{\op F,\op T\}$, if the pair of eigenvalues $\{f_i,t_j\}$ corresponds one-to-one to the eigenstate $\ket{i,j}$, there is no degeneracy, and the orthonormality condition is
-\[\braket{i,j}{i',j'}=\delta_{ii'}\delta_{jj'}.\]
+\begin{equation}
+\braket{i,j}{i',j'}=\delta_{ii'}\delta_{jj'}.
+\end{equation}
 \subsection*{5) Cascaded measurements}
 For three physical quantities $\op A,\op B,\op C$, consider the following two measurement procedures.
 
 \textbf{First procedure:}
-\begin{center}\begin{tikzpicture}[>=Latex,scale=.9]
-\foreach \x/\name in {0/{Measure $A$},2.4/{Measure $B$},4.8/{Measure $C$}}{\draw (\x,-.3)rectangle(\x+1.5,.55);\node at (\x+.75,.15){\name};}
-\draw[->](-.65,.1)--(0,.1);\draw[->](1.5,.1)--(2.4,.1);\draw[->](3.9,.1)--(4.8,.1);\draw[->](6.3,.1)--(6.95,.1);
-\node[below]at(-.45,-.3){$\ket\Psi$};\node[below]at(1.7,-.3){$\ket a$};\node[below]at(4.1,-.3){$\ket b$};\node[below]at(6.55,-.3){$\ket c$};
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.9,
+ every node/.style={font=\small}]
+ \node[draw,minimum width=1.75cm,minimum height=.82cm] (a) at (0,0) {Measure $A$};
+ \node[draw,minimum width=1.75cm,minimum height=.82cm] (b) at (2.75,0) {Measure $B$};
+ \node[draw,minimum width=1.75cm,minimum height=.82cm] (c) at (5.5,0) {Measure $C$};
+ \draw[->] (-1.45,0)--(a.west);
+ \draw[->] (a.east)--(b.west);
+ \draw[->] (b.east)--(c.west);
+ \draw[->] (c.east)--(6.95,0);
+ \node[below] at (-1.23,-.40) {$\ket\Psi$};
+ \node[below] at (1.38,-.40) {$\ket a$};
+ \node[below] at (4.13,-.40) {$\ket b$};
+ \node[below] at (6.75,-.40) {$\ket c$};
 \end{tikzpicture}\end{center}
 The state sequence is $\ket\Psi\rightarrow\ket a\rightarrow\ket b\rightarrow\ket c$; the values of the physical quantities are initially indefinite and then are $a,b,c$ after their respective measurements.
 
 After three measurements, the probability for $\op C$ to take the value $c$ is
-\[P(c)=\sum_{a,b}|\braket a\Psi|^2\,|\braket b a|^2\,|\braket c b|^2.\]
+\begin{equation}
+P(c)=\sum_{a,b}|\braket a\Psi|^2\,|\braket b a|^2\,|\braket c b|^2.
+\end{equation}
 Here $|\braket a\Psi|^2$ is the probability of collapse from $\ket\Psi$ to $\ket a$; $|\braket b a|^2$ is the probability from $\ket a$ to $\ket b$; and $|\braket c b|^2$ is the probability from $\ket b$ to $\ket c$.
 
 \textbf{Second procedure:}
-\begin{center}\begin{tikzpicture}[>=Latex,scale=.9]
-\draw (0,-.3)rectangle(1.5,.55)node[midway]{Measure $A$};\draw (3,-.3)rectangle(4.5,.55)node[midway]{Measure $C$};
-\draw[->](-.65,.1)--(0,.1);\draw[->](1.5,.1)--(3,.1);\draw[->](4.5,.1)--(5.15,.1);
-\node[below]at(-.45,-.3){$\ket\Psi$};\node[below]at(2.2,-.3){$\ket a$};\node[below]at(4.9,-.3){$\ket c$};
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.9,every node/.style={font=\small}]
+ \node[draw,minimum width=1.75cm,minimum height=.82cm] (a) at (0,0) {Measure $A$};
+ \node[draw,minimum width=1.75cm,minimum height=.82cm] (c) at (3.7,0) {Measure $C$};
+ \draw[->] (-1.45,0)--(a.west);
+ \draw[->] (a.east)--(c.west);
+ \draw[->] (c.east)--(5.1,0);
+ \node[below] at (-1.23,-.40) {$\ket\Psi$};
+ \node[below] at (1.85,-.40) {$\ket a$};
+ \node[below] at (4.85,-.40) {$\ket c$};
 \end{tikzpicture}\end{center}
 After two measurements, the probability for $\op C$ to take the value $c$ is
-\[P'(c)=\sum_a |\braket a\Psi|^2\,|\braket c a|^2.\]
+\begin{equation}
+P'(c)=\sum_a |\braket a\Psi|^2\,|\braket c a|^2.
+\end{equation}
 Clearly, in general,
-\[P(c)\ne P'(c).\]
+\begin{equation}
+P(c)\ne P'(c).
+\end{equation}
 However, if $[\op A,\op B]=0$, $\op A$ and $\op B$ have common eigenstates $\ket n$, which replace $\ket a$ and $\ket b$:
-\[P(c)=\sum_n|\braket n\Psi|^2\,|\braket c n|^2=P'(c).\]
+\begin{equation}
+P(c)=\sum_n|\braket n\Psi|^2\,|\braket c n|^2=P'(c).
+\end{equation}
 Or if $[\op B,\op C]=0$, $\op B$ and $\op C$ have common eigenstates $\ket m$, which replace $\ket b$ and $\ket c$:
-\[P(c)=\sum_a|\braket a\Psi|^2\,|\braket m a|^2=P'(c).\]
+\begin{equation}
+P(c)=\sum_a|\braket a\Psi|^2\,|\braket m a|^2=P'(c).
+\end{equation}
 \textbf{Conclusion.} Since physical quantities have definite values only in their eigenstates, the order of measurements changes the final measurement results.
 \subsection*{6) Uncertainty relation}
 If $[\op A,\op B]\ne0$, the physical quantities $\op A,\op B$ cannot have definite values simultaneously. How large are their uncertainties?
@@ -194,8 +274,10 @@ In an arbitrary state $\ket\psi$, $\op A$ has only a definite expectation value 
 \draw[<->] (1.35,1.2)--(2.95,1.2)node[midway,above]{$\Delta A$};
 \end{tikzpicture}\end{center}
 The uncertainty is represented by the variance:
-\[\langle(\Delta\op A)^2\rangle\equiv
-\mel\psi{(\op A-\langle\op A\rangle)^2}\psi\ge0.\]
+\begin{equation}
+\langle(\Delta\op A)^2\rangle\equiv
+\mel\psi{(\op A-\langle\op A\rangle)^2}\psi\ge0.
+\end{equation}
 If $\ket\psi$ is an eigenstate of $\op A$, the expectation value equals its eigenvalue, the variance is zero, and the distribution is a delta function.
 \begin{center}\begin{tikzpicture}[>=Latex,scale=.75]
 \draw[->](0,0)--(4.4,0)node[right]{$A$};\draw[->](0,0)--(0,2.2)node[above]{$P(A)$};\draw[very thick](2.15,0)--(2.15,1.9);\node[below]at(2.15,0){$a$};
@@ -203,48 +285,58 @@ If $\ket\psi$ is an eigenstate of $\op A$, the expectation value equals its eige
 Define the uncertainty between $\op A$ and $\op B$ using the product of variances $\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle$. How can we estimate it?
 
 For arbitrary states $\ket\alpha,\ket\beta$ and arbitrary complex number $\lambda$, the norm of the linear-combination state is nonnegative:
-\[(\bra\alpha+\lambda^*\bra\beta)(\ket\alpha+\lambda\ket\beta)\ge0.\]
+\begin{equation}
+(\bra\alpha+\lambda^*\bra\beta)(\ket\alpha+\lambda\ket\beta)\ge0.
+\end{equation}
 Choosing
-\[\lambda=-\frac{\braket\beta\alpha}{\braket\beta\beta}\]
+\begin{equation}
+\lambda=-\frac{\braket\beta\alpha}{\braket\beta\beta}
+\end{equation}
 gives the Schwarz inequality,
-\[\braket\alpha\alpha\,\braket\beta\beta\ge |\braket\alpha\beta|^2.\]
+\begin{equation}
+\braket\alpha\alpha\,\braket\beta\beta\ge |\braket\alpha\beta|^2.
+\end{equation}
 Set
-\[\ket\alpha=\Delta\op A\ket\Psi,\qquad
+\begin{equation}
+\ket\alpha=\Delta\op A\ket\Psi,\qquad
 \ket\beta=\Delta\op B\ket\Psi,\qquad
 \Delta\op A=\op A-\langle\op A\rangle,\quad
-\Delta\op B=\op B-\langle\op B\rangle.\]
+\Delta\op B=\op B-\langle\op B\rangle.
+\end{equation}
 Then
-\[\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
-\ge |\langle\Delta\op A\Delta\op B\rangle|^2.\]
+\begin{equation}
+\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
+\ge |\langle\Delta\op A\Delta\op B\rangle|^2.
+\end{equation}
 Since
-\begin{align*}
+\begin{equation}\begin{aligned}
 |\langle\Delta\op A\Delta\op B\rangle|^2
 &=(\operatorname{Re}\langle\Delta\op A\Delta\op B\rangle)^2
  +(\operatorname{Im}\langle\Delta\op A\Delta\op B\rangle)^2\\
 &\ge(\operatorname{Im}\langle\Delta\op A\Delta\op B\rangle)^2\\
 &=\left[\frac1{2\ii}\left(\langle\Delta\op A\Delta\op B\rangle
 -\langle\Delta\op B\Delta\op A\rangle\right)\right]^2,
-\end{align*}
+\end{aligned}\end{equation}
 we obtain
-\[
+\begin{equation}
 \langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
 \ge \left[\frac1{2\ii}\left(\langle\Delta\op A\Delta\op B\rangle
 -\langle\Delta\op B\Delta\op A\rangle\right)\right]^2.
-\]
+\end{equation}
 Equality requires equality in the Schwarz inequality and a vanishing real part of $\langle\Delta\op A\Delta\op B\rangle$.
 
 From
-\begin{align*}
+\begin{equation}\begin{aligned}
 \langle\Delta\op A\Delta\op B\rangle
 &=\mel\psi{(\op A-\langle\op A\rangle)(\op B-\langle\op B\rangle)}\psi
 =\langle\op A\op B\rangle-\langle\op A\rangle\langle\op B\rangle,\\
 \langle\Delta\op B\Delta\op A\rangle
 &=\mel\psi{(\op B-\langle\op B\rangle)(\op A-\langle\op A\rangle)}\psi
 =\langle\op B\op A\rangle-\langle\op B\rangle\langle\op A\rangle,
-\end{align*}
+\end{aligned}\end{equation}
 it follows that
-\[
+\begin{equation}
 \boxed{\langle(\Delta\op A)^2\rangle\langle(\Delta\op B)^2\rangle
 \ge \left(\frac1{2\ii}\langle[\op A,\op B]\rangle\right)^2.}
-\]
+\end{equation}
 This shows that the uncertainties of two physical quantities are controlled by their commutation relation and the state $\ket\psi$.

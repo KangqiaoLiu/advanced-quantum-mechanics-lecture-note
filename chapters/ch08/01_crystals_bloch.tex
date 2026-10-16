@@ -3,30 +3,30 @@ A crystal contains a very large number of repeating microscopic units. Its atomi
 
 \subsection*{1) A tight-binding chain}
 Consider one localized orbital $\ket n$ in each unit cell $n$ of a one-dimensional lattice, with lattice spacing $a$. The states are orthonormal, $\braket m n=\delta_{mn}$. An electron can move between neighboring sites by the \emph{hopping amplitude} $t$:
-\[
+\begin{equation}
  \op H=-t\sum_n\bigl(\ket{n+1}\bra n+\ket n\bra{n+1}\bigr).
-\]
+\end{equation}
 With periodic boundary conditions, $\ket{n+N}=\ket n$. Define the normalized Bloch states
-\[
+\begin{equation}
 \ket k=\frac1{\sqrt N}\sum_{n=0}^{N-1}e^{\ii kna}\ket n,
 \qquad k=\frac{2\pi m}{Na},\ m=0,\ldots,N-1.
-\]
+\end{equation}
 Translation by one cell multiplies $\ket k$ by $e^{-\ii ka}$, and the Hamiltonian acts diagonally:
-\[
+\begin{equation}
  \op H\ket k=-2t\cos(ka)\ket k.
-\]
+\end{equation}
 The dispersion $E(k)=-2t\cos(ka)$ repeats under $k\mapsto k+2\pi/a$. The interval $[-\pi/a,\pi/a)$ is one \emph{Brillouin zone}. A band is the energy of an eigenstate of the periodic Hamiltonian as a function of crystal momentum.
 
 \subsection*{2) More than one orbital per unit cell}
 Suppose a cell has two orbitals, $A$ and $B$. The Bloch wavefunction has a two-component coefficient $\ket{u(k)}=(u_A(k),u_B(k))^{\mathsf T}$, and its energies follow from a $2\times2$ Hermitian \emph{Bloch Hamiltonian}:
-\[
+\begin{equation}
  \op h(k)\ket{u_n(k)}=E_n(k)\ket{u_n(k)},\qquad n=1,2.
-\]
+\end{equation}
 Any $2\times2$ Hermitian matrix can be written
-\[
+\begin{equation}
  \op h(k)=d_0(k)\mathbf1_2+\vect d(k)\cdot\vect\sigma,\qquad
  E_\pm(k)=d_0(k)\pm|\vect d(k)|.
-\]
+\end{equation}
 The bands are separated by a gap whenever $\vect d(k)\ne0$. At fixed particle filling, a band insulator results if all occupied bands are separated from the empty bands by a finite gap. These are single-particle bands: interactions may require a more general many-body description.
 
 \subsection*{3) The role of geometry}

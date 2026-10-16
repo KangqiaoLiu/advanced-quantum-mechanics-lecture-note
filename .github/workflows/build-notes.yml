@@ -9,6 +9,7 @@ on:
       - 'frontmatter/**'
       - 'references/**'
       - 'scripts/check_new_chapters.py'
+      - 'scripts/check_display_equations.py'
       - 'scripts/check_notation_consistency.py'
       - 'scripts/check_content_additions.py'
       - 'latexmkrc'
@@ -29,6 +30,9 @@ jobs:
     steps:
       - name: Check out versioned LaTeX sources
         uses: actions/checkout@v4
+
+      - name: Check all displayed equations are numbered
+        run: python3 scripts/check_display_equations.py
 
       - name: Check whole-book notation consistency
         run: python3 scripts/check_notation_consistency.py
