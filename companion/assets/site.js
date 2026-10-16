@@ -72,7 +72,7 @@ async function init() {
   } catch (err) {
     count.textContent = "Catalog could not be loaded.";
     message.hidden = false;
-    message.textContent = "Serve the companion directory with: python3 -m http.server 8000 --directory companion. Then open http://localhost:8000/ .";
+    message.textContent = "Serve the companion directory with: python3 -m http.server 8000 from the repository root. Then open http://localhost:8000/companion/ .";
   }
 }
 init();

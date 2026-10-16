@@ -2,7 +2,7 @@
 
 **Instructor:** Kangqiao LIU · **Status:** design and nine-chapter navigable catalog. The physical simulations are being developed; an interactive lab is available only once its working page and physics checks are committed.
 
-**[Open the companion directory (browser catalog)](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Master companion plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
+**[Browser catalog source](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Master companion plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
 
 This is an independently navigable, English-language learning companion to the graduate lecture notes. It will connect physical questions, mathematical predictions, numerical or analytic experiments, derivations, self-checks and research explorations.
 
@@ -19,10 +19,10 @@ The nine-chapter catalog currently describes **62 candidate laboratory questions
 From the repository root:
 
 ```bash
-python3 -m http.server 8000 --directory companion
+python3 -m http.server 8000
 ```
 
-Open [http://localhost:8000/](http://localhost:8000/). The existing `index.html` reads `catalog.json`; no packages are necessary to inspect and search the catalog. This is a **directory scaffold**, not yet a simulation application. A normal local file opening may block the catalog data file; use the short local server command above.
+Open [http://localhost:8000/companion/](http://localhost:8000/companion/). The existing `index.html` reads `catalog.json`; no packages are necessary to inspect and search the catalog. This is a **directory scaffold**, not yet a simulation application. Run the command from the **repository root** so the catalog can also link to the lecture PDF and design documents. A normal local file opening may block the catalog data file; use the short local server command above.
 
 ## Directory and working agreements
 

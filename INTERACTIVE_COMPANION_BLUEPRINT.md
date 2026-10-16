@@ -115,10 +115,10 @@ Current `companion/index.html` is an honest **catalog and navigation scaffold** 
 The local catalog can be previewed with:
 
 ```bash
-python3 -m http.server 8000 --directory companion
+python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000/`. Production deployment, domain, access rights, and eventual destination of the PDF cover link require a later publication decision; the cover currently points to the working `companion/README.md` in this same private repository.
+Then visit `http://localhost:8000/companion/`. Production deployment, domain, access rights, and eventual destination of the PDF cover link require a later publication decision; the cover currently points to the working `companion/README.md` in this same private repository.
 
 ## 8. Validation and release quality
 
