@@ -4,6 +4,8 @@ English graduate-level lecture notes by **Kangqiao LIU**.
 
 **[Read the current complete PDF](pdf/advanced-quantum-mechanics.pdf)**. The PDF is built from the LaTeX sources on every content revision.
 
+**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browse catalog](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md). The companion currently has a navigable laboratory directory and documented prototypes; numerical and visual physics laboratories will be added as they are built and verified.
+
 The manuscript covers foundational quantum theory, quantum dynamics, angular momentum and measurement, approximation methods, scattering, quantum many-body systems, relativistic quantum mechanics, topological condensed matter physics, and quantum neural networks and machine learning.
 
 The original lecture notes and their historical Chinese-to-English translation are preserved in separate repository branches; the current manuscript incorporates instructor-authored handwritten lecture material and additional self-contained topics. The student-facing book includes a single-page *List of Notation* and a bibliography for its two contemporary chapters.

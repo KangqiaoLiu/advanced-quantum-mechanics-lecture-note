@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive companion catalog for graduate Advanced Quantum Mechanics lecture notes.">
+  <title>Interactive Companion | Advanced Quantum Mechanics</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">Kangqiao LIU · Graduate lecture companion</p>
+      <h1>Advanced Quantum Mechanics</h1>
+      <p class="subtitle">An interactive path from quantum states to topology and quantum machine learning.</p>
+      <p class="status" role="status">Curriculum preview · Physics laboratories are being prepared</p>
+      <nav aria-label="Resource links">
+        <a href="../pdf/advanced-quantum-mechanics.pdf">Complete lecture notes ↗</a>
+        <a href="../INTERACTIVE_COMPANION_BLUEPRINT.md">Project blueprint ↗</a>
+        <a href="README.md">Companion guide ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap" id="main">
+    <section class="intro" aria-label="Learning routes">
+      <div><h2>Catch up</h2><p>Make amplitudes, matrices and measurements intuitive with short experiments.</p></div>
+      <div><h2>Reconstruct</h2><p>Connect classroom derivations to predictions and measurable quantities.</p></div>
+      <div><h2>Explore further</h2><p>Inspect limits, approximations, topology and trainable quantum models.</p></div>
+    </section>
+    <section aria-labelledby="catalog-title" class="directory">
+      <div class="directory-heading">
+        <div>
+          <p class="eyebrow">Nine chapters · a connected scientific course</p>
+          <h2 id="catalog-title">Laboratory directory</h2>
+          <p id="count" class="minor" aria-live="polite">Loading the nine-chapter inventory…</p>
+        </div>
+        <div class="filters">
+          <label for="chapter">Chapter</label>
+          <select id="chapter"><option value="all">All nine chapters</option></select>
+          <label for="search">Find a physical question</label>
+          <input id="search" type="search" placeholder="Search: Berry, spin, SSH, gradient…" autocomplete="off">
+          <label class="check"><input id="core" type="checkbox"> Show classroom-route selection</label>
+        </div>
+      </div>
+      <p class="minor" id="explanation">Each entry is a scientific question in the planned curriculum. “Planned prototype” means a priority for implementation, not a running simulation. Source links open current lecture-note files.</p>
+      <div id="labs" class="labs" aria-live="polite"></div>
+      <p id="message" class="error" role="alert" hidden></p>
+    </section>
+  </main>
+  <footer class="wrap footer">
+    <p>© 2026 Kangqiao LIU · <a href="mailto:kqliu@xhu.edu.cn">kqliu@xhu.edu.cn</a> · <a href="https://kangqiaoliu.github.io/">Personal page</a></p>
+    <p class="minor">The teaching material is in development. Check the README and source notes for available content and rights.</p>
+  </footer>
+</body>
+</html>
