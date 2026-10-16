@@ -42,7 +42,7 @@ The following material is **preserved in source order and has not been silently 
 - [x] Local `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` successful: **145 cumulative PDF pages** including front matter and Chapters 1–8.
 - [x] Eliminated the new overfull horizontal box warning from the longest bilinear-covariant display.
 - [x] Inspected contact-sheet renders of all ten English Chapter 8 pages.
-- [ ] Confirmed cloud GitHub Actions compilation and updated repository PDF; fill in only after verified success.
+- [x] GitHub Actions run 38897750654 completed successfully: XeLaTeX compilation, version-specific artifact archive and generated eight-chapter PDF committed to `pdf/advanced-quantum-mechanics.pdf` on `main` (verified in repository listing).
 - [ ] Full independent instructor source-vs-translation bilingual and mathematical review.
 
 ## Frozen-stage handoff
