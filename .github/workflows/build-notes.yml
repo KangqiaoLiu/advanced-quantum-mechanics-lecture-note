@@ -53,4 +53,12 @@ jobs:
             exit 0
           fi
           git commit -m 'build: update versioned lecture notes PDF [skip ci]'
+          # Documentation may have advanced while LaTeX compiled.
+          # Never publish a stale PDF if actual LaTeX sources advanced.
+          git fetch origin main:refs/remotes/origin/main
+          if ! git diff --quiet "${GITHUB_SHA}" origin/main -- main.tex chapters/ latexmkrc; then
+            echo 'Source files changed during compilation; a newer source build must publish the PDF.'
+            exit 1
+          fi
+          git rebase origin/main
           git push origin HEAD:main
