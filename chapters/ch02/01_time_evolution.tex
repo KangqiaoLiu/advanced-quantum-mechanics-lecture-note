@@ -1,0 +1,175 @@
+% Faithful translation baseline; Chinese source PDF pp. 25--30.
+\section{Time Evolution and the Schr\"odinger Equation}
+This chapter discusses the time evolution of states and physical quantities in quantum mechanics. Unlike other physical quantities, which are represented by operators, time in nonrelativistic quantum mechanics is only a parameter; it remains a classical quantity and is not an operator.
+
+\subsection*{1) Time-evolution (translation) operator}
+Initial state: $\ket{\alpha,t_0}$.
+
+Evolution from $t_0$ to $t$:
+\[\ket{\alpha,t}=\op U(t,t_0)\ket{\alpha,t_0}.\]
+Expand $\ket{\alpha,t_0}$ and $\ket{\alpha,t}$ in eigenstates $\ket a$ of an operator $\op A$:
+\[\ket{\alpha,t_0}=\sum_a\ket a\braket{a}{\alpha,t_0},\qquad
+\ket{\alpha,t}=\sum_a\ket a\braket{a}{\alpha,t}.\]
+Clearly, the probability of occupying a particular eigenstate is not necessarily conserved:
+\[|\braket{a}{\alpha,t_0}|^2\ne|\braket{a}{\alpha,t}|^2.\]
+However, the normalization condition
+\[\braket{\alpha,t}{\alpha,t}=\braket{\alpha,t_0}{\alpha,t_0}=1\]
+implies conservation of the total probability,
+\[\sum_a|\braket{a}{\alpha,t}|^2=\sum_a|\braket{a}{\alpha,t_0}|^2=1,\]
+and the time-evolution operator is unitary:
+\[\op U^{\dagger}(t,t_0)\op U(t,t_0)=\mathbf1.\]
+Require the composition law for time evolution:
+\[\op U(t_2,t_0)=\op U(t_2,t_1)\op U(t_1,t_0),\qquad t_2>t_1>t_0.\]
+An infinitesimal time-evolution operator can be written
+\[\op U(t_0+\dd t,t_0)=\mathbf1-\ii\op\Omega\,\dd t.\]
+Unitarity, $\op U^{\dagger}\op U=\mathbf1$, requires $\op\Omega$ to be Hermitian:
+\[\op\Omega^{\dagger}=\op\Omega.\]
+Since $\op U$ is dimensionless, $\op\Omega$ has dimensions of frequency. By the Planck--Einstein energy--frequency relation $E=\hbar\omega$, we may set
+\[\op\Omega=\frac{\op H}{\hbar},\qquad
+\boxed{\op U(t_0+\dd t,t_0)=\mathbf1-\frac{\ii}{\hbar}\op H\,\dd t.}\]
+
+\subsection*{2) Equation of time evolution}
+Using the composition law,
+\[\op U(t+\dd t,t_0)=\op U(t+\dd t,t)\op U(t,t_0)
+=\left(\mathbf1-\frac{\ii}{\hbar}\op H\dd t\right)\op U(t,t_0).\]
+Hence
+\[\frac{\op U(t+\dd t,t_0)-\op U(t,t_0)}{\dd t}
+=-\frac{\ii}{\hbar}\op H\op U(t,t_0),\]
+so that
+\[\boxed{\ii\hbar\frac{\partial}{\partial t}\op U(t,t_0)
+=\op H\op U(t,t_0).}\]
+This is the fundamental equation of time evolution in quantum mechanics.
+
+Multiplying the equation on the right by the initial state $\ket{\alpha,t_0}$ gives
+\[\ii\hbar\frac{\partial}{\partial t}\op U(t,t_0)\ket{\alpha,t_0}
+=\op H\op U(t,t_0)\ket{\alpha,t_0},\]
+\[\boxed{\ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}=\op H\ket{\alpha,t}.}\]
+This is the equation governing the time evolution of a state, the Schr\"odinger equation.
+
+We now discuss solutions of this fundamental equation. If the Hamiltonian has no explicit time dependence, for example the magnetic interaction $\op H\sim\op J_z B$ in a constant magnetic field directed along $z$,
+\[\boxed{\op U(t,t_0)=\exp\left[-\frac{\ii}{\hbar}\op H(t-t_0)\right].}\]
+If the Hamiltonian depends on time but the Hamiltonians at different times commute, for example $\op H(t)\sim\op J_z B(t)$ when the magnitude but not the direction of the magnetic field changes,
+\[\op U(t,t_0)=\exp\left[-\frac{\ii}{\hbar}\int_{t_0}^t\op H(t')\dd t'\right].\]
+If the Hamiltonian depends on time and the Hamiltonians at different times do not commute, for example $\op H(t)\sim\vect{J}\cdot\vect{B}(t)$ when both the magnitude and direction of the field vary,
+\[\begin{split}
+\op U(t,t_0)=\mathbf1+\sum_{n=1}^{\infty}\left(-\frac{\ii}{\hbar}\right)^n
+&\int_{t_0}^{t}\dd t_1\int_{t_0}^{t_1}\dd t_2\cdots
+\int_{t_0}^{t_{n-1}}\dd t_n\\[-2pt]
+&\qquad\times \op H(t_1)\op H(t_2)\cdots\op H(t_n).
+\end{split}\]
+This is called the Dyson series.
+
+Below we mainly consider Hamiltonians that do not depend explicitly on time.
+
+\subsection*{3) Stationary states}
+Suppose initially the system is in an eigenstate of $\op H$:
+\[\ket{\alpha,t_0}=\ket E,\qquad\op H\ket E=E\ket E.\]
+Then
+\[\ket{\alpha,t}=e^{-\ii\op H(t-t_0)/\hbar}\ket{\alpha,t_0}
+=e^{-\ii E(t-t_0)/\hbar}\ket{\alpha,t_0}.\]
+The state changes only by a phase. The expectation value of any physical quantity $\op A$ is
+\[\mel{\alpha,t}{\op A}{\alpha,t}
+=\mel{\alpha,t_0}{e^{\ii E(t-t_0)/\hbar}\op A e^{-\ii E(t-t_0)/\hbar}}{\alpha,t_0}
+=\mel{\alpha,t_0}{\op A}{\alpha,t_0}\]
+and does not change with time. Therefore, energy eigenstates are called stationary states.
+
+If the system is initially not in a stationary state, its amplitude for occupying the stationary state $\ket E$ at time $t$ is
+\[\braket{E}{\alpha,t}=\bra E e^{-\ii\op H(t-t_0)/\hbar}\ket{\alpha,t_0}
+=e^{-\ii E(t-t_0)/\hbar}\braket{E}{\alpha,t_0},\]
+and its probability satisfies
+\[|\braket{E}{\alpha,t}|^2=|\braket{E}{\alpha,t_0}|^2.\]
+The probability of occupying any stationary state is the same at all times as it was initially. Thus, if the system initially occupies a stationary state, it remains in that state; if its initial state is not stationary, it remains nonstationary.
+
+\subsection*{4) Electron-spin precession}
+Consider the interaction of an electron's spin magnetic moment with an external magnetic field directed along $z$:
+\[\op H=-\left(\frac{e}{mc}\right)\vect{\op s}\cdot\vect B
+=-\frac{eB}{mc}\op s_z=\omega\op s_z,
+\qquad\omega=-\frac{eB}{mc}>0.\]
+The time-evolution operator is
+\[\op U(t,0)=e^{-\ii\op Ht/\hbar}=e^{-\ii\omega\op s_z t/\hbar}.\]
+The operators $\op s_z$ and $\op H$ have common eigenstates $\ket{s_z^{\pm}}$:
+\[\op s_z\ket{s_z^{\pm}}=\pm\frac{\hbar}{2}\ket{s_z^{\pm}},\qquad
+\op H\ket{s_z^{\pm}}=\pm\frac{\hbar\omega}{2}\ket{s_z^{\pm}}.\]
+Suppose the system initially occupies the positive eigenstate of $\op s_x$:
+\[\ket{\alpha,0}=\ket{s_x^+}=\frac1{\sqrt2}\ket{s_z^+}+\frac1{\sqrt2}\ket{s_z^-}.\]
+At an arbitrary time,
+\[\ket{\alpha,t}=\op U(t,0)\ket{\alpha,0}.\]
+The probability of finding the system in $\ket{s_x^+}$ is
+\[\begin{split}
+|\braket{s_x^+}{\alpha,t}|^2
+&=\left|\left(\frac{\bra{s_z^+}+\bra{s_z^-}}{\sqrt2}\right)
+ e^{-\ii\omega\op s_z t/\hbar}
+ \left(\frac{\ket{s_z^+}+\ket{s_z^-}}{\sqrt2}\right)\right|^2\\
+&=\left|\frac{e^{-\ii\omega t/2}+e^{\ii\omega t/2}}{2}\right|^2
+=\cos^2\frac{\omega t}{2}.
+\end{split}\]
+By conservation of probability,
+\[|\braket{s_x^-}{\alpha,t}|^2=1-|\braket{s_x^+}{\alpha,t}|^2
+=\sin^2\frac{\omega t}{2}.\]
+The expectation value at an arbitrary time is
+\[\begin{split}
+\langle s_x\rangle
+&=\mel{\alpha,t}{\op s_x}{\alpha,t}
+=\sum_{s_x}s_x|\braket{s_x}{\alpha,t}|^2\\
+&=\frac{\hbar}{2}\left(\cos^2\frac{\omega t}{2}-\sin^2\frac{\omega t}{2}\right)
+=\frac{\hbar}{2}\cos\omega t.
+\end{split}\]
+Similarly,
+\[\langle s_y\rangle=\frac{\hbar}{2}\sin\omega t,\qquad\langle s_z\rangle=0.\]
+\begin{center}
+\begin{tikzpicture}[scale=1.05,>=Latex]
+\draw[->](-1.4,0)--(1.45,0)node[right]{$y$};
+\draw[->](0,-.85)--(0,2.1)node[above]{$z$};
+\draw[->](0,0)--(-1.15,-.85)node[below]{$x$};
+\draw (0,1.25) ellipse (1.0 and .32);
+\draw[dashed] (0,0)--(-.76,1.46);
+\draw[thick,->] (0,0)--(.72,1.49)node[right]{$\langle\vect s\rangle$};
+\draw (.0,.35) arc[start angle=90,end angle=60,radius=.35];
+\node at (.17,.62){$\alpha$};
+\end{tikzpicture}
+\end{center}
+The expectation value $\langle\vect s\rangle$ precesses about the $z$ axis with time; the trajectory is a cone. This is the spin Larmor precession, with $\omega$ the Larmor frequency.
+
+\subsection*{5) Energy--time uncertainty relation}
+From
+\[\langle(\Delta\op x)^2\rangle\langle(\Delta\op p)^2\rangle\ge\frac{\hbar^2}{4},\]
+we obtain $\Delta x\,\Delta p\ge\hbar/2$, where
+\[\Delta A=\sqrt{\langle(\Delta\op A)^2\rangle}.\]
+By classical analogy, $x=x(t)$ and $p=p(E,p)$, one may suppose
+\[\Delta t\,\Delta E\ge\frac\hbar2.\]
+This is the energy--time uncertainty relation. However, unlike $x$, $p$, $E$, $\op x$, $\op p$, and $\op H$ in quantum mechanics, time $t$ remains a classical quantity. What does $\Delta t$ mean?
+
+What are $\langle(\Delta\op H)^2\rangle$ and $\langle(\Delta t)^2\rangle$?
+
+For an arbitrary observable $\op O$,
+\[\langle O\rangle(t)=\mel{\alpha,t}{\op O}{\alpha,t}.\]
+Its time derivative is
+\[\frac{\dd}{\dd t}\langle O\rangle
+=\left(\frac{\partial}{\partial t}\bra{\alpha,t}\right)\op O\ket{\alpha,t}
++\bra{\alpha,t}\frac{\partial\op O}{\partial t}\ket{\alpha,t}
++\bra{\alpha,t}\op O\left(\frac{\partial}{\partial t}\ket{\alpha,t}\right).\]
+Since
+\[\ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}=\op H\ket{\alpha,t},\qquad
+-\ii\hbar\frac{\partial}{\partial t}\bra{\alpha,t}=\bra{\alpha,t}\op H,\]
+we have
+\[\frac{\dd}{\dd t}\langle O\rangle
+=\frac1{\ii\hbar}\mel{\alpha,t}{[\op O,\op H]}{\alpha,t}
++\left\langle\frac{\partial\op O}{\partial t}\right\rangle.\]
+If $\op O$ has no explicit time dependence,
+\[\frac{\dd}{\dd t}\langle O\rangle
+=\frac1{\ii\hbar}\langle[\op O,\op H]\rangle.\]
+Consequently, the uncertainty relation between $\op O$ and $\op H$ gives
+\[\langle(\Delta\op O)^2\rangle\langle(\Delta\op H)^2\rangle
+\ge \left|\frac1{2\ii}\langle[\op O,\op H]\rangle\right|^2
+=\frac{\hbar^2}{4}\left(\frac{\dd\langle O\rangle}{\dd t}\right)^2.\]
+Therefore
+\[\Delta O\,\Delta E\ge\frac\hbar2\left|\frac{\dd\langle O\rangle}{\dd t}\right|.\]
+If we define
+\[\Delta t=\Delta O\left|\frac{\dd\langle O\rangle}{\dd t}\right|^{-1},\]
+then
+\[\boxed{\Delta t\,\Delta E\ge\frac\hbar2.}\]
+Thus $\Delta t$ is the time needed for the expectation value of a physical quantity $\op O$ to change by an amount equal to one standard deviation $\Delta O$. Clearly, both $\Delta t$ and $\Delta E$ are averages and uncertainties of physical quantities.
+
+\textbf{Example.} In a stationary state $\Delta E=0$, and $\langle\op O\rangle$ is time independent:
+\[\frac{\dd}{\dd t}\langle O\rangle=0,\qquad
+\Delta t=\Delta O\left|\frac{\dd\langle O\rangle}{\dd t}\right|^{-1}\longrightarrow\infty.\]

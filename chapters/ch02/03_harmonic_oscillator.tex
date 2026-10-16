@@ -1,0 +1,225 @@
+% Faithful translation baseline; Chinese source PDF pp. 35--40.
+\section{One-Dimensional Linear Harmonic Oscillator}
+For an arbitrary potential, expand it in a Taylor series near a minimum $x_0$:
+\[V(x)=V(x_0)+V'(x_0)(x-x_0)+\frac12V''(x_0)(x-x_0)^2+\cdots.\]
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=.85]
+\draw[->](0,0)--(4.9,0) node[right]{$x$};\draw[->](0,0)--(0,2.5)node[above]{$V(x)$};
+\draw[thick,smooth] plot coordinates {(.6,2.0)(.9,1.35)(1.2,1.0)(1.5,1.42)(1.95,1.62)(2.7,1.8)(3.4,1.87)(4.4,1.68)};
+\draw[dashed](1.2,0)--(1.2,1.0);\node[below]at(1.2,0){$x_0$};
+\end{tikzpicture}
+\end{center}
+The constant term $V(x_0)$ can be incorporated into the energy. At the potential minimum $V'(x_0)=0$. Omitting higher-order terms,
+\[V(x)\simeq\frac12V''(x_0)(x-x_0)^2.\]
+This approximates a harmonic-oscillator potential; therefore the harmonic oscillator has general significance.
+
+Classically,
+\[H=\frac{p^2}{2m}+\frac12m\omega^2x^2.\]
+Quantum mechanically,
+\[\op H=\frac{\op p^2}{2m}+\frac12m\omega^2\op x^2,\qquad
+[\op x,\op p]=\ii\hbar.\]
+Because
+\[\op H=\frac{m\omega^2}{2}
+\left(\op x-\frac{\ii\op p}{m\omega}\right)
+\left(\op x+\frac{\ii\op p}{m\omega}\right)
++\frac12\hbar\omega,\]
+define new operators
+\[\op a=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\op x+\frac{\ii\op p}{m\omega}\right),\qquad
+\op a^{\dagger}=\sqrt{\frac{m\omega}{2\hbar}}
+\left(\op x-\frac{\ii\op p}{m\omega}\right).\]
+Then
+\[\boxed{\op H=\left(\op a^{\dagger}\op a+\frac12\right)\hbar\omega,\qquad
+[\op a,\op a^{\dagger}]=\mathbf1.}\]
+Clearly, $\op a$ is not Hermitian, $\op a^{\dagger}\ne\op a$. However, $\op a^{\dagger}\op a$ is Hermitian:
+\[(\op a^{\dagger}\op a)^{\dagger}=\op a^{\dagger}\op a.\]
+Since $\op H$ differs from $\op a^{\dagger}\op a$ only by a constant, they have common eigenstates. Let
+\[\op a^{\dagger}\op a\ket n=n\ket n.\]
+Then
+\[\op H\ket n=\left(n+\frac12\right)\hbar\omega\ket n,\qquad
+E_n=\left(n+\frac12\right)\hbar\omega.\]
+\textbf{Questions:} What are the eigenvalues $n$? What are the coordinate-representation eigenstates $\braket x n$?
+
+\subsection*{1) Nonnegativity of the eigenvalues}
+Let
+\[\op a\ket n=\ket b.\]
+Then
+\[\bra n\op a^{\dagger}=\bra b,\qquad
+\mel n{\op a^{\dagger}\op a}n=\braket b b,\quad
+n\braket n n=\braket b b.\]
+Because $\braket b b\ge0$ and $\braket n n\ge0$, we have $n\ge0$.
+
+\subsection*{2) Raising and lowering operators}
+From $[\op a,\op a^{\dagger}]=1$,
+\[\begin{split}
+(\op a^{\dagger}\op a)\op a\ket n
+&=\op a(\op a\op a^{\dagger}-1)\ket n
+=\op a(\op a^{\dagger}\op a-1)\ket n\\
+&=(n-1)\op a\ket n,
+\end{split}\]
+\[\begin{split}
+(\op a^{\dagger}\op a)\op a^{\dagger}\ket n
+&=\op a^{\dagger}(\op a\op a^{\dagger})\ket n
+=\op a^{\dagger}(\op a^{\dagger}\op a+1)\ket n\\
+&=(n+1)\op a^{\dagger}\ket n.
+\end{split}\]
+If $\ket n$ is an eigenstate of $\op a^{\dagger}\op a$, so are $\op a\ket n$ and $\op a^{\dagger}\ket n$, with the following relationships:
+\[\begin{array}{c|c}
+\text{Eigenstate}&\text{Eigenvalue of }\op a^{\dagger}\op a\\\hline
+(\op a^{\dagger})^2\ket n&n+2\\
+\op a^{\dagger}\ket n&n+1\\
+\ket n&n\\
+\op a\ket n&n-1\\
+\op a^2\ket n&n-2
+\end{array}\]
+Hence $\op a$ is called the lowering (annihilation) operator and $\op a^{\dagger}$ the raising (creation) operator. Together with $n\ge0$, the possible eigenvalues have the form
+\[n=n_0,n_0+1,n_0+2,\ldots,\qquad n_0\ge0.\]
+
+\subsection*{3) Lowest eigenvalue}
+For the lowest eigenvalue $n_0$, necessarily
+\[\op a\ket{n_0}=0.\]
+Otherwise $\op a\ket{n_0}$ would have eigenvalue $n_0-1$, contradicting the assumption that $n_0$ is the smallest eigenvalue. From
+\[\op a^{\dagger}\op a\ket{n_0}=n_0\ket{n_0}=0\]
+we obtain $n_0=0$. Therefore
+\[\boxed{E_n=\left(n+\frac12\right)\hbar\omega,\quad n=0,1,2,\ldots.}\]
+Notice that so far we have used only the commutation relation, without introducing any specific representation.
+
+\subsection*{4) Matrix elements of creation and annihilation operators}
+Since $\op a\ket n$ has eigenvalue $n-1$, and in the absence of degeneracy (one-dimensional bound states are nondegenerate),
+\[\op a\ket n=a_n\ket{n-1}.\]
+Similarly,
+\[\op a^{\dagger}\ket n=b_n\ket{n+1}.\]
+Because
+\[\bra n\op a^{\dagger}=a_n^*\bra{n-1},\qquad
+\bra n\op a=b_n^*\bra{n+1},\]
+we obtain
+\[\mel n{\op a^{\dagger}\op a}n=|a_n|^2\braket{n-1}{n-1},\quad n=|a_n|^2,\quad |a_n|=\sqrt n,\]
+\[\mel n{\op a\op a^{\dagger}}n=|b_n|^2\braket{n+1}{n+1},\quad
+n+1=|b_n|^2,\quad |b_n|=\sqrt{n+1}.\]
+Choose the phases so that $a_n=\sqrt n$ and $b_n=\sqrt{n+1}$. Thus
+\[\boxed{\op a\ket n=\sqrt n\ket{n-1},\qquad
+\op a^{\dagger}\ket n=\sqrt{n+1}\ket{n+1}.}\]
+
+\subsection*{5) Representation common to $\op H$ and $\op a^{\dagger}\op a$}
+\[(a^{\dagger}a)_{mn}=\mel m{\op a^{\dagger}\op a}n
+=n\braket m n=n\delta_{mn},\]
+\[H_{mn}=\mel m{\op H}n=\left(n+\frac12\right)\hbar\omega\delta_{mn}.\]
+Both are diagonal matrices, as expected in their own representation. Meanwhile,
+\[a_{mn}=\mel m{\op a}n=\sqrt n\braket m{n-1}=\sqrt n\delta_{m,n-1},\]
+\[(a^{\dagger})_{mn}=\mel m{\op a^{\dagger}}n
+=\sqrt{n+1}\braket m{n+1}=\sqrt{n+1}\delta_{m,n+1}.\]
+Since
+\[\op x=\sqrt{\frac\hbar{2m\omega}}(\op a^{\dagger}+\op a),\qquad
+\op p=\ii\sqrt{\frac{m\hbar\omega}{2}}(\op a^{\dagger}-\op a),\]
+it follows that
+\[x_{mn}=\sqrt{\frac\hbar{2m\omega}}
+\bigl(\sqrt n\delta_{m,n-1}+\sqrt{n+1}\delta_{m,n+1}\bigr),\]
+\[p_{mn}=\ii\sqrt{\frac{m\hbar\omega}{2}}
+\bigl(-\sqrt n\delta_{m,n-1}+\sqrt{n+1}\delta_{m,n+1}\bigr).\]
+They are nondiagonal matrices. Note that $\mel n{\op x}n=\mel n{\op p}n=0$.
+
+\subsection*{6) Coordinate representation}
+For the ground state $\ket0$,
+\[\op a\ket0=0,\qquad
+\left(\op x+\frac{\ii}{m\omega}\op p\right)\ket0=0.\]
+Multiplying from the left by $\bra x$ and inserting the completeness relation,
+\[\int\dd x'\,\bra x\left(\op x+\frac{\ii}{m\omega}\op p\right)\ket{x'}\braket{x'}0=0.\]
+Using
+\[\mel x{\op x}{x'}=x\delta(x-x'),\qquad
+\mel x{\op p}{x'}=-\ii\hbar\frac{\dd}{\dd x}\delta(x-x'),\qquad
+\braket{x'}0=\psi_0(x'),\]
+we obtain
+\[\left(x+\frac\hbar{m\omega}\frac{\dd}{\dd x}\right)\psi_0(x)=0.\]
+The solution of this first-order differential equation is
+\[\psi_0(x)=C\exp\left(-\frac{m\omega x^2}{2\hbar}\right).\]
+With the normalization condition
+\[\int_{-\infty}^{\infty}|\psi_0(x)|^2\dd x=1,\]
+we have
+\[\boxed{\psi_0(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+\exp\left(-\frac{m\omega x^2}{2\hbar}\right).}\]
+For an excited state,
+\[\begin{split}
+\psi_n(x)=\braket x n
+&=\frac1{\sqrt n}\bra x\op a^{\dagger}\ket{n-1}
+=\frac1{\sqrt{n(n-1)}}\bra x(\op a^{\dagger})^2\ket{n-2}\\
+&=\frac1{\sqrt{n!}}\bra x(\op a^{\dagger})^n\ket0
+=\frac1{\sqrt{n!}}\left(\frac{m\omega}{2\hbar}\right)^{n/2}
+\bra x\left(\op x-\frac{\ii}{m\omega}\op p\right)^n\ket0.
+\end{split}\]
+Insert $n$ position completeness relations:
+\[\begin{split}
+\psi_n(x)=\frac1{\sqrt{n!}}\left(\frac{m\omega}{2\hbar}\right)^{n/2}
+\int\dd x_1\cdots\dd x_n\;&\mel x{\op x-\frac{\ii}{m\omega}\op p}{x_1}
+\mel{x_1}{\op x-\frac{\ii}{m\omega}\op p}{x_2}\\[-2pt]
+&\cdots\mel{x_{n-1}}{\op x-\frac{\ii}{m\omega}\op p}{x_n}\braket{x_n}0.
+\end{split}\]
+Using the position and momentum matrix elements gives
+\[\boxed{\psi_n(x)=\frac1{\sqrt{n!}}\left(\frac{m\omega}{2\hbar}\right)^{n/2}
+\left(x-\frac\hbar{m\omega}\frac{\dd}{\dd x}\right)^n\psi_0(x).}\]
+Thus the one-dimensional harmonic-oscillator problem has been solved completely.
+
+\subsection*{7) Physical meaning of $\op a^{\dagger}\op a$}
+The harmonic-oscillator energies are
+\[E_n=\left(n+\frac12\right)\hbar\omega,\qquad n=0,1,2,3,\ldots.\]
+The ground-state energy $E_0=\hbar\omega/2>0$ is the zero-point energy. An excited state involves quanta of energy $\varepsilon=\hbar\omega$. When the oscillator is in the $n$-th excited state, $n$ quanta have been excited.
+
+$n$: quantum number, particle number.
+
+$\op N=\op a^{\dagger}\op a$ is the particle-number operator; $\op a$ is a particle-annihilation operator and $\op a^{\dagger}$ a particle-creation operator.
+
+The common representation of $\op H$ and $\op N$ is the particle-number representation.
+
+To summarize the algebraic solution: bound states $\to$ discrete spectrum $\to$ identify lowering and raising operators for the discrete quantum numbers. The particle-number representation is the foundation of the second-quantization scheme.
+
+\subsection*{8) Casimir effect}
+Does the zero-point energy have observable effects? Consider the vacuum energy of the quantized electromagnetic field.
+
+According to Planck's studies of blackbody radiation, the electromagnetic field consists of harmonic oscillations of different frequencies $\omega_k$ (energy $\hbar\omega_k$). Here $k$ is the wave number, $\omega_k=ck$, and $n$ is the number of photons of energy $\hbar\omega_k$. The total electromagnetic-field energy is written
+\[E=2\int\frac{\dd^3k}{(2\pi)^3}\sum_{n=0}^{\infty}
+\left(n+\frac12\right)\hbar\omega_k.\]
+Boundary conditions change the distribution of frequencies, hence the distribution of wave numbers $k$.
+
+The vacuum is the unexcited state, $n=0$, with vacuum energy
+\[E=\int\frac{\dd^3k}{(2\pi)^3}\hbar\omega_k,\]
+which is infinite. In ordinary calculations it is subtracted as the background to excitations. The question is whether the vacuum energy itself has observable effects.
+
+Place two parallel plates in the electromagnetic radiation field, each of area $L^2$ with $L$ sufficiently large and separation $a\ll L$. Boundary conditions restrict the component of wave number perpendicular to the plates to $k_z=n\pi/a$; in the transverse direction there is no significant restriction because $L$ is large. The vacuum energy between the plates, in volume $L^2a$, is
+\[E(a)=\hbar c\int\frac{\dd^2 k_\perp}{(2\pi/L)^2}
+\sum_{n=0}^{\infty}\sqrt{k_\perp^2+\left(\frac{n\pi}{a}\right)^2}.\]
+Here $\dd^2k_\perp/(2\pi/L)^2$ is the number of transverse modes in the element $\dd^2k_\perp$ near $\vect k_\perp$.
+
+The change in vacuum energy associated with inserting the plates into this volume is
+\[\begin{split}
+\Delta E(a)=E(a)-E_0(a)
+=\hbar c\int\frac{\dd^2 k_\perp}{(2\pi/L)^2}
+\bigg[&\sum_{n=0}^{\infty}\sqrt{k_\perp^2+\left(\frac{n\pi}{a}\right)^2}\\[-2pt]
+&-\int_0^\infty\dd n\,\sqrt{k_\perp^2+\left(\frac{n\pi}{a}\right)^2}\bigg].
+\end{split}\]
+This change produces a force per unit area between the plates,
+\[F(a)=-\frac1{L^2}\frac{\partial\Delta E(a)}{\partial a}.\]
+Both $E(a)$ and $E_0(a)$ diverge (vacuum divergence), but $\Delta E(a)$ is finite. After calculation (see standard quantum-mechanics textbooks, for example those by Su Ru-Keng and Zhang Yong-De),
+\[\boxed{F(a)=-\frac{\hbar c\pi^2}{240a^4}.}\]
+The attractive force caused by the change (fluctuation) in vacuum energy when the plates are inserted, and its dependence on $a$, were experimentally observed in 1958. This is an observable effect of the vacuum energy.
+
+\subsection*{9) Time evolution of observables in the Heisenberg picture}
+Omitting the H subscript, the Heisenberg equations of motion give
+\[\frac{\dd\op a}{\dd t}=\frac1{\ii\hbar}[\op a,\op H]=-\ii\omega\op a,\qquad
+\frac{\dd\op a^{\dagger}}{\dd t}=\frac1{\ii\hbar}[\op a^{\dagger},\op H]
+=\ii\omega\op a^{\dagger}.\]
+The solutions are
+\[\op a(t)=\op a(0)e^{-\ii\omega t},\qquad
+\op a^{\dagger}(t)=\op a^{\dagger}(0)e^{\ii\omega t}.\]
+Alternatively,
+\[\begin{split}
+\op x(t)&=\sqrt{\frac\hbar{2m\omega}}\bigl(\op a(t)+\op a^{\dagger}(t)\bigr)
+=\op x(0)\cos\omega t+\frac{\op p(0)}{m\omega}\sin\omega t,\\
+\op p(t)&=\ii\sqrt{\frac{m\hbar\omega}{2}}\bigl(\op a^{\dagger}(t)-\op a(t)\bigr)
+=\op p(0)\cos\omega t-m\omega\op x(0)\sin\omega t.
+\end{split}\]
+Although $\op x(t)$ and $\op p(t)$ oscillate, their expectation values in an energy eigenstate are
+\[\mel n{\op x(t)}n
+=\mel n{\op x(0)}n\cos\omega t+
+\frac1{m\omega}\mel n{\op p(0)}n\sin\omega t=0,\]
+\[\mel n{\op p(t)}n
+=\mel n{\op p(0)}n\cos\omega t-m\omega\mel n{\op x(0)}n\sin\omega t=0\]
+and thus show no oscillation.

@@ -1,0 +1,130 @@
+% Faithful translation baseline; Chinese source PDF pp. 31--34.
+\section{Schr\"odinger and Heisenberg Pictures}
+\subsection*{1) Two kinds of unitary transformations}
+The spatial-translation operator $\op U(\dd\vect x)$ and time-translation operator $\op U(\dd t)$ discussed earlier both act on the state:
+\[\ket\alpha\longrightarrow\op U(\dd\vect x)\ket\alpha
+=\left(\mathbf1-\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)\ket\alpha,\]
+\[\ket\alpha\longrightarrow\op U(\dd t)\ket\alpha
+=\left(\mathbf1-\frac{\ii}{\hbar}\op H\dd t\right)\ket\alpha.\]
+The physical quantities remain unchanged; observable differences arise from changes in the state. Under a unitary change of the state,
+\[\mel\beta{\op A}\alpha\longrightarrow
+\bra\beta\op U^{\dagger}\op A\op U\ket\alpha.\]
+Equivalently, one may leave the state $\ket\alpha$ unchanged and transform the physical quantity:
+\[\boxed{\op A\longrightarrow\op U^{\dagger}\op A\op U,\qquad\ket\alpha\ \text{unchanged}.}\]
+The two methods are completely equivalent: the time dependence may be assigned either to the state or to the observable. For example, under a spatial displacement,
+\[\op x\longrightarrow\op U^{\dagger}(\dd\vect x)\op x\op U(\dd\vect x)
+=\left(\mathbf1+\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)
+\op x\left(\mathbf1-\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)
+=\op x+\frac{\ii}{\hbar}[\vect{\op p}\cdot\dd\vect x,\op x]
+=\op x+\dd\vect x.\]
+
+\subsection*{2) Schr\"odinger and Heisenberg pictures of time evolution}
+In the \emph{Schr\"odinger picture}, the state evolves as
+\[\ket{\alpha,t}_{\mathrm S}=\op U(t)\ket{\alpha,0}_{\mathrm S},\qquad
+\op U(t)=e^{-\ii\op Ht/\hbar},\]
+while the observable $\op A_{\mathrm S}$ remains fixed in time.
+
+In the \emph{Heisenberg picture}, the observable evolves as
+\[\op A_{\mathrm H}(t)=\op U^{\dagger}(t)\op A_{\mathrm H}(0)\op U(t),\]
+while the state $\ket\alpha_{\mathrm H}$ remains fixed.
+
+For the same initial conditions,
+\[\op A_{\mathrm H}(0)=\op A_{\mathrm S},\qquad
+\ket{\alpha,0}_{\mathrm S}=\ket\alpha_{\mathrm H}.\]
+These are the relations between the two pictures.
+
+\textbf{Notes.}
+\begin{enumerate}
+\item Inner products (including matrix elements, probability amplitudes and expectation values) are independent of picture:
+\[{}_{\mathrm S}\braket{\alpha,t}{\beta,t}_{\mathrm S}
+={}_{\mathrm S}\bra{\alpha,0}\op U^{\dagger}\op U\ket{\beta,0}_{\mathrm S}
+={}_{\mathrm S}\braket{\alpha,0}{\beta,0}_{\mathrm S}
+={}_{\mathrm H}\braket\alpha\beta_{\mathrm H}.\]
+\item Since a unitary transformation preserves commutators, if the Schr\"odinger-picture commutation relation is
+\[[\op A_{\mathrm S},\op B_{\mathrm S}]=\op C_{\mathrm S},\]
+or equivalently initially $[\op A_{\mathrm H}(0),\op B_{\mathrm H}(0)]=\op C_{\mathrm H}(0)$, then the equal-time relation is
+\[[\op A_{\mathrm H}(t),\op B_{\mathrm H}(t)]=\op C_{\mathrm H}(t).\]
+\item The Hamiltonian in the previously introduced time-evolution operator $\op U(t)=e^{-\ii\op Ht/\hbar}$ is the Schr\"odinger-picture Hamiltonian $\op H=\op H_{\mathrm S}$. For a time-independent Hamiltonian,
+\[\op H_{\mathrm H}(t)=\op U^{\dagger}(t)\op H_{\mathrm S}\op U(t)
+=e^{\ii\op H_{\mathrm S}t/\hbar}\op H_{\mathrm S}e^{-\ii\op H_{\mathrm S}t/\hbar}
+=\op H_{\mathrm S}=\op H_{\mathrm H}.\]
+\end{enumerate}
+So far we have considered time evolution of states and observables. Do basis vectors also change with time, as general vectors do? Basis vectors are eigenstates of observables; their time dependence is determined by that of the observables.
+
+In the Schr\"odinger picture,
+\[\op A_{\mathrm S}\ket a_{\mathrm S}=a\ket a_{\mathrm S}.\]
+Since $\op A_{\mathrm S}$ is time independent, its eigenbasis $\ket a_{\mathrm S}$ is also time independent.
+
+In the Heisenberg picture,
+\[\op A_{\mathrm H}(t)\ket{a,t}_{\mathrm H}=a\ket{a,t}_{\mathrm H}.\]
+Since $\op A_{\mathrm H}$ depends on time, its basis $\ket{a,t}_{\mathrm H}$ also depends on time. Using
+\[\op U^{\dagger}(t)\op A_{\mathrm S}\op U(t)\ket{a,t}_{\mathrm H}
+=a\ket{a,t}_{\mathrm H},\]
+we obtain
+\[\op A_{\mathrm S}\op U(t)\ket{a,t}_{\mathrm H}
+=a\op U(t)\ket{a,t}_{\mathrm H}.\]
+Comparison with the Schr\"odinger-picture eigenvalue equation gives
+\[\op U(t)\ket{a,t}_{\mathrm H}=\ket a_{\mathrm S},\quad
+\ket{a,t}_{\mathrm H}=\op U^{\dagger}(t)\ket a_{\mathrm S}
+=\op U^{\dagger}(t)\ket{a,0}_{\mathrm H}.\]
+In summary:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+&Schr\"odinger picture&Heisenberg picture\\\midrule
+State&$\ket{\alpha,t}_{\mathrm S}=\op U(t)\ket{\alpha,0}_{\mathrm S}$&$\ket\alpha_{\mathrm H}$ fixed\\
+Observable&$\op A_{\mathrm S}$ fixed&$\op A_{\mathrm H}(t)=\op U^{\dagger}\op A_{\mathrm H}(0)\op U$\\
+Basis&$\ket a_{\mathrm S}$ fixed&$\ket{a,t}_{\mathrm H}=\op U^{\dagger}(t)\ket{a,0}_{\mathrm H}$\\\bottomrule
+\end{tabular}\end{center}
+
+\subsection*{3) Equation of motion in the Heisenberg picture}
+In classical mechanics, only physical quantities evolve with time and the notion of a state vector is not introduced. The Heisenberg picture of quantum mechanics is therefore easier to compare with classical mechanics.
+
+Differentiate
+\[\op A_{\mathrm H}(t)=e^{\ii\op Ht/\hbar}\op A_{\mathrm H}(0)e^{-\ii\op Ht/\hbar}\]
+with respect to time. We obtain the Heisenberg equation of motion:
+\[\boxed{\frac{\dd\op A_{\mathrm H}(t)}{\dd t}
+=\frac1{\ii\hbar}[\op A_{\mathrm H}(t),\op H].}\]
+It plays a role similar to the Schr\"odinger-picture equation for the state,
+\[\ii\hbar\frac{\partial}{\partial t}\ket{\alpha,t}_{\mathrm S}
+=\op H\ket{\alpha,t}_{\mathrm S}.\]
+Compare the equation of motion of analytical classical mechanics,
+\[\frac{\dd A}{\dd t}=\{A,H\}_{\mathrm{Poisson}}.\]
+We obtain the route from classical mechanics to quantum mechanics, canonical quantization:
+\[\boxed{\{\ \,,\ \}_{\mathrm{Poisson}}\quad
+\xrightarrow{\ \text{quantum mechanics}\ }\quad
+\frac1{\ii\hbar}[\ \,,\ \ ].}\]
+
+\subsection*{4) Ehrenfest theorem}
+How is $\op H$ constructed? For a quantum system with a classical counterpart, the Hamiltonian $H(\vect x,\vect p)$ of analytical mechanics is taken to the quantum Hamiltonian $\op H(\vect{\op x},\vect{\op p})$.
+
+For a free particle,
+\[\op H=\frac{\vect{\op p}^{\,2}}{2m}.\]
+Heisenberg equations of motion (we henceforth omit the picture index H on observables) give
+\[\frac{\dd\vect{\op p}}{\dd t}=
+\frac1{\ii\hbar}[\vect{\op p},\op H]=0,\qquad
+\vect{\op p}(t)=\vect{\op p}(0),\]
+\[\frac{\dd\vect{\op x}}{\dd t}=\frac1{\ii\hbar}[\vect{\op x},\op H]
+=\frac1{2\ii\hbar m}[\vect{\op x},\vect{\op p}^{\,2}]
+=\frac{\vect{\op p}(t)}m=\frac{\vect{\op p}(0)}m,\quad
+\vect{\op x}(t)=\vect{\op x}(0)+\frac{\vect{\op p}(0)}m t.\]
+For a general system,
+\[\op H=\frac{\vect{\op p}^{\,2}}{2m}+V(\vect{\op x}).\]
+The Heisenberg equations are
+\[\frac{\dd\vect{\op p}}{\dd t}=
+\frac1{\ii\hbar}[\vect{\op p},\op H]
+=\frac1{\ii\hbar}[\vect{\op p},V(\vect{\op x})].\]
+Expand $V(\vect{\op x})$ as a power series in $\vect{\op x}$ and use $[\op x_i,\op p_j]=\ii\hbar\delta_{ij}$. Then
+\[\frac{\dd\vect{\op p}}{\dd t}=-\vect\nabla V(\vect{\op x}),\]
+\[\frac{\dd\vect{\op x}}{\dd t}
+=\frac1{\ii\hbar}[\vect{\op x},\op H]
+=\frac1{2\ii\hbar m}[\vect{\op x},\vect{\op p}^{\,2}]
+=\frac{\vect{\op p}}m,\]
+\[m\frac{\dd^2\vect{\op x}}{\dd t^2}
+=\frac{\dd\vect{\op p}}{\dd t}=-\vect\nabla V(\vect{\op x}).\]
+Taking expectation values on both sides,
+\[\boxed{m\frac{\dd^2\langle\vect{\op x}\rangle}{\dd t^2}
+=\frac{\dd\langle\vect{\op p}\rangle}{\dd t}
+=-\langle\vect\nabla V(\vect{\op x})\rangle.}\]
+This is the Ehrenfest theorem, corresponding to Newton's law in classical mechanics. Since inner products are picture-independent, the Ehrenfest theorem for expectation values is also picture-independent.
+
+Unless otherwise stated, problems below are generally discussed in the Schr\"odinger picture.

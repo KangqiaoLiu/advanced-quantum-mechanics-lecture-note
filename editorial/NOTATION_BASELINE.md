@@ -20,3 +20,11 @@ This list codifies the project blueprint's proposed choices already needed in Ch
 | Commutator, anticommutator | `[A,B]`, `\{A,B\}` |
 
 Full-book conventions are currently marked proposed in `PROJECT_BLUEPRINT.md`; change this file and associated chapters together if the instructor adopts a different standard.
+
+## Chapter 2 conventions (2026-10-16)
+
+- Schrödinger/Heisenberg observables use subscripts `\mathrm S`, `\mathrm H`; physical time evolution is `\op U(t,t_0)`.
+- Oscillator lowering/raising operators are `\op a`, `\op a^\dagger`; number `\op N=\op a^\dagger\op a`; coherent eigenvalue `\alpha` is complex.
+- The position-space propagator is `K(x_f,t_f;x_i,t_i)`.
+- Source Chapter 2 uses Gaussian electromagnetic conventions, including `(e/c)A`, `E=-\nabla\varphi-c^{-1}\partial_t A`. Keep these units in Phase T, pending separate later decisions on uniform book units.
+- The printed student list of notation remains [frontmatter/notation.tex](../frontmatter/notation.tex).

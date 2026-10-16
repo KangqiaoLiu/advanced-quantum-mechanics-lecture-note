@@ -1,0 +1,186 @@
+% Faithful translation baseline; Chinese source PDF pp. 48--52.
+\section{Feynman Path Integral}
+\subsection*{1) Propagator in the Schr\"odinger picture}
+Start with the time evolution of the state:
+\[\ket{\psi,t}=e^{-\ii\op H(t-t_0)/\hbar}\ket{\psi,t_0}.\]
+In the coordinate representation,
+\[\begin{split}
+\braket{\vect x''}{\psi,t}
+&=\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{\psi,t_0}\\
+&=\int\dd^3x'\,\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}
+\ket{\vect x'}\braket{\vect x'}{\psi,t_0}.
+\end{split}\]
+Define the matrix element of the evolution operator,
+\[\boxed{K(\vect x'',t;\vect x',t_0)
+=\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{\vect x'}.}\]
+Then
+\[\psi(\vect x'',t)=\int\dd^3x'\,
+K(\vect x'',t;\vect x',t_0)\psi(\vect x',t_0).\]
+The function $K(\vect x'',t;\vect x',t_0)$ is the propagator: it propagates the initial wavefunction $\psi(\vect x',t_0)$ to the final wavefunction $\psi(\vect x'',t)$. Integration means that every possible position of the particle in the initial wavefunction contributes to its final state.
+
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.8]
+\draw[->](0,0)--(5,0)node[right]{$x$};\draw[->](0,0)--(0,3.1)node[above]{$t$};
+\fill (.9,.45)circle(2pt)node[below right]{$(x',t_0)$};\fill (4,2.7)circle(2pt)node[above]{$(x'',t)$};
+\draw[->,thick] (.9,.45)to[out=45,in=230] (4,2.7);
+\node at(2.55,1.55){$K(x'',t;x',t_0)$};
+\end{tikzpicture}\end{center}
+We now derive the propagator's relationship to the equation of motion. Take $t\ge t_0$ and define a related propagator incorporating the initial condition:
+\[K(\vect x'',t;\vect x',t_0)
+=\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{\vect x'}\,\theta(t-t_0).\]
+Differentiate with respect to $t$:
+\[\begin{split}
+\ii\hbar\frac{\partial K}{\partial t}
+&=\bra{\vect x''}\op H e^{-\ii\op H(t-t_0)/\hbar}\ket{\vect x'}\theta(t-t_0)\\
+&\quad+\ii\hbar\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{\vect x'}\delta(t-t_0)\\
+&=\int\dd^3x'''\,\mel{\vect x''}{\op H}{\vect x'''}
+K(\vect x''',t;\vect x',t_0)\\
+&\quad+\ii\hbar\delta^{(3)}(\vect x''-\vect x')\delta(t-t_0)\\
+&=\op H(\vect x'')K(\vect x'',t;\vect x',t_0)
++\ii\hbar\delta^{(3)}(\vect x''-\vect x')\delta(t-t_0).
+\end{split}\]
+Thus
+\[\boxed{\left(\ii\hbar\frac{\partial}{\partial t}-\op H(\vect x'')\right)
+K(\vect x'',t;\vect x',t_0)
+=\ii\hbar\delta^{(3)}(\vect x''-\vect x')\delta(t-t_0).}\]
+Notice that taking the spatial trace of the propagator yields
+\[\begin{aligned}
+\int\dd^3x\,K(\vect x,t;\vect x,0)
+&=\int\dd^3x\,\bra{\vect x}e^{-\ii\op Ht/\hbar}\ket{\vect x}\\
+&=\sum_E\int\dd^3x\,\braket{\vect x}{E}\braket E{\vect x}
+\,e^{-\ii Et/\hbar}\\
+&=\sum_E e^{-\ii Et/\hbar}.
+\end{aligned}\]
+With the imaginary-time substitution $t=-\ii\hbar\beta$, this becomes the statistical-mechanical partition function $Z=\sum_Ee^{-\beta E}$, showing a relation between imaginary-time propagators and statistical mechanics.
+
+\textbf{Example 1: propagator of a one-dimensional free particle.}
+\[\begin{split}
+K(x'',t;x',t_0)
+&=\bra{x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{x'}\\
+&=\int\dd p\,\braket{x''}p e^{-\ii p^2(t-t_0)/(2m\hbar)}\braket p{x'}\\
+&=\int\frac{\dd p}{2\pi\hbar}
+\exp\left[\frac\ii\hbar\left(p(x''-x')-\frac{p^2(t-t_0)}{2m}\right)\right]\\
+&=\sqrt{\frac{m}{2\pi\ii\hbar(t-t_0)}}
+\exp\left[\frac{\ii m(x''-x')^2}{2\hbar(t-t_0)}\right].
+\end{split}\]
+Once this propagator is known, the time evolution of an initial plane wave (stationary state), $\psi(x',t_0)=(2\pi)^{-1}\exp\left[{\ii}\bigl(px'-p^2t_0/(2m)\bigr)/\hbar\right]$, is
+\[\psi(x'',t)=\int\dd x'\,K(x'',t;x',t_0)\psi(x',t_0),\]
+which is again a plane wave.
+
+\textbf{Example 2: propagator of a one-dimensional harmonic oscillator.}
+\[\begin{split}
+K(x'',t;x',t_0)
+&=\bra{x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{x'}\\
+&=\sum_n\braket{x''}n e^{-\ii E_n(t-t_0)/\hbar}\braket n{x'}\\
+&=\sum_n\psi_n(x'')\psi_n^*(x')e^{-\ii E_n(t-t_0)/\hbar}.
+\end{split}\]
+Here $E_n$ and $\psi_n(x)$ are the oscillator's energies and its coordinate-representation wavefunctions.
+
+\subsection*{2) Transition amplitude in the Heisenberg picture}
+In the Heisenberg picture,
+\[\begin{split}
+K(\vect x'',t;\vect x',t_0)
+&=\bra{\vect x''}e^{-\ii\op H(t-t_0)/\hbar}\ket{\vect x'}\\
+&=\left(\bra{\vect x''}e^{-\ii\op Ht/\hbar}\right)
+\left(e^{\ii\op Ht_0/\hbar}\ket{\vect x'}\right)\\
+&=\left(\bra{\vect x''}\op U(t,0)\right)
+\left(\op U^{\dagger}(t_0,0)\ket{\vect x'}\right)
+=\braket{\vect x'',t}{\vect x',t_0}.
+\end{split}\]
+This is the amplitude for the position eigenstate $\ket{\vect x',t_0}$ at time $t_0$ to make a transition to the position eigenstate $\ket{\vect x'',t}$ at time $t$. Thus the propagator is also called a transition amplitude.
+
+The completeness relation in the Heisenberg picture must involve basis states at the same time:
+\[\int\dd^3x\,\ket{\vect x,t}\bra{\vect x,t}=\mathbf1.\]
+It follows that
+\[\begin{split}
+K(\vect x_3,t_3;\vect x_1,t_1)
+&=\braket{\vect x_3,t_3}{\vect x_1,t_1}\\
+&=\int\dd^3x_2\,\braket{\vect x_3,t_3}{\vect x_2,t_2}
+\braket{\vect x_2,t_2}{\vect x_1,t_1}\\
+&=\int\dd^3x_2\,K(\vect x_3,t_3;\vect x_2,t_2)
+K(\vect x_2,t_2;\vect x_1,t_1),\quad t_3>t_2>t_1.
+\end{split}\]
+This is the composition law of propagators: propagation from $(\vect x_1,t_1)$ to $(\vect x_3,t_3)$ is the sum over propagation first to $(\vect x_2,t_2)$ and then to $(\vect x_3,t_3)$.
+
+For simplicity, consider one spatial dimension. Divide the interval from the initial to final time into $N-1$ equal parts:
+\[\dd t=\frac{t_N-t_1}{N-1}.\]
+The full propagator is
+\[\begin{split}
+K(x_N,t_N;x_1,t_1)=\int&\dd x_{N-1}\dd x_{N-2}\cdots\dd x_2\;
+K(x_N,t_N;x_{N-1},t_{N-1})\\
+&\times K(x_{N-1},t_{N-1};x_{N-2},t_{N-2})\cdots
+K(x_2,t_2;x_1,t_1).
+\end{split}\]
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.82]
+\draw[->](0,0)--(6.6,0)node[right]{$x$};\draw[->](0,0)--(0,3.1)node[above]{$t$};
+\coordinate (P) at(1,.5);\fill(P) circle (1.8pt) node[below]{$(x_1,t_1)$};
+\foreach \x/\y in {2/1,2.7/1.6,3.5/2.2,5/2.8}{\fill(\x,\y) circle(1.7pt);}
+\draw[thick](P)--(2,1)--(2.7,1.6)--(3.5,2.2)--(5,2.8);
+\node[right]at(5,2.8){$(x_N,t_N)$};
+\end{tikzpicture}\end{center}
+As $N\to\infty$, or $\dd t\to0$, this multiple integral becomes a sum over paths.
+\begin{center}\begin{tikzpicture}[>=Latex,scale=.72]
+\draw[->](0,0)--(6.4,0)node[right]{$x$};
+\draw[->](0,0)--(0,3.2)node[above]{$t$};
+\fill (1,.5)circle(2pt)node[below left]{$(x_1,t_1)$};
+\fill (5,2.8)circle(2pt)node[above right]{$(x_N,t_N)$};
+\draw[thick] (1,.5)to[out=15,in=210](3,1.9)to[out=40,in=225](5,2.8);
+\draw (1,.5)to[out=150,in=195](.55,1.6)to[out=20,in=205](5,2.8);
+\draw (1,.5)to[out=0,in=260](3,1.0)to[out=65,in=205](5,2.8);
+\draw (1,.5)to[out=20,in=170](4.5,1.8)to[out=35,in=230](5,2.8);
+\node[right] at(3.0,2.4){$x(t)$};
+\end{tikzpicture}\end{center}
+
+Unlike quantum mechanics, where every path contributes to evolution in space-time, in classical mechanics a particular initial and final state is connected by a unique path determined by the principle of least action. For example, the unique path of free fall is
+\[x=h-\frac12gt^2,\]
+where $h$ is the height and $g$ the acceleration of gravity.
+
+\subsection*{3) Path integral}
+The basic postulate of Feynman's path-integral theory is that the probability amplitude for propagation from $(x_1,t_1)$ to $(x_N,t_N)$ is the sum of contributions from all possible paths $x(t)$:
+\[\boxed{K(x_N,t_N;x_1,t_1)
+=C\int_{x_1}^{x_N}[\dd x(t)]\,e^{\ii S[x(t)]/\hbar}
+=C\int_{x_1}^{x_N}[\dd x(t)]
+\exp\left[\frac\ii\hbar\int_{t_1}^{t_N}L_c(x,\dot x)\dd t\right].}\]
+The contribution of each path is $Ce^{\ii S[x(t)]/\hbar}$. The action is
+\[S[x(t)]=\int_{t_1}^{t_N}L_c(x,\dot x)\dd t,\qquad
+L_c=\frac12m\dot x^2-V(x).\]
+To return the path integral to a multiple integral, take $\dd t=(t_N-t_1)/N$ and obtain
+\[K(x_N,t_N;x_1,t_1)=C\lim_{N\to\infty}
+\int\dd x_{N-1}\cdots\dd x_2\,
+\exp\left[\frac\ii\hbar\sum_{n=2}^{N}L_c(x_n,\dot x_n)\dd t\right].\]
+If $L_c$ is quadratic in $x$, the path integral is Gaussian and exactly integrable. For example, for a free particle,
+\[L_c=\frac12m\dot x^2,\qquad
+L_c(x_n,\dot x_n)\dd t=\frac12m\left(\frac{x_n-x_{n-1}}{\dd t}\right)^2\dd t
+=\frac{m(x_n-x_{n-1})^2}{2\dd t}.\]
+Then
+\[\begin{split}
+K(x_N,t_N;x_1,t_1)
+&=C\lim_{N\to\infty}\int\dd x_{N-1}\cdots\dd x_2\,
+\exp\left[\frac{\ii m}{2\hbar\dd t}
+\sum_{n=2}^{N}(x_n-x_{n-1})^2\right]\\
+&=C\exp\left[\frac{\ii m(x_N-x_1)^2}{2\hbar(t_N-t_1)}\right].
+\end{split}\]
+The position eigenstates' orthogonality and normalization require
+\[\lim_{t_N\to t_1}K(x_N,t_N;x_1,t_1)
+=\braket{x_N,t_1}{x_1,t_1}=\delta(x_N-x_1).\]
+Thus
+\[\boxed{K(x_N,t_N;x_1,t_1)
+=\sqrt{\frac{m}{2\pi\ii\hbar(t_N-t_1)}}
+\exp\left[\frac{\ii m(x_N-x_1)^2}{2\hbar(t_N-t_1)}\right].}\]
+This agrees with the calculation in the Schr\"odinger picture.
+
+As another example, for the harmonic oscillator the classical Lagrangian is
+\[L_c=\frac12m\dot x^2-\frac12m\omega^2x^2.\]
+After evaluating the Gaussian integral,
+\[\boxed{\begin{aligned}
+K(x_N,t_N;x_1,t_1)
+&=\sqrt{\frac{m\omega}{2\pi\ii\hbar\sin[\omega(t_N-t_1)]}}\\[-2pt]
+&\quad\times\exp\left\{\frac{\ii m\omega}{2\hbar\sin[\omega(t_N-t_1)]}
+\left[(x_N^2+x_1^2)\cos[\omega(t_N-t_1)]-2x_1x_N\right]\right\}.
+\end{aligned}}\]
+\textbf{Discussion.}
+\begin{enumerate}[label=(\arabic*)]
+\item The phase factor contributed by each path is different. In a classical system, when the action $S_{\mathrm{cl}}$ along the classical path is much greater than $\hbar$, the actions on nearby paths differ, and their contributions oscillate rapidly and cancel; the contribution from the stationary-action path remains.
+\item Only Gaussian path integrals can be evaluated exactly.
+\item In the Schr\"odinger picture, the probability amplitude refers to a transition of the state. In Feynman's path integral, the probability amplitude is linked to the particle's motion, namely to paths. Feynman's path-integral theory can be proved equivalent to the Schr\"odinger equation (see p.~122 of the original source).
+\item A merit of the path integral is that the difference from classical mechanics is apparent and easily understood. Operators and other $q$-numbers need not be introduced; all calculations take place using $c$-numbers. Path integrals are relatively cumbersome in nonrelativistic quantum mechanics, but important in gauge field theory.
+\end{enumerate}

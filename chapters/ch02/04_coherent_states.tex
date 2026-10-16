@@ -1,0 +1,66 @@
+% Faithful translation baseline; Chinese source PDF pp. 41--42.
+\section{Coherent States of the Harmonic Oscillator}
+In energy eigenstates of the harmonic oscillator, the expectation values of $\op x$ and $\op p$ are zero, and no classical oscillation is observed. However, consider a linear combination of energy eigenstates, for example
+\[\ket a=c_0\ket0+c_1\ket1.\]
+In the Heisenberg picture, the expectation value is
+\[\begin{split}
+\mel a{\op x(t)}a
+&=(c_0^*\bra0+c_1^*\bra1)\op x(t)(c_0\ket0+c_1\ket1)\\
+&=c_0^*c_1\mel0{\op x(t)}1+c_1^*c_0\mel1{\op x(t)}0\\
+&=\sqrt{\frac\hbar{2m\omega}}
+\left(c_0^*c_1e^{-\ii\omega t}+c_1^*c_0e^{\ii\omega t}\right).
+\end{split}\]
+Oscillations appear. Can one find a state whose oscillation is closest to classical oscillation, that is, the oscillation of $\op x(t)$? This leads to the coherent state $\ket\alpha$, defined as an eigenstate of the lowering operator:
+\[\boxed{\op a\ket\alpha=\alpha\ket\alpha.}\]
+Note that $\op a$ is not Hermitian; its eigenvalue $\alpha$ is generally complex.
+
+\subsection*{1) Coherent states satisfy the minimum-uncertainty relation}
+The uncertainty relation is
+\[(\Delta x)^2(\Delta p)^2\ge\frac{\hbar^2}{4}.\]
+In the coherent state $\ket\alpha$,
+\[\begin{split}
+\mel\alpha{\op x}\alpha
+&=\sqrt{\frac\hbar{2m\omega}}\mel\alpha{\op a^{\dagger}+\op a}\alpha
+=\sqrt{\frac\hbar{2m\omega}}(\alpha^*+\alpha),\\
+\mel\alpha{\op x^2}\alpha
+&=\frac\hbar{2m\omega}\bigl[1+(\alpha+\alpha^*)^2\bigr],\\
+\mel\alpha{\op p}\alpha
+&=-\ii\sqrt{\frac{\hbar m\omega}{2}}(\alpha-\alpha^*),\\
+\mel\alpha{\op p^2}\alpha
+&=\frac{\hbar m\omega}{2}\bigl[1-(\alpha-\alpha^*)^2\bigr].
+\end{split}\]
+It follows that
+\[(\Delta x)^2(\Delta p)^2
+=\bigl(\langle\op x^2\rangle-\langle\op x\rangle^2\bigr)
+\bigl(\langle\op p^2\rangle-\langle\op p\rangle^2\bigr)
+=\frac{\hbar^2}{4}.\]
+Thus coherent states satisfy the minimum-uncertainty relation and are the quantum states closest to classical states.
+
+\subsection*{2) Expansion of a coherent state}
+Expand $\ket\alpha$ in energy eigenstates:
+\[\ket\alpha=\sum_n c_n\ket n.\]
+Since
+\[c_n=\braket n\alpha
+=\frac1{\sqrt{n!}}\bra0\op a^n\ket\alpha
+=\frac{\alpha^n}{\sqrt{n!}}\braket0\alpha
+=\frac{\alpha^n}{\sqrt{n!}}c_0,\]
+we have
+\[\ket\alpha=c_0\sum_n\frac{\alpha^n}{\sqrt{n!}}\ket n.\]
+Normalization gives
+\[1=\braket\alpha\alpha=\sum_n|c_n|^2
+=|c_0|^2\sum_n\frac{|\alpha|^{2n}}{n!}
+=|c_0|^2e^{|\alpha|^2}.\]
+Choose $c_0=e^{-|\alpha|^2/2}$; then
+\[\boxed{\ket\alpha=\sum_{n=0}^{\infty}
+e^{-|\alpha|^2/2}\frac{\alpha^n}{\sqrt{n!}}\ket n.}\]
+
+\subsection*{3) The ground state is a coherent state}
+For the ground state $\ket0$, $\op a\ket0=0$. Thus $\ket0$ is an eigenstate of the annihilation operator, with eigenvalue zero.
+
+\subsection*{4) Time evolution of the eigenvalue}
+In the Heisenberg picture,
+\[\op a(t)=\op a(0)e^{-\ii\omega t},\]
+\[\op a(t)\ket\alpha=\op a(0)e^{-\ii\omega t}\ket\alpha
+=\alpha e^{-\ii\omega t}\ket\alpha.\]
+Hence the eigenvalue evolves as
+\[\boxed{\alpha(t)=\alpha e^{-\ii\omega t}.}\]

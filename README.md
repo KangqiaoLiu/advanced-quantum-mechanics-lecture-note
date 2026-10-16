@@ -18,7 +18,7 @@ The initial content backbone is a 186-page Chinese lecture note provided by the 
 - An analysis of interactive-course references and candidate student exercises/labs.
 - Future repository organization, quality checks, and publication considerations.
 
-**Project phase (2026-10-16):** the first-pass faithful English **Chapter 1 translation** (Chinese source PDF viewer pp. 1–24) has been compiled locally. Remaining original chapters and the interactive companion are forthcoming; the instructor will review translation fidelity and approve subsequent content adaptation.
+**Project phase (2026-10-16):** first-pass faithful English **Chapters 1–2** (Chinese source PDF viewer pp. 1–61) have been completed, compiled locally, and tracked. Chapters 3–8 and the interactive companion are forthcoming; final instructor source-fidelity approval remains pending.
 
 ## Whole-book PDF structure
 
@@ -33,6 +33,13 @@ The versioned book root [`main.tex`](main.tex) produces a **title page**, an aut
 - **Cloud compilation:** [.github/workflows/build-notes.yml](.github/workflows/build-notes.yml) compiles XeLaTeX when sources change, uploads the exact build under [Actions](../../actions) → *Build English lecture notes PDF* → *Artifacts*, and commits the latest PDF to `pdf/advanced-quantum-mechanics.pdf` using the GitHub Actions bot. Source commits and PDF commits are both preserved in the Git history. The editable LaTeX is the canonical source.
 
 The faithful translation is deliberately kept separate from future additions (Berry phase, density matrices, measurement extensions, topology, QNN, etc.). Revisions to translation vs. subsequent pedagogy must be distinguishable in history.
+
+## Chapter 2: Quantum Dynamics translation baseline
+
+- **LaTeX:** [chapters/ch02/](chapters/ch02/), containing seven sections corresponding to Chinese PDF viewer pp. 25–61.
+- **Translation and scientific-audit ledger:** [editorial/CHAPTER02_TRANSLATION_LOG.md](editorial/CHAPTER02_TRANSLATION_LOG.md).
+- **Complete compiled book PDF:** [pdf/advanced-quantum-mechanics.pdf](pdf/advanced-quantum-mechanics.pdf). The book now contains Chapters 1–2, with automatic title page, contents and cumulative notation list.
+- **Correction policy:** record minimal obvious formula fixes in the translation ledger; defer mathematical/pedagogical expansion to the later revision phase.
 
 ## Intended deliverables
 
