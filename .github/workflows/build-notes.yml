@@ -14,6 +14,7 @@ on:
       - 'scripts/check_content_additions.py'
       - 'scripts/check_visual_assets.py'
       - 'scripts/check_teaching_derivations.py'
+      - 'scripts/check_interactive_guides.py'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
@@ -35,6 +36,9 @@ jobs:
 
       - name: Check figure assets and AB geometry
         run: python3 scripts/check_visual_assets.py
+
+      - name: Check all thirty-five in-text interactive study links
+        run: python3 scripts/check_interactive_guides.py
 
       - name: Check all displayed equations are numbered
         run: python3 scripts/check_display_equations.py
