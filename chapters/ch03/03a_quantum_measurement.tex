@@ -44,7 +44,7 @@ The composite state is pure even though its subsystem is maximally mixed. The pu
 
 \subsection*{2) Projective measurement and conditional states}
 
-A projective measurement of an observable $\op A=\sum_j a_j\op Q_j$ uses mutually orthogonal projectors $\op Q_j\op Q_k=\delta_{jk}\op Q_j$ and $\sum_j\op Q_j=\op I$. As established earlier, outcome $j$ has probability
+A projective measurement of an observable $\op A=\sum_j a_j\op Q_j$ uses mutually orthogonal projectors $\op Q_j\op Q_k=\delta_{jk}\op Q_j$ and $\sum_j\op Q_j=\mathbf1$. As established earlier, outcome $j$ has probability
 \begin{equation}
 p_j=\operatorname{tr}(\op Q_j\op\rho),
 \end{equation}
@@ -174,7 +174,7 @@ A measurement of the meter in the $\{\ket\downarrow,\ket\uparrow\}$ basis induce
 Set $\eta=\sin(2\theta)$. The two POVM effects are
 \begin{equation}
 \op E_\downarrow=\tfrac12[(1+\eta)\ket0\bra0+(1-\eta)\ket1\bra1],\qquad
-\op E_\uparrow=\op I-\op E_\downarrow.
+\op E_\uparrow=\mathbf1-\op E_\downarrow.
 \end{equation}
 They are positive and sum to the identity for $|\eta|\le1$. When $\theta=\pi/4$, the measurement is projective:
 \begin{equation}
@@ -182,4 +182,4 @@ They are positive and sum to the identity for $|\eta|\le1$. When $\theta=\pi/4$,
 \op M_\uparrow=\ket1\bra1,\quad
 \ket{\Psi_{SM}}=a_0\ket0\ket\downarrow+a_1\ket1\ket\uparrow.
 \end{equation}
-The outcomes identify the computational-basis state, with probabilities $|a_0|^2$ and $|a_1|^2$. At $\theta=3\pi/4$ the two projector outcomes are exchanged (up to an irrelevant phase): the meter result $\downarrow$ selects system state $\ket1$, and $\uparrow$ selects $\ket0$. When $\theta=0$, both effects are $\op I/2$: the result contains no information about the system and the conditional state is unchanged. Intermediate $0<\theta<\pi/4$ implements a tunable \emph{unsharp} measurement, whose backaction and information gain vary continuously with the interaction strength and time. The result follows entirely from a unitary system--probe interaction and an ordinary projective readout of the meter.
+The outcomes identify the computational-basis state, with probabilities $|a_0|^2$ and $|a_1|^2$. At $\theta=3\pi/4$ the two projector outcomes are exchanged (up to an irrelevant phase): the meter result $\downarrow$ selects system state $\ket1$, and $\uparrow$ selects $\ket0$. When $\theta=0$, both effects are $\mathbf1/2$: the result contains no information about the system and the conditional state is unchanged. Intermediate $0<\theta<\pi/4$ implements a tunable \emph{unsharp} measurement, whose backaction and information gain vary continuously with the interaction strength and time. The result follows entirely from a unitary system--probe interaction and an ordinary projective readout of the meter.

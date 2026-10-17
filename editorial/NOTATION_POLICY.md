@@ -10,7 +10,12 @@ The student-facing [`frontmatter/notation.tex`](../frontmatter/notation.tex) is 
 
 | Domain | One consistent convention | Consequence |
 |---|---|---|
-| Abstract observables | `\op A`, `\op H`; a hat denotes an operator | Representing the operator by a numerical matrix `A_{mn}` may omit the hat; `\dagger` is the adjoint. |
+| Abstract observables and matrices | `\op A`, `\op H`; `A_{mn}` denotes matrix elements | The hat denotes an abstract operator. A matrix in a fixed basis omits the hat. Ordinary matrix transpose is `A^{\mathsf T}`; conjugate transpose/Hermitian adjoint is `A^\dagger=(A^{\mathsf T})^*`. |
+| Identity | `\mathbf1`, `\mathbf1_A` for a named subsystem | One canonical identity symbol; reserve `I` for explicitly defined non-identity parameters only. |
+| Generic, translation and scattering operators | `\op A` generic; `\op U_{\mathrm{tr}}` translation; `\op T` scattering | Prevents `\op T` from denoting three unrelated operators. `\timeorder` denotes time ordering. |
+| Normalized versus transposed state | `\ket{a_{\mathrm{norm}}}` versus `a^{\mathsf T}` | A normalized ket is a new state with unit norm; a transpose is an algebraic operation on matrix components. |
+| Trace | `\operatorname{tr}` for full and partial traces, e.g. `\operatorname{tr}_B` | Uniform lowercase roman operator, including in composite-system measurement formulas. |
+| Operator-valued vectors | `\op{\vect x}`, `\op{\vect p}` | Use operator outside bold in the source; do not alternate with `\vect{\op x}`. |
 | Spatial quantities | `\vect r`, `\vect p` for vectors; `\op{\vect r}`, `\op{\vect p}` for operator-valued vectors | Scalar Cartesian components may use `x`, `p_x` and associated hats. |
 | Kets, bras, averages | `\ket\psi`, `\bra\psi`, `\langle A\rangle_\psi`, `\langle A\rangle_\rho` | Mixed-state averages now use angle brackets with density-matrix subscript, preserving the original source's distinction from pure-state averages; the original source's `[A]` notation is retired. |
 | Pictures | Subscripts `\mathrm S`, `\mathrm H`, `\mathrm I` | Same physical operator, different representation in time evolution. |
@@ -33,7 +38,7 @@ All sources use the shared macros in [`main.tex`](../main.tex), including `\op`,
 4. Changed the Chapter 3 statistical shorthand `[A]` and `[s_i]` to `\langle A\rangle_\rho` and `\langle s_i\rangle_\rho` (no change to probability mixtures or traces).
 5. Established [`scripts/check_notation_consistency.py`](../scripts/check_notation_consistency.py), which guards the shared macros, the one-table structure, the changed source sites and the absence of the superseded ambiguities.
 
-**Version separation:** The source-faithful reviewed translation is preserved in the branch `translation/fidelity-audited-2026-10-16`. This consistent-notation revision belongs to the instructor-directed Phase R and is tracked distinctly; equation identities and physics claims are unchanged. A separate full physical-science review still remains on the project agenda.
+**Historical source record:** Translation provenance and prior notation choices are documented in instructor-only `editorial/` files. Public historical snapshot branches were retired; the commit history remains available. Mathematical notation and scientific validity are audited independently.
 
 
 ## Instructor supplementary chapters (2026-10-16)
@@ -43,3 +48,9 @@ The added material retains the one-page global table and defines specialized qua
 ## Effective non-Hermitian physics: local conventions (2026-10-17)
 
 `chapters/ch01/03a_nonhermitian_dimer.tex` uses an ordered single-photon basis `(|A>, |B>)`, locally sets `ℏ=1`, and defines `κ` as the lossy cavity's **intensity** decay rate. The corresponding matrix diagonal is `ω0-iκ/2`. Complex eigenvalue imaginary parts control amplitude decay; squared amplitudes determine intensity rates. A passive two-mode exceptional point occurs at `κ=4J`. Subtracting the shared complex energy yields a PT-symmetric relative matrix, while the physical original experiment contains only loss. The no-jump state has conditional, decreasing norm; the full system-plus-environment evolution conserves probability. Symbols and rates are defined in the local section to preserve the one-page printed global notation list.
+
+## Nine-chapter notation audit (2026-10-17)
+
+The text now uses one transpose marker, normalized-ket label, matrix/operator distinction, identity, trace convention and operator-valued-vector macro ordering. Translation is written as `\op U_{\mathrm{tr}}` and the scattering transition operator as `\op T`. The generic eigenproblem uses `\op A` and the representation transformation uses observables `\op F` and `\op G`. Standard local subject conventions remain valid when definitions are explicit: WKB tilde momentum, spin Pauli `\sigma_i` versus scattering `\sigma(\Omega)`, and time `t` versus transmission `t` in scattering calculations.
+
+The current CI notation audit scans every chapter for superseded aliases and identity/trace collisions. Further reviews of the *meaning* of parameters should accompany individual derivations when chapters receive scientific updates.

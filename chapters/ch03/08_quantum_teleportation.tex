@@ -21,7 +21,7 @@ The four Bell states are
 \end{equation}
 They form an orthonormal basis of two qubits. One may obtain them from computational-basis states with a Hadamard gate on the first qubit and a controlled-NOT (CNOT) gate from the first qubit to the second: a Hadamard creates a superposition; the CNOT correlates the target with its control. More precisely,
 \begin{equation}
-\boxed{\ket{\beta_{xy}}=\operatorname{CNOT}(\op U_{\mathrm H}\otimes\op I)\ket{x,y}
+\boxed{\ket{\beta_{xy}}=\operatorname{CNOT}(\op U_{\mathrm H}\otimes\mathbf1)\ket{x,y}
 =\frac{\ket{0,y}+(-1)^x\ket{1,1-y}}{\sqrt2},\quad x,y\in\{0,1\}.}
 \end{equation}
 This convention gives $\ket{\beta_{00}}=\ket{\Phi^+}$, $\ket{\beta_{01}}=\ket{\Psi^+}$, $\ket{\beta_{10}}=\ket{\Phi^-}$, and $\ket{\beta_{11}}=\ket{\Psi^-}$.
@@ -69,7 +69,7 @@ Write Alice's two measured bits as $m_1m_2$. Bob applies the appropriate correct
 \begin{equation}
 \begin{array}{c|c|c}
 \text{Alice's result}&\text{Bob's conditional state}&\text{Correction}\\\hline
-00&\ket\psi&\op I\\
+00&\ket\psi&\mathbf1\\
 01&\sigma_x\ket\psi&\sigma_x\\
 10&\sigma_z\ket\psi&\sigma_z\\
 11&\sigma_x\sigma_z\ket\psi&\sigma_z\sigma_x
@@ -114,7 +114,7 @@ Without Alice's classical message, Bob must average over her possible outcomes. 
 \begin{equation}
 \op\rho_3=\frac14\bigl(\op\rho+\sigma_x\op\rho\sigma_x
 +\sigma_z\op\rho\sigma_z+\sigma_x\sigma_z\op\rho\sigma_z\sigma_x\bigr)
-=\frac12\op I,
+=\frac12\mathbf1,
 \end{equation}
 where $\op\rho=\ket\psi\bra\psi$. Bob's local state is independent of $\alpha,\beta$ before he receives the classical bits, so the protocol cannot transmit information faster than light.
 
