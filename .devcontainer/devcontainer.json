@@ -1,6 +1,5 @@
 {
   "name": "Advanced Quantum Mechanics — private companion preview",
-  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "forwardPorts": [
     8000
   ],

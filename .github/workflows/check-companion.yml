@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'companion/**'
+      - '.devcontainer/**'
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
@@ -14,6 +15,7 @@ on:
   pull_request:
     paths:
       - 'companion/**'
+      - '.devcontainer/**'
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
@@ -43,3 +45,33 @@ jobs:
         run: python3 scripts/check_companion_pages.py
       - name: Smoke test all four numerical labs in headless browser
         run: python3 scripts/check_companion_browser.py
+
+      - name: Check private Codespaces preview configuration and HTTP startup
+        shell: bash
+        run: |
+          bash -n .devcontainer/start-preview.sh
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          c = json.loads(Path(".devcontainer/devcontainer.json").read_text())
+          assert c.get("forwardPorts") == [8000]
+          assert c["portsAttributes"]["8000"]["onAutoForward"] == "openBrowser"
+          assert "image" not in c, "Use the included GitHub Codespaces base image."
+          assert c["postStartCommand"] == "bash .devcontainer/start-preview.sh"
+          PY
+          bash .devcontainer/start-preview.sh
+          python3 - <<'PY'
+          import json, urllib.request
+          from urllib.parse import urljoin
+          base = "http://127.0.0.1:8000/companion/"
+          with urllib.request.urlopen(base) as r:
+              assert r.status == 200
+              assert b"Laboratory directory" in r.read()
+          with urllib.request.urlopen(urljoin(base, "catalog.json")) as r:
+              catalog = json.load(r)
+              assert sum(x["stage"]=="implemented" for x in catalog["labs"]) == 4
+          with urllib.request.urlopen(urljoin(base, "labs/IC-08-02/index.html")) as r:
+              assert b"SSH" in r.read()
+          print("PASS authenticated Codespaces HTTP preview preparation.")
+          PY
+
