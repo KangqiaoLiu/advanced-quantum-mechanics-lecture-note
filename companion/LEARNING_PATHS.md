@@ -1,49 +1,46 @@
-# Independent Learning Routes — Advanced Quantum Mechanics
+# Curated Self-Directed Learning Paths — Advanced Quantum Mechanics
 
-**Teaching model (confirmed 2026-10-17):** The graduate course is delivered through blackboard derivations. These interactive units are for students to open **independently after class**, at their own pace. They are not projected or demonstrated in class and carry no assigned classroom time.
+**Teaching boundary:** 48 × 40-minute lectures use blackboard explanations. All experiments are optional **independent after-class learning** activities. AI assistance can deepen exploration but numerical or symbolic claims need independent checks.
 
-## How to work through an independent laboratory
+## Read before opening a simulation
 
-1. **Predict:** read the motivating physical question and state an expected limiting-case result before changing controls.
-2. **Experiment:** change one parameter at a time. Compare two complementary observables such as probabilities and state purity, band topology and spectral gap, or loss and gradient.
-3. **Derive:** reproduce the displayed identity on paper, using the linked primary lecture-note section and checking signs, units and basis conventions.
-4. **Challenge:** explore degeneracies, limiting regimes, small probabilities, finite-size effects and numerical convergence. Complete the formative self-check.
-5. **Connect:** select another experiment following a physical question or return to the complete notes.
+Students are invited to start from a physical question, predict a limiting case, vary controls to identify a physical relationship, reconstruct the derivation, and test at least one result independently. Choose depth freely; there is no required laboratory schedule.
 
-## Complete recommended self-study route (22 / 22 working)
+The full historical inventory consists of 62 questions. The actual instructional package is **27 selected investigations** (18 runnable now, nine selected for future development), **eight existing reference tools**, and **27 guided reading extensions**. The selected mainline is the recommended route; the former `core` catalog flag is historical and does not imply the current selection.
 
-All **22** catalog entries historically marked `route: core` are now implemented. This is a **suggested conceptual path**, not classroom exercises, lecture demonstrations or a grading scheme.
+## The mainline, chapter by chapter
 
-| Chapter | Recommended self-study topics |
+| Chapter | Selected interactive investigations |
 |---|---|
-| 1. Basic Concepts | [Complex amplitude and phase](labs/IC-01-01/index.html) · [Two-by-two eigenproblem](labs/IC-01-02/index.html) · [Cascaded Stern–Gerlach](labs/IC-01-03/index.html) · [Born rule and projectors](labs/IC-01-04/index.html) · [Measurement axes and basis changes](labs/IC-01-05/index.html) · [Tensor-product index laboratory](labs/IC-01-08/index.html) |
-| 2. Quantum Dynamics | [Spin precession in a field](labs/IC-02-01/index.html) · [Harmonic oscillator and coherent states](labs/IC-02-03/index.html) · [Berry phase on the Bloch sphere](labs/IC-02-08/index.html) |
-| 3. Angular Momentum Theory | [Pure states and statistical mixtures](labs/IC-03-03/index.html) · [Entanglement and partial trace](labs/IC-03-04/index.html) · [POVM effects versus instruments](labs/IC-03-05/index.html) |
-| 4. Approximation Methods | Use available advanced modules |
-| 5. Scattering Theory | Use available advanced modules |
-| 6. Quantum Many-Body Systems | [Permutation and exchange](labs/IC-06-01/index.html) · [Bosonic Fock occupation rules](labs/IC-06-03/index.html) · [Fermionic creation and ordering signs](labs/IC-06-04/index.html) |
+| 1. Basic Concepts | [Cascaded Stern–Gerlach](labs/IC-01-03/index.html) |
+| 2. Quantum Dynamics | [Spin precession in a field](labs/IC-02-01/index.html) · [Harmonic oscillator and coherent states](labs/IC-02-03/index.html) · WKB near a turning point *(planned)* · Path phases and stationary action *(planned)* · [Berry phase on the Bloch sphere](labs/IC-02-08/index.html) |
+| 3. Angular Momentum Theory | Adding two angular momenta *(planned)* · [Entanglement and partial trace](labs/IC-03-04/index.html) · [POVM effects versus instruments](labs/IC-03-05/index.html) · Bell correlations and CHSH *(planned)* |
+| 4. Approximation Methods | [Avoided crossings and perturbation theory](labs/IC-04-01/index.html) · Variational energy landscape *(planned)* · Driven two-level resonance *(planned)* |
+| 5. Scattering Theory | Lippmann–Schwinger, T matrix and Born regime *(planned)* · [Partial-wave interference and unitarity](labs/IC-05-05/index.html) |
+| 6. Quantum Many-Body Systems | [Permutation and exchange](labs/IC-06-01/index.html) · [Fermionic creation and ordering signs](labs/IC-06-04/index.html) |
 | 7. Relativistic Quantum Mechanics | [From Schrödinger to Pauli](labs/IC-07-01/index.html) · [Klein–Gordon versus Dirac](labs/IC-07-02/index.html) |
-| 8. Topological Condensed Matter Physics | [SSH bulk, winding and edges](labs/IC-08-02/index.html) · [SSH boundary termination and symmetry](labs/IC-08-03/index.html) · [Zak phase and Berry gauge](labs/IC-08-04/index.html) |
-| 9. Quantum Neural Networks and Machine Learning | [Parameterized quantum circuit output](labs/IC-09-01/index.html) · [Parameter-shift training](labs/IC-09-03/index.html) |
+| 8. Topological Condensed Matter Physics | [SSH bulk, winding and edges](labs/IC-08-02/index.html) · [SSH boundary termination and symmetry](labs/IC-08-03/index.html) · [Zak phase and Berry gauge](labs/IC-08-04/index.html) · [Chern insulator phase diagram](labs/IC-08-06/index.html) · Thouless pumping over a cycle *(planned)* |
+| 9. Quantum Neural Networks and Machine Learning | [Parameter-shift training](labs/IC-09-03/index.html) · [Quantum kernel geometry](labs/IC-09-05/index.html) · Trainability and gradient concentration *(planned)* |
 
-## Seven cross-chapter learning journeys
+### Choose a conceptual direction
 
-**1. What is a quantum state?** [Interference](labs/IC-01-01/index.html) → [Hermitian spectra](labs/IC-01-02/index.html) → [basis transformations](labs/IC-01-05/index.html) → [Born projectors](labs/IC-01-04/index.html) → [sequential Stern–Gerlach](labs/IC-01-03/index.html) → [two-qubit index and tensor products](labs/IC-01-08/index.html).
+- **State, measurement, and information:** [Sequential Stern–Gerlach](labs/IC-01-03/index.html) → [Entanglement and partial trace](labs/IC-03-04/index.html) → [POVM instruments](labs/IC-03-05/index.html). An advanced CHSH comparison joins this route later.
+- **Dynamics and geometry:** [Spin precession](labs/IC-02-01/index.html) → [Harmonic oscillator](labs/IC-02-03/index.html) → [Adiabatic Berry phase](labs/IC-02-08/index.html). Planned extensions expose WKB failure, path phases and resonant driving.
+- **Approximation and scattering:** [Avoided crossings](labs/IC-04-01/index.html) → [Partial-wave unitarity](labs/IC-05-05/index.html) → future variational optimization and Lippmann–Schwinger/Born convergence.
+- **Many-body and relativity:** [Particle exchange](labs/IC-06-01/index.html) → [Fermionic ordering](labs/IC-06-04/index.html) → [Pauli spin magnetic coupling](labs/IC-07-01/index.html) → [Dirac velocity](labs/IC-07-02/index.html).
+- **Band geometry:** [SSH winding and boundaries](labs/IC-08-02/index.html) → [Boundary termination](labs/IC-08-03/index.html) → [Zak Wilson loop](labs/IC-08-04/index.html) → [QWZ Chern phase](labs/IC-08-06/index.html), with topological pumping planned.
+- **Quantum learning:** [Parameter-shift training](labs/IC-09-03/index.html) → [Quantum-kernel Gram geometry](labs/IC-09-05/index.html) → planned gradient concentration and trainability.
 
-**2. How do quantum states evolve and accumulate geometric phase?** [Spin precession](labs/IC-02-01/index.html) → [coherent oscillator](labs/IC-02-03/index.html) → [spin Berry holonomy](labs/IC-02-08/index.html).
+## Eight available review tools
 
-**3. How is quantum information distributed and measured?** [Mixed-state ensembles](labs/IC-03-03/index.html) → [Schmidt entanglement](labs/IC-03-04/index.html) → [POVM instruments](labs/IC-03-05/index.html). Distinguish state preparation, density operator, effects and quantum instruments.
+For students who need algebraic or conceptual preparation, the already-written [complex interference](labs/IC-01-01/index.html), [2×2 Hermitian spectrum](labs/IC-01-02/index.html), [Born projectors](labs/IC-01-04/index.html), [basis changes](labs/IC-01-05/index.html), [tensor-product indices](labs/IC-01-08/index.html), [statistical mixtures](labs/IC-03-03/index.html), [bosonic number operators](labs/IC-06-03/index.html) and [one-qubit circuit output](labs/IC-09-01/index.html) remain accessible via the *Foundational references* collection.
 
-**4. When do approximations and partial waves work?** [Level repulsion and perturbative error](labs/IC-04-01/index.html) → [elastic partial-wave scattering](labs/IC-05-05/index.html). Compare limits, exact calculations, normalization and optical-theorem consistency.
+## Guided external extension and responsible AI use
 
-**5. What does particle indistinguishability change?** [Spatial exchange symmetry](labs/IC-06-01/index.html) → [bosonic occupation factors](labs/IC-06-03/index.html) → [fermionic Fock algebra](labs/IC-06-04/index.html). Connect permutation symmetry, position-space wavefunctions and operator signs.
+Use the [27-topic guided reading library](reading.html). Each question links to a vetted teaching source, a specific independent derivation/exploration, and a related working experiment. Students may ask AI to suggest intermediate steps, alternative examples or unit-checks, but should independently verify outputs and sign conventions. This channel is deliberately broad: readers may investigate uncertainty, Fourier wavepackets, gauge patches, Green functions, weak-coupling Born scattering, full Dirac limits, alternative quantum feature maps and more without another custom teaching application.
 
-**6. How are spin, boundaries and topology connected?** [Pauli spin–field coupling](labs/IC-07-01/index.html) → [Dirac spinors](labs/IC-07-02/index.html) for relativistic intuition; then [Berry phase](labs/IC-02-08/index.html) → [SSH winding](labs/IC-08-02/index.html) → [boundary termination](labs/IC-08-03/index.html) → [Zak phase](labs/IC-08-04/index.html) → [QWZ Chern number](labs/IC-08-06/index.html) for topology.
+## Scientific quality
 
-**7. What makes a quantum circuit useful for learning?** [Parameterized circuit output](labs/IC-09-01/index.html) → [parameter-shift training](labs/IC-09-03/index.html) → [quantum kernel geometry](labs/IC-09-05/index.html). Verify measurable outputs, derivative identities, sample uncertainty and positive-semidefinite Gram matrices.
+Selected experiments must have coherent physical and mathematical models, multiple diagnostic observables, carefully documented assumptions, checks against limiting cases and reproducible numerical validation. The course manuscript is the primary reference. New lab counts should not override opportunities to improve accuracy, visual legibility and intellectual continuity in existing materials.
 
-## The continuing comprehensive reference collection
-
-The full companion includes **62** scientific questions across nine chapters. **26** have working, independently checked numerical/analytic experiments. The other **36** questions are substantive self-directed extensions still to be authored to the same standard, including additional WKB/path-integral approaches, spin/Bell phenomena, scattering approximations, higher Fock interactions, topology and trainability.
-
-The authoritative catalog is [index.html](index.html), the detailed remaining-work inventory is [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md), and physical model assumptions are recorded in [PHYSICS_CONVENTIONS.md](PHYSICS_CONVENTIONS.md). The English [lecture notes](../pdf/advanced-quantum-mechanics.pdf) remain authoritative for all derivations.
+[Complete current scope](IMPLEMENTATION_STATUS.md) · [All subject areas](index.html) · [Lecture notes](../pdf/advanced-quantum-mechanics.pdf).
