@@ -370,4 +370,87 @@ check("Quantum fidelity Gram kernel is normalized and positive semidefinite",()=
   assert.ok(Math.abs(shot.sampled-shot.exact)<6*shot.se+.0001);
 });
 
+
+// Additional self-study prerequisites: tensor products, exchange statistics, Pauli spin, SSH terminations and circuit output.
+const Tensor=require("../companion/labs/IC-01-08/model.js");
+check("Tensor product, CNOT basis indexing, and reduced-state entropy",()=>{
+ const bell=Tensor.evaluate(90,0,"cnot");
+ close(bell.norm,1);close(bell.v[0],1/Math.SQRT2,1e-12);close(bell.v[3],1/Math.SQRT2,1e-12);
+ close(bell.lambda[0],.5);close(bell.lambda[1],.5);close(bell.purity,.5);close(bell.entropy,1);
+ for(const a of [0,20,55,90,180])for(const b of [0,40,90,170]){
+   for(const mode of ["product","cnot"]){
+    const p=Tensor.evaluate(a,b,mode);
+    close(p.norm,1,1e-12);close(p.lambda.reduce((x,y)=>x+y,0),1,1e-12);
+    close(p.purity,p.lambda[0]**2+p.lambda[1]**2,1e-12);
+    assert.ok(p.entropy>=-1e-12&&p.entropy<=1+1e-12);
+   }
+   close(Tensor.evaluate(a,b,"product").entropy,0,1e-10);
+ }
+ for(const a of [0,30,90,150])close(Tensor.evaluate(a,90,"cnot").entropy,0,1e-10);
+});
+const Exchange=require("../companion/labs/IC-06-01/model.js");
+check("Gaussian orbital overlap and two-body exchange parity",()=>{
+ for(const d of [.4,.8,2.5,4])for(const sigma of [.5,1,1.5]){
+  const model=Exchange.describe(d,sigma);
+  close(model.S,Math.exp(-d*d/(8*sigma*sigma)));
+  for(const [x,y] of [[0,0],[.8,-1.2],[2,-.3],[-2,-2]]){
+   close(model.psi(x,y,1),model.psi(y,x,1));
+   close(model.psi(x,y,-1),-model.psi(y,x,-1),1e-11);
+   close(model.density(x,y,-1),model.density(y,x,-1));
+  }
+  close(model.diagonal(.8,-1),0,1e-12);
+ }
+});
+check("Symmetric and antisymmetric two-particle spatial densities normalize",()=>{
+ const d=2,sigma=1,model=Exchange.describe(d,sigma),a=-8,b=8,N=240,h=(b-a)/N;
+ for(const sign of [-1,1]){
+  let area=0;
+  for(let j=0;j<=N;j++)for(let i=0;i<=N;i++){
+    const wx=(i===0||i===N)?.5:1,wy=(j===0||j===N)?.5:1;
+    area+=wx*wy*model.density(a+i*h,a+j*h,sign);
+  }
+  close(area*h*h,1,1e-8);
+ }
+});
+const Pauli=require("../companion/labs/IC-07-01/model.js");
+check("Pauli electron orbital-spin Zeeman splitting and expected energy",()=>{
+ for(const B of [0,.25,1,2.9])for(const l of [-2,-1,0,1,2])for(const theta of [0,45,90,160,180]){
+  const r=Pauli.evaluate(B,l,theta);
+  close(r.pUp+r.pDown,1);close(r.splitting,2*B);close(r.orbitalShift,B);
+  close(r.mean,r.pUp*r.EUp+r.pDown*r.EDown,1e-12);
+  assert.ok(r.variance>=-1e-12);
+ }
+ close(Pauli.evaluate(1,0,0).EUp,1);
+ close(Pauli.evaluate(1,0,180).EDown,-1);
+});
+const BoundSSH=require("../companion/labs/IC-08-03/model.js");
+check("SSH two terminations, finite-size splitting, chiral symmetry",()=>{
+ const t1=.2,t2=1.5,N=12,delta=0;
+ const weak=BoundSSH.predict(t1,t2,N,"inter",delta),strong=BoundSSH.predict(t1,t2,N,"intra",delta);
+ assert.equal(weak.nu,1);assert.equal(strong.nu,1);
+ assert.ok(weak.middle<.03,[weak.middle]);
+ assert.ok(strong.middle>1,[strong.middle]);
+ assert.ok(weak.edge>strong.edge,[weak.edge,strong.edge]);
+ close(weak.probs.reduce((a,b)=>a+b,0),1,1e-9);
+ const broken=BoundSSH.predict(t1,t2,N,"inter",.3);
+ assert.equal(broken.nu,null);assert.ok(broken.middle>.1);
+ for(const cfg of [[1.3,.5,6,"inter",0],[.5,1.3,10,"intra",0]]){
+   const p=BoundSSH.predict(...cfg);close(p.probs.reduce((a,b)=>a+b,0),1,1e-8);
+ }
+});
+const Circuit=require("../companion/labs/IC-09-01/model.js");
+check("QML Ry-Rz-Ry output, shift identity, vanishing gradients and Pauli shot noise",()=>{
+ for(const x of [-2,-1,0,.7,2])for(const theta of [-3,-1,0,1.2,2.7])for(const beta of [0,.3,1.1,Math.PI/2]){
+   const p=Circuit.predict(x,theta,beta,128);
+   assert.ok(p.f>=-1-1e-12&&p.f<=1+1e-12);
+   close(p.pPlus+p.pMinus,1,1e-12);
+   close(p.d,p.shifted,1e-12);
+   const h=1e-5;
+   close(p.d,(Circuit.output(x,theta+h,beta)-Circuit.output(x,theta-h,beta))/(2*h),2e-10);
+   if(x===0||beta===0)close(p.d,0,1e-12);
+ }
+ const sampled=Circuit.predict(.9,1.1,1,4096);
+ assert.ok(Math.abs(sampled.sample.estimate-sampled.f)<6*sampled.se+.02);
+});
+
 process.stdout.write("\nALL "+checks+" PHYSICS TEST GROUPS PASSED\n");
