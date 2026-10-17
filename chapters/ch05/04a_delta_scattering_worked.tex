@@ -1,0 +1,111 @@
+% Original scattering bridge: fully solvable Lippmann--Schwinger check.
+\subsection*{Worked example: outgoing Green function, Born series, and exact scattering}
+The formal integral equation becomes much more concrete in
+one dimension. Work in units $\hbar^2/(2m)=1$, choose
+positive energy $E=k^2$ with $k>0$, and consider
+\begin{equation}
+\left(-\frac{\dd^2}{\dd x^2}+g\delta(x)\right)
+\psi(x)=k^2\psi(x).
+\end{equation}
+The incident wave comes from the left. Outside $x=0$
+the stationary equation is free, so the most general
+outgoing scattering ansatz is
+\begin{equation}
+\psi(x)=
+\begin{cases}
+e^{\ii kx}+r e^{-\ii kx},&x<0,\\
+t e^{\ii kx},&x>0.
+\end{cases}
+\label{eq:worked-delta-ansatz}
+\end{equation}
+Continuity of the wavefunction gives $\psi(0^-)=\psi(0^+)$,
+hence $1+r=t$. Next integrate the differential equation
+from $-\epsilon$ to $+\epsilon$:
+\begin{equation}
+-\psi'(\epsilon)+\psi'(-\epsilon)+g\psi(0)
+=k^2\int_{-\epsilon}^\epsilon\psi(x)\dd x.
+\end{equation}
+The right side tends to zero as $\epsilon\to0$;
+the delta function contributes $g\psi(0)$. Therefore
+\begin{equation}
+\psi'(0^+)-\psi'(0^-)=g\psi(0).
+\end{equation}
+The two derivatives obtained from
+Eq.~\eqref{eq:worked-delta-ansatz} are
+$\psi'(0^+)=\ii kt$ and $\psi'(0^-)=\ii k(1-r)$.
+Use $t=1+r$ to find
+\begin{equation}
+\ii k[(1+r)-(1-r)]=g(1+r),
+\qquad 2\ii kr=g(1+r).
+\end{equation}
+Solving the last equation step by step,
+\begin{equation}
+(2\ii k-g)r=g,\qquad
+r=\frac{g}{2\ii k-g}
+=\boxed{\frac{-\ii u}{1+\ii u}},
+\quad
+t=1+r=\boxed{\frac1{1+\ii u}},
+\quad u=\frac{g}{2k}.
+\label{eq:worked-delta-amplitudes}
+\end{equation}
+The outgoing current carried by each plane wave is proportional
+to its signed wavenumber. Incoming and outgoing wavenumber
+magnitudes are identical, so reflection and transmission
+probabilities are simply squared amplitudes:
+\begin{equation}
+R=|r|^2=\frac{u^2}{1+u^2},\qquad
+T=|t|^2=\frac1{1+u^2},\qquad
+\boxed{R+T=1}.
+\end{equation}
+This current-conservation identity is an independent check.
+
+\paragraph{Recover the same result from the integral equation.}
+The one-dimensional outgoing free Green function for
+$k^2+\partial_x^2$ is
+\begin{equation}
+G_0^+(x,x';k)=-\frac{\ii}{2k}e^{\ii k|x-x'|}.
+\end{equation}
+Its first derivative jumps by $1$ in the equation
+$(k^2+\partial_x^2)G_0^+=\delta(x-x')$,
+which can be checked on either side of $x=x'$.
+The Lippmann--Schwinger equation becomes
+\begin{equation}
+\psi(x)=e^{\ii kx}+
+g\,G_0^+(x,0;k)\psi(0).
+\end{equation}
+Setting $x=0$ gives an \emph{algebraic} equation:
+\begin{equation}
+\psi(0)=1-\frac{\ii g}{2k}\psi(0)
+\quad\Longrightarrow\quad
+\psi(0)=\frac1{1+\ii u}.
+\end{equation}
+For $x<0$, the scattered term is
+$-\ii u\,\psi(0)e^{-\ii kx}$;
+therefore $r=-\ii u/(1+\ii u)$,
+exactly as in Eq.~\eqref{eq:worked-delta-amplitudes}.
+For $x>0$ the total amplitude is
+$1-\ii u\psi(0)=1/(1+\ii u)=t$.
+
+\paragraph{Show precisely where the Born series converges.}
+At the origin, the repeated interaction gives a geometric series
+\begin{equation}
+\psi(0)=\frac1{1+\ii u}
+=\sum_{n=0}^{\infty}(-\ii u)^n,
+\qquad |u|<1.
+\end{equation}
+The order-$N$ reflection amplitude is
+\begin{equation}
+r_N=-\ii u\sum_{n=0}^{N-1}(-\ii u)^n.
+\end{equation}
+Subtract it from the exact geometric sum:
+\begin{equation}
+r-r_N=r(-\ii u)^N,\qquad
+|r-r_N|=|r|\,|u|^N.
+\end{equation}
+For $|u|>1$, successive Born terms grow, while the exact
+amplitude remains bounded and satisfies $R+T=1$.
+The radius of convergence here is a property of this
+specified delta-potential series; other potentials require
+their own analysis. The complete
+\href{https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/labs/IC-05-03/index.html}
+{interactive scattering problem} illustrates both behaviors.

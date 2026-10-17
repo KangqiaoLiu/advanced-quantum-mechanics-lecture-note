@@ -1,0 +1,64 @@
+% Original nonrelativistic limit worked out by component.
+\subsection*{Worked calculation: normalize a Dirac spinor and take its low-energy limit}
+The four-component spinor just introduced can be understood
+by calculating its norm directly. Let
+$\xi_s^\dagger\xi_{s'}=\delta_{ss'}$ and define
+\begin{equation}
+\chi_s=\frac{c\,\vect\sigma\cdot\vect p}{E+mc^2}\xi_s,
+\qquad E=\sqrt{m^2c^4+c^2\vect p^{\,2}}>0.
+\end{equation}
+Because $(\vect\sigma\cdot\vect p)^\dagger
+=\vect\sigma\cdot\vect p$ and
+$(\vect\sigma\cdot\vect p)^2=\vect p^{\,2}I$,
+\begin{align}
+\chi_s^\dagger\chi_{s'}
+&=\frac{c^2}{(E+mc^2)^2}
+ \xi_s^\dagger(\vect\sigma\cdot\vect p)^2\xi_{s'}\notag\\
+&=\frac{c^2\vect p^{\,2}}{(E+mc^2)^2}\delta_{ss'}.
+\end{align}
+The positive-energy dispersion relation implies
+$c^2\vect p^{\,2}=E^2-m^2c^4
+=(E-mc^2)(E+mc^2)$.
+Thus
+\begin{align}
+\delta_{ss'}+\chi_s^\dagger\chi_{s'}
+&=\left[1+\frac{E-mc^2}{E+mc^2}\right]\delta_{ss'}\notag\\
+&=\frac{2E}{E+mc^2}\delta_{ss'}.
+\end{align}
+Multiply the stacked spinor $(\xi_s,\chi_s)^{\mathsf T}$
+by $\sqrt{(E+mc^2)/(2E)}$. The normalization factor
+cancels the previous fraction exactly:
+$u_s^\dagger(\vect p)u_{s'}(\vect p)=\delta_{ss'}$.
+
+\paragraph{Explicit expansion for small momentum.}
+Introduce $\epsilon=|\vect p|/(mc)$ and assume
+$\epsilon\ll1$. Expand the positive energy:
+\begin{align}
+E&=mc^2\sqrt{1+\epsilon^2}\notag\\
+ &=mc^2\left(1+\frac{\epsilon^2}{2}
+   -\frac{\epsilon^4}{8}+O(\epsilon^6)\right)\notag\\
+ &=mc^2+\frac{\vect p^{\,2}}{2m}
+   -\frac{\vect p^{\,4}}{8m^3c^2}
+   +O\left(\frac{|\vect p|^6}{m^5c^4}\right).
+\end{align}
+Consequently
+\begin{equation}
+\frac{c\,\vect\sigma\cdot\vect p}{E+mc^2}
+=\frac{\vect\sigma\cdot\vect p}{2mc}
++O(\epsilon^3),
+\end{equation}
+where the big-$O$ term is understood relative to the
+dimensionless spinor components. The lower two components
+are suppressed by one power of $|\vect p|/(mc)$.
+The difference $E-mc^2$ becomes the nonrelativistic kinetic
+energy at leading order. These two limits explain why
+the two-component Pauli spinor is a reliable low-energy
+description, together with the magnetic coupling derived
+earlier in this chapter.
+
+\paragraph{Checkpoint.}
+For momentum along $+z$,
+$\vect p=(0,0,p)$ and $\xi_\uparrow=(1,0)^{\mathsf T}$,
+write the complete four-component $u_\uparrow$
+and check all four squared moduli sum to one.
+Then repeat for $\xi_\downarrow$ and verify orthogonality.

@@ -1,0 +1,81 @@
+% Original combinatorial signs bridge.
+\subsection*{Worked calculation: tracking fermionic signs in three orbitals}
+The antisymmetric Fock algebra is sometimes difficult because
+operators act \emph{from right to left} while the canonical
+occupation convention orders creation operators from left to right.
+We calculate a three-mode example explicitly.
+
+Choose orbitals $1<2<3$, vacuum $\ket0$, and
+\begin{equation}
+\ket{1,0,1}=\op a_1^\dagger\op a_3^\dagger\ket0.
+\end{equation}
+Act with $\op a_2^\dagger$. It must cross the occupied
+lower-index mode $1$ to restore canonical order:
+\begin{align}
+\op a_2^\dagger\ket{1,0,1}
+&=\op a_2^\dagger\op a_1^\dagger\op a_3^\dagger\ket0\notag\\
+&=-\op a_1^\dagger\op a_2^\dagger\op a_3^\dagger\ket0
+=\boxed{-\ket{1,1,1}}.
+\end{align}
+The minus sign is exactly $(-1)^{\nu_2}$, since one
+lower-index orbital is occupied. Acting instead with
+$\op a_1$ on $\ket{1,0,1}$,
+\begin{equation}
+\op a_1\op a_1^\dagger\op a_3^\dagger\ket0
+=(1-\op a_1^\dagger\op a_1)\op a_3^\dagger\ket0
+=\ket{0,0,1},
+\end{equation}
+because $\op a_1\ket0=0$.
+This result has positive sign: mode 1 has no occupied
+lower-index orbitals.
+
+\paragraph{A complete one-body transition.}
+Evaluate $\op a_2^\dagger\op a_3$ on
+$\ket{1,0,1}$ by applying the rightmost operator first.
+Since $\op a_3$ must pass the particle in mode 1,
+\begin{equation}
+\op a_3\ket{1,0,1}
+=\op a_3\op a_1^\dagger\op a_3^\dagger\ket0
+=-\op a_1^\dagger(1-\op a_3^\dagger\op a_3)\ket0
+=-\ket{1,0,0}.
+\end{equation}
+Now create in mode 2:
+\begin{equation}
+\op a_2^\dagger\op a_3\ket{1,0,1}
+=-\op a_2^\dagger\op a_1^\dagger\ket0
+=+\op a_1^\dagger\op a_2^\dagger\ket0
+=\boxed{+\ket{1,1,0}}.
+\end{equation}
+Two minus signs cancel. This small calculation is the
+concrete meaning of the matrix element
+$t_{23}\op a_2^\dagger\op a_3$
+in a one-body Hamiltonian.
+
+\paragraph{Where does the two-body factor of one half come from?}
+Start with the first-quantized sum over unordered pairs
+$\op V=\sum_{\alpha<\beta}v(\vect r_\alpha,\vect r_\beta)$.
+For a symmetric interaction
+$v(\vect r_\alpha,\vect r_\beta)
+=v(\vect r_\beta,\vect r_\alpha)$,
+\begin{equation}
+\sum_{\alpha<\beta}v_{\alpha\beta}
+=\frac12\sum_{\alpha\neq\beta}v_{\alpha\beta}.
+\end{equation}
+The right-hand sum counts each pair twice. After expanding
+the one-particle coordinate basis and using creation
+and annihilation operators, this becomes
+\begin{equation}
+\op V=\frac12\sum_{ijkl}
+V_{ij;kl}\op a_i^\dagger\op a_j^\dagger
+\op a_l\op a_k.
+\end{equation}
+The prefactor follows from \emph{pair counting}; anticommutation
+then supplies exchange signs. If antisymmetrized two-body
+matrix elements are used instead of the unsymmetrized
+$V_{ij;kl}$ defined above, the numerical prefactor must
+be reconsidered to avoid double counting.
+
+\paragraph{Self-check.}
+Calculate $\op a_3^\dagger\op a_2\ket{1,1,0}$
+and confirm that the outcome is $+\ket{1,0,1}$,
+the Hermitian-adjoint transition of the preceding example.
