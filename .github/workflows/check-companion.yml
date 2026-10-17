@@ -39,11 +39,11 @@ jobs:
           node --check companion/assets/site.js
           node --check companion/assets/lab-core.js
           for f in companion/labs/IC-*/model.js companion/labs/IC-*/lab.js; do node --check "$f"; done
-      - name: Check nine chapters of analytic and numerical quantum models
+      - name: Check all independently benchmarked quantum models
         run: node scripts/test_companion_models.cjs
       - name: Check static laboratory HTML and links
         run: python3 scripts/check_companion_pages.py
-      - name: Smoke test all nine numerical labs in headless browser
+      - name: Smoke test all numerical laboratories and reading catalog in headless Chrome
         run: python3 scripts/check_companion_browser.py
 
       - name: Check private Codespaces preview configuration and HTTP startup
@@ -66,7 +66,7 @@ jobs:
           base = "http://127.0.0.1:8000/companion/"
           with urllib.request.urlopen(base) as r:
               assert r.status == 200
-              assert b"Laboratory directory" in r.read()
+              assert b"Choose an investigation or reading topic" in r.read()
           with urllib.request.urlopen(urljoin(base, "catalog.json")) as r:
               catalog = json.load(r)
               assert sum(x["stage"]=="implemented" for x in catalog["labs"]) >= 9
