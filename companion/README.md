@@ -1,32 +1,31 @@
-# Advanced Quantum Mechanics — Curated Interactive Companion
+# Advanced Quantum Mechanics — Interactive Companion
 
-**Instructor:** Kangqiao LIU · **Purpose:** optional, independent student exploration after class. Live course periods continue with blackboard derivations only.
+This collection accompanies the graduate *Advanced Quantum Mechanics* lecture notes. Its interactive investigations and guided readings are designed for **independent after-class study**.
 
-## Completed selected scope
+[**Open interactive experiments**](index.html) · [**Read the lecture notes**](../pdf/advanced-quantum-mechanics.pdf) · [**Follow a study route**](LEARNING_PATHS.md) · [**Guided further reading**](reading.html)
 
-- **27** featured working physics investigations, covering all nine chapters.
-- **8** other completed foundational reference labs, available when students need an extra conceptual refresher.
-- **27** externally supported guided-reading questions, with direct teaching links and specific student exercises.
-- **35 self-authored interactive models are all implemented**. The historic 62-topic inventory is retained, but there are no outstanding bespoke simulations in the curated plan.
+## Choose how to study
 
-[Open curated interactive directory](index.html) · [Guided further reading](reading.html) · [Independent student learning routes](LEARNING_PATHS.md) · [Completed content and verification](IMPLEMENTATION_STATUS.md) · [Complete lecture-note PDF](../pdf/advanced-quantum-mechanics.pdf)
+**Featured investigations.** Explore the central physical questions of each chapter through exact or independently checked models, numerical figures, and worked derivations.
 
-The curated directory defaults to the 27 featured experiments. Students can choose a chapter, search a physical question, or switch to **All available experiments**, **Foundational references**, **Guided reading** or the complete historic inventory. Inside each featured experiment, neighboring investigations connect through previous/next links.
+**All interactive experiments.** Browse every interactive numerical model in the course.
 
-Every selected module provides a motivating physical question, model assumptions, genuine numerical or analytical predictions that respond to controls, multiple diagnostic figures, mathematical derivations, exact or asymptotic limits, independent questions and a formative check. The website is designed to be used entirely without live classroom demonstration.
+**Foundational references.** Review the mathematical and conceptual building blocks—complex amplitudes, projectors, basis changes, tensor products, density operators and occupation rules.
 
-## Access in GitHub (private repository)
+**Guided further reading.** Follow specific mathematical questions with external teaching resources and related experiments.
 
-Open **Code → Codespaces → Create codespace on main**. The repository's development-container setup automatically starts an HTTP server with forwarded port 8000; open its forwarded address at `/companion/`. Keep the forwarded port **Private**. To update an older Codespace, pull the latest `main`.
+## How to use an experiment
 
-For local preview, from repository root run `python3 -m http.server 8000` and open `http://localhost:8000/companion/`. The site runs in the browser without scientific Python dependencies.
+1. Read the motivating physical question and predict a limiting case.
+2. Change one parameter and observe the computed quantities.
+3. Derive the formula shown on the page using the relevant lecture-note section.
+4. Verify a normalization, approximation, sign convention or convergence limit.
+5. Complete the self-check and follow the suggested additional investigation when useful.
 
-## Scientific checks and maintaining quality
+Experiments provide quantitative models of their stated physical setup. The assumptions on each page identify what is held fixed and how far the model can be applied.
 
-Run `node scripts/test_companion_models.cjs` (48 independent physics test groups), `python3 scripts/check_companion_catalog.py`, `python3 scripts/check_companion_pages.py`, and `python3 scripts/check_companion_browser.py`. GitHub Actions checks syntax, source links, physics models, all 35 lab-page initial renders, directory/reading content and Codespaces startup.
+## Course access
 
-Further maintenance includes meaningful control-interaction sweeps, visual and keyboard/screen-reader inspection across devices, student learning feedback and cross-chapter symbol auditing. These additional quality tasks should improve the scientific teaching content rather than inflate the number of self-authored experiments.
+Open the interactive companion using the course link or private access instructions provided by your instructor. The experiments run in a modern web browser. If your instructor has granted repository access, you can also use the provided local course preview.
 
-## Source notes and rights
-
-See [course conventions](PHYSICS_CONVENTIONS.md), [prototype specifications](PROTOTYPES.md), [laboratory template](LAB_TEMPLATE.md), [curated project blueprint](../INTERACTIVE_COMPANION_BLUEPRINT.md) and [source attribution/rights](../COPYRIGHT.md). The private repository includes teaching sources with copyright considerations. A public interactive website requires a separate rights review and an appropriately separated publication package.
+For questions about the course material, contact **Kangqiao LIU** at [kqliu@xhu.edu.cn](mailto:kqliu@xhu.edu.cn).

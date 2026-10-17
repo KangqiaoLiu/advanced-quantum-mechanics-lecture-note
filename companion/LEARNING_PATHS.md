@@ -1,8 +1,6 @@
-# Independent Learning Guide — The Finished Curated Companion
+# Independent Learning Guide — Advanced Quantum Mechanics
 
-The nine-chapter Advanced Quantum Mechanics course is taught at the blackboard. Its interactive companion is an **optional, self-directed after-class resource**, freely navigable by students at their own pace.
-
-**Current complete scope:** 27 featured investigations with running physics models, eight additional working foundations/reference modules, and 27 optional guided external-reading topics. The original 62-topic master inventory is preserved as editorial history; all planned bespoke simulations in the selected scope are now implemented.
+The interactive companion is a self-directed after-class resource. The investigations connect core quantum-mechanical derivations to numerical predictions. Foundational reference exercises and optional guided reading provide different entry points.
 
 ## A student workflow that goes beyond moving sliders
 
@@ -12,7 +10,7 @@ The nine-chapter Advanced Quantum Mechanics course is taught at the blackboard. 
 4. **Test reliability:** vary a finite cutoff, grid, sample count, wavepacket width or degenerate parameter. Distinguish a genuine singularity from a numerical approximation artifact.
 5. **Explain:** complete the laboratory's formative question, and record why its physical outcome follows from the model. AI may help generate counterexamples and independent calculations, but original derivations and limits determine validity.
 
-## Twenty-seven complete featured studies
+## Featured interactive studies
 
 | Chapter | Working self-study investigations |
 |---|---|
@@ -34,9 +32,9 @@ The nine-chapter Advanced Quantum Mechanics course is taught at the blackboard. 
 - *Relativity and topology:* Pauli magnetic coupling, free Dirac wavefunctions, SSH winding, boundary termination, Zak holonomy, QWZ Chern phases and Thouless pumping.
 - *Quantum machine learning:* parameter-shift optimization, state-fidelity kernels, global/local cost gradients and finite-shot signal resolution.
 
-## Review material for students who need more foundation
+## Foundational reference exercises
 
-The eight existing reference tools remain fully active and directly linkable:
+These short exercises reinforce prerequisites and can be revisited whenever helpful:
 
 - [Complex amplitude and phase](labs/IC-01-01/index.html) — How do complex amplitudes combine before probabilities are formed?
 - [Two-by-two eigenproblem](labs/IC-01-02/index.html) — How do the eigenvectors of a Hermitian matrix depend on its entries?
@@ -49,10 +47,10 @@ The eight existing reference tools remain fully active and directly linkable:
 
 These may be used repeatedly without making them additional mandatory assignments.
 
-## Twenty-seven optional further readings
+## Optional further reading
 
-Read [Guided Further Reading](reading.html) for all 27 additional scientific questions, each with an appropriate external teaching resource, a focused derivation or physical check, lecture-note pointers and a nearby already-working laboratory. Students may use generative AI to request alternate derivations, check algebra or investigate numerical corner cases; every result should be checked against the original equations and physical constraints.
+Read [Guided Further Reading](reading.html) for additional scientific questions. Each includes an external teaching resource, a focused derivation or physical check and a related interactive experiment. Students may use generative AI to request alternate derivations, check algebra or investigate numerical corner cases; every result should be checked against the original equations and physical constraints.
 
-## Use, access, and provenance
+## Lecture notes and course access
 
-The companion is contained in the private [GitHub repository](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note). Start a Codespace, open forwarded port 8000 and visit `/companion/`; locally, serve repository root with `python3 -m http.server 8000`. The [implementation status](IMPLEMENTATION_STATUS.md) explains tests, remaining usability review and publication rights. The full [lecture notes](../pdf/advanced-quantum-mechanics.pdf) remain the authoritative mathematical reference.
+The [complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf) are the mathematical reference for the experiments. Use the course access instructions supplied by your instructor to open the companion.

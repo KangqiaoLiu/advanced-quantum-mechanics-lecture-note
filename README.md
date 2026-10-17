@@ -1,72 +1,33 @@
 # Advanced Quantum Mechanics
 
-English graduate-level lecture notes by **Kangqiao LIU**.
+Graduate lecture notes by **Kangqiao LIU**.
 
-**[Read the current complete PDF](pdf/advanced-quantum-mechanics.pdf)**. The PDF is built from the LaTeX sources on every content revision.
+[**Read the lecture notes (PDF)**](pdf/advanced-quantum-mechanics.pdf) · [**Explore the interactive experiments**](companion/index.html) · [**Guided further reading**](companion/reading.html) · [**Independent study guide**](companion/LEARNING_PATHS.md)
 
-**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browser catalog source](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md) · [Implementation status — curated scope complete](companion/IMPLEMENTATION_STATUS.md). The interactive companion now includes all 27 featured physics investigations and eight additional foundations (35 working self-authored labs), plus 27 guided external-reading topics. All are intended for independent study after class; blackboard teaching is unchanged. Blackboard teaching is unchanged.
+The course develops quantum mechanics from its mathematical foundations through physical applications and contemporary research topics. The English lecture notes provide step-by-step derivations, explicit mathematical conventions, and worked physical examples. The interactive companion offers independent numerical experiments and exercises that connect the formulas with measurable predictions.
 
-The manuscript covers foundational quantum theory, quantum dynamics, angular momentum and measurement, approximation methods, scattering, quantum many-body systems, relativistic quantum mechanics, topological condensed matter physics, and quantum neural networks and machine learning.
+## Course contents
 
-The original lecture notes and their historical Chinese-to-English translation are preserved in separate repository branches; the current manuscript incorporates instructor-authored handwritten lecture material and additional self-contained topics. The student-facing book includes a single-page *List of Notation* and a bibliography for its two contemporary chapters.
+1. **Basic Concepts:** state vectors, Hermitian operators, effective non-Hermitian Hamiltonians, measurement and representations.
+2. **Quantum Dynamics:** time evolution, pictures of quantum mechanics, oscillators, semiclassical approximations, path integrals and geometric phases.
+3. **Angular Momentum Theory:** rotations, spins, density operators, angular-momentum addition, entanglement and quantum communication.
+4. **Approximation Methods:** perturbation theory, variational methods and driven quantum dynamics.
+5. **Scattering Theory:** Green functions, Lippmann–Schwinger equation, Born approximations and partial-wave scattering.
+6. **Quantum Many-Body Systems:** permutation symmetry, identical particles, bosons and fermions.
+7. **Relativistic Quantum Mechanics:** Pauli and Dirac equations and relativistic spinors.
+8. **Topological Condensed Matter Physics:** SSH chains, edge states, Chern insulators and Thouless pumping.
+9. **Quantum Neural Networks and Machine Learning:** quantum circuits, variational training, gradients and quantum kernels.
 
-## Acknowledgments
+## Studying with the interactive companion
 
-These lecture notes draw **extensively** on the Advanced Quantum Mechanics lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. Parts also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to Professor Zhuang and these authors for their work and teaching materials. I also thank **Professor Hong Guo (郭弘)** for his Advanced Quantum Mechanics course, which has informed the preparation of these notes.
+The [interactive directory](companion/index.html) provides featured physical investigations and additional foundational exercises. Each experiment introduces a question, allows you to vary physical parameters, displays quantitative predictions, and guides you through derivations and limiting cases.
 
+Start with an experiment related to the material you are studying. Predict what will happen, test your prediction, and then derive the result. For additional topics, use the [guided reading collection](companion/reading.html), including links to external educational materials.
 
-## Open the interactive companion in GitHub (private)
+The interactive materials are designed for independent after-class study. Access to the private course repository or its preview, where needed, is arranged by the instructor.
 
-**[Create a Codespace for this repository](https://github.com/codespaces/new?hide_repo_select=true&repo=1410589769&ref=main)**
+## References and acknowledgments
 
-1. On GitHub, open **Code → Codespaces → Create codespace on main**, or use the link above while signed in.
-2. The committed [development-container configuration](.devcontainer/devcontainer.json) automatically starts the course preview and forwards port **8000**.
-3. When the browser preview opens, navigate to `/companion/`. If it does not open automatically, select the **PORTS** tab, then **Open in Browser** for port 8000 and append `/companion/` to the forwarded address.
-4. Use the four working laboratories and the nine-chapter directory in the browser. Keep port visibility **Private**.
+These notes draw extensively on the *Advanced Quantum Mechanics* lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. They also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to these authors for their work and teaching materials. I also thank **Professor Hong Guo (郭弘)** for his Advanced Quantum Mechanics course, which informed the preparation of these notes. References to contemporary research appear throughout the lecture notes.
 
-Codespaces uses your GitHub monthly compute/storage allowance. Stop idle environments from [github.com/codespaces](https://github.com/codespaces). A permanent student-facing GitHub Pages site is a separate publication choice: Pages websites are normally public even when their source repositories are private. Academic rights review and publishing approval should precede such publication.
-
-## Build
-
-The root file is `main.tex` (XeLaTeX). Its sources are organized under `chapters/ch01/`--`chapters/ch09/`; the new academic references are in `references/topology_qml.bib`.
-
-```bash
-latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
-python3 scripts/check_notation_consistency.py
-python3 scripts/check_new_chapters.py
-python3 scripts/check_display_equations.py
-```
-
-GitHub Actions (`.github/workflows/build-notes.yml`) runs validation, compiles the book, archives a version-specific PDF, and publishes the new `pdf/advanced-quantum-mechanics.pdf` on `main`.
-
-## Fully worked first-occurrence derivations
-
-The student-facing manuscript now includes a new [non-Hermitian physics
-interlude](chapters/ch01/03a_nonhermitian_dimer.tex) immediately after
-Hermitian operators, with a two-cavity loss model, full 2×2
-Hamiltonian, exceptional point, conditional norm evolution and three
-original vector figures. Across the other eight chapters,
-[original worked derivations](editorial/STEP_BY_STEP_PEDAGOGY.md)
-clarify unitary evolution, coupled spin, Gaussian variational bounds,
-delta-potential scattering and Born convergence, fermionic signs,
-Dirac spinor normalization, SSH Fourier/Berry phases and quantum
-parameter-shift gradients.
-
-The [nine-chapter pedagogical audit](editorial/STEP_BY_STEP_PEDAGOGY.md)
-separates the completed first-occurrence expansions from material still
-awaiting an exhaustive equation-by-equation review.
-
-## Editorial references and history
-
-- [Equation-numbering and figure-by-figure visual review](editorial/EQUATION_FIGURE_REVIEW_2026-10-16.md)
-
-- [Project blueprint](PROJECT_BLUEPRINT.md)
-- [Whole-book notation policy](editorial/NOTATION_POLICY.md)
-- [Handwritten lecture integration record](editorial/CONTENT_INTEGRATION_2026-10-16.md)
-- [Current revision and source mapping](editorial/REVISION_2026-10-16_TOPOLOGY_QML.md)
-- `textbook/pre-instructor-supplements-2026-10-16`: original merged-chapter source before replacing handwritten material.
-- `translation/fidelity-audited-2026-10-16`: source-faithful eight-chapter translation review snapshot.
-
-## Copyright and third-party materials
-
-**© 2026 Kangqiao LIU. All rights reserved.** The compiled PDF carries a discreet copyright mark on each page. See [COPYRIGHT.md](COPYRIGHT.md) for rights, conditions of use and treatment of third-party material. Source scans and reference PDFs are excluded from this repository.
+**© 2026 Kangqiao LIU. All rights reserved.** See [Copyright and use](COPYRIGHT.md).
