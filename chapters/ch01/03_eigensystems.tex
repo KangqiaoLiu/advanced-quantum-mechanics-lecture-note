@@ -3,43 +3,43 @@
 \subsection*{1) Eigenvalues and eigenstates of a general operator}
 The eigenvalue equation of an operator is
 \begin{equation}
-\op T\ket a=\lambda\ket a,
+\op A\ket a=\lambda\ket a,
 \end{equation}
-where $\lambda$ is called an eigenvalue of $\op T$ and $\ket a$ is called an eigenvector of $\op T$.
+where $\lambda$ is called an eigenvalue of $\op A$ and $\ket a$ is called an eigenvector of $\op A$.
 
 Use the completeness relation to derive the component equation. Write
-$\ket a=\sum_n a_n\ket n$ and multiply $\op T\ket a=\lambda\ket a$
+$\ket a=\sum_n a_n\ket n$ and multiply $\op A\ket a=\lambda\ket a$
 by $\bra m$:
 \begin{equation}
-\mel m{\op T}a=\sum_n a_n\mel m{\op T}n
+\mel m{\op A}a=\sum_n a_n\mel m{\op A}n
 =\lambda\sum_n a_n\braket m n=\lambda a_m.
 \end{equation}
-Thus $\sum_n T_{mn}a_n=\lambda a_m$ for each $m$, or,
+Thus $\sum_n A_{mn}a_n=\lambda a_m$ for each $m$, or,
 \begin{equation}
-Ta=\lambda a,\qquad (T-\lambda I)a=0.
+Aa=\lambda a,\qquad (A-\lambda\mathbf1)a=0.
 \end{equation}
 The condition for a nonzero eigenvector $a\ne0$ is
 \begin{equation}
-\det(T-\lambda I)=0.
+\det(A-\lambda\mathbf1)=0.
 \end{equation}
 This is the secular equation in an $N$-dimensional space:
 \begin{equation}
 \begin{vmatrix}
-T_{11}-\lambda&T_{12}&\cdots&T_{1N}\\
-T_{21}&T_{22}-\lambda&\cdots&T_{2N}\\
+A_{11}-\lambda&A_{12}&\cdots&A_{1N}\\
+A_{21}&A_{22}-\lambda&\cdots&A_{2N}\\
 \vdots&\vdots&\ddots&\vdots\\
-T_{N1}&T_{N2}&\cdots&T_{NN}-\lambda
+A_{N1}&A_{N2}&\cdots&A_{NN}-\lambda
 \end{vmatrix}=0.
 \end{equation}
 One thereby obtains $N$ eigenvalues $\lambda_i$ ($i=1,2,\ldots,N$). Substituting each into
 \begin{equation}
-(T-\lambda_i I)a=0
+(A-\lambda_i\mathbf1)a=0
 \end{equation}
 gives the corresponding eigenvector $a$.
 
 \textbf{Example.} Find the eigenvalues and eigenvectors of
 \begin{equation}
-T=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+A=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
 \end{equation}
 The secular equation is
 \begin{equation}
@@ -55,37 +55,37 @@ Let $a=(a_1,a_2)^{\mathsf T}$. For $\lambda=1$,
 \end{equation}
 The normalized eigenvector is $a=(1,0)^{\mathsf T}$. Similarly, taking $\lambda=-1$ gives $a=(0,1)^{\mathsf T}$.
 \subsection*{2) Hermitian operators}
-If $\op T^\dagger=\op T$, or $T^\dagger=T$, the operator $\op T$ is called Hermitian and $T$ is called a Hermitian matrix.
+If $\op A^\dagger=\op A$, or $A^\dagger=A$, the operator $\op A$ is called Hermitian and $A$ is called a Hermitian matrix.
 
 We discuss the following properties of Hermitian operators.
 \paragraph{a) Conjugate symmetry.}
 \begin{equation}
-\mel a{\op T}b=\mel b{\op T^\dagger}a^*=\mel b{\op T}a^*.
+\mel a{\op A}b=\bigl(\mel b{\op A^\dagger}a\bigr)^*=\bigl(\mel b{\op A}a\bigr)^*.
 \end{equation}
 In particular,
 \begin{equation}
-\mel a{\op T}a=\mel a{\op T}a^*,
+\mel a{\op A}a=\bigl(\mel a{\op A}a\bigr)^*,
 \end{equation}
-which shows that the expectation value $\mel a{\op T}a$ of a Hermitian operator is real.
+which shows that the expectation value $\mel a{\op A}a$ of a Hermitian operator is real.
 
-For an anti-Hermitian operator, $\op T^\dagger=-\op T$ and
+For an anti-Hermitian operator, $\op A^\dagger=-\op A$ and
 \begin{equation}
-\mel a{\op T}a=-\mel a{\op T}a^*,
+\mel a{\op A}a=-\bigl(\mel a{\op A}a\bigr)^*,
 \end{equation}
 so its expectation value is purely imaginary.
 \paragraph{b) Reality of eigenvalues and orthogonality.}
 Suppose
 \begin{equation}
-\op T\ket i=\lambda_i\ket i,\qquad \op T\ket j=\lambda_j\ket j.
+\op A\ket i=\lambda_i\ket i,\qquad \op A\ket j=\lambda_j\ket j.
 \end{equation}
 From
 \begin{equation}
-\mel j{\op T}i=\lambda_i\braket j i
+\mel j{\op A}i=\lambda_i\braket j i
 \end{equation}
 and
 \begin{equation}
-\bra j\op T=\bra j\lambda_j^*,\qquad
-\mel j{\op T}i=\lambda_j^*\braket j i,
+\bra j\op A=\bra j\lambda_j^*,\qquad
+\mel j{\op A}i=\lambda_j^*\braket j i,
 \end{equation}
 we obtain
 \begin{equation}
@@ -101,7 +101,7 @@ For $j\ne i$, if $\lambda_i-\lambda_j\ne0$, then $\braket j i=0$. Thus eigenstat
 \paragraph{c) Orthogonalization by linear superposition (Schmidt orthogonalization).}
 Suppose several eigenstates correspond to the same eigenvalue, i.e., there is degeneracy. For example, for a $g$-fold degenerate eigenvalue ($g\ge2$),
 \begin{equation}
-\op T\ket{i,j}=\lambda_i\ket{i,j},\qquad j=1,\ldots,g.
+\op A\ket{i,j}=\lambda_i\ket{i,j},\qquad j=1,\ldots,g.
 \end{equation}
 Are these $g$ eigenvectors orthogonal?
 
@@ -111,10 +111,10 @@ Redefine $g$ new states:
 \end{equation}
 Since
 \begin{equation}
-\op T\ket{i,n}=\sum_{j=1}^g C_{nj}\op T\ket{i,j}
+\op A\ket{i,n}=\sum_{j=1}^g C_{nj}\op A\ket{i,j}
 =\lambda_i\sum_{j=1}^g C_{nj}\ket{i,j}=\lambda_i\ket{i,n},
 \end{equation}
-each $\ket{i,n}$ is still an eigenstate of $\op T$ with eigenvalue $\lambda_i$. Hence it suffices to show that the $\ket{i,n}$ can be made orthonormal.
+each $\ket{i,n}$ is still an eigenstate of $\op A$ with eigenvalue $\lambda_i$. Hence it suffices to show that the $\ket{i,n}$ can be made orthonormal.
 
 Here is an explicit construction of the required vectors. Start with
 linearly independent eigenvectors $\ket{v_1},\dots,\ket{v_g}$ in the
@@ -145,7 +145,7 @@ For $j<n$,
 \end{equation}
 Since all $\ket{v_n}$ have the same eigenvalue $\lambda_i$,
 every linear combination $\ket{w_n}$ also satisfies
-$\op T\ket{w_n}=\lambda_i\ket{w_n}$.
+$\op A\ket{w_n}=\lambda_i\ket{w_n}$.
 This is the Gram--Schmidt construction \emph{inside the eigenspace}.
 It yields orthonormal eigenvectors, including in the degenerate case:
 \begin{equation}
@@ -164,11 +164,11 @@ Choose a normalized eigenvector $\ket{e_1}$.
 Its orthogonal complement is invariant: whenever
 $\braket{e_1}{v}=0$,
 \begin{equation}
-\braket{e_1}{\op T v}
-=\mel{e_1}{\op T}v
+\braket{e_1}{\op A v}
+=\mel{e_1}{\op A}v
 =\lambda_1\braket{e_1}{v}=0.
 \end{equation}
-Restrict $\op T$ to this $(N-1)$-dimensional invariant subspace.
+Restrict $\op A$ to this $(N-1)$-dimensional invariant subspace.
 The restriction remains Hermitian. Iterating produces $N$ mutually
 orthonormal eigenvectors, including any necessary orthogonalization
 within degenerate subspaces.
@@ -185,4 +185,4 @@ This is the finite-dimensional spectral theorem. Additional
 domain and continuous-spectrum considerations arise in infinite
 dimension.
 
-\interactiveguide{IC-01-02}{A Hermitian $2	imes2$ eigenproblem}{Now vary the diagonal and off-diagonal entries of a Hermitian matrix. Calculate both eigenvalues and normalized eigenvectors by hand; compare with the display and examine the approach to degeneracy.}
+\interactiveguide{IC-01-02}{A Hermitian $2\times2$ eigenproblem}{Now vary the diagonal and off-diagonal entries of a Hermitian matrix. Calculate both eigenvalues and normalized eigenvectors by hand; compare with the display and examine the approach to degeneracy.}
