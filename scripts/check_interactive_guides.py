@@ -26,6 +26,12 @@ for chapter in sorted((root/"chapters").rglob("*.tex")):
         assert lab_id in labs,(chapter,lab_id)
         assert len(tex[match.end():].split("\n",1)[0])>80,(chapter,lab_id)
         found.append((lab_id,chapter.relative_to(root).as_posix()))
+# A GitHub source-view URL renders HTML source, not an executable experiment.
+# Keep every in-text reference on the public static course domain.
+for chapter in sorted((root/"chapters").rglob("*.tex")):
+    tex=chapter.read_text(encoding="utf-8")
+    assert "github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/labs/" not in tex,chapter
+
 counts=Counter(k for k,_ in found)
 assert set(counts)==set(labs),{
     "missing":sorted(set(labs)-set(counts)),
