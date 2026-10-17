@@ -69,7 +69,8 @@ jobs:
               assert b"Laboratory directory" in r.read()
           with urllib.request.urlopen(urljoin(base, "catalog.json")) as r:
               catalog = json.load(r)
-              assert sum(x["stage"]=="implemented" for x in catalog["labs"]) == 9
+              assert sum(x["stage"]=="implemented" for x in catalog["labs"]) >= 9
+              assert {x["chapter"] for x in catalog["labs"] if x["stage"]=="implemented"} == set(range(1,10))
           with urllib.request.urlopen(urljoin(base, "labs/IC-08-02/index.html")) as r:
               assert b"SSH" in r.read()
           print("PASS authenticated Codespaces HTTP preview preparation.")
