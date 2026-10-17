@@ -34,7 +34,7 @@ class Inspect(HTMLParser):
         if tag == "a" and a.get("href"):
             self.links.append(a["href"])
 
-finished = [x for x in catalog["labs"] if x["stage"] == "implemented"]
+finished = [x for x in catalog["labs"] if x.get("page")]
 assert len(finished) >= 9, "The nine-chapter release needs a working laboratory in each chapter."
 for lab in finished:
     path = comp / lab["page"]

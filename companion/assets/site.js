@@ -1,99 +1,46 @@
 "use strict";
-const base = "https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/";
-const container = document.querySelector("#labs");
-const chapterInput = document.querySelector("#chapter");
-const searchInput = document.querySelector("#search");
-const trackInput = document.querySelector("#track");
-const message = document.querySelector("#message");
-const count = document.querySelector("#count");
-let catalog = null;
-
-const element = (tag, className, text) => {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text != null) node.textContent = text;
-  return node;
-};
-function external(target, textLabel) {
-  const a = element("a", "", textLabel);
-  a.href = target;
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
-  return a;
+const listing=document.querySelector("#labs"),chapterSelect=document.querySelector("#chapter"),search=document.querySelector("#search"),collection=document.querySelector("#track"),count=document.querySelector("#count"),status=document.querySelector("#catalog-status"),notice=document.querySelector("#message");
+let catalog;
+function element(tag,cls,value){const x=document.createElement(tag);if(cls)x.className=cls;if(value!==undefined)x.textContent=value;return x;}
+function link(href,label,external){const a=element("a","",label);a.href=href;if(external){a.target="_blank";a.rel="noopener noreferrer";}return a;}
+function card(topic){
+ const card=element("article","lab");
+ if(topic.category==="foundation")card.classList.add("lab-reference");
+ if(topic.category==="reading")card.classList.add("lab-reading");
+ card.append(element("span","id",topic.id+" · Chapter "+topic.chapter));
+ card.append(element("h3","",topic.title));
+ card.append(element("p","question",topic.question));
+ if(topic.category!=="reading")card.append(element("p","observable","Explore: "+topic.observable));
+ card.append(element("span","chip",topic.category==="featured"?"Featured investigation":topic.category==="foundation"?"Foundational reference":"Guided reading"));
+ const links=element("div","lab-links");
+ if(topic.page)links.append(link(topic.page,"Open experiment ↗"));
+ if(topic.reading){links.append(link("reading.html#"+encodeURIComponent(topic.id),"Open reading exercise ↗"));links.append(link(topic.reading.url,"External teaching resource ↗",true));}
+ links.append(link("../pdf/advanced-quantum-mechanics.pdf","Course lecture notes ↗"));
+ card.append(links);return card;
 }
-function card(lab) {
-  const article = element("article", "lab");
-  const kind = lab.editorial_track;
-  if (kind === "reading") article.classList.add("lab-reading");
-  if (kind === "reference") article.classList.add("lab-reference");
-  article.append(element("span", "id", lab.id + " · Chapter " + lab.chapter));
-  article.append(element("h3", "", lab.title));
-  article.append(element("p", "question", lab.question));
-  if (kind !== "reading") article.append(element("p", "observable", "Explore: " + lab.observable));
-
-  const chips = element("div", "chips");
-  chips.append(element("span", "chip", kind === "selected" ? "Selected investigation" : kind === "reference" ? "Foundational reference" : "Guided reading"));
-  if (kind !== "reading") chips.append(element("span", "chip", lab.stage === "implemented" ? "Interactive now" : "Selected · in development"));
-  article.append(chips);
-
-  const links = element("div", "lab-links");
-  if (lab.stage === "implemented" && lab.page) {
-    const launch = element("a", "launch", "Explore interactive lab ↗");
-    launch.href = lab.page;
-    links.append(launch);
-  }
-  if (kind === "reading") {
-    const link = element("a", "launch", "Read the guided extension ↗");
-    link.href = "reading.html#" + encodeURIComponent(lab.id);
-    links.append(link);
-    links.append(external(lab.reading_resource.url, "External resource ↗"));
-  } else if (lab.stage !== "implemented") {
-    links.append(element("span", "pending-copy", "Full independent-study lab in preparation"));
-  }
-  links.append(external(base + lab.source, "Lecture-note derivation ↗"));
-  article.append(links);
-  return article;
+function render(){
+ if(!catalog)return;
+ const chapter=chapterSelect.value,kind=collection.value,term=search.value.trim().toLocaleLowerCase();
+ const topics=catalog.labs.filter(t=>
+  (chapter==="all"||t.chapter===Number(chapter))&&
+  (kind==="all-experiments"?Boolean(t.page):kind==="featured"?t.category==="featured":kind==="foundation"?t.category==="foundation":t.category==="reading")&&
+  (!term||[t.id,t.title,t.question,t.observable||"",t.reading?.task||""].some(s=>s.toLocaleLowerCase().includes(term)))
+ );
+ listing.replaceChildren(...topics.map(card));
+ count.textContent=topics.length+" "+(topics.length===1?"learning topic":"learning topics");
+ if(!topics.length)listing.append(element("p","minor","No matching topic. Try another chapter or search term."));
 }
-function render() {
-  if (!catalog) return;
-  const term = searchInput.value.trim().toLocaleLowerCase();
-  const chapter = chapterInput.value;
-  const track = trackInput.value;
-  const labs = catalog.labs.filter(lab =>
-    (chapter === "all" || lab.chapter === Number(chapter)) &&
-    (track === "all" ||
-      (track === "working" ? lab.stage === "implemented" : lab.editorial_track === track)) &&
-    (!term || [lab.id, lab.title, lab.question, lab.observable, lab.reading_resource?.task || ""]
-      .some(s => s.toLocaleLowerCase().includes(term))));
-  const fragment = document.createDocumentFragment();
-  labs.forEach(lab => fragment.append(card(lab)));
-  container.replaceChildren(fragment);
-  count.textContent = labs.length + " matching topics · " +
-    labs.filter(x => x.stage === "implemented").length + " live experiments · " +
-    (catalog.curation.selected_to_build || 0) + " selected future experiments in the full plan";
-  if (!labs.length) container.append(element("p", "minor", "No matching question. Try another chapter or collection."));
-}
-async function init() {
-  try {
-    const response = await fetch("./catalog.json");
-    if (!response.ok) throw Error("Catalog file unavailable.");
-    catalog = await response.json();
-    const c = catalog.curation;
-    document.querySelector("#catalog-status").textContent =
-      c.selected_live + " selected interactive labs · " + c.selected_to_build +
-      " selected future topics · " + c.reference_live + " additional reference labs";
-    catalog.chapters.forEach(ch => {
-      const opt = document.createElement("option");
-      opt.value = String(ch.number);
-      opt.textContent = "Chapter " + ch.number + " — " + ch.name;
-      chapterInput.append(opt);
-    });
-    [chapterInput, searchInput, trackInput].forEach(el => el.addEventListener("input", render));
-    render();
-  } catch (err) {
-    count.textContent = "Catalog unavailable.";
-    message.hidden = false;
-    message.textContent = "Serve from the repository root with: python3 -m http.server 8000. Then visit /companion/ .";
-  }
+async function init(){
+ try{
+  const request=await fetch("catalog.json");if(!request.ok)throw Error("Catalog unavailable");
+  catalog=await request.json();
+  status.textContent="Interactive investigations · Nine chapters";
+  for(const ch of catalog.chapters){const option=element("option","","Chapter "+ch.number+" — "+ch.name);option.value=String(ch.number);chapterSelect.append(option);}
+  [chapterSelect,search,collection].forEach(x=>x.addEventListener("input",render));
+  render();
+ }catch(error){
+  status.textContent="Interactive learning";count.textContent="Course content unavailable";
+  notice.hidden=false;notice.textContent="Please open this page through the course website.";
+ }
 }
 init();

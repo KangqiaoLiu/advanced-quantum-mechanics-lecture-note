@@ -1,34 +1,31 @@
 "use strict";
 const root=document.querySelector("#reading-list"),chapterNav=document.querySelector("#chapter-nav");
-const base="https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/";
-const e=(tag,cls,value)=>{const item=document.createElement(tag);if(cls)item.className=cls;if(value!==undefined)item.textContent=value;return item;};
-function link(url,label,external=false){const a=e("a","",label);a.href=url;if(external){a.target="_blank";a.rel="noopener noreferrer";}return a;}
+const e=(tag,cls,value)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(value!==undefined)x.textContent=value;return x;};
+function link(url,label,external){const x=e("a","",label);x.href=url;if(external){x.target="_blank";x.rel="noopener noreferrer";}return x;}
 async function load(){
  try{
-  const response=await fetch("catalog.json");
-  if(!response.ok)throw Error("Unable to load the curriculum registry.");
-  const catalog=await response.json(),reading=catalog.labs.filter(x=>x.editorial_track==="reading"),ids=new Map(catalog.labs.map(x=>[x.id,x]));
-  document.querySelector("#reading-count").textContent=reading.length+" guided extensions across "+catalog.chapters.length+" chapters";
+  const response=await fetch("catalog.json");if(!response.ok)throw Error("Reading content unavailable");
+  const catalog=await response.json(),readings=catalog.labs.filter(x=>x.category==="reading"),index=new Map(catalog.labs.map(x=>[x.id,x]));
+  document.querySelector("#reading-count").textContent=readings.length+" guided reading topics across "+catalog.chapters.length+" chapters";
   for(const ch of catalog.chapters){
-   const topics=reading.filter(l=>l.chapter===ch.number);if(!topics.length)continue;
-   chapterNav.append(link("#chapter-"+ch.number,"Chapter "+ch.number+" · "+topics.length));
+   const topics=readings.filter(x=>x.chapter===ch.number);if(!topics.length)continue;
+   chapterNav.append(link("#chapter-"+ch.number,"Chapter "+ch.number));
    const section=e("section","reading-chapter");section.id="chapter-"+ch.number;
    section.append(e("h2","",ch.number+". "+ch.name));const grid=e("div","reading-grid");
-   for(const lab of topics){
-    const card=e("article","reading-task");card.id=lab.id;
-    card.append(e("span","id",lab.id+" · Guided reading"));
-    card.append(e("h3","",lab.title));card.append(e("p","",lab.question));
-    card.append(e("p","reading-action","Investigate independently: "+lab.reading_resource.task));
-    const links=e("div","links");
-    links.append(link(lab.reading_resource.url,lab.reading_resource.label+" ↗",true));
-    links.append(link(base+lab.source,"Original lecture-note section ↗",true));
-    const related=ids.get(lab.reading_resource.related_lab);
-    if(related&&related.page)links.append(link(related.page,"Related experiment: "+related.id+" ↗"));
+   for(const item of topics){
+    const card=e("article","reading-task");card.id=item.id;
+    card.append(e("span","id",item.id+" · Guided reading"));
+    card.append(e("h3","",item.title));card.append(e("p","",item.question));
+    card.append(e("p","reading-action","Investigate independently: "+item.reading.task));
+    const links=e("div","links");links.append(link(item.reading.url,item.reading.title+" ↗",true));
+    links.append(link("../pdf/advanced-quantum-mechanics.pdf","Course lecture notes ↗"));
+    const related=index.get(item.reading.related);
+    if(related?.page)links.append(link(related.page,"Related experiment ↗"));
     card.append(links);grid.append(card);
    }
    section.append(grid);root.append(section);
   }
-  if(location.hash){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)target.scrollIntoView({block:"start"});}
- }catch(error){const x=document.querySelector("#reading-error");x.hidden=false;x.textContent="The guided reading page requires the curriculum JSON. Start an HTTP preview from the repository root and visit /companion/reading.html.";}
+  if(location.hash){const id=decodeURIComponent(location.hash.slice(1));const x=document.getElementById(id);if(x)x.scrollIntoView({block:"start"});}
+ }catch(error){const x=document.querySelector("#reading-error");x.hidden=false;x.textContent="Unable to load the reading guide. Open this page through the course website.";}
 }
 load();

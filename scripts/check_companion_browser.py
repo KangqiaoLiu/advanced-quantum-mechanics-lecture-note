@@ -64,7 +64,7 @@ for lab_id, checks in cases.items():
 # The reading-only route and default curated directory are functioning browser pages.
 for name, filename, text_markers, css_class, minimum in [
     ("curated index", root / "companion" / "index.html",
-     ["Selected investigation", "27 matching topics"], 'class="lab"', 20),
+     ["Featured investigation", "27 learning topics"], 'class="lab"', 20),
     ("guided reading", root / "companion" / "reading.html",
      ["Guided reading", "Investigate independently:"], 'class="reading-task"', 27),
 ]:
