@@ -5,8 +5,8 @@ Selecting a suitable representation can simplify a calculation. The transformati
 Consider two representations:
 \begin{equation}
 \begin{array}{ll}
-I\text{ representation:}&\text{basis }\ket i,\quad \op I\ket i=i\ket i,\\
-M\text{ representation:}&\text{basis }\ket m,\quad \op M\ket m=m\ket m.
+F\text{ representation:}&\text{basis }\ket i,\quad \op F\ket i=f_i\ket i,\\
+G\text{ representation:}&\text{basis }\ket m,\quad \op G\ket m=g_m\ket m.
 \end{array}
 \end{equation}
 We have
@@ -39,23 +39,23 @@ Using completeness,
 \end{equation}
 In matrix form,
 \begin{equation}
-\boxed{a_M=S^\dagger a_I.}
+\boxed{a_G=S^\dagger a_F.}
 \end{equation}
 \subsection*{2) Transformation of an arbitrary operator}
 In the $I$ representation,
 \begin{equation}
-(T_I)_{ij}=\mel i{\op T}j.
+(A_F)_{ij}=\mel i{\op A}j.
 \end{equation}
 In the $M$ representation,
 \begin{equation}\begin{aligned}
-(T_M)_{mn}=\mel m{\op T}n
-&=\sum_{ij}\braket m i\mel i{\op T}j\braket j n\\
-&=\sum_{ij}S_{im}^*(T_I)_{ij}S_{jn}
-=\sum_{ij}(S^\dagger)_{mi}(T_I)_{ij}S_{jn}.
+(A_G)_{mn}=\mel m{\op A}n
+&=\sum_{ij}\braket m i\mel i{\op A}j\braket j n\\
+&=\sum_{ij}S_{im}^*(A_F)_{ij}S_{jn}
+=\sum_{ij}(S^\dagger)_{mi}(A_F)_{ij}S_{jn}.
 \end{aligned}\end{equation}
 In matrix form,
 \begin{equation}
-\boxed{T_M=S^\dagger T_I S.}
+\boxed{A_G=S^\dagger A_F S.}
 \end{equation}
 \subsection*{3) The representation-transformation matrix is unitary}
 \begin{equation}
@@ -74,16 +74,16 @@ Note that $S$ is not necessarily Hermitian: $S^\dagger\ne S$.
 \subsection*{4) Transformation of representation does not change eigenvalues}
 Suppose
 \begin{equation}
-T_I a_I=\lambda_I a_I.
+A_F a_F=\lambda_F a_F.
 \end{equation}
 Then
 \begin{equation}\begin{aligned}
-T_M a_M
-&=S^\dagger T_I SS^\dagger a_I
-=S^\dagger T_Ia_I=S^\dagger\lambda_Ia_I\\
-&=\lambda_I S^\dagger a_I=\lambda_I a_M.
+A_G a_G
+&=S^\dagger A_F SS^\dagger a_F
+=S^\dagger A_Fa_F=S^\dagger\lambda_Fa_F\\
+&=\lambda_F S^\dagger a_F=\lambda_F a_G.
 \end{aligned}\end{equation}
-Thus the eigenvalue in the $M$ representation is still $\lambda_I$. A transformation of representation does not change the values of physical quantities.
+Thus the eigenvalue in the $M$ representation is still $\lambda_F$. A transformation of representation does not change the values of physical quantities.
 
 \textbf{Example 1:} A transformation of representation does not change commutation relations.
 
@@ -97,8 +97,8 @@ Commutation relations are fundamental relations of quantum mechanics and are unc
 
 \textbf{Example 2:} A transformation of representation does not change the trace of a matrix:
 \begin{equation}
-\operatorname{tr}(T_M)=\operatorname{tr}(S^\dagger T_IS)
-=\operatorname{tr}(SS^\dagger T_I)=\operatorname{tr}(T_I).
+\operatorname{tr}(A_G)=\operatorname{tr}(S^\dagger A_FS)
+=\operatorname{tr}(SS^\dagger A_F)=\operatorname{tr}(A_F).
 \end{equation}
 
 \interactiveguide{IC-01-05}{Measurement axes and basis changes}{After the unitary-change-of-basis derivation, rotate the spin measurement axes and transform the state components. Verify that the matrix entries change while the probabilities for a fixed physical experiment remain invariant.}
