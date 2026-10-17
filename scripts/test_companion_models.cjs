@@ -453,4 +453,132 @@ check("QML Ry-Rz-Ry output, shift identity, vanishing gradients and Pauli shot n
  assert.ok(Math.abs(sampled.sample.estimate-sampled.f)<6*sampled.se+.02);
 });
 
+
+const Airy=require("../companion/labs/IC-02-05/model.js");
+check("Linear turning-point Airy integration and matched WKB asymptotics",()=>{
+ close(Airy.airy(0),.355028053887817,1e-14);
+ close(Airy.airy(2),.0349241304232744,3e-8);
+ close(Airy.airy(-2),.2274074282016856,3e-8);
+ for(const x of [-7,-4,-2,1.5,2,3])assert.ok(Number.isFinite(Airy.airy(x)));
+ assert.equal(Airy.wkb(0),null);
+ const near=Airy.predict(0,0,1),far=Airy.predict(-6,0,1);
+ assert.equal(near.approx,null);
+ assert.ok(far.error<.035,far.error);
+});
+const PathPhase=require("../companion/labs/IC-02-06/model.js");
+check("One-mode path integral Gaussian exact value and converging quadrature",()=>{
+ for(const c of [.05,.4,1.8,3])for(const sigma of [.5,1,1.7]){
+  const exact=PathPhase.predict(c,sigma),numeric=PathPhase.integrate(c,sigma,2400,7);
+  close(numeric.real,exact.real,2e-6);
+  close(numeric.imag,exact.imag,2e-6);
+  close(numeric.ratio,exact.ratio,1e-6);
+  assert.ok(exact.ratio<=1);
+ }
+ close(PathPhase.predict(0,1).ratio,1,1e-12);
+});
+const Coupled=require("../companion/labs/IC-03-02/model.js");
+check("Spin-half angular momentum addition, exchange eigenstates and mixing",()=>{
+ const singlet=Coupled.evaluate(1,0,"lower"),triplet=Coupled.evaluate(1,0,"upper");
+ close(singlet.lower,-.75);close(triplet.upper,.25);
+ close(singlet.pSinglet,1);close(singlet.S2,0);close(singlet.correlation,-3);
+ close(triplet.pTriplet,1);close(triplet.S2,2);close(triplet.correlation,1);
+ assert.equal(Coupled.evaluate(0,0).defined,false);
+ for(const J of [-1.3,.4,1.5])for(const d of [-2,-.6,0,.9]){
+  const p=Coupled.evaluate(J,d),q=Coupled.evaluate(J,d,"upper");
+  close(p.pTriplet+p.pSinglet,1);
+  close(p.pUD+p.pDU,1);
+  close(p.pTriplet+q.pTriplet,1);
+  close(p.upper-p.lower,Math.hypot(J,2*d));
+ }
+});
+const CHSH=require("../companion/labs/IC-03-06/model.js");
+check("CHSH Tsirelson bound and all four singlet joint probabilities",()=>{
+ const opt=CHSH.evaluate(0,90,45,-45,1);
+ close(opt.S,-2*Math.SQRT2,1e-12);
+ assert.equal(opt.violates,true);
+ const noisy=CHSH.evaluate(0,90,45,-45,.5);
+ assert.equal(noisy.violates,false);
+ for(const v of [0,.2,.75,1])for(const b of [-120,0,25,90]){
+  const s=CHSH.evaluate(0,90,b,-b,v);
+  assert.ok(Math.abs(s.S)<=2*Math.SQRT2+1e-12);
+  close(s.joint.reduce((p,q)=>p+q,0),1);
+  close(s.joint[0]+s.joint[1],.5);
+  close(s.joint[0]+s.joint[2],.5);
+ }
+});
+const Variational=require("../companion/labs/IC-04-02/model.js");
+check("Anharmonic oscillator variational bounds and nested Rayleigh-Ritz energies",()=>{
+ close(Variational.energy(1,0),.5);
+ close(Variational.lowest(0,8),.5);
+ close(Variational.optimal(0),1,1e-12);
+ for(const l of [.1,.4,1.2]){
+  const optimum=Variational.optimal(l);
+  close(optimum**4+6*l*optimum**6,1,1e-10);
+  const e=Variational.energy(optimum,l);
+  assert.ok(e<=Variational.energy(optimum*.85,l));
+  assert.ok(e<=Variational.energy(optimum*1.15,l));
+  const a=Variational.lowest(l,8),b=Variational.lowest(l,12),d=Variational.lowest(l,20);
+  assert.ok(a+1e-8>=b&&b+1e-8>=d,[l,a,b,d]);
+  assert.ok(d<=e+.015,[l,d,e]);
+  const h=Variational.matrix(l,12);
+  for(let i=0;i<12;i++)for(let j=0;j<12;j++)close(h[i][j],h[j][i]);
+ }
+});
+const Rabi=require("../companion/labs/IC-04-03/model.js");
+check("Analytic driven Rabi rotation, detuning envelope, full Bloch norm",()=>{
+ close(Rabi.rwa(1,0,Math.PI),1,1e-12);
+ close(Rabi.bound(1,2),.2);
+ for(const d of [-2,0,1])for(const t of [0,.5,3,6]){
+  const z=Rabi.predict(.5,d,t);
+  assert.ok(z.rwa>=-1e-12&&z.rwa<=1+1e-12);
+  assert.ok(z.lab>=-1e-9&&z.lab<=1+1e-9);
+  close(z.norm,1,3e-7);
+ }
+ const z=Rabi.predict(.3,0,5);
+ assert.ok(Math.abs(z.difference)<.03,z.difference);
+});
+const Scattering=require("../companion/labs/IC-05-03/model.js");
+check("Outgoing delta-scatterer T matrix, exact unitarity and Born convergence",()=>{
+ for(const k of [.7,1,2])for(const g of [-2,-.5,0,1,3]){
+  const e=Scattering.exact(g,k);
+  close(e.R+e.T,1);
+  close(e.rr*e.rr+e.ri*e.ri,e.R);
+  const q=Scattering.predict(g,k,6);
+  close(q.error,q.predictedError,2e-10);
+ }
+ const convergent=Scattering.predict(.6,1,10),divergent=Scattering.predict(5,1,10);
+ assert.ok(convergent.error<1e-6);
+ assert.ok(divergent.error>divergent.R*100);
+ close(Scattering.exact(0,1).T,1);
+});
+const Pump=require("../companion/labs/IC-08-07/model.js");
+check("Rice-Mele Thouless Chern pump, orientation, homotopy and critical cycle",()=>{
+ for(const n of [24,40,56]){
+  const top=Pump.predict(.5,0,0,Math.PI/2,n);
+  const trivial=Pump.predict(.3,0,.55,Math.PI/2,n);
+  assert.equal(top.analytic,-1);
+  assert.equal(trivial.analytic,0);
+  assert.ok(Math.abs(top.numeric+1)<.02,[n,top.numeric]);
+  assert.ok(Math.abs(trivial.numeric)<.02,[n,trivial.numeric]);
+  assert.ok(top.mingap>.1);
+ }
+ assert.equal(Pump.predict(.4,0,.4,0,48).analytic,null);
+ close(Pump.flux(1,.5,0,0,80),Pump.flux(1+2*Math.PI,.5,0,0,80),1e-12);
+});
+const Train=require("../companion/labs/IC-09-06/model.js");
+check("Global parity cost versus local gradient exponential second moments",()=>{
+ for(const n of [1,2,5,10,15]){
+   const d=Train.predict(n,1024,1800,7);
+   close(d.exactGlobal,2**(-n));
+   close(d.exactLocal,.5);
+   close(d.rmsGlobal**2,d.exactGlobal);
+   close(d.nominalShotNoise**2,1/2048);
+   assert.equal(d.global.length,1800);
+   assert.deepEqual(d.global,Train.predict(n,1024,1800,7).global);
+   assert.ok(d.globalMoment>=0&&d.localMoment>0);
+ }
+ const local=Train.predict(6,1024,6000,5);
+ assert.ok(Math.abs(local.localMoment-.5)<.025,[local.localMoment]);
+});
+
 process.stdout.write("\nALL "+checks+" PHYSICS TEST GROUPS PASSED\n");
