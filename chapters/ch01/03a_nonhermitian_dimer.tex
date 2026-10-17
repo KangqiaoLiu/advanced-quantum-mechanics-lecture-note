@@ -182,7 +182,7 @@ Solve the right eigenproblem
 $H_{\mathrm{eff}}\vect v_\pm=\lambda_\pm\vect v_\pm$.
 The characteristic equation reads
 \begin{align}
-0&=\det(H_{\mathrm{eff}}-\lambda I)\notag\\
+0&=\det(H_{\mathrm{eff}}-\lambda \mathbf1)\notag\\
  &=\begin{vmatrix}
  \omega_0-\ii\kappa/2-\lambda&J\\
  J&\omega_0-\lambda
@@ -213,7 +213,7 @@ decays as $\exp(-\Gamma t)$. The factor of two between
 amplitude and intensity decay is essential.
 
 \paragraph{Construct the right eigenvectors explicitly.}
-The top component of $(H_{\mathrm{eff}}-\lambda I)\vect v=0$
+The top component of $(H_{\mathrm{eff}}-\lambda \mathbf1)\vect v=0$
 is
 \begin{equation}
 (\omega_0-\ii\kappa/2-\lambda)v_A+Jv_B=0.
@@ -253,7 +253,7 @@ separate. At the threshold,
 Insert these values back into the original matrix rather than
 inferring the eigenspace from the roots alone:
 \begin{equation}
-H_{\mathrm{eff}}-\lambda_{\mathrm{EP}}I
+H_{\mathrm{eff}}-\lambda_{\mathrm{EP}}\mathbf1
 =J\begin{pmatrix}-\ii&1\\1&\ii\end{pmatrix}.
 \end{equation}
 An eigenvector satisfies $-\ii v_A+v_B=0$, hence
@@ -329,7 +329,7 @@ at the marked EP.}
 Subtract a multiple of the identity:
 \begin{equation}
 H_{\mathrm{eff}}=
-\left(\omega_0-\frac{\ii\kappa}{4}\right)I+
+\left(\omega_0-\frac{\ii\kappa}{4}\right)\mathbf1+
 K,\qquad
 K=\begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}.
 \label{eq:nh-traceless}
@@ -361,21 +361,21 @@ the matrix exponential directly. From Eq.~\eqref{eq:nh-traceless},
 K^2&=\begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}
      \begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}\\
 &=\begin{pmatrix}J^2-\kappa^2/16&0\\0&J^2-\kappa^2/16\end{pmatrix}
-=\Omega^2 I.
+=\Omega^2 \mathbf1.
 \end{aligned}
 \end{equation}
-Hence $K^{2m}=\Omega^{2m}I$ and
+Hence $K^{2m}=\Omega^{2m}\mathbf1$ and
 $K^{2m+1}=\Omega^{2m}K$. Splitting the exponential series,
 \begin{align}
 e^{-\ii Kt}
-&=\sum_{m=0}^\infty\frac{(-1)^m(\Omega t)^{2m}}{(2m)!}I
+&=\sum_{m=0}^\infty\frac{(-1)^m(\Omega t)^{2m}}{(2m)!}\mathbf1
  -\ii\sum_{m=0}^\infty
      \frac{(-1)^m(\Omega t)^{2m+1}}{(2m+1)!}
      \frac{K}{\Omega}\notag\\
-&=\boxed{I\cos(\Omega t)-\ii\frac{K}{\Omega}\sin(\Omega t)}.
+&=\boxed{\mathbf1\cos(\Omega t)-\ii\frac{K}{\Omega}\sin(\Omega t)}.
 \label{eq:nh-exp-k}
 \end{align}
-Since $I$ commutes with $K$, the common diagonal shift
+Since $\mathbf1$ commutes with $K$, the common diagonal shift
 in Eq.~\eqref{eq:nh-traceless} factors out:
 \begin{equation}
 e^{-\ii H_{\mathrm{eff}}t}
@@ -475,11 +475,11 @@ probability in the full system plus environment.
 At $\kappa=4J$, show directly that the characteristic
 polynomial equals $(\lambda-\omega_0+\ii J)^2$.
 Compute the nullspace of
-$H_{\mathrm{eff}}-(\omega_0-\ii J)I$.
+$H_{\mathrm{eff}}-(\omega_0-\ii J)\mathbf1$.
 Why does the EP provide only one eigenvector?
 Finally take the $\Omega\to0$ limit in
 Eq.~\eqref{eq:nh-exp-k} and verify
-$e^{-\ii Kt}=I-\ii Kt$ using $K^2=0$.
+$e^{-\ii Kt}=\mathbf1-\ii Kt$ using $K^2=0$.
 
 \noindent\textbf{Independent extension.}
 In the online companion, the
