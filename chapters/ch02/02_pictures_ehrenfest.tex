@@ -4,7 +4,7 @@
 The spatial-translation operator $\op U(\dd\vect x)$ and time-translation operator $\op U(\dd t)$ discussed earlier both act on the state:
 \begin{equation}
 \ket\alpha\longrightarrow\op U(\dd\vect x)\ket\alpha
-=\left(\mathbf1-\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)\ket\alpha,
+=\left(\mathbf1-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right)\ket\alpha,
 \end{equation}
 \begin{equation}
 \ket\alpha\longrightarrow\op U(\dd t)\ket\alpha
@@ -22,9 +22,9 @@ Equivalently, one may leave the state $\ket\alpha$ unchanged and transform the p
 The two methods are completely equivalent: the time dependence may be assigned either to the state or to the observable. For example, under a spatial displacement,
 \begin{equation}
 \op x\longrightarrow\op U^{\dagger}(\dd\vect x)\op x\op U(\dd\vect x)
-=\left(\mathbf1+\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)
-\op x\left(\mathbf1-\frac{\ii}{\hbar}\vect{\op p}\cdot\dd\vect x\right)
-=\op x+\frac{\ii}{\hbar}[\vect{\op p}\cdot\dd\vect x,\op x]
+=\left(\mathbf1+\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right)
+\op x\left(\mathbf1-\frac{\ii}{\hbar}\op{\vect p}\cdot\dd\vect x\right)
+=\op x+\frac{\ii}{\hbar}[\op{\vect p}\cdot\dd\vect x,\op x]
 =\op x+\dd\vect x.
 \end{equation}
 
@@ -139,53 +139,53 @@ We obtain the route from classical mechanics to quantum mechanics, canonical qua
 \end{equation}
 
 \subsection*{4) Ehrenfest theorem}
-How is $\op H$ constructed? For a quantum system with a classical counterpart, the Hamiltonian $H(\vect x,\vect p)$ of analytical mechanics is taken to the quantum Hamiltonian $\op H(\vect{\op x},\vect{\op p})$.
+How is $\op H$ constructed? For a quantum system with a classical counterpart, the Hamiltonian $H(\vect x,\vect p)$ of analytical mechanics is taken to the quantum Hamiltonian $\op H(\op{\vect x},\op{\vect p})$.
 
 For a free particle,
 \begin{equation}
-\op H=\frac{\vect{\op p}^{\,2}}{2m}.
+\op H=\frac{\op{\vect p}^{\,2}}{2m}.
 \end{equation}
 Heisenberg equations of motion (we henceforth omit the picture index H on observables) give
 \begin{equation}
-\frac{\dd\vect{\op p}}{\dd t}=
-\frac1{\ii\hbar}[\vect{\op p},\op H]=0,\qquad
-\vect{\op p}(t)=\vect{\op p}(0),
+\frac{\dd\op{\vect p}}{\dd t}=
+\frac1{\ii\hbar}[\op{\vect p},\op H]=0,\qquad
+\op{\vect p}(t)=\op{\vect p}(0),
 \end{equation}
 \begin{equation}
-\frac{\dd\vect{\op x}}{\dd t}=\frac1{\ii\hbar}[\vect{\op x},\op H]
-=\frac1{2\ii\hbar m}[\vect{\op x},\vect{\op p}^{\,2}]
-=\frac{\vect{\op p}(t)}m=\frac{\vect{\op p}(0)}m,\quad
-\vect{\op x}(t)=\vect{\op x}(0)+\frac{\vect{\op p}(0)}m t.
+\frac{\dd\op{\vect x}}{\dd t}=\frac1{\ii\hbar}[\op{\vect x},\op H]
+=\frac1{2\ii\hbar m}[\op{\vect x},\op{\vect p}^{\,2}]
+=\frac{\op{\vect p}(t)}m=\frac{\op{\vect p}(0)}m,\quad
+\op{\vect x}(t)=\op{\vect x}(0)+\frac{\op{\vect p}(0)}m t.
 \end{equation}
 For a general system,
 \begin{equation}
-\op H=\frac{\vect{\op p}^{\,2}}{2m}+V(\vect{\op x}).
+\op H=\frac{\op{\vect p}^{\,2}}{2m}+V(\op{\vect x}).
 \end{equation}
 The Heisenberg equations are
 \begin{equation}
-\frac{\dd\vect{\op p}}{\dd t}=
-\frac1{\ii\hbar}[\vect{\op p},\op H]
-=\frac1{\ii\hbar}[\vect{\op p},V(\vect{\op x})].
+\frac{\dd\op{\vect p}}{\dd t}=
+\frac1{\ii\hbar}[\op{\vect p},\op H]
+=\frac1{\ii\hbar}[\op{\vect p},V(\op{\vect x})].
 \end{equation}
-Expand $V(\vect{\op x})$ as a power series in $\vect{\op x}$ and use $[\op x_i,\op p_j]=\ii\hbar\delta_{ij}$. Then
+Expand $V(\op{\vect x})$ as a power series in $\op{\vect x}$ and use $[\op x_i,\op p_j]=\ii\hbar\delta_{ij}$. Then
 \begin{equation}
-\frac{\dd\vect{\op p}}{\dd t}=-\vect\nabla V(\vect{\op x}),
-\end{equation}
-\begin{equation}
-\frac{\dd\vect{\op x}}{\dd t}
-=\frac1{\ii\hbar}[\vect{\op x},\op H]
-=\frac1{2\ii\hbar m}[\vect{\op x},\vect{\op p}^{\,2}]
-=\frac{\vect{\op p}}m,
+\frac{\dd\op{\vect p}}{\dd t}=-\vect\nabla V(\op{\vect x}),
 \end{equation}
 \begin{equation}
-m\frac{\dd^2\vect{\op x}}{\dd t^2}
-=\frac{\dd\vect{\op p}}{\dd t}=-\vect\nabla V(\vect{\op x}).
+\frac{\dd\op{\vect x}}{\dd t}
+=\frac1{\ii\hbar}[\op{\vect x},\op H]
+=\frac1{2\ii\hbar m}[\op{\vect x},\op{\vect p}^{\,2}]
+=\frac{\op{\vect p}}m,
+\end{equation}
+\begin{equation}
+m\frac{\dd^2\op{\vect x}}{\dd t^2}
+=\frac{\dd\op{\vect p}}{\dd t}=-\vect\nabla V(\op{\vect x}).
 \end{equation}
 Taking expectation values on both sides,
 \begin{equation}
-\boxed{m\frac{\dd^2\langle\vect{\op x}\rangle}{\dd t^2}
-=\frac{\dd\langle\vect{\op p}\rangle}{\dd t}
-=-\langle\vect\nabla V(\vect{\op x})\rangle.}
+\boxed{m\frac{\dd^2\langle\op{\vect x}\rangle}{\dd t^2}
+=\frac{\dd\langle\op{\vect p}\rangle}{\dd t}
+=-\langle\vect\nabla V(\op{\vect x})\rangle.}
 \end{equation}
 This is the Ehrenfest theorem, corresponding to Newton's law in classical mechanics. Since inner products are picture-independent, the Ehrenfest theorem for expectation values is also picture-independent.
 
