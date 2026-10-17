@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
-  "revision": "2026-10-17",
-  "status": "26 fully authored self-study experiments; all 22 recommended foundational topics complete; 36 independent extensions remain planned.",
-  "version": "0.5.0-complete-recommended-self-study",
+  "revision": "2026-10-17: Curated flagship self-study scope; 27 selected investigations, 8 already-authored reference tools, and 27 externally supported reading topics.",
+  "status": "26 working experiments retained; 18 selected live investigations, 8 optional foundations; 9 selected experiments to implement; 27 external-reading topics.",
+  "version": "0.6.0-curated",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -54,7 +54,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-01-01/index.html"
+      "page": "labs/IC-01-01/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-01-02",
@@ -67,7 +68,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-01-02/index.html"
+      "page": "labs/IC-01-02/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-01-03",
@@ -80,7 +82,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-01-03/index.html"
+      "page": "labs/IC-01-03/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-01-04",
@@ -93,7 +96,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-01-04/index.html"
+      "page": "labs/IC-01-04/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-01-05",
@@ -106,7 +110,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-01-05/index.html"
+      "page": "labs/IC-01-05/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-01-06",
@@ -118,7 +123,15 @@
       "observable": "Commutator, standard deviations, uncertainty bound",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · Exploring uncertainty",
+        "url": "https://quantum.cloud.ibm.com/learning/en/modules/quantum-mechanics/exploring-uncertainty-with-qiskit",
+        "task": "Derive the Robertson inequality for Pauli X and Z and test states with zero variance in one observable.",
+        "related_lab": "IC-01-03"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-01-07",
@@ -130,7 +143,15 @@
       "observable": "Normalized Gaussian, Fourier width, uncertainty product",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "QuVis · interactive quantum mechanics simulations",
+        "url": "https://www.st-andrews.ac.uk/physics/quvis/de/index-about.php?catid=1&nodeid=1",
+        "task": "Fourier transform two normalized Gaussians of different width and confirm ΔxΔp=ℏ/2.",
+        "related_lab": "IC-02-03"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-01-08",
@@ -143,7 +164,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-01-08/index.html"
+      "page": "labs/IC-01-08/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-01-09",
@@ -155,7 +177,15 @@
       "observable": "Complex spectrum, eigenvectors, normalization cautions",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Diagonalize a 2×2 non-Hermitian matrix, identify eigenvalue coalescence and compare with Hermitian spectral reality.",
+        "related_lab": "IC-01-02"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-01",
@@ -168,7 +198,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-02-01/index.html"
+      "page": "labs/IC-02-01/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-02-02",
@@ -180,7 +211,15 @@
       "observable": "Time-evolved states and operators, expectation values",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "QuTiP · quantum dynamics and time-dependent Hamiltonians",
+        "url": "https://qutip.readthedocs.io/en/stable/guide/guide-dynamics.html",
+        "task": "For a constant qubit Hamiltonian, compute 〈σx(t)〉 once from ψ(t) and once from σx(t).",
+        "related_lab": "IC-02-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-03",
@@ -193,7 +232,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-02-03/index.html"
+      "page": "labs/IC-02-03/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-02-04",
@@ -205,7 +245,15 @@
       "observable": "Quadrature variances, uncertainty ellipse, oscillation",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "QuVis · interactive quantum mechanics simulations",
+        "url": "https://www.st-andrews.ac.uk/physics/quvis/de/index-about.php?catid=1&nodeid=1",
+        "task": "Compute the product and covariance determinant of squeezed-state quadrature variances in the existing oscillator experiment.",
+        "related_lab": "IC-02-03"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-05",
@@ -217,7 +265,8 @@
       "observable": "Turning points, exact and approximate profiles, error",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-02-06",
@@ -229,7 +278,8 @@
       "observable": "Path family, actions, complex phase and cancellation",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-02-07",
@@ -241,7 +291,15 @@
       "observable": "Relative phase and fringes, flux periodicity",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Derive the relative two-path Aharonov–Bohm phase qΦ/ℏ and specify the closed path that makes it gauge invariant.",
+        "related_lab": "IC-02-08"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-08",
@@ -254,7 +312,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-02-08/index.html"
+      "page": "labs/IC-02-08/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-02-09",
@@ -266,7 +325,15 @@
       "observable": "Patch potentials, overlap gauge transformation, flux",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "Topology in Condensed Matter · Thouless pumps",
+        "url": "https://topocondmat.org/w3-pump-qhe/pumps/",
+        "task": "Compare north- and south-patch Berry connections and their integer transition winding.",
+        "related_lab": "IC-02-08"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-10",
@@ -278,7 +345,15 @@
       "observable": "Potentials, wavefunction phase, observable invariants",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Apply a local eigenket rephasing and show explicitly which Berry-connection terms change.",
+        "related_lab": "IC-02-08"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-02-11",
@@ -290,7 +365,15 @@
       "observable": "Propagator products, pulse order, final occupation",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "QuTiP · quantum dynamics and time-dependent Hamiltonians",
+        "url": "https://qutip.readthedocs.io/en/stable/guide/guide-dynamics.html",
+        "task": "Multiply two noncommuting SU(2) pulse unitaries in both orders and compare their final Z probabilities.",
+        "related_lab": "IC-02-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-03-01",
@@ -302,7 +385,15 @@
       "observable": "State phase, Bloch direction, interference reference",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · Basics of quantum information",
+        "url": "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information",
+        "task": "Explain why a spinor changes sign after 2π while its Bloch vector and Pauli averages return.",
+        "related_lab": "IC-02-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-03-02",
@@ -314,7 +405,8 @@
       "observable": "Product and coupled bases, Clebsch–Gordan weights",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-03-03",
@@ -327,7 +419,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-03-03/index.html"
+      "page": "labs/IC-03-03/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-03-04",
@@ -340,7 +433,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-03-04/index.html"
+      "page": "labs/IC-03-04/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-03-05",
@@ -353,7 +447,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-03-05/index.html"
+      "page": "labs/IC-03-05/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-03-06",
@@ -365,7 +460,8 @@
       "observable": "Correlators, CHSH expression, quantum/classical limits",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-03-07",
@@ -377,7 +473,15 @@
       "observable": "Bell measurement, outcome, corrected state fidelity",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · quantum teleportation",
+        "url": "https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/entanglement-in-action/quantum-teleportation",
+        "task": "Track the four classical measurement outcomes and the corresponding corrective Pauli operator.",
+        "related_lab": "IC-03-04"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-03-08",
@@ -389,7 +493,15 @@
       "observable": "Spherical-harmonic densities and nodes",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "task": "Plot angular probability patterns of a small set of spherical harmonics and relate nodes to (ℓ,m).",
+        "related_lab": "IC-03-04"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-04-01",
@@ -402,7 +514,8 @@
       "route": "extension",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-04-01/index.html"
+      "page": "labs/IC-04-01/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-04-02",
@@ -414,7 +527,8 @@
       "observable": "Rayleigh quotient, trial parameters, exact reference",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-04-03",
@@ -426,7 +540,8 @@
       "observable": "Transition curve, resonance width, finite-time oscillation",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-04-04",
@@ -438,7 +553,15 @@
       "observable": "Exact spectrum and approximation error",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Compare the expansion parameter of a two-level Hamiltonian about weak and strong coupling limits.",
+        "related_lab": "IC-04-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-04-05",
@@ -450,7 +573,15 @@
       "observable": "Operators, Dyson terms, expectation consistency",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "QuTiP · quantum dynamics and time-dependent Hamiltonians",
+        "url": "https://qutip.readthedocs.io/en/stable/guide/guide-dynamics.html",
+        "task": "Move a time-dependent drive into the interaction picture and verify the same final transition probability.",
+        "related_lab": "IC-04-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-05-01",
@@ -462,7 +593,15 @@
       "observable": "Wave vectors, momentum transfer, differential cross section",
       "route": "extension",
       "stage": "planned",
-      "minutes": "5–10"
+      "minutes": "5–10",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Derive q=2k sin(θ/2) for elastic scattering and connect it to angular cross-section features.",
+        "related_lab": "IC-05-05"
+      },
+      "reading_reason": "Fundamental material is covered by the lecture notes or existing working laboratories."
     },
     {
       "id": "IC-05-02",
@@ -474,19 +613,29 @@
       "observable": "Radial waves, asymptotic sign and boundary condition",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Show why the outgoing Green function uses an outgoing radiation condition and derive its far-field behavior.",
+        "related_lab": "IC-05-05"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-05-03",
       "chapter": 5,
-      "title": "Lippmann–Schwinger and the T matrix",
+      "title": "Lippmann–Schwinger, T matrix and Born regime",
       "level": "advanced",
       "source": "chapters/ch05/03_lippmann_schwinger.tex",
-      "question": "How does iterating the scattering equation build multiple scattering?",
-      "observable": "First terms, amplitude contributions, convergence",
+      "question": "How do multiple-scattering corrections determine the reliability of the Born approximation?",
+      "observable": "Scattering-series iteration, exact amplitude, first Born error and convergence",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected",
+      "editorial_note": "Integrates the original IC-05-04 Born-validity question into one meaningful scattering laboratory."
     },
     {
       "id": "IC-05-04",
@@ -498,7 +647,15 @@
       "observable": "Potential strength, exact/numerical and Born amplitudes",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Derive the first Born term from the Lippmann–Schwinger equation; compare a weak-potential condition with higher orders.",
+        "related_lab": "IC-05-05"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-05-05",
@@ -511,7 +668,8 @@
       "route": "extension",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-05-05/index.html"
+      "page": "labs/IC-05-05/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-06-01",
@@ -524,7 +682,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-06-01/index.html"
+      "page": "labs/IC-06-01/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-06-02",
@@ -536,7 +695,15 @@
       "observable": "Normalized two-body amplitudes and exchange terms",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "task": "Normalize symmetric/antisymmetric two-orbital states with nonzero overlap and inspect their coincidence node.",
+        "related_lab": "IC-06-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-06-03",
@@ -549,7 +716,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-06-03/index.html"
+      "page": "labs/IC-06-03/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-06-04",
@@ -562,7 +730,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-06-04/index.html"
+      "page": "labs/IC-06-04/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-06-05",
@@ -574,7 +743,15 @@
       "observable": "Matrix elements, occupation transitions, number conservation",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "task": "Apply Σij hij a†i aj to one- and two-particle Fock basis vectors and track statistics.",
+        "related_lab": "IC-06-04"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-06-06",
@@ -586,7 +763,15 @@
       "observable": "Four-index matrix elements, exchange, state transitions",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "task": "Count ordered pair indices in a two-body Hamiltonian and explain its factor of one half.",
+        "related_lab": "IC-06-04"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-07-01",
@@ -599,7 +784,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-07-01/index.html"
+      "page": "labs/IC-07-01/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-07-02",
@@ -612,7 +798,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-07-02/index.html"
+      "page": "labs/IC-07-02/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-07-03",
@@ -624,7 +811,15 @@
       "observable": "Positive-energy spinors, component weights, limit",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "task": "Normalize a positive-energy Dirac spinor and determine the small component's size at p≪mc.",
+        "related_lab": "IC-07-02"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-07-04",
@@ -636,7 +831,15 @@
       "observable": "Large/small spinors, Pauli limit, relativistic correction",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
+        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "task": "Expand the Dirac equation at low momentum and recover the leading Pauli term and relativistic corrections.",
+        "related_lab": "IC-07-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-08-01",
@@ -648,7 +851,15 @@
       "observable": "Unit cells, Bloch states, dispersion",
       "route": "extension",
       "stage": "planned",
-      "minutes": "5–10"
+      "minutes": "5–10",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "Topology in Condensed Matter · SSH interactive assignments",
+        "url": "https://topocondmat.org/w1_topointro/w1_assignments.html",
+        "task": "Fourier-transform a nearest-neighbor two-site chain into its 2×2 Bloch Hamiltonian.",
+        "related_lab": "IC-08-02"
+      },
+      "reading_reason": "Fundamental material is covered by the lecture notes or existing working laboratories."
     },
     {
       "id": "IC-08-02",
@@ -661,7 +872,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-08-02/index.html"
+      "page": "labs/IC-08-02/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-08-03",
@@ -674,7 +886,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "30–60+",
-      "page": "labs/IC-08-03/index.html"
+      "page": "labs/IC-08-03/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-08-04",
@@ -687,7 +900,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-08-04/index.html"
+      "page": "labs/IC-08-04/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-08-05",
@@ -699,7 +913,15 @@
       "observable": "Band eigenvectors, curvature map, surface integral",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "Topology in Condensed Matter · Thouless pumps",
+        "url": "https://topocondmat.org/w3-pump-qhe/pumps/",
+        "task": "Relate local Berry curvature to a discretized Wilson-loop flux and the integrated Chern number.",
+        "related_lab": "IC-08-06"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-08-06",
@@ -712,7 +934,8 @@
       "route": "extension",
       "stage": "implemented",
       "minutes": "30–60+",
-      "page": "labs/IC-08-06/index.html"
+      "page": "labs/IC-08-06/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-08-07",
@@ -724,7 +947,8 @@
       "observable": "Pump path, polarization, integrated Berry curvature",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-09-01",
@@ -737,7 +961,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "5–10",
-      "page": "labs/IC-09-01/index.html"
+      "page": "labs/IC-09-01/index.html",
+      "editorial_track": "reference"
     },
     {
       "id": "IC-09-02",
@@ -749,7 +974,15 @@
       "observable": "Encoded input, feature curves, classifier response",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · optimization loops and barren plateaus",
+        "url": "https://quantum.cloud.ibm.com/learning/en/courses/variational-algorithm-design/optimization-loops",
+        "task": "For one-qubit Ry data encoding derive the frequency content of a measured expectation and compare with repeated encoding.",
+        "related_lab": "IC-09-01"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-09-03",
@@ -762,7 +995,8 @@
       "route": "core",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-09-03/index.html"
+      "page": "labs/IC-09-03/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-09-04",
@@ -774,7 +1008,15 @@
       "observable": "Sample statistics, loss trajectories, confidence range",
       "route": "extension",
       "stage": "planned",
-      "minutes": "15–30"
+      "minutes": "15–30",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · optimization loops and barren plateaus",
+        "url": "https://quantum.cloud.ibm.com/learning/en/courses/variational-algorithm-design/optimization-loops",
+        "task": "Use the Bernoulli variance of a parameter-shift gradient to predict how many shots are needed for a chosen precision.",
+        "related_lab": "IC-09-03"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     },
     {
       "id": "IC-09-05",
@@ -787,7 +1029,8 @@
       "route": "extension",
       "stage": "implemented",
       "minutes": "15–30",
-      "page": "labs/IC-09-05/index.html"
+      "page": "labs/IC-09-05/index.html",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-09-06",
@@ -799,7 +1042,8 @@
       "observable": "Gradient variance, cost locality, system size",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "selected"
     },
     {
       "id": "IC-09-07",
@@ -811,13 +1055,31 @@
       "observable": "Decision surface, loss landscape, matched baseline",
       "route": "extension",
       "stage": "planned",
-      "minutes": "30–60+"
+      "minutes": "30–60+",
+      "editorial_track": "reading",
+      "reading_resource": {
+        "label": "IBM Quantum Learning · optimization loops and barren plateaus",
+        "url": "https://quantum.cloud.ibm.com/learning/en/courses/variational-algorithm-design/optimization-loops",
+        "task": "Compare a separable ansatz and an entangling ansatz on one precisely defined two-qubit training target.",
+        "related_lab": "IC-09-03"
+      },
+      "reading_reason": "This question is suitable for a focused derivation or external exercise alongside existing labs."
     }
   ],
   "release_date": "2026-10-17",
-  "learning_use": "Each interactive experiment is an independent after-class learning resource; no in-class demonstration is planned.",
+  "learning_use": "The instructor uses blackboard teaching; interactive material is optional self-directed after-class study. A curated selected route is featured; completed foundational reference tools and external reading remain accessible on demand.",
   "route_meaning": {
     "core": "recommended conceptual independent-study path, never a class demonstration schedule",
     "extension": "additional self-paced investigations"
+  },
+  "curation": {
+    "selected_total": 27,
+    "selected_live": 18,
+    "selected_to_build": 9,
+    "reference_live": 8,
+    "reading_only": 27,
+    "planned_total_self_built": 35,
+    "policy": "Do not write new standalone laboratories for reading-only topics. Keep all 26 validated existing code modules. Prioritize scientifically transformative and quantitatively meaningful self-directed experiments.",
+    "decision_date": "2026-10-17"
   }
 }
