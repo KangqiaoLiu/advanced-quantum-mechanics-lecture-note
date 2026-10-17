@@ -22,7 +22,7 @@
   }
   function trials(initial,stages,N,seed=17){
     let a=(seed>>>0)||1;const rand=()=>{a^=a<<13;a^=a>>>17;a^=a<<5;return(a>>>0)/4294967296;};
-    const alive=[N],plus=Array(stages.length).fill(0),minus=Array(stages.length).fill(0);
+    let survivors=0;const plus=Array(stages.length).fill(0),minus=Array(stages.length).fill(0);
     for(let shot=0;shot<N;shot++){
       let r=initial.slice(),active=true;
       stages.forEach((s,j)=>{if(!active)return;
@@ -32,10 +32,9 @@
         if(s.mode==="plus"&&sign<0||s.mode==="minus"&&sign>0){active=false;return;}
         r=s.n.map(v=>v*sign);
       });
-      if(active)alive[0]===N?void 0:void 0;
-      if(active)alive.push(1);
+      if(active)survivors++;
     }
-    return {survivors:alive.length-1,plus,minus,N};
+    return {survivors,plus,minus,N};
   }
   return {dot,unit,one,predict,trials};
 });

@@ -8,6 +8,8 @@ on:
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
       - 'scripts/test_companion_models.cjs'
+      - 'scripts/check_companion_browser.py'
+      - 'scripts/check_companion_pages.py'
       - '.github/workflows/check-companion.yml'
   pull_request:
     paths:
@@ -39,3 +41,5 @@ jobs:
         run: node scripts/test_companion_models.cjs
       - name: Check static laboratory HTML and links
         run: python3 scripts/check_companion_pages.py
+      - name: Smoke test all four numerical labs in headless browser
+        run: python3 scripts/check_companion_browser.py

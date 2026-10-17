@@ -1,4 +1,4 @@
-@import url("../../assets/site.css");
+@import url("site.css");
 :root{--ink:#243b4b;--deep:#102d3e;--line:#d5e1e7;--soft:#f0f5f7;--blue:#256e9b;--teal:#15867c;--orange:#bd733b;}
 *{box-sizing:border-box}body.labpage{background:#f6f9fa;color:var(--ink)}
 .labnav{background:#10283a;color:#e4f0f4;padding:10px 0}.labnav .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between}.labnav a{color:#d7f2fc}.labnav small{color:#a3c8d4}
@@ -25,3 +25,5 @@ details{border-top:1px solid #e0e8ed;padding:12px 0}summary{font-weight:650;curs
 .sitefooter{border-top:1px solid #d7e3e9;margin:32px auto 0;padding:30px 0;font-size:.85rem;color:#6a7b85}
 @media(max-width:880px){.labgrid,.learning{grid-template-columns:1fr}.labhero{padding:35px 0 30px}.labmain{padding:0 15px;margin-top:16px}.labcard{padding:17px}.inline-controls{grid-template-columns:1fr}.labnav .wrap{gap:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+@media(max-width:620px){.canvasblock{overflow-x:auto;padding-bottom:3px}.canvasblock canvas{min-width:610px;max-width:none}}

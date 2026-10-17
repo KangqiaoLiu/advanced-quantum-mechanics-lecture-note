@@ -53,5 +53,9 @@ for lab in finished:
     for id in ("lab-core.js", "model.js", "lab.js"):
         assert id in page, (path, id)
     assert len(page) > 6500, (path, "Lab should contain substantial explanatory text")
+    css = comp / "assets" / "lab.css"
+    styles = css.read_text(encoding="utf-8")
+    assert '@import url("site.css")' in styles, "Lab stylesheet must import the actual base stylesheet."
+    assert (comp / "assets" / "site.css").is_file(), "Missing base CSS."
     print(f"PASS {lab['id']} · {scanner.canvas} accessible data figures · {scanner.scripts} local scripts")
 print(f"PASS: {len(finished)} implemented laboratories and local assets")
