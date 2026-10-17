@@ -21,12 +21,12 @@ Squared norm of a vector: $\vect a\cdot\vect a\geq0$.
 
 If the basis vectors are orthonormal, $\vect e_n\cdot\vect e_m=\delta_{nm}$, the inner product has the matrix form
 \begin{equation}
-\vect a\cdot\vect b=\sum_n a_nb_n=\widetilde a\,b,
+\vect a\cdot\vect b=\sum_n a_nb_n=a^{\mathsf T}b,
 \quad b=\begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix},\quad
  a=\begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix},\quad
- \widetilde a=(a_1,a_2,a_3),
+ a^{\mathsf T}=(a_1,a_2,a_3),
 \end{equation}
-where $\widetilde a$ is the transpose of $a$.
+Here $a^{\mathsf T}$ is the transpose of a column vector; in complex spaces the inner product instead uses the conjugate transpose $a^\dagger=(a^{\mathsf T})^*$.
 
 Components (matrix elements) of a vector:
 \begin{equation}
@@ -34,7 +34,7 @@ a_n=\vect e_n\cdot\vect a.
 \end{equation}
 The vector $\vect a$ is its abstract or general form. The matrix $a$ is the representation of $\vect a$ in a specific coordinate system (representation). Its matrix elements depend on the choice of basis vectors; for example, Cartesian and spherical coordinate systems give different representations.
 
-Operations on a vector, such as translations and rotations (operators), give another vector in the same three-dimensional space: $\op T\vect a=\vect b$.
+A linear operator maps vectors to vectors; for example, $\op A\vect a=\vect b$, where $\op A$ is generic.
 \subsection*{2) Hilbert space}
 Extend the three-dimensional vector space to a complex vector space of arbitrary dimension:
 \begin{equation}
@@ -55,14 +55,14 @@ In a complex-function vector space, constants are generally complex, so
 \begin{equation}
 \alpha\ket a\longleftrightarrow\bra a\alpha^*.
 \end{equation}
-For an operation (operator) $\op T$ in the complex space,
+For an operation (operator) $\op A$ in the complex space,
 \begin{equation}
-\op T\ket a\longleftrightarrow\bra a\op T^\dagger.
+\op A\ket a\longleftrightarrow\bra a\op A^\dagger.
 \end{equation}
-$\op T^\dagger$ is the left operator corresponding to the right operator $\op T$, called the Hermitian-conjugate operator. Note that
+$\op A^\dagger$ is the left operator corresponding to the right operator $\op A$, called the Hermitian-conjugate operator. Note that
 \begin{equation}
-\op T\op F\ket a=\op T(\op F\ket a)
-\longleftrightarrow \bra a\op F^\dagger\op T^\dagger.
+\op A\op F\ket a=\op A(\op F\ket a)
+\longleftrightarrow \bra a\op F^\dagger\op A^\dagger.
 \end{equation}
 We now choose a particular representation, taking an $N$-dimensional discrete space as an example.
 
@@ -80,7 +80,12 @@ which is a complex number.
 
 Squared norm: $\braket a a\geq0$. (Only when $\ket a$ and $\bra a$ are defined as conjugates can the squared norm be guaranteed nonnegative.)
 
-Normalized vector: defining $\ket{\widetilde a}=\ket a/\sqrt{\braket a a}$ gives $\braket{\widetilde a}{\widetilde a}=1$; the vector is said to be normalized.
+For a nonzero ket, define a normalized state by
+\begin{equation}
+\ket{a_{\mathrm{norm}}}=\frac{\ket a}{\sqrt{\braket a a}},\qquad
+\braket{a_{\mathrm{norm}}}{a_{\mathrm{norm}}}=1.
+\end{equation}
+The subscript \emph{norm} indicates normalization and is unrelated to transpose.
 
 Orthonormality of basis vectors: $\braket n m=\delta_{nm}$.
 
@@ -96,8 +101,8 @@ a^\dagger=(a_1^*,a_2^*,\ldots,a_N^*).
 \end{equation}
 Evidently,
 \begin{equation}
-\braket a b=\braket b a^*,\qquad
-\mel a{\op T}b=\mel b{\op T^\dagger}a^*.
+\braket a b=(\braket b a)^*,\qquad
+\mel a{\op A}b=\bigl(\mel b{\op A^\dagger}a\bigr)^*.
 \end{equation}
 Components (matrix elements) of a vector: multiplying $\ket a=\sum_n a_n\ket n$ from the left by $\bra m$ gives
 \begin{equation}
@@ -141,7 +146,7 @@ Comparison yields
 \begin{equation}
 [(F^\dagger)_{nm}]^*=F_{mn},\qquad
 (F^\dagger)_{nm}=F_{mn}^*,\qquad
-F^\dagger=(\widetilde F)^*.
+F^\dagger=(F^{\mathsf T})^*.
 \end{equation}
 Thus $F^\dagger$ is the Hermitian-conjugate matrix of $F$.
 \paragraph{Outer product.}
