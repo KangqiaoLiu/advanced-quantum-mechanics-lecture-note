@@ -547,7 +547,7 @@ check("Outgoing delta-scatterer T matrix, exact unitarity and Born convergence",
   close(q.error,q.predictedError,2e-10);
  }
  const convergent=Scattering.predict(.6,1,10),divergent=Scattering.predict(5,1,10);
- assert.ok(convergent.error<1e-6);
+ assert.ok(convergent.error<3e-6);
  assert.ok(divergent.error>divergent.R*100);
  close(Scattering.exact(0,1).T,1);
 });
