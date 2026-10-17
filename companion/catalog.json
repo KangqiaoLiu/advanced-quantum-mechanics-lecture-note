@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17",
-  "status": "Nine implemented physics labs, one for each textbook chapter; 53 other candidate labs remain planned.",
-  "version": "0.3.0-nine-chapter-coverage",
+  "status": "21 substantive self-paced after-class laboratories implemented; 41 further experiments planned.",
+  "version": "0.4.0-self-directed",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -52,8 +52,9 @@
       "question": "How do complex amplitudes combine before probabilities are formed?",
       "observable": "Complex-plane arrows, phase interference, normalization",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-01-01/index.html"
     },
     {
       "id": "IC-01-02",
@@ -64,8 +65,9 @@
       "question": "How do the eigenvectors of a Hermitian matrix depend on its entries?",
       "observable": "Matrix, eigenvalues, normalized eigenvectors, degeneracy",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-01-02/index.html"
     },
     {
       "id": "IC-01-03",
@@ -89,8 +91,9 @@
       "question": "How are probabilities and state updates computed from projectors?",
       "observable": "Outcome probabilities, normalized selected states, repeatability",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-01-04/index.html"
     },
     {
       "id": "IC-01-05",
@@ -101,8 +104,9 @@
       "question": "Why do matrix components change while physical predictions remain invariant?",
       "observable": "Spin bases, Pauli matrices, transformed amplitudes",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-01-05/index.html"
     },
     {
       "id": "IC-01-06",
@@ -161,8 +165,9 @@
       "question": "How does a two-level state evolve in a constant magnetic field?",
       "observable": "Bloch vector, probabilities, expectation values",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-02-01/index.html"
     },
     {
       "id": "IC-02-02",
@@ -246,8 +251,9 @@
       "question": "How does a cyclic adiabatic path accumulate a geometric phase?",
       "observable": "Solid angle, geometric and dynamical phase",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-02-08/index.html"
     },
     {
       "id": "IC-02-09",
@@ -318,8 +324,9 @@
       "question": "Can two different ensembles represent the same density operator?",
       "observable": "Bloch ball, density matrices, purity",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-03-03/index.html"
     },
     {
       "id": "IC-03-04",
@@ -343,8 +350,9 @@
       "question": "What additional information specifies the postmeasurement state?",
       "observable": "Effects, Kraus operators, conditioned and average updates",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-03-05/index.html"
     },
     {
       "id": "IC-03-06",
@@ -537,8 +545,9 @@
       "question": "Why does bosonic creation produce a square-root occupation factor?",
       "observable": "Occupation ladder, commutators, normalization",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-06-03/index.html"
     },
     {
       "id": "IC-06-04",
@@ -672,8 +681,9 @@
       "question": "Which aspects of the Zak phase depend on gauge and unit cell?",
       "observable": "Bloch eigenvectors, discrete overlaps, phase",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-08-04/index.html"
     },
     {
       "id": "IC-08-05",
@@ -696,8 +706,9 @@
       "question": "How does a gap-closing point change a Chern number?",
       "observable": "Qi–Wu–Zhang spectrum, mass tuning, integer phases",
       "route": "extension",
-      "stage": "planned",
-      "minutes": "30–60+"
+      "stage": "implemented",
+      "minutes": "30–60+",
+      "page": "labs/IC-08-06/index.html"
     },
     {
       "id": "IC-08-07",
@@ -769,8 +780,9 @@
       "question": "How do quantum feature states define a kernel matrix?",
       "observable": "State overlaps, Gram matrix, eigenvalues",
       "route": "extension",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-09-05/index.html"
     },
     {
       "id": "IC-09-06",
@@ -797,5 +809,10 @@
       "minutes": "30–60+"
     }
   ],
-  "release_date": "2026-10-17"
+  "release_date": "2026-10-17",
+  "learning_use": "Companion modules are optional self-directed after-class studies. The instructor will not demonstrate or use them during blackboard classroom lessons.",
+  "route_meaning": {
+    "core": "recommended conceptual independent-study path, never a class demonstration schedule",
+    "extension": "additional self-paced investigations"
+  }
 }

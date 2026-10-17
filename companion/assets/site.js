@@ -21,7 +21,7 @@ function card(lab) {
   article.append(element("p", "observable", "Explore: " + lab.observable));
   const chips = element("div", "chips");
   chips.append(element("span", "chip", lab.level + " · " + lab.minutes + " min"));
-  if (lab.route === "core") chips.append(element("span", "chip route", "classroom route"));
+  if (lab.route === "core") chips.append(element("span", "chip route", "self-study route"));
   chips.append(element("span", "chip", lab.stage === "implemented" ? "working experiment" : (lab.stage === "prototype" ? "planned prototype" : "planned lab")));
   article.append(chips);
   const a = element("a", "", "View relevant lecture-note source ↗");
