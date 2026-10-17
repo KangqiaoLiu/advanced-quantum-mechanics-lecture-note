@@ -147,7 +147,7 @@
       "editorial_track": "reading",
       "reading_resource": {
         "label": "QuVis · interactive quantum mechanics simulations",
-        "url": "https://www.st-andrews.ac.uk/physics/quvis/de/index-about.php?catid=1&nodeid=1",
+        "url": "https://www.st-andrews.ac.uk/physics/quvis/",
         "task": "Fourier transform two normalized Gaussians of different width and confirm ΔxΔp=ℏ/2.",
         "related_lab": "IC-02-03"
       },
@@ -249,7 +249,7 @@
       "editorial_track": "reading",
       "reading_resource": {
         "label": "QuVis · interactive quantum mechanics simulations",
-        "url": "https://www.st-andrews.ac.uk/physics/quvis/de/index-about.php?catid=1&nodeid=1",
+        "url": "https://www.st-andrews.ac.uk/physics/quvis/",
         "task": "Compute the product and covariance determinant of squeezed-state quadrature variances in the existing oscillator experiment.",
         "related_lab": "IC-02-03"
       },
@@ -328,8 +328,8 @@
       "minutes": "30–60+",
       "editorial_track": "reading",
       "reading_resource": {
-        "label": "Topology in Condensed Matter · Thouless pumps",
-        "url": "https://topocondmat.org/w3-pump-qhe/pumps/",
+        "label": "Topology in Condensed Matter · Berry curvature, gauge and Chern number",
+        "url": "https://topocondmat.org/w4-haldane/haldane-model/",
         "task": "Compare north- and south-patch Berry connections and their integer transition winding.",
         "related_lab": "IC-02-08"
       },
@@ -348,8 +348,8 @@
       "minutes": "15–30",
       "editorial_track": "reading",
       "reading_resource": {
-        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
-        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "label": "Topology in Condensed Matter · Berry curvature, gauge and Chern number",
+        "url": "https://topocondmat.org/w4-haldane/haldane-model/",
         "task": "Apply a local eigenket rephasing and show explicitly which Berry-connection terms change.",
         "related_lab": "IC-02-08"
       },
@@ -916,8 +916,8 @@
       "minutes": "15–30",
       "editorial_track": "reading",
       "reading_resource": {
-        "label": "Topology in Condensed Matter · Thouless pumps",
-        "url": "https://topocondmat.org/w3-pump-qhe/pumps/",
+        "label": "Topology in Condensed Matter · Berry curvature, gauge and Chern number",
+        "url": "https://topocondmat.org/w4-haldane/haldane-model/",
         "task": "Relate local Berry curvature to a discretized Wilson-loop flux and the integrated Chern number.",
         "related_lab": "IC-08-06"
       },
