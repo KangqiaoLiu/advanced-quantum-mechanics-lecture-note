@@ -42,7 +42,7 @@ for student,original in zip(labs,archive["labs"]):
     assert (root/original["source"]).is_file(),original["source"]
 
 cover=(root/"main.tex").read_text(encoding="utf-8")
-assert "companion/README.md" in cover
+assert "companion/index.html" in cover
 assert (root/"companion/reading.html").is_file()
 assert (root/"companion/assets/site.js").is_file()
 assert (root/"companion/assets/reading.js").is_file()
