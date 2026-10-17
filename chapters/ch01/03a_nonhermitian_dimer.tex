@@ -230,3 +230,259 @@ eigenvalues need not be orthogonal. For a general non-Hermitian
 matrix, left eigenvectors form a different set, and
 biorthogonal expansions replace the Hermitian orthonormal
 eigenbasis.
+
+\subsection*{4) Exceptional points are more than repeated eigenvalues}
+Define
+\begin{equation}
+\Omega=\sqrt{J^2-\left(\frac{\kappa}{4}\right)^2}.
+\end{equation}
+For $0\leq\kappa<4J$, the square root is real: the
+frequencies $\operatorname{Re}\lambda_\pm$ split, while
+$\operatorname{Im}\lambda_\pm=-\kappa/4$ are identical.
+For $\kappa>4J$, the square root is imaginary: the two
+frequencies coincide at $\omega_0$, while the decay rates
+separate. At the threshold,
+\begin{equation}
+\kappa_{\mathrm{EP}}=4J,\qquad
+\lambda_{\mathrm{EP}}=\omega_0-\ii J.
+\label{eq:nh-ep-condition}
+\end{equation}
+Insert these values back into the original matrix rather than
+inferring the eigenspace from the roots alone:
+\begin{equation}
+H_{\mathrm{eff}}-\lambda_{\mathrm{EP}}I
+=J\begin{pmatrix}-\ii&1\\1&\ii\end{pmatrix}.
+\end{equation}
+An eigenvector satisfies $-\ii v_A+v_B=0$, hence
+$v_B=\ii v_A$. With $v_A=1$,
+\begin{equation}
+\vect v_{\mathrm{EP}}=\begin{pmatrix}1\\\ii\end{pmatrix},\qquad
+\begin{pmatrix}-\ii&1\\1&\ii\end{pmatrix}
+\begin{pmatrix}1\\\ii\end{pmatrix}
+=\begin{pmatrix}-\ii+\ii\\1+\ii^2\end{pmatrix}
+=\begin{pmatrix}0\\0\end{pmatrix}.
+\end{equation}
+The second row equals $\ii$ times the first, and the matrix
+has rank one. Consequently its nullspace has dimension one:
+a double eigenvalue possesses only one independent
+right eigenvector. This is an \emph{exceptional point} (EP).
+For a Hermitian matrix, a twofold degeneracy instead has
+two independent eigenvectors; eigenvalue coincidence by
+itself is insufficient to identify an EP.
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[x=.91cm,y=1.08cm,>=Latex,font=\footnotesize]
+ \begin{scope}
+ \draw[->] (0,-1.24)--(0,1.30);
+ \draw[->] (0,0)--(8.32,0) node[right] {$\kappa/J$};
+ \node[above right,align=left] at (.15,1.04)
+      {$\operatorname{Re}(\lambda_\pm-\omega_0)/J$};
+ \foreach \x in {0,2,4,6,8}{
+   \draw (\x,-.035)--(\x,.035);
+   \node[below] at (\x,-.08) {\x};
+ }
+ \draw[blue!75!black,very thick] plot[domain=0:4,samples=80]
+      (\x,{sqrt(max(0,1-(\x/4)^2))});
+ \draw[blue!75!black,very thick] plot[domain=0:4,samples=80]
+      (\x,{-sqrt(max(0,1-(\x/4)^2))});
+ \draw[blue!75!black,very thick] (4,0)--(8,0);
+ \draw[densely dashed,gray] (4,-1.13)--(4,1.12);
+ \node[above] at (4,1.16) {EP};
+ \end{scope}
+ \begin{scope}[shift={(0,-1.93)}]
+ \draw[->] (0,-3.92)--(0,.34);
+ \draw[->] (0,0)--(8.32,0) node[right] {$\kappa/J$};
+ \node[above right] at (.15,.10)
+      {$\operatorname{Im}\lambda_\pm/J$};
+ \foreach \x in {0,2,4,6,8}{
+   \draw (\x,-.035)--(\x,.035);
+   \node[above] at (\x,.03) {\x};
+ }
+ \foreach \y in {-1,-2,-3}{
+   \draw (-.035,\y)--(.035,\y);
+   \node[left] at (-.09,\y) {\y};
+ }
+ \draw[orange!80!black,very thick] plot[domain=0:4,samples=80]
+      (\x,{-\x/4});
+ \draw[orange!80!black,very thick] plot[domain=4:8,samples=80]
+      (\x,{-\x/4+sqrt(max(0,(\x/4)^2-1))});
+ \draw[orange!80!black,very thick] plot[domain=4:8,samples=80]
+      (\x,{-\x/4-sqrt(max(0,(\x/4)^2-1))});
+ \draw[densely dashed,gray] (4,-3.83)--(4,.15);
+ \end{scope}
+\end{tikzpicture}
+\caption{Analytic real (upper) and imaginary (lower) parts
+of the passive coupled-cavity spectrum in
+Eq.~\eqref{eq:nh-complex-spectrum}, with $J>0$.
+The frequency branches merge at $\kappa/J=4$, while
+the two attenuation-related imaginary parts separate
+beyond that value. Both right eigenvectors also coalesce
+at the marked EP.}
+\label{fig:nh-eigenvalue-curves}
+\end{figure}
+
+\paragraph{Connection to PT symmetry, with an important distinction.}
+Subtract a multiple of the identity:
+\begin{equation}
+H_{\mathrm{eff}}=
+\left(\omega_0-\frac{\ii\kappa}{4}\right)I+
+K,\qquad
+K=\begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}.
+\label{eq:nh-traceless}
+\end{equation}
+For $\mathcal P=\sigma_x$ (cavity exchange) and $\mathcal T$
+(complex conjugation), direct multiplication gives
+$\sigma_x K^*\sigma_x=K$. Thus the shifted matrix $K$
+has PT symmetry, and its eigenvalues are $\pm\Omega$.
+A physically \emph{pumped} balanced gain--loss dimer would
+instead be
+\begin{equation}
+H_{\mathcal{PT}}=
+\begin{pmatrix}\omega_0+\ii\gamma&J\\
+J&\omega_0-\ii\gamma\end{pmatrix},
+\qquad E_\pm=\omega_0\pm\sqrt{J^2-\gamma^2},
+\end{equation}
+with an EP at $|\gamma|=J$.
+The apparatus of Fig.~\ref{fig:nh-physical-system} has
+\emph{only a lossy cavity}; its apparent gain in $K$ is
+relative to the factored-out common decay. This is an
+algebraic correspondence, not a claim that cavity $B$
+contains an active gain medium.
+
+\subsection*{5) Solve the dynamics even at the exceptional point}
+The eigenvector expansion breaks down at the EP, so we use
+the matrix exponential directly. From Eq.~\eqref{eq:nh-traceless},
+\begin{equation}
+\begin{aligned}
+K^2&=\begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}
+     \begin{pmatrix}-\ii\kappa/4&J\\J&\ii\kappa/4\end{pmatrix}\\
+&=\begin{pmatrix}J^2-\kappa^2/16&0\\0&J^2-\kappa^2/16\end{pmatrix}
+=\Omega^2 I.
+\end{aligned}
+\end{equation}
+Hence $K^{2m}=\Omega^{2m}I$ and
+$K^{2m+1}=\Omega^{2m}K$. Splitting the exponential series,
+\begin{align}
+e^{-\ii Kt}
+&=\sum_{m=0}^\infty\frac{(-1)^m(\Omega t)^{2m}}{(2m)!}I
+ -\ii\sum_{m=0}^\infty
+     \frac{(-1)^m(\Omega t)^{2m+1}}{(2m+1)!}
+     \frac{K}{\Omega}\notag\\
+&=\boxed{I\cos(\Omega t)-\ii\frac{K}{\Omega}\sin(\Omega t)}.
+\label{eq:nh-exp-k}
+\end{align}
+Since $I$ commutes with $K$, the common diagonal shift
+in Eq.~\eqref{eq:nh-traceless} factors out:
+\begin{equation}
+e^{-\ii H_{\mathrm{eff}}t}
+=e^{-\ii\omega_0t-\kappa t/4}e^{-\ii Kt}.
+\end{equation}
+Prepare a single photon in cavity $A$,
+$(a(0),b(0))^{\mathsf T}=(1,0)^{\mathsf T}$.
+Multiplication by the first column of
+Eq.~\eqref{eq:nh-exp-k} gives
+\begin{align}
+a(t)&=e^{-\ii\omega_0t-\kappa t/4}
+ \left[\cos(\Omega t)-\frac{\kappa}{4\Omega}\sin(\Omega t)\right],
+\label{eq:nh-amplitude-a}\\
+b(t)&=-\ii e^{-\ii\omega_0t-\kappa t/4}
+ \frac{J}{\Omega}\sin(\Omega t).
+\label{eq:nh-amplitude-b}
+\end{align}
+At $\kappa>4J$, $\Omega$ is imaginary.
+Use $\sin(\ii x)=\ii\sinh x$ and
+$\cos(\ii x)=\cosh x$ to obtain real-valued
+decay envelopes; the formulas themselves remain valid
+by analytic continuation.
+
+Exactly at the EP, $\Omega=0$.
+The limit $\lim_{\Omega\to0}\sin(\Omega t)/\Omega=t$
+and $\cos 0=1$ yield
+\begin{equation}
+a_{\mathrm{EP}}(t)=e^{-\ii\omega_0t-Jt}(1-Jt),
+\qquad
+b_{\mathrm{EP}}(t)=-\ii e^{-\ii\omega_0t-Jt}Jt.
+\label{eq:nh-ep-time}
+\end{equation}
+The polynomial factor multiplying the exponential is a
+signature of the non-diagonalizable Jordan structure.
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[x=1.24cm,y=2.7cm,>=Latex,font=\footnotesize]
+ \draw[->] (0,0)--(4.4,0) node[right] {$Jt$};
+ \draw[->] (0,0)--(0,1.16) node[above]
+      {$P_{\mathrm{no\ jump}}$};
+ \foreach \x in {0,1,2,3,4}{
+   \draw (\x,-.012)--(\x,.012);
+   \node[below] at (\x,-.028) {\x};
+ }
+ \foreach \y in {0,.5,1}{
+   \draw (-.02,\y)--(.02,\y);
+   \node[left] at (-.07,\y) {\y};
+ }
+ \draw[gray!75!black,thick,densely dashed] (0,1)--(4,1);
+ \draw[blue!75!black,very thick] plot[domain=0:4,samples=130]
+  (\x,{exp(-\x)*((cos(deg(sqrt(.75)*\x))-
+  .5/sqrt(.75)*sin(deg(sqrt(.75)*\x)))^2+
+  (sin(deg(sqrt(.75)*\x))/sqrt(.75))^2)});
+ \draw[orange!80!black,very thick] plot[domain=0:4,samples=130]
+  (\x,{exp(-2*\x)*((1-\x)^2+\x^2)});
+ \draw[gray!75!black,thick,densely dashed] (2.10,1.03)--(2.45,1.03);
+ \node[anchor=west] at (2.51,1.03) {$\kappa=0$};
+ \draw[blue!75!black,very thick] (2.10,.88)--(2.45,.88);
+ \node[anchor=west] at (2.51,.88) {$\kappa=2J$};
+ \draw[orange!80!black,very thick] (2.10,.73)--(2.45,.73);
+ \node[anchor=west] at (2.51,.73) {$\kappa=4J$ (EP)};
+\end{tikzpicture}
+\caption{Exact no-emission survival probability
+$|a(t)|^2+|b(t)|^2$ for a photon initially in cavity $A$,
+computed from Eqs.~\eqref{eq:nh-amplitude-a} and
+\eqref{eq:nh-amplitude-b}. The Hermitian limit conserves
+norm. For $\kappa=2J$ the survival decays smoothly;
+at the EP $\kappa=4J$,
+$P_{\mathrm{no\ jump}}=e^{-2Jt}[(1-Jt)^2+(Jt)^2]$.
+The curves use dimensionless time $Jt$.}
+\label{fig:nh-survival-curves}
+\end{figure}
+
+\subsection*{6) Essential consistency checks}
+\begin{enumerate}
+\item \textbf{Hermitian limit.}
+For $\kappa=0$ we have $\Omega=J$,
+$a(t)=e^{-\ii\omega_0t}\cos Jt$,
+$b(t)=-\ii e^{-\ii\omega_0t}\sin Jt$.
+The norm is exactly $\cos^2 Jt+\sin^2 Jt=1$.
+\item \textbf{Uncoupled lossy cavity.}
+Set $J=0$ in the \emph{original} component equations.
+Then $a(t)=a(0)e^{-\ii\omega_0t-\kappa t/2}$
+and $b(t)=b(0)e^{-\ii\omega_0t}$.
+An initial photon in $A$ has survival probability
+$e^{-\kappa t}$: this checks that $\kappa$ means
+\emph{intensity} decay rate.
+\item \textbf{Probability in the larger system.}
+The norm lost by the no-jump branch is the accumulated
+probability of emission, so
+$P_{\mathrm{no\ jump}}(t)+P_{\mathrm{emission}}(t)=1$
+for the initial one-photon state. There is no loss of
+probability in the full system plus environment.
+\end{enumerate}
+\paragraph{Checkpoint.}
+At $\kappa=4J$, show directly that the characteristic
+polynomial equals $(\lambda-\omega_0+\ii J)^2$.
+Compute the nullspace of
+$H_{\mathrm{eff}}-(\omega_0-\ii J)I$.
+Why does the EP provide only one eigenvector?
+Finally take the $\Omega\to0$ limit in
+Eq.~\eqref{eq:nh-exp-k} and verify
+$e^{-\ii Kt}=I-\ii Kt$ using $K^2=0$.
+
+\noindent\textbf{Independent extension.}
+In the online companion, the
+\href{https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/reading.html#IC-01-09}
+{guided non-Hermitian reading question}
+offers an additional matrix example and a chance to
+check the complex spectrum with symbolic calculation.
+The hand derivation and norm balance provide the primary
+physical verification.
