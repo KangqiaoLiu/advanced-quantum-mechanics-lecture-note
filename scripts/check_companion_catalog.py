@@ -42,7 +42,7 @@ for student,original in zip(labs,archive["labs"]):
     assert (root/original["source"]).is_file(),original["source"]
 
 cover=(root/"main.tex").read_text(encoding="utf-8")
-assert "companion/index.html" in cover
+assert "https://kangqiaoliu.github.io/courses/advanced-quantum-mechanics/companion/" in cover
 assert (root/"companion/reading.html").is_file()
 assert (root/"companion/assets/site.js").is_file()
 assert (root/"companion/assets/reading.js").is_file()
