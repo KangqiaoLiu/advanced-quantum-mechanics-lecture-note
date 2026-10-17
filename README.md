@@ -4,7 +4,7 @@ English graduate-level lecture notes by **Kangqiao LIU**.
 
 **[Read the current complete PDF](pdf/advanced-quantum-mechanics.pdf)**. The PDF is built from the LaTeX sources on every content revision.
 
-**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browser catalog source](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md). The companion currently has a navigable laboratory directory and documented prototypes; numerical and visual physics laboratories will be added as they are built and verified.
+**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browser catalog source](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md). Four independently verified browser experiments are implemented, with further experiments planned.
 
 The manuscript covers foundational quantum theory, quantum dynamics, angular momentum and measurement, approximation methods, scattering, quantum many-body systems, relativistic quantum mechanics, topological condensed matter physics, and quantum neural networks and machine learning.
 
@@ -13,6 +13,18 @@ The original lecture notes and their historical Chinese-to-English translation a
 ## Acknowledgments
 
 These lecture notes draw **extensively** on the Advanced Quantum Mechanics lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. Parts also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to Professor Zhuang and these authors for their work and teaching materials. I also thank **Professor Hong Guo (郭弘)** for his Advanced Quantum Mechanics course, which has informed the preparation of these notes.
+
+
+## Open the interactive companion in GitHub (private)
+
+**[Create a Codespace for this repository](https://github.com/codespaces/new?hide_repo_select=true&repo=1410589769&ref=main)**
+
+1. On GitHub, open **Code → Codespaces → Create codespace on main**, or use the link above while signed in.
+2. The committed [development-container configuration](.devcontainer/devcontainer.json) automatically starts the course preview and forwards port **8000**.
+3. When the browser preview opens, navigate to `/companion/`. If it does not open automatically, select the **PORTS** tab, then **Open in Browser** for port 8000 and append `/companion/` to the forwarded address.
+4. Use the four working laboratories and the nine-chapter directory in the browser. Keep port visibility **Private**.
+
+Codespaces uses your GitHub monthly compute/storage allowance. Stop idle environments from [github.com/codespaces](https://github.com/codespaces). A permanent student-facing GitHub Pages site is a separate publication choice: Pages websites are normally public even when their source repositories are private. Academic rights review and publishing approval should precede such publication.
 
 ## Build
 

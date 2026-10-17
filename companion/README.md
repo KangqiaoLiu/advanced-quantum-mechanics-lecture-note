@@ -14,6 +14,13 @@ This is an independently navigable, English-language learning companion to the g
 
 The nine-chapter catalog currently describes **62 candidate laboratory questions**, with **22 initially marked for the classroom-linked learning route**. Four prototypes are specified in detail: sequential Stern–Gerlach, harmonic oscillator/coherent states, SSH topological bands and edge states, and parameter-shift quantum-circuit training. The four representative experiments now have working browser pages, source models and independent physics checks.
 
+
+## GitHub-only private browser preview
+
+Open the [repository's Codespaces creation page](https://github.com/codespaces/new?hide_repo_select=true&repo=1410589769&ref=main), or use **Code → Codespaces → Create codespace on main** in GitHub. The committed `.devcontainer/devcontainer.json` starts a lightweight web server on port 8000. GitHub forwards that port with **Private** visibility by default. Follow the port link and visit `/companion/` (for example, `https://<codespace-name>-8000.app.github.dev/companion/`).
+
+This method loads the four interactive laboratories and the PDF lecture notes without a local clone. Keep the port private. Codespaces has monthly account usage allowances and stops after inactivity; stop or delete unused environments at [github.com/codespaces](https://github.com/codespaces). This is an authenticated development preview, not a permanent public course website.
+
 ## Preview the catalog locally
 
 From the repository root:
