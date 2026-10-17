@@ -7,7 +7,17 @@ on:
       - '.devcontainer/**'
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
+      - 'COPYRIGHT.md'
+      - 'LICENSE'
+      - 'LICENSE-CONTENT.md'
+      - 'NOTICE'
+      - 'CITATION.cff'
+      - 'CONTRIBUTING.md'
+      - 'CONTRIBUTORS.md'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
       - 'scripts/check_companion_catalog.py'
+      - 'scripts/check_license_policy.py'
       - 'scripts/check_student_surfaces.py'
       - 'scripts/test_companion_models.cjs'
       - 'scripts/check_companion_browser.py'
@@ -19,7 +29,17 @@ on:
       - '.devcontainer/**'
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
+      - 'COPYRIGHT.md'
+      - 'LICENSE'
+      - 'LICENSE-CONTENT.md'
+      - 'NOTICE'
+      - 'CITATION.cff'
+      - 'CONTRIBUTING.md'
+      - 'CONTRIBUTORS.md'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
       - 'scripts/check_companion_catalog.py'
+      - 'scripts/check_license_policy.py'
       - 'scripts/test_companion_models.cjs'
       - '.github/workflows/check-companion.yml'
   workflow_dispatch:
@@ -33,6 +53,8 @@ jobs:
     steps:
       - name: Check out course source files
         uses: actions/checkout@v4
+      - name: Verify copyright, licenses and contribution attribution
+        run: python3 scripts/check_license_policy.py
       - name: Check nine-chapter catalog and note mappings
         run: python3 scripts/check_companion_catalog.py
       - name: Check that student pages have no internal milestones or developer links
