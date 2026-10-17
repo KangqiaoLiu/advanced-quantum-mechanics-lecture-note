@@ -27,3 +27,12 @@ details{border-top:1px solid #e0e8ed;padding:12px 0}summary{font-weight:650;curs
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 @media(max-width:620px){.canvasblock{overflow-x:auto;padding-bottom:3px}.canvasblock canvas{min-width:610px;max-width:none}}
+
+/* Nine-chapter conceptual progression, accessible on both narrow and wide displays. */
+.lesson-sequence{display:grid;grid-template-columns:1fr .65fr 1fr;gap:12px;margin-top:-23px;margin-bottom:20px}
+.lesson-sequence a{background:#fff;border:1px solid #d5e1e7;border-radius:9px;padding:18px;display:flex;flex-direction:column;gap:6px;text-decoration:none;min-width:0}
+.lesson-sequence strong{font-size:.89rem;line-height:1.4;color:#1d5f79}
+.lesson-sequence a.center{text-align:center;align-items:center}
+.lesson-sequence a:last-child{text-align:right;align-items:flex-end}
+.lesson-sequence a:focus-visible,.lesson-sequence a:hover{border-color:#327e93;background:#f0f8f9}
+@media(max-width:760px){.lesson-sequence{grid-template-columns:1fr 1fr;gap:8px}.lesson-sequence a.center{grid-row:2;grid-column:span 2}.lesson-sequence a{padding:12px}.lesson-sequence strong{font-size:.81rem}}

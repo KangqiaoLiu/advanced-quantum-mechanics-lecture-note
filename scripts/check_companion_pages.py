@@ -53,6 +53,7 @@ for lab in finished:
     for id in ("lab-core.js", "model.js", "lab.js"):
         assert id in page, (path, id)
     assert len(page) > 6500, (path, "Lab should contain substantial explanatory text")
+    assert 'aria-label="Next and previous laboratories"' in page, (path, "Missing nine-chapter navigation")
     css = comp / "assets" / "lab.css"
     styles = css.read_text(encoding="utf-8")
     assert '@import url("site.css")' in styles, "Lab stylesheet must import the actual base stylesheet."
