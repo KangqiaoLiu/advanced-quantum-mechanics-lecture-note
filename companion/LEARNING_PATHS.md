@@ -1,67 +1,49 @@
-# Learning Routes Across the Nine-Chapter Companion
+# Independent Learning Routes — Advanced Quantum Mechanics
 
-**Status:** proposed pathways, October 17, 2026. These paths reorganize the same laboratory catalog by learning intention; no period-by-period allocation or assessment requirement is approved here.
+**Instructor's teaching model (confirmed 2026-10-17):** The Advanced Quantum Mechanics course is delivered using blackboard derivations. These interactive units are exclusively for **students to open independently after class**. The instructor will not demonstrate experiments on a screen during classroom periods, and students may explore at any pace without a prescribed period-by-period allocation.
 
-## 1. The nine-chapter reference-book route
+## How to learn from one experiment
 
-Read the authoritative English lecture notes and visit the matching laboratory directory when a derivation has a physical or numerical consequence worth exploring. Chapter coverage and lab IDs are registered in [catalog.json](catalog.json). All nine chapters remain accessible, including approximation and scattering material that may be taught through independent reading rather than live board work.
+1. **Predict:** read the motivating physical question and state an anticipated result for a soluble parameter limit.
+2. **Explore:** change one control at a time. Observe two complementary quantities such as probability and state purity, phase and gap, or model loss and gradient.
+3. **Reconstruct:** derive the displayed formula on paper using the corresponding lecture-note source. Clarify which state, basis, gauge, units and assumptions were selected.
+4. **Stress-test:** use both the default example and a difficult limit, including degeneracies, near-zero probabilities, weak/strong coupling, or finite sampling.
+5. **Reflect:** complete the formative self-check, then explain a surprising output in words before choosing the next topic.
 
-1. Basic Concepts — amplitudes, Hermitian spectra, Stern–Gerlach, representations, measurement.
-2. Quantum Dynamics — evolution, oscillator, approximations and geometric phase.
-3. Angular Momentum Theory — rotations, spin coupling, density operators, generalized measurement, Bell physics.
-4. Approximation Methods — perturbation, variational and time-dependent treatments.
-5. Scattering Theory — Green functions, Born series, partial waves.
-6. Quantum Many-Body Systems — permutation, Bose/Fermi Fock space and operators.
-7. Relativistic Quantum Mechanics — Pauli, Klein–Gordon, Dirac and spinor structure.
-8. Topological Condensed Matter Physics — Bloch/SSH through Chern phases and pumping.
-9. Quantum Neural Networks and Machine Learning — trainable circuits, gradients, kernels and limitations.
+## Recommended conceptual starting route
 
-## 2. Classroom-linked route (22 proposed labs)
+The 22 catalog entries with `route=core` are a suggested **self-study** progression. This label retains continuity with earlier plans but no longer means classroom use, class demonstrations or fixed instructional minutes.
 
-The board route is provisionally 48 periods of 40 minutes, with specific allocations and timing still under instructor review. The following links express **conceptual alignment**, not a one-lab-per-period teaching schedule.
+| Textbook chapter | Recommended questions and current links |
+|---|---|
+| 1. Basic Concepts | [IC-01-01: Complex amplitude and phase](labs/IC-01-01/index.html); [IC-01-02: Two-by-two eigenproblem](labs/IC-01-02/index.html); [IC-01-03: Cascaded Stern–Gerlach](labs/IC-01-03/index.html); [IC-01-04: Born rule and projectors](labs/IC-01-04/index.html); [IC-01-05: Measurement axes and basis changes](labs/IC-01-05/index.html); IC-01-08: Tensor-product index laboratory (planned) |
+| 2. Quantum Dynamics | [IC-02-01: Spin precession in a field](labs/IC-02-01/index.html); [IC-02-03: Harmonic oscillator and coherent states](labs/IC-02-03/index.html); [IC-02-08: Berry phase on the Bloch sphere](labs/IC-02-08/index.html) |
+| 3. Angular Momentum Theory | [IC-03-03: Pure states and statistical mixtures](labs/IC-03-03/index.html); [IC-03-04: Entanglement and partial trace](labs/IC-03-04/index.html); [IC-03-05: POVM effects versus instruments](labs/IC-03-05/index.html) |
+| 4. Approximation Methods | Use independent extensions |
+| 5. Scattering Theory | Use independent extensions |
+| 6. Quantum Many-Body Systems | IC-06-01: Permutation and exchange (planned); [IC-06-03: Bosonic Fock occupation rules](labs/IC-06-03/index.html); [IC-06-04: Fermionic creation and ordering signs](labs/IC-06-04/index.html) |
+| 7. Relativistic Quantum Mechanics | IC-07-01: From Schrödinger to Pauli (planned); [IC-07-02: Klein–Gordon versus Dirac](labs/IC-07-02/index.html) |
+| 8. Topological Condensed Matter Physics | [IC-08-02: SSH bulk, winding and edges](labs/IC-08-02/index.html); IC-08-03: SSH boundary termination and symmetry (planned); [IC-08-04: Zak phase and Berry gauge](labs/IC-08-04/index.html) |
+| 9. Quantum Neural Networks and Machine Learning | IC-09-01: Parameterized quantum circuit output (planned); [IC-09-03: Parameter-shift training](labs/IC-09-03/index.html) |
 
-| Provisional period block | Corresponding concepts in the manuscript | Candidate lab IDs |
-|---|---|---|
-| 01–12, foundational mathematical and measurement ideas | Chapter 1 with one preparatory cross-link to Chapter 3 | IC-01-01, IC-01-02, IC-01-03, IC-01-04, IC-01-05, IC-01-08 |
-| 13–24, dynamics, Aharonov–Bohm and Berry | Chapter 2 | IC-02-01, IC-02-03, IC-02-08 |
-| 25–28, topological introduction | Chapter 8 | IC-08-02, IC-08-03, IC-08-04 |
-| 29–32, density matrices and measurement | Chapter 3 | IC-03-03, IC-03-04, IC-03-05 |
-| 33–40, identical particles and Fock methods | Chapter 6 | IC-06-01, IC-06-03, IC-06-04 |
-| 41–44, parameterized quantum learning | Chapter 9 | IC-09-01, IC-09-03 |
-| 45–48, Pauli/Dirac and emergence of spin | Chapter 7 | IC-07-01, IC-07-02 |
+**Progress:** 17/22 active on this recommended sequence; the remaining 5 are IC-01-08, IC-06-01, IC-07-01, IC-08-03, IC-09-01.
 
-This aligns the initial **22** classroom-route flags in the current catalog. It may be reordered or augmented based on actual lecture pacing. Laboratories marked `extension` remain fully legitimate independent study and research enrichments.
+## Seven concept-driven self-study journeys
 
-## 3. Conceptual pathways across chapters
+**1. From probability amplitudes to state preparation.** [Complex interference](labs/IC-01-01/index.html) → [Hermitian eigenvectors](labs/IC-01-02/index.html) → [representation changes](labs/IC-01-05/index.html) → [Born projectors](labs/IC-01-04/index.html) → [sequential Stern–Gerlach](labs/IC-01-03/index.html). Compare a preparation, its probability predictions and how measurement changes the resulting state.
 
-These paths should become clickable guided sequences as functioning labs are built:
+**2. Dynamics, coherent motion and geometry.** [Spin precession](labs/IC-02-01/index.html) → [coherent oscillator and Wigner distributions](labs/IC-02-03/index.html) → [Berry holonomy](labs/IC-02-08/index.html). Understand the distinction between dynamical state motion and geometric phase.
 
-- **Amplitudes → measurement:** IC-01-01 → IC-01-02 → IC-01-03 → IC-01-04 → IC-03-03 → IC-03-04 → IC-03-05. Questions progress from complex numbers to conditional measurement and generalized instruments.
-- **Time evolution → geometric phase → topology:** IC-02-01 → IC-02-08 → IC-08-01 → IC-08-02 → IC-08-04 → IC-08-05 → IC-08-06. Relate adiabatic cyclic physics, Bloch theory, discrete Zak phase, curvature and Chern invariants.
-- **Tensor products → many-body physics:** IC-01-08 → IC-03-04 → IC-06-01 → IC-06-02 → IC-06-03 → IC-06-04 → IC-06-05 → IC-06-06. Practice both state-level exchange and the operator-level algebra of Fock space.
-- **Measured quantities → learning dynamics:** IC-01-04 → IC-03-05 → IC-09-01 → IC-09-02 → IC-09-03 → IC-09-04 → IC-09-05 → IC-09-06. Connect readouts to gradients, statistical sampling and trainability.
-- **Spectra and approximation limits:** IC-01-02 → IC-04-01 → IC-04-02 → IC-02-05 → IC-05-04 → IC-05-05. Connect small eigenproblems to perturbative, semiclassical and scattering approximations.
-- **Spin → relativistic theory:** IC-03-01 → IC-07-01 → IC-07-02 → IC-07-03 → IC-07-04. Follow the matrix and spinor structure from spin rotations into Dirac theory.
+**3. Density operators and information.** [Equivalent statistical mixtures](labs/IC-03-03/index.html) → [Schmidt entanglement and partial trace](labs/IC-03-04/index.html) → [POVM effects versus instruments](labs/IC-03-05/index.html). Explain how different preparations can share a density operator, why reduced purity differs from global purity, and why an effect fails to determine backaction.
 
-Advanced experiments are eligible for new linked routes as the complete companion matures. These paths are intentionally permeable: each lab can display prerequisite refreshers rather than requiring every earlier lab to be completed.
+**4. Approximations and scattering.** [Avoided crossings](labs/IC-04-01/index.html) → [s/p partial-wave interference](labs/IC-05-05/index.html). Learn to compare an approximate formula with exact energy levels or unitarity/optical-theorem constraints, and identify parameters that control validity.
 
-## 4. Mapping and editing rule
+**5. Identical particles and Fock algebra.** [Bosonic ladder factors](labs/IC-06-03/index.html) → [fermionic anticommutation and signs](labs/IC-06-04/index.html). Derive normalized many-body state amplitudes before moving to interactions.
 
-The [machine-readable catalog](catalog.json) owns stable IDs, notes source paths, initial route flags, scientific questions and laboratory status. The period-level syllabus lives in [COURSE_DESIGN_48_PERIODS.md](../COURSE_DESIGN_48_PERIODS.md). Keep this file synchronized with both when changing learning order. A note source can legitimately sit in another chapter (e.g., tensor-product foundations are given a later rigorous derivation).
+**6. Quantum geometry and band topology.** [Berry phase](labs/IC-02-08/index.html) → [SSH bands, winding and boundary modes](labs/IC-08-02/index.html) → [Zak Wilson loops](labs/IC-08-04/index.html) → [QWZ Chern insulator](labs/IC-08-06/index.html). Check gauge and unit-cell conventions, identify when the gap closes, and distinguish a local curvature density from the global integral.
 
+**7. Relativity and quantum machine learning.** [Free Dirac spinors and velocity](labs/IC-07-02/index.html) build a relativistic spin connection. [Parameterized-circuit parameter shift](labs/IC-09-03/index.html) → [quantum kernel geometry](labs/IC-09-05/index.html) connect measurable quantum expectations to optimization and positive-semidefinite similarity.
 
-## Nine-chapter working-experiment route (2026-10-17)
+## Complete independent study catalog
 
-One complete, independently testable laboratory exists in each textbook chapter. These are the recommended first entry points for independent study:
-
-- **01 · Basic Concepts:** [Sequential Stern–Gerlach](labs/IC-01-03/index.html) — Postselection · Density operators · Exact and finite-shot probabilities.
-- **02 · Quantum Dynamics:** [Harmonic oscillator](labs/IC-02-03/index.html) — Coherent and squeezed states · Wave packets · Wigner phase space.
-- **03 · Angular Momentum / Composites:** [Entanglement and partial trace](labs/IC-03-04/index.html) — Schmidt probabilities · Reduced entropy · Joint correlations.
-- **04 · Approximation Methods:** [Avoided crossings](labs/IC-04-01/index.html) — Perturbation breakdown · Exact energies · Eigenvector mixing.
-- **05 · Scattering Theory:** [Partial-wave scattering](labs/IC-05-05/index.html) — Angular interference · Cross sections · Optical theorem.
-- **06 · Many-Body Systems:** [Fermion ordering signs](labs/IC-06-04/index.html) — Fock occupations · Parity factors · Anticommutators.
-- **07 · Relativistic QM:** [Klein–Gordon and Dirac](labs/IC-07-02/index.html) — Relativistic spectra · Probability current · Low-energy limit.
-- **08 · Topological Matter:** [SSH bulk and boundaries](labs/IC-08-02/index.html) — Winding · Gaps · Exact finite-chain edge eigenstates.
-- **09 · Quantum ML:** [Training quantum circuits](labs/IC-09-03/index.html) — Parameter shift · Loss optimization · Measurement noise.
-
-The provisional 22-entry classroom route now has **7 implemented laboratories**: IC-01-03, IC-02-03, IC-03-04, IC-06-04, IC-07-02, IC-08-02 and IC-09-03. The newly implemented Ch. 4 (IC-04-01) and Ch. 5 (IC-05-05) units belong to the independent-study extension route. These statuses quantify completed experiments, not mastery of a chapter or a finished 48-period course.
+The full [nine-chapter catalog](index.html) has **62 scientific questions**, of which **21 currently link to working experiments**. All 41 further questions are meaningful independent extensions; the distinction between `core` and `extension` controls route suggestions, not educational legitimacy. Full implementation details are in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md). Research-grade experiments will need extra convergence checks and optional companion notebooks. The English [lecture notes](../pdf/advanced-quantum-mechanics.pdf) remain authoritative.
