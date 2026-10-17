@@ -2,7 +2,7 @@
 
 **Instructor:** Kangqiao LIU. **Purpose:** voluntary, entirely student-led **after-class interactive study**. All live teaching remains on the blackboard; no classroom demonstration of interactive materials is planned.
 
-**Current content:** 21 full interactive experiments in all nine English textbook chapters; 41 substantive experiments remain planned. The catalog retains 62 scientifically motivated questions.
+**Current content:** 26 full interactive experiments in all nine English textbook chapters; 36 substantive experiments remain planned. The catalog retains 62 scientifically motivated questions.
 
 [Start from the nine-chapter interactive directory](index.html) · [Independent learning paths](LEARNING_PATHS.md) · [Progress and remaining work](IMPLEMENTATION_STATUS.md) · [Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf) · [Master scientific blueprint](../INTERACTIVE_COMPANION_BLUEPRINT.md)
 
@@ -43,4 +43,4 @@ The authoritative repository is **private**. GitHub Codespaces starts an authent
 
 ## Known limitations
 
-Automated tests verify model equations, analytic limits, controlled mesh convergence and initial browser rendering. Human review is needed for full keyboard accessibility, mobile/desktop visualization, student understanding and deeper edge-case interactions. The 41 planned labs will be implemented to the same standards.
+Automated tests verify model equations, analytic limits, controlled mesh convergence and initial browser rendering. Human review is needed for full keyboard accessibility, mobile/desktop visualization, student understanding and deeper edge-case interactions. The 36 planned labs will be implemented to the same standards.

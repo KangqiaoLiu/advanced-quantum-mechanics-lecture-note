@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17",
-  "status": "21 substantive self-paced after-class laboratories implemented; 41 further experiments planned.",
-  "version": "0.4.0-self-directed",
+  "status": "26 fully authored self-study experiments; all 22 recommended foundational topics complete; 36 independent extensions remain planned.",
+  "version": "0.5.0-complete-recommended-self-study",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -141,8 +141,9 @@
       "question": "How are two small Hilbert spaces combined without losing track of indices?",
       "observable": "Basis mapping, Kronecker products, dimensions",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-01-08/index.html"
     },
     {
       "id": "IC-01-09",
@@ -521,8 +522,9 @@
       "question": "What changes when two indistinguishable particles are exchanged?",
       "observable": "Permutation action, eigenvalues, symmetric subspaces",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-06-01/index.html"
     },
     {
       "id": "IC-06-02",
@@ -595,8 +597,9 @@
       "question": "Where does spin enter the Pauli Hamiltonian with electromagnetic coupling?",
       "observable": "Spin magnetic term, operator products, sign checks",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-07-01/index.html"
     },
     {
       "id": "IC-07-02",
@@ -669,8 +672,9 @@
       "question": "When do edge states survive a boundary or symmetry perturbation?",
       "observable": "Localization length, edge splitting, boundary spectrum",
       "route": "core",
-      "stage": "planned",
-      "minutes": "30–60+"
+      "stage": "implemented",
+      "minutes": "30–60+",
+      "page": "labs/IC-08-03/index.html"
     },
     {
       "id": "IC-08-04",
@@ -731,8 +735,9 @@
       "question": "How do rotation parameters turn measurements into model predictions?",
       "observable": "Circuit, Bloch vector, expectation value",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-09-01/index.html"
     },
     {
       "id": "IC-09-02",
@@ -810,7 +815,7 @@
     }
   ],
   "release_date": "2026-10-17",
-  "learning_use": "Companion modules are optional self-directed after-class studies. The instructor will not demonstrate or use them during blackboard classroom lessons.",
+  "learning_use": "Each interactive experiment is an independent after-class learning resource; no in-class demonstration is planned.",
   "route_meaning": {
     "core": "recommended conceptual independent-study path, never a class demonstration schedule",
     "extension": "additional self-paced investigations"
