@@ -25,7 +25,7 @@ assert "family-names: Liu" in read("CITATION.cff")
 assert "given-names: Kangqiao" in read("CITATION.cff")
 assert "https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note" in read("CITATION.cff")
 assert "retains copyright" in read("CONTRIBUTING.md")
-assert "do not ask for a transfer" in read("CONTRIBUTING.md")
+assert "does not ask for a transfer" in read("CONTRIBUTING.md")
 assert "Kangqiao LIU" in read("CONTRIBUTORS.md")
 for path in (".github/ISSUE_TEMPLATE/physics-error.md",
              ".github/ISSUE_TEMPLATE/improvement.md",
