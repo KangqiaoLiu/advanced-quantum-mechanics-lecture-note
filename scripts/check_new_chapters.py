@@ -25,7 +25,7 @@ require('Ten-minute lecture route' not in all_text and 'Instructor-Directed Expa
         'student prose is free from scheduling and internal-edition notes')
 require('Instructor: Kangqiao LIU' in main, 'cover instructor')
 require('\\AddToShipoutPictureBG' in main and (ROOT/'COPYRIGHT.md').exists(), 'per-page and repository copyright')
-require('\\bibliography{references/topology_qml}' in main and ref.count('doi =') == 11, '11 DOI-identified citations')
+require('\\bibliography{references/topology_qml}' in main and ref.count('doi =') == 13, '13 DOI-identified citations')
 require(all((ROOT/'chapters'/f).exists() for f in ['ch06/03_bosons.tex','ch06/04_fermions.tex','ch08/05_quantum_pumping.tex','ch09/04_worked_models.tex']), 'all substantive modules exist')
 
 # Complex winding of q*(k) = t1 + t2 exp(+i k).
