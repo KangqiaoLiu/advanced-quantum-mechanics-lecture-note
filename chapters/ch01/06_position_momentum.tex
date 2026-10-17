@@ -43,14 +43,14 @@ The position--momentum uncertainty relation is
 \ge\left(\frac1{2\ii}\langle[\op x,\op p_x]\rangle\right)^2=\frac{\hbar^2}{4}.
 \end{equation}
 \subsection*{2) Spatial translations}
-Define the spatial-translation operator by
+Define the spatial-translation operator $\op U_{\mathrm{tr}}$, with the subscript ``tr'' indicating translation (distinct from the scattering transition operator $\op T$ introduced later), by
 \begin{equation}
-\op T(\dd\vect x)\ket{\vect x}=\ket{\vect x+\dd\vect x}.
+\op U_{\mathrm{tr}}(\dd\vect x)\ket{\vect x}=\ket{\vect x+\dd\vect x}.
 \end{equation}
 For an arbitrary state $\ket\psi$,
 \begin{equation}\begin{aligned}
-\op T(\dd\vect x)\ket\psi
-&=\op T(\dd\vect x)\int\dd^3x\,\ket{\vect x}\braket{\vect x}\psi\\
+\op U_{\mathrm{tr}}(\dd\vect x)\ket\psi
+&=\op U_{\mathrm{tr}}(\dd\vect x)\int\dd^3x\,\ket{\vect x}\braket{\vect x}\psi\\
 &=\int\dd^3x\,\ket{\vect x+\dd\vect x}\braket{\vect x}\psi
 &&\text{(the operator acts only on vectors)}\\
 &=\int\dd^3x\,\ket{\vect x}\braket{\vect x-\dd\vect x}\psi
@@ -58,13 +58,13 @@ For an arbitrary state $\ket\psi$,
 \end{aligned}\end{equation}
 For an infinitesimal translation, take
 \begin{equation}
-\op T(\dd\vect x)=\mathbf1-\ii\op{\vect K}\cdot\dd\vect x,
+\op U_{\mathrm{tr}}(\dd\vect x)=\mathbf1-\ii\op{\vect K}\cdot\dd\vect x,
 \end{equation}
 where the generator $\op{\vect K}$ is Hermitian.
 
 A translation is a unitary operator:
 \begin{equation}
-\op T(\dd\vect x)\op T^\dagger(\dd\vect x)
+\op U_{\mathrm{tr}}(\dd\vect x)\op U_{\mathrm{tr}}^\dagger(\dd\vect x)
 =(\mathbf1-\ii\op{\vect K}\cdot\dd\vect x)
  (\mathbf1+\ii\op{\vect K}\cdot\dd\vect x)
 =\mathbf1,
@@ -73,33 +73,33 @@ neglecting second-order infinitesimals.
 
 Composition law for translations:
 \begin{equation}\begin{aligned}
-\op T(\dd\vect x_1)\op T(\dd\vect x_2)
+\op U_{\mathrm{tr}}(\dd\vect x_1)\op U_{\mathrm{tr}}(\dd\vect x_2)
 &=(\mathbf1-\ii\op{\vect K}\cdot\dd\vect x_1)
 (\mathbf1-\ii\op{\vect K}\cdot\dd\vect x_2)\\
 &=\mathbf1-\ii\op{\vect K}\cdot(\dd\vect x_1+\dd\vect x_2)
-=\op T(\dd\vect x_1+\dd\vect x_2).
+=\op U_{\mathrm{tr}}(\dd\vect x_1+\dd\vect x_2).
 \end{aligned}\end{equation}
 A finite translation is obtained by repeated infinitesimal translations.
 
 For an arbitrary state $\ket\psi$,
 \begin{equation}\begin{aligned}
-\op{\vect x}\op T(\dd\vect x)\ket\psi
+\op{\vect x}\op U_{\mathrm{tr}}(\dd\vect x)\ket\psi
 &=\int\dd^3x\,\op{\vect x}\ket{\vect x+\dd\vect x}\braket{\vect x}\psi\\
 &=\int\dd^3x\,(\vect x+\dd\vect x)\ket{\vect x+\dd\vect x}\braket{\vect x}\psi,\\
-\op T(\dd\vect x)\op{\vect x}\ket\psi
-&=\int\dd^3x\,\op T(\dd\vect x)\vect x\ket{\vect x}\braket{\vect x}\psi\\
+\op U_{\mathrm{tr}}(\dd\vect x)\op{\vect x}\ket\psi
+&=\int\dd^3x\,\op U_{\mathrm{tr}}(\dd\vect x)\vect x\ket{\vect x}\braket{\vect x}\psi\\
 &=\int\dd^3x\,\vect x\ket{\vect x+\dd\vect x}\braket{\vect x}\psi.
 \end{aligned}\end{equation}
 Hence
 \begin{equation}\begin{aligned}
-[\op{\vect x},\op T(\dd\vect x)]\ket\psi
+[\op{\vect x},\op U_{\mathrm{tr}}(\dd\vect x)]\ket\psi
 &=\int\dd^3x\,\dd\vect x\,\ket{\vect x+\dd\vect x}\braket{\vect x}\psi\\
 &=\int\dd^3x\,\dd\vect x\,\ket{\vect x}\braket{\vect x}\psi
 =\dd\vect x\ket\psi,
 \end{aligned}\end{equation}
 where second-order infinitesimals have been neglected. Thus
 \begin{equation}
-[\op{\vect x},\op T(\dd\vect x)]=\dd\vect x,\qquad
+[\op{\vect x},\op U_{\mathrm{tr}}(\dd\vect x)]=\dd\vect x,\qquad
 [\op{\vect x},\op{\vect K}\cdot\dd\vect x]=\ii\dd\vect x.
 \end{equation}
 If the translation is taken in the $x_j$ direction, $\dd\vect x=\epsilon\vect e_j$, then
@@ -116,11 +116,11 @@ we have
 \end{equation}
 Momentum is therefore the generator of translations, and
 \begin{equation}
-\boxed{\op T(\dd\vect x)=\mathbf1-\frac\ii\hbar\op{\vect p}\cdot\dd\vect x.}
+\boxed{\op U_{\mathrm{tr}}(\dd\vect x)=\mathbf1-\frac\ii\hbar\op{\vect p}\cdot\dd\vect x.}
 \end{equation}
 Since $[\op p_x,\op p_y]=0$,
 \begin{equation}
-[\op T(\dd x),\op T(\dd y)]
+[\op U_{\mathrm{tr}}(\dd x),\op U_{\mathrm{tr}}(\dd y)]
 =\left[\mathbf1-\frac\ii\hbar\op p_x\dd x,
         \mathbf1-\frac\ii\hbar\op p_y\dd y\right]=0.
 \end{equation}
@@ -160,12 +160,12 @@ so the position operator is diagonal.
 
 From
 \begin{equation}
-\op T(\dd\vect x)\ket\beta
+\op U_{\mathrm{tr}}(\dd\vect x)\ket\beta
 =\left(\mathbf1-\frac\ii\hbar\op{\vect p}\cdot\dd\vect x\right)\ket\beta
 \end{equation}
 and
 \begin{equation}\begin{aligned}
-\op T(\dd\vect x)\ket\beta
+\op U_{\mathrm{tr}}(\dd\vect x)\ket\beta
 &=\int\dd^3x\,\ket{\vect x}\braket{\vect x-\dd\vect x}\beta\\
 &=\int\dd^3x\,\ket{\vect x}\left(
 \braket{\vect x}\beta-\dd\vect x\cdot\vect\nabla_{\vect x}\braket{\vect x}\beta
