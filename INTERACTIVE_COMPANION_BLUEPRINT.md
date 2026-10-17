@@ -161,3 +161,8 @@ Prefer comprehensive deliverables in these three passes to excessive micro-itera
 Source claims, permissions, code/data rights and original academic sources remain governed by [COPYRIGHT.md](COPYRIGHT.md). The current catalog is a documented intention: mark an item as functioning only after a tested experiment is actually present.
 
 **Hand-off to the next conversation:** read `README.md`, this blueprint, `companion/README.md`, `companion/catalog.json`, `companion/PROTOTYPES.md`, `companion/PHYSICS_CONVENTIONS.md`, the applicable `chapters/chNN/*.tex` and `editorial/NOTATION_POLICY.md`. Compare actual repository contents with this plan before implementation. Update the catalog and this document when decisions change.
+
+
+## 11. First implementation milestone (2026-10-17)
+
+The four calibration labs have been authored and linked from the companion homepage: [IC-01-03](companion/labs/IC-01-03/index.html), [IC-02-03](companion/labs/IC-02-03/index.html), [IC-08-02](companion/labs/IC-08-02/index.html), [IC-09-03](companion/labs/IC-09-03/index.html). They include independent physics models, multiple responsive visualizations, parameter controls, guided questions, worked mathematical bridges, scope notes and source-note links. Numerical regression tests: `node scripts/test_companion_models.cjs`. Page/asset checks: `python3 scripts/check_companion_pages.py`. These run on the CI workflow `check-companion.yml`. The catalog marks precisely these four entries `implemented` with working page paths. Initial release is a **local browser-capable, source-controlled website** within the private repository; public GitHub Pages deployment and browser-based visual/device validation remain separately reviewable steps.

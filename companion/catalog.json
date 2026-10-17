@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17",
-  "status": "Curriculum and directory scaffold; physics laboratories to be built",
-  "version": "0.1.0-planning",
+  "status": "Four fully authored browser labs with physics model tests; remaining experiments planned.",
+  "version": "0.2.0-four-labs",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -76,8 +76,9 @@
       "question": "Why can an intermediate spin measurement change the final statistics?",
       "observable": "Three analyzers, postselection, conditional and joint probabilities",
       "route": "core",
-      "stage": "prototype",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-01-03/index.html"
     },
     {
       "id": "IC-01-04",
@@ -184,8 +185,9 @@
       "question": "Why does a coherent-state wave packet move without spreading?",
       "observable": "Fock coefficients, position density, phase-space orbit",
       "route": "core",
-      "stage": "prototype",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-02-03/index.html"
     },
     {
       "id": "IC-02-04",
@@ -640,8 +642,9 @@
       "question": "How do hopping amplitudes govern gap closure and topological winding?",
       "observable": "Chain, complex loop, bands, open-boundary eigenstates",
       "route": "core",
-      "stage": "prototype",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-08-02/index.html"
     },
     {
       "id": "IC-08-03",
@@ -736,8 +739,9 @@
       "question": "Can a quantum circuit be trained using shifted expectation values?",
       "observable": "Gradient identity, measured outputs, loss and updates",
       "route": "core",
-      "stage": "prototype",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-09-03/index.html"
     },
     {
       "id": "IC-09-04",
@@ -787,5 +791,6 @@
       "stage": "planned",
       "minutes": "30–60+"
     }
-  ]
+  ],
+  "release_date": "2026-10-17"
 }

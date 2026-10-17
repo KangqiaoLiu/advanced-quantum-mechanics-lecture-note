@@ -1,4 +1,4 @@
-name: Check interactive companion catalog
+name: Check interactive companion catalog and physics
 on:
   push:
     branches: [main]
@@ -7,6 +7,7 @@ on:
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
+      - 'scripts/test_companion_models.cjs'
       - '.github/workflows/check-companion.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
+      - 'scripts/test_companion_models.cjs'
       - '.github/workflows/check-companion.yml'
   workflow_dispatch:
 
@@ -28,5 +30,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Check nine-chapter catalog and note mappings
         run: python3 scripts/check_companion_catalog.py
-      - name: Check companion browser JavaScript syntax
-        run: node --check companion/assets/site.js
+      - name: Check every browser JavaScript source
+        run: |
+          node --check companion/assets/site.js
+          node --check companion/assets/lab-core.js
+          for f in companion/labs/IC-*/model.js companion/labs/IC-*/lab.js; do node --check "$f"; done
+      - name: Check four analytic and numerical quantum models
+        run: node scripts/test_companion_models.cjs
+      - name: Check static laboratory HTML and links
+        run: python3 scripts/check_companion_pages.py

@@ -1,6 +1,6 @@
 # Four Gold-Standard Calibration Laboratories
 
-**Status:** specifications prepared (2026-10-17). **All four are planned; no simulations are claimed to be working.**
+**Status:** all four laboratory pages are implemented in `companion/labs/`; this document retains their source design specifications and review cases. The independent model tests and static-page checks live in `scripts/`. Student-facing work remains open to visual and pedagogical refinement.
 
 These four laboratories deliberately stress different requirements: sequential quantum measurement, dynamical state-space visualization, topological spectra and invariants, and trainable numerical quantum circuits. All student-facing lab copy and figures must be English. Each must graduate from planned/prototype to implemented only after the numerical, mathematical and visual checklists in the master blueprint pass.
 
