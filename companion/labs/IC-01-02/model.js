@@ -1,0 +1,1 @@
+"use strict";(function(r,f){let o=f();if(typeof module!=="undefined"&&module.exports)module.exports=o;r.Model0102=o})(globalThis,function(){function predict(z,g,phi){const e=Math.hypot(z,g),t=phi*Math.PI/180;if(e<1e-13)return{e:0,gap:0,rx:null,ry:null,rz:null,pz:null};return{e,gap:2*e,rx:g*Math.cos(t)/e,ry:g*Math.sin(t)/e,rz:z/e,pz:.5*(1+z/e)};}return{predict};});
