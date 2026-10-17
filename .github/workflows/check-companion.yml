@@ -8,6 +8,7 @@ on:
       - 'INTERACTIVE_COMPANION_BLUEPRINT.md'
       - 'main.tex'
       - 'scripts/check_companion_catalog.py'
+      - 'scripts/check_student_surfaces.py'
       - 'scripts/test_companion_models.cjs'
       - 'scripts/check_companion_browser.py'
       - 'scripts/check_companion_pages.py'
@@ -34,6 +35,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Check nine-chapter catalog and note mappings
         run: python3 scripts/check_companion_catalog.py
+      - name: Check that student pages have no internal milestones or developer links
+        run: python3 scripts/check_student_surfaces.py
       - name: Check every browser JavaScript source
         run: |
           node --check companion/assets/site.js
