@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this course repository when using its resources in scholarly work."
+title: "Advanced Quantum Mechanics: Graduate Lecture Notes and Interactive Companion"
+type: software
+authors:
+  - family-names: Liu
+    given-names: Kangqiao
+    orcid: "https://orcid.org/0000-0002-4014-5728"
+abstract: >-
+  Nine-chapter English graduate quantum mechanics lecture notes with
+  interactive physics investigations and guided study resources.
+repository-code: "https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note"
+url: "https://kangqiaoliu.github.io/courses/advanced-quantum-mechanics/companion/"
