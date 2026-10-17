@@ -39,6 +39,23 @@ python3 scripts/check_display_equations.py
 
 GitHub Actions (`.github/workflows/build-notes.yml`) runs validation, compiles the book, archives a version-specific PDF, and publishes the new `pdf/advanced-quantum-mechanics.pdf` on `main`.
 
+## Fully worked first-occurrence derivations
+
+The student-facing manuscript now includes a new [non-Hermitian physics
+interlude](chapters/ch01/03a_nonhermitian_dimer.tex) immediately after
+Hermitian operators, with a two-cavity loss model, full 2×2
+Hamiltonian, exceptional point, conditional norm evolution and three
+original vector figures. Across the other eight chapters,
+[original worked derivations](editorial/STEP_BY_STEP_PEDAGOGY.md)
+clarify unitary evolution, coupled spin, Gaussian variational bounds,
+delta-potential scattering and Born convergence, fermionic signs,
+Dirac spinor normalization, SSH Fourier/Berry phases and quantum
+parameter-shift gradients.
+
+The [nine-chapter pedagogical audit](editorial/STEP_BY_STEP_PEDAGOGY.md)
+separates the completed first-occurrence expansions from material still
+awaiting an exhaustive equation-by-equation review.
+
 ## Editorial references and history
 
 - [Equation-numbering and figure-by-figure visual review](editorial/EQUATION_FIGURE_REVIEW_2026-10-16.md)
