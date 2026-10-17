@@ -78,22 +78,24 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p pdf
-          cp main.pdf pdf/advanced-quantum-mechanics.pdf
+          # Preserve the compiled PDF while refreshing the working tree from
+          # the latest main. This avoids binary rebase conflicts if another
+          # successful run updated the PDF during compilation.
+          cp main.pdf "${RUNNER_TEMP}/advanced-quantum-mechanics.pdf"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add pdf/advanced-quantum-mechanics.pdf
-          if git diff --cached --quiet; then
-            echo 'PDF has not changed; no commit required.'
-            exit 0
-          fi
-          git commit -m 'build: update versioned lecture notes PDF [skip ci]'
-          # Documentation may have advanced while LaTeX compiled.
-          # Never publish a stale PDF if actual LaTeX sources advanced.
           git fetch origin main:refs/remotes/origin/main
           if ! git diff --quiet "${GITHUB_SHA}" origin/main -- main.tex chapters/ frontmatter/ figures/ references/ latexmkrc; then
             echo 'Source files changed during compilation; a newer source build must publish the PDF.'
             exit 1
           fi
-          git rebase origin/main
+          git reset --hard origin/main
+          mkdir -p pdf
+          cp "${RUNNER_TEMP}/advanced-quantum-mechanics.pdf" pdf/advanced-quantum-mechanics.pdf
+          git add pdf/advanced-quantum-mechanics.pdf
+          if git diff --cached --quiet; then
+            echo 'PDF is already current; no new commit needed.'
+            exit 0
+          fi
+          git commit -m 'build: update versioned lecture notes PDF [skip ci]'
           git push origin HEAD:main

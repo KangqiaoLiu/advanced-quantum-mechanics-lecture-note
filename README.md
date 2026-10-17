@@ -4,7 +4,7 @@ Graduate lecture notes by **Kangqiao LIU**.
 
 [**Read the lecture notes (PDF)**](pdf/advanced-quantum-mechanics.pdf) · [**Explore the interactive experiments**](companion/index.html) · [**Guided further reading**](companion/reading.html) · [**Independent study guide**](companion/LEARNING_PATHS.md)
 
-The course develops quantum mechanics from its mathematical foundations through physical applications and contemporary research topics. The English lecture notes provide step-by-step derivations, explicit mathematical conventions, and worked physical examples. The interactive companion offers independent numerical experiments and exercises that connect the formulas with measurable predictions.
+The course develops quantum mechanics from its mathematical foundations through physical applications and contemporary research topics. The English lecture notes provide step-by-step derivations, explicit mathematical conventions, and worked physical examples. The interactive companion offers independent numerical experiments and exercises that connect the formulas with measurable predictions. The lecture-note PDF links all 35 interactive experiments directly from the relevant derivations, with a short prompt explaining what to examine or verify.
 
 ## Course contents
 
