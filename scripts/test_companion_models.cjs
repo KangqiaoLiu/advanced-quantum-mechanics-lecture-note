@@ -156,15 +156,17 @@ check("Avoided crossing gap, degeneracy and perturbative limit",()=>{
 // Chapter 5 — partial waves, angular integration and unitarity
 const Scatter=require("../companion/labs/IC-05-05/model.js");
 check("s+p partial-wave optical theorem and solid-angle normalization",()=>{
+  // Composite Simpson integration controls quadrature error independently of the model.
+  function simpson(fn,a,b,n=30000){const h=(b-a)/n;let s=fn(a)+fn(b);for(let i=1;i<n;i++)s+=(i%2?4:2)*fn(a+i*h);return s*h/3;}
   for(const [d0,d1,k] of [[0,0,1],[90,0,1],[0,90,1.8],[60,35,1.3],[120,50,.75]]){
    const s=Scatter.evaluate(d0,d1,k);
    close(s.total,s.optical,1e-10);
    close(s.sigma0+s.sigma1,s.total,1e-10);
    close(s.sigma0,4*Math.PI*Math.sin(Scatter.rad(d0))**2/(k*k));
-   const numeric=integrate(theta=>2*Math.PI*Math.sin(theta)*s.ds(theta*180/Math.PI),0,Math.PI,30000);
+   const numeric=simpson(theta=>2*Math.PI*Math.sin(theta)*s.ds(theta*180/Math.PI),0,Math.PI,30000);
    close(numeric,s.total,1e-7);
-   if(s.total>1e-10)close(integrate(theta=>s.angularDensity(theta*180/Math.PI),0,Math.PI,30000),1,1e-8);
-   const transport=integrate(theta=>2*Math.PI*Math.sin(theta)*(1-Math.cos(theta))*s.ds(theta*180/Math.PI),0,Math.PI,30000);
+   if(s.total>1e-10)close(simpson(theta=>s.angularDensity(theta*180/Math.PI),0,Math.PI,30000),1,1e-8);
+   const transport=simpson(theta=>2*Math.PI*Math.sin(theta)*(1-Math.cos(theta))*s.ds(theta*180/Math.PI),0,Math.PI,30000);
    close(transport,s.transport,1e-7);
    assert.ok(s.transport>=-1e-10);
   }
