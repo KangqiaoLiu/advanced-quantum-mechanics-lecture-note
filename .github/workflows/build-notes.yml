@@ -13,6 +13,7 @@ on:
       - 'scripts/check_notation_consistency.py'
       - 'scripts/check_content_additions.py'
       - 'scripts/check_visual_assets.py'
+      - 'scripts/check_teaching_derivations.py'
       - 'latexmkrc'
       - '.github/workflows/build-notes.yml'
   workflow_dispatch:
@@ -40,6 +41,9 @@ jobs:
 
       - name: Check whole-book notation consistency
         run: python3 scripts/check_notation_consistency.py
+
+      - name: Check step-by-step teaching bridges and non-Hermitian model
+        run: python3 scripts/check_teaching_derivations.py
 
       - name: Check supplementary quantum algebra
         shell: bash
