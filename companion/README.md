@@ -26,6 +26,10 @@ Experiments provide quantitative models of their stated physical setup. The assu
 
 ## Course access
 
-Open the interactive companion using the course link or private access instructions provided by your instructor. The experiments run in a modern web browser. If your instructor has granted repository access, you can also use the provided local course preview.
+Access the [public course website](https://kangqiaoliu.github.io/courses/advanced-quantum-mechanics/companion/). All experiments run in a modern browser. The [public repository](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note) provides the code and a route for reporting problems or proposing changes.
 
 For questions about the course material, contact **Kangqiao LIU** at [kqliu@xhu.edu.cn](mailto:kqliu@xhu.edu.cn).
+
+## Reuse and improve
+
+Original interactive software is licensed under [Apache License 2.0](../LICENSE); eligible original instructional content is under [CC BY-NC-SA 4.0](../LICENSE-CONTENT.md). Some lecture-note content has third-party rights; see [COPYRIGHT.md](../COPYRIGHT.md). To contribute, use [GitHub Issues or pull requests](../CONTRIBUTING.md), and cite the course using [CITATION.cff](../CITATION.cff).

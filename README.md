@@ -24,10 +24,18 @@ The [interactive directory](companion/index.html) provides featured physical inv
 
 Start with an experiment related to the material you are studying. Predict what will happen, test your prediction, and then derive the result. For additional topics, use the [guided reading collection](companion/reading.html), including links to external educational materials.
 
-The interactive materials are designed for independent after-class study. Access to the private course repository or its preview, where needed, is arranged by the instructor.
+The interactive materials are open for independent after-class study at the [public course website](https://kangqiaoliu.github.io/courses/advanced-quantum-mechanics/companion/).
+
+## Participate and cite
+
+The course welcomes scientific corrections and improvements. You can [report a problem or propose a topic](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/issues/new/choose) and submit changes through a [pull request](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/pulls). See [CONTRIBUTING.md](CONTRIBUTING.md) for review procedures, scientific checks, and contributor rights.
+
+The original software code is available under [Apache License 2.0](LICENSE); eligible original instructor-authored teaching expression is offered under [CC BY-NC-SA 4.0](LICENSE-CONTENT.md). Third-party textbook material, translations and the mixed-source PDF have separate rights. Read [COPYRIGHT.md](COPYRIGHT.md) for the precise permissions and exclusions.
+
+**Original course author:** Kangqiao LIU. Contributors retain the copyright in their own additions and are credited in the public commit history; see [CONTRIBUTORS.md](CONTRIBUTORS.md). For research papers and educational publications, use GitHub's **Cite this repository** feature ([CITATION.cff](CITATION.cff)).
 
 ## References and acknowledgments
 
 These notes draw extensively on the *Advanced Quantum Mechanics* lecture notes of **Professor Pengfei Zhuang (庄鹏飞)**. They also draw on *Quantum Computation and Quantum Information* by **Michael A. Nielsen and Isaac L. Chuang**, and *Advanced Quantum Mechanics* by **Franz Schwabl**. I am grateful to these authors for their work and teaching materials. I also thank **Professor Hong Guo (郭弘)** for his Advanced Quantum Mechanics course, which informed the preparation of these notes. References to contemporary research appear throughout the lecture notes.
 
-**© 2026 Kangqiao LIU. All rights reserved.** See [Copyright and use](COPYRIGHT.md).
+**© 2026 Kangqiao LIU** for original instructor work; usage rights depend on the component. See [Copyright and licensing](COPYRIGHT.md).
