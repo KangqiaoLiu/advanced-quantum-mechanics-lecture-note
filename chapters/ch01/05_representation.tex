@@ -17,19 +17,19 @@ The transformation matrix $S$ is defined by
 \begin{equation}
 S_{im}=\braket i m.
 \end{equation}
-It represents the basis vectors of the $M$ representation in the $I$ representation.
+It represents the basis vectors of the $G$ representation in the $F$ representation; the identity is denoted by $\mathbf1$ throughout.
 \subsection*{1) Transformation of an arbitrary vector}
-In the $I$ representation,
+In the $F$ representation,
 \begin{equation}
 \ket a=\sum_i\ket i\braket i a.
 \end{equation}
-The coefficient $\braket i a$ is the component of $\ket a$ along $\ket i$, or its representation in the $I$ basis.
+The coefficient $\braket i a$ is the component of $\ket a$ along $\ket i$, or its representation in the $F$ basis.
 
-In the $M$ representation,
+In the $G$ representation,
 \begin{equation}
 \ket a=\sum_m\ket m\braket m a.
 \end{equation}
-The coefficient $\braket m a$ is the component along $\ket m$, or the representation of $\ket a$ in the $M$ basis.
+The coefficient $\braket m a$ is the component along $\ket m$, or the representation of $\ket a$ in the $G$ basis.
 
 Using completeness,
 \begin{equation}
@@ -42,11 +42,11 @@ In matrix form,
 \boxed{a_G=S^\dagger a_F.}
 \end{equation}
 \subsection*{2) Transformation of an arbitrary operator}
-In the $I$ representation,
+In the $F$ representation,
 \begin{equation}
 (A_F)_{ij}=\mel i{\op A}j.
 \end{equation}
-In the $M$ representation,
+In the $G$ representation,
 \begin{equation}\begin{aligned}
 (A_G)_{mn}=\mel m{\op A}n
 &=\sum_{ij}\braket m i\mel i{\op A}j\braket j n\\
@@ -83,11 +83,11 @@ A_G a_G
 =S^\dagger A_Fa_F=S^\dagger\lambda_Fa_F\\
 &=\lambda_F S^\dagger a_F=\lambda_F a_G.
 \end{aligned}\end{equation}
-Thus the eigenvalue in the $M$ representation is still $\lambda_F$. A transformation of representation does not change the values of physical quantities.
+Thus the eigenvalue in the $G$ representation is still $\lambda_F$. A transformation of representation does not change the values of physical quantities.
 
 \textbf{Example 1:} A transformation of representation does not change commutation relations.
 
-If $[A_I,B_I]=C_I$ in the $I$ representation, then in the $M$ representation,
+If $[A_I,B_I]=C_I$ in the $F$ representation, then in the $G$ representation,
 \begin{equation}\begin{aligned}
 [A_M,B_M]&=A_MB_M-B_MA_M\\
 &=S^\dagger A_I SS^\dagger B_I S-S^\dagger B_I SS^\dagger A_I S\\
