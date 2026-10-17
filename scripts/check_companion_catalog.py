@@ -68,6 +68,6 @@ for reference in (
 
 print(
     f"Companion catalog valid: {len(chapters)} chapters, {len(labs)} questions, "
-    f"{per_chapter}, {sum(x['route'] == 'core' for x in labs)} classroom-route candidates, "
+    f"{per_chapter}, {sum(x['route'] == 'core' for x in labs)} recommended self-study questions, "
     f"{sum(x['stage'] == 'implemented' for x in labs)} implemented experiments."
 )
