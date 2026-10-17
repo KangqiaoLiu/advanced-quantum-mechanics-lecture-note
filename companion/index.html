@@ -14,12 +14,10 @@
       <p class="eyebrow">Kangqiao LIU · Graduate lecture companion</p>
       <h1>Advanced Quantum Mechanics</h1>
       <p class="subtitle">An interactive path from quantum states to topology and quantum machine learning.</p>
-      <p class="status" id="catalog-status" role="status">27 selected labs ready · Nine chapters</p>
+      <p class="status" id="catalog-status" role="status">Interactive investigations · Nine chapters</p>
       <nav aria-label="Resource links">
         <a href="../pdf/advanced-quantum-mechanics.pdf">Complete lecture notes ↗</a>
-        <a href="../INTERACTIVE_COMPANION_BLUEPRINT.md">Project blueprint ↗</a>
         <a href="README.md">Companion guide ↗</a>
-        <a href="IMPLEMENTATION_STATUS.md">Progress and remaining work ↗</a>
         <a href="LEARNING_PATHS.md">Independent study routes ↗</a>
         <a href="reading.html">Curated external readings ↗</a>
       </nav>
@@ -32,9 +30,9 @@
       <div><h2>Explore further</h2><p>Inspect limits, approximations, topology and trainable quantum models.</p></div>
     </section>
     <section aria-labelledby="featured-heading" class="directory">
-  <p class="eyebrow">Nine chapters · Curated experiments</p>
+  <p class="eyebrow">Nine chapters · Physical investigations</p>
   <h2 id="featured-heading">Choose a physical experiment</h2>
-  <p class="minor">The instructor teaches with the blackboard; all interactive material is for independent study after class. Start with one physical question and its full mathematical explanation. Our carefully edited collection has 27 selected investigations (all 27 now working), plus eight existing foundations and 27 guided external-reading topics.</p>
+  <p class="minor">Explore a physical question, make a prediction, and test it against quantitative results. Each experiment includes derivations, model assumptions and questions for independent study.</p>
   <div class="featured">
     <a href="labs/IC-01-03/index.html"><span>01 · Basic Concepts</span><strong>Sequential Stern–Gerlach</strong><small>Postselection · Density operators · Exact and finite-shot probabilities</small><em>Open interactive experiment ↗</em></a>
     <a href="labs/IC-02-03/index.html"><span>02 · Quantum Dynamics</span><strong>Harmonic oscillator</strong><small>Coherent and squeezed states · Wave packets · Wigner phase space</small><em>Open interactive experiment ↗</em></a>
@@ -50,7 +48,7 @@
 <section aria-labelledby="catalog-title" class="directory">
       <div class="directory-heading">
         <div>
-          <p class="eyebrow">A carefully edited, research-oriented collection</p>
+          <p class="eyebrow">Explore by chapter or concept</p>
           <h2 id="catalog-title">Choose an investigation or reading topic</h2>
           <p id="count" class="minor" aria-live="polite">Loading the nine-chapter inventory…</p>
         </div>
@@ -61,22 +59,21 @@
           <input id="search" type="search" placeholder="Search: Berry, spin, SSH, gradient…" autocomplete="off">
           <label for="track">Collection</label>
           <select id="track">
-            <option value="selected">Selected investigations (27)</option>
-            <option value="working">All available experiments (26)</option>
-            <option value="reference">Foundational quick references (8)</option>
-            <option value="reading">External reading and guided tasks (27)</option>
-            <option value="all">Full historical topic registry (62)</option>
-          </select>
+            <option value="featured">Featured investigations</option>
+            <option value="all-experiments">All interactive experiments</option>
+            <option value="foundation">Foundational references</option>
+            <option value="reading">Guided further reading</option>
+</select>
         </div>
       </div>
-      <p class="minor" id="explanation">Selected investigations are shown by default. Switch the collection to browse all 26 available experiments, eight quick references, or 27 further-reading questions. Every retained topic links to the lecture-note source.</p>
+      <p class="minor" id="explanation">Featured investigations are shown first. Use the collection filter to find introductory exercises, all interactive experiments or guided reading.</p>
       <div id="labs" class="labs" aria-live="polite"></div>
       <p id="message" class="error" role="alert" hidden></p>
     </section>
   </main>
   <footer class="wrap footer">
     <p>© 2026 Kangqiao LIU · <a href="mailto:kqliu@xhu.edu.cn">kqliu@xhu.edu.cn</a> · <a href="https://kangqiaoliu.github.io/">Personal page</a></p>
-    <p class="minor">The teaching material is in development. Check the README and source notes for available content and rights.</p>
+    
   </footer>
 </body>
 </html>
