@@ -2,7 +2,7 @@
 
 **Instructor:** Kangqiao LIU · **Status:** nine complete interactive physics laboratories, with at least one working laboratory in each chapter. **62** cataloged scientific questions; **53** are planned extensions.
 
-**[Companion catalog source](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Master plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
+**[Companion catalog source](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Remaining work and status](IMPLEMENTATION_STATUS.md)** · **[Master plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
 
 This is a graduate-level interactive self-study companion with quantitative experiments, mathematical derivations, interpretation, guided questions, and independent physics verification. Every chapter is now represented by a runnable scientific laboratory.
 
