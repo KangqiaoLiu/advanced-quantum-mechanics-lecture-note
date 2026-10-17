@@ -1,39 +1,32 @@
 # Advanced Quantum Mechanics — Curated Interactive Companion
 
-**Instructor:** Kangqiao LIU. **Teaching model:** classroom teaching uses the blackboard; this website is for **optional student-led after-class exploration**.
+**Instructor:** Kangqiao LIU · **Purpose:** optional, independent student exploration after class. Live course periods continue with blackboard derivations only.
 
-The initial 62-question inventory has been curated into **27 high-value selected investigations** (18 working, nine planned), **eight existing quick-reference labs** (all working), and **27 guided external-reading questions**. **All 26 previously completed labs remain available.** The final intended number of self-authored experiments is **35**; nine new labs remain to be developed.
+## Completed selected scope
 
-## Start here
+- **27** featured working physics investigations, covering all nine chapters.
+- **8** other completed foundational reference labs, available when students need an extra conceptual refresher.
+- **27** externally supported guided-reading questions, with direct teaching links and specific student exercises.
+- **35 self-authored interactive models are all implemented**. The historic 62-topic inventory is retained, but there are no outstanding bespoke simulations in the curated plan.
 
-[Curated nine-chapter directory](index.html) · [27 guided external readings](reading.html) · [Independent learning paths](LEARNING_PATHS.md) · [Full scope and remaining tasks](IMPLEMENTATION_STATUS.md) · [English lecture notes](../pdf/advanced-quantum-mechanics.pdf).
+[Open curated interactive directory](index.html) · [Guided further reading](reading.html) · [Independent student learning routes](LEARNING_PATHS.md) · [Completed content and verification](IMPLEMENTATION_STATUS.md) · [Complete lecture-note PDF](../pdf/advanced-quantum-mechanics.pdf)
 
-The directory initially shows only the 27 selected investigations; students can change the collection selector to see all 26 currently working units, quick algebra/notation references, external reading or the full historical registry. This separation keeps the main textbook focused while preserving useful earlier work.
+The curated directory defaults to the 27 featured experiments. Students can choose a chapter, search a physical question, or switch to **All available experiments**, **Foundational references**, **Guided reading** or the complete historic inventory. Inside each featured experiment, neighboring investigations connect through previous/next links.
 
-A typical lesson asks for a prediction, displays actual numerical/analytical results under changes of control parameters, gives the relevant derivation and assumptions, proposes investigations, and checks a student's interpretation.
+Every selected module provides a motivating physical question, model assumptions, genuine numerical or analytical predictions that respond to controls, multiple diagnostic figures, mathematical derivations, exact or asymptotic limits, independent questions and a formative check. The website is designed to be used entirely without live classroom demonstration.
 
-## Planned nine scientific investigations
+## Access in GitHub (private repository)
 
-- IC-02-05: WKB near a turning point — Where does WKB reproduce an exact solution, and where does it fail?
-- IC-02-06: Path phases and stationary action — How do nearby paths interfere around a stationary-action path?
-- IC-03-02: Adding two angular momenta — How does the coupled basis reorganize two-spin states?
-- IC-03-06: Bell correlations and CHSH — How does the CHSH value vary with four measurement directions?
-- IC-04-02: Variational energy landscape — How does a trial wavefunction constrain the ground-state energy?
-- IC-04-03: Driven two-level resonance — How do transition probabilities depend on drive frequency and duration?
-- IC-05-03: Lippmann–Schwinger, T matrix and Born regime — How do multiple-scattering corrections determine the reliability of the Born approximation?
-- IC-08-07: Thouless pumping over a cycle — How does a closed adiabatic cycle transport quantized charge?
-- IC-09-06: Trainability and gradient concentration — How does training difficulty change with a circuit's structure and size?
+Open **Code → Codespaces → Create codespace on main**. The repository's development-container setup automatically starts an HTTP server with forwarded port 8000; open its forwarded address at `/companion/`. Keep the forwarded port **Private**. To update an older Codespace, pull the latest `main`.
 
-Each new selected unit must demonstrate a genuine physical consequence of changing parameters and must pass independent scientific tests; high-quality explanation takes precedence over topic count.
+For local preview, from repository root run `python3 -m http.server 8000` and open `http://localhost:8000/companion/`. The site runs in the browser without scientific Python dependencies.
 
-## How to view the private website
+## Scientific checks and maintaining quality
 
-From GitHub use **Code → Codespaces → Create codespace on main**, open the forwarded port 8000 and visit `/companion/`. Keep port visibility Private. Locally, from repository root execute `python3 -m http.server 8000` and open `http://localhost:8000/companion/`.
+Run `node scripts/test_companion_models.cjs` (48 independent physics test groups), `python3 scripts/check_companion_catalog.py`, `python3 scripts/check_companion_pages.py`, and `python3 scripts/check_companion_browser.py`. GitHub Actions checks syntax, source links, physics models, all 35 lab-page initial renders, directory/reading content and Codespaces startup.
 
-## Tests and scientific reference
+Further maintenance includes meaningful control-interaction sweeps, visual and keyboard/screen-reader inspection across devices, student learning feedback and cross-chapter symbol auditing. These additional quality tasks should improve the scientific teaching content rather than inflate the number of self-authored experiments.
 
-Run `node scripts/test_companion_models.cjs`, `python3 scripts/check_companion_catalog.py`, `python3 scripts/check_companion_pages.py` and `python3 scripts/check_companion_browser.py`. GitHub Actions runs these checks automatically. See [physics conventions](PHYSICS_CONVENTIONS.md), [prototype specifications](PROTOTYPES.md), [the writing template](LAB_TEMPLATE.md) and [master editorial blueprint](../INTERACTIVE_COMPANION_BLUEPRINT.md).
+## Source notes and rights
 
-## Rights and hosting
-
-The repository and lecture manuscript remain private pending copyright clearance. A possible public release should separate original authored interactive content from third-party-protected source-note material. Linked external reading resources remain at their original websites. Automated checks do not replace human desktop/mobile visual QA or student comprehension trials.
+See [course conventions](PHYSICS_CONVENTIONS.md), [prototype specifications](PROTOTYPES.md), [laboratory template](LAB_TEMPLATE.md), [curated project blueprint](../INTERACTIVE_COMPANION_BLUEPRINT.md) and [source attribution/rights](../COPYRIGHT.md). The private repository includes teaching sources with copyright considerations. A public interactive website requires a separate rights review and an appropriately separated publication package.

@@ -1,46 +1,58 @@
-# Curated Self-Directed Learning Paths — Advanced Quantum Mechanics
+# Independent Learning Guide — The Finished Curated Companion
 
-**Teaching boundary:** 48 × 40-minute lectures use blackboard explanations. All experiments are optional **independent after-class learning** activities. AI assistance can deepen exploration but numerical or symbolic claims need independent checks.
+The nine-chapter Advanced Quantum Mechanics course is taught at the blackboard. Its interactive companion is an **optional, self-directed after-class resource**, freely navigable by students at their own pace.
 
-## Read before opening a simulation
+**Current complete scope:** 27 featured investigations with running physics models, eight additional working foundations/reference modules, and 27 optional guided external-reading topics. The original 62-topic master inventory is preserved as editorial history; all planned bespoke simulations in the selected scope are now implemented.
 
-Students are invited to start from a physical question, predict a limiting case, vary controls to identify a physical relationship, reconstruct the derivation, and test at least one result independently. Choose depth freely; there is no required laboratory schedule.
+## A student workflow that goes beyond moving sliders
 
-The full historical inventory consists of 62 questions. The actual instructional package is **27 selected investigations** (18 runnable now, nine selected for future development), **eight existing reference tools**, and **27 guided reading extensions**. The selected mainline is the recommended route; the former `core` catalog flag is historical and does not imply the current selection.
+1. **Predict:** state a clear physical expectation before changing parameters, ideally in a limiting case with an exact derivation.
+2. **Observe:** change one parameter and compare diagnostic quantities: amplitudes and probabilities, spectral gaps and topology, eigenvalues and trial bounds, gradients and shot uncertainty.
+3. **Reproduce:** derive the equation shown in the laboratory using the corresponding English lecture-note section. Keep the Hilbert-space basis, physical units, signs and perturbative assumptions explicit.
+4. **Test reliability:** vary a finite cutoff, grid, sample count, wavepacket width or degenerate parameter. Distinguish a genuine singularity from a numerical approximation artifact.
+5. **Explain:** complete the laboratory's formative question, and record why its physical outcome follows from the model. AI may help generate counterexamples and independent calculations, but original derivations and limits determine validity.
 
-## The mainline, chapter by chapter
+## Twenty-seven complete featured studies
 
-| Chapter | Selected interactive investigations |
+| Chapter | Working self-study investigations |
 |---|---|
 | 1. Basic Concepts | [Cascaded Stern–Gerlach](labs/IC-01-03/index.html) |
-| 2. Quantum Dynamics | [Spin precession in a field](labs/IC-02-01/index.html) · [Harmonic oscillator and coherent states](labs/IC-02-03/index.html) · WKB near a turning point *(planned)* · Path phases and stationary action *(planned)* · [Berry phase on the Bloch sphere](labs/IC-02-08/index.html) |
-| 3. Angular Momentum Theory | Adding two angular momenta *(planned)* · [Entanglement and partial trace](labs/IC-03-04/index.html) · [POVM effects versus instruments](labs/IC-03-05/index.html) · Bell correlations and CHSH *(planned)* |
-| 4. Approximation Methods | [Avoided crossings and perturbation theory](labs/IC-04-01/index.html) · Variational energy landscape *(planned)* · Driven two-level resonance *(planned)* |
-| 5. Scattering Theory | Lippmann–Schwinger, T matrix and Born regime *(planned)* · [Partial-wave interference and unitarity](labs/IC-05-05/index.html) |
+| 2. Quantum Dynamics | [Spin precession in a field](labs/IC-02-01/index.html) · [Harmonic oscillator and coherent states](labs/IC-02-03/index.html) · [WKB near a turning point](labs/IC-02-05/index.html) · [Path phases and stationary action](labs/IC-02-06/index.html) · [Berry phase on the Bloch sphere](labs/IC-02-08/index.html) |
+| 3. Angular Momentum Theory | [Adding two angular momenta](labs/IC-03-02/index.html) · [Entanglement and partial trace](labs/IC-03-04/index.html) · [POVM effects versus instruments](labs/IC-03-05/index.html) · [Bell correlations and CHSH](labs/IC-03-06/index.html) |
+| 4. Approximation Methods | [Avoided crossings and perturbation theory](labs/IC-04-01/index.html) · [Variational energy landscape](labs/IC-04-02/index.html) · [Driven two-level resonance](labs/IC-04-03/index.html) |
+| 5. Scattering Theory | [Lippmann–Schwinger, T matrix and Born regime](labs/IC-05-03/index.html) · [Partial-wave interference and unitarity](labs/IC-05-05/index.html) |
 | 6. Quantum Many-Body Systems | [Permutation and exchange](labs/IC-06-01/index.html) · [Fermionic creation and ordering signs](labs/IC-06-04/index.html) |
 | 7. Relativistic Quantum Mechanics | [From Schrödinger to Pauli](labs/IC-07-01/index.html) · [Klein–Gordon versus Dirac](labs/IC-07-02/index.html) |
-| 8. Topological Condensed Matter Physics | [SSH bulk, winding and edges](labs/IC-08-02/index.html) · [SSH boundary termination and symmetry](labs/IC-08-03/index.html) · [Zak phase and Berry gauge](labs/IC-08-04/index.html) · [Chern insulator phase diagram](labs/IC-08-06/index.html) · Thouless pumping over a cycle *(planned)* |
-| 9. Quantum Neural Networks and Machine Learning | [Parameter-shift training](labs/IC-09-03/index.html) · [Quantum kernel geometry](labs/IC-09-05/index.html) · Trainability and gradient concentration *(planned)* |
+| 8. Topological Condensed Matter Physics | [SSH bulk, winding and edges](labs/IC-08-02/index.html) · [SSH boundary termination and symmetry](labs/IC-08-03/index.html) · [Zak phase and Berry gauge](labs/IC-08-04/index.html) · [Chern insulator phase diagram](labs/IC-08-06/index.html) · [Thouless pumping over a cycle](labs/IC-08-07/index.html) |
+| 9. Quantum Neural Networks and Machine Learning | [Parameter-shift training](labs/IC-09-03/index.html) · [Quantum kernel geometry](labs/IC-09-05/index.html) · [Trainability and gradient concentration](labs/IC-09-06/index.html) |
 
-### Choose a conceptual direction
+**Recommended concept threads:**
 
-- **State, measurement, and information:** [Sequential Stern–Gerlach](labs/IC-01-03/index.html) → [Entanglement and partial trace](labs/IC-03-04/index.html) → [POVM instruments](labs/IC-03-05/index.html). An advanced CHSH comparison joins this route later.
-- **Dynamics and geometry:** [Spin precession](labs/IC-02-01/index.html) → [Harmonic oscillator](labs/IC-02-03/index.html) → [Adiabatic Berry phase](labs/IC-02-08/index.html). Planned extensions expose WKB failure, path phases and resonant driving.
-- **Approximation and scattering:** [Avoided crossings](labs/IC-04-01/index.html) → [Partial-wave unitarity](labs/IC-05-05/index.html) → future variational optimization and Lippmann–Schwinger/Born convergence.
-- **Many-body and relativity:** [Particle exchange](labs/IC-06-01/index.html) → [Fermionic ordering](labs/IC-06-04/index.html) → [Pauli spin magnetic coupling](labs/IC-07-01/index.html) → [Dirac velocity](labs/IC-07-02/index.html).
-- **Band geometry:** [SSH winding and boundaries](labs/IC-08-02/index.html) → [Boundary termination](labs/IC-08-03/index.html) → [Zak Wilson loop](labs/IC-08-04/index.html) → [QWZ Chern phase](labs/IC-08-06/index.html), with topological pumping planned.
-- **Quantum learning:** [Parameter-shift training](labs/IC-09-03/index.html) → [Quantum-kernel Gram geometry](labs/IC-09-05/index.html) → planned gradient concentration and trainability.
+- *Interference → Measurement → Entanglement:* sequential Stern–Gerlach, reduced-state entropy, quantum instruments, spin addition and CHSH correlations.
+- *Dynamics → Approximation:* spin precession, oscillator coherence, Berry geometry, WKB turning points, action-phase interference, variational optimization and driven resonance.
+- *Scattering and many-body:* avoided crossings, exact Lippmann–Schwinger/Born benchmark, s/p-wave unitarity, exchange symmetry and fermionic ordering.
+- *Relativity and topology:* Pauli magnetic coupling, free Dirac wavefunctions, SSH winding, boundary termination, Zak holonomy, QWZ Chern phases and Thouless pumping.
+- *Quantum machine learning:* parameter-shift optimization, state-fidelity kernels, global/local cost gradients and finite-shot signal resolution.
 
-## Eight available review tools
+## Review material for students who need more foundation
 
-For students who need algebraic or conceptual preparation, the already-written [complex interference](labs/IC-01-01/index.html), [2×2 Hermitian spectrum](labs/IC-01-02/index.html), [Born projectors](labs/IC-01-04/index.html), [basis changes](labs/IC-01-05/index.html), [tensor-product indices](labs/IC-01-08/index.html), [statistical mixtures](labs/IC-03-03/index.html), [bosonic number operators](labs/IC-06-03/index.html) and [one-qubit circuit output](labs/IC-09-01/index.html) remain accessible via the *Foundational references* collection.
+The eight existing reference tools remain fully active and directly linkable:
 
-## Guided external extension and responsible AI use
+- [Complex amplitude and phase](labs/IC-01-01/index.html) — How do complex amplitudes combine before probabilities are formed?
+- [Two-by-two eigenproblem](labs/IC-01-02/index.html) — How do the eigenvectors of a Hermitian matrix depend on its entries?
+- [Born rule and projectors](labs/IC-01-04/index.html) — How are probabilities and state updates computed from projectors?
+- [Measurement axes and basis changes](labs/IC-01-05/index.html) — Why do matrix components change while physical predictions remain invariant?
+- [Tensor-product index laboratory](labs/IC-01-08/index.html) — How are two small Hilbert spaces combined without losing track of indices?
+- [Pure states and statistical mixtures](labs/IC-03-03/index.html) — Can two different ensembles represent the same density operator?
+- [Bosonic Fock occupation rules](labs/IC-06-03/index.html) — Why does bosonic creation produce a square-root occupation factor?
+- [Parameterized quantum circuit output](labs/IC-09-01/index.html) — How do rotation parameters turn measurements into model predictions?
 
-Use the [27-topic guided reading library](reading.html). Each question links to a vetted teaching source, a specific independent derivation/exploration, and a related working experiment. Students may ask AI to suggest intermediate steps, alternative examples or unit-checks, but should independently verify outputs and sign conventions. This channel is deliberately broad: readers may investigate uncertainty, Fourier wavepackets, gauge patches, Green functions, weak-coupling Born scattering, full Dirac limits, alternative quantum feature maps and more without another custom teaching application.
+These may be used repeatedly without making them additional mandatory assignments.
 
-## Scientific quality
+## Twenty-seven optional further readings
 
-Selected experiments must have coherent physical and mathematical models, multiple diagnostic observables, carefully documented assumptions, checks against limiting cases and reproducible numerical validation. The course manuscript is the primary reference. New lab counts should not override opportunities to improve accuracy, visual legibility and intellectual continuity in existing materials.
+Read [Guided Further Reading](reading.html) for all 27 additional scientific questions, each with an appropriate external teaching resource, a focused derivation or physical check, lecture-note pointers and a nearby already-working laboratory. Students may use generative AI to request alternate derivations, check algebra or investigate numerical corner cases; every result should be checked against the original equations and physical constraints.
 
-[Complete current scope](IMPLEMENTATION_STATUS.md) · [All subject areas](index.html) · [Lecture notes](../pdf/advanced-quantum-mechanics.pdf).
+## Use, access, and provenance
+
+The companion is contained in the private [GitHub repository](https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note). Start a Codespace, open forwarded port 8000 and visit `/companion/`; locally, serve repository root with `python3 -m http.server 8000`. The [implementation status](IMPLEMENTATION_STATUS.md) explains tests, remaining usability review and publication rights. The full [lecture notes](../pdf/advanced-quantum-mechanics.pdf) remain the authoritative mathematical reference.

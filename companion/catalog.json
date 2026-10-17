@@ -1,7 +1,7 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17: Curated flagship self-study scope; 27 selected investigations, 8 already-authored reference tools, and 27 externally supported reading topics.",
-  "status": "The complete curated suite is authored: 27 featured physics investigations and eight optional working reference laboratories; 27 further topics use guided external reading. No outstanding bespoke planned experiments.",
+  "status": "All 35 curated interactive labs implemented and numerically tested, plus 27 guided reading topics. Nine-chapter after-class self-study content complete under the selected scope.",
   "version": "1.0.0-curated-complete",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
@@ -1088,8 +1088,8 @@
     "reference_live": 8,
     "reading_only": 27,
     "planned_total_self_built": 35,
-    "policy": "Do not write new standalone laboratories for reading-only topics. Keep all 26 validated existing code modules. Prioritize scientifically transformative and quantitatively meaningful self-directed experiments.",
+    "policy": "All 27 featured investigations and all eight reference modules are now implemented. Preserve the 35 tested laboratories and expand via guided reading, targeted refinement, and future student feedback; reading-only topics need no custom standalone simulations.",
     "decision_date": "2026-10-17",
-    "release_state": "curated content implemented; internal scientific and browser regression checks still being extended; human visual/accessibility and student review remain future quality work"
+    "release_state": "complete internal curated content; all 35 browser modules and 48 physics regression groups passed automation; accessibility, visual interaction and student comprehension require ongoing human review"
   }
 }

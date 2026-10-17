@@ -393,3 +393,8 @@ The instructor confirmed explicitly: **all live course periods use blackboard ex
 ## Scope clarification: curated companion target (2026-10-17)
 
 The former expectation of producing a bespoke application for all 62 companion questions has been superseded. For students' independent after-class study, the selected web curriculum consists of 27 highlighted scientific investigations (18 already working, nine future), eight fully working review tools, and 27 guided-reading topics linking to authoritative outside educational resources. No interactive material is used in the classroom; the 48-period blackboard syllabus is unaffected. The [current editorial status](companion/IMPLEMENTATION_STATUS.md) and [selected self-study routes](companion/LEARNING_PATHS.md) supersede earlier references to 22 classroom-linked labs and 36 planned custom extensions.
+
+
+## Curated online self-study supplement completed (2026-10-17)
+
+The nine-chapter independent Companion has finished its selected 35-interactive-model scope: 27 featured physics explorations and eight reference labs, supplemented by 27 guided external readings. These are offered for voluntary, independent use **after class**. The previously proposed number and sequence of in-class demonstrations remain superseded; the lecturer's 48-period teaching scheme is exclusively blackboard based. The source of truth is [companion/IMPLEMENTATION_STATUS.md](companion/IMPLEMENTATION_STATUS.md).

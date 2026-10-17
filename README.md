@@ -4,7 +4,7 @@ English graduate-level lecture notes by **Kangqiao LIU**.
 
 **[Read the current complete PDF](pdf/advanced-quantum-mechanics.pdf)**. The PDF is built from the LaTeX sources on every content revision.
 
-**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browser catalog source](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md) · [Implementation status and next 53 topics](companion/IMPLEMENTATION_STATUS.md). 26 independently checked after-class interactive laboratories are preserved, with 18 featured investigations, eight reference tools and nine selected future experiments; 27 further topics have guided external reading links. Blackboard teaching is unchanged.
+**[Interactive Companion — nine-chapter catalog](companion/README.md)** · [Browser catalog source](companion/index.html) · [Companion master plan](INTERACTIVE_COMPANION_BLUEPRINT.md) · [Implementation status — curated scope complete](companion/IMPLEMENTATION_STATUS.md). The interactive companion now includes all 27 featured physics investigations and eight additional foundations (35 working self-authored labs), plus 27 guided external-reading topics. All are intended for independent study after class; blackboard teaching is unchanged. Blackboard teaching is unchanged.
 
 The manuscript covers foundational quantum theory, quantum dynamics, angular momentum and measurement, approximation methods, scattering, quantum many-body systems, relativistic quantum mechanics, topological condensed matter physics, and quantum neural networks and machine learning.
 
