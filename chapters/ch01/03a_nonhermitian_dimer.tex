@@ -1,0 +1,232 @@
+% Instructor-authored non-Hermitian physics interlude (2026-10-17).
+% Complete worked model immediately after finite-dimensional Hermiticity.
+\section{Beyond Hermiticity: Loss, Complex Spectra, and Exceptional Points}
+\label{sec:nh-two-cavities}
+A Hermitian Hamiltonian has real eigenvalues and preserves the norm of a
+state under Schr\"odinger evolution. A subsystem that exchanges
+excitations with its environment admits another useful description:
+an \emph{effective non-Hermitian Hamiltonian}. We now construct one
+directly from a physical model, write down every matrix element, and
+follow its eigenvalues and dynamics without assuming diagonalizability.
+
+\subsection*{1) What changes when a Hamiltonian is non-Hermitian?}
+Let the possibly non-Hermitian generator be $\op H_{\mathrm{eff}}$,
+with
+\begin{equation}
+\ii\hbar\frac{\dd}{\dd t}\ket{\psi(t)}
+ =\op H_{\mathrm{eff}}\ket{\psi(t)}.
+\label{eq:nh-schro}
+\end{equation}
+Take the Hermitian adjoint of both sides. The imaginary unit changes
+sign under complex conjugation, so
+\begin{equation}
+-\ii\hbar\frac{\dd}{\dd t}\bra{\psi(t)}
+ =\bra{\psi(t)}\op H_{\mathrm{eff}}^\dagger.
+\end{equation}
+Rearranging these two equations gives
+\begin{equation}
+\frac{\dd}{\dd t}\ket\psi
+ =-\frac{\ii}{\hbar}\op H_{\mathrm{eff}}\ket\psi,\qquad
+\frac{\dd}{\dd t}\bra\psi
+ =\frac{\ii}{\hbar}\bra\psi\op H_{\mathrm{eff}}^\dagger.
+\end{equation}
+Use the product rule, keeping both contributions:
+\begin{align}
+\frac{\dd}{\dd t}\braket\psi\psi
+&=\left(\frac{\dd}{\dd t}\bra\psi\right)\ket\psi+
+  \bra\psi\left(\frac{\dd}{\dd t}\ket\psi\right)\notag\\
+&=\frac{\ii}{\hbar}\mel\psi{\op H_{\mathrm{eff}}^\dagger}\psi
+ -\frac{\ii}{\hbar}\mel\psi{\op H_{\mathrm{eff}}}\psi\notag\\
+&=\boxed{\frac{\ii}{\hbar}
+ \mel\psi{\op H_{\mathrm{eff}}^\dagger-\op H_{\mathrm{eff}}}\psi}.
+\label{eq:nh-norm-identity}
+\end{align}
+For $\op H_{\mathrm{eff}}=\op H_{\mathrm{eff}}^\dagger$,
+the last line vanishes, recovering unitary norm conservation.
+For a lossy effective model it will be nonpositive.
+
+\subsection*{2) Concrete apparatus: two coupled optical cavities}
+Consider two optical cavities, each supporting one mode of common
+frequency $\omega_0$. A photon can hop coherently between them at a
+real coupling frequency $J>0$. Mode $A$ additionally emits into
+an external reservoir at an \emph{intensity} decay rate
+$\kappa\geq0$. We study the single-photon sector with basis
+$\ket A=\ket{1,0}$ and $\ket B=\ket{0,1}$.
+We temporarily use units $\hbar=1$ so that the matrix entries
+are angular frequencies.
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[>=Latex,thick,font=\small]
+ \filldraw[draw=blue!70!black,fill=blue!10,rounded corners=5pt,
+           line width=1pt] (-3.5,-.65) rectangle (-1.25,.65);
+ \filldraw[draw=teal!70!black,fill=teal!10,rounded corners=5pt,
+           line width=1pt] (1.25,-.65) rectangle (3.5,.65);
+ \node at (-2.375,.20) {cavity $A$};
+ \node at (-2.375,-.21) {$\ket A,\ \omega_0$};
+ \node at (2.375,.20) {cavity $B$};
+ \node at (2.375,-.21) {$\ket B,\ \omega_0$};
+ \draw[<->,very thick] (-1.15,0)--(1.15,0);
+ \node[above] at (0,.08) {hopping $J$};
+ \draw[->,very thick,red!70!black] (-2.375,-.76)--(-2.375,-1.86);
+ \node[below,align=center] at (-2.375,-1.88)
+      {outgoing light\\loss rate $\kappa$};
+ \draw[densely dashed,rounded corners,gray]
+      (-3.82,-.96) rectangle (3.82,.95);
+ \node[gray!70!black,anchor=south east] at (3.72,.96)
+      {two-mode subsystem};
+ \node[anchor=west,align=left,font=\footnotesize] at (-.63,-1.62)
+      {after emission:\\vacuum $\ket{0,0}$};
+\end{tikzpicture}
+\caption{Original schematic of the single-photon coupled-cavity
+model. The external reservoir accepts an excitation from cavity
+$A$; coherent hopping transfers it between the two cavities.
+The non-Hermitian matrix below describes the \emph{conditional}
+no-emission sector, rather than unconditional probability loss
+in the full quantum system.}
+\label{fig:nh-physical-system}
+\end{figure}
+
+The coherent part of the Hamiltonian is written in ket form as
+\begin{equation}
+\op H_0=\omega_0(\ket A\bra A+\ket B\bra B)
+ +J(\ket A\bra B+\ket B\bra A).
+\end{equation}
+To obtain its matrix, insert $\bra A,\bra B$ on the left and
+$\ket A,\ket B$ on the right. Because
+$\braket A A=\braket B B=1$ and $\braket A B=0$,
+\begin{equation}
+\begin{array}{ll}
+\mel A{\op H_0}A=\omega_0,&\mel A{\op H_0}B=J,\\
+\mel B{\op H_0}A=J,&\mel B{\op H_0}B=\omega_0.
+\end{array}
+\end{equation}
+Thus $H_0=\left(\begin{smallmatrix}
+\omega_0&J\\J&\omega_0
+\end{smallmatrix}\right)$ is Hermitian.
+
+To represent the monitored emission channel, introduce
+$\op L=\sqrt{\kappa}\ket{\mathrm{vac}}\bra A$
+with $\ket{\mathrm{vac}}=\ket{0,0}$. The standard
+no-click (no-jump) effective Hamiltonian is
+\begin{equation}
+\op H_{\mathrm{eff}}=\op H_0-\frac{\ii}{2}\op L^\dagger\op L.
+\end{equation}
+Let us perform the multiplication:
+\begin{equation}
+\begin{aligned}
+\op L^\dagger\op L
+&=\kappa\ket A\bra{\mathrm{vac}}
+ \ket{\mathrm{vac}}\bra A\\
+&=\kappa\ket A\bra A,
+\end{aligned}
+\end{equation}
+since $\braket{\mathrm{vac}}{\mathrm{vac}}=1$.
+Therefore the explicit non-Hermitian matrix is
+\begin{equation}
+\boxed{H_{\mathrm{eff}}=
+\begin{pmatrix}\omega_0-\ii\kappa/2&J\\
+J&\omega_0\end{pmatrix}.}
+\label{eq:nh-explicit-matrix}
+\end{equation}
+Its $AA$ entry is complex, while the coherent coupling stays
+real and symmetric. Indeed,
+$H_{\mathrm{eff}}^\dagger-H_{\mathrm{eff}}
+=\ii\kappa\ket A\bra A$.
+
+\paragraph{Check the physical meaning of the imaginary entry.}
+Write the unnormalized conditional state as
+$\ket{\widetilde\psi(t)}=a(t)\ket A+b(t)\ket B$.
+The Schr\"odinger equation gives the two \emph{component}
+equations, before and after division by $\ii$:
+\begin{equation}
+\begin{aligned}
+\ii\dot a&=(\omega_0-\ii\kappa/2)a+Jb,
+&\dot a&=(-\ii\omega_0-\kappa/2)a-\ii Jb,\\
+\ii\dot b&=Ja+\omega_0 b,
+&\dot b&=-\ii Ja-\ii\omega_0 b.
+\end{aligned}
+\end{equation}
+Using $\frac{\dd}{\dd t}|a|^2=a^*\dot a+\dot a^*a$,
+we find
+\begin{align}
+\frac{\dd}{\dd t}|a|^2
+ &=-\kappa|a|^2+\ii J(ab^*-a^*b),\\
+\frac{\dd}{\dd t}|b|^2
+ &=-\ii J(ab^*-a^*b).
+\end{align}
+The two hopping contributions cancel upon addition:
+\begin{equation}
+\boxed{\frac{\dd}{\dd t}\bigl(|a|^2+|b|^2\bigr)
+=-\kappa|a|^2\leq0.}
+\label{eq:nh-survival}
+\end{equation}
+This verifies Eq.~\eqref{eq:nh-norm-identity} directly.
+
+For a normalized initial single-photon state,
+$P_{\mathrm{no\ jump}}(t)=|a(t)|^2+|b(t)|^2$
+is the probability of detecting \emph{no photon emission} up
+to time $t$ in this monitored-channel model. Upon conditioning
+on that event, the surviving state is normalized by dividing
+$\ket{\widetilde\psi}$ by $\sqrt{P_{\mathrm{no\ jump}}}$.
+An unconditional description includes the vacuum reached
+after emission and obeys trace-preserving evolution.
+Thus the decreasing no-jump norm represents a physically
+identified branch of a larger probability-conserving theory.
+
+\subsection*{3) Eigenvalues: every algebraic step}
+Solve the right eigenproblem
+$H_{\mathrm{eff}}\vect v_\pm=\lambda_\pm\vect v_\pm$.
+The characteristic equation reads
+\begin{align}
+0&=\det(H_{\mathrm{eff}}-\lambda I)\notag\\
+ &=\begin{vmatrix}
+ \omega_0-\ii\kappa/2-\lambda&J\\
+ J&\omega_0-\lambda
+ \end{vmatrix}\notag\\
+ &=(\omega_0-\ii\kappa/2-\lambda)
+   (\omega_0-\lambda)-J^2.
+\end{align}
+Set $z=\lambda-\omega_0$ and expand:
+\begin{equation}
+(-z-\ii\kappa/2)(-z)-J^2
+=z^2+\frac{\ii\kappa}{2}z-J^2=0.
+\end{equation}
+Complete the square:
+\begin{equation}
+\left(z+\frac{\ii\kappa}{4}\right)^2
+=J^2-\frac{\kappa^2}{16}.
+\end{equation}
+We obtain the exact eigenvalues
+\begin{equation}
+\boxed{\lambda_\pm=\omega_0-\frac{\ii\kappa}{4}
+ \pm\sqrt{J^2-\left(\frac{\kappa}{4}\right)^2}.}
+\label{eq:nh-complex-spectrum}
+\end{equation}
+An eigenamplitude with eigenvalue
+$\lambda=E-\ii\Gamma/2$ evolves as
+$\exp(-\ii Et-\Gamma t/2)$, so its \emph{intensity}
+decays as $\exp(-\Gamma t)$. The factor of two between
+amplitude and intensity decay is essential.
+
+\paragraph{Construct the right eigenvectors explicitly.}
+The top component of $(H_{\mathrm{eff}}-\lambda I)\vect v=0$
+is
+\begin{equation}
+(\omega_0-\ii\kappa/2-\lambda)v_A+Jv_B=0.
+\end{equation}
+For $J>0$ choose $v_A=1$ and solve for $v_B$:
+\begin{equation}
+\boxed{\vect v_\pm=
+\begin{pmatrix}
+1\\(\lambda_\pm-\omega_0+\ii\kappa/2)/J
+\end{pmatrix}.}
+\label{eq:nh-right-vectors}
+\end{equation}
+The second component then vanishes precisely because the
+secular equation holds. These vectors may be normalized by
+their Euclidean norms, but eigenvectors of distinct complex
+eigenvalues need not be orthogonal. For a general non-Hermitian
+matrix, left eigenvectors form a different set, and
+biorthogonal expansions replace the Hermitian orthonormal
+eigenbasis.
