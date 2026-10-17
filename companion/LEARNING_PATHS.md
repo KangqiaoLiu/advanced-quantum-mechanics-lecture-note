@@ -48,3 +48,20 @@ Advanced experiments are eligible for new linked routes as the complete companio
 ## 4. Mapping and editing rule
 
 The [machine-readable catalog](catalog.json) owns stable IDs, notes source paths, initial route flags, scientific questions and laboratory status. The period-level syllabus lives in [COURSE_DESIGN_48_PERIODS.md](../COURSE_DESIGN_48_PERIODS.md). Keep this file synchronized with both when changing learning order. A note source can legitimately sit in another chapter (e.g., tensor-product foundations are given a later rigorous derivation).
+
+
+## Nine-chapter working-experiment route (2026-10-17)
+
+One complete, independently testable laboratory exists in each textbook chapter. These are the recommended first entry points for independent study:
+
+- **01 · Basic Concepts:** [Sequential Stern–Gerlach](labs/IC-01-03/index.html) — Postselection · Density operators · Exact and finite-shot probabilities.
+- **02 · Quantum Dynamics:** [Harmonic oscillator](labs/IC-02-03/index.html) — Coherent and squeezed states · Wave packets · Wigner phase space.
+- **03 · Angular Momentum / Composites:** [Entanglement and partial trace](labs/IC-03-04/index.html) — Schmidt probabilities · Reduced entropy · Joint correlations.
+- **04 · Approximation Methods:** [Avoided crossings](labs/IC-04-01/index.html) — Perturbation breakdown · Exact energies · Eigenvector mixing.
+- **05 · Scattering Theory:** [Partial-wave scattering](labs/IC-05-05/index.html) — Angular interference · Cross sections · Optical theorem.
+- **06 · Many-Body Systems:** [Fermion ordering signs](labs/IC-06-04/index.html) — Fock occupations · Parity factors · Anticommutators.
+- **07 · Relativistic QM:** [Klein–Gordon and Dirac](labs/IC-07-02/index.html) — Relativistic spectra · Probability current · Low-energy limit.
+- **08 · Topological Matter:** [SSH bulk and boundaries](labs/IC-08-02/index.html) — Winding · Gaps · Exact finite-chain edge eigenstates.
+- **09 · Quantum ML:** [Training quantum circuits](labs/IC-09-03/index.html) — Parameter shift · Loss optimization · Measurement noise.
+
+The provisional 22-entry classroom route now has **7 implemented laboratories**: IC-01-03, IC-02-03, IC-03-04, IC-06-04, IC-07-02, IC-08-02 and IC-09-03. The newly implemented Ch. 4 (IC-04-01) and Ch. 5 (IC-05-05) units belong to the independent-study extension route. These statuses quantify completed experiments, not mastery of a chapter or a finished 48-period course.

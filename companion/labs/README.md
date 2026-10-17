@@ -1,20 +1,17 @@
-# Physics Lab Modules
+# Interactive Physics Laboratories — Nine-Chapter Release
 
-This directory is reserved for **implemented, independently checked interactive physics experiments**. The full laboratory plan currently lives in [catalog.json](../catalog.json), [PROTOTYPES.md](../PROTOTYPES.md), and [LAB_TEMPLATE.md](../LAB_TEMPLATE.md).
+Each implemented module contains an independent `model.js` with a testable physical model, an `index.html` with full English teaching explanations and diagrams, and a `lab.js` for live controls and plots. Shared plotting and controls: `../assets/lab-core.js` and `../assets/lab.css`. The first four labs are detailed in [PROTOTYPES.md](../PROTOTYPES.md).
 
-**Current status:** four browser laboratories with authored scientific explanations, operating parameter controls and independent model checks have been committed. The first-wave lab IDs are IC-01-03 (Stern–Gerlach), IC-02-03 (oscillator/coherent states), IC-08-02 (SSH), and IC-09-03 (QML training). As implementations begin, organize each module as `labs/IC-XX-YY/` with its browser page, model, independent numerical/analytic tests and source mapping.
-
-Each completed experiment must have meaningful defaults, parameter ranges, visible observables, derivation and exercise links, validation, keyboard usability and static explanation. The catalog entry is updated to `stage: "implemented"` with a `page` path such as `labs/IC-01-03/index.html` only when that page exists and has passed validation.
-
-Physics correctness and the current notes' conventions take precedence over visual animation complexity.
-
-## Implemented laboratories
-
-| ID | Full interactive page | Main physical model |
+| Chapter | Interactive laboratory | Physics |
 |---|---|---|
-| IC-01-03 | [Cascaded Stern–Gerlach](IC-01-03/index.html) | Spin-½ projectors and branch conditioning |
-| IC-02-03 | [Oscillator and coherent states](IC-02-03/index.html) | Exact oscillator number-state, Gaussian and Wigner descriptions |
-| IC-08-02 | [SSH topological chain](IC-08-02/index.html) | Bloch bands, exact finite-chain eigenpairs and protected winding |
-| IC-09-03 | [Quantum-circuit training](IC-09-03/index.html) | Parameter shift and finite-shot sample-based optimization |
+| 01 · Basic Concepts | [Sequential Stern–Gerlach](IC-01-03/index.html) | Postselection · Density operators · Exact and finite-shot probabilities |
+| 02 · Quantum Dynamics | [Harmonic oscillator](IC-02-03/index.html) | Coherent and squeezed states · Wave packets · Wigner phase space |
+| 03 · Angular Momentum / Composites | [Entanglement and partial trace](IC-03-04/index.html) | Schmidt probabilities · Reduced entropy · Joint correlations |
+| 04 · Approximation Methods | [Avoided crossings](IC-04-01/index.html) | Perturbation breakdown · Exact energies · Eigenvector mixing |
+| 05 · Scattering Theory | [Partial-wave scattering](IC-05-05/index.html) | Angular interference · Cross sections · Optical theorem |
+| 06 · Many-Body Systems | [Fermion ordering signs](IC-06-04/index.html) | Fock occupations · Parity factors · Anticommutators |
+| 07 · Relativistic QM | [Klein–Gordon and Dirac](IC-07-02/index.html) | Relativistic spectra · Probability current · Low-energy limit |
+| 08 · Topological Matter | [SSH bulk and boundaries](IC-08-02/index.html) | Winding · Gaps · Exact finite-chain edge eigenstates |
+| 09 · Quantum ML | [Training quantum circuits](IC-09-03/index.html) | Parameter shift · Loss optimization · Measurement noise |
 
-See [physics regression tests](../../scripts/test_companion_models.cjs) and [page checks](../../scripts/check_companion_pages.py).
+The full 62-item roadmap lives in [catalog.json](../catalog.json). Independent model tests and static checks are under `../../scripts/` and run on every relevant GitHub Actions build. Implemented page statuses should reflect working tested experiments only.

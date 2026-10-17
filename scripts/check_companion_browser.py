@@ -14,6 +14,11 @@ if browser is None:
 cases = {
     "IC-01-03": ("Exact survival probability", "25.00%"),
     "IC-02-03": ("Covariance determinant", "0.2500"),
+    "IC-03-04": ("Reduced state ρA", "0.5000"),
+    "IC-04-01": ("Exact energies E−, E+", "Minimum avoided gap"),
+    "IC-05-05": ("Optical-theorem σ", "Transport cross section σtr"),
+    "IC-06-04": ("Initial occupation |n〉", "Canonical anticommutator"),
+    "IC-07-02": ("Dimensionless positive E", "Spinor normalization"),
     "IC-08-02": ("Bulk winding ν", "Infinite-bulk spectral gap"),
     "IC-09-03": ("Shifted gradient", "Exact loss"),
 }
@@ -30,4 +35,4 @@ for lab_id, checks in cases.items():
         assert marker in document, (lab_id, marker, document[-2000:])
     assert 'canvas' in document and 'width="720"' in document, f"{lab_id}: physics figures did not render"
     print(f"PASS {lab_id}: rendered numerical results and canvas figures in headless Chrome")
-print("PASS four interactive laboratories: first-paint smoke tests")
+print("PASS nine interactive laboratories: first-paint smoke tests")

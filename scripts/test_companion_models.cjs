@@ -111,4 +111,107 @@ check("Finite shots unbiased within tolerance, training reproducible",()=>{
  close(Q.oneStep(opts,opts.theta,Q.rng(11)).gradientVariance,
     (2-Q.output("one",opts.theta+Math.PI/2,opts.x,0)**2-Q.output("one",opts.theta-Math.PI/2,opts.x,0)**2)/(4*opts.shots));
 });
+
+// Chapter 3 — Schmidt spectra, partial traces and local measurement probabilities
+const Ent=require("../companion/labs/IC-03-04/model.js");
+check("Two-qubit partial trace and entanglement entropy",()=>{
+  for(let t=0;t<=90;t+=5)for(const phase of [-180,0,37,135]){
+    const d=Ent.evaluate(t,phase);
+    close(d.lambda0+d.lambda1,1);
+    close(d.purity,d.lambda0*d.lambda0+d.lambda1*d.lambda1);
+    close(d.joint.reduce((s,x)=>s+x,0),1);
+    assert.ok(d.joint.every(x=>x>=-1e-12&&x<=1+1e-12));
+    close(d.globalPurity,1);
+  }
+  const bell=Ent.evaluate(45,0);
+  close(bell.entropy,1);close(bell.purity,.5);close(bell.E,1);close(bell.joint[0],.5);
+  close(Ent.evaluate(45,180).E,-1);
+  close(Ent.evaluate(45,90,0,90).E,1);
+  close(Ent.evaluate(0,125).entropy,0);
+  close(Ent.evaluate(30,90,0,90).E,Math.sin(Math.PI/3));
+});
+check("Entanglement: local density remains independent of relative phase",()=>{
+  const a=Ent.evaluate(27,0),b=Ent.evaluate(27,91);
+  assert.deepEqual(a.rhoA,b.rhoA);
+  close(a.entropy,b.entropy);close(a.purity,b.purity);
+  assert.ok(Math.abs(a.E-b.E)>.01);
+  const z=Ent.evaluate(25,80,0,0,"zz");
+  close(z.E,1);close(z.joint[0],Math.cos(25*Math.PI/180)**2);
+  close(z.joint[3],Math.sin(25*Math.PI/180)**2);
+});
+// Chapter 4 — exact vs perturbative level splitting
+const Avoid=require("../companion/labs/IC-04-01/model.js");
+check("Avoided crossing gap, degeneracy and perturbative limit",()=>{
+  const at=Avoid.evaluate(0,.4);
+  close(at.gap,.8);close(at.exact[1],.4);assert.equal(at.pt[1],null);
+  const deg=Avoid.evaluate(0,0);close(deg.gap,0);assert.equal(deg.pUpperZ,null);
+  const distant=Avoid.evaluate(3,.2);
+  assert.ok(distant.ptError<.0001);
+  for(const x of [-3,-1,-.5,.5,1,3]){
+   const a=Avoid.evaluate(x,.6),b=Avoid.evaluate(-x,.6);
+   close(a.E,b.E);close(a.exact[0]+a.exact[1],0);
+   close(a.pUpperZ+b.pUpperZ,1);
+  }
+});
+// Chapter 5 — partial waves, angular integration and unitarity
+const Scatter=require("../companion/labs/IC-05-05/model.js");
+check("s+p partial-wave optical theorem and solid-angle normalization",()=>{
+  for(const [d0,d1,k] of [[0,0,1],[90,0,1],[0,90,1.8],[60,35,1.3],[120,50,.75]]){
+   const s=Scatter.evaluate(d0,d1,k);
+   close(s.total,s.optical,1e-10);
+   close(s.sigma0+s.sigma1,s.total,1e-10);
+   close(s.sigma0,4*Math.PI*Math.sin(Scatter.rad(d0))**2/(k*k));
+   const numeric=integrate(theta=>2*Math.PI*Math.sin(theta)*s.ds(theta*180/Math.PI),0,Math.PI,30000);
+   close(numeric,s.total,1e-7);
+   if(s.total>1e-10)close(integrate(theta=>s.angularDensity(theta*180/Math.PI),0,Math.PI,30000),1,1e-8);
+   const transport=integrate(theta=>2*Math.PI*Math.sin(theta)*(1-Math.cos(theta))*s.ds(theta*180/Math.PI),0,Math.PI,30000);
+   close(transport,s.transport,1e-7);
+   assert.ok(s.transport>=-1e-10);
+  }
+});
+// Chapter 6 — CAR on all 16 occupation states, 32 operator pairings
+const Fermi=require("../companion/labs/IC-06-04/model.js");
+check("Fermionic creation order and Pauli exclusion",()=>{
+ const vac=[0,0,0,0],a=Fermi.product(vac,{kind:"create",j:1},{kind:"create",j:0});
+ const b=Fermi.product(vac,{kind:"create",j:0},{kind:"create",j:1});
+ assert.deepEqual(a.after,[1,1,0,0]);close(a.amplitude,-1);close(b.amplitude,1);
+ assert.equal(Fermi.apply([1,0,0,0],"create",0).allowed,false);
+});
+check("All fermionic canonical anticommutators across basis vectors",()=>{
+ for(let bits=0;bits<16;bits++){
+   const n=Array.from({length:4},(_,i)=>(bits>>i)&1);
+   for(const j of [0,1,2,3])for(const k of [0,1,2,3])
+     for(const a of ["create","annihilate"])for(const b of ["create","annihilate"]){
+       const d=Fermi.compare(n,{kind:a,j:j},{kind:b,j:k});
+       close(d.sum,a!==b&&j===k?1:0,1e-12);
+     }
+ }
+});
+// Chapter 7 — free Dirac block and nonrelativistic expansion
+const Dirac=require("../companion/labs/IC-07-02/model.js");
+check("Dirac positive-energy spinor, relativistic velocity and normalization",()=>{
+ for(const p of [-3,-2,-.5,0,.5,1.5,3]){
+   const E=Dirac.energy(p);
+   close(E*E,p*p+1,1e-12);
+   for(const t of [0,.12,1.5,3.3]){
+      const pos=Dirac.evaluate(p,t,"positive"),up=Dirac.evaluate(p,t,"upper");
+      close(pos.v,p/E);
+      close(pos.probUpper+pos.probLower,1);
+      close(up.probUpper+up.probLower,1);
+      close(up.v,p/(E*E)*(1-Math.cos(2*E*t)),1e-12);
+      close(up.bloch.reduce((s,x)=>s+x*x,0),1,1e-10);
+      assert.ok(up.probLower>=-1e-12&&up.probLower<=1+1e-12);
+   }
+ }
+});
+check("Relativistic kinetic expansion and rest-frame state",()=>{
+ close(Dirac.energy(0),1);
+ close(Dirac.evaluate(0,3,"upper").v,0);
+ for(const p of [.03,.08,.1]){
+  const exact=Dirac.energy(p)-1,approx=Dirac.correction(p);
+  assert.ok(Math.abs(exact-approx)<p**6/12);
+  assert.ok(exact<Dirac.nonrel(p));
+ }
+});
+
 process.stdout.write("\nALL "+checks+" PHYSICS TEST GROUPS PASSED\n");

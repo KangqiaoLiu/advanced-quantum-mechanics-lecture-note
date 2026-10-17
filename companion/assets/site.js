@@ -49,7 +49,7 @@ function render() {
   const fragment = document.createDocumentFragment();
   labs.forEach(lab => fragment.append(card(lab)));
   container.replaceChildren(fragment);
-  count.textContent = labs.length + " of " + catalog.labs.length + " planned questions shown · " + catalog.chapters.length + " chapters";
+  count.textContent = labs.length + " of " + catalog.labs.length + " scientific questions shown · " + catalog.labs.filter(x=>x.stage==="implemented").length + " runnable experiments · " + catalog.chapters.length + " chapters";
   if (!labs.length) container.append(element("p", "minor", "No questions match. Try a broader concept."));
 }
 async function init() {

@@ -1,62 +1,47 @@
 # Interactive Companion — Advanced Quantum Mechanics
 
-**Instructor:** Kangqiao LIU · **Status:** four independently checked interactive experiments available in the nine-chapter catalog. Other laboratory questions remain planned.
+**Instructor:** Kangqiao LIU · **Status:** nine complete interactive physics laboratories, with at least one working laboratory in each chapter. **62** cataloged scientific questions; **53** are planned extensions.
 
-**[Browser catalog source](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Master companion plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
+**[Companion catalog source](index.html)** · **[Complete English lecture notes](../pdf/advanced-quantum-mechanics.pdf)** · **[Master plan](../INTERACTIVE_COMPANION_BLUEPRINT.md)**
 
-This is an independently navigable, English-language learning companion to the graduate lecture notes. It will connect physical questions, mathematical predictions, numerical or analytic experiments, derivations, self-checks and research explorations.
+This is a graduate-level interactive self-study companion with quantitative experiments, mathematical derivations, interpretation, guided questions, and independent physics verification. Every chapter is now represented by a runnable scientific laboratory.
 
-## Ways to use the material
+## Working laboratories by chapter
 
-- **Catch up:** concise foundations, visible algebra, conceptual questions.
-- **Reconstruct the lecture:** follow the 48-period board-derived route with key equations and experiments.
-- **Explore more:** advanced experiments from all nine chapters, including topics beyond the live board route.
+| Chapter | Working experiment | Student learns to verify |
+|---|---|---|
+| 01 · Basic Concepts | [Sequential Stern–Gerlach](labs/IC-01-03/index.html) | Postselection · Density operators · Exact and finite-shot probabilities |
+| 02 · Quantum Dynamics | [Harmonic oscillator](labs/IC-02-03/index.html) | Coherent and squeezed states · Wave packets · Wigner phase space |
+| 03 · Angular Momentum / Composites | [Entanglement and partial trace](labs/IC-03-04/index.html) | Schmidt probabilities · Reduced entropy · Joint correlations |
+| 04 · Approximation Methods | [Avoided crossings](labs/IC-04-01/index.html) | Perturbation breakdown · Exact energies · Eigenvector mixing |
+| 05 · Scattering Theory | [Partial-wave scattering](labs/IC-05-05/index.html) | Angular interference · Cross sections · Optical theorem |
+| 06 · Many-Body Systems | [Fermion ordering signs](labs/IC-06-04/index.html) | Fock occupations · Parity factors · Anticommutators |
+| 07 · Relativistic QM | [Klein–Gordon and Dirac](labs/IC-07-02/index.html) | Relativistic spectra · Probability current · Low-energy limit |
+| 08 · Topological Matter | [SSH bulk and boundaries](labs/IC-08-02/index.html) | Winding · Gaps · Exact finite-chain edge eigenstates |
+| 09 · Quantum ML | [Training quantum circuits](labs/IC-09-03/index.html) | Parameter shift · Loss optimization · Measurement noise |
 
-The nine-chapter catalog currently describes **62 candidate laboratory questions**, with **22 initially marked for the classroom-linked learning route**. Four prototypes are specified in detail: sequential Stern–Gerlach, harmonic oscillator/coherent states, SSH topological bands and edge states, and parameter-shift quantum-circuit training. The four representative experiments now have working browser pages, source models and independent physics checks.
+The 62-item catalog retains its original scientific questions and distinguishes implemented entries from planned extensions. Seven of the nine implemented laboratories belong to the proposed 22-lab classroom-linked route; the approximation and scattering exemplars serve as independent-study extensions.
 
+## GitHub Codespaces preview — private repository
 
-## GitHub-only private browser preview
+From the repository page, use **Code → Codespaces → Create codespace on main**, or open the [Codespaces creation page](https://github.com/codespaces/new?hide_repo_select=true&repo=1410589769&ref=main). The included development container automatically serves port 8000. Open the forwarded port and visit `/companion/`. Keep the forwarded port **Private**.
 
-Open the [repository's Codespaces creation page](https://github.com/codespaces/new?hide_repo_select=true&repo=1410589769&ref=main), or use **Code → Codespaces → Create codespace on main** in GitHub. The committed `.devcontainer/devcontainer.json` starts a lightweight web server on port 8000. GitHub forwards that port with **Private** visibility by default. Follow the port link and visit `/companion/` (for example, `https://<codespace-name>-8000.app.github.dev/companion/`).
+For local preview, run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000/companion/`. Serving from the root preserves same-repository links to the lecture-note PDF. No scientific Python packages are required in a student's browser.
 
-This method loads the four interactive laboratories and the PDF lecture notes without a local clone. Keep the port private. Codespaces has monthly account usage allowances and stops after inactivity; stop or delete unused environments at [github.com/codespaces](https://github.com/codespaces). This is an authenticated development preview, not a permanent public course website.
+## Physics and interface checks
 
-## Preview the catalog locally
+- `node scripts/test_companion_models.cjs` runs reproducible analytic, numerical, normalization and algebraic model benchmarks.
+- `python3 scripts/check_companion_catalog.py` verifies source mappings, chapter coverage and implemented page paths.
+- `python3 scripts/check_companion_pages.py` checks page structure, assets, controls and accessible figure labels.
+- `python3 scripts/check_companion_browser.py` smoke-tests calculations and rendered canvas figures in headless Chrome when available.
+- `.github/workflows/check-companion.yml` executes the checks in GitHub Actions on content changes.
 
-From the repository root:
-
-```bash
-python3 -m http.server 8000
-```
-
-Open [http://localhost:8000/companion/](http://localhost:8000/companion/). The existing `index.html` reads `catalog.json`; no packages are necessary to inspect and search the catalog. This is a **directory scaffold**, not yet a simulation application. Run the command from the **repository root** so the catalog can also link to the lecture PDF and design documents. A normal local file opening may block the catalog data file; use the short local server command above.
-
-## Directory and working agreements
-
-| Resource | Purpose |
-|---|---|
-| `index.html`, `assets/site.css`, `assets/site.js` | Working responsive chapter and laboratory browser |
-| `catalog.json` | Structured, authoritative nine-chapter lab registry; IDs, notes paths, questions, levels and development status |
-| `PROTOTYPES.md` | Detailed specifications and analytic review cases for four calibration laboratories |
-| `LAB_TEMPLATE.md` | Per-lab prose/interaction/physics/validation checklist to copy when implementing each unit |
-| `PHYSICS_CONVENTIONS.md` | Required numerical signs and physical conventions from current notes |
-| `../INTERACTIVE_COMPANION_BLUEPRINT.md` | Full purpose, content density, platform trade-offs, research extensions and staged implementation |
-| `../COURSE_DESIGN_48_PERIODS.md` | Provisional blackboard period route; pedagogical context |
-| [`LEARNING_PATHS.md`](LEARNING_PATHS.md) | Conceptual cross-chapter pathways and 22-lab classroom-route alignment |
-| [`labs/`](labs/) and [`notebooks/`](notebooks/) | Reserved module locations for fully tested interactive labs and optional numerical deep dives |
-| `../scripts/check_companion_catalog.py` | Deterministic catalog integrity checker |
-
-A future implemented lab may live under `companion/labs/<lab-id>/`, with its own documented model, test fixture, derivation and independent browser interface. Keep exact source equation mappings, formulas and fixed parameter checks close to each experiment. Research-grade calculations may be implemented in optional notebooks; student participation never requires coding.
+Other key references: [laboratory conventions](PHYSICS_CONVENTIONS.md), [teaching routes](LEARNING_PATHS.md), [lab design template](LAB_TEMPLATE.md), [full development blueprint](../INTERACTIVE_COMPANION_BLUEPRINT.md). The four first calibration labs have detailed source specifications in [PROTOTYPES.md](PROTOTYPES.md).
 
 ## Publishing and copyright
 
-This companion is currently contained in the same **private** repository as the notes. The linked PDF cover opens this README for readers with repository access. The local browser catalog does not by itself establish a hosted public website. When a hosted version exists, update the PDF cover link to it after checking permissions. All rights and treatment of source material follow [COPYRIGHT.md](../COPYRIGHT.md).
+The full notes and this interactive companion are presently contained in a **private** repository. Github Codespaces preview runs within the user's authenticated session with private ports. A public GitHub Pages deployment requires a deliberate permission/rights decision; publicly distributable original interactive content can be separated from restricted teaching sources. All rights and source attribution follow [COPYRIGHT.md](../COPYRIGHT.md).
 
-## Available interactive experiments (first complete set)
+## Honest scope of this release
 
-- [IC-01-03: Cascaded Stern–Gerlach](labs/IC-01-03/index.html) — projective preparation, selective/nonselective measurement, exact and sampled conditional statistics.
-- [IC-02-03: Oscillator and coherent states](labs/IC-02-03/index.html) — Fock/coherent/squeezed states, time evolution, position densities, Wigner functions and occupations.
-- [IC-08-02: SSH topology](labs/IC-08-02/index.html) — Bloch bands, winding, finite-chain spectra, edge-state localization and symmetry breaking.
-- [IC-09-03: Quantum-circuit training](labs/IC-09-03/index.html) — parameter-shift identity, measured gradients, trainable losses and finite-shot updates.
-
-Physics benchmarks run through `node scripts/test_companion_models.cjs`; static page/assets verification runs through `python3 scripts/check_companion_pages.py`. Both are invoked by `.github/workflows/check-companion.yml`. Run the local root-directory server described above and open `http://localhost:8000/companion/` for the working site.
+All nine laboratories have working numerical/analytic models and substantive explanations. The remaining 53 scientific questions are registered but awaiting implementation. Browser smoke tests cover first paint and numerical data rendering; human visual inspection on different devices, student comprehension trials, and a deployable rights-reviewed public edition are further work. The 48-period classroom schedule remains provisional.

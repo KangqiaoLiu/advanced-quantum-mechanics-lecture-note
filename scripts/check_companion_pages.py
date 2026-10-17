@@ -35,7 +35,7 @@ class Inspect(HTMLParser):
             self.links.append(a["href"])
 
 finished = [x for x in catalog["labs"] if x["stage"] == "implemented"]
-assert len(finished) >= 4, "The first release requires the four high-depth laboratories."
+assert len(finished) >= 9, "The nine-chapter release needs a working laboratory in each chapter."
 for lab in finished:
     path = comp / lab["page"]
     assert path.is_file(), path

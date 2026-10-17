@@ -10,3 +10,7 @@
 .featured em{font-size:.82rem;margin-top:5px;font-style:normal;font-weight:700;color:#146b84}
 .lab a.launch{font-weight:700;color:#14747a}
 @media(max-width:760px){.featured{grid-template-columns:1fr;margin-bottom:42px}}
+
+/* One substantive interactive laboratory per chapter, with three-across desktop layout. */
+@media(min-width:1040px){.featured{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.featured a{min-height:170px;justify-content:space-between}

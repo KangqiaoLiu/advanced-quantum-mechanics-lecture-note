@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17",
-  "status": "Four fully authored browser labs with physics model tests; remaining experiments planned.",
-  "version": "0.2.0-four-labs",
+  "status": "Nine implemented physics labs, one for each textbook chapter; 53 other candidate labs remain planned.",
+  "version": "0.3.0-nine-chapter-coverage",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -330,8 +330,9 @@
       "question": "Why can a pure composite state have a mixed subsystem?",
       "observable": "Two-qubit state, reduced matrices, entropy and purity",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-03-04/index.html"
     },
     {
       "id": "IC-03-05",
@@ -390,8 +391,9 @@
       "question": "When does ordinary perturbation theory cease to be accurate?",
       "observable": "Two-level exact eigenvalues and perturbative expansions",
       "route": "extension",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-04-01/index.html"
     },
     {
       "id": "IC-04-02",
@@ -498,8 +500,9 @@
       "question": "How do individual phase shifts combine into the total cross section?",
       "observable": "Phase shifts, angular interference, optical theorem checks",
       "route": "extension",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-05-05/index.html"
     },
     {
       "id": "IC-06-01",
@@ -546,8 +549,9 @@
       "question": "Why does exchanging two fermionic creation operators change a sign?",
       "observable": "Bit occupations, parity count, anticommutator identities",
       "route": "core",
-      "stage": "planned",
-      "minutes": "5–10"
+      "stage": "implemented",
+      "minutes": "5–10",
+      "page": "labs/IC-06-04/index.html"
     },
     {
       "id": "IC-06-05",
@@ -594,8 +598,9 @@
       "question": "Why does linearizing relativistic dispersion require matrix algebra?",
       "observable": "Dispersion, Clifford anticommutators, spinor dimension",
       "route": "core",
-      "stage": "planned",
-      "minutes": "15–30"
+      "stage": "implemented",
+      "minutes": "15–30",
+      "page": "labs/IC-07-02/index.html"
     },
     {
       "id": "IC-07-03",

@@ -19,6 +19,10 @@ assert len(ids) == len(set(ids)), "Each lab ID must remain unique."
 per_chapter = Counter(lab["chapter"] for lab in labs)
 assert all(per_chapter.get(ch, 0) > 0 for ch in range(1, 10)), per_chapter
 
+# Every chapter has an authored, runnable experimental entry in this release.
+implemented_per_chapter = Counter(lab["chapter"] for lab in labs if lab["stage"] == "implemented")
+assert set(implemented_per_chapter) == set(range(1, 10)), implemented_per_chapter
+
 for lab in labs:
     assert re.fullmatch(r"IC-(0[1-9])-\d{2,3}", lab["id"])
     assert int(lab["id"].split("-")[1]) == lab["chapter"]
