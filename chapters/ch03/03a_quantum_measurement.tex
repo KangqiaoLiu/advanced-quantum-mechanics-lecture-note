@@ -26,7 +26,7 @@ If $\ket{\Psi_{AB}}$ cannot be factored as a product $\ket{\psi_A}\otimes\ket{\p
 \end{equation}
 Expectation values of every observable acting only on $A$ can be computed equivalently as
 \begin{equation}
-\operatorname{tr}_{AB}\bigl[\op\rho_{AB}(\op A\otimes\op I_B)\bigr]
+\operatorname{tr}_{AB}\bigl[\op\rho_{AB}(\op A\otimes\mathbf1_B)\bigr]
  =\operatorname{tr}_A(\op\rho_A\op A).
 \end{equation}
 For example, for the entangled Bell state
@@ -35,7 +35,7 @@ For example, for the entangled Bell state
 \end{equation}
 the reduced state is
 \begin{equation}
-\op\rho_A=\frac12(\ket0\bra0+\ket1\bra1)=\frac12\op I_A.
+\op\rho_A=\frac12(\ket0\bra0+\ket1\bra1)=\frac12\mathbf1_A.
 \end{equation}
 The composite state is pure even though its subsystem is maximally mixed. The purity $\operatorname{tr}\op\rho^2$ equals one for a pure state and is smaller for a mixed state; it is preserved under unitary evolution of the closed composite system but need not be preserved under a partial trace.
 
@@ -80,8 +80,8 @@ Completeness of the probe readout basis and unitarity of $\op U_{SM}$ imply
 \begin{equation}
 \sum_j\op M_j^\dagger\op M_j
 ={}_M\bra\theta\op U_{SM}^\dagger
-  \bigl(\op I_S\otimes\sum_j\ket{r_j}_M\bra{r_j}\bigr)
-  \op U_{SM}\ket\theta_M=\op I_S.
+  \bigl(\mathbf1_S\otimes\sum_j\ket{r_j}_M\bra{r_j}\bigr)
+  \op U_{SM}\ket\theta_M=\mathbf1_S.
 \end{equation}
 The system's state generally changes even if no direct projective measurement was performed on it. This is \emph{measurement backaction}, illustrated in Fig.~\ref{fig:indirect-measurement-thesis}. For an ideal rank-one probe readout conditioned on $j$, the post-readout pure composite state is the product $\ket{\psi_j}_S\otimes\ket{r_j}_M$, whereas the pre-readout state may have been entangled.
 
@@ -96,7 +96,7 @@ The system's state generally changes even if no direct projective measurement wa
 The positive operators
 \begin{equation}
 \boxed{\op E_j=\op M_j^\dagger\op M_j,\qquad
-\op E_j\ge 0,\qquad\sum_j\op E_j=\op I_S}
+\op E_j\ge 0,\qquad\sum_j\op E_j=\mathbf1_S}
 \end{equation}
 are called \emph{effects}, and their complete collection forms a positive operator-valued measure (POVM). They determine outcome probabilities, $p_j=\operatorname{tr}(\op\rho_S\op E_j)$. A projective measurement is the special case $\op M_j=\op E_j=\op Q_j$.
 

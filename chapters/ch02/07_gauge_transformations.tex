@@ -69,8 +69,8 @@ Fields:
 \end{equation}
 From the Hamiltonian of classical electrodynamics, the quantum Hamiltonian of a charged particle in an electromagnetic field is
 \begin{equation}
-\boxed{\op H=\frac1{2m}\left(\vect{\op p}-\frac ec\vect A\right)^2+e\varphi,\quad
-\varphi=\varphi(\vect{\op x},t),\ \vect A=\vect A(\vect{\op x},t).}
+\boxed{\op H=\frac1{2m}\left(\op{\vect p}-\frac ec\vect A\right)^2+e\varphi,\quad
+\varphi=\varphi(\op{\vect x},t),\ \vect A=\vect A(\op{\vect x},t).}
 \end{equation}
 Using the fundamental commutation relations
 \begin{equation}
@@ -108,12 +108,12 @@ m\frac{\dd^2\op x_i}{\dd t^2}
 \end{equation}
 In vector notation,
 \begin{equation}
-\boxed{m\frac{\dd^2\vect{\op x}}{\dd t^2}
+\boxed{m\frac{\dd^2\op{\vect x}}{\dd t^2}
 =e\left[\vect E+\frac1{2c}
-\left(\frac{\dd\vect{\op x}}{\dd t}\times\vect B
--\vect B\times\frac{\dd\vect{\op x}}{\dd t}\right)\right].}
+\left(\frac{\dd\op{\vect x}}{\dd t}\times\vect B
+-\vect B\times\frac{\dd\op{\vect x}}{\dd t}\right)\right].}
 \end{equation}
-This is the Ehrenfest theorem in the Heisenberg picture. Note that the velocity operator $\dd\vect{\op x}/\dd t$ and $\vect B=\vect\nabla\times\vect A$ generally do not commute; operator ordering matters in this expression.
+This is the Ehrenfest theorem in the Heisenberg picture. Note that the velocity operator $\dd\op{\vect x}/\dd t$ and $\vect B=\vect\nabla\times\vect A$ generally do not commute; operator ordering matters in this expression.
 
 In the coordinate representation of the Schr\"odinger picture,
 \begin{equation}
@@ -146,28 +146,28 @@ where $\Lambda(\vect x)$ is an arbitrary scalar function. It is clear that the f
 Let the state corresponding to the potentials $\varphi,\vect A$ be $\ket{\psi,t}_1$, and that corresponding to $\varphi,\vect A+\vect\nabla\Lambda$ be $\ket{\psi,t}_2$. They satisfy respectively
 \begin{equation}
 \ii\hbar\frac{\partial}{\partial t}\ket{\psi,t}_1
-=\left[\frac{(\vect{\op p}-e\vect A/c)^2}{2m}+e\varphi\right]\ket{\psi,t}_1,
+=\left[\frac{(\op{\vect p}-e\vect A/c)^2}{2m}+e\varphi\right]\ket{\psi,t}_1,
 \end{equation}
 \begin{equation}
 \ii\hbar\frac{\partial}{\partial t}\ket{\psi,t}_2
-=\left[\frac{[\vect{\op p}-e(\vect A+\vect\nabla\Lambda)/c]^2}{2m}
+=\left[\frac{[\op{\vect p}-e(\vect A+\vect\nabla\Lambda)/c]^2}{2m}
 +e\varphi\right]\ket{\psi,t}_2.
 \end{equation}
 Take
 \begin{equation}
-\ket{\psi,t}_2=\exp\left(\frac{\ii e}{\hbar c}\Lambda(\vect{\op x})\right)\ket{\psi,t}_1.
+\ket{\psi,t}_2=\exp\left(\frac{\ii e}{\hbar c}\Lambda(\op{\vect x})\right)\ket{\psi,t}_1.
 \end{equation}
 Because
 \begin{equation}
 e^{-\ii e\Lambda/(\hbar c)}
-\left[\vect{\op p}-\frac ec(\vect A+\vect\nabla\Lambda)\right]
+\left[\op{\vect p}-\frac ec(\vect A+\vect\nabla\Lambda)\right]
 e^{\ii e\Lambda/(\hbar c)}
-=\vect{\op p}-\frac ec\vect A,
+=\op{\vect p}-\frac ec\vect A,
 \end{equation}
 it is easy to show that the two Schr\"odinger equations are consistent. Thus, under a gauge transformation the states differ by a phase factor:
 \begin{equation}
 \boxed{\ket{\psi,t}\longrightarrow
-\exp\left(\frac{\ii e}{\hbar c}\Lambda(\vect{\op x})\right)\ket{\psi,t}.}
+\exp\left(\frac{\ii e}{\hbar c}\Lambda(\op{\vect x})\right)\ket{\psi,t}.}
 \end{equation}
 Does a gauge transformation have observable quantum effects?
 
@@ -225,7 +225,7 @@ Introducing the field into the region $\rho<\rho_a$ changes the vector potential
 
 The stationary Schr\"odinger equation is
 \begin{equation}
-\frac1{2m}\left(\vect{\op p}-\frac ec\vect A\right)^2\psi
+\frac1{2m}\left(\op{\vect p}-\frac ec\vect A\right)^2\psi
 =-\frac{\hbar^2}{2m}\left[
 \vect e_\rho\frac{\partial}{\partial\rho}
 +\frac{\vect e_\phi}{\rho}\left(\frac{\partial}{\partial\phi}
