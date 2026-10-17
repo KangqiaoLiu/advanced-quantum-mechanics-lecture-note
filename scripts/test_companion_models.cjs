@@ -216,4 +216,158 @@ check("Relativistic kinetic expansion and rest-frame state",()=>{
  }
 });
 
+
+// Expanded self-study mathematics: exact checks independent of browser rendering.
+const Amp=require("../companion/labs/IC-01-01/model.js");
+check("Two-path interference, coherence and pure-state visibility",()=>{
+  for(const w of [0,.1,.5,.8,1])for(const eta of [0,.3,1])for(const phase of [0,45,180,270]){
+    const p=Amp.predict(w,phase,eta);close(p.plus+p.minus,1);
+    assert.ok(p.plus>=-1e-12&&p.plus<=1+1e-12);
+    close(p.visibility,2*eta*Math.sqrt(w*(1-w)));
+    close(p.purity,w*w+(1-w)**2+2*eta*eta*w*(1-w));
+    if(eta===1)close(p.visibility**2+p.D**2,1,1e-12);
+  }
+  close(Amp.predict(.5,0,1).plus,1);close(Amp.predict(.5,180,1).plus,0);
+  close(Amp.predict(.5,180,0).plus,.5);
+});
+const Eigen=require("../companion/labs/IC-01-02/model.js");
+check("Hermitian two-level spectrum and normalized eigenstate Bloch vector",()=>{
+  for(const z of [-2,-.8,0,.6,1.7])for(const g of [0,.4,1.5]){
+    const p=Eigen.predict(z,g,70);
+    close(p.e,Math.hypot(z,g));close(p.gap,2*p.e);
+    if(p.e>0){close(p.rx*p.rx+p.ry*p.ry+p.rz*p.rz,1);close(p.pz,(1+p.rz)/2);}
+    else assert.equal(p.pz,null);
+  }
+  close(Eigen.predict(0,1,0).pz,.5);
+  close(Eigen.predict(.8,.6,0).e,Eigen.predict(.8,.6,128).e);
+});
+const Born=require("../companion/labs/IC-01-04/model.js");
+check("Born projectors, bypass, selective and nonselective output",()=>{
+  for(const theta of [0,30,90,180])for(const purity of [0,.4,1]){
+    const p=Born.predict(0,0,purity,theta,0,"both"),
+      select=Born.predict(0,0,purity,theta,0,"plus"),
+      bypass=Born.predict(0,0,purity,theta,0,"bypass");
+    close(p.pPlus+p.pMinus,1);close(p.success,1);
+    close(p.outputPurity,(1+(purity*Math.cos(theta*Math.PI/180))**2)/2,1e-12);
+    close(bypass.outputPurity,(1+purity*purity)/2,1e-12);
+    if(select.success>1e-11)close(select.outputPurity,1);
+  }
+  assert.equal(Born.predict(0,0,1,180,0,"plus").final,null);
+});
+const Basis=require("../companion/labs/IC-01-05/model.js");
+check("Physical expectation invariant under unitary basis changes",()=>{
+  for(const a of [0,20,75,180])for(const b of [-180,-90,0,45,140]){
+    const p=Basis.predict(a,b),rad=d=>d*Math.PI/180;
+    close(p.trueValue,Math.cos(rad(a)));
+    close(p.a00*p.a00+p.a01*p.a01,1);
+    const c=Math.cos(rad(a-b)),s=Math.sin(rad(a-b));
+    close(p.a00*c+p.a01*s,p.trueValue,1e-12);
+    close(p.prob,.5*(1+p.naive),1e-12);
+  }
+});
+const SpinPrec=require("../companion/labs/IC-02-01/model.js");
+check("Unitary Bloch precession conserves norm and longitudinal spin",()=>{
+  for(const initial of [0,30,90,180])for(const field of [0,45,90,140])for(const t of [0,.3,1,3,10]){
+    const p=SpinPrec.predict(initial,20,field,1.4,t);
+    close(p.norm,1,1e-12);
+    close(p.longitudinal,SpinPrec.dot(p.r,p.n),1e-12);
+  }
+  close(SpinPrec.predict(0,0,90,1,Math.PI).r[2],-1);
+});
+const SpinBerry=require("../companion/labs/IC-02-08/model.js");
+check("Spin Berry solid-angle phase, gauge winding, orientation and mesh convergence",()=>{
+  for(const angle of [0,20,60,90,120,150])for(const wind of [-1,0,1,2]){
+    const fine=SpinBerry.predict(angle,wind,0,256);
+    assert.ok(fine.error<.005,[angle,wind,fine.error]);
+    for(const gauge of [-3,0,2]){
+      const g=SpinBerry.predict(angle,wind,gauge,256);
+      close(SpinBerry.wrap(g.discrete-fine.discrete),0,1e-10);
+      close(g.solid,2*Math.PI*wind*(1-Math.cos(angle*Math.PI/180)),1e-12);
+    }
+  }
+  close(SpinBerry.predict(90,1,0,64).cos,-1);
+});
+const Mix=require("../companion/labs/IC-03-03/model.js");
+check("Equivalent density ensembles and Helstrom qubit discrimination bound",()=>{
+  const both=Mix.predict(.5,.5,75);
+  close(both.pA,.5);close(both.pB,.5);close(both.distance,0);
+  close(both.success,.5);close(both.entropyA,1);close(both.purityB,.5);
+  for(const p of [0,.2,.6,1])for(const q of [0,.35,.5,.9,1]){
+    const d=Mix.predict(p,q,35);
+    close(d.distance,Math.hypot(2*p-1,2*q-1)/2);
+    assert.ok(d.success>=.5&&d.success<=1+1e-12);
+    close(d.entropyA,Mix.entropy(p));
+  }
+});
+const POVM=require("../companion/labs/IC-03-05/model.js");
+check("Same POVM effects with distinct instrument backaction",()=>{
+  for(const theta of [0,35,90,180])for(const eta of [0,.35,1]){
+    const lud=POVM.predict(theta,eta,"luders","both"),prep=POVM.predict(theta,eta,"prepare","both");
+    close(lud.pPlus,prep.pPlus);close(lud.pPlus+lud.pMinus,1);
+    close(prep.out[0],1);close(prep.out[2],0);
+    const lplus=POVM.predict(theta,eta,"luders","plus");
+    const pplus=POVM.predict(theta,eta,"prepare","plus");
+    close(lplus.p,pplus.p);
+    if(lplus.p<1e-12){assert.equal(lplus.out,null);assert.equal(pplus.out,null);}
+    else{close(lplus.purity,1);close(pplus.purity,1);}
+  }
+  const initial=POVM.predict(0,0,"luders","both"),reinit=POVM.predict(0,0,"prepare","both");
+  close(initial.out[2],1);close(reinit.out[0],1);
+});
+const Boson=require("../companion/labs/IC-06-03/model.js");
+check("Bosonic Fock ladder and commutator coefficients",()=>{
+  for(let n=0;n<=10;n++){
+    const create=Boson.predict(n,2,0,"create",1.5),destroy=Boson.predict(n,2,0,"annihilate",1.5);
+    close(create.amplitude**2,n+1);close(destroy.amplitude**2,n);
+    close(create.amplitude**2-destroy.amplitude**2,1);
+    if(n===0)assert.equal(destroy.after,null);
+  }
+  for(const alpha of [0,.5,1.5,2.9]){
+    const a=Boson.predict(3,2,0,"create",alpha);
+    const s=Array.from({length:50},(_,i)=>a.occupation(i)).reduce((x,y)=>x+y,0);
+    close(s,1,1e-10);
+  }
+});
+const Zak=require("../companion/labs/IC-08-04/model.js");
+check("SSH Wilson-loop Zak phase gauge invariance and transition",()=>{
+  for(const [a,b,expect] of [[.5,1.5,1],[1.5,.5,0],[.8,1.4,1]]){
+    for(const n of [24,48,96]){
+      const baseline=Zak.predict(a,b,n,0);
+      assert.equal(baseline.nu,expect);
+      assert.ok(baseline.error<1e-8,[a,b,n,baseline.error]);
+      for(const m of [-2,1,3])close(Zak.wrap(Zak.predict(a,b,n,m).gamma-baseline.gamma),0,1e-9);
+    }
+  }
+  assert.equal(Zak.predict(1,1,48,0).gamma,null);
+});
+const Chern=require("../companion/labs/IC-08-06/model.js");
+check("QWZ two-band Chern phases, gap closures and midpoint convergence",()=>{
+  for(const [M,integer] of [[-3,0],[-1,1],[1,-1],[3,0]]){
+    const d=Chern.predict(M,64);
+    assert.equal(d.exact,integer);
+    assert.ok(Math.abs(d.numeric-integer)<.005,[M,d.numeric]);
+    close(d.numeric,Chern.integrate(M,64),1e-12);
+  }
+  for(const critical of [-2,0,2]){const d=Chern.predict(critical,48);assert.equal(d.exact,null);assert.equal(d.numeric,null);close(d.gap,0);}
+  const x=.7,y=1.2,M=-1;
+  close(Chern.curvature(x,y,M),Chern.curvature(-x,-y,M),1e-12);
+});
+const Kernel=require("../companion/labs/IC-09-05/model.js");
+check("Quantum fidelity Gram kernel is normalized and positive semidefinite",()=>{
+  for(const n of [3,6,9,15]){
+    const d=Kernel.predict(n,2.4,0,n-1,512);
+    close(d.trace,n,1e-8);
+    assert.ok(d.eig.at(-1)>-1e-8,d.eig.at(-1));
+    assert.ok(d.rank<=3,[n,d.rank]);
+    for(let i=0;i<n;i++)for(let j=0;j<n;j++){
+      close(d.K[i][j],d.K[j][i]);
+      close(d.K[i][j],(1+Math.cos(d.x[i]-d.x[j]))/2,1e-12);
+    }
+    for(let i=0;i<n;i++)close(d.K[i][i],1);
+  }
+  close(Kernel.kernel(0,Math.PI),0,1e-14);
+  const shot=Kernel.predict(11,2.4,3,8,4096);
+  assert.ok(Math.abs(shot.sampled-shot.exact)<6*shot.se+.0001);
+});
+
 process.stdout.write("\nALL "+checks+" PHYSICS TEST GROUPS PASSED\n");
