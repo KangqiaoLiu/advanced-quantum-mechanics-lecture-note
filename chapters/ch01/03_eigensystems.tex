@@ -7,7 +7,14 @@ The eigenvalue equation of an operator is
 \end{equation}
 where $\lambda$ is called an eigenvalue of $\op T$ and $\ket a$ is called an eigenvector of $\op T$.
 
-In matrix form (prove this yourself using the completeness relation),
+Use the completeness relation to derive the component equation. Write
+$\ket a=\sum_n a_n\ket n$ and multiply $\op T\ket a=\lambda\ket a$
+by $\bra m$:
+\begin{equation}
+\mel m{\op T}a=\sum_n a_n\mel m{\op T}n
+=\lambda\sum_n a_n\braket m n=\lambda a_m.
+\end{equation}
+Thus $\sum_n T_{mn}a_n=\lambda a_m$ for each $m$, or,
 \begin{equation}
 Ta=\lambda a,\qquad (T-\lambda I)a=0.
 \end{equation}
@@ -109,20 +116,71 @@ Since
 \end{equation}
 each $\ket{i,n}$ is still an eigenstate of $\op T$ with eigenvalue $\lambda_i$. Hence it suffices to show that the $\ket{i,n}$ can be made orthonormal.
 
-Can one choose the coefficients $C_{nj}$ so that these $g$ new states satisfy
+Here is an explicit construction of the required vectors. Start with
+linearly independent eigenvectors $\ket{v_1},\dots,\ket{v_g}$ in the
+degenerate eigenspace, and normalize the first:
 \begin{equation}
-\braket{i,m}{i,n}=\delta_{mn}\;?
+\ket{e_1}=\frac{\ket{v_1}}{\sqrt{\braket{v_1}{v_1}}}.
 \end{equation}
-There are $g$ normalization equations and $(g^2-g)/2$ orthogonality equations, making $g(g+1)/2$ independent equations, fewer than the $g^2$ coefficients $C_{nj}$. Thus there are various choices of coefficients satisfying the orthonormality conditions, so that the new states $\ket{i,n}$ are orthonormal:
+Remove the component of the second vector parallel to $\ket{e_1}$:
+\begin{equation}
+\ket{w_2}=\ket{v_2}-\ket{e_1}\braket{e_1}{v_2},
+\quad
+\braket{e_1}{w_2}=\braket{e_1}{v_2}
+-\braket{e_1}{e_1}\braket{e_1}{v_2}=0.
+\end{equation}
+The original pair is independent, so $\ket{w_2}\ne0$.
+Set $\ket{e_2}=\ket{w_2}/\sqrt{\braket{w_2}{w_2}}$.
+For each later vector, repeat:
+\begin{equation}
+\ket{w_n}=\ket{v_n}-\sum_{k=1}^{n-1}
+ \ket{e_k}\braket{e_k}{v_n},
+\qquad
+\ket{e_n}=\frac{\ket{w_n}}{\sqrt{\braket{w_n}{w_n}}}.
+\end{equation}
+For $j<n$,
+\begin{equation}
+\braket{e_j}{w_n}=\braket{e_j}{v_n}
+-\sum_{k<n}\delta_{jk}\braket{e_k}{v_n}=0.
+\end{equation}
+Since all $\ket{v_n}$ have the same eigenvalue $\lambda_i$,
+every linear combination $\ket{w_n}$ also satisfies
+$\op T\ket{w_n}=\lambda_i\ket{w_n}$.
+This is the Gram--Schmidt construction \emph{inside the eigenspace}.
+It yields orthonormal eigenvectors, including in the degenerate case:
 \begin{equation}
 \braket{i,m}{j,n}=\delta_{ij}\delta_{mn}.
 \end{equation}
-Here $\delta_{ij}$ follows from orthonormality of eigenstates belonging to different eigenvalues, while $\delta_{mn}$ follows from orthogonalization by linear superposition.
+Here distinct eigenvalues supply the factor $\delta_{ij}$,
+and Gram--Schmidt supplies $\delta_{mn}$.
 
 \textbf{Conclusion:} Eigenstates of a Hermitian operator can be chosen orthonormal, whether the eigenvalues are degenerate or nondegenerate.
 \paragraph{d) Completeness.}
-It can be shown that eigenvectors of a Hermitian operator satisfy
+In a finite-dimensional space we can establish completeness by induction.
+A Hermitian $N\times N$ matrix has an eigenvalue by the fundamental
+theorem of algebra applied to its characteristic polynomial, and
+the reality argument above makes that eigenvalue real.
+Choose a normalized eigenvector $\ket{e_1}$.
+Its orthogonal complement is invariant: whenever
+$\braket{e_1}{v}=0$,
 \begin{equation}
-\sum_i\ket i\bra i=\mathbf1.
+\braket{e_1}{\op T v}
+=\mel{e_1}{\op T}v
+=\lambda_1\braket{e_1}{v}=0.
 \end{equation}
-Hence the eigenvectors of a Hermitian operator can form a set of orthonormal basis vectors of a Hilbert space, i.e., a linear vector space or a representation.
+Restrict $\op T$ to this $(N-1)$-dimensional invariant subspace.
+The restriction remains Hermitian. Iterating produces $N$ mutually
+orthonormal eigenvectors, including any necessary orthogonalization
+within degenerate subspaces.
+Every ket can therefore be expanded as
+\begin{equation}
+\ket\psi=\sum_{n=1}^N\ket{e_n}\braket{e_n}{\psi}
+=\left(\sum_{n=1}^N\ket{e_n}\bra{e_n}\right)\ket\psi.
+\end{equation}
+Because $\ket\psi$ is arbitrary,
+\begin{equation}
+\boxed{\sum_{n=1}^N\ket{e_n}\bra{e_n}=\mathbf1.}
+\end{equation}
+This is the finite-dimensional spectral theorem. Additional
+domain and continuous-spectrum considerations arise in infinite
+dimension.
