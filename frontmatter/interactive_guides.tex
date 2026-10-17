@@ -1,0 +1,10 @@
+% Student-facing navigation from a derivation to the corresponding live experiment.
+% Every link resolves to a public GitHub Pages experiment, not repository source.
+\newcommand{\interactiveguide}[3]{%
+  \par\medskip
+  \noindent\begingroup\small
+  \textsf{\textbf{\color{blue!60!black}Interactive investigation #1.}}\enspace
+  \href{https://kangqiaoliu.github.io/courses/advanced-quantum-mechanics/companion/labs/#1/index.html}{\textsf{\textbf{Open #2}}}.\enspace
+  #3\par
+  \endgroup\smallskip
+}
