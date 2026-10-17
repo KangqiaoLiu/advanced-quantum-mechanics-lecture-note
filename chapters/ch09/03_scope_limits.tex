@@ -23,6 +23,9 @@ Classical input data must first be encoded into the quantum system. If preparing
 
 The term \emph{quantum advantage} has a specific meaning: a demonstrable improvement in a defined task and resource measure relative to the best relevant classical alternatives. It is stronger than showing that a quantum circuit can solve a toy task or that its state space has dimension $2^n$. Establishing such advantages for useful classical-data machine-learning tasks remains an active research problem. The review of variational quantum algorithms~\cite{Cerezo2021}, the expressivity analysis~\cite{SchuldSwekeMeyer2021}, and the 2025 overview of trainability obstacles~\cite{Larocca2025} provide a basis for assessing new claims.
 
+
+\interactiveguide{IC-09-06}{Gradient concentration and trainability}{After discussing barren plateaus, compare global and local costs as circuit size increases. Estimate gradient variances over parameter samples and connect the results with the measurement-shot requirements.}
+
 \section{Beyond the Introductory Models}
 Quantum learning also includes \emph{quantum convolutional} and recurrent-like architectures, generative modeling, quantum-data classification, learning properties of quantum phases, and hybrid quantum--classical methods. Their physical motivations differ. For example, classifying states of a many-body system can start directly from a measured or prepared quantum state, while training a classical-label classifier usually requires a chosen encoding of ordinary inputs. The preceding derivations establish a minimal mathematical language for these extensions:
 \begin{equation}

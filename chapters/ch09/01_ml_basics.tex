@@ -140,6 +140,9 @@ For one training example $(x,y)$, the squared loss is $[\cos(x+\theta)-y]^2$, wi
 \end{equation}
 This simple example makes clear that a quantum circuit does not automatically produce a better predictor than a classical cosine model. Its purpose is to show the precise form of the quantum learning procedure.
 
+
+\interactiveguide{IC-09-01}{Parameterized quantum circuits}{After computing the exact one-qubit expectation value, vary gate angles and input encodings. Compare the measured circuit output with its analytic Bloch-vector and Pauli-expectation predictions.}
+
 \subsection*{3) Two qubits and entangling gates}
 Start in $\ket{00}$, encode two real inputs by $R_y(x_1)\otimes R_y(x_2)$, then apply a CNOT with the first qubit as the control. Measure $\sigma_z$ on the second qubit. The CNOT transforms the measured operator in the Heisenberg picture as
 \begin{equation}

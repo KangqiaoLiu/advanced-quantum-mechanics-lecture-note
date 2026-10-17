@@ -36,6 +36,9 @@ Each parameter derivative may therefore require two or more circuit settings. Wi
 \caption{The parameter-shift rule for the exactly soluble $f(\theta)=\cos\theta$. The two dots mark the evaluations at $\theta_0\pm\pi/2$ (with $\theta_0=0.48$); their difference, divided by two, gives $f'(\theta_0)$. The plot is generated analytically.}
 \label{fig:qml-parameter-shift}
 \end{figure}
+
+\interactiveguide{IC-09-03}{Parameter-shift training}{After deriving the two-shift gradient formula, run a short circuit-training experiment. Compare shifted expectation values against the analytic derivative, then vary shot noise and step size to inspect optimization behavior.}
+
 \subsection*{3) More expressive data encodings}
 A single use of $R_y(x)$ produced the simple trigonometric function in Eq.~\eqref{eq:qnn-onequbit}. A generic data-encoding layer may be written $e^{-\ii x\op G}$ for some Hermitian generator $\op G$. Inserting its spectral decomposition reveals factors $e^{-\ii x(g_a-g_b)}$. Consequently a circuit expectation can be written as a finite Fourier-type series in the input:
 \begin{equation}
@@ -103,3 +106,5 @@ For $\ket{\phi(x)}=R_y(x)\ket0$,
 \label{fig:qml-kernel-matrix}
 \end{figure}
 The result is simple enough to evaluate classically. The research question for larger quantum feature maps is whether useful kernel values can be estimated efficiently on suitable quantum hardware while the corresponding classical computation remains costly for the relevant data distribution. The existence of an exponentially large Hilbert space alone does not establish such a benefit~\cite{Havlicek2019}.
+
+\interactiveguide{IC-09-05}{Quantum kernel geometry}{After proving that the overlap matrix is positive semidefinite, generate a small quantum kernel Gram matrix. Compare overlap probabilities, matrix eigenvalues and the one-qubit analytic result.}
