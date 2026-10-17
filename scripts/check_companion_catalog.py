@@ -23,6 +23,30 @@ assert all(per_chapter.get(ch, 0) > 0 for ch in range(1, 10)), per_chapter
 implemented_per_chapter = Counter(lab["chapter"] for lab in labs if lab["stage"] == "implemented")
 assert set(implemented_per_chapter) == set(range(1, 10)), implemented_per_chapter
 
+# The editorial track, rather than the historical route label, determines work scope.
+tracks = Counter(lab.get("editorial_track") for lab in labs)
+assert tracks == {"selected": 27, "reference": 8, "reading": 27}, tracks
+selected = [lab for lab in labs if lab["editorial_track"] == "selected"]
+references = [lab for lab in labs if lab["editorial_track"] == "reference"]
+readings = [lab for lab in labs if lab["editorial_track"] == "reading"]
+assert sum(lab["stage"] == "implemented" for lab in selected) == 18
+assert sum(lab["stage"] == "planned" for lab in selected) == 9
+assert all(lab["stage"] == "implemented" for lab in references)
+assert all(lab["stage"] == "planned" for lab in readings)
+assert data["curation"]["planned_total_self_built"] == 35
+assert data["curation"]["reading_only"] == len(readings)
+assert set(lab["chapter"] for lab in selected) == set(range(1, 10))
+assert (ROOT / "companion/reading.html").is_file()
+assert (ROOT / "companion/assets/reading.js").is_file()
+for lab in readings:
+    r = lab.get("reading_resource", {})
+    assert r.get("url", "").startswith("https://"), (lab["id"], r)
+    assert len(r.get("label", "")) >= 15, lab["id"]
+    assert len(r.get("task", "")) >= 55, lab["id"]
+    assert r.get("related_lab") in ids, lab["id"]
+    related = next(x for x in labs if x["id"] == r["related_lab"])
+    assert related["stage"] == "implemented", (lab["id"], r["related_lab"])
+
 for lab in labs:
     assert re.fullmatch(r"IC-(0[1-9])-\d{2,3}", lab["id"])
     assert int(lab["id"].split("-")[1]) == lab["chapter"]

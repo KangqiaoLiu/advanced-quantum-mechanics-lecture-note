@@ -52,4 +52,22 @@ for lab_id, checks in cases.items():
         assert marker in document, (lab_id, marker, document[-2000:])
     assert 'canvas' in document and 'width="720"' in document, f"{lab_id}: physics figures did not render"
     print(f"PASS {lab_id}: rendered numerical results and canvas figures in headless Chrome")
-print("PASS all registered interactive laboratories: first-paint smoke tests")
+# The reading-only route and default curated directory are functioning browser pages.
+for name, filename, text_markers, css_class, minimum in [
+    ("curated index", root / "companion" / "index.html",
+     ["Selected investigation", "27 matching topics"], 'class="lab"', 20),
+    ("guided reading", root / "companion" / "reading.html",
+     ["Guided reading", "Investigate independently:"], 'class="reading-task"', 27),
+]:
+    result = subprocess.run(
+        [browser, "--headless", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage",
+         "--allow-file-access-from-files", "--virtual-time-budget=1800", "--dump-dom", filename.as_uri()],
+        text=True, capture_output=True, timeout=45
+    )
+    assert result.returncode == 0, (name, result.stderr[-1200:])
+    document = result.stdout
+    for marker in text_markers:
+        assert marker in document, (name, marker, document[-1800:])
+    assert document.count(css_class) >= minimum, (name, css_class, document.count(css_class))
+    print(f"PASS {name}: all curated content rendered in headless Chrome")
+print("PASS all registered interactive laboratories and curated reading: first-paint smoke tests")

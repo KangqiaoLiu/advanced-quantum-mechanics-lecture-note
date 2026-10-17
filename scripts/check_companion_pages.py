@@ -60,3 +60,15 @@ for lab in finished:
     assert (comp / "assets" / "site.css").is_file(), "Missing base CSS."
     print(f"PASS {lab['id']} · {scanner.canvas} accessible data figures · {scanner.scripts} local scripts")
 print(f"PASS: {len(finished)} implemented laboratories and local assets")
+
+
+# Curated external-reading page must exist and have accessible structure.
+reading_page = comp / "reading.html"
+assert reading_page.is_file(), reading_page
+content = reading_page.read_text(encoding="utf-8")
+assert 'id="reading-list"' in content
+assert 'id="reading-error"' in content
+assert 'assets/reading.js' in content
+assert "guided" in content.lower()
+assert (comp / "assets" / "reading.js").is_file()
+print("PASS guided external-reading source and assets")
