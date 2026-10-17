@@ -1,0 +1,105 @@
+% Original self-contained variational bridge.
+\subsection*{Worked calculation: Gaussian upper bound for an anharmonic oscillator}
+The helium calculation above illustrates screening, but its
+Coulomb integrals can obscure the variational principle.
+A one-dimensional example lets us calculate every integral
+and every derivative explicitly before handling more elaborate atoms.
+
+Choose dimensionless units $\hbar=m=\omega=1$ and
+\begin{equation}
+\op H=-\frac12\frac{\dd^2}{\dd x^2}
++\frac{x^2}{2}+\lambda x^4,\qquad\lambda\geq0.
+\end{equation}
+Take a normalized Gaussian trial state parametrized by
+its positive width $\sigma$,
+\begin{equation}
+\psi_\sigma(x)=\frac{1}{\pi^{1/4}\sqrt\sigma}
+ \exp\left(-\frac{x^2}{2\sigma^2}\right),
+\qquad
+|\psi_\sigma(x)|^2
+=\frac{e^{-x^2/\sigma^2}}{\sqrt\pi\,\sigma}.
+\end{equation}
+Check normalization by setting $u=x/\sigma$:
+\begin{equation}
+\int_{-\infty}^{\infty}|\psi_\sigma|^2\dd x
+=\frac1{\sqrt\pi\,\sigma}
+ \int_{-\infty}^{\infty}e^{-x^2/\sigma^2}\dd x
+=\frac1{\sqrt\pi}\int_{-\infty}^{\infty}e^{-u^2}\dd u
+=1.
+\end{equation}
+The Gaussian integral is $\int_{\mathbb R}e^{-u^2}\dd u
+=\sqrt\pi$. Differentiate it with respect to a width parameter
+to obtain
+\begin{equation}
+\langle x^2\rangle
+=\frac1{\sqrt\pi\,\sigma}
+ \int_{\mathbb R}x^2e^{-x^2/\sigma^2}\dd x
+=\frac{\sigma^2}{2},\qquad
+\langle x^4\rangle=\frac{3\sigma^4}{4}.
+\end{equation}
+For the kinetic term, first differentiate
+$\psi'_\sigma=-x\psi_\sigma/\sigma^2$.
+Integration by parts, with the boundary term vanishing, gives
+\begin{align}
+\left\langle-\frac12\frac{\dd^2}{\dd x^2}\right\rangle
+&=\frac12\int_{\mathbb R}|\psi'_\sigma(x)|^2\dd x\notag\\
+&=\frac{1}{2\sigma^4}\int_{\mathbb R}
+ x^2|\psi_\sigma(x)|^2\dd x
+=\frac{1}{4\sigma^2}.
+\end{align}
+Combining these separate contributions,
+\begin{equation}
+\boxed{E_{\mathrm{trial}}(\sigma)
+=\frac1{4\sigma^2}+\frac{\sigma^2}4
++\frac{3\lambda\sigma^4}{4}.}
+\label{eq:worked-variational-energy}
+\end{equation}
+To find the optimum, calculate
+\begin{equation}
+\frac{\dd E_{\mathrm{trial}}}{\dd\sigma}
+=-\frac1{2\sigma^3}+\frac{\sigma}2
++3\lambda\sigma^3.
+\end{equation}
+The stationarity condition can be multiplied by
+$2\sigma^3$ (positive because $\sigma>0$):
+\begin{equation}
+\boxed{\sigma^4+6\lambda\sigma^6=1.}
+\end{equation}
+For $\lambda\geq0$, the left side is strictly increasing
+in $\sigma>0$, ranging from zero to infinity. Thus it
+has exactly one positive solution.
+Furthermore,
+\begin{equation}
+\frac{\dd^2 E_{\mathrm{trial}}}{\dd\sigma^2}
+=\frac3{2\sigma^4}+\frac12+9\lambda\sigma^2>0.
+\end{equation}
+The stationary point is therefore the unique global minimum.
+The variational bound is
+$E_0\leq E_{\mathrm{trial}}(\sigma_\ast)$.
+At $\lambda=0$, the equation gives $\sigma_\ast=1$
+and $E_{\mathrm{trial}}=1/2$, recovering the exact
+harmonic-oscillator ground energy.
+
+\paragraph{Why the inequality always points upward.}
+Expand any \emph{normalized} trial ket in exact normalized
+energy eigenstates:
+$\ket\psi=\sum_n c_n\ket n$, so
+$\sum_n|c_n|^2=1$. Then
+\begin{equation}
+\langle H\rangle-E_0
+=\sum_n|c_n|^2(E_n-E_0)\geq0,
+\end{equation}
+because each term is nonnegative. If the trial ket were not
+normalized, the correct variational object would be
+$\mel\psi{\op H}\psi/\braket\psi\psi$.
+
+\paragraph{Interpretation and experiment.}
+Increasing $\lambda$ penalizes large $\langle x^4\rangle$,
+so the optimal wavepacket becomes narrower. Its kinetic
+energy then increases, and the width balances these effects.
+The after-class
+\href{https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/labs/IC-04-02/index.html}
+{variational energy interactive investigation}
+plots the same formula against an independent finite-basis
+diagonalization, giving two variational upper bounds that
+can be compared for convergence.

@@ -1,0 +1,77 @@
+% Original self-study derivation bridge, 2026-10-17.
+\subsection*{Worked derivation: from unitarity to the Schr\"odinger equation}
+The previous section introduced the infinitesimal time-evolution operator.
+Let us fill in the intermediate algebra so that the role of
+Hermiticity is visible, including all terms of first order in $\dd t$.
+
+Take $\op U(t+\dd t,t)=\mathbf1+\op A\,\dd t+
+O((\dd t)^2)$ for some operator $\op A$.
+Unitarity demands
+\begin{align}
+\mathbf1
+&=\op U^\dagger\op U\notag\\
+&=\bigl[\mathbf1+\op A^\dagger\dd t+O((\dd t)^2)\bigr]
+  \bigl[\mathbf1+\op A\dd t+O((\dd t)^2)\bigr]\notag\\
+&=\mathbf1+(\op A^\dagger+\op A)\dd t
+  +O((\dd t)^2).
+\end{align}
+Comparing the coefficients of $\dd t$ gives
+$\op A^\dagger=-\op A$. Thus the infinitesimal
+generator is anti-Hermitian. We can write
+$\op A=-\ii\op H/\hbar$, where
+\begin{equation}
+\op H^\dagger
+=(\ii\hbar\op A)^\dagger
+=-\ii\hbar\op A^\dagger
+=\ii\hbar\op A=\op H.
+\end{equation}
+For a time-dependent generator the infinitesimal relation is
+\begin{equation}
+\op U(t+\dd t,t)=
+\mathbf1-\frac{\ii}{\hbar}\op H(t)\dd t
++O((\dd t)^2).
+\end{equation}
+The composition property gives
+\begin{align}
+\op U(t+\dd t,t_0)
+&=\op U(t+\dd t,t)\op U(t,t_0)\notag\\
+&=\op U(t,t_0)-\frac{\ii}{\hbar}
+ \op H(t)\op U(t,t_0)\dd t+O((\dd t)^2).
+\end{align}
+Subtract $\op U(t,t_0)$, divide by $\dd t$ and
+take $\dd t\to0$:
+\begin{equation}
+\boxed{\ii\hbar\partial_t\op U(t,t_0)
+=\op H(t)\op U(t,t_0).}
+\end{equation}
+Acting on the fixed initial ket $\ket{\psi(t_0)}$
+immediately yields
+$\ii\hbar\partial_t\ket{\psi(t)}
+=\op H(t)\ket{\psi(t)}$.
+
+\paragraph{What changes if Hamiltonians at different times do not commute?}
+At two successive short intervals $\Delta t$, the evolution is
+\begin{equation}
+\op U(t_2,t_0)\simeq
+\left[\mathbf1-\frac{\ii}{\hbar}\op H(t_1)\Delta t\right]
+\left[\mathbf1-\frac{\ii}{\hbar}\op H(t_0)\Delta t\right].
+\end{equation}
+Reversing their order changes the product by a term
+proportional to
+$[\op H(t_1),\op H(t_0)](\Delta t)^2$.
+For a finite interval these ordering effects accumulate and
+lead to the time-ordered exponential introduced later in this book.
+The expression
+$\exp[-(\ii/\hbar)\int\op H(t)\dd t]$
+is valid without time ordering only if the relevant Hamiltonians
+commute. In the special constant two-level example
+$\op H=\tfrac{\hbar\Omega}{2}\sigma_x$,
+$\sigma_x^2=I$ gives
+$\op U=\cos(\Omega t/2)I-\ii\sin(\Omega t/2)\sigma_x$.
+Direct multiplication verifies
+$\op U^\dagger\op U=I$, as expected.
+
+\paragraph{Checkpoint.}
+Repeat the first calculation using the \emph{effective} Hamiltonian
+of Sec.~\ref{sec:nh-two-cavities}. Identify precisely which step
+changes and use Eq.~\eqref{eq:nh-survival} to interpret the result.

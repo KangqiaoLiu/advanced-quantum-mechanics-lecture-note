@@ -1,0 +1,108 @@
+% Original worked example: Clebsch--Gordan coefficients from spin algebra.
+\subsection*{Worked example: reconstruct every coefficient for two spin-$\frac12$ particles}
+The coupled and uncoupled bases introduced above are two
+representations of the same four-dimensional Hilbert space.
+To obtain the Clebsch--Gordan coefficients concretely,
+write the product kets
+$\ket{\uparrow\uparrow}$,
+$\ket{\uparrow\downarrow}$,
+$\ket{\downarrow\uparrow}$ and
+$\ket{\downarrow\downarrow}$.
+Their $J_z$ values are respectively
+$\hbar$, $0$, $0$ and $-\hbar$.
+The state with maximal $m$ is uniquely
+\begin{equation}
+\ket{1,1}=\ket{\uparrow\uparrow}.
+\end{equation}
+Now apply the total lowering operator
+$\op J_-=\op J_{1-}+\op J_{2-}$.
+For spin one, $\op J_-\ket{1,1}
+=\hbar\sqrt2\,\ket{1,0}$.
+On the product ket, use
+$\op J_{1-}\ket{\uparrow\uparrow}
+=\hbar\ket{\downarrow\uparrow}$ and
+$\op J_{2-}\ket{\uparrow\uparrow}
+=\hbar\ket{\uparrow\downarrow}$:
+\begin{align}
+\hbar\sqrt2\,\ket{1,0}
+&=(\op J_{1-}+\op J_{2-})
+  \ket{\uparrow\uparrow}\notag\\
+&=\hbar\ket{\downarrow\uparrow}
+ +\hbar\ket{\uparrow\downarrow}.
+\end{align}
+Divide by $\hbar\sqrt2$:
+\begin{equation}
+\boxed{\ket{1,0}=\frac1{\sqrt2}
+\left(\ket{\uparrow\downarrow}
++\ket{\downarrow\uparrow}\right).}
+\end{equation}
+Applying $\op J_-$ once more,
+\begin{equation}
+\begin{aligned}
+\hbar\sqrt2\,\ket{1,-1}
+&=(\op J_{1-}+\op J_{2-})\ket{1,0}\\
+&=\frac{\hbar}{\sqrt2}
+ \bigl(\ket{\downarrow\downarrow}
+      +\ket{\downarrow\downarrow}\bigr)\\
+&=\hbar\sqrt2\ket{\downarrow\downarrow},
+\end{aligned}
+\end{equation}
+which yields $\ket{1,-1}=\ket{\downarrow\downarrow}$.
+
+What is the fourth orthonormal state? It must have $m=0$
+and be orthogonal to $\ket{1,0}$. Write
+$\ket\chi=a\ket{\uparrow\downarrow}
++b\ket{\downarrow\uparrow}$.
+Orthogonality requires
+$(a+b)/\sqrt2=0$, so $b=-a$.
+Normalization requires $|a|^2+|b|^2=1$,
+hence $|a|=1/\sqrt2$. Fixing the overall phase,
+\begin{equation}
+\boxed{\ket{0,0}=\frac1{\sqrt2}
+\left(\ket{\uparrow\downarrow}
+-\ket{\downarrow\uparrow}\right).}
+\end{equation}
+The three $j=1$ triplets and one $j=0$ singlet
+account for all four independent product states:
+$2\otimes2=3\oplus1$.
+
+\paragraph{Check by applying total $\op{\vect J}^{\,2}$.}
+Since $\op{\vect J}=\op{\vect J}_1+\op{\vect J}_2$,
+\begin{equation}
+\op{\vect J}^{\,2}
+=\op{\vect J}_1^{\,2}+\op{\vect J}_2^{\,2}
++2\op{\vect J}_1\cdot\op{\vect J}_2,
+\quad
+\op{\vect J}_1\cdot\op{\vect J}_2
+=\op J_{1z}\op J_{2z}
++\tfrac12(\op J_{1+}\op J_{2-}
++\op J_{1-}\op J_{2+}).
+\end{equation}
+On the $m=0$ basis
+$(\ket{\uparrow\downarrow},\ket{\downarrow\uparrow})$,
+the operators become
+\begin{equation}
+\op J_{1z}\op J_{2z}
+=-\frac{\hbar^2}{4}I,\qquad
+\frac12(\op J_{1+}\op J_{2-}
++\op J_{1-}\op J_{2+})
+=\frac{\hbar^2}{2}
+ \begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\end{equation}
+As $\op{\vect J}_1^{\,2}+\op{\vect J}_2^{\,2}
+=\frac{3\hbar^2}{2}I$, we obtain
+\begin{equation}
+J^2=\hbar^2
+\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+\end{equation}
+Multiplying by $(1,1)^{\mathsf T}/\sqrt2$ gives
+$2\hbar^2$ (triplet $j=1$), while multiplying
+by $(1,-1)^{\mathsf T}/\sqrt2$ gives $0$
+(singlet $j=0$). The two calculations agree.
+
+\paragraph{Self-check.}
+Apply $\op J_+$ to the singlet explicitly.
+Every resulting term cancels: $\op J_+\ket{0,0}=0$.
+The coupled basis is therefore a direct consequence of
+angular-momentum algebra and normalization, without
+memorizing a table of coefficients.
