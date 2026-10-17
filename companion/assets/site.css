@@ -34,3 +34,8 @@
 .reading-task a{color:#146178;font-size:.88rem}
 .reading-task .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
 @media(max-width:760px){.reading-grid{grid-template-columns:1fr}.reading-task{padding:16px}}
+
+.reading-chapter-nav{display:flex;gap:11px;flex-wrap:wrap;margin:16px 0 10px}
+.reading-chapter-nav a{border:1px solid #d5e1e7;background:#fff;border-radius:6px;padding:7px 11px;color:#155c70;text-decoration:none;font-size:.86rem}
+.reading-chapter-nav a:hover,.reading-chapter-nav a:focus-visible{background:#eaf5f7;border-color:#74acb7}
+.reading-action{line-height:1.65}

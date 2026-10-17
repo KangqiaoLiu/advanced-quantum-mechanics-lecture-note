@@ -180,8 +180,8 @@
       "minutes": "30–60+",
       "editorial_track": "reading",
       "reading_resource": {
-        "label": "MIT OCW · Quantum Physics III (2018) lecture notes",
-        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2018/resources/lecture-notes/",
+        "label": "Ashida, Gong & Ueda · Non-Hermitian Physics (review)",
+        "url": "https://arxiv.org/abs/2006.01837",
         "task": "Diagonalize a 2×2 non-Hermitian matrix, identify eigenvalue coalescence and compare with Hermitian spectral reality.",
         "related_lab": "IC-01-02"
       },
@@ -496,8 +496,8 @@
       "minutes": "30–60+",
       "editorial_track": "reading",
       "reading_resource": {
-        "label": "MIT OCW · Quantum Physics III (2016) lecture notes",
-        "url": "https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/resources/lecture-notes/",
+        "label": "Physics LibreTexts · Spherical harmonics",
+        "url": "https://phys.libretexts.org/Bookshelves/Quantum_Mechanics/Introductory_Quantum_Mechanics_%28Fitzpatrick%29/07%3A_Orbital_Angular_Momentum/7.06%3A_Spherical_Harmonics",
         "task": "Plot angular probability patterns of a small set of spherical harmonics and relate nodes to (ℓ,m).",
         "related_lab": "IC-03-04"
       },
