@@ -1,0 +1,117 @@
+% Original complete parameter shift and finite shot worked derivation.
+\subsection*{Worked derivation: parameter shift and the measurement cost}
+The parameter-shift formula above is simple to quote.
+To see why it is exact, start from a single rotation
+$\op R(\theta)=\exp(-\ii\theta\sigma_\mu/2)$.
+Since $\sigma_\mu^2=I$, even and odd powers in the
+exponential sum separately to
+\begin{equation}
+\op R(\theta)=I\cos\frac\theta2
+-\ii\sigma_\mu\sin\frac\theta2.
+\end{equation}
+For any fixed input density matrix $\rho$ and Hermitian
+measurement operator $\op O$, write
+$f(\theta)=\operatorname{tr}[\op O\op R(\theta)
+\rho\op R^\dagger(\theta)]$. Substitute the two-term
+rotation decomposition and expand the four products.
+Terms containing two factors $\cos(\theta/2)$ or two
+factors $\sin(\theta/2)$ give
+$\cos^2(\theta/2)$ and $\sin^2(\theta/2)$;
+the two cross terms give
+$\sin(\theta/2)\cos(\theta/2)$.
+Using
+\begin{equation}
+\cos^2\frac\theta2=\frac{1+\cos\theta}2,\qquad
+\sin^2\frac\theta2=\frac{1-\cos\theta}2,\qquad
+2\sin\frac\theta2\cos\frac\theta2=\sin\theta,
+\end{equation}
+we obtain
+\begin{equation}
+f(\theta)=A+B\cos\theta+C\sin\theta,
+\end{equation}
+for real coefficients $A,B,C$ independent of $\theta$.
+This holds with arbitrary fixed unitaries before and after
+the displayed rotation; they simply modify the effective
+$\rho$ and $\op O$.
+Differentiate analytically:
+\begin{equation}
+\frac{\dd f}{\dd\theta}=-B\sin\theta+C\cos\theta.
+\end{equation}
+Now evaluate the function at shifted arguments:
+\begin{align}
+f(\theta+\pi/2)&=A-B\sin\theta+C\cos\theta,\\
+f(\theta-\pi/2)&=A+B\sin\theta-C\cos\theta.
+\end{align}
+Subtracting and dividing by two gives
+\begin{equation}
+\boxed{f'(\theta)=\frac12
+\left[f(\theta+\pi/2)-f(\theta-\pi/2)\right],}
+\end{equation}
+which is exactly Eq.~\eqref{eq:qnn-shift}.
+
+\paragraph{The gradient is exact; measurements introduce noise.}
+For each of the two shifted circuits, suppose we measure
+a Pauli observable with independent outputs $z=\pm1$.
+If the true expectation is $f_\pm$, then
+$E[z]=f_\pm$, $E[z^2]=1$ and
+$\operatorname{Var}(z)=1-f_\pm^2$.
+With $M$ independent shots per shift,
+the sample mean $\widehat f_\pm$ has variance
+\begin{equation}
+\operatorname{Var}(\widehat f_\pm)
+=\frac{1-f_\pm^2}{M}.
+\end{equation}
+The two batches are independent, so for
+$\widehat g=(\widehat f_+-\widehat f_-)/2$,
+\begin{align}
+E[\widehat g]
+&=\tfrac12(f_+-f_-)=f'(\theta),\\
+\operatorname{Var}(\widehat g)
+&=\tfrac14\bigl[\operatorname{Var}(\widehat f_+)
++\operatorname{Var}(\widehat f_-)\bigr]\notag\\
+&=\boxed{\frac{2-f_+^2-f_-^2}{4M}
+\leq\frac1{2M}.}
+\end{align}
+The estimator is unbiased, and its uncertainty depends on
+measurement outcomes as well as the shot budget.
+
+\paragraph{A useful counterexample to a universal claim.}
+Consider $n$ independently rotated qubits
+$\ket{\psi(\vect\theta)}=\bigotimes_{j=1}^n
+R_y(\theta_j)\ket0$. Measuring the global observable
+$Z^{\otimes n}$ gives
+\begin{equation}
+f_{\mathrm{global}}(\vect\theta)
+=\prod_{j=1}^n\cos\theta_j,\qquad
+\partial_{\theta_1}f_{\mathrm{global}}
+=-\sin\theta_1\prod_{j=2}^n\cos\theta_j.
+\end{equation}
+When each $\theta_j$ is independent and uniform
+on $[-\pi,\pi]$, the averages
+$E[\sin^2\theta_j]=E[\cos^2\theta_j]=1/2$
+give
+\begin{equation}
+E[(\partial_{\theta_1}f_{\mathrm{global}})^2]
+=\left(\frac12\right)^n.
+\end{equation}
+For the local observable $Z_1$, however,
+$f_{\mathrm{local}}=\cos\theta_1$ and
+\begin{equation}
+E[(\partial_{\theta_1}f_{\mathrm{local}})^2]
+=\frac12
+\end{equation}
+for \emph{every} $n$. The same product circuit can
+therefore have exponentially small global gradients and
+a dimension-independent local gradient. The precise
+cost observable and parameter ensemble matter.
+The
+\href{https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/labs/IC-09-06/index.html}
+{gradient concentration lab} tests these exact moments
+against reproducible random ensembles.
+
+\paragraph{Checkpoint.}
+At $n=10$, calculate the expected squared global
+gradient and compare it with the local value.
+For $M=512$, compute the conservative standard-deviation
+bound $\sqrt{1/(2M)}$ for a two-shift estimator.
+Which gradients are easier to distinguish from shot noise?

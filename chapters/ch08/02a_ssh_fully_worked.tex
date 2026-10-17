@@ -1,0 +1,125 @@
+% Original worked bridge: Bloch transform, eigenvalues and Berry connection.
+\subsection*{Worked derivation: from SSH hopping to a winding number}
+We now unpack the short step from the real-space hopping
+Hamiltonian to its two-band Bloch matrix. Choose a ring of $N$
+unit cells, momentum values $k=2\pi m/N$, and the Fourier
+conventions of Eq.~\eqref{eq:ssh-real}:
+\begin{equation}
+\op a_n=\frac1{\sqrt N}\sum_k e^{\ii kn}\op a_k,\qquad
+\op b_n=\frac1{\sqrt N}\sum_q e^{\ii qn}\op b_q.
+\end{equation}
+To transform the intracell term, substitute both expansions:
+\begin{align}
+\sum_n \op a_n^\dagger\op b_n
+&=\frac1N\sum_{n,k,q}
+ e^{-\ii kn}e^{\ii qn}\op a_k^\dagger\op b_q\notag\\
+&=\sum_{k,q}\left[\frac1N\sum_n
+ e^{\ii(q-k)n}\right]\op a_k^\dagger\op b_q
+=\sum_k\op a_k^\dagger\op b_k,
+\end{align}
+where the term in square brackets is $\delta_{kq}$.
+For the intercell term a shift of the position index matters:
+\begin{align}
+\sum_n\op a_{n+1}^\dagger\op b_n
+&=\frac1N\sum_{n,k,q}
+ e^{-\ii k(n+1)}e^{\ii qn}
+ \op a_k^\dagger\op b_q\notag\\
+&=\sum_k e^{-\ii k}\op a_k^\dagger\op b_k.
+\end{align}
+Together with the Hermitian conjugate,
+\begin{equation}
+\op H=\sum_k\begin{pmatrix}
+\op a_k^\dagger&\op b_k^\dagger
+\end{pmatrix}
+\underbrace{\begin{pmatrix}
+0&t_1+t_2e^{-\ii k}\\
+t_1+t_2e^{\ii k}&0
+\end{pmatrix}}_{h(k)}
+\begin{pmatrix}\op a_k\\\op b_k\end{pmatrix}.
+\end{equation}
+There is now a precise reason for the exponent sign in
+the upper-right matrix entry.
+
+\paragraph{Derive the two energies and locate the gap.}
+Let $q=t_1+t_2e^{-\ii k}$. The characteristic polynomial is
+\begin{equation}
+\det[h(k)-EI]
+=\begin{vmatrix}-E&q\\q^*&-E\end{vmatrix}
+=E^2-|q|^2.
+\end{equation}
+Compute the modulus explicitly:
+\begin{equation}
+\begin{aligned}
+|q|^2
+&=(t_1+t_2e^{-\ii k})(t_1+t_2e^{\ii k})\\
+&=t_1^2+t_2^2+t_1t_2(e^{\ii k}+e^{-\ii k})\\
+&=t_1^2+t_2^2+2t_1t_2\cos k.
+\end{aligned}
+\end{equation}
+Thus $E_\pm=\pm|q|$. For $t_1,t_2>0$,
+the minimum $|q|$ occurs at $k=\pi$, because
+$\cos k\geq-1$. Hence
+$|q(\pi)|=|t_1-t_2|$ and
+the direct spectral gap is $2|t_1-t_2|$.
+
+\paragraph{One explicit lower-band eigenvector.}
+Write the \emph{upper-right} off-diagonal element as
+$q=|q|e^{-\ii\varphi}$, so that
+$q^*=|q|e^{\ii\varphi}$. With
+$\varphi=\arg(t_1+t_2e^{\ii k})$, choose
+\begin{equation}
+\ket{u_-(k)}=\frac1{\sqrt2}
+\begin{pmatrix}-e^{-\ii\varphi(k)}\\1\end{pmatrix}.
+\end{equation}
+Multiplication verifies its lower-band eigenvalue:
+\begin{equation}
+h(k)\ket{u_-}
+=\frac{|q|}{\sqrt2}
+\begin{pmatrix}
+e^{-\ii\varphi}\\-1
+\end{pmatrix}
+=-|q|\ket{u_-}.
+\end{equation}
+Now differentiate the state:
+\begin{equation}
+\partial_k\ket{u_-}
+=\frac1{\sqrt2}
+\begin{pmatrix}\ii e^{-\ii\varphi}\partial_k\varphi\\0
+\end{pmatrix}.
+\end{equation}
+Its Berry connection is
+\begin{equation}
+\begin{aligned}
+\mathcal A(k)
+&=\ii\braket{u_-(k)}{\partial_k u_-(k)}\\
+&=\frac{\ii}{2}
+ \bigl(-e^{\ii\varphi}\bigr)
+ \bigl(\ii e^{-\ii\varphi}\partial_k\varphi\bigr)
+=\frac12\partial_k\varphi.
+\end{aligned}
+\end{equation}
+The map
+$(t_1+t_2\cos k,t_2\sin k)$ is a circle of
+radius $t_2$ centered at $(t_1,0)$ in the complex plane.
+The argument $\varphi$ winds by $2\pi$ if the circle
+encloses the origin (when $t_2>t_1$), and by zero
+if it does not (when $t_1>t_2$).
+Therefore
+\begin{equation}
+\gamma_{\mathrm{Zak}}
+=\oint\mathcal A(k)\dd k
+=\frac12[\varphi(\pi)-\varphi(-\pi)]
+=\pi\nu\pmod{2\pi}.
+\end{equation}
+
+\paragraph{Physical interpretation and limits.}
+A nonzero winding requires a spectral gap and a fixed
+choice of sublattice/unit-cell convention. At $t_1=t_2$,
+$q(\pi)=0$, so the phase becomes undefined exactly where
+the gap closes. Adding a staggered onsite $\sigma_z$
+term changes the symmetry class, allowing the planar loop
+to move away from the origin in three dimensions.
+The independent
+\href{https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-note/blob/main/companion/labs/IC-08-02/index.html}
+{SSH bulk and boundary investigation} connects this
+momentum-space calculation with finite-chain edge states.
