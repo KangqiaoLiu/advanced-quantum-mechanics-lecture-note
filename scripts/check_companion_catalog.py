@@ -29,8 +29,8 @@ assert tracks == {"selected": 27, "reference": 8, "reading": 27}, tracks
 selected = [lab for lab in labs if lab["editorial_track"] == "selected"]
 references = [lab for lab in labs if lab["editorial_track"] == "reference"]
 readings = [lab for lab in labs if lab["editorial_track"] == "reading"]
-assert sum(lab["stage"] == "implemented" for lab in selected) == 18
-assert sum(lab["stage"] == "planned" for lab in selected) == 9
+assert sum(lab["stage"] == "implemented" for lab in selected) == 27
+assert sum(lab["stage"] == "planned" for lab in selected) == 0
 assert all(lab["stage"] == "implemented" for lab in references)
 assert all(lab["stage"] == "planned" for lab in readings)
 assert data["curation"]["planned_total_self_built"] == 35

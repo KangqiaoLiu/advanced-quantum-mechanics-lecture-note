@@ -1,8 +1,8 @@
 {
   "title": "Advanced Quantum Mechanics — Interactive Companion",
   "revision": "2026-10-17: Curated flagship self-study scope; 27 selected investigations, 8 already-authored reference tools, and 27 externally supported reading topics.",
-  "status": "26 working experiments retained; 18 selected live investigations, 8 optional foundations; 9 selected experiments to implement; 27 external-reading topics.",
-  "version": "0.6.0-curated",
+  "status": "The complete curated suite is authored: 27 featured physics investigations and eight optional working reference laboratories; 27 further topics use guided external reading. No outstanding bespoke planned experiments.",
+  "version": "1.0.0-curated-complete",
   "notes": "../pdf/advanced-quantum-mechanics.pdf",
   "chapters": [
     {
@@ -264,9 +264,10 @@
       "question": "Where does WKB reproduce an exact solution, and where does it fail?",
       "observable": "Turning points, exact and approximate profiles, error",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-02-05/index.html"
     },
     {
       "id": "IC-02-06",
@@ -277,9 +278,10 @@
       "question": "How do nearby paths interfere around a stationary-action path?",
       "observable": "Path family, actions, complex phase and cancellation",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-02-06/index.html"
     },
     {
       "id": "IC-02-07",
@@ -404,9 +406,10 @@
       "question": "How does the coupled basis reorganize two-spin states?",
       "observable": "Product and coupled bases, Clebsch–Gordan weights",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-03-02/index.html"
     },
     {
       "id": "IC-03-03",
@@ -459,9 +462,10 @@
       "question": "How does the CHSH value vary with four measurement directions?",
       "observable": "Correlators, CHSH expression, quantum/classical limits",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "15–30",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-03-06/index.html"
     },
     {
       "id": "IC-03-07",
@@ -526,9 +530,10 @@
       "question": "How does a trial wavefunction constrain the ground-state energy?",
       "observable": "Rayleigh quotient, trial parameters, exact reference",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "15–30",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-04-02/index.html"
     },
     {
       "id": "IC-04-03",
@@ -539,9 +544,10 @@
       "question": "How do transition probabilities depend on drive frequency and duration?",
       "observable": "Transition curve, resonance width, finite-time oscillation",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "15–30",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-04-03/index.html"
     },
     {
       "id": "IC-04-04",
@@ -632,10 +638,11 @@
       "question": "How do multiple-scattering corrections determine the reliability of the Born approximation?",
       "observable": "Scattering-series iteration, exact amplitude, first Born error and convergence",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
       "editorial_track": "selected",
-      "editorial_note": "Integrates the original IC-05-04 Born-validity question into one meaningful scattering laboratory."
+      "editorial_note": "Integrates the original IC-05-04 Born-validity question into one meaningful scattering laboratory.",
+      "page": "labs/IC-05-03/index.html"
     },
     {
       "id": "IC-05-04",
@@ -946,9 +953,10 @@
       "question": "How does a closed adiabatic cycle transport quantized charge?",
       "observable": "Pump path, polarization, integrated Berry curvature",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-08-07/index.html"
     },
     {
       "id": "IC-09-01",
@@ -1041,9 +1049,10 @@
       "question": "How does training difficulty change with a circuit's structure and size?",
       "observable": "Gradient variance, cost locality, system size",
       "route": "extension",
-      "stage": "planned",
+      "stage": "implemented",
       "minutes": "30–60+",
-      "editorial_track": "selected"
+      "editorial_track": "selected",
+      "page": "labs/IC-09-06/index.html"
     },
     {
       "id": "IC-09-07",
@@ -1074,12 +1083,13 @@
   },
   "curation": {
     "selected_total": 27,
-    "selected_live": 18,
-    "selected_to_build": 9,
+    "selected_live": 27,
+    "selected_to_build": 0,
     "reference_live": 8,
     "reading_only": 27,
     "planned_total_self_built": 35,
     "policy": "Do not write new standalone laboratories for reading-only topics. Keep all 26 validated existing code modules. Prioritize scientifically transformative and quantitatively meaningful self-directed experiments.",
-    "decision_date": "2026-10-17"
+    "decision_date": "2026-10-17",
+    "release_state": "curated content implemented; internal scientific and browser regression checks still being extended; human visual/accessibility and student review remain future quality work"
   }
 }
