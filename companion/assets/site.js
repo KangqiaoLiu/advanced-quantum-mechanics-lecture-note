@@ -3,77 +3,97 @@ const base = "https://github.com/KangqiaoLiu/advanced-quantum-mechanics-lecture-
 const container = document.querySelector("#labs");
 const chapterInput = document.querySelector("#chapter");
 const searchInput = document.querySelector("#search");
-const coreInput = document.querySelector("#core");
+const trackInput = document.querySelector("#track");
 const message = document.querySelector("#message");
 const count = document.querySelector("#count");
 let catalog = null;
+
 const element = (tag, className, text) => {
   const node = document.createElement(tag);
   if (className) node.className = className;
   if (text != null) node.textContent = text;
   return node;
 };
+function external(target, textLabel) {
+  const a = element("a", "", textLabel);
+  a.href = target;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  return a;
+}
 function card(lab) {
   const article = element("article", "lab");
+  const kind = lab.editorial_track;
+  if (kind === "reading") article.classList.add("lab-reading");
+  if (kind === "reference") article.classList.add("lab-reference");
   article.append(element("span", "id", lab.id + " · Chapter " + lab.chapter));
   article.append(element("h3", "", lab.title));
   article.append(element("p", "question", lab.question));
-  article.append(element("p", "observable", "Explore: " + lab.observable));
+  if (kind !== "reading") article.append(element("p", "observable", "Explore: " + lab.observable));
+
   const chips = element("div", "chips");
-  chips.append(element("span", "chip", lab.level + " · " + lab.minutes + " min"));
-  if (lab.route === "core") chips.append(element("span", "chip route", "self-study route"));
-  chips.append(element("span", "chip", lab.stage === "implemented" ? "working experiment" : (lab.stage === "prototype" ? "planned prototype" : "planned lab")));
+  chips.append(element("span", "chip", kind === "selected" ? "Selected investigation" : kind === "reference" ? "Foundational reference" : "Guided reading"));
+  if (kind !== "reading") chips.append(element("span", "chip", lab.stage === "implemented" ? "Interactive now" : "Selected · in development"));
   article.append(chips);
-  const a = element("a", "", "View relevant lecture-note source ↗");
-  a.href = base + lab.source;
-  a.target = "_blank";
-  a.rel = "noopener noreferrer";
-  article.append(a);
+
+  const links = element("div", "lab-links");
   if (lab.stage === "implemented" && lab.page) {
-    const launch = element("a", "launch", "Open interactive experiment ↗");
+    const launch = element("a", "launch", "Explore interactive lab ↗");
     launch.href = lab.page;
-    article.append(document.createTextNode(" · "));
-    article.append(launch);
+    links.append(launch);
   }
+  if (kind === "reading") {
+    const link = element("a", "launch", "Read the guided extension ↗");
+    link.href = "reading.html#" + encodeURIComponent(lab.id);
+    links.append(link);
+    links.append(external(lab.reading_resource.url, "External resource ↗"));
+  } else if (lab.stage !== "implemented") {
+    links.append(element("span", "pending-copy", "Full independent-study lab in preparation"));
+  }
+  links.append(external(base + lab.source, "Lecture-note derivation ↗"));
+  article.append(links);
   return article;
 }
 function render() {
   if (!catalog) return;
   const term = searchInput.value.trim().toLocaleLowerCase();
   const chapter = chapterInput.value;
-  const onlyCore = coreInput.checked;
+  const track = trackInput.value;
   const labs = catalog.labs.filter(lab =>
     (chapter === "all" || lab.chapter === Number(chapter)) &&
-    (!onlyCore || lab.route === "core") &&
-    (!term || [lab.id,lab.title,lab.question,lab.observable].some(s=>s.toLocaleLowerCase().includes(term))));
+    (track === "all" ||
+      (track === "working" ? lab.stage === "implemented" : lab.editorial_track === track)) &&
+    (!term || [lab.id, lab.title, lab.question, lab.observable, lab.reading_resource?.task || ""]
+      .some(s => s.toLocaleLowerCase().includes(term))));
   const fragment = document.createDocumentFragment();
   labs.forEach(lab => fragment.append(card(lab)));
   container.replaceChildren(fragment);
-  count.textContent = labs.length + " of " + catalog.labs.length + " scientific questions shown · " + catalog.labs.filter(x=>x.stage==="implemented").length + " runnable experiments · " + catalog.chapters.length + " chapters";
-  if (!labs.length) container.append(element("p", "minor", "No questions match. Try a broader concept."));
+  count.textContent = labs.length + " matching topics · " +
+    labs.filter(x => x.stage === "implemented").length + " live experiments · " +
+    (catalog.curation.selected_to_build || 0) + " selected future experiments in the full plan";
+  if (!labs.length) container.append(element("p", "minor", "No matching question. Try another chapter or collection."));
 }
 async function init() {
   try {
     const response = await fetch("./catalog.json");
     if (!response.ok) throw Error("Catalog file unavailable.");
     catalog = await response.json();
-    const available = catalog.labs.filter(lab => lab.stage === "implemented").length;
-    document.querySelector("#catalog-status").textContent = available
-      ? available + " working experiments · " + (catalog.labs.length - available) + " further questions in development"
-      : "Curriculum preview · Physics laboratories are being prepared";
-    catalog.chapters.forEach(ch=>{
+    const c = catalog.curation;
+    document.querySelector("#catalog-status").textContent =
+      c.selected_live + " selected interactive labs · " + c.selected_to_build +
+      " selected future topics · " + c.reference_live + " additional reference labs";
+    catalog.chapters.forEach(ch => {
       const opt = document.createElement("option");
       opt.value = String(ch.number);
       opt.textContent = "Chapter " + ch.number + " — " + ch.name;
       chapterInput.append(opt);
     });
-    [chapterInput,searchInput,coreInput].forEach(el=>el.addEventListener("input",render));
+    [chapterInput, searchInput, trackInput].forEach(el => el.addEventListener("input", render));
     render();
   } catch (err) {
-    count.textContent = "Catalog could not be loaded.";
+    count.textContent = "Catalog unavailable.";
     message.hidden = false;
-    message.textContent = "Serve the companion directory with: python3 -m http.server 8000 from the repository root. Then open http://localhost:8000/companion/ .";
+    message.textContent = "Serve from the repository root with: python3 -m http.server 8000. Then visit /companion/ .";
   }
 }
 init();
-

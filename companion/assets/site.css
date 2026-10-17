@@ -14,3 +14,23 @@
 /* One substantive interactive laboratory per chapter, with three-across desktop layout. */
 @media(min-width:1040px){.featured{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .featured a{min-height:170px;justify-content:space-between}
+
+/* Curated self-study directory: selected, reference, and external-reading tracks. */
+.lab-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:14px}
+.lab-links a{font-size:.85rem}
+.lab .pending-copy{color:#687c87;font-size:.81rem}
+.lab-reading{background:#fbfcfd}
+.lab-reference{border-style:dashed}
+.reading-hero{max-width:830px}
+.reading-guide{border:1px solid #d5e0e5;border-radius:12px;padding:21px 24px;margin:24px 0;background:#f2f7f9}
+.reading-guide p{color:#485e69}
+.reading-chapter{margin:42px 0 26px}
+.reading-chapter h2{font:normal 1.7rem Georgia,serif;margin:0 0 12px;color:#203e50}
+.reading-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.reading-task{background:#fff;border:1px solid #d5dfe4;border-radius:11px;padding:21px 23px;scroll-margin-top:30px}
+.reading-task h3{font-size:1.05rem;margin:5px 0 12px}
+.reading-task p{margin:9px 0;font-size:.9rem;color:#415965}
+.reading-task .reading-action{border-left:3px solid #148579;background:#edf5f3;padding:11px 13px;margin:12px 0}
+.reading-task a{color:#146178;font-size:.88rem}
+.reading-task .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+@media(max-width:760px){.reading-grid{grid-template-columns:1fr}.reading-task{padding:16px}}
