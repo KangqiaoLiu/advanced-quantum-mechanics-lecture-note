@@ -1,0 +1,86 @@
+% One-page, landscape course map for the opening blackboard discussion.
+% Student-facing content only. This page precedes the notation sheet.
+\clearpage
+\begin{landscape}
+\thispagestyle{empty}
+\begingroup
+\setlength{\parindent}{0pt}
+\centering
+\begin{tikzpicture}[x=1mm,y=1mm,>=Latex,
+  every node/.style={inner sep=0pt,outer sep=0pt,align=left}]
+  \useasboundingbox (0,0) rectangle (243,144);
+  \node[font=\sffamily\LARGE\bfseries,anchor=west] at (1,137)
+    {Advanced Quantum Mechanics};
+  \node[font=\sffamily\small,anchor=west,text=black!70] at (1,128)
+    {A bridge from undergraduate quantum mechanics to modern quantum physics};
+  \draw[line width=0.65pt] (1,121) -- (242,121);
+
+  % Left: retain the original QM -> advanced framework -> course story.
+  \node[font=\sffamily\normalsize\bfseries,anchor=center] at (39,105)
+    {Quantum mechanics};
+  \draw[->,line width=0.75pt] (39,99) -- (39,91);
+  \node[font=\sffamily\normalsize\bfseries,anchor=center] at (39,84)
+    {Advanced QM};
+  \node[font=\sffamily\footnotesize,anchor=center,text=black!70] at (39,76)
+    {Framework \quad Language \quad Tools};
+  \draw[->,line width=0.75pt] (39,69) -- (39,61);
+  \node[font=\sffamily\normalsize\bfseries,anchor=center] at (39,54)
+    {This course};
+  \node[font=\sffamily\footnotesize,anchor=north,text width=69mm,align=center] at (39,47)
+    {A foundation for reading, reasoning, and working across modern quantum physics.};
+
+  % Right: a branching map of active areas, not a course contents list.
+  \draw[line width=0.4pt,black!45] (81,35) -- (81,114);
+  \node[font=\sffamily\bfseries\small,anchor=west] at (90,114)
+    {Where the framework leads};
+  \foreach \yy in {106,85,64,43} {
+    \draw[->,line width=0.5pt,black!70] (81,\yy) -- (88,\yy);
+  }
+
+  \node[font=\sffamily\bfseries\small,anchor=west] at (91,106)
+    {Condensed matter};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=70mm,anchor=north west] at (91,101)
+    {Many-body systems, superconductivity, topological phases};
+  \node[font=\sffamily\bfseries\small,anchor=west] at (170,106)
+    {AMO physics};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=69mm,anchor=north west] at (170,101)
+    {Atoms, lasers, cold gases, quantum optics};
+
+  \node[font=\sffamily\bfseries\small,anchor=west] at (91,85)
+    {Quantum information};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=70mm,anchor=north west] at (91,80)
+    {Computation, entanglement, communication};
+  \node[font=\sffamily\bfseries\small,anchor=west] at (170,85)
+    {Quantum statistical physics};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=69mm,anchor=north west] at (170,80)
+    {Thermalization, quantum thermodynamics};
+
+  \node[font=\sffamily\bfseries\small,anchor=west] at (91,64)
+    {Quantum field theory};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=70mm,anchor=north west] at (91,59)
+    {Particles, fields, fundamental interactions};
+  \node[font=\sffamily\bfseries\small,anchor=west] at (170,64)
+    {Quantum chemistry};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=69mm,anchor=north west] at (170,59)
+    {Molecules, structure, reactions};
+
+  \node[font=\sffamily\bfseries\small,anchor=west] at (91,43)
+    {Open quantum systems};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=70mm,anchor=north west] at (91,38)
+    {Decoherence, dissipation, quantum noise};
+  \node[font=\sffamily\bfseries\small,anchor=west] at (170,43)
+    {Quantum foundations};
+  \node[font=\sffamily\footnotesize,text=black!70,text width=69mm,anchor=north west] at (170,38)
+    {States, measurement, the classical limit};
+
+  \draw[line width=0.65pt] (1,27) -- (242,27);
+  \node[font=\sffamily\small,anchor=west] at (2,21)
+    {\textbf{Our route:} Foundations $\rightarrow$ Dynamics $\rightarrow$ Measurement $\rightarrow$ Many-body $\rightarrow$ Relativity $\rightarrow$ Topology $\rightarrow$ Quantum ML};
+  \node[font=\sffamily\small,anchor=west] at (2,12)
+    {\textbf{Background:} Undergraduate QM; linear algebra; complex numbers; calculus. Other tools are introduced when needed.};
+  \node[font=\sffamily\small,anchor=west] at (2,3)
+    {\textbf{Our goal:} Derive $\cdot$ Interpret $\cdot$ Apply $\cdot$ Verify --- including AI-assisted results.};
+\end{tikzpicture}
+\endgroup
+\end{landscape}
+\clearpage
