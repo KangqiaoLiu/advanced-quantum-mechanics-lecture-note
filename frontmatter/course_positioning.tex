@@ -1,11 +1,12 @@
-% One-page, landscape course map for the opening blackboard discussion.
+% One-page, portrait A4 sheet with the board diagram rotated 90 degrees.
 % Student-facing content only. This page precedes the notation sheet.
 \clearpage
-\begin{landscape}
 \thispagestyle{empty}
 \begingroup
 \setlength{\parindent}{0pt}
-\centering
+% Keep the PDF page portrait A4; rotate only the board-style contents.
+\noindent\makebox[\textwidth][c]{%
+\rotatebox{90}{%
 \begin{tikzpicture}[x=1mm,y=1mm,>=Latex,
   every node/.style={inner sep=0pt,outer sep=0pt,align=left}]
   \useasboundingbox (0,0) rectangle (243,144);
@@ -80,7 +81,8 @@
     {\textbf{Background:} Undergraduate QM; linear algebra; complex numbers; calculus. Other tools are introduced when needed.};
   \node[font=\sffamily\small,anchor=west] at (2,3)
     {\textbf{Our goal:} Derive $\cdot$ Interpret $\cdot$ Apply $\cdot$ Verify --- including AI-assisted results.};
-\end{tikzpicture}
+\end{tikzpicture}%
+}%
+}\par
 \endgroup
-\end{landscape}
 \clearpage
