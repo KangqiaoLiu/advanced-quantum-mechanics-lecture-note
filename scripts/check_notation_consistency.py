@@ -77,10 +77,12 @@ def main():
             raise SystemExit("Install PyMuPDF to use --pdf") from ex
         pdf = fitz.open(str(args.pdf))
         check(len(pdf) >= 100, "complete book PDF available")
-        check("List of Notation" in pdf[3].get_text() and
-              "Chapter 1" in pdf[4].get_text() and
-              "List of Notation" not in pdf[4].get_text(),
-              "notation occupies exactly one standalone PDF page (physical page 4)")
+        notation_pages = [i for i, p in enumerate(pdf) if "List of Notation" in p.get_text()]
+        chapter_one_pages = [i for i, p in enumerate(pdf)
+                             if "Chapter 1" in p.get_text() and "Basic Concepts" in p.get_text()]
+        check(len(notation_pages) == 1 and len(chapter_one_pages) >= 1 and
+              chapter_one_pages[0] == notation_pages[0] + 1,
+              "notation occupies exactly one standalone PDF page immediately before Chapter 1")
     print("Notation consistency: all selected checks passed.")
 
 
