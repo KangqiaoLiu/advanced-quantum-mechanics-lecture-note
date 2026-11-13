@@ -2,7 +2,13 @@
 % Placement: immediately following the Aharonov--Bohm effect, before monopoles.
 \section{Berry Phase}
 
-The Aharonov--Bohm effect showed that the relative phase of a quantum amplitude can depend on the geometry of a path even where the magnetic field vanishes. A related geometric phase appears when a Hamiltonian depends on external parameters that vary slowly along a path. In this case the path lies in \emph{parameter space}, rather than necessarily in the particle's physical position space.
+Quantum interference depends on the relative phases of probability amplitudes. In familiar examples, a phase accumulates as a system evolves in time: an energy eigenstate acquires a factor determined by its energy and the elapsed time. The Aharonov--Bohm effect provides another way for two amplitudes to acquire a measurable phase difference. It shows that the potentials and the paths followed by quantum amplitudes carry information that is visible in an interference experiment.
+
+Now imagine preparing a spin in a magnetic field and slowly turning the direction of that field. The spin can follow the changing field direction, and eventually the field can return to its initial direction. The quantum state then returns to the same instantaneous eigenspace, but its phase can retain a memory of the route taken during the rotation. For a spin-$\frac12$ state, the additional phase is related to the solid angle swept out by the field direction on a sphere. This is an example of the \emph{Berry phase}: a phase determined by the geometry of a gradual, cyclic change in the system's control parameters.
+
+The distinction between a phase due to elapsed time and a phase due to the route through parameter space is useful experimentally. Geometric phases can be observed by interference, and controlled paths can be used to implement phase operations in quantum control and geometric quantum gates. They also provide a language for phenomena in solids: as an electron moves through a crystal, its Bloch eigenstate changes with crystal momentum. The associated Berry connection and Berry curvature help explain electronic transport, including Hall responses, and lead naturally to topological properties of energy bands.
+
+We begin with the simplest setting in which this geometric contribution can be derived. The Hamiltonian depends on slowly varying external parameters, and we follow an instantaneous eigenstate around a path in \emph{parameter space}. This is the same mathematical idea that later connects quantum dynamics to topological condensed matter physics.
 
 \subsection*{1) Instantaneous eigenstates and adiabatic evolution}
 
